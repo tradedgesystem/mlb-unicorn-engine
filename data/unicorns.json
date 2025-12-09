@@ -1,0 +1,211 @@
+[
+  {
+    "id": "A-101",
+    "category": "A",
+    "title": "Slider Whiff Rate Spike (Last 50)",
+    "player": "Dylan Cease",
+    "team": "SDP",
+    "value": 42.3,
+    "context": "Whiff rate on sliders increased +14.7% over his season baseline",
+    "sample": 50,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "A-102",
+    "category": "A",
+    "title": "Changeup Disappearance Window",
+    "player": "Zack Wheeler",
+    "team": "PHI",
+    "value": 38.9,
+    "context": "Last 30 CH generated +11% whiff rate vs career rolling average",
+    "sample": 30,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "A-103",
+    "category": "A",
+    "title": "Curveball Freeze Cluster",
+    "player": "Corbin Burnes",
+    "team": "BAL",
+    "value": 19,
+    "context": "19 called strikes on curveballs across last 45 thrown",
+    "sample": 45,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "B-201",
+    "category": "B",
+    "title": "Fastball Velocity Micro-Trend",
+    "player": "Yoshinobu Yamamoto",
+    "team": "LAD",
+    "value": 97.1,
+    "context": "FB velo averaged +1.8 mph above his rolling 5-start mean",
+    "sample": 312,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "B-202",
+    "category": "B",
+    "title": "Cut Fastball Velocity Collapse",
+    "player": "Nathan Eovaldi",
+    "team": "TEX",
+    "value": -2.4,
+    "context": "Cutter velo down −2.4 mph across last three outings",
+    "sample": 134,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "B-203",
+    "category": "B",
+    "title": "Rising Sinker VAA Trend",
+    "player": "Logan Webb",
+    "team": "SFG",
+    "value": -4.8,
+    "context": "Sinker vertical attack angle 4.8° flatter than season mean",
+    "sample": 220,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "C-301",
+    "category": "C",
+    "title": "Elite Contact Suppression Window",
+    "player": "Tarik Skubal",
+    "team": "DET",
+    "value": 9.2,
+    "context": "xwOBA allowed last 100 pitches ranks in top 2% of MLB",
+    "sample": 100,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "C-302",
+    "category": "C",
+    "title": "Zero-Barrel Stretch",
+    "player": "Blake Snell",
+    "team": "SFG",
+    "value": 0,
+    "context": "0 barrels allowed in last 60 batted balls",
+    "sample": 60,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "C-303",
+    "category": "C",
+    "title": "Weak Contact Engine Burst",
+    "player": "Framber Valdez",
+    "team": "HOU",
+    "value": 82.4,
+    "context": "GB% hit 82.4% over last 40 BIP",
+    "sample": 40,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "D-401",
+    "category": "D",
+    "title": "Lefty Killer Surge (Last 25 PA)",
+    "player": "Fernando Tatis Jr.",
+    "team": "SDP",
+    "value": 0.662,
+    "context": "wOBA vs LHP last 25 PA up +0.214 vs season average",
+    "sample": 25,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "D-402",
+    "category": "D",
+    "title": "Righty Killer Window",
+    "player": "Bryce Harper",
+    "team": "PHI",
+    "value": 0.598,
+    "context": "xwOBA vs RHP last 40 PA up +0.177",
+    "sample": 40,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "D-403",
+    "category": "D",
+    "title": "Clutch Contact Elevation",
+    "player": "Juan Soto",
+    "team": "NYY",
+    "value": 28,
+    "context": "28% increase in hard-hit balls in high-leverage spots (last 20 PA)",
+    "sample": 20,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "E-501",
+    "category": "E",
+    "title": "Pitch Shape Consistency Burst",
+    "player": "Logan Webb",
+    "team": "SFG",
+    "value": 98.4,
+    "context": "Sinker vertical movement deviation < 0.5\" over last 75 pitches",
+    "sample": 75,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "E-502",
+    "category": "E",
+    "title": "Slider Gyro Lock-In",
+    "player": "Spencer Strider",
+    "team": "ATL",
+    "value": 89.1,
+    "context": "Gyro degree deviation narrowed to <1.2° last 60 pitches",
+    "sample": 60,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "E-503",
+    "category": "E",
+    "title": "Changeup Arm-Speed Sync",
+    "player": "Cole Ragans",
+    "team": "KCR",
+    "value": 95.2,
+    "context": "CH arm-speed variance <1.5% across last 80 thrown",
+    "sample": 80,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "F-601",
+    "category": "F",
+    "title": "Elite Baserunning Window",
+    "player": "Elly De La Cruz",
+    "team": "CIN",
+    "value": 30.1,
+    "context": "Sprint speed in-game average +2.9 ft/s last 10 games",
+    "sample": 10,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "F-602",
+    "category": "F",
+    "title": "Steal Opportunity Conversion Spike",
+    "player": "CJ Abrams",
+    "team": "WSH",
+    "value": 87.5,
+    "context": "Converted 7 of last 8 steal opportunities",
+    "sample": 8,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "G-701",
+    "category": "G",
+    "title": "Defensive Range Expansion",
+    "player": "Ha-Seong Kim",
+    "team": "SDP",
+    "value": 1.9,
+    "context": "Outs Above Expected +1.9 over last 12 games",
+    "sample": 12,
+    "updated": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": "G-702",
+    "category": "G",
+    "title": "Throwing Velocity Burst",
+    "player": "Oneil Cruz",
+    "team": "PIT",
+    "value": 97.8,
+    "context": "Average infield throw velo hit 97.8 mph last 7 games",
+    "sample": 7,
+    "updated": "2025-01-01T12:00:00Z"
+  }
+]

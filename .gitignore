@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+*.db
+
+# Node
+node_modules/
+
+# macOS
+.DS_Store
+
+# Alembic
+alembic/*.sqlite
+
+# VSCode
+.vscode/

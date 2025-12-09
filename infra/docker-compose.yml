@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: mlb_unicorn_db
+    environment:
+      POSTGRES_USER: mlb
+      POSTGRES_PASSWORD: mlb
+      POSTGRES_DB: mlb_unicorn_engine
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ../backend
+    env_file:
+      - ../backend/.env.example
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    volumes:
+      - ../backend:/app
+
+  redis:
+    image: redis:7-alpine
+    container_name: mlb_unicorn_redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+
+volumes:
+  pgdata:

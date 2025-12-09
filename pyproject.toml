@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "mlb-unicorn-engine"
+version = "0.1.0"
+description = "MLB Unicorn Engine backend (FastAPI, Postgres, Alembic)"
+authors = ["Codex <dev@example.com>"]
+packages = [{ include = "backend" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "*"
+uvicorn = { version = "*", extras = ["standard"] }
+SQLAlchemy = "^2.0"
+alembic = "^1.13"
+psycopg2-binary = "^2.9"
+pydantic = "^2.6"
+pandas = "^2.2"
+numpy = "^1.26"
+pybaseball = "^2.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4"
+pytest-asyncio = "^0.23"
+
+[build-system]
+requires = ["poetry-core>=1.7.0"]
+build-backend = "poetry.core.masonry.api"
