@@ -5,7 +5,7 @@ from typing import Iterable, Mapping, Sequence
 
 from sqlalchemy.orm import Session
 
-from backend.db import models
+from backend.app.db import models
 from backend.app.core.logging import logger
 
 

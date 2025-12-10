@@ -5,7 +5,7 @@ from datetime import date
 from textwrap import dedent
 from typing import Dict, Tuple
 
-from backend.db import models
+from backend.app.db import models
 from backend.app.unicorns.filters import build_filter_clause
 from backend.app.unicorns.metrics import get_metric_expr
 

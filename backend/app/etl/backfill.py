@@ -10,7 +10,7 @@ from backend.app.etl.preprocess import sanitize_value
 from pybaseball import statcast
 
 from backend.app.core.logging import logger
-from backend.db.session import SessionLocal
+from backend.app.db.session import SessionLocal
 from backend.app.etl.loader import StatcastLoader
 from backend.app.etl import preprocess
 

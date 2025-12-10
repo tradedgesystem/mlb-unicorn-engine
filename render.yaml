@@ -1,15 +1,10 @@
 services:
   - type: web
     name: mlb-unicorn-engine
-    env: docker
+    env: python
     plan: free
-    dockerfilePath: ./Dockerfile
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.app.api.main:app --host 0.0.0.0 --port 8000
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: unicorn-db
-          property: connectionString
-
-databases:
-  - name: unicorn-db
-    plan: free
+        sync: false

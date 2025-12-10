@@ -5,8 +5,8 @@ from decimal import Decimal
 from typing import List
 
 from backend.app.core.logging import logger
-from backend.db import models
-from backend.db.session import SessionLocal
+from backend.app.db import models
+from backend.app.db.session import SessionLocal
 
 
 SEED_PATTERNS: List[dict] = [

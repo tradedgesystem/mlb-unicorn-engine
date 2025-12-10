@@ -3,9 +3,9 @@ from datetime import date
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.db import models
-from backend.db.base import Base
-from backend.db.session import SessionLocal, engine
+from backend.app.db import models
+from backend.app.db.base import Base
+from backend.app.db.session import SessionLocal, engine
 from backend.app.unicorns.queries import fetch_top50_for_date
 
 app = FastAPI()
@@ -24,6 +24,11 @@ def init_db() -> None:
     # Ensure core tables exist (useful for fresh Render/Postgres instances).
     Base.metadata.create_all(bind=engine)
     _seed_sample_top50()
+
+
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "MLB Unicorn Engine API is running"}
 
 
 def to_dict(row):

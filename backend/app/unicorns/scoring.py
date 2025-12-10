@@ -6,7 +6,7 @@ import statistics
 from dataclasses import dataclass
 from typing import Callable, Iterable, List, Sequence
 
-from backend.db import models
+from backend.app.db import models
 from backend.app.unicorns.metrics import public_weight_for_category
 
 

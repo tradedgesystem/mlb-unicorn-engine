@@ -10,8 +10,8 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from backend.app.core.logging import logger
-from backend.db import models
-from backend.db.session import SessionLocal
+from backend.app.db import models
+from backend.app.db.session import SessionLocal
 from backend.app.unicorns.patterns import validate_pattern
 from backend.app.unicorns.scoring import ScoredRow, compute_scores
 from backend.app.unicorns.sql_builder import build_query

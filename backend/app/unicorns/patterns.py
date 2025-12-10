@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Iterable
 
-from backend.db import models
+from backend.app.db import models
 
 ALLOWED_COUNTS = {"3-0", "0-2", "3-2"}
 BANNED_TERMS = {
