@@ -1,6 +1,6 @@
 from datetime import date
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.app.db import models
@@ -27,7 +27,8 @@ def init_db() -> None:
 
 
 @app.get("/")
-def root():
+def root(response: Response):
+    response.headers["Cache-Control"] = "public, max-age=120"
     return {"status": "ok", "message": "MLB Unicorn Engine API is running"}
 
 
@@ -46,11 +47,25 @@ def to_dict(row):
 
 
 @app.get("/top50/{run_date}")
-def get_top50(run_date: date):
+def get_top50(run_date: date, response: Response):
     session = SessionLocal()
     try:
         rows = fetch_top50_for_date(session, run_date)
+        response.headers["Cache-Control"] = "public, max-age=300"
         return [to_dict(r) for r in rows]
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    finally:
+        session.close()
+
+
+@app.get("/players")
+def get_players(response: Response):
+    session = SessionLocal()
+    try:
+        players = session.query(models.Player).all()
+        response.headers["Cache-Control"] = "public, max-age=600"
+        return [{"id": p.player_id, "full_name": p.full_name} for p in players]
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     finally:
