@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import date
+from pathlib import Path
 from typing import Dict, Iterable, List, Mapping, MutableMapping
 
 import pandas as pd
@@ -67,6 +68,16 @@ TEAM_ABBR_TO_ID: Dict[str, int] = {
 
 HIT_EVENTS = {"single", "double", "triple", "home_run"}
 WALK_EVENTS = {"walk", "intent_walk"}
+PLAYER_NAME_OVERRIDES: Dict[int, str] = {
+    660271: "Shohei Ohtani",
+}
+LOG_FILE = Path(__file__).resolve().parents[3] / "logs" / "etl_ingestion.log"
+
+
+def _log_to_file(message: str) -> None:
+    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with LOG_FILE.open("a", encoding="utf-8") as f:
+        f.write(message + "\n")
 
 
 def _safe_int(value) -> int | None:
@@ -148,6 +159,10 @@ def _aggregate_players(df: pd.DataFrame) -> List[Mapping]:
                 "primary_pos": "P",
                 "current_team_id": _team_id(row.get("fld_team")) or _team_id(row.get("home_team")) or _team_id(row.get("away_team")),
             }
+    # Apply known overrides for mis-labeled Statcast names
+    for pid, override in PLAYER_NAME_OVERRIDES.items():
+        if pid in players:
+            players[pid]["full_name"] = override
     return list(players.values())
 
 
@@ -259,46 +274,132 @@ def _build_pitch_records(df: pd.DataFrame) -> List[Mapping]:
     return pitch_records
 
 
-def build_batches_for_date(as_of_date: date) -> Mapping[str, Iterable[Mapping]]:
-    date_str = as_of_date.isoformat()
-    df = statcast(start_dt=date_str, end_dt=date_str)
-    if df.empty:
-        logger.warning("No Statcast data for %s", as_of_date)
-        return {"players": [], "teams": [], "games": [], "pitch_facts": [], "pa_facts": []}
-
-    # pitch and PA identifiers
-    df = df.copy()
+def _prepare_game_df(df_game: pd.DataFrame) -> pd.DataFrame:
+    """Add identifiers needed for downstream ingestion."""
+    df = df_game.sort_values(["at_bat_number", "pitch_number"]).copy()
     df["pitch_number_pa"] = df.groupby(["game_pk", "at_bat_number"]).cumcount() + 1
     df["game_pitch_number"] = df.groupby("game_pk").cumcount() + 1
-    df["is_last_pitch"] = df.groupby(["game_pk", "at_bat_number"])["pitch_number_pa"].transform("max") == df["pitch_number_pa"]
+    df["is_last_pitch"] = (
+        df.groupby(["game_pk", "at_bat_number"])["pitch_number_pa"].transform("max") == df["pitch_number_pa"]
+    )
     df["pitch_id"] = df.apply(lambda r: int(f"{int(r.game_pk)}{int(r.game_pitch_number):05d}"), axis=1)
     df["pa_id"] = df.apply(lambda r: int(f"{int(r.game_pk)}{int(r.at_bat_number):04d}"), axis=1)
+    return df
 
+
+def _build_batches_from_df(df: pd.DataFrame) -> Mapping[str, Iterable[Mapping]]:
     teams = _build_team_records(df)
     games = _build_game_records(df)
     players = _aggregate_players(df)
     pa_facts = _build_pa_records(df)
     pitch_facts = _build_pitch_records(df)
-    return {
-        "players": players,
-        "teams": teams,
-        "games": games,
-        "pitch_facts": pitch_facts,
-        "pa_facts": pa_facts,
-    }
+    return {"players": players, "teams": teams, "games": games, "pitch_facts": pitch_facts, "pa_facts": pa_facts}
+
+
+def _build_pa_records_with_placeholders(df_game: pd.DataFrame) -> List[Mapping]:
+    """Build PA records and add placeholder 0-pitch PAs for missing at_bat_number gaps."""
+    pa_records = _build_pa_records(df_game)
+    game_id = int(df_game["game_pk"].iloc[0])
+    at_bats_present = {int(x) for x in df_game["at_bat_number"].dropna().unique()}
+    if not at_bats_present:
+        return pa_records
+    min_ab = min(at_bats_present)
+    max_ab = max(at_bats_present)
+    for ab in range(min_ab, max_ab + 1):
+        if ab in at_bats_present:
+            continue
+        pa_id = int(f"{game_id}{ab:04d}")
+        pa_records.append(
+            {
+                "pa_id": pa_id,
+                "game_id": game_id,
+                "inning": None,
+                "top_bottom": None,
+                "batter_id": None,
+                "pitcher_id": None,
+                "result": "unknown",
+                "is_hit": False,
+                "is_hr": False,
+                "is_bb": False,
+                "xwoba": None,
+                "bases_state_before": None,
+                "outs_before": None,
+                "score_diff_before": None,
+                "bat_order": None,
+                "is_risp": False,
+            }
+        )
+    pa_records.sort(key=lambda r: r["pa_id"])
+    return pa_records
+
+
+def ingest_date(as_of_date: date) -> None:
+    date_str = as_of_date.isoformat()
+    df_day = statcast(start_dt=date_str, end_dt=date_str)
+    if df_day.empty:
+        logger.warning("No Statcast data for %s", date_str)
+        _log_to_file(f"[WARN] date={date_str} missing pitch data")
+        return
+
+    df_day = df_day.drop_duplicates(subset=["game_pk", "at_bat_number", "pitch_number"])
+    game_ids = sorted(df_day["game_pk"].dropna().unique())
+    teams_day = _build_team_records(df_day)
+
+    for game_id in game_ids:
+        df_game_raw = df_day[df_day["game_pk"] == game_id]
+        if df_game_raw.empty:
+            continue
+        try:
+            df_prepared = _prepare_game_df(df_game_raw)
+            pa_facts = _build_pa_records_with_placeholders(df_prepared)
+            pitch_facts = _build_pitch_records(df_prepared)
+            games = _build_game_records(df_prepared)
+            players = _aggregate_players(df_prepared)
+            batch = {
+                "players": players,
+                "teams": teams_day,
+                "games": games,
+                "pa_facts": pa_facts,
+                "pitch_facts": pitch_facts,
+            }
+            with SessionLocal() as session:
+                loader = StatcastLoader(session)
+                loader.load_all(**batch)
+            _log_to_file(
+                f"[OK] game_id={int(game_id)} date={date_str} pa_count={len(pa_facts)} pitch_count={len(pitch_facts)}"
+            )
+        except Exception as exc:  # noqa: BLE001
+            msg = f"[ERROR] game_id={int(game_id)} date={date_str} exception={exc}"
+            _log_to_file(msg)
+            logger.exception("Failed ingest for game %s on %s", game_id, date_str)
+
+
+def ingest_range(start_date: date, end_date: date) -> None:
+    current = start_date
+    while current <= end_date:
+        ingest_date(current)
+        current = date.fromordinal(current.toordinal() + 1)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run daily Statcast backfill")
-    parser.add_argument("--date", required=True, help="Single date (YYYY-MM-DD) to backfill")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--date", help="Single date (YYYY-MM-DD) to backfill")
+    group.add_argument("--start", help="Start date (YYYY-MM-DD) for range backfill")
+    parser.add_argument("--end", help="End date (YYYY-MM-DD) for range backfill (required with --start)")
     args = parser.parse_args()
-    run_date = date.fromisoformat(args.date)
+    if args.date:
+        run_date = date.fromisoformat(args.date)
+        ingest_date(run_date)
+        logger.info("Backfill complete for %s", run_date)
+        return
 
-    batch = build_batches_for_date(run_date)
-    with SessionLocal() as session:
-        loader = StatcastLoader(session)
-        loader.load_all(**batch)
-    logger.info("Backfill complete for %s", run_date)
+    if not args.end:
+        raise SystemExit("--end is required when using --start")
+    start_date = date.fromisoformat(args.start)
+    end_date = date.fromisoformat(args.end)
+    ingest_range(start_date, end_date)
+    logger.info("Backfill complete for range %s to %s", start_date, end_date)
 
 
 if __name__ == "__main__":

@@ -3,7 +3,9 @@ from __future__ import annotations
 
 from collections import defaultdict
 from datetime import date
-from typing import Iterable, List, Optional, Sequence
+from typing import Dict, Iterable, List, Optional, Sequence
+
+import requests
 
 from sqlalchemy import and_, case, func, select
 
@@ -13,6 +15,53 @@ from backend.app.db.session import SessionLocal
 
 SWING_RESULTS = {"swinging_strike", "swinging_strike_blocked", "foul", "foul_tip", "in_play", "hit_into_play"}
 CONTACT_RESULTS = {"in_play", "hit_into_play"}
+
+_POSITION_CACHE: Dict[int, Optional[str]] = {}
+
+
+def _chunked(values: Sequence[int], size: int = 200) -> Iterable[Sequence[int]]:
+    for i in range(0, len(values), size):
+        yield values[i : i + size]
+
+
+def preload_primary_positions(player_ids: Sequence[int]) -> None:
+    """Warm the in-process cache of primary positions from MLBAM people endpoint."""
+    missing = [pid for pid in player_ids if pid not in _POSITION_CACHE]
+    if not missing:
+        return
+    url = "https://statsapi.mlb.com/api/v1/people"
+    for chunk in _chunked(missing, size=200):
+        try:
+            resp = requests.get(
+                url,
+                params={"personIds": ",".join(str(pid) for pid in chunk)},
+                timeout=20,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            for person in data.get("people", []):
+                pid = int(person.get("id"))
+                abbrev = (
+                    (person.get("primaryPosition") or {}).get("abbreviation")
+                    if isinstance(person, dict)
+                    else None
+                )
+                _POSITION_CACHE[pid] = abbrev
+            # Ensure any missing IDs in response are still cached as None
+            returned = {int(p.get("id")) for p in data.get("people", []) if isinstance(p, dict)}
+            for pid in chunk:
+                if pid not in returned:
+                    _POSITION_CACHE[pid] = None
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Primary position lookup failed for %s ids: %s", len(chunk), exc)
+            for pid in chunk:
+                _POSITION_CACHE[pid] = None
+
+
+def _primary_position_abbrev(player_id: int) -> Optional[str]:
+    if player_id not in _POSITION_CACHE:
+        preload_primary_positions([player_id])
+    return _POSITION_CACHE.get(player_id)
 
 
 def _safe_div(numer: Optional[float], denom: Optional[float]) -> Optional[float]:
@@ -25,12 +74,12 @@ def _safe_div(numer: Optional[float], denom: Optional[float]) -> Optional[float]
 
 
 def _get_player_role(session, player_id: int) -> str:
-    # Pitcher if they have any pitch_facts as pitcher
+    pos_abbrev = (_primary_position_abbrev(player_id) or "").upper()
+    base_is_pitcher = pos_abbrev == "P"
+
+    # If they actually pitched in the ingested window, classify as starter/reliever.
     pitcher_pitches = session.scalar(
         select(func.count()).select_from(models.PitchFact).where(models.PitchFact.pitcher_id == player_id)
-    )
-    batter_pas = session.scalar(
-        select(func.count()).select_from(models.PlateAppearance).where(models.PlateAppearance.batter_id == player_id)
     )
     if pitcher_pitches and pitcher_pitches > 0:
         # determine starter vs reliever by earliest pitch number threshold per game
@@ -52,7 +101,12 @@ def _get_player_role(session, player_id: int) -> str:
         if (starter_count or 0) >= (reliever_count or 0):
             return "starter"
         return "reliever"
-    return "hitter" if (batter_pas or 0) > 0 else "hitter"
+
+    # Otherwise, fall back to stable primary position.
+    if base_is_pitcher:
+        # No starts observed -> treat as reliever by default.
+        return "reliever"
+    return "hitter"
 
 
 def get_player_role(session, player_id: int) -> str:
@@ -234,6 +288,7 @@ def compute_player_summary(session, player_id: int) -> None:
 def update_all() -> None:
     with SessionLocal() as session:
         player_ids = [row.player_id for row in session.execute(select(models.Player.player_id))]
+        preload_primary_positions(player_ids)
         logger.info("Computing metrics for %s players", len(player_ids))
         for idx, pid in enumerate(player_ids, start=1):
             compute_player_summary(session, pid)

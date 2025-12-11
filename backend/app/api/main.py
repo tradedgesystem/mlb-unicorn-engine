@@ -199,7 +199,8 @@ def get_team(team_id: int, response: Response):
         starters = []
         relievers = []
         for p in players:
-            role = get_player_role(session, p.player_id)
+            summary = session.get(models.PlayerSummary, p.player_id)
+            role = summary.role if summary else get_player_role(session, p.player_id)
             payload = {"player_id": p.player_id, "full_name": p.full_name, "role": role}
             if role == "starter":
                 starters.append(payload)

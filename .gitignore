@@ -15,5 +15,8 @@ node_modules/
 # Alembic
 alembic/*.sqlite
 
+# Runtime logs
+logs/
+
 # VSCode
 .vscode/
