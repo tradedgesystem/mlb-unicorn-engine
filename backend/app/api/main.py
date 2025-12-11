@@ -7,6 +7,7 @@ from backend.app.db import models
 from backend.app.db.base import Base
 from backend.app.db.session import SessionLocal, engine
 from backend.app.unicorns.queries import fetch_top50_for_date
+from backend.app.core.player_metrics import update_all as refresh_player_metrics
 
 app = FastAPI()
 
@@ -66,6 +67,91 @@ def get_players(response: Response):
         players = session.query(models.Player).all()
         response.headers["Cache-Control"] = "public, max-age=600"
         return [{"id": p.player_id, "full_name": p.full_name} for p in players]
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    finally:
+        session.close()
+
+
+def _role_metrics(summary: models.PlayerSummary) -> dict:
+    if summary is None:
+        return {}
+    role = summary.role
+    if role == "hitter":
+        return {
+            "barrel_pct_last_50": summary.barrel_pct_last_50,
+            "hard_hit_pct_last_50": summary.hard_hit_pct_last_50,
+            "xwoba_last_50": summary.xwoba_last_50,
+            "contact_pct_last_50": summary.contact_pct_last_50,
+            "chase_pct_last_50": summary.chase_pct_last_50,
+        }
+    if role == "starter":
+        return {
+            "xwoba_last_3_starts": summary.xwoba_last_3_starts,
+            "whiff_pct_last_3_starts": summary.whiff_pct_last_3_starts,
+            "k_pct_last_3_starts": summary.k_pct_last_3_starts,
+            "bb_pct_last_3_starts": summary.bb_pct_last_3_starts,
+            "hard_hit_pct_last_3_starts": summary.hard_hit_pct_last_3_starts,
+        }
+    if role == "reliever":
+        return {
+            "xwoba_last_5_apps": summary.xwoba_last_5_apps,
+            "whiff_pct_last_5_apps": summary.whiff_pct_last_5_apps,
+            "k_pct_last_5_apps": summary.k_pct_last_5_apps,
+            "bb_pct_last_5_apps": summary.bb_pct_last_5_apps,
+            "hard_hit_pct_last_5_apps": summary.hard_hit_pct_last_5_apps,
+        }
+    return {}
+
+
+@app.get("/players/{player_id}")
+def get_player_profile(player_id: int, response: Response):
+    session = SessionLocal()
+    try:
+        player = (
+            session.query(models.Player, models.Team)
+            .outerjoin(models.Team, models.Team.team_id == models.Player.current_team_id)
+            .filter(models.Player.player_id == player_id)
+            .first()
+        )
+        if not player:
+            raise HTTPException(status_code=404, detail="Player not found")
+
+        summary = session.get(models.PlayerSummary, player_id)
+        if summary is None:
+            refresh_player_metrics()  # compute fresh summaries
+            summary = session.get(models.PlayerSummary, player_id)
+
+        metrics = _role_metrics(summary)
+        unicorns = (
+            session.query(models.UnicornTop50Daily)
+            .filter(models.UnicornTop50Daily.entity_id == player_id)
+            .order_by(models.UnicornTop50Daily.run_date.desc(), models.UnicornTop50Daily.rank.asc())
+            .limit(5)
+            .all()
+        )
+
+        response.headers["Cache-Control"] = "public, max-age=300"
+        return {
+            "player_id": player[0].player_id,
+            "player_name": player[0].full_name,
+            "team_id": player[1].team_id if player[1] else None,
+            "team_name": player[1].team_name if player[1] else None,
+            "role": summary.role if summary else None,
+            "metrics": metrics,
+            "recent_unicorns": [
+                {
+                    "run_date": str(u.run_date),
+                    "pattern_id": u.pattern_id,
+                    "description": u.description,
+                    "metric_value": float(u.metric_value),
+                    "score": float(u.score),
+                }
+                for u in unicorns
+            ],
+        }
+    except HTTPException:
+        raise
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     finally:

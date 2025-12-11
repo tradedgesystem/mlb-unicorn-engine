@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from typing import Optional
 
 from sqlalchemy import (
@@ -15,6 +15,7 @@ from sqlalchemy import (
     Text,
     UniqueConstraint,
 )
+from sqlalchemy import DateTime, func
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -203,3 +204,30 @@ class UnicornTop50Daily(Base):
     sample_size: Mapped[int] = mapped_column(Integer, nullable=False)
     score: Mapped[float] = mapped_column(Numeric(14, 6), nullable=False)
     description: Mapped[str] = mapped_column(Text, nullable=False)
+
+
+class PlayerSummary(Base):
+    __tablename__ = "player_summary"
+
+    player_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("players.player_id"), primary_key=True)
+    role: Mapped[str] = mapped_column(Text, nullable=False)
+
+    barrel_pct_last_50: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    hard_hit_pct_last_50: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    xwoba_last_50: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    contact_pct_last_50: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    chase_pct_last_50: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+
+    xwoba_last_3_starts: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    whiff_pct_last_3_starts: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    k_pct_last_3_starts: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    bb_pct_last_3_starts: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    hard_hit_pct_last_3_starts: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+
+    xwoba_last_5_apps: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    whiff_pct_last_5_apps: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    k_pct_last_5_apps: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    bb_pct_last_5_apps: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+    hard_hit_pct_last_5_apps: Mapped[Optional[float]] = mapped_column(Numeric(6, 4))
+
+    updated_at: Mapped[Optional[datetime]] = mapped_column(DateTime, server_default=func.now())

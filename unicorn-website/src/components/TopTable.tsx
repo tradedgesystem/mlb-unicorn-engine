@@ -331,7 +331,12 @@ function FragmentRow({ row, isTop5, isExpanded, onToggle }: FragmentRowProps) {
                 .toUpperCase()}
             </div>
             <div className="flex flex-col">
-              <span className="font-medium leading-tight">{row.playerName}</span>
+              <a
+                href={`/player/${row.entity_id}`}
+                className="font-medium leading-tight hover:underline decoration-2 decoration-neutral-400"
+              >
+                {row.playerName}
+              </a>
               <span className="text-xs text-neutral-500">
                 Pattern {row.pattern_id}
               </span>
