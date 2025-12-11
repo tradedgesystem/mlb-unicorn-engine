@@ -55,6 +55,11 @@ def _get_player_role(session, player_id: int) -> str:
     return "hitter" if (batter_pas or 0) > 0 else "hitter"
 
 
+def get_player_role(session, player_id: int) -> str:
+    """Public wrapper so API routes can infer role."""
+    return _get_player_role(session, player_id)
+
+
 def _last_pa_ids(session, batter_id: int, limit: int = 50) -> List[int]:
     stmt = (
         select(models.PlateAppearance.pa_id)

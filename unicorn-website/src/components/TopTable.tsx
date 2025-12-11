@@ -2,7 +2,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { fetchPlayers, fetchTop50, PlayerMap, UnicornRow } from "../lib/api";
+import { fetchPlayers, fetchTop50, PlayerMap, UnicornRow } from "../lib/legacyTop";
+import { slugifyPlayer } from "../lib/slugs";
 
 type Filter = "all" | "hitters" | "pitchers" | "relievers";
 type SortKey = "rank" | "score" | "player" | "entity_type";
@@ -332,7 +333,7 @@ function FragmentRow({ row, isTop5, isExpanded, onToggle }: FragmentRowProps) {
             </div>
             <div className="flex flex-col">
               <a
-                href={`/player/${row.entity_id}`}
+                href={`/players/${slugifyPlayer(row.playerName)}`}
                 className="font-medium leading-tight hover:underline decoration-2 decoration-neutral-400"
               >
                 {row.playerName}

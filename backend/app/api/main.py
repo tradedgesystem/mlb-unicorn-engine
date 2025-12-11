@@ -7,7 +7,10 @@ from backend.app.db import models
 from backend.app.db.base import Base
 from backend.app.db.session import SessionLocal, engine
 from backend.app.unicorns.queries import fetch_top50_for_date
-from backend.app.core.player_metrics import update_all as refresh_player_metrics
+from backend.app.core.player_metrics import (
+    get_player_role,
+    update_all as refresh_player_metrics,
+)
 
 app = FastAPI()
 
@@ -71,6 +74,11 @@ def get_players(response: Response):
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     finally:
         session.close()
+
+
+@app.get("/api/players")
+def get_players_api(response: Response):
+    return get_players(response)
 
 
 def _role_metrics(summary: models.PlayerSummary) -> dict:
@@ -149,6 +157,64 @@ def get_player_profile(player_id: int, response: Response):
                 }
                 for u in unicorns
             ],
+        }
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    finally:
+        session.close()
+
+
+@app.get("/api/players/{player_id}")
+def get_player_profile_api(player_id: int, response: Response):
+    return get_player_profile(player_id, response)
+
+
+@app.get("/api/teams")
+def list_teams(response: Response):
+    session = SessionLocal()
+    try:
+        teams = session.query(models.Team).order_by(models.Team.team_name.asc()).all()
+        response.headers["Cache-Control"] = "public, max-age=600"
+        return [
+            {"team_id": t.team_id, "team_name": t.team_name, "abbrev": t.abbrev}
+            for t in teams
+        ]
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    finally:
+        session.close()
+
+
+@app.get("/api/teams/{team_id}")
+def get_team(team_id: int, response: Response):
+    session = SessionLocal()
+    try:
+        team = session.get(models.Team, team_id)
+        if not team:
+            raise HTTPException(status_code=404, detail="Team not found")
+        players = session.query(models.Player).filter(models.Player.current_team_id == team_id).all()
+        hitters = []
+        starters = []
+        relievers = []
+        for p in players:
+            role = get_player_role(session, p.player_id)
+            payload = {"player_id": p.player_id, "full_name": p.full_name, "role": role}
+            if role == "starter":
+                starters.append(payload)
+            elif role == "reliever":
+                relievers.append(payload)
+            else:
+                hitters.append(payload)
+        response.headers["Cache-Control"] = "public, max-age=300"
+        return {
+            "team_id": team.team_id,
+            "team_name": team.team_name,
+            "abbrev": team.abbrev,
+            "hitters": hitters,
+            "starters": starters,
+            "relievers": relievers,
         }
     except HTTPException:
         raise
