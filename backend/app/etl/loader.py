@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from typing import Iterable, Mapping, Sequence
 
+from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 
 from backend.app.db import models
@@ -124,7 +125,6 @@ class StatcastLoader:
                 )
             )
             self.session.execute(stmt)
-        self.session.commit()
 
     def insert_pa_facts(self, pa_facts):
         from sqlalchemy.dialects.postgresql import insert
@@ -137,7 +137,6 @@ class StatcastLoader:
                 .on_conflict_do_nothing(index_elements=[models.PlateAppearance.pa_id])
             )
             self.session.execute(stmt)
-        self.session.commit()
 
     def load_all(
         self,
@@ -148,6 +147,26 @@ class StatcastLoader:
         pitch_facts: Sequence[Mapping],
         pa_facts: Sequence[Mapping],
     ) -> None:
+        incoming_ids = {g["game_id"] for g in games}
+        existing_ids: set[int] = set()
+        for g in games:
+            result = self.session.execute(
+                select(models.Game.game_id).where(
+                    models.Game.game_date == g["game_date"],
+                    models.Game.home_team_id == g.get("home_team_id"),
+                    models.Game.away_team_id == g.get("away_team_id"),
+                )
+            )
+            for row in result:
+                existing_ids.add(int(row.game_id))
+
+        delete_ids = incoming_ids | existing_ids
+        if delete_ids:
+            self.session.execute(delete(models.PitchFact).where(models.PitchFact.game_id.in_(delete_ids)))
+            self.session.execute(delete(models.PlateAppearance).where(models.PlateAppearance.game_id.in_(delete_ids)))
+            self.session.execute(delete(models.Game).where(models.Game.game_id.in_(delete_ids)))
+            self.session.commit()
+
         self.upsert_teams(teams)
         self.insert_games(games)
         self.insert_players(players)

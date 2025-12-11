@@ -43,7 +43,7 @@ export function TopTable() {
   const [filter, setFilter] = useState<Filter>("all");
   const [sortKey, setSortKey] = useState<SortKey>("rank");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
-  const [selectedDate, setSelectedDate] = useState<string>(formatDateInput(new Date()));
+  const [selectedDate, setSelectedDate] = useState<string>("2025-03-27");
   const [expanded, setExpanded] = useState<number | null>(null);
   const [search, setSearch] = useState("");
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
