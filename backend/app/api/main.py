@@ -11,6 +11,11 @@ from backend.app.core.player_metrics import (
     get_player_role,
     update_all as refresh_player_metrics,
 )
+from backend.app.core.mlbam_people import (
+    get_full_name,
+    get_primary_position_abbrev,
+    is_placeholder_name,
+)
 
 app = FastAPI()
 
@@ -201,7 +206,18 @@ def get_team(team_id: int, response: Response):
         for p in players:
             summary = session.get(models.PlayerSummary, p.player_id)
             role = summary.role if summary else get_player_role(session, p.player_id)
-            payload = {"player_id": p.player_id, "full_name": p.full_name, "role": role}
+            player_name = p.full_name
+            if is_placeholder_name(player_name, p.player_id):
+                resolved = get_full_name(p.player_id)
+                player_name = resolved or str(p.player_id)
+            position = get_primary_position_abbrev(p.player_id) or p.primary_pos
+            payload = {
+                "player_id": p.player_id,
+                "player_name": player_name,
+                "full_name": player_name,  # backward compatibility
+                "role": role,
+                "position": position,
+            }
             if role == "starter":
                 starters.append(payload)
             elif role == "reliever":

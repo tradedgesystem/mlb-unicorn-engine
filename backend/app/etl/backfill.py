@@ -11,6 +11,7 @@ from backend.app.etl.preprocess import sanitize_value
 from pybaseball import statcast
 
 from backend.app.core.logging import logger
+from backend.app.core.mlbam_people import get_full_name, is_placeholder_name, preload_people
 from backend.app.db.session import SessionLocal
 from backend.app.etl.loader import StatcastLoader
 from backend.app.etl import preprocess
@@ -153,13 +154,26 @@ def _aggregate_players(df: pd.DataFrame) -> List[Mapping]:
             players[pitcher_id] = {
                 "player_id": pitcher_id,
                 "mlb_id": pitcher_id,
-                "full_name": row.get("pitcher_name") or str(pitcher_id),
+                # Statcast does not expose pitcher names in this dataframe; resolve later.
+                "full_name": None,
                 "bat_side": None,
                 "throw_side": row.get("p_throws"),
                 "primary_pos": "P",
                 "current_team_id": _team_id(row.get("fld_team")) or _team_id(row.get("home_team")) or _team_id(row.get("away_team")),
             }
-    # Apply known overrides for mis-labeled Statcast names
+
+    # Resolve any placeholder / missing names via MLBAM people endpoint.
+    missing_ids = [pid for pid, payload in players.items() if is_placeholder_name(payload.get("full_name"), pid)]
+    if missing_ids:
+        preload_people(missing_ids)
+        for pid in missing_ids:
+            resolved = get_full_name(pid)
+            if resolved and not is_placeholder_name(resolved, pid):
+                players[pid]["full_name"] = resolved
+            else:
+                players[pid]["full_name"] = players[pid].get("full_name") or str(pid)
+
+    # Apply known overrides for mis-labeled Statcast names.
     for pid, override in PLAYER_NAME_OVERRIDES.items():
         if pid in players:
             players[pid]["full_name"] = override

@@ -51,8 +51,8 @@ export default function TeamHittersPage({ params }: { params: { teamSlug: string
           <ul className="divide-y divide-white/40">
             {team.hitters.map((p: any) => (
               <li key={p.player_id} className="py-3">
-                <Link href={`/players/${slugifyPlayer(p.full_name)}`} className="text-neutral-900 hover:underline">
-                  {p.full_name}
+                <Link href={`/players/${slugifyPlayer(p.player_name || p.full_name)}`} className="text-neutral-900 hover:underline">
+                  {p.player_name || p.full_name}
                 </Link>
               </li>
             ))}
