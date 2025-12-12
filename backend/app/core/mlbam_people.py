@@ -83,20 +83,20 @@ def is_placeholder_name(name: Optional[str], player_id: Optional[int] = None) ->
 
 
 def refresh_player_names(session) -> int:
-    """Update players.full_name for any placeholder/numeric names.
+    """Update players.full_name and players.primary_pos from MLBAM people data.
 
-    Returns number of rows updated.
+    Returns number of rows updated (name or position).
     """
     players = session.execute(select(models.Player)).scalars().all()
-    to_fix = [p for p in players if is_placeholder_name(p.full_name, p.player_id)]
-    if not to_fix:
-        return 0
-    preload_people([p.player_id for p in to_fix])
+    preload_people([p.player_id for p in players])
     updated = 0
-    for p in to_fix:
-        full_name = get_full_name(p.player_id)
-        if full_name and not is_placeholder_name(full_name, p.player_id):
+    for p in players:
+        full_name, pos = _PEOPLE_CACHE.get(p.player_id, (None, None))
+        if is_placeholder_name(p.full_name, p.player_id) and full_name and not is_placeholder_name(full_name, p.player_id):
             p.full_name = full_name
+            updated += 1
+        if pos and pos != p.primary_pos:
+            p.primary_pos = pos
             updated += 1
     return updated
 
@@ -113,4 +113,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

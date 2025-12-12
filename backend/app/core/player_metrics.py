@@ -5,7 +5,7 @@ from collections import defaultdict
 from datetime import date
 from typing import Iterable, List, Optional, Sequence
 
-from sqlalchemy import and_, case, func, select
+from sqlalchemy import and_, case, func, select, or_
 
 from backend.app.core.logging import logger
 from backend.app.core.mlbam_people import (
@@ -30,29 +30,38 @@ def _safe_div(numer: Optional[float], denom: Optional[float]) -> Optional[float]
 
 def _get_player_role(session, player_id: int) -> str:
     pos_abbrev = (get_primary_position_abbrev(player_id) or "").upper()
+    two_way = pos_abbrev == "TWP"
     base_is_pitcher = pos_abbrev == "P"
 
-    # If they actually pitched in the ingested window, classify as starter/reliever.
+    # If MLBAM primary position is missing, fall back to stored primary_pos.
+    if not pos_abbrev:
+        stored = session.scalar(
+            select(models.Player.primary_pos).where(models.Player.player_id == player_id)
+        )
+        base_is_pitcher = (stored or "").upper() == "P"
+
+    # Only pitchers (or two-way) use pitch data for starter/reliever split.
     pitcher_pitches = session.scalar(
         select(func.count()).select_from(models.PitchFact).where(models.PitchFact.pitcher_id == player_id)
     )
-    if pitcher_pitches and pitcher_pitches > 0:
+    if (base_is_pitcher or two_way) and pitcher_pitches and pitcher_pitches > 0:
         # determine starter vs reliever by earliest pitch number threshold per game
         min_pitch_sub = (
             select(
                 models.PitchFact.game_id,
                 func.min(models.PitchFact.pitch_number_game).label("min_pitch"),
+                func.min(models.PitchFact.inning).label("min_inning"),
             )
             .where(models.PitchFact.pitcher_id == player_id)
             .group_by(models.PitchFact.game_id)
             .subquery()
         )
-        starter_count = session.scalar(
-            select(func.count()).select_from(min_pitch_sub).where(min_pitch_sub.c.min_pitch <= 15)
+        is_starter_game = or_(
+            min_pitch_sub.c.min_pitch <= 15,
+            min_pitch_sub.c.min_inning <= 1,
         )
-        reliever_count = session.scalar(
-            select(func.count()).select_from(min_pitch_sub).where(min_pitch_sub.c.min_pitch > 15)
-        )
+        starter_count = session.scalar(select(func.count()).select_from(min_pitch_sub).where(is_starter_game))
+        reliever_count = session.scalar(select(func.count()).select_from(min_pitch_sub).where(~is_starter_game))
         if (starter_count or 0) >= (reliever_count or 0):
             return "starter"
         return "reliever"
@@ -61,6 +70,9 @@ def _get_player_role(session, player_id: int) -> str:
     if base_is_pitcher:
         # No starts observed -> treat as reliever by default.
         return "reliever"
+    if two_way:
+        # Two-way players are hitters unless they pitched in-window.
+        return "hitter"
     return "hitter"
 
 
@@ -129,22 +141,28 @@ def _pitcher_game_sets(session, pitcher_id: int):
         select(
             models.PitchFact.game_id,
             func.min(models.PitchFact.pitch_number_game).label("min_pitch"),
+            func.min(models.PitchFact.inning).label("min_inning"),
         )
         .where(models.PitchFact.pitcher_id == pitcher_id)
         .group_by(models.PitchFact.game_id)
         .subquery()
     )
 
+    is_starter_game = or_(
+        min_pitch_sub.c.min_pitch <= 15,
+        min_pitch_sub.c.min_inning <= 1,
+    )
+
     starter_games = (
         select(min_pitch_sub.c.game_id, models.Game.game_date)
         .join(models.Game, models.Game.game_id == min_pitch_sub.c.game_id)
-        .where(min_pitch_sub.c.min_pitch <= 15)
+        .where(is_starter_game)
         .order_by(models.Game.game_date.desc())
     )
     reliever_games = (
         select(min_pitch_sub.c.game_id, models.Game.game_date)
         .join(models.Game, models.Game.game_id == min_pitch_sub.c.game_id)
-        .where(min_pitch_sub.c.min_pitch > 15)
+        .where(~is_starter_game)
         .order_by(models.Game.game_date.desc())
     )
     return starter_games, reliever_games
