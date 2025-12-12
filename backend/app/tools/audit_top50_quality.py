@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Mapping, MutableMapping, Optional, Sequence, Tuple
 
 import time
+import sys
 import requests
 
 DEFAULT_BASE_URL = os.getenv("UNICORN_API_BASE_URL", "http://localhost:8000")
@@ -399,6 +400,14 @@ def _print_summary(report: dict) -> None:
         print(f"{day}: {tag} ({reason_text})")
 
 
+def exit_code_from_report(report: Mapping) -> int:
+    """Return 0 only when overall and all days are PASS; otherwise return 1."""
+    overall_ok = report.get("overall_verdict") == "PASS"
+    days = report.get("days") or {}
+    all_days_ok = all((day.get("verdict") == "PASS") for day in days.values())
+    return 0 if overall_ok and all_days_ok else 1
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Audit Top 50 quality for a date range")
     parser.add_argument("--start", required=True, help="Start date YYYY-MM-DD")
@@ -431,6 +440,7 @@ def main() -> None:
     _print_summary(report)
     print(f"HTTP timeout={args.http_timeout}s retries={args.http_retries} backoff={args.http_backoff}s")
     print(f"Report written to {path}")
+    sys.exit(exit_code_from_report(report))
 
 
 if __name__ == "__main__":

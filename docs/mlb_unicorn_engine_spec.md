@@ -634,9 +634,12 @@ Codex should provide basic scripts / commands:
 15.3 Audits
 - Top 50 Quality Audit: `python -m backend.app.tools.audit_top50_quality --start YYYY-MM-DD --end YYYY-MM-DD --base-url <api_base>` (uses `UNICORN_API_BASE_URL` if set; defaults to localhost).
 - Output: JSON at `./artifacts/top50_quality_report_<start>_<end>.json` and console PASS/FAIL per day plus overall verdict.
+- Daily guardrail: GitHub Actions workflow **Top50 Quality Audit** runs daily at 15:00 UTC (and can be run manually) against the Render production base URL and fails the run on any FAIL verdict.
+- Failure artifacts: When the workflow fails, download the `top50-quality-report` artifact from the run to inspect the generated JSON reports.
 - Checks per day: diversity (roles, teams, full 50), duplicate-feeling descriptions (Jaccard ≥ 0.85), score clustering (cv + near ties), role mismatches, and cross-day domination thresholds.
 - Admin route (guarded by `ADMIN_ENABLED=true`): `GET /api/admin/audit/top50?start=YYYY-MM-DD&end=YYYY-MM-DD` runs the audit directly on the DB without external HTTP calls.
 - CLI HTTP tuning flags: `--http-timeout` (default 60s), `--http-retries` (default 3), `--http-backoff` (default 0.8s) for resilient production audits.
+- Tests: pytest (included in requirements.txt) is used for audit guardrails.
 
 16. How to Use This Spec with Codex Max
 When handing this to Codex Max, the user should:

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from datetime import date
-from typing import Iterable, List, Optional, Sequence
+from typing import Iterable, List, Optional, Sequence, Mapping
 
 from sqlalchemy import and_, case, func, select, or_
 
@@ -11,6 +11,12 @@ from backend.app.core.logging import logger
 from backend.app.core.mlbam_people import (
     get_primary_position_abbrev,
     preload_people,
+)
+from backend.app.core.roles import (
+    DEFAULT_LOOKBACK_DAYS,
+    DEFAULT_STARTS_THRESHOLD,
+    classify_pitcher_role,
+    get_pitcher_usage_counts,
 )
 from backend.app.db import models
 from backend.app.db.session import SessionLocal
@@ -28,57 +34,57 @@ def _safe_div(numer: Optional[float], denom: Optional[float]) -> Optional[float]
         return None
 
 
-def _get_player_role(session, player_id: int) -> str:
+def _get_player_role(
+    session,
+    player_id: int,
+    *,
+    as_of_date: Optional[date] = None,
+    lookback_days: Optional[int] = None,
+    usage_counts: Optional[Mapping[int, Mapping[str, int]]] = None,
+) -> str:
     pos_abbrev = (get_primary_position_abbrev(player_id) or "").upper()
     two_way = pos_abbrev == "TWP"
     base_is_pitcher = pos_abbrev == "P"
 
-    # If MLBAM primary position is missing, fall back to stored primary_pos.
     if not pos_abbrev:
         stored = session.scalar(
             select(models.Player.primary_pos).where(models.Player.player_id == player_id)
         )
         base_is_pitcher = (stored or "").upper() == "P"
 
-    # Only pitchers (or two-way) use pitch data for starter/reliever split.
-    pitcher_pitches = session.scalar(
-        select(func.count()).select_from(models.PitchFact).where(models.PitchFact.pitcher_id == player_id)
+    as_of = as_of_date or date.today()
+    lookback = lookback_days if lookback_days is not None else DEFAULT_LOOKBACK_DAYS
+    counts_map = usage_counts if usage_counts is not None else get_pitcher_usage_counts(
+        session, as_of_date=as_of, lookback_days=lookback
     )
-    if (base_is_pitcher or two_way) and pitcher_pitches and pitcher_pitches > 0:
-        # determine starter vs reliever by earliest pitch number threshold per game
-        min_pitch_sub = (
-            select(
-                models.PitchFact.game_id,
-                func.min(models.PitchFact.pitch_number_game).label("min_pitch"),
-                func.min(models.PitchFact.inning).label("min_inning"),
-            )
-            .where(models.PitchFact.pitcher_id == player_id)
-            .group_by(models.PitchFact.game_id)
-            .subquery()
+    usage = counts_map.get(player_id, {"starts": 0, "apps": 0})
+    is_pitcher = base_is_pitcher or two_way or (usage.get("apps", 0) > 0 or usage.get("starts", 0) > 0)
+    if is_pitcher:
+        return classify_pitcher_role(
+            usage.get("starts", 0),
+            usage.get("apps", 0),
+            starts_threshold=DEFAULT_STARTS_THRESHOLD,
         )
-        is_starter_game = or_(
-            min_pitch_sub.c.min_pitch <= 15,
-            min_pitch_sub.c.min_inning <= 1,
-        )
-        starter_count = session.scalar(select(func.count()).select_from(min_pitch_sub).where(is_starter_game))
-        reliever_count = session.scalar(select(func.count()).select_from(min_pitch_sub).where(~is_starter_game))
-        if (starter_count or 0) >= (reliever_count or 0):
-            return "starter"
-        return "reliever"
 
-    # Otherwise, fall back to stable primary position.
-    if base_is_pitcher:
-        # No starts observed -> treat as reliever by default.
-        return "reliever"
-    if two_way:
-        # Two-way players are hitters unless they pitched in-window.
-        return "hitter"
     return "hitter"
 
 
-def get_player_role(session, player_id: int) -> str:
+def get_player_role(
+    session,
+    player_id: int,
+    *,
+    as_of_date: Optional[date] = None,
+    lookback_days: Optional[int] = None,
+    usage_counts: Optional[Mapping[int, Mapping[str, int]]] = None,
+) -> str:
     """Public wrapper so API routes can infer role."""
-    return _get_player_role(session, player_id)
+    return _get_player_role(
+        session,
+        player_id,
+        as_of_date=as_of_date,
+        lookback_days=lookback_days,
+        usage_counts=usage_counts,
+    )
 
 
 def _last_pa_ids(session, batter_id: int, limit: int = 50) -> List[int]:
@@ -234,8 +240,21 @@ def _reliever_metrics(session, pitcher_id: int) -> dict:
     }
 
 
-def compute_player_summary(session, player_id: int) -> None:
-    role = _get_player_role(session, player_id)
+def compute_player_summary(
+    session,
+    player_id: int,
+    *,
+    as_of_date: Optional[date] = None,
+    lookback_days: Optional[int] = None,
+    usage_counts: Optional[Mapping[int, Mapping[str, int]]] = None,
+) -> None:
+    role = _get_player_role(
+        session,
+        player_id,
+        as_of_date=as_of_date,
+        lookback_days=lookback_days,
+        usage_counts=usage_counts,
+    )
     metrics: dict = {}
     if role == "hitter":
         metrics.update(_hitter_metrics(session, player_id))
@@ -260,11 +279,20 @@ def compute_player_summary(session, player_id: int) -> None:
 
 def update_all() -> None:
     with SessionLocal() as session:
+        as_of = date.today()
+        lookback = DEFAULT_LOOKBACK_DAYS
+        usage_counts = get_pitcher_usage_counts(session, as_of_date=as_of, lookback_days=lookback)
         player_ids = [row.player_id for row in session.execute(select(models.Player.player_id))]
         preload_people(player_ids)
         logger.info("Computing metrics for %s players", len(player_ids))
         for idx, pid in enumerate(player_ids, start=1):
-            compute_player_summary(session, pid)
+            compute_player_summary(
+                session,
+                pid,
+                as_of_date=as_of,
+                lookback_days=lookback,
+                usage_counts=usage_counts,
+            )
             if idx % 200 == 0:
                 session.commit()
         session.commit()

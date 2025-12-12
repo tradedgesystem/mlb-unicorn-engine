@@ -1,4 +1,5 @@
 from datetime import date
+from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,6 +9,12 @@ from backend.app.db.base import Base
 from backend.app.db.session import SessionLocal, engine
 from backend.app.unicorns.queries import fetch_top50_for_date
 from backend.app.core.player_metrics import get_player_role, update_all as refresh_player_metrics
+from backend.app.core.roles import (
+    DEFAULT_LOOKBACK_DAYS,
+    DEFAULT_STARTS_THRESHOLD,
+    classify_pitcher_role,
+    get_pitcher_usage_counts,
+)
 from backend.app.core.mlbam_people import (
     get_full_name,
     get_primary_position_abbrev,
@@ -118,9 +125,12 @@ def _role_metrics(summary: models.PlayerSummary) -> dict:
 
 
 @app.get("/players/{player_id}")
-def get_player_profile(player_id: int, response: Response):
+def get_player_profile(player_id: int, response: Response, as_of_date: Optional[date] = None):
     session = SessionLocal()
     try:
+        as_of = as_of_date or date.today()
+        lookback = DEFAULT_LOOKBACK_DAYS
+        usage_counts = get_pitcher_usage_counts(session, as_of_date=as_of, lookback_days=lookback)
         player = (
             session.query(models.Player, models.Team)
             .outerjoin(models.Team, models.Team.team_id == models.Player.current_team_id)
@@ -135,6 +145,13 @@ def get_player_profile(player_id: int, response: Response):
             refresh_player_metrics()  # compute fresh summaries
             summary = session.get(models.PlayerSummary, player_id)
 
+        role = get_player_role(
+            session,
+            player_id,
+            as_of_date=as_of,
+            lookback_days=lookback,
+            usage_counts=usage_counts,
+        )
         metrics = _role_metrics(summary)
         unicorns = (
             session.query(models.UnicornTop50Daily)
@@ -150,7 +167,7 @@ def get_player_profile(player_id: int, response: Response):
             "player_name": player[0].full_name,
             "team_id": player[1].team_id if player[1] else None,
             "team_name": player[1].team_name if player[1] else None,
-            "role": summary.role if summary else None,
+            "role": role,
             "metrics": metrics,
             "recent_unicorns": [
                 {
@@ -172,8 +189,8 @@ def get_player_profile(player_id: int, response: Response):
 
 
 @app.get("/api/players/{player_id}")
-def get_player_profile_api(player_id: int, response: Response):
-    return get_player_profile(player_id, response)
+def get_player_profile_api(player_id: int, response: Response, as_of_date: Optional[date] = None):
+    return get_player_profile(player_id, response, as_of_date=as_of_date)
 
 
 @app.get("/api/teams")
@@ -193,9 +210,12 @@ def list_teams(response: Response):
 
 
 @app.get("/api/teams/{team_id}")
-def get_team(team_id: int, response: Response):
+def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None):
     session = SessionLocal()
     try:
+        as_of = as_of_date or date.today()
+        lookback = DEFAULT_LOOKBACK_DAYS
+        usage_counts = get_pitcher_usage_counts(session, as_of_date=as_of, lookback_days=lookback)
         team = session.get(models.Team, team_id)
         if not team:
             raise HTTPException(status_code=404, detail="Team not found")
@@ -204,13 +224,28 @@ def get_team(team_id: int, response: Response):
         starters = []
         relievers = []
         for p in players:
+            position = get_primary_position_abbrev(p.player_id) or p.primary_pos
             summary = session.get(models.PlayerSummary, p.player_id)
-            role = summary.role if summary else get_player_role(session, p.player_id)
+            base_role = summary.role if summary else None
+            counts = usage_counts.get(p.player_id, {"starts": 0, "apps": 0})
+            is_pitcher = (
+                (position or "").upper() in {"P", "TWP"}
+                or (base_role in {"starter", "reliever"})
+                or (counts.get("apps", 0) > 0)
+            )
+            role = (
+                classify_pitcher_role(
+                    counts.get("starts", 0),
+                    counts.get("apps", 0),
+                    starts_threshold=DEFAULT_STARTS_THRESHOLD,
+                )
+                if is_pitcher
+                else (base_role or "hitter")
+            )
             player_name = p.full_name
             if is_placeholder_name(player_name, p.player_id):
                 resolved = get_full_name(p.player_id)
                 player_name = resolved or str(p.player_id)
-            position = get_primary_position_abbrev(p.player_id) or p.primary_pos
             payload = {
                 "player_id": p.player_id,
                 "player_name": player_name,

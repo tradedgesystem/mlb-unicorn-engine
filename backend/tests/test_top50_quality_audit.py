@@ -1,5 +1,6 @@
 from backend.app.tools.audit_top50_quality import (
     cluster_descriptions,
+    exit_code_from_report,
     jaccard_similarity,
     normalize_text,
     _request_with_retry,
@@ -60,3 +61,20 @@ def test_request_with_retry(monkeypatch):
     resp = _request_with_retry("http://example.com", timeout=0.1, retries=3, backoff=0.001)
     assert resp.json() == {"ok": True}
     assert calls["count"] == 3
+
+
+def test_exit_code_from_report():
+    clean_report = {
+        "overall_verdict": "PASS",
+        "days": {"2025-05-01": {"verdict": "PASS"}, "2025-05-02": {"verdict": "PASS"}},
+    }
+    assert exit_code_from_report(clean_report) == 0
+
+    overall_fail = {**clean_report, "overall_verdict": "FAIL"}
+    assert exit_code_from_report(overall_fail) == 1
+
+    day_fail = {
+        "overall_verdict": "PASS",
+        "days": {"2025-05-01": {"verdict": "FAIL"}, "2025-05-02": {"verdict": "PASS"}},
+    }
+    assert exit_code_from_report(day_fail) == 1

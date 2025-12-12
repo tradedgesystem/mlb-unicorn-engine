@@ -1,0 +1,47 @@
+name: Top50 Quality Audit
+
+on:
+  schedule:
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Compute audit window
+        id: dates
+        run: |
+          END=$(date -u -d "yesterday" +%F)
+          START=$(date -u -d "$END -6 days" +%F)
+          echo "start=$START" >> "$GITHUB_OUTPUT"
+          echo "end=$END" >> "$GITHUB_OUTPUT"
+
+      - name: Run Top50 Quality Audit
+        run: |
+          python -m backend.app.tools.audit_top50_quality \
+            --start "${{ steps.dates.outputs.start }}" \
+            --end "${{ steps.dates.outputs.end }}" \
+            --base-url https://mlb-unicorn-engine.onrender.com \
+            --http-timeout 60 --http-retries 3 --http-backoff 0.8
+
+      - name: Run audit unit test
+        run: python -m pytest backend/tests/test_top50_quality_audit.py
+
+      - name: Upload audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: top50-quality-report
+          path: artifacts/*.json
