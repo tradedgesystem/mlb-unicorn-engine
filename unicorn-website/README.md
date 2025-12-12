@@ -40,3 +40,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Set `NEXT_PUBLIC_API_BASE` in Vercel Production to `https://mlb-unicorn-engine.onrender.com` (or your chosen backend base).
 - The frontend always calls the backend directly at `<base>/api/...`; no calls should go through the Vercel domain.
 - After changing the env var, trigger a redeploy.
+
+### Vercel monorepo note
+
+- Root directory for the Next.js app is `unicorn-website`. A `vercel.json` at repo root points the build and routes there so `/health` and other pages are emitted correctly.

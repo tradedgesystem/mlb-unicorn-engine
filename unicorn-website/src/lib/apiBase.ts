@@ -1,9 +1,19 @@
-export const API_BASE = process.env.NEXT_PUBLIC_API_BASE as string | undefined;
+const envBase = (process.env.NEXT_PUBLIC_API_BASE || "").trim();
 
-if (process.env.NODE_ENV === 'production' && (!API_BASE || API_BASE.length === 0)) {
-  throw new Error('NEXT_PUBLIC_API_BASE is not set. Please set NEXT_PUBLIC_API_BASE on Vercel.');
+if (process.env.NODE_ENV === "production" && !envBase) {
+  throw new Error(
+    "NEXT_PUBLIC_API_BASE is required in production (set to https://mlb-unicorn-engine.onrender.com)"
+  );
 }
 
-if (!API_BASE || API_BASE.length === 0) {
-  console.error('NEXT_PUBLIC_API_BASE is not set. Using relative API routes may fail.');
+if (!envBase) {
+  if (process.env.NODE_ENV !== "production") {
+    console.error(
+      "NEXT_PUBLIC_API_BASE not set; using default https://mlb-unicorn-engine.onrender.com"
+    );
+  } else {
+    console.error("NEXT_PUBLIC_API_BASE is not set. Please set NEXT_PUBLIC_API_BASE on Vercel.");
+  }
 }
+
+export const API_BASE = envBase || "https://mlb-unicorn-engine.onrender.com";
