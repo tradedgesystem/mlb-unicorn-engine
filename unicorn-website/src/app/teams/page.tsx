@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { fetchTeams } from "../../lib/api";
-import { slugifyTeam } from "../../lib/slugs";
 
 type Team = { team_id: number; team_name: string; abbrev: string };
 
@@ -30,13 +29,13 @@ export default function TeamsPage() {
       </div>
 
       {error ? (
-        <p className="text-red-600">{error}</p>
+        <div className="rounded-2xl bg-red-50 text-red-700 px-4 py-3 text-sm">{error}</div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {teams.map((team) => (
             <Link
               key={team.team_id}
-              href={`/teams/${slugifyTeam(team.team_name)}`}
+              href={`/teams/${team.team_id}`}
               className="glass rounded-3xl p-4 hover:-translate-y-1 transition shadow-sm"
             >
               <p className="text-xs uppercase text-neutral-500">{team.abbrev}</p>

@@ -1,4 +1,4 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "https://mlb-unicorn-engine.onrender.com";
+import { API_BASE } from "./apiBase";
 
 export async function fetchTeams() {
   const res = await fetch(`${API_BASE}/api/teams`, { cache: "no-store" });

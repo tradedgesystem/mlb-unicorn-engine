@@ -1,9 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { fetchPlayers, fetchTop50, PlayerMap, UnicornRow } from "../lib/legacyTop";
-import { slugifyPlayer } from "../lib/slugs";
 
 type Filter = "all" | "hitters" | "pitchers" | "relievers";
 type SortKey = "rank" | "score" | "player" | "entity_type";
@@ -27,10 +26,6 @@ function classifyEntity(row: UnicornRow): Filter {
     return "hitters";
   }
   return "all";
-}
-
-function formatDateInput(date: Date) {
-  return date.toISOString().slice(0, 10);
 }
 
 const shimmer =
@@ -332,12 +327,12 @@ function FragmentRow({ row, isTop5, isExpanded, onToggle }: FragmentRowProps) {
                 .toUpperCase()}
             </div>
             <div className="flex flex-col">
-              <a
-                href={`/players/${slugifyPlayer(row.playerName)}`}
+              <Link
+                href={`/players/${row.entity_id}`}
                 className="font-medium leading-tight hover:underline decoration-2 decoration-neutral-400"
               >
                 {row.playerName}
-              </a>
+              </Link>
               <span className="text-xs text-neutral-500">
                 Pattern {row.pattern_id}
               </span>
