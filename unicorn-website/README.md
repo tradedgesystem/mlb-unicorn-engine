@@ -34,3 +34,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### API base configuration
+
+- Set `NEXT_PUBLIC_API_BASE` in Vercel Production to `https://mlb-unicorn-engine.onrender.com` (or your chosen backend base).
+- The frontend always calls the backend directly at `<base>/api/...`; no calls should go through the Vercel domain.
+- After changing the env var, trigger a redeploy.

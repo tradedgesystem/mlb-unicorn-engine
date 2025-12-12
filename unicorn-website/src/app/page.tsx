@@ -14,7 +14,12 @@ export default function Home() {
   useEffect(() => {
     fetchTeams()
       .then((data) => setTeams(data))
-      .catch(() => setTeamsError("Unable to load teams"));
+      .catch((err: unknown) => {
+        const e = err as { status?: number; host?: string };
+        const status = e?.status ? ` (${e.status})` : "";
+        const host = e?.host ? ` from ${e.host}` : "";
+        setTeamsError(`Unable to load teams${status}${host}`);
+      });
   }, []);
 
   return (
