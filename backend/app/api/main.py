@@ -7,15 +7,14 @@ from backend.app.db import models
 from backend.app.db.base import Base
 from backend.app.db.session import SessionLocal, engine
 from backend.app.unicorns.queries import fetch_top50_for_date
-from backend.app.core.player_metrics import (
-    get_player_role,
-    update_all as refresh_player_metrics,
-)
+from backend.app.core.player_metrics import get_player_role, update_all as refresh_player_metrics
 from backend.app.core.mlbam_people import (
     get_full_name,
     get_primary_position_abbrev,
     is_placeholder_name,
 )
+from backend.app.tools.audit_top50_quality import Top50Entry, audit_range, _role_from_player
+from backend.app.unicorns.engine import apply_min_score_spacing, MIN_REL_GAP
 
 app = FastAPI()
 
@@ -60,6 +59,7 @@ def get_top50(run_date: date, response: Response):
     session = SessionLocal()
     try:
         rows = fetch_top50_for_date(session, run_date)
+        apply_min_score_spacing(rows, min_rel_gap=MIN_REL_GAP)
         response.headers["Cache-Control"] = "public, max-age=300"
         return [to_dict(r) for r in rows]
     except Exception as exc:
@@ -264,5 +264,86 @@ def _seed_sample_top50() -> None:
         session.commit()
     except Exception:
         session.rollback()
+    finally:
+        session.close()
+
+
+def _db_top50_loader(session):
+    def _load(run_date: date):
+        rows = (
+            session.query(
+                models.UnicornTop50Daily,
+                models.Player,
+                models.PlayerSummary,
+            )
+            .join(models.Player, models.Player.player_id == models.UnicornTop50Daily.entity_id)
+            .outerjoin(models.PlayerSummary, models.PlayerSummary.player_id == models.Player.player_id)
+            .filter(models.UnicornTop50Daily.run_date == run_date)
+            .order_by(models.UnicornTop50Daily.rank.asc())
+            .all()
+        )
+        results = []
+        for row in rows:
+            top = row[0]
+            player = row[1]
+            summary = row[2]
+            results.append(
+                Top50Entry(
+                    run_date=str(top.run_date),
+                    rank=top.rank,
+                    entity_type=top.entity_type,
+                    entity_id=top.entity_id,
+                    pattern_id=top.pattern_id,
+                    score=float(top.score),
+                    description=top.description,
+                    team_id=player.current_team_id,
+                    role=summary.role if summary else None,
+                )
+            )
+        return results
+
+    return _load
+
+
+def _db_player_loader(session):
+    cache = {}
+
+    def _load(player_id: int):
+        if player_id in cache:
+            return cache[player_id]
+        player = session.get(models.Player, player_id)
+        summary = session.get(models.PlayerSummary, player_id)
+        payload = {
+            "player_id": player_id,
+            "full_name": player.full_name if player else None,
+            "primary_pos": player.primary_pos if player else None,
+            "team_id": player.current_team_id if player else None,
+            "role": summary.role if summary else None,
+        }
+        cache[player_id] = payload
+        return payload
+
+    return _load
+
+
+@app.get("/api/admin/audit/top50")
+def audit_top50_admin(start: date, end: date, response: Response):
+    from os import getenv
+
+    if getenv("ADMIN_ENABLED", "").lower() != "true":
+        raise HTTPException(status_code=404, detail="Not found")
+    session = SessionLocal()
+    try:
+        report = audit_range(
+            start,
+            end,
+            load_top50=_db_top50_loader(session),
+            load_player=_db_player_loader(session),
+        )
+        report["base_url"] = "db://local"
+        response.headers["Cache-Control"] = "no-store"
+        return report
+    except Exception as exc:  # noqa: BLE001
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
     finally:
         session.close()

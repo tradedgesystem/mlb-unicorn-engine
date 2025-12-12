@@ -33,6 +33,20 @@ def _rank_based_z(values: Sequence[float], descending: bool) -> List[float]:
     return [z_map[i] for i in range(n)]
 
 
+def _rank_spread_z(values: Sequence[float], descending: bool) -> List[float]:
+    """Assign wider-spread rank-based z_raw in [0,2], top at 2.0, bottom at 0.0."""
+    n = len(values)
+    if n == 1:
+        return [2.0]
+    indexed = list(enumerate(values))
+    indexed.sort(key=lambda x: x[1], reverse=descending)
+    denom = max(1, n - 1)
+    z_map = {}
+    for rank_idx, (orig_idx, _) in enumerate(indexed):
+        z_map[orig_idx] = 2.0 * (1 - (rank_idx / denom))
+    return [z_map[i] for i in range(n)]
+
+
 def compute_scores(
     pattern: models.PatternTemplate,
     rows: Iterable[dict],
@@ -74,8 +88,8 @@ def compute_scores(
         mean_val = 0.0
         std_val = 0.0
 
-    if std_val <= 0 or len(metric_values) < 3:
-        z_values = _rank_based_z(metric_values, descending=descending)
+    if std_val <= 1e-9 or len(metric_values) < 5:
+        z_values = _rank_spread_z(metric_values, descending=descending)
     else:
         z_values = [
             (val - mean_val) / std_val if descending else (mean_val - val) / std_val
@@ -110,7 +124,26 @@ def compute_scores(
             )
         )
 
-    scored.sort(key=lambda r: r.score, reverse=True)
+    metric_sort_direction = -1 if descending else 1
+    scored.sort(
+        key=lambda r: (
+            -r.score,
+            -r.sample_size,
+            metric_sort_direction * r.metric_value,
+            r.entity_id,
+        )
+    )
+    # Enforce a minimal 1% drop between adjacent scores to avoid plateaus.
+    for idx in range(1, len(scored)):
+        prev = scored[idx - 1].score
+        cur = scored[idx].score
+        if prev > 0 and (prev - cur) < 0.01 * prev:
+            new_score = prev * 0.99
+            if cur != 0:
+                factor = new_score / cur
+                scored[idx].z_adjusted *= factor
+            scored[idx].score = new_score
+
     for i, r in enumerate(scored, start=1):
         r.rank = i
     return scored

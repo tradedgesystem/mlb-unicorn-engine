@@ -6,12 +6,18 @@ from datetime import date
 from pathlib import Path
 from typing import Dict, Iterable, List, Mapping, MutableMapping
 
+import requests
 import pandas as pd
 from backend.app.etl.preprocess import sanitize_value
 from pybaseball import statcast
 
 from backend.app.core.logging import logger
-from backend.app.core.mlbam_people import get_full_name, is_placeholder_name, preload_people
+from backend.app.core.mlbam_people import (
+    get_full_name,
+    get_primary_position_abbrev,
+    is_placeholder_name,
+    preload_people,
+)
 from backend.app.db.session import SessionLocal
 from backend.app.etl.loader import StatcastLoader
 from backend.app.etl import preprocess
@@ -101,6 +107,64 @@ def _team_id(abbrev: str | None) -> int | None:
     raise ValueError(f"Unknown team abbreviation: {abbrev}")
 
 
+def _infer_batting_team_id(row: pd.Series) -> int | None:
+    """Resolve batting team for a play. statcast() no longer returns bat_team, so derive from half-inning."""
+    # Prefer explicit column if present (older pybaseball versions).
+    bat_abbr = row.get("bat_team")
+    if bat_abbr and not pd.isna(bat_abbr):
+        return _team_id(str(bat_abbr).upper())
+
+    half = (row.get("inning_topbot") or "").upper()
+    home_abbr = row.get("home_team")
+    away_abbr = row.get("away_team")
+    if half.startswith("T"):
+        if away_abbr and not pd.isna(away_abbr):
+            return _team_id(str(away_abbr).upper())
+    if half.startswith("B"):
+        if home_abbr and not pd.isna(home_abbr):
+            return _team_id(str(home_abbr).upper())
+    # Fallback: prefer home, then away so ingest does not fail.
+    if home_abbr and not pd.isna(home_abbr):
+        try:
+            return _team_id(str(home_abbr).upper())
+        except ValueError:
+            pass
+    if away_abbr and not pd.isna(away_abbr):
+        try:
+            return _team_id(str(away_abbr).upper())
+        except ValueError:
+            pass
+    return None
+
+
+def _infer_fielding_team_id(row: pd.Series) -> int | None:
+    """Resolve fielding/pitching team for a play."""
+    fld_abbr = row.get("fld_team")
+    if fld_abbr and not pd.isna(fld_abbr):
+        return _team_id(str(fld_abbr).upper())
+
+    half = (row.get("inning_topbot") or "").upper()
+    home_abbr = row.get("home_team")
+    away_abbr = row.get("away_team")
+    if half.startswith("T"):
+        if home_abbr and not pd.isna(home_abbr):
+            return _team_id(str(home_abbr).upper())
+    if half.startswith("B"):
+        if away_abbr and not pd.isna(away_abbr):
+            return _team_id(str(away_abbr).upper())
+    if home_abbr and not pd.isna(home_abbr):
+        try:
+            return _team_id(str(home_abbr).upper())
+        except ValueError:
+            pass
+    if away_abbr and not pd.isna(away_abbr):
+        try:
+            return _team_id(str(away_abbr).upper())
+        except ValueError:
+            pass
+    return None
+
+
 def _build_team_records(df: pd.DataFrame) -> List[Mapping]:
     teams = set(df["home_team"].dropna().unique()) | set(df["away_team"].dropna().unique())
     records: List[Mapping] = []
@@ -138,40 +202,46 @@ def _aggregate_players(df: pd.DataFrame) -> List[Mapping]:
 
     for _, row in df.iterrows():
         batter_id = _safe_int(row.get("batter"))
+        batter_team_id = _infer_batting_team_id(row)
         if batter_id and batter_id not in players:
             players[batter_id] = {
                 "player_id": batter_id,
                 "mlb_id": batter_id,
-                "full_name": row.get("player_name") or str(batter_id),
+                # statcast player_name column reflects the pitcher; resolve via MLBAM below.
+                "full_name": None,
                 "bat_side": row.get("stand"),
                 "throw_side": None,
                 "primary_pos": None,
-                "current_team_id": _team_id(row.get("bat_team")) or _team_id(row.get("home_team")) or _team_id(row.get("away_team")),
+                "current_team_id": batter_team_id,
             }
 
         pitcher_id = _safe_int(row.get("pitcher"))
+        pitcher_team_id = _infer_fielding_team_id(row)
         if pitcher_id and pitcher_id not in players:
             players[pitcher_id] = {
                 "player_id": pitcher_id,
                 "mlb_id": pitcher_id,
-                # Statcast does not expose pitcher names in this dataframe; resolve later.
-                "full_name": None,
+                "full_name": row.get("player_name"),
                 "bat_side": None,
                 "throw_side": row.get("p_throws"),
                 "primary_pos": "P",
-                "current_team_id": _team_id(row.get("fld_team")) or _team_id(row.get("home_team")) or _team_id(row.get("away_team")),
+                "current_team_id": pitcher_team_id,
             }
 
-    # Resolve any placeholder / missing names via MLBAM people endpoint.
-    missing_ids = [pid for pid, payload in players.items() if is_placeholder_name(payload.get("full_name"), pid)]
-    if missing_ids:
-        preload_people(missing_ids)
-        for pid in missing_ids:
-            resolved = get_full_name(pid)
-            if resolved and not is_placeholder_name(resolved, pid):
-                players[pid]["full_name"] = resolved
-            else:
-                players[pid]["full_name"] = players[pid].get("full_name") or str(pid)
+    # Resolve authoritative names/positions from MLBAM to avoid mismatched pitcher/batter labels.
+    preload_people(list(players.keys()))
+    for pid, payload in players.items():
+        resolved_name = get_full_name(pid)
+        if resolved_name and not is_placeholder_name(resolved_name, pid):
+            payload["full_name"] = resolved_name
+        else:
+            payload["full_name"] = payload.get("full_name") or str(pid)
+
+        pos = get_primary_position_abbrev(pid)
+        if pos:
+            payload["primary_pos"] = pos
+        elif payload.get("primary_pos") is None and payload.get("throw_side"):
+            payload["primary_pos"] = "P"
 
     # Apply known overrides for mis-labeled Statcast names.
     for pid, override in PLAYER_NAME_OVERRIDES.items():
@@ -310,6 +380,68 @@ def _build_batches_from_df(df: pd.DataFrame) -> Mapping[str, Iterable[Mapping]]:
     return {"players": players, "teams": teams, "games": games, "pitch_facts": pitch_facts, "pa_facts": pa_facts}
 
 
+def _fetch_team_roster(team_id: int, as_of_date: date) -> List[int]:
+    """Fetch MLBAM player ids for an official roster on the given date."""
+    url = f"https://statsapi.mlb.com/api/v1/teams/{team_id}/roster"
+    try:
+        resp = requests.get(url, params={"date": as_of_date.isoformat()}, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        roster = data.get("roster", []) if isinstance(data, dict) else []
+        player_ids: List[int] = []
+        for entry in roster:
+            person = entry.get("person") if isinstance(entry, dict) else None
+            if person and isinstance(person, dict):
+                pid = person.get("id")
+                try:
+                    player_ids.append(int(pid))
+                except (TypeError, ValueError):
+                    continue
+        return player_ids
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Failed to fetch roster for team %s: %s", team_id, exc)
+        _log_to_file(f"[WARN] roster_fetch team_id={team_id} date={as_of_date} exc={exc}")
+        return []
+
+
+def _sync_official_rosters(as_of_date: date) -> None:
+    """Align players.current_team_id/name/position using official MLB rosters."""
+    team_ids = sorted(set(TEAM_ABBR_TO_ID.values()))
+    roster_map: Dict[int, int] = {}
+    for tid in team_ids:
+        for pid in _fetch_team_roster(tid, as_of_date):
+            roster_map[pid] = tid
+
+    if not roster_map:
+        logger.warning("No roster data fetched for %s; skipping roster sync", as_of_date)
+        return
+
+    player_ids = list(roster_map.keys())
+    preload_people(player_ids)
+
+    payloads: List[Mapping] = []
+    for pid in player_ids:
+        name = get_full_name(pid)
+        pos = get_primary_position_abbrev(pid)
+        payloads.append(
+            {
+                "player_id": pid,
+                "mlb_id": pid,
+                "full_name": name or str(pid),
+                "bat_side": None,
+                "throw_side": None,
+                "primary_pos": pos,
+                "current_team_id": roster_map[pid],
+            }
+        )
+
+    with SessionLocal() as session:
+        loader = StatcastLoader(session)
+        loader.insert_players(payloads)
+        session.commit()
+    logger.info("Synced %s players from official rosters for %s", len(payloads), as_of_date)
+
+
 def _build_pa_records_with_placeholders(df_game: pd.DataFrame) -> List[Mapping]:
     """Build PA records and add placeholder 0-pitch PAs for missing at_bat_number gaps."""
     pa_records = _build_pa_records(df_game)
@@ -386,6 +518,7 @@ def ingest_date(as_of_date: date) -> None:
             msg = f"[ERROR] game_id={int(game_id)} date={date_str} exception={exc}"
             _log_to_file(msg)
             logger.exception("Failed ingest for game %s on %s", game_id, date_str)
+    _sync_official_rosters(as_of_date)
 
 
 def ingest_range(start_date: date, end_date: date) -> None:

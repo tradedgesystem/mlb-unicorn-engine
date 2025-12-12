@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import argparse
-from datetime import date
+import os
+from datetime import date, timedelta
 from typing import Dict, Iterable, List
+from collections import defaultdict
 
 import sqlalchemy as sa
 from sqlalchemy import text
@@ -16,6 +18,11 @@ from backend.app.unicorns.patterns import validate_pattern
 from backend.app.unicorns.scoring import ScoredRow, compute_scores
 from backend.app.unicorns.sql_builder import build_query
 
+MAX_PER_PATTERN_PER_DAY = 5
+MIN_REL_GAP = 0.011  # 1.1% spacing for final Top 50
+TOP50_LOOKBACK_DAYS = int(os.getenv("TOP50_LOOKBACK_DAYS", "7"))
+TOP50_MAX_APPEARANCES_LOOKBACK = int(os.getenv("TOP50_MAX_APPEARANCES_LOOKBACK", "3"))
+TOP10_MAX_APPEARANCES_LOOKBACK = int(os.getenv("TOP10_MAX_APPEARANCES_LOOKBACK", "2"))
 
 def _render_description(template: str, player_name: str | None, team_name: str | None, metric_value: float | None) -> str:
     if not template:
@@ -31,31 +38,47 @@ def _render_description(template: str, player_name: str | None, team_name: str |
     return description
 
 
-def generate_top50(session: Session, run_date: date) -> None:
-    stmt = (
-        sa.select(
-            models.UnicornResult,
-            models.Player.full_name.label("player_name"),
-            models.Team.team_name.label("team_name"),
-            models.PatternTemplate.description_template.label("description_template"),
-        )
-        .join(models.Player, models.Player.player_id == models.UnicornResult.entity_id)
-        .join(models.PatternTemplate, models.PatternTemplate.pattern_id == models.UnicornResult.pattern_id)
-        .join(models.Team, models.Team.team_id == models.Player.current_team_id, isouter=True)
-        .where(models.UnicornResult.run_date == run_date)
-        .order_by(models.UnicornResult.score.desc())
-    )
-    rows = session.execute(stmt).all()
+def apply_min_score_spacing(rows, min_rel_gap: float = MIN_REL_GAP) -> None:
+    """Adjust scores in-place to enforce a minimum relative gap without changing order."""
+    if not rows:
+        return
+    rows[0].score = max(0.0, float(rows[0].score))
+    for i in range(1, len(rows)):
+        prev = max(0.0, float(rows[i - 1].score))
+        cur = max(0.0, float(rows[i].score))
+        max_allowed = prev * (1 - min_rel_gap)
+        if cur > max_allowed:
+            cur = max_allowed
+        rows[i].score = max(0.0, cur)
+
+
+def _select_top50(
+    rows,
+    run_date: date,
+    recent_top50: Dict[int, int],
+    recent_top10: Dict[int, int],
+) -> List[models.UnicornTop50Daily]:
     seen_entities: set[int] = set()
+    pattern_counts: Dict[str, int] = defaultdict(int)
     top: List[models.UnicornTop50Daily] = []
 
     for row in rows:
         result: models.UnicornResult = row[0]
-        player_name = row.player_name
-        team_name = row.team_name
-        template = row.description_template
+        player_name = row[1]
+        team_name = row[2]
+        template = row[3]
         if result.entity_id in seen_entities:
             continue
+        if pattern_counts[result.pattern_id] >= MAX_PER_PATTERN_PER_DAY:
+            continue
+        prior_top50 = recent_top50.get(result.entity_id, 0)
+        if prior_top50 >= TOP50_MAX_APPEARANCES_LOOKBACK:
+            continue
+        # prospective rank is current length + 1
+        prospective_rank = len(top) + 1
+        if prospective_rank <= 10 and recent_top10.get(result.entity_id, 0) >= TOP10_MAX_APPEARANCES_LOOKBACK:
+            continue
+
         rank = len(top) + 1
         description = _render_description(template, player_name, team_name, float(result.metric_value))
         top.append(
@@ -72,8 +95,43 @@ def generate_top50(session: Session, run_date: date) -> None:
             )
         )
         seen_entities.add(result.entity_id)
+        pattern_counts[result.pattern_id] += 1
         if rank >= 50:
             break
+    return top
+
+
+def generate_top50(session: Session, run_date: date) -> None:
+    lookback_start = run_date - timedelta(days=TOP50_LOOKBACK_DAYS)
+    historical = (
+        session.query(models.UnicornTop50Daily.entity_id, models.UnicornTop50Daily.rank)
+        .filter(models.UnicornTop50Daily.run_date >= lookback_start)
+        .filter(models.UnicornTop50Daily.run_date < run_date)
+        .all()
+    )
+    recent_top50: Dict[int, int] = defaultdict(int)
+    recent_top10: Dict[int, int] = defaultdict(int)
+    for pid, rank in historical:
+        recent_top50[int(pid)] += 1
+        if rank <= 10:
+            recent_top10[int(pid)] += 1
+
+    stmt = (
+        sa.select(
+            models.UnicornResult,
+            models.Player.full_name.label("player_name"),
+            models.Team.team_name.label("team_name"),
+            models.PatternTemplate.description_template.label("description_template"),
+        )
+        .join(models.Player, models.Player.player_id == models.UnicornResult.entity_id)
+        .join(models.PatternTemplate, models.PatternTemplate.pattern_id == models.UnicornResult.pattern_id)
+        .join(models.Team, models.Team.team_id == models.Player.current_team_id, isouter=True)
+        .where(models.UnicornResult.run_date == run_date)
+        .order_by(models.UnicornResult.score.desc())
+    )
+    rows = session.execute(stmt).all()
+    top = _select_top50(rows, run_date, recent_top50, recent_top10)
+    apply_min_score_spacing(top, min_rel_gap=MIN_REL_GAP)
 
     session.execute(sa.delete(models.UnicornTop50Daily).where(models.UnicornTop50Daily.run_date == run_date))
     if top:

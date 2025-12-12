@@ -631,6 +631,13 @@ Codex should provide basic scripts / commands:
 - npm install
 - npm run dev → start Next.js dev server
 
+15.3 Audits
+- Top 50 Quality Audit: `python -m backend.app.tools.audit_top50_quality --start YYYY-MM-DD --end YYYY-MM-DD --base-url <api_base>` (uses `UNICORN_API_BASE_URL` if set; defaults to localhost).
+- Output: JSON at `./artifacts/top50_quality_report_<start>_<end>.json` and console PASS/FAIL per day plus overall verdict.
+- Checks per day: diversity (roles, teams, full 50), duplicate-feeling descriptions (Jaccard ≥ 0.85), score clustering (cv + near ties), role mismatches, and cross-day domination thresholds.
+- Admin route (guarded by `ADMIN_ENABLED=true`): `GET /api/admin/audit/top50?start=YYYY-MM-DD&end=YYYY-MM-DD` runs the audit directly on the DB without external HTTP calls.
+- CLI HTTP tuning flags: `--http-timeout` (default 60s), `--http-retries` (default 3), `--http-backoff` (default 0.8s) for resilient production audits.
+
 16. How to Use This Spec with Codex Max
 When handing this to Codex Max, the user should:
 - Ensure this document is accessible as docs/mlb_unicorn_engine_spec.md in the repo or pasted into the Codex context.
