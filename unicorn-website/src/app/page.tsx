@@ -70,20 +70,23 @@ export default function Home() {
       return null;
     }
     return (
-      <div className="space-y-2">
+            <div className="space-y-2">
         <h4 className="text-lg font-semibold text-neutral-900">{label}</h4>
         {players && players.length > 0 ? (
           <ul className="divide-y divide-white/40 rounded-2xl bg-white/60 shadow-sm">
             {players.map((p: Player) => (
-              <li key={p.player_id} className="px-4 py-3 flex items-center justify-between">
-                <div>
-                  <span className="text-neutral-900 font-medium">
+              <li
+                key={p.player_id}
+                className="px-4 py-3 flex items-center justify-between hover:bg-white/70 cursor-pointer transition"
+              >
+                <Link href={`/players/${p.player_id}`} className="flex flex-col">
+                  <span className="text-neutral-900 font-medium hover:underline">
                     {p.player_name || p.full_name || `Player ${p.player_id}`}
                   </span>
                   <p className="text-xs text-neutral-500">
                     {p.position || p.role || label.slice(0, -1)}
                   </p>
-                </div>
+                </Link>
                 <span className="text-xs uppercase text-neutral-500">{label.slice(0, -1)}</span>
               </li>
             ))}
