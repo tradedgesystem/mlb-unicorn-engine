@@ -75,15 +75,11 @@ export default function Home() {
         {players && players.length > 0 ? (
           <ul className="divide-y divide-white/40 rounded-2xl bg-white/60 shadow-sm">
             {players.map((p: Player) => {
-              const rawId =
-                p.player_id ??
-                (typeof (p as never)["playerId"] !== "undefined" ? (p as never)["playerId"] : undefined) ??
-                (typeof (p as never)["id"] !== "undefined" ? (p as never)["id"] : undefined);
-              const pid = typeof rawId === "string" ? Number(rawId) : rawId;
-              const isValidId = Number.isFinite(pid);
+              const pid = p.player_id;
+              const isValidId = typeof pid === "number" && Number.isFinite(pid);
               return (
                 <li
-                  key={p.player_id ?? `${p.player_name}-${label}`}
+                  key={pid ?? `${p.player_name}-${label}`}
                   className="px-4 py-3 flex items-center justify-between hover:bg-white/70 cursor-pointer transition"
                 >
                   {isValidId ? (

@@ -52,7 +52,8 @@ export default function PlayerPage({
 }) {
   const raw = Array.isArray(params.playerId) ? params.playerId[0] : params.playerId;
   const playerIdNum = Number(raw);
-  const debug = (Array.isArray(searchParams?.debug) ? searchParams.debug[0] : searchParams?.debug) === "1";
+  const debug =
+    (Array.isArray(searchParams?.debug) ? searchParams.debug[0] : searchParams?.debug) === "1";
   const base = process.env.NEXT_PUBLIC_API_BASE || "";
   const [data, setData] = useState<PlayerResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -156,6 +157,9 @@ export default function PlayerPage({
             </p>
             <p>
               <strong>Metric keys:</strong> {Object.keys(data?.metrics || {}).join(", ") || "(none)"}
+            </p>
+            <p>
+              <strong>Raw param:</strong> {String(raw)}
             </p>
           </div>
         )}

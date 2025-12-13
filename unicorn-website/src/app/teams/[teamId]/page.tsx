@@ -119,15 +119,26 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
           <p className="text-neutral-600">No players in this group.</p>
         ) : (
           <ul className="divide-y divide-white/40 rounded-2xl bg-white/60 shadow-sm">
-            {roster.map((p) => (
-              <li key={p.player_id} className="px-4 py-3 flex items-center justify-between">
-                <div>
-                  <Link
-                    href={`/players/${p.player_id}`}
-                    className="text-neutral-900 font-medium hover:underline"
-                  >
-                    {p.player_name || p.full_name || `Player ${p.player_id}`}
-                  </Link>
+            {roster.map((p) => {
+              const pid = p.player_id;
+              const valid = typeof pid === "number" && Number.isFinite(pid);
+              return (
+                <li
+                  key={pid ?? p.player_name ?? p.full_name ?? `${activeTab}-unknown`}
+                  className="px-4 py-3 flex items-center justify-between"
+                >
+                  {valid ? (
+                    <Link
+                      href={`/players/${pid}`}
+                      className="text-neutral-900 font-medium hover:underline"
+                    >
+                      {p.player_name || p.full_name || `Player ${pid}`}
+                    </Link>
+                  ) : (
+                    <span className="text-neutral-900 font-medium">
+                      {p.player_name || p.full_name || "Player"}
+                    </span>
+                  )}
                   <p className="text-xs text-neutral-500">
                     {p.position ||
                       p.role ||
@@ -137,16 +148,16 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
                         ? "Starter"
                         : "Reliever")}
                   </p>
-                </div>
-                <span className="text-xs uppercase text-neutral-500">
-                  {activeTab === "hitters"
-                    ? "Hitter"
-                    : activeTab === "starters"
-                    ? "Starter"
-                    : "Reliever"}
-                </span>
-              </li>
-            ))}
+                  <span className="text-xs uppercase text-neutral-500">
+                    {activeTab === "hitters"
+                      ? "Hitter"
+                      : activeTab === "starters"
+                      ? "Starter"
+                      : "Reliever"}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>

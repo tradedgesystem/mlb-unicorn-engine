@@ -322,22 +322,28 @@ function FragmentRow({ row, isTop5, isExpanded, onToggle }: FragmentRowProps) {
               {row.playerName
                 .split(" ")
                 .slice(0, 2)
-                .map((part) => part[0])
-                .join("")
-                .toUpperCase()}
-            </div>
-            <div className="flex flex-col">
-              <Link
-                href={`/players/${row.entity_id}`}
-                className="font-medium leading-tight hover:underline decoration-2 decoration-neutral-400"
-              >
-                {row.playerName}
-              </Link>
-              <span className="text-xs text-neutral-500">
-                Pattern {row.pattern_id}
-              </span>
-            </div>
-          </div>
+            .map((part) => part[0])
+            .join("")
+            .toUpperCase()}
+        </div>
+        <div className="flex flex-col">
+          {Number.isFinite(row.entity_id) ? (
+            <Link
+              href={`/players/${row.entity_id}`}
+              className="font-medium leading-tight hover:underline decoration-2 decoration-neutral-400"
+            >
+              {row.playerName}
+            </Link>
+          ) : (
+            <span className="font-medium leading-tight text-neutral-700">
+              {row.playerName} (missing id)
+            </span>
+          )}
+          <span className="text-xs text-neutral-500">
+            Pattern {row.pattern_id}
+          </span>
+        </div>
+      </div>
         </td>
         <td
           className={`px-4 py-3 text-sm border-b border-white/40 ${topTone}`}
