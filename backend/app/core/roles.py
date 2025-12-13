@@ -37,7 +37,11 @@ def get_pitcher_usage_counts(
             models.PlateAppearance.pa_id,
         )
         .join(models.Game, models.Game.game_id == models.PlateAppearance.game_id)
-        .where(models.Game.game_date >= start_date, models.Game.game_date <= end_date)
+        .where(
+            models.Game.game_date >= start_date,
+            models.Game.game_date <= end_date,
+            models.PlateAppearance.pitcher_id != None,  # noqa: E711
+        )
     ).cte("pas")
 
     first_pa = (
@@ -76,6 +80,8 @@ def get_pitcher_usage_counts(
 
     counts: Dict[int, Dict[str, int]] = {}
     for row in results:
+        if row.pitcher_id is None:
+            continue
         counts[int(row.pitcher_id)] = {
             "starts": int(row.starts or 0),
             "apps": int(row.apps or 0),
