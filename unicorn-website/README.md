@@ -41,7 +41,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - The browser calls same-origin `GET /api/...` routes on the Vercel domain, which proxy to the backend.
 - After changing the env var, trigger a redeploy (disable build cache if you’re troubleshooting).
 
+### Warm endpoint
+
+- `GET /api/warm` pings the backend (`${BACKEND_API_BASE}/api/teams`) so cold starts are less likely.
+- Local check (with the dev server running): `curl -fsS http://localhost:3000/api/warm`
+
 ### Vercel monorepo note
 
 - Root directory for the Next.js app is `unicorn-website`. A `vercel.json` at repo root points the build and routes there so `/health` and other pages are emitted correctly.
-
