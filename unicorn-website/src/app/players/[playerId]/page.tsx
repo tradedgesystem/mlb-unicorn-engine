@@ -44,15 +44,16 @@ const METRIC_KEYS: Record<string, { key: string; label: string }[]> = {
   ],
 };
 
-export default function PlayerPage({ params }: { params: { playerId: string } }) {
-  const playerId = Number(params.playerId);
+export default function PlayerPage({ params }: { params: { playerId: string | string[] } }) {
+  const raw = Array.isArray(params.playerId) ? params.playerId[0] : params.playerId;
+  const playerIdNum = Number(raw);
   const [data, setData] = useState<PlayerResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (Number.isNaN(playerId)) {
-      setError("Invalid player id.");
+    if (!Number.isFinite(playerIdNum)) {
+      setError(`Invalid player id: ${String(raw)}`);
       setLoading(false);
       return;
     }
@@ -60,7 +61,7 @@ export default function PlayerPage({ params }: { params: { playerId: string } })
       try {
         setLoading(true);
         setError(null);
-        const detail = await fetchPlayerProfile(playerId);
+        const detail = await fetchPlayerProfile(playerIdNum);
         setData(detail);
       } catch {
         setError("Unable to load player data.");
@@ -69,7 +70,7 @@ export default function PlayerPage({ params }: { params: { playerId: string } })
       }
     };
     load();
-  }, [playerId]);
+  }, [playerIdNum, raw]);
 
   const metrics = useMemo(() => {
     const roleKey = (data?.role || "hitter").toLowerCase();
@@ -89,7 +90,7 @@ export default function PlayerPage({ params }: { params: { playerId: string } })
         <div>
           <p className="text-sm text-neutral-500">{data?.team_name || "Player"}</p>
           <h1 className="text-3xl font-semibold text-neutral-900">
-            {data?.player_name || `Player ${playerId}`}
+            {data?.player_name || `Player ${playerIdNum}`}
           </h1>
           {data?.role && (
             <span className="text-sm text-neutral-600 uppercase tracking-wide">{data.role}</span>
