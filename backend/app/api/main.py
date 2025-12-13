@@ -124,8 +124,32 @@ def get_top50(run_date: date, response: Response):
     try:
         rows = fetch_top50_for_date(session, run_date)
         apply_min_score_spacing(rows, min_rel_gap=MIN_REL_GAP)
+        entity_ids = [int(r.entity_id) for r in rows if r.entity_id is not None]
+        player_meta = {}
+        if entity_ids:
+            for pid, primary_pos, role in (
+                session.query(
+                    models.Player.player_id,
+                    models.Player.primary_pos,
+                    models.PlayerSummary.role,
+                )
+                .outerjoin(models.PlayerSummary, models.PlayerSummary.player_id == models.Player.player_id)
+                .filter(models.Player.player_id.in_(entity_ids))
+                .all()
+            ):
+                player_meta[int(pid)] = {
+                    "primary_pos": primary_pos,
+                    "role": role,
+                }
         response.headers["Cache-Control"] = "public, max-age=300"
-        return [to_dict(r) for r in rows]
+        payload = []
+        for r in rows:
+            base = to_dict(r)
+            meta = player_meta.get(int(r.entity_id)) if r.entity_id is not None else None
+            base["primary_pos"] = (meta or {}).get("primary_pos")
+            base["role"] = (meta or {}).get("role")
+            payload.append(base)
+        return payload
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     finally:

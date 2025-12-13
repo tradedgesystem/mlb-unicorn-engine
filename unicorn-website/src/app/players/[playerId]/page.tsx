@@ -142,7 +142,7 @@ export default async function PlayerPage({
   const showLeagueAvgStarter = Boolean(leagueStarter && leagueStarter.metrics);
 
   const debugPanel = debug ? (
-    <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
+    <div className="glass p-3 text-xs text-neutral-700 space-y-1">
       <p>
         <strong>Resolved params:</strong> {JSON.stringify(resolvedParams)}
       </p>
@@ -202,13 +202,13 @@ export default async function PlayerPage({
         <div className="flex gap-2">
           <Link
             href="/"
-            className="glass rounded-full px-4 py-2 text-sm text-neutral-800 hover:-translate-y-0.5 transition"
+            className="glass px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-200"
           >
             Top 50
           </Link>
           <Link
             href="/teams"
-            className="glass rounded-full px-4 py-2 text-sm text-neutral-800 hover:-translate-y-0.5 transition"
+            className="glass px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-200"
           >
             Teams
           </Link>
@@ -308,7 +308,7 @@ export default async function PlayerPage({
         {data?.recent_unicorns?.length ? (
           <div className="space-y-3">
             {data.recent_unicorns.map((u) => (
-              <div key={`${u.run_date}-${u.pattern_id}`} className="rounded-2xl bg-white/70 px-4 py-3">
+              <div key={`${u.run_date}-${u.pattern_id}`} className="glass px-4 py-3">
                 <div className="flex items-center justify-between text-sm text-neutral-600">
                   <span>{u.run_date}</span>
                   <span className="font-mono">{u.pattern_id}</span>

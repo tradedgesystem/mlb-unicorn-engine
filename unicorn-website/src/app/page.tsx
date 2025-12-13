@@ -70,17 +70,17 @@ export default function Home() {
       return null;
     }
     return (
-            <div className="space-y-2">
+      <div className="space-y-2">
         <h4 className="text-lg font-semibold text-neutral-900">{label}</h4>
         {players && players.length > 0 ? (
-          <ul className="divide-y divide-white/40 rounded-2xl bg-white/60 shadow-sm">
+          <ul className="glass divide-y divide-neutral-300">
             {players.map((p: Player) => {
               const pid = p.player_id;
               const isValidId = typeof pid === "number" && Number.isFinite(pid);
               return (
                 <li
                   key={pid ?? `${p.player_name}-${label}`}
-                  className="px-4 py-3 flex items-center justify-between hover:bg-white/70 cursor-pointer transition"
+                  className="px-4 py-3 flex items-center justify-between hover:bg-neutral-200"
                 >
                   {isValidId ? (
                     <Link href={`/players/${pid}`} className="flex flex-col">
@@ -132,7 +132,7 @@ export default function Home() {
           </Link>
         </div>
         {teamsError ? (
-          <div className="rounded-2xl bg-red-50 text-red-700 px-4 py-3 text-sm">
+          <div className="border border-red-600 bg-red-50 text-red-700 px-4 py-3 text-sm">
             {teamsError}
           </div>
         ) : (
@@ -141,7 +141,7 @@ export default function Home() {
               <button
                 key={team.team_id}
                 onClick={() => handleSelectTeam(team.team_id)}
-                className="text-left glass rounded-2xl p-4 hover:-translate-y-1 transition shadow-sm"
+                className="text-left glass p-4 hover:bg-neutral-200"
               >
                 <p className="text-xs uppercase text-neutral-500">{team.abbrev}</p>
                 <h3 className="text-lg font-semibold text-neutral-900">{team.team_name}</h3>
@@ -154,7 +154,9 @@ export default function Home() {
         )}
       </section>
       {selectedError && (
-        <div className="rounded-2xl bg-red-50 text-red-700 px-4 py-3 text-sm">{selectedError}</div>
+        <div className="border border-red-600 bg-red-50 text-red-700 px-4 py-3 text-sm">
+          {selectedError}
+        </div>
       )}
       {selectedTeam && (
         <section className="glass rounded-3xl p-6 space-y-4">

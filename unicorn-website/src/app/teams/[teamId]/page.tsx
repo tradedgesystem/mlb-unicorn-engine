@@ -75,13 +75,13 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
         <div className="flex gap-2">
           <Link
             href="/teams"
-            className="glass rounded-full px-4 py-2 text-sm text-neutral-800 hover:-translate-y-0.5 transition"
+            className="glass px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-200"
           >
             ← Teams
           </Link>
           <Link
             href="/"
-            className="glass rounded-full px-4 py-2 text-sm text-neutral-800 hover:-translate-y-0.5 transition"
+            className="glass px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-200"
           >
             Top 50
           </Link>
@@ -89,7 +89,7 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
       </div>
 
       {error && (
-        <div className="rounded-2xl bg-red-50 text-red-700 px-4 py-3 text-sm">
+        <div className="border border-red-600 bg-red-50 text-red-700 px-4 py-3 text-sm">
           {error}
         </div>
       )}
@@ -100,10 +100,10 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+              className={`px-4 py-2 text-sm font-medium border border-neutral-400 ${
                 activeTab === tab
-                  ? "glass shadow-sm text-neutral-900"
-                  : "bg-white/70 text-neutral-600 hover:-translate-y-0.5"
+                  ? "glass text-neutral-900"
+                  : "bg-transparent text-neutral-900 hover:bg-neutral-200"
               }`}
             >
               {tab === "hitters" ? "Hitters" : tab === "starters" ? "Starters" : "Relievers"}
@@ -118,7 +118,7 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
         ) : roster.length === 0 ? (
           <p className="text-neutral-600">No players in this group.</p>
         ) : (
-          <ul className="divide-y divide-white/40 rounded-2xl bg-white/60 shadow-sm">
+          <ul className="glass divide-y divide-neutral-300">
             {roster.map((p) => {
               const pid = p.player_id;
               const valid = typeof pid === "number" && Number.isFinite(pid);

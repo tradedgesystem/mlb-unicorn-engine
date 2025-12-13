@@ -1,23 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  color: #0c0c0d;
-  background: #f2f2f7;
-  font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #111;
+  background: #e5e5e5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+    sans-serif;
 }
 
 body {
-  background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.65), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.55), transparent 28%),
-    #f2f2f7;
+  background: #e5e5e5;
   min-height: 100vh;
-  color: #0c0c0d;
-  -webkit-font-smoothing: antialiased;
+  color: #111;
 }
 
 .glass {
-  @apply border border-white/20 bg-white/60 backdrop-blur-lg shadow-[0_10px_30px_rgba(0,0,0,0.08)];
+  background: #f7f7f7;
+  border: 1px solid #a3a3a3;
+  border-radius: 2px;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .fade-in {

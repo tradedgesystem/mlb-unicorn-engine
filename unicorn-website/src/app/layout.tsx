@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "MLB Unicorn Engine",
-  description: "Top 50 MLB unicorns with Apple-inspired UI",
+  description: "Top 50 MLB unicorns with minimalist UI",
 };
 
 export default function RootLayout({

@@ -11,6 +11,8 @@ export type UnicornRow = {
   sample_size: number;
   score: number;
   description: string;
+  role?: string | null;
+  primary_pos?: string | null;
 };
 
 export type Player = { id: number; full_name: string };
