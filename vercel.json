@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    { "src": "unicorn-website/package.json", "use": "@vercel/next" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "unicorn-website/$1" }
-  ]
-}
