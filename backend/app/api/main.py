@@ -91,18 +91,18 @@ def _set_hot_cache_headers(response: Response) -> None:
 
 @app.middleware("http")
 async def sentry_request_context(request: Request, call_next):
-    with sentry_sdk.configure_scope() as scope:
-        scope.set_tag("method", request.method)
-        scope.set_tag("path", request.url.path)
-        route = request.scope.get("route")
-        if route is not None:
-            scope.set_tag("endpoint", getattr(route, "path", None) or getattr(route, "name", None))
-        team_id = request.path_params.get("team_id")
-        player_id = request.path_params.get("player_id")
-        if team_id is not None:
-            scope.set_tag("team_id", str(team_id))
-        if player_id is not None:
-            scope.set_tag("player_id", str(player_id))
+    scope = sentry_sdk.get_current_scope()
+    scope.set_tag("method", request.method)
+    scope.set_tag("path", request.url.path)
+    route = request.scope.get("route")
+    if route is not None:
+        scope.set_tag("endpoint", getattr(route, "path", None) or getattr(route, "name", None))
+    team_id = request.path_params.get("team_id")
+    player_id = request.path_params.get("player_id")
+    if team_id is not None:
+        scope.set_tag("team_id", str(team_id))
+    if player_id is not None:
+        scope.set_tag("player_id", str(player_id))
 
     return await call_next(request)
 

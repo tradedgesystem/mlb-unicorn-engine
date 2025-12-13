@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function SentryTestPage({
   searchParams,
 }: {
@@ -17,4 +19,3 @@ export default function SentryTestPage({
 
   throw new Error("Sentry test error (frontend)");
 }
-
