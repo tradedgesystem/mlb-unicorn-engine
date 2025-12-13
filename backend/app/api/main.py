@@ -209,11 +209,20 @@ def list_teams(response: Response):
         session.close()
 
 
+def _effective_as_of_date(session, as_of_date: Optional[date]) -> date:
+    if as_of_date:
+        return as_of_date
+    latest = session.scalar(select(func.max(models.Game.game_date)))
+    if latest:
+        return latest
+    return date.today()
+
+
 @app.get("/api/teams/{team_id}")
 def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None):
     session = SessionLocal()
     try:
-        as_of = as_of_date or date.today()
+        as_of = _effective_as_of_date(session, as_of_date)
         lookback = DEFAULT_LOOKBACK_DAYS
         usage_counts = get_pitcher_usage_counts(session, as_of_date=as_of, lookback_days=lookback)
         team = session.get(models.Team, team_id)
@@ -259,6 +268,20 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
                 relievers.append(payload)
             else:
                 hitters.append(payload)
+        # If starters are empty but we have relievers with starts, promote the top ones.
+        if not starters and relievers:
+            reliever_with_starts = [
+                (rc.get("starts", 0), payload)
+                for payload in relievers
+                for rc in [usage_counts.get(payload["player_id"], {"starts": 0})]
+                if rc.get("starts", 0) > 0
+            ]
+            reliever_with_starts.sort(key=lambda x: x[0], reverse=True)
+            promoted = [p for _, p in reliever_with_starts[:5]]
+            if promoted:
+                starter_ids = {p["player_id"] for p in promoted}
+                starters.extend(promoted)
+                relievers = [p for p in relievers if p["player_id"] not in starter_ids]
         response.headers["Cache-Control"] = "public, max-age=300"
         return {
             "team_id": team.team_id,
