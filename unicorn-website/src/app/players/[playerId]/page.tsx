@@ -47,14 +47,15 @@ export default function PlayerPage({
   params,
   searchParams,
 }: {
-  params: { playerId: string | string[] };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: { playerId: string };
+  searchParams?: Record<string, string | string[] | undefined>;
 }) {
-  const raw = Array.isArray(params.playerId) ? params.playerId[0] : params.playerId;
-  const playerIdNum = Number(raw);
+  const rawFromParams = Array.isArray(params?.playerId) ? params.playerId[0] : params?.playerId;
+  const playerIdNum = Number(rawFromParams);
   const debug =
-    (Array.isArray(searchParams?.debug) ? searchParams.debug[0] : searchParams?.debug) === "1";
+    (Array.isArray(searchParams?.debug) ? searchParams?.debug[0] : searchParams?.debug) === "1";
   const base = process.env.NEXT_PUBLIC_API_BASE || "";
+  const invalidId = !Number.isFinite(playerIdNum);
   const [data, setData] = useState<PlayerResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -62,14 +63,18 @@ export default function PlayerPage({
   const [lastUrl, setLastUrl] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!Number.isFinite(playerIdNum)) {
-      setError(`Invalid player id: ${String(raw)}`);
+    if (invalidId) {
+      setError(`Invalid player id: ${String(rawFromParams)}`);
       setLoading(false);
+      setLastUrl(null);
+      setLastStatus(null);
       return;
     }
     if (!base) {
       setError("Missing NEXT_PUBLIC_API_BASE");
       setLoading(false);
+      setLastUrl(null);
+      setLastStatus(null);
       return;
     }
     const load = async () => {
@@ -95,7 +100,7 @@ export default function PlayerPage({
       }
     };
     load();
-  }, [playerIdNum, raw, base]);
+  }, [playerIdNum, rawFromParams, base, invalidId]);
 
   const metrics = useMemo(() => {
     const roleKey = (data?.role || "hitter").toLowerCase();
@@ -108,6 +113,69 @@ export default function PlayerPage({
   }, [data]);
 
   const hasMetrics = metrics.some((m) => m.value !== null && m.value !== undefined);
+
+  const DebugPanel = () =>
+    debug ? (
+      <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
+        <p>
+          <strong>Params:</strong> {JSON.stringify(params)}
+        </p>
+        <p>
+          <strong>SearchParams:</strong> {JSON.stringify(searchParams)}
+        </p>
+        <p>
+          <strong>Raw param:</strong> {String(rawFromParams)}
+        </p>
+        <p>
+          <strong>Parsed playerIdNum:</strong> {Number.isFinite(playerIdNum) ? playerIdNum : "NaN"}
+        </p>
+        <p>
+          <strong>API Base:</strong> {base || "(empty)"}
+        </p>
+        <p>
+          <strong>Fetch URL:</strong> {lastUrl || "(not fired)"}
+        </p>
+        <p>
+          <strong>HTTP status:</strong> {lastStatus ?? "(unknown)"}
+        </p>
+        <p>
+          <strong>Metric keys:</strong> {Object.keys(data?.metrics || {}).join(", ") || "(none)"}
+        </p>
+      </div>
+    ) : null;
+
+  if (invalidId) {
+    return (
+      <main className="min-h-screen px-4 py-8 sm:px-8 lg:px-16 space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm text-neutral-500">Player</p>
+            <h1 className="text-3xl font-semibold text-neutral-900">Invalid player</h1>
+          </div>
+          <div className="flex gap-2">
+            <Link
+              href="/"
+              className="glass rounded-full px-4 py-2 text-sm text-neutral-800 hover:-translate-y-0.5 transition"
+            >
+              Top 50
+            </Link>
+            <Link
+              href="/teams"
+              className="glass rounded-full px-4 py-2 text-sm text-neutral-800 hover:-translate-y-0.5 transition"
+            >
+              Teams
+            </Link>
+          </div>
+        </div>
+
+        <div className="glass rounded-3xl p-6 space-y-4">
+          <h2 className="text-xl font-semibold text-neutral-900">Predictive Metrics</h2>
+          <p className="text-red-600">Invalid player id: {String(rawFromParams)}</p>
+          <DebugPanel />
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen px-4 py-8 sm:px-8 lg:px-16 space-y-6">
@@ -144,25 +212,7 @@ export default function PlayerPage({
         {!loading && !error && !hasMetrics && (
           <p className="text-neutral-600">Metrics unavailable.</p>
         )}
-        {debug && (
-          <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
-            <p>
-              <strong>API Base:</strong> {base || "(empty)"}
-            </p>
-            <p>
-              <strong>Fetch URL:</strong> {lastUrl || "(not fired)"}
-            </p>
-            <p>
-              <strong>HTTP status:</strong> {lastStatus ?? "(unknown)"}
-            </p>
-            <p>
-              <strong>Metric keys:</strong> {Object.keys(data?.metrics || {}).join(", ") || "(none)"}
-            </p>
-            <p>
-              <strong>Raw param:</strong> {String(raw)}
-            </p>
-          </div>
-        )}
+        <DebugPanel />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {metrics.map((m) => (
             <div key={m.key} className="glass rounded-2xl p-4 shadow-sm">
