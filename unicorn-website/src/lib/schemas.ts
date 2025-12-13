@@ -5,6 +5,21 @@ const zNumber = z.preprocess((value) => {
   return value;
 }, z.number());
 
+const zMetricValue = z.preprocess((value) => {
+  if (value === null || value === undefined) return null;
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (typeof value === "string") {
+    const n = Number(value);
+    return Number.isFinite(n) ? n : null;
+  }
+  return null;
+}, z.number().nullable());
+
+const zMetrics = z.preprocess((value) => {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  return value;
+}, z.record(z.string(), zMetricValue));
+
 export const Top50RowSchema = z
   .object({
     run_date: z.string().optional(),
@@ -38,6 +53,7 @@ export const RosterPlayerSchema = z
     full_name: z.string().optional(),
     position: z.string().nullable().optional(),
     role: z.string().nullable().optional(),
+    metrics: zMetrics.optional().default({}),
   })
   .passthrough();
 

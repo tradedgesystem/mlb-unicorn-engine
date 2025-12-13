@@ -12,6 +12,7 @@ type Player = {
   full_name?: string;
   position?: string | null;
   role?: string | null;
+  metrics?: Record<string, number | null>;
 };
 
 type TeamDetail = {
@@ -24,6 +25,37 @@ type TeamDetail = {
 };
 
 type TabKey = "hitters" | "starters" | "relievers";
+
+const METRIC_CONFIG: Record<TabKey, { key: string; label: string }[]> = {
+  hitters: [
+    { key: "barrel_pct_last_50", label: "Barrel %" },
+    { key: "hard_hit_pct_last_50", label: "Hard-Hit %" },
+    { key: "xwoba_last_50", label: "xwOBA" },
+    { key: "contact_pct_last_50", label: "Contact %" },
+    { key: "chase_pct_last_50", label: "Chase %" },
+  ],
+  starters: [
+    { key: "xwoba_last_3_starts", label: "xwOBA Allowed" },
+    { key: "whiff_pct_last_3_starts", label: "Whiff %" },
+    { key: "k_pct_last_3_starts", label: "K %" },
+    { key: "bb_pct_last_3_starts", label: "BB %" },
+    { key: "hard_hit_pct_last_3_starts", label: "Hard-Hit % Allowed" },
+  ],
+  relievers: [
+    { key: "xwoba_last_5_apps", label: "xwOBA Allowed" },
+    { key: "whiff_pct_last_5_apps", label: "Whiff %" },
+    { key: "k_pct_last_5_apps", label: "K %" },
+    { key: "bb_pct_last_5_apps", label: "BB %" },
+    { key: "hard_hit_pct_last_5_apps", label: "Hard-Hit % Allowed" },
+  ],
+};
+
+function formatMetricValue(value: unknown): string {
+  if (value === null || value === undefined) return "—";
+  const n = typeof value === "number" ? value : Number(value);
+  if (!Number.isFinite(n)) return "—";
+  return n.toFixed(3);
+}
 
 function teamFetchErrorMessage(res: { status?: number; error?: string }): string {
   const err = (res.error || "").toLowerCase();
@@ -55,6 +87,16 @@ function coerceRosterPlayers(value: unknown): Player[] {
         full_name: typeof obj.full_name === "string" ? obj.full_name : undefined,
         position: typeof obj.position === "string" ? obj.position : null,
         role: typeof obj.role === "string" ? obj.role : null,
+        metrics:
+          obj.metrics && typeof obj.metrics === "object" && !Array.isArray(obj.metrics)
+            ? Object.fromEntries(
+                Object.entries(obj.metrics as Record<string, unknown>).map(([key, value]) => {
+                  if (value === null || value === undefined) return [key, null];
+                  const n = typeof value === "number" ? value : Number(value);
+                  return [key, Number.isFinite(n) ? n : null];
+                })
+              )
+            : {},
       };
     });
 }
@@ -196,6 +238,7 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
     if (activeTab === "starters") return team.starters || [];
     return team.relievers || [];
   }, [team, activeTab]);
+  const metricConfig = METRIC_CONFIG[activeTab];
 
   const hasRoster =
     (team?.hitters?.length || 0) > 0 ||
@@ -266,39 +309,63 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
             {roster.map((p) => {
               const pid = p.player_id;
               const valid = typeof pid === "number" && Number.isFinite(pid);
+              const metrics = p.metrics || {};
+              const hasAnyMetric = metricConfig.some(
+                (cfg) => metrics[cfg.key] !== null && metrics[cfg.key] !== undefined
+              );
               return (
                 <li
                   key={pid ?? p.player_name ?? p.full_name ?? `${activeTab}-unknown`}
-                  className="px-4 py-3 flex items-center justify-between"
+                  className="px-4 py-3 space-y-2"
                 >
-                  {valid ? (
-                    <Link
-                      href={`/players/${pid}`}
-                      className="text-neutral-900 font-medium hover:underline"
-                    >
-                      {p.player_name || p.full_name || `Player ${pid}`}
-                    </Link>
-                  ) : (
-                    <span className="text-neutral-900 font-medium">
-                      {p.player_name || p.full_name || "Player"}
-                    </span>
-                  )}
-                  <p className="text-xs text-neutral-500">
-                    {p.position ||
-                      p.role ||
-                      (activeTab === "hitters"
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="min-w-0">
+                      {valid ? (
+                        <Link
+                          href={`/players/${pid}`}
+                          className="text-neutral-900 font-medium hover:underline"
+                        >
+                          {p.player_name || p.full_name || `Player ${pid}`}
+                        </Link>
+                      ) : (
+                        <span className="text-neutral-900 font-medium">
+                          {p.player_name || p.full_name || "Player"}
+                        </span>
+                      )}
+                      <p className="text-xs text-neutral-500">
+                        {p.position ||
+                          p.role ||
+                          (activeTab === "hitters"
+                            ? "Hitter"
+                            : activeTab === "starters"
+                              ? "Starter"
+                              : "Reliever")}
+                      </p>
+                    </div>
+                    <span className="text-xs uppercase text-neutral-500 whitespace-nowrap">
+                      {activeTab === "hitters"
                         ? "Hitter"
                         : activeTab === "starters"
-                        ? "Starter"
-                        : "Reliever")}
-                  </p>
-                  <span className="text-xs uppercase text-neutral-500">
-                    {activeTab === "hitters"
-                      ? "Hitter"
-                      : activeTab === "starters"
-                      ? "Starter"
-                      : "Reliever"}
-                  </span>
+                          ? "Starter"
+                          : "Reliever"}
+                    </span>
+                  </div>
+
+                  {!hasAnyMetric && (
+                    <p className="text-xs text-neutral-600">
+                      No predictive metrics available yet.
+                    </p>
+                  )}
+                  <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+                    {metricConfig.map((cfg) => (
+                      <div key={cfg.key} className="border border-neutral-300 px-2 py-2">
+                        <p className="text-[10px] uppercase text-neutral-500">{cfg.label}</p>
+                        <p className="text-sm text-neutral-900">
+                          {formatMetricValue(metrics[cfg.key])}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </li>
               );
             })}

@@ -29,6 +29,7 @@ def setup_db(monkeypatch):
             models.Player.__table__,
             models.Game.__table__,
             models.PlateAppearance.__table__,
+            models.PitchFact.__table__,
             models.PlayerSummary.__table__,
         ],
     )
@@ -73,6 +74,33 @@ def test_team_endpoint_without_as_of_date(monkeypatch):
     assert isinstance(data.get("starters"), list)
     assert isinstance(data.get("relievers"), list)
     assert isinstance(data.get("hitters"), list)
+    hitter_keys = {
+        "barrel_pct_last_50",
+        "hard_hit_pct_last_50",
+        "xwoba_last_50",
+        "contact_pct_last_50",
+        "chase_pct_last_50",
+    }
+    starter_keys = {
+        "xwoba_last_3_starts",
+        "whiff_pct_last_3_starts",
+        "k_pct_last_3_starts",
+        "bb_pct_last_3_starts",
+        "hard_hit_pct_last_3_starts",
+    }
+    reliever_keys = {
+        "xwoba_last_5_apps",
+        "whiff_pct_last_5_apps",
+        "k_pct_last_5_apps",
+        "bb_pct_last_5_apps",
+        "hard_hit_pct_last_5_apps",
+    }
+    for p in data.get("hitters", []):
+        assert set((p.get("metrics") or {}).keys()) == hitter_keys
+    for p in data.get("starters", []):
+        assert set((p.get("metrics") or {}).keys()) == starter_keys
+    for p in data.get("relievers", []):
+        assert set((p.get("metrics") or {}).keys()) == reliever_keys
 
 
 def test_team_endpoint_with_as_of_date(monkeypatch):
@@ -85,6 +113,9 @@ def test_team_endpoint_with_as_of_date(monkeypatch):
     data = resp.json()
     assert data["team_id"] == 119
     assert "hitters" in data and "starters" in data and "relievers" in data
+    assert all("metrics" in p for p in data.get("hitters", []))
+    assert all("metrics" in p for p in data.get("starters", []))
+    assert all("metrics" in p for p in data.get("relievers", []))
 
 
 def test_team_endpoint_cache_returns_identical_payload(monkeypatch):

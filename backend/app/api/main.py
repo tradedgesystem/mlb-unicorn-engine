@@ -21,6 +21,7 @@ from backend.app.unicorns.queries import fetch_top50_for_date
 from backend.app.core.player_metrics import (
     _hitter_metrics as compute_hitter_metrics,
     _starter_metrics as compute_starter_metrics,
+    _reliever_metrics as compute_reliever_metrics,
     league_hitter_metrics as compute_league_hitter_metrics,
     get_player_role,
     update_all as refresh_player_metrics,
@@ -63,6 +64,55 @@ _TOP50_CACHE: dict[str, tuple[float, list[dict]]] = {}
 
 _TEAM_TTL_SECONDS = 120
 _TEAM_CACHE: dict[int, tuple[float, dict]] = {}
+
+_HITTER_METRIC_KEYS = (
+    "barrel_pct_last_50",
+    "hard_hit_pct_last_50",
+    "xwoba_last_50",
+    "contact_pct_last_50",
+    "chase_pct_last_50",
+)
+_STARTER_METRIC_KEYS = (
+    "xwoba_last_3_starts",
+    "whiff_pct_last_3_starts",
+    "k_pct_last_3_starts",
+    "bb_pct_last_3_starts",
+    "hard_hit_pct_last_3_starts",
+)
+_RELIEVER_METRIC_KEYS = (
+    "xwoba_last_5_apps",
+    "whiff_pct_last_5_apps",
+    "k_pct_last_5_apps",
+    "bb_pct_last_5_apps",
+    "hard_hit_pct_last_5_apps",
+)
+
+
+def _metrics_for_team_role(session, player_id: int, role: str) -> dict:
+    """Return a stable 5-key metrics dict for a roster player role.
+
+    Never raises; if metric computation fails or sample is unavailable, values are None.
+    """
+    try:
+        normalized = (role or "").strip().lower()
+        if normalized == "hitter":
+            raw = compute_hitter_metrics(session, player_id) or {}
+            return {key: raw.get(key) for key in _HITTER_METRIC_KEYS}
+        if normalized == "starter":
+            raw = compute_starter_metrics(session, player_id) or {}
+            return {key: raw.get(key) for key in _STARTER_METRIC_KEYS}
+        if normalized == "reliever":
+            raw = compute_reliever_metrics(session, player_id) or {}
+            return {key: raw.get(key) for key in _RELIEVER_METRIC_KEYS}
+    except Exception:
+        logger.exception("Failed to compute roster metrics for player_id=%s role=%s", player_id, role)
+
+    normalized = (role or "").strip().lower()
+    if normalized == "starter":
+        return {key: None for key in _STARTER_METRIC_KEYS}
+    if normalized == "reliever":
+        return {key: None for key in _RELIEVER_METRIC_KEYS}
+    return {key: None for key in _HITTER_METRIC_KEYS}
 
 
 def _init_sentry() -> None:
@@ -618,6 +668,7 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
                 "full_name": player_name,  # backward compatibility
                 "role": role,
                 "position": position,
+                "metrics": _metrics_for_team_role(session, p.player_id, role),
             }
             if role == "starter":
                 starters.append(payload)
@@ -637,6 +688,9 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
             promoted = [p for _, p in reliever_with_starts[:5]]
             if promoted:
                 starter_ids = {p["player_id"] for p in promoted}
+                for p in promoted:
+                    p["role"] = "starter"
+                    p["metrics"] = _metrics_for_team_role(session, p["player_id"], "starter")
                 starters.extend(promoted)
                 relievers = [p for p in relievers if p["player_id"] not in starter_ids]
         payload = {
