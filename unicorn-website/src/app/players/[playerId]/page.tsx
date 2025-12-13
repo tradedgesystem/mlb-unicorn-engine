@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { fetchPlayerProfile } from "../../../lib/api";
 
 type PlayerResponse = {
   player_id: number;
@@ -44,12 +43,22 @@ const METRIC_KEYS: Record<string, { key: string; label: string }[]> = {
   ],
 };
 
-export default function PlayerPage({ params }: { params: { playerId: string | string[] } }) {
+export default function PlayerPage({
+  params,
+  searchParams,
+}: {
+  params: { playerId: string | string[] };
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
   const raw = Array.isArray(params.playerId) ? params.playerId[0] : params.playerId;
   const playerIdNum = Number(raw);
+  const debug = (Array.isArray(searchParams?.debug) ? searchParams.debug[0] : searchParams?.debug) === "1";
+  const base = process.env.NEXT_PUBLIC_API_BASE || "";
   const [data, setData] = useState<PlayerResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [lastStatus, setLastStatus] = useState<number | null>(null);
+  const [lastUrl, setLastUrl] = useState<string | null>(null);
 
   useEffect(() => {
     if (!Number.isFinite(playerIdNum)) {
@@ -57,20 +66,35 @@ export default function PlayerPage({ params }: { params: { playerId: string | st
       setLoading(false);
       return;
     }
+    if (!base) {
+      setError("Missing NEXT_PUBLIC_API_BASE");
+      setLoading(false);
+      return;
+    }
     const load = async () => {
       try {
         setLoading(true);
         setError(null);
-        const detail = await fetchPlayerProfile(playerIdNum);
+        const url = new URL(`/api/players/${playerIdNum}`, base).toString();
+        setLastUrl(url);
+        const resp = await fetch(url, { cache: "no-store" });
+        setLastStatus(resp.status);
+        if (!resp.ok) {
+          setError(`Unable to load player data (status ${resp.status})`);
+          setData(null);
+          return;
+        }
+        const detail = await resp.json();
         setData(detail);
-      } catch {
+      } catch (err) {
+        console.error("Player fetch failed", err);
         setError("Unable to load player data.");
       } finally {
         setLoading(false);
       }
     };
     load();
-  }, [playerIdNum, raw]);
+  }, [playerIdNum, raw, base]);
 
   const metrics = useMemo(() => {
     const roleKey = (data?.role || "hitter").toLowerCase();
@@ -118,6 +142,22 @@ export default function PlayerPage({ params }: { params: { playerId: string | st
         {error && <p className="text-red-600">{error}</p>}
         {!loading && !error && !hasMetrics && (
           <p className="text-neutral-600">Metrics unavailable.</p>
+        )}
+        {debug && (
+          <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
+            <p>
+              <strong>API Base:</strong> {base || "(empty)"}
+            </p>
+            <p>
+              <strong>Fetch URL:</strong> {lastUrl || "(not fired)"}
+            </p>
+            <p>
+              <strong>HTTP status:</strong> {lastStatus ?? "(unknown)"}
+            </p>
+            <p>
+              <strong>Metric keys:</strong> {Object.keys(data?.metrics || {}).join(", ") || "(none)"}
+            </p>
+          </div>
         )}
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {metrics.map((m) => (
