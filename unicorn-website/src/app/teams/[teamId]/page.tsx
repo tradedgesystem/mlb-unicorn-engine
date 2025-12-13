@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { API_BASE } from "../../../lib/apiBase";
 import { fetchJson } from "../../../lib/fetchJson";
-import { TeamDetailSchema } from "../../../lib/schemas";
+import { TeamDetailSchema, TeamsListSchema } from "../../../lib/schemas";
 
 type Player = {
   player_id: number;
@@ -26,44 +26,82 @@ type TeamDetail = {
 type TabKey = "hitters" | "starters" | "relievers";
 
 export default function TeamPage({ params }: { params: { teamId: string } }) {
-  const teamId = Number(params.teamId);
+  const rawTeamId = params.teamId;
   const [team, setTeam] = useState<TeamDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<TabKey>("hitters");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (Number.isNaN(teamId)) {
-      setError("Invalid team id");
-      setLoading(false);
-      return;
-    }
+    let cancelled = false;
     const load = async () => {
       try {
         setLoading(true);
         setError(null);
-        const url = `${API_BASE}/api/teams/${teamId}`;
+        setTeam(null);
+
+        const isNumeric = /^[0-9]+$/.test(rawTeamId);
+        let resolvedTeamId: number | null = isNumeric ? Number.parseInt(rawTeamId, 10) : null;
+
+        if (resolvedTeamId === null) {
+          const teamsUrl = `${API_BASE}/api/teams`;
+          const teamsRes = await fetchJson<unknown>(teamsUrl, {
+            timeoutMs: 4000,
+            init: { next: { revalidate: 300 } },
+          });
+          if (!teamsRes.ok) {
+            if (cancelled) return;
+            setError(
+              teamsRes.status
+                ? `Unable to load team (status ${teamsRes.status})`
+                : "Unable to load team"
+            );
+            return;
+          }
+          const parsedTeams = TeamsListSchema.safeParse(teamsRes.data);
+          if (!parsedTeams.success) {
+            if (cancelled) return;
+            setError("Unable to load team (invalid teams list).");
+            return;
+          }
+          const needle = rawTeamId.toUpperCase();
+          const match = parsedTeams.data.find((t) => t.abbrev.toUpperCase() === needle);
+          if (!match) {
+            if (cancelled) return;
+            setError("Team not found");
+            return;
+          }
+          resolvedTeamId = match.team_id;
+        }
+
+        const url = `${API_BASE}/api/teams/${resolvedTeamId}`;
         const res = await fetchJson<unknown>(url, { timeoutMs: 4000 });
         if (!res.ok) {
-          setTeam(null);
+          if (cancelled) return;
           setError(res.status ? `Unable to load team (status ${res.status})` : "Unable to load team");
           return;
         }
         const parsed = TeamDetailSchema.safeParse(res.data);
         if (!parsed.success) {
-          setTeam(null);
+          if (cancelled) return;
           setError("Unable to load team (invalid data).");
           return;
         }
+        if (cancelled) return;
         setTeam(parsed.data);
       } catch {
+        if (cancelled) return;
         setError("Unable to load team");
       } finally {
+        if (cancelled) return;
         setLoading(false);
       }
     };
     load();
-  }, [teamId]);
+    return () => {
+      cancelled = true;
+    };
+  }, [rawTeamId]);
 
   const roster = useMemo(() => {
     if (!team) return [];
