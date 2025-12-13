@@ -1,0 +1,32 @@
+name: Warm Render
+
+on:
+  schedule:
+    - cron: "2-59/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  warm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Warm backend via Vercel proxy
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Random jitter (0-20s) to avoid thundering herd.
+          sleep "$((RANDOM % 21))"
+
+          url="https://mlb-unicorn-web.vercel.app/api/warm"
+          for attempt in 1 2 3; do
+            echo "Attempt ${attempt}/3: ${url}"
+            if curl -fsS -L --max-time 25 "${url}"; then
+              echo "Warm OK"
+              exit 0
+            fi
+            echo "Warm failed (attempt ${attempt})" >&2
+            sleep 2
+          done
+
+          echo "Warm failed after 3 attempts" >&2
+          exit 1
