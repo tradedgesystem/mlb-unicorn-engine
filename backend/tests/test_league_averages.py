@@ -29,6 +29,7 @@ def setup_db(monkeypatch):
             models.Player.__table__,
             models.Game.__table__,
             models.PlateAppearance.__table__,
+            models.PitchFact.__table__,
             models.PlayerSummary.__table__,
             models.UnicornTop50Daily.__table__,
         ],

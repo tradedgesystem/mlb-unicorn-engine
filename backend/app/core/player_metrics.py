@@ -23,6 +23,7 @@ from backend.app.db.session import SessionLocal
 
 SWING_RESULTS = {"swinging_strike", "swinging_strike_blocked", "foul", "foul_tip", "in_play", "hit_into_play"}
 CONTACT_RESULTS = {"in_play", "hit_into_play"}
+IN_PLAY_RESULTS = {"in_play", "hit_into_play"}
 
 
 def _safe_div(numer: Optional[float], denom: Optional[float]) -> Optional[float]:
@@ -101,16 +102,39 @@ def _last_pa_ids(session, batter_id: int, limit: int = 50) -> List[int]:
 def _hitter_metrics(session, batter_id: int) -> dict:
     pa_ids = _last_pa_ids(session, batter_id, limit=50)
     if not pa_ids:
-        return {}
+        return {
+            "barrel_pct_last_50": None,
+            "hard_hit_pct_last_50": None,
+            "xwoba_last_50": None,
+            "contact_pct_last_50": None,
+            "chase_pct_last_50": None,
+        }
 
     xwoba = session.scalar(
         select(func.avg(models.PlateAppearance.xwoba)).where(models.PlateAppearance.pa_id.in_(pa_ids))
     )
 
+    batted_ball_cond = and_(
+        models.PitchFact.is_last_pitch_of_pa == True,  # noqa: E712
+        models.PitchFact.result_pitch.in_(IN_PLAY_RESULTS),
+        models.PitchFact.launch_speed != None,  # noqa: E711
+    )
+    derived_barrel_cond = and_(
+        models.PitchFact.launch_speed >= 98,
+        models.PitchFact.launch_angle >= 26,
+        models.PitchFact.launch_angle <= 30,
+    )
+    barrel_cond = or_(
+        models.PitchFact.is_barrel == True,  # noqa: E712
+        derived_barrel_cond,
+    )
+
     pitch_query = select(
         func.count().label("total"),
-        func.sum(case((models.PitchFact.is_barrel == True, 1), else_=0)).label("barrels"),
-        func.sum(case((models.PitchFact.is_hard_hit == True, 1), else_=0)).label("hard_hits"),
+        func.sum(case((and_(batted_ball_cond, barrel_cond), 1), else_=0)).label("barrels"),
+        func.sum(case((and_(batted_ball_cond, models.PitchFact.is_hard_hit == True), 1), else_=0)).label(
+            "hard_hits"
+        ),
         func.sum(case((models.PitchFact.result_pitch.in_(CONTACT_RESULTS), 1), else_=0)).label(
             "contact_swings"
         ),
@@ -125,7 +149,7 @@ def _hitter_metrics(session, batter_id: int) -> dict:
             )
         ).label("swings_outside"),
         func.sum(case((models.PitchFact.is_in_zone == False, 1), else_=0)).label("pitches_outside"),
-        func.sum(case((models.PitchFact.launch_speed != None, 1), else_=0)).label("batted_balls"),
+        func.sum(case((batted_ball_cond, 1), else_=0)).label("batted_balls"),
     ).where(models.PitchFact.pa_id.in_(pa_ids))
 
     stats = session.execute(pitch_query).one()
@@ -139,6 +163,31 @@ def _hitter_metrics(session, batter_id: int) -> dict:
         "xwoba_last_50": float(xwoba) if xwoba is not None else None,
         "contact_pct_last_50": _safe_div(stats.contact_swings, swings),
         "chase_pct_last_50": _safe_div(stats.swings_outside, pitches_outside),
+    }
+
+
+def pitch_facts_barrel_diagnostics(session) -> dict[str, int]:
+    """Return high-level barrel signal counts for debugging ETL/flags.
+
+    - batted_ball_candidates: rows with launch_speed+launch_angle present
+    - flagged_barrels: rows with is_barrel = TRUE
+    """
+    batted_ball_candidates = session.scalar(
+        select(func.count())
+        .select_from(models.PitchFact)
+        .where(
+            models.PitchFact.launch_speed != None,  # noqa: E711
+            models.PitchFact.launch_angle != None,  # noqa: E711
+        )
+    )
+    flagged_barrels = session.scalar(
+        select(func.count())
+        .select_from(models.PitchFact)
+        .where(models.PitchFact.is_barrel == True)  # noqa: E712
+    )
+    return {
+        "batted_ball_candidates": int(batted_ball_candidates or 0),
+        "flagged_barrels": int(flagged_barrels or 0),
     }
 
 
@@ -237,6 +286,94 @@ def _reliever_metrics(session, pitcher_id: int) -> dict:
         "k_pct_last_5_apps": stats["k_pct"],
         "bb_pct_last_5_apps": stats["bb_pct"],
         "hard_hit_pct_last_5_apps": stats["hard_hit_pct"],
+    }
+
+
+def league_hitter_metrics(session, *, as_of_date: Optional[date] = None) -> dict[str, Optional[float]]:
+    """Compute league-level hitter metrics over each batter's last 50 PAs.
+
+    This mirrors the hitter metric definitions and uses batted-ball rows based on pitch_facts.
+    """
+    as_of = as_of_date or date.today()
+    ranked_pas = (
+        select(
+            models.PlateAppearance.pa_id.label("pa_id"),
+            func.row_number()
+            .over(
+                partition_by=models.PlateAppearance.batter_id,
+                order_by=[models.Game.game_date.desc(), models.PlateAppearance.pa_id.desc()],
+            )
+            .label("rn"),
+        )
+        .join(models.Game, models.Game.game_id == models.PlateAppearance.game_id)
+        .where(
+            models.PlateAppearance.batter_id != None,  # noqa: E711
+            models.Game.game_date <= as_of,
+        )
+    ).cte("ranked_pas")
+
+    last_pas = select(ranked_pas.c.pa_id).where(ranked_pas.c.rn <= 50).cte("last_pas")
+
+    xwoba = session.scalar(
+        select(func.avg(models.PlateAppearance.xwoba))
+        .select_from(models.PlateAppearance)
+        .join(last_pas, last_pas.c.pa_id == models.PlateAppearance.pa_id)
+    )
+
+    batted_ball_cond = and_(
+        models.PitchFact.is_last_pitch_of_pa == True,  # noqa: E712
+        models.PitchFact.result_pitch.in_(IN_PLAY_RESULTS),
+        models.PitchFact.launch_speed != None,  # noqa: E711
+    )
+    derived_barrel_cond = and_(
+        models.PitchFact.launch_speed >= 98,
+        models.PitchFact.launch_angle >= 26,
+        models.PitchFact.launch_angle <= 30,
+    )
+    barrel_cond = or_(
+        models.PitchFact.is_barrel == True,  # noqa: E712
+        derived_barrel_cond,
+    )
+
+    pitch_stmt = (
+        select(
+            func.sum(case((and_(batted_ball_cond, barrel_cond), 1), else_=0)).label("barrels"),
+            func.sum(case((and_(batted_ball_cond, models.PitchFact.is_hard_hit == True), 1), else_=0)).label(
+                "hard_hits"
+            ),
+            func.sum(case((batted_ball_cond, 1), else_=0)).label("batted_balls"),
+            func.sum(case((models.PitchFact.result_pitch.in_(CONTACT_RESULTS), 1), else_=0)).label(
+                "contact_swings"
+            ),
+            func.sum(case((models.PitchFact.result_pitch.in_(SWING_RESULTS), 1), else_=0)).label("swings"),
+            func.sum(
+                case(
+                    (
+                        and_(
+                            models.PitchFact.is_in_zone == False,
+                            models.PitchFact.result_pitch.in_(SWING_RESULTS),
+                        ),
+                        1,
+                    ),
+                    else_=0,
+                )
+            ).label("swings_outside"),
+            func.sum(case((models.PitchFact.is_in_zone == False, 1), else_=0)).label("pitches_outside"),
+        )
+        .select_from(models.PitchFact)
+        .join(last_pas, last_pas.c.pa_id == models.PitchFact.pa_id)
+    )
+    stats = session.execute(pitch_stmt).one()
+
+    batted_balls = stats.batted_balls or 0
+    swings = stats.swings or 0
+    pitches_outside = stats.pitches_outside or 0
+    return {
+        "barrel_pct_last_50": _safe_div(stats.barrels, batted_balls),
+        "hard_hit_pct_last_50": _safe_div(stats.hard_hits, batted_balls),
+        "xwoba_last_50": float(xwoba) if xwoba is not None else None,
+        "contact_pct_last_50": _safe_div(stats.contact_swings, swings),
+        "chase_pct_last_50": _safe_div(stats.swings_outside, pitches_outside),
     }
 
 

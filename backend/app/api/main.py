@@ -13,6 +13,7 @@ from backend.app.unicorns.queries import fetch_top50_for_date
 from backend.app.core.player_metrics import (
     _hitter_metrics as compute_hitter_metrics,
     _starter_metrics as compute_starter_metrics,
+    league_hitter_metrics as compute_league_hitter_metrics,
     get_player_role,
     update_all as refresh_player_metrics,
 )
@@ -247,11 +248,6 @@ def get_player_profile(player_id: int, response: Response, as_of_date: Optional[
                 ],
             }
 
-        summary = session.get(models.PlayerSummary, player_id)
-        if summary is None:
-            refresh_player_metrics()  # compute fresh summaries
-            summary = session.get(models.PlayerSummary, player_id)
-
         role = get_player_role(
             session,
             player_id,
@@ -259,7 +255,24 @@ def get_player_profile(player_id: int, response: Response, as_of_date: Optional[
             lookback_days=lookback,
             usage_counts=usage_counts,
         )
-        metrics = _role_metrics(summary)
+
+        if role == "hitter":
+            hitter_keys = [
+                "barrel_pct_last_50",
+                "hard_hit_pct_last_50",
+                "xwoba_last_50",
+                "contact_pct_last_50",
+                "chase_pct_last_50",
+            ]
+            hitter_raw = compute_hitter_metrics(session, player_id) or {}
+            metrics = {key: hitter_raw.get(key) for key in hitter_keys}
+        else:
+            summary = session.get(models.PlayerSummary, player_id)
+            if summary is None:
+                refresh_player_metrics()  # compute fresh summaries
+                summary = session.get(models.PlayerSummary, player_id)
+            metrics = _role_metrics(summary)
+
         unicorns = (
             session.query(models.UnicornTop50Daily)
             .filter(models.UnicornTop50Daily.entity_id == player_id)
@@ -314,6 +327,16 @@ def get_league_averages(role: str, response: Response, as_of_date: Optional[date
             response.headers["Cache-Control"] = "public, max-age=300"
             return cached
 
+        if normalized_role == "hitter":
+            metrics = compute_league_hitter_metrics(session, as_of_date=as_of)
+            payload = {
+                "role": normalized_role,
+                "as_of_date": as_of.isoformat(),
+                "metrics": metrics,
+            }
+            _league_avg_cache_set(normalized_role, as_of, payload)
+            response.headers["Cache-Control"] = "public, max-age=300"
+            return payload
         if session.query(models.PlayerSummary).count() == 0:
             refresh_player_metrics()
 
