@@ -3,6 +3,7 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import func, select
 
 from backend.app.db import models
 from backend.app.db.base import Base
