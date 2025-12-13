@@ -9,3 +9,4 @@ numpy>=1.26
 pybaseball>=2.2
 python-dotenv>=1.0
 pytest>=8.0
+sentry-sdk[fastapi]

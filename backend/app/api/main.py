@@ -1,10 +1,15 @@
 from datetime import date
 import logging
+import os
 from time import time
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
+import sentry_sdk
+from sentry_sdk.integrations.fastapi import FastApiIntegration
+from sentry_sdk.integrations.logging import LoggingIntegration
+from starlette.requests import Request
 from sqlalchemy import func, select
 
 from backend.app.db import models
@@ -55,8 +60,51 @@ _TOP50_TTL_SECONDS = 60
 _TOP50_CACHE: dict[str, tuple[float, list[dict]]] = {}
 
 
+def _init_sentry() -> None:
+    dsn = (os.getenv("SENTRY_DSN") or "").strip()
+    if not dsn:
+        return
+
+    try:
+        traces_sample_rate = float(os.getenv("SENTRY_TRACES_SAMPLE_RATE", "0.1"))
+    except ValueError:
+        traces_sample_rate = 0.1
+
+    sentry_sdk.init(
+        dsn=dsn,
+        environment=os.getenv("SENTRY_ENVIRONMENT", "production"),
+        release=os.getenv("SENTRY_RELEASE") or os.getenv("RENDER_GIT_COMMIT") or "unknown",
+        traces_sample_rate=traces_sample_rate,
+        integrations=[
+            FastApiIntegration(),
+            LoggingIntegration(level=logging.INFO, event_level=logging.ERROR),
+        ],
+    )
+
+
+_init_sentry()
+
+
 def _set_hot_cache_headers(response: Response) -> None:
     response.headers["Cache-Control"] = _HOT_CACHE_CONTROL
+
+
+@app.middleware("http")
+async def sentry_request_context(request: Request, call_next):
+    with sentry_sdk.configure_scope() as scope:
+        scope.set_tag("method", request.method)
+        scope.set_tag("path", request.url.path)
+        route = request.scope.get("route")
+        if route is not None:
+            scope.set_tag("endpoint", getattr(route, "path", None) or getattr(route, "name", None))
+        team_id = request.path_params.get("team_id")
+        player_id = request.path_params.get("player_id")
+        if team_id is not None:
+            scope.set_tag("team_id", str(team_id))
+        if player_id is not None:
+            scope.set_tag("player_id", str(player_id))
+
+    return await call_next(request)
 
 
 def _top50_cache_get(run_date: date) -> Optional[list[dict]]:
@@ -373,6 +421,16 @@ def get_player_profile(player_id: int, response: Response, as_of_date: Optional[
 @app.get("/api/players/{player_id}")
 def get_player_profile_api(player_id: int, response: Response, as_of_date: Optional[date] = None):
     return get_player_profile(player_id, response, as_of_date=as_of_date)
+
+
+@app.get("/api/sentry-test")
+def sentry_test(debug: Optional[str] = None):
+    environment = (os.getenv("SENTRY_ENVIRONMENT") or "production").strip().lower()
+    if environment == "production":
+        raise HTTPException(status_code=404, detail="Not found")
+    if debug not in {None, "", "1"}:
+        raise HTTPException(status_code=400, detail="Invalid debug")
+    raise Exception("Sentry test (backend)")
 
 
 @app.get("/api/league-averages")
