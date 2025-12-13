@@ -561,13 +561,27 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
 
     session = SessionLocal()
     try:
-        as_of = _effective_as_of_date(session, as_of_date)
-        lookback = DEFAULT_LOOKBACK_DAYS
-        usage_counts = get_pitcher_usage_counts(session, as_of_date=as_of, lookback_days=lookback)
         team = session.get(models.Team, team_id)
         if not team:
             raise HTTPException(status_code=404, detail="Team not found")
         players = session.query(models.Player).filter(models.Player.current_team_id == team_id).all()
+        if not players:
+            payload = {
+                "team_id": team.team_id,
+                "team_name": team.team_name,
+                "abbrev": team.abbrev,
+                "hitters": [],
+                "starters": [],
+                "relievers": [],
+            }
+            if as_of_date is None:
+                _team_cache_set(team_id, payload)
+            _set_hot_cache_headers(response)
+            return jsonable_encoder(payload)
+
+        as_of = _effective_as_of_date(session, as_of_date)
+        lookback = DEFAULT_LOOKBACK_DAYS
+        usage_counts = get_pitcher_usage_counts(session, as_of_date=as_of, lookback_days=lookback)
         hitters = []
         starters = []
         relievers = []
