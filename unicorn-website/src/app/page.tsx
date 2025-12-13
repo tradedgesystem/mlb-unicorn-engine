@@ -9,7 +9,7 @@ import { TeamDetailSchema, TeamsListSchema } from "../lib/schemas";
 
 type Team = { team_id: number; team_name: string; abbrev: string };
 type Player = {
-  player_id: number;
+  player_id?: number;
   player_name?: string;
   full_name?: string;
   position?: string | null;

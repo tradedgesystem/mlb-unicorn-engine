@@ -5,9 +5,10 @@ import { useEffect, useMemo, useState } from "react";
 import { API_BASE } from "../../../lib/apiBase";
 import { fetchJson } from "../../../lib/fetchJson";
 import { TeamDetailSchema, TeamsListSchema } from "../../../lib/schemas";
+import * as Sentry from "@sentry/nextjs";
 
 type Player = {
-  player_id: number;
+  player_id?: number;
   player_name?: string;
   full_name?: string;
   position?: string | null;
@@ -25,10 +26,45 @@ type TeamDetail = {
 
 type TabKey = "hitters" | "starters" | "relievers";
 
+function teamFetchErrorMessage(res: { status?: number; error?: string }): string {
+  const err = (res.error || "").toLowerCase();
+  if (err.includes("timeout")) return "Unable to load team (timeout)";
+  if (err.startsWith("invalid json")) return "Unable to load team (invalid response)";
+  if (typeof res.status === "number") return `Unable to load team (status ${res.status})`;
+  return "Unable to load team";
+}
+
+function coerceRosterPlayers(value: unknown): Player[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter((item) => item && typeof item === "object")
+    .map((item) => {
+      const obj = item as Record<string, unknown>;
+      const pid =
+        typeof obj.player_id === "number"
+          ? obj.player_id
+          : typeof obj.player_id === "string"
+            ? Number(obj.player_id)
+            : typeof obj.id === "number"
+              ? obj.id
+              : typeof obj.id === "string"
+                ? Number(obj.id)
+                : undefined;
+      return {
+        player_id: Number.isFinite(pid as number) ? (pid as number) : undefined,
+        player_name: typeof obj.player_name === "string" ? obj.player_name : undefined,
+        full_name: typeof obj.full_name === "string" ? obj.full_name : undefined,
+        position: typeof obj.position === "string" ? obj.position : null,
+        role: typeof obj.role === "string" ? obj.role : null,
+      };
+    });
+}
+
 export default function TeamPage({ params }: { params: { teamId: string } }) {
   const rawTeamId = params.teamId;
   const [team, setTeam] = useState<TeamDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<TabKey>("hitters");
   const [loading, setLoading] = useState(true);
 
@@ -38,10 +74,12 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
       try {
         setLoading(true);
         setError(null);
+        setNotice(null);
         setTeam(null);
 
         const isNumeric = /^[0-9]+$/.test(rawTeamId);
         let resolvedTeamId: number | null = isNumeric ? Number.parseInt(rawTeamId, 10) : null;
+        let resolvedMeta: { team_id: number; team_name: string; abbrev: string } | null = null;
 
         if (resolvedTeamId === null) {
           const teamsUrl = `${API_BASE}/api/teams`;
@@ -51,17 +89,19 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
           });
           if (!teamsRes.ok) {
             if (cancelled) return;
-            setError(
-              teamsRes.status
-                ? `Unable to load team (status ${teamsRes.status})`
-                : "Unable to load team"
-            );
+            const message = teamFetchErrorMessage(teamsRes);
+            console.error(message, teamsRes.error);
+            Sentry.captureMessage(message, { level: "error", extra: { url: teamsUrl, ...teamsRes } });
+            setError(message);
             return;
           }
           const parsedTeams = TeamsListSchema.safeParse(teamsRes.data);
           if (!parsedTeams.success) {
             if (cancelled) return;
-            setError("Unable to load team (invalid teams list).");
+            const message = "Unable to load team (invalid response)";
+            console.error(message);
+            Sentry.captureMessage(message, { level: "error", extra: { url: teamsUrl } });
+            setError(message);
             return;
           }
           const needle = rawTeamId.toUpperCase();
@@ -72,25 +112,73 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
             return;
           }
           resolvedTeamId = match.team_id;
+          resolvedMeta = match;
+        }
+
+        if (resolvedTeamId === null || !Number.isFinite(resolvedTeamId)) {
+          if (cancelled) return;
+          setError("Team not found");
+          return;
         }
 
         const url = `${API_BASE}/api/teams/${resolvedTeamId}`;
-        const res = await fetchJson<unknown>(url, { timeoutMs: 4000 });
+        const res = await fetchJson<unknown>(url, { timeoutMs: 10000 });
         if (!res.ok) {
           if (cancelled) return;
-          setError(res.status ? `Unable to load team (status ${res.status})` : "Unable to load team");
+          const message = teamFetchErrorMessage(res);
+          console.error(message, res.error);
+          Sentry.captureMessage(message, { level: "error", extra: { url, ...res } });
+          setError(message);
           return;
         }
         const parsed = TeamDetailSchema.safeParse(res.data);
         if (!parsed.success) {
+          const raw = res.data as Record<string, unknown> | null;
+          const hitters = raw ? coerceRosterPlayers(raw.hitters) : [];
+          const starters = raw ? coerceRosterPlayers(raw.starters) : [];
+          const relievers = raw ? coerceRosterPlayers(raw.relievers) : [];
+
+          const hasAnyRoster =
+            hitters.length > 0 || starters.length > 0 || relievers.length > 0;
+
           if (cancelled) return;
-          setError("Unable to load team (invalid data).");
+          if (hasAnyRoster) {
+            const bestEffort: TeamDetail = {
+              team_id: resolvedMeta?.team_id ?? (typeof raw?.team_id === "number" ? raw.team_id : resolvedTeamId),
+              team_name:
+                resolvedMeta?.team_name ??
+                (typeof raw?.team_name === "string" ? raw.team_name : `Team ${resolvedTeamId}`),
+              abbrev:
+                resolvedMeta?.abbrev ??
+                (typeof raw?.abbrev === "string" ? raw.abbrev : rawTeamId.toUpperCase()),
+              hitters,
+              starters,
+              relievers,
+            };
+            setTeam(bestEffort);
+            setNotice("Unable to load team (invalid response)");
+            console.error("Team detail schema invalid; rendering best-effort roster");
+            Sentry.captureMessage("Team detail schema invalid; rendering best-effort roster", {
+              level: "warning",
+              extra: { url, teamId: resolvedTeamId },
+            });
+            return;
+          }
+
+          setNotice("Roster unavailable");
+          console.error("Team detail schema invalid; roster unavailable");
+          Sentry.captureMessage("Team detail schema invalid; roster unavailable", {
+            level: "warning",
+            extra: { url, teamId: resolvedTeamId },
+          });
           return;
         }
         if (cancelled) return;
         setTeam(parsed.data);
-      } catch {
+      } catch (err) {
         if (cancelled) return;
+        console.error("Unable to load team", err);
+        Sentry.captureException(err);
         setError("Unable to load team");
       } finally {
         if (cancelled) return;
@@ -143,6 +231,11 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
       {error && (
         <div className="border border-red-600 bg-red-50 text-red-700 px-4 py-3 text-sm">
           {error}
+        </div>
+      )}
+      {notice && !error && (
+        <div className="border border-neutral-400 bg-neutral-100 text-neutral-800 px-4 py-3 text-sm">
+          {notice}
         </div>
       )}
 

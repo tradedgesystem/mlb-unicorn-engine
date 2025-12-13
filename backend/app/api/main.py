@@ -59,6 +59,9 @@ _LEAGUE_AVG_CACHE: dict[tuple[str, str], tuple[float, dict]] = {}
 _TOP50_TTL_SECONDS = 60
 _TOP50_CACHE: dict[str, tuple[float, list[dict]]] = {}
 
+_TEAM_TTL_SECONDS = 120
+_TEAM_CACHE: dict[int, tuple[float, dict]] = {}
+
 
 def _init_sentry() -> None:
     dsn = (os.getenv("SENTRY_DSN") or "").strip()
@@ -120,6 +123,21 @@ def _top50_cache_get(run_date: date) -> Optional[list[dict]]:
 
 def _top50_cache_set(run_date: date, payload: list[dict]) -> None:
     _TOP50_CACHE[run_date.isoformat()] = (time() + _TOP50_TTL_SECONDS, payload)
+
+
+def _team_cache_get(team_id: int) -> Optional[dict]:
+    cached = _TEAM_CACHE.get(team_id)
+    if not cached:
+        return None
+    expires_at, payload = cached
+    if time() < expires_at:
+        return payload
+    _TEAM_CACHE.pop(team_id, None)
+    return None
+
+
+def _team_cache_set(team_id: int, payload: dict) -> None:
+    _TEAM_CACHE[team_id] = (time() + _TEAM_TTL_SECONDS, payload)
 
 
 def _league_avg_cache_get(role: str, as_of: date) -> Optional[dict]:
@@ -527,6 +545,17 @@ def _effective_as_of_date(session, as_of_date: Optional[date]) -> date:
 @app.get("/api/teams/{team_id}")
 def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None):
     started = time()
+    if as_of_date is None:
+        cached = _team_cache_get(team_id)
+        if cached is not None:
+            _set_hot_cache_headers(response)
+            duration = time() - started
+            if duration > 2:
+                logger.warning("Slow request: /api/teams/%s %.3fs", team_id, duration)
+            else:
+                logger.debug("Request: /api/teams/%s %.3fs", team_id, duration)
+            return cached
+
     session = SessionLocal()
     try:
         as_of = _effective_as_of_date(session, as_of_date)
@@ -593,8 +622,7 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
                 starter_ids = {p["player_id"] for p in promoted}
                 starters.extend(promoted)
                 relievers = [p for p in relievers if p["player_id"] not in starter_ids]
-        _set_hot_cache_headers(response)
-        return {
+        payload = {
             "team_id": team.team_id,
             "team_name": team.team_name,
             "abbrev": team.abbrev,
@@ -602,6 +630,10 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
             "starters": starters,
             "relievers": relievers,
         }
+        if as_of_date is None:
+            _team_cache_set(team_id, payload)
+        _set_hot_cache_headers(response)
+        return payload
     except HTTPException:
         raise
     except Exception as exc:

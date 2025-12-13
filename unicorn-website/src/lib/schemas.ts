@@ -33,7 +33,7 @@ export const TeamsListSchema = z.array(TeamSchema);
 
 export const RosterPlayerSchema = z
   .object({
-    player_id: zNumber,
+    player_id: zNumber.optional(),
     player_name: z.string().optional(),
     full_name: z.string().optional(),
     position: z.string().nullable().optional(),
@@ -56,4 +56,3 @@ export type Top50Row = z.infer<typeof Top50RowSchema>;
 export type Team = z.infer<typeof TeamSchema>;
 export type TeamDetail = z.infer<typeof TeamDetailSchema>;
 export type RosterPlayer = z.infer<typeof RosterPlayerSchema>;
-
