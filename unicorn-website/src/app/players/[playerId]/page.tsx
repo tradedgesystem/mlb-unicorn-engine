@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
 
 type PlayerResponse = {
   player_id: number;
@@ -43,74 +40,61 @@ const METRIC_KEYS: Record<string, { key: string; label: string }[]> = {
   ],
 };
 
-export default function PlayerPage({
+export default async function PlayerPage({
   params,
   searchParams,
 }: {
-  params: { playerId: string };
-  searchParams?: Record<string, string | string[] | undefined>;
+  params: { playerId: string } | Promise<{ playerId: string }>;
+  searchParams?: Record<string, string | string[] | undefined> | Promise<
+    Record<string, string | string[] | undefined>
+  >;
 }) {
-  const rawFromParams = Array.isArray(params?.playerId) ? params.playerId[0] : params?.playerId;
+  const resolvedParams = (await Promise.resolve(params as unknown)) as { playerId?: unknown };
+  const resolvedSearch = (await Promise.resolve(searchParams as unknown)) as
+    | Record<string, string | string[] | undefined>
+    | undefined;
+  const rawFromParams = Array.isArray(resolvedParams?.playerId)
+    ? resolvedParams.playerId[0]
+    : resolvedParams?.playerId;
   const playerIdNum = Number(rawFromParams);
   const debug =
-    (Array.isArray(searchParams?.debug) ? searchParams?.debug[0] : searchParams?.debug) === "1";
-  const base = process.env.NEXT_PUBLIC_API_BASE || "";
+    (Array.isArray(resolvedSearch?.debug) ? resolvedSearch?.debug[0] : resolvedSearch?.debug) ===
+    "1";
+  const base = process.env.NEXT_PUBLIC_API_BASE ?? "";
   const invalidId = !Number.isFinite(playerIdNum);
-  const [data, setData] = useState<PlayerResponse | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [lastStatus, setLastStatus] = useState<number | null>(null);
-  const [lastUrl, setLastUrl] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (invalidId) {
-      setError(`Invalid player id: ${String(rawFromParams)}`);
-      setLoading(false);
-      setLastUrl(null);
-      setLastStatus(null);
-      return;
-    }
-    if (!base) {
-      setError("Missing NEXT_PUBLIC_API_BASE");
-      setLoading(false);
-      setLastUrl(null);
-      setLastStatus(null);
-      return;
-    }
-    const load = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const url = new URL(`/api/players/${playerIdNum}`, base).toString();
-        setLastUrl(url);
-        const resp = await fetch(url, { cache: "no-store" });
-        setLastStatus(resp.status);
-        if (!resp.ok) {
-          setError(`Unable to load player data (status ${resp.status})`);
-          setData(null);
-          return;
-        }
-        const detail = await resp.json();
-        setData(detail);
-      } catch (err) {
-        console.error("Player fetch failed", err);
-        setError("Unable to load player data.");
-      } finally {
-        setLoading(false);
+  const url = base && Number.isFinite(playerIdNum)
+    ? new URL(`/api/players/${playerIdNum}`, base).toString()
+    : "";
+  let data: PlayerResponse | null = null;
+  let error: string | null = null;
+  let status: number | null = null;
+
+  if (invalidId) {
+    error = `Invalid player id: ${String(rawFromParams)}`;
+  } else if (!base) {
+    error = "Missing NEXT_PUBLIC_API_BASE";
+  } else {
+    try {
+      const resp = await fetch(url, { cache: "no-store" });
+      status = resp.status;
+      if (!resp.ok) {
+        error = `Unable to load player data (status ${resp.status})`;
+      } else {
+        data = await resp.json();
       }
-    };
-    load();
-  }, [playerIdNum, rawFromParams, base, invalidId]);
+    } catch (err) {
+      console.error("Player fetch failed", err);
+      error = "Unable to load player data.";
+    }
+  }
 
-  const metrics = useMemo(() => {
-    const roleKey = (data?.role || "hitter").toLowerCase();
-    const configs = METRIC_KEYS[roleKey] || METRIC_KEYS.hitter;
-    const metricsObj = data?.metrics || {};
-    return configs.map((cfg) => ({
-      ...cfg,
-      value: metricsObj[cfg.key],
-    }));
-  }, [data]);
+  const roleKey = (data?.role || "hitter").toLowerCase();
+  const configs = METRIC_KEYS[roleKey] || METRIC_KEYS.hitter;
+  const metrics = configs.map((cfg) => ({
+    ...cfg,
+    value: data?.metrics?.[cfg.key],
+  }));
 
   const hasMetrics = metrics.some((m) => m.value !== null && m.value !== undefined);
 
@@ -118,10 +102,10 @@ export default function PlayerPage({
     debug ? (
       <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
         <p>
-          <strong>Params:</strong> {JSON.stringify(params)}
+          <strong>Resolved params:</strong> {JSON.stringify(resolvedParams)}
         </p>
         <p>
-          <strong>SearchParams:</strong> {JSON.stringify(searchParams)}
+          <strong>Resolved search:</strong> {JSON.stringify(resolvedSearch)}
         </p>
         <p>
           <strong>Raw param:</strong> {String(rawFromParams)}
@@ -133,10 +117,10 @@ export default function PlayerPage({
           <strong>API Base:</strong> {base || "(empty)"}
         </p>
         <p>
-          <strong>Fetch URL:</strong> {lastUrl || "(not fired)"}
+          <strong>Fetch URL:</strong> {url || "(not fired)"}
         </p>
         <p>
-          <strong>HTTP status:</strong> {lastStatus ?? "(unknown)"}
+          <strong>HTTP status:</strong> {status ?? "(unknown)"}
         </p>
         <p>
           <strong>Metric keys:</strong> {Object.keys(data?.metrics || {}).join(", ") || "(none)"}
@@ -144,46 +128,13 @@ export default function PlayerPage({
       </div>
     ) : null;
 
-  if (invalidId) {
-    return (
-      <main className="min-h-screen px-4 py-8 sm:px-8 lg:px-16 space-y-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm text-neutral-500">Player</p>
-            <h1 className="text-3xl font-semibold text-neutral-900">Invalid player</h1>
-          </div>
-          <div className="flex gap-2">
-            <Link
-              href="/"
-              className="glass rounded-full px-4 py-2 text-sm text-neutral-800 hover:-translate-y-0.5 transition"
-            >
-              Top 50
-            </Link>
-            <Link
-              href="/teams"
-              className="glass rounded-full px-4 py-2 text-sm text-neutral-800 hover:-translate-y-0.5 transition"
-            >
-              Teams
-            </Link>
-          </div>
-        </div>
-
-        <div className="glass rounded-3xl p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-neutral-900">Predictive Metrics</h2>
-          <p className="text-red-600">Invalid player id: {String(rawFromParams)}</p>
-          <DebugPanel />
-        </div>
-      </main>
-    );
-  }
-
   return (
     <main className="min-h-screen px-4 py-8 sm:px-8 lg:px-16 space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm text-neutral-500">{data?.team_name || "Player"}</p>
           <h1 className="text-3xl font-semibold text-neutral-900">
-            {data?.player_name || `Player ${playerIdNum}`}
+            {data?.player_name || `Player ${Number.isFinite(playerIdNum) ? playerIdNum : ""}`}
           </h1>
           {data?.role && (
             <span className="text-sm text-neutral-600 uppercase tracking-wide">{data.role}</span>
@@ -207,11 +158,8 @@ export default function PlayerPage({
 
       <div className="glass rounded-3xl p-6 space-y-4">
         <h2 className="text-xl font-semibold text-neutral-900">Predictive Metrics</h2>
-        {loading && <p className="text-neutral-600">Loading…</p>}
         {error && <p className="text-red-600">{error}</p>}
-        {!loading && !error && !hasMetrics && (
-          <p className="text-neutral-600">Metrics unavailable.</p>
-        )}
+        {!error && !hasMetrics && <p className="text-neutral-600">Metrics unavailable.</p>}
         <DebugPanel />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {metrics.map((m) => (
