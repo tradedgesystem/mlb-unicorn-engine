@@ -1,3 +1,4 @@
+from copy import deepcopy
 from datetime import date
 import logging
 import os
@@ -5,6 +6,7 @@ from time import time
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Response
+from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 import sentry_sdk
 from sentry_sdk.integrations.fastapi import FastApiIntegration
@@ -137,7 +139,8 @@ def _team_cache_get(team_id: int) -> Optional[dict]:
 
 
 def _team_cache_set(team_id: int, payload: dict) -> None:
-    _TEAM_CACHE[team_id] = (time() + _TEAM_TTL_SECONDS, payload)
+    encoded = jsonable_encoder(payload)
+    _TEAM_CACHE[team_id] = (time() + _TEAM_TTL_SECONDS, deepcopy(encoded))
 
 
 def _league_avg_cache_get(role: str, as_of: date) -> Optional[dict]:
@@ -633,7 +636,7 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
         if as_of_date is None:
             _team_cache_set(team_id, payload)
         _set_hot_cache_headers(response)
-        return payload
+        return jsonable_encoder(payload)
     except HTTPException:
         raise
     except Exception as exc:

@@ -85,3 +85,23 @@ def test_team_endpoint_with_as_of_date(monkeypatch):
     data = resp.json()
     assert data["team_id"] == 119
     assert "hitters" in data and "starters" in data and "relievers" in data
+
+
+def test_team_endpoint_cache_returns_identical_payload(monkeypatch):
+    SessionLocal = setup_db(monkeypatch)
+    seed_team_data(SessionLocal)
+    api_main._TEAM_CACHE.clear()
+    client = TestClient(app)
+
+    resp1 = client.get("/api/teams/119")
+    resp2 = client.get("/api/teams/119")
+
+    assert resp1.status_code == 200
+    assert resp2.status_code == 200
+    data1 = resp1.json()
+    data2 = resp2.json()
+
+    assert data1 == data2
+    for key in ("hitters", "starters", "relievers"):
+        assert isinstance(data1.get(key), list)
+        assert isinstance(data2.get(key), list)
