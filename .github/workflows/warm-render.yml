@@ -17,10 +17,10 @@ jobs:
           # Random jitter (0-20s) to avoid thundering herd.
           sleep "$((RANDOM % 21))"
 
-          url="https://mlb-unicorn-web.vercel.app/api/warm"
           for attempt in 1 2 3; do
+            url="https://mlb-unicorn-web.vercel.app/api/warm?ts=$(date +%s)"
             echo "Attempt ${attempt}/3: ${url}"
-            if curl -fsS -L --max-time 25 "${url}"; then
+            if curl -fsS -L -H "Cache-Control: no-cache" --max-time 25 "${url}"; then
               echo "Warm OK"
               exit 0
             fi
