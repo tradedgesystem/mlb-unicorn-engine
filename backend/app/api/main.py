@@ -1,4 +1,5 @@
 from datetime import date
+import logging
 from time import time
 from typing import Optional
 
@@ -35,6 +36,10 @@ app = FastAPI()
 
 OHTANI_TWO_WAY_ID = 660271
 
+logger = logging.getLogger(__name__)
+
+_HOT_CACHE_CONTROL = "public, max-age=0, s-maxage=60, stale-while-revalidate=300"
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -45,6 +50,28 @@ app.add_middleware(
 
 _LEAGUE_AVG_TTL_SECONDS = 15 * 60
 _LEAGUE_AVG_CACHE: dict[tuple[str, str], tuple[float, dict]] = {}
+
+_TOP50_TTL_SECONDS = 60
+_TOP50_CACHE: dict[str, tuple[float, list[dict]]] = {}
+
+
+def _set_hot_cache_headers(response: Response) -> None:
+    response.headers["Cache-Control"] = _HOT_CACHE_CONTROL
+
+
+def _top50_cache_get(run_date: date) -> Optional[list[dict]]:
+    cached = _TOP50_CACHE.get(run_date.isoformat())
+    if not cached:
+        return None
+    expires_at, payload = cached
+    if time() < expires_at:
+        return payload
+    _TOP50_CACHE.pop(run_date.isoformat(), None)
+    return None
+
+
+def _top50_cache_set(run_date: date, payload: list[dict]) -> None:
+    _TOP50_CACHE[run_date.isoformat()] = (time() + _TOP50_TTL_SECONDS, payload)
 
 
 def _league_avg_cache_get(role: str, as_of: date) -> Optional[dict]:
@@ -120,8 +147,13 @@ def to_dict(row):
 
 @app.get("/top50/{run_date}")
 def get_top50(run_date: date, response: Response):
+    started = time()
     session = SessionLocal()
     try:
+        cached = _top50_cache_get(run_date)
+        if cached is not None:
+            _set_hot_cache_headers(response)
+            return cached
         rows = fetch_top50_for_date(session, run_date)
         apply_min_score_spacing(rows, min_rel_gap=MIN_REL_GAP)
         entity_ids = [int(r.entity_id) for r in rows if r.entity_id is not None]
@@ -141,7 +173,6 @@ def get_top50(run_date: date, response: Response):
                     "primary_pos": primary_pos,
                     "role": role,
                 }
-        response.headers["Cache-Control"] = "public, max-age=300"
         payload = []
         for r in rows:
             base = to_dict(r)
@@ -149,11 +180,18 @@ def get_top50(run_date: date, response: Response):
             base["primary_pos"] = (meta or {}).get("primary_pos")
             base["role"] = (meta or {}).get("role")
             payload.append(base)
+        _top50_cache_set(run_date, payload)
+        _set_hot_cache_headers(response)
         return payload
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     finally:
         session.close()
+        duration = time() - started
+        if duration > 2:
+            logger.warning("Slow request: /top50/%s %.3fs", run_date.isoformat(), duration)
+        else:
+            logger.debug("Request: /top50/%s %.3fs", run_date.isoformat(), duration)
 
 
 @app.get("/players")
@@ -348,7 +386,7 @@ def get_league_averages(role: str, response: Response, as_of_date: Optional[date
         as_of = as_of_date or date.today()
         cached = _league_avg_cache_get(normalized_role, as_of)
         if cached is not None:
-            response.headers["Cache-Control"] = "public, max-age=300"
+            _set_hot_cache_headers(response)
             return cached
 
         if normalized_role == "hitter":
@@ -359,7 +397,7 @@ def get_league_averages(role: str, response: Response, as_of_date: Optional[date
                 "metrics": metrics,
             }
             _league_avg_cache_set(normalized_role, as_of, payload)
-            response.headers["Cache-Control"] = "public, max-age=300"
+            _set_hot_cache_headers(response)
             return payload
         if session.query(models.PlayerSummary).count() == 0:
             refresh_player_metrics()
@@ -383,7 +421,7 @@ def get_league_averages(role: str, response: Response, as_of_date: Optional[date
             "metrics": metrics,
         }
         _league_avg_cache_set(normalized_role, as_of, payload)
-        response.headers["Cache-Control"] = "public, max-age=300"
+        _set_hot_cache_headers(response)
         return payload
     except HTTPException:
         raise
@@ -398,7 +436,7 @@ def list_teams(response: Response):
     session = SessionLocal()
     try:
         teams = session.query(models.Team).order_by(models.Team.team_name.asc()).all()
-        response.headers["Cache-Control"] = "public, max-age=600"
+        _set_hot_cache_headers(response)
         return [
             {"team_id": t.team_id, "team_name": t.team_name, "abbrev": t.abbrev}
             for t in teams
@@ -430,6 +468,7 @@ def _effective_as_of_date(session, as_of_date: Optional[date]) -> date:
 
 @app.get("/api/teams/{team_id}")
 def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None):
+    started = time()
     session = SessionLocal()
     try:
         as_of = _effective_as_of_date(session, as_of_date)
@@ -496,7 +535,7 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
                 starter_ids = {p["player_id"] for p in promoted}
                 starters.extend(promoted)
                 relievers = [p for p in relievers if p["player_id"] not in starter_ids]
-        response.headers["Cache-Control"] = "public, max-age=300"
+        _set_hot_cache_headers(response)
         return {
             "team_id": team.team_id,
             "team_name": team.team_name,
@@ -511,6 +550,11 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     finally:
         session.close()
+        duration = time() - started
+        if duration > 2:
+            logger.warning("Slow request: /api/teams/%s %.3fs", team_id, duration)
+        else:
+            logger.debug("Request: /api/teams/%s %.3fs", team_id, duration)
 
 
 def _seed_sample_top50() -> None:

@@ -1,0 +1,21 @@
+name: Smoke
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * *"
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Smoke curl
+        run: |
+          set -euo pipefail
+          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/health
+          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/
+          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/teams
+          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/players/605141
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.onrender.com/top50/2025-03-27
+

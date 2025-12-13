@@ -2,11 +2,15 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { fetchPlayers, fetchTop50, PlayerMap, UnicornRow } from "../lib/legacyTop";
+import { API_BASE } from "../lib/apiBase";
+import { fetchJson } from "../lib/fetchJson";
+import { Top50ResponseSchema, Top50Row } from "../lib/schemas";
 
 type SortKey = "rank" | "player";
 
-function positionBadge(row: UnicornRow): string {
+type PlayerMap = Record<number, string>;
+
+function positionBadge(row: Top50Row): string {
   const role = (row.role || "").toLowerCase();
   if (role === "starter") return "SP";
   if (role === "reliever") return "RP";
@@ -16,7 +20,7 @@ function positionBadge(row: UnicornRow): string {
 }
 
 export function TopTable() {
-  const [rows, setRows] = useState<UnicornRow[]>([]);
+  const [rows, setRows] = useState<Top50Row[]>([]);
   const [players, setPlayers] = useState<PlayerMap>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -31,9 +35,51 @@ export function TopTable() {
     setLoading(true);
     setError(null);
     try {
-      const [playersMap, top50] = await Promise.all([fetchPlayers(), fetchTop50(runDate)]);
+      const top50Url = `${API_BASE}/top50/${runDate}`;
+      const playersUrl = `${API_BASE}/players`;
+
+      const [playersRes, top50Res] = await Promise.all([
+        fetchJson<unknown>(playersUrl, { timeoutMs: 4000, init: { next: { revalidate: 60 } } }),
+        fetchJson<unknown>(top50Url, { timeoutMs: 4000, init: { next: { revalidate: 60 } } }),
+      ]);
+
+      if (!top50Res.ok) {
+        setRows([]);
+        setPlayers({});
+        setError(`Top 50 temporarily unavailable. ${top50Res.error || ""}`.trim());
+        return;
+      }
+
+      const parsedTop50 = Top50ResponseSchema.safeParse(top50Res.data);
+      if (!parsedTop50.success) {
+        setRows([]);
+        setPlayers({});
+        setError("Top 50 temporarily unavailable (invalid data).");
+        return;
+      }
+
+      const playersMap: PlayerMap = {};
+      if (playersRes.ok) {
+        const raw = playersRes.data;
+        if (Array.isArray(raw)) {
+          raw.forEach((p) => {
+            const pid = Number((p as { id?: unknown }).id);
+            const name = (p as { full_name?: unknown }).full_name;
+            if (Number.isFinite(pid)) {
+              playersMap[pid] = typeof name === "string" && name.trim() ? name : String(pid);
+            }
+          });
+        } else if (raw && typeof raw === "object") {
+          Object.entries(raw as Record<string, unknown>).forEach(([id, name]) => {
+            const pid = Number(id);
+            if (!Number.isFinite(pid)) return;
+            playersMap[pid] = typeof name === "string" && name.trim() ? name : id;
+          });
+        }
+      }
+
       setPlayers(playersMap);
-      setRows(top50);
+      setRows(parsedTop50.data);
       setLastUpdated(new Date());
     } catch (err) {
       console.error(err);
@@ -203,7 +249,7 @@ function Th({ label, onClick, active, dir }: ThProps) {
 }
 
 type FragmentRowProps = {
-  row: UnicornRow & { playerName: string };
+  row: Top50Row & { playerName: string };
   isExpanded: boolean;
   onToggle: () => void;
 };
@@ -278,4 +324,3 @@ function FragmentRow({ row, isExpanded, onToggle }: FragmentRowProps) {
     </>
   );
 }
-

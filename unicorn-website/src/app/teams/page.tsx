@@ -2,18 +2,40 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { fetchTeams } from "../../lib/api";
+import { API_BASE } from "../../lib/apiBase";
+import { fetchJson } from "../../lib/fetchJson";
+import { TeamsListSchema } from "../../lib/schemas";
 
 type Team = { team_id: number; team_name: string; abbrev: string };
 
 export default function TeamsPage() {
   const [teams, setTeams] = useState<Team[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    fetchTeams()
-      .then((data) => setTeams(data))
-      .catch(() => setError("Unable to load teams"));
+    const url = `${API_BASE}/api/teams`;
+    fetchJson<unknown>(url, { timeoutMs: 4000, init: { next: { revalidate: 300 } } })
+      .then((res) => {
+        if (!res.ok) {
+          setError(res.status ? `Unable to load teams (status ${res.status})` : "Unable to load teams");
+          setTeams([]);
+          return;
+        }
+        const parsed = TeamsListSchema.safeParse(res.data);
+        if (!parsed.success) {
+          setError("Unable to load teams (invalid data).");
+          setTeams([]);
+          return;
+        }
+        setTeams(parsed.data);
+      })
+      .catch((err) => {
+        console.error("Teams list unexpected error", err);
+        setError("Unable to load teams (unexpected error).");
+        setTeams([]);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -30,6 +52,10 @@ export default function TeamsPage() {
 
       {error ? (
         <div className="border border-red-600 bg-red-50 text-red-700 px-4 py-3 text-sm">{error}</div>
+      ) : loading ? (
+        <div className="glass p-4 text-sm text-neutral-800">Loading...</div>
+      ) : teams.length === 0 ? (
+        <div className="glass p-4 text-sm text-neutral-800">No teams available.</div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {teams.map((team) => (

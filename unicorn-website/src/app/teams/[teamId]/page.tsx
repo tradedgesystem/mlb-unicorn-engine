@@ -2,14 +2,16 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { fetchTeam } from "../../../lib/api";
+import { API_BASE } from "../../../lib/apiBase";
+import { fetchJson } from "../../../lib/fetchJson";
+import { TeamDetailSchema } from "../../../lib/schemas";
 
 type Player = {
   player_id: number;
   player_name?: string;
   full_name?: string;
-  position?: string;
-  role?: string;
+  position?: string | null;
+  role?: string | null;
 };
 
 type TeamDetail = {
@@ -40,8 +42,20 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
       try {
         setLoading(true);
         setError(null);
-        const detail = await fetchTeam(teamId);
-        setTeam(detail);
+        const url = `${API_BASE}/api/teams/${teamId}`;
+        const res = await fetchJson<unknown>(url, { timeoutMs: 4000 });
+        if (!res.ok) {
+          setTeam(null);
+          setError(res.status ? `Unable to load team (status ${res.status})` : "Unable to load team");
+          return;
+        }
+        const parsed = TeamDetailSchema.safeParse(res.data);
+        if (!parsed.success) {
+          setTeam(null);
+          setError("Unable to load team (invalid data).");
+          return;
+        }
+        setTeam(parsed.data);
       } catch {
         setError("Unable to load team");
       } finally {
