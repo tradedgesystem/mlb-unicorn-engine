@@ -10,7 +10,12 @@ from backend.app.db import models
 from backend.app.db.base import Base
 from backend.app.db.session import SessionLocal, engine
 from backend.app.unicorns.queries import fetch_top50_for_date
-from backend.app.core.player_metrics import get_player_role, update_all as refresh_player_metrics
+from backend.app.core.player_metrics import (
+    _hitter_metrics as compute_hitter_metrics,
+    _starter_metrics as compute_starter_metrics,
+    get_player_role,
+    update_all as refresh_player_metrics,
+)
 from backend.app.core.roles import (
     DEFAULT_LOOKBACK_DAYS,
     DEFAULT_STARTS_THRESHOLD,
@@ -26,6 +31,8 @@ from backend.app.tools.audit_top50_quality import Top50Entry, audit_range, _role
 from backend.app.unicorns.engine import apply_min_score_spacing, MIN_REL_GAP
 
 app = FastAPI()
+
+OHTANI_TWO_WAY_ID = 660271
 
 app.add_middleware(
     CORSMiddleware,
@@ -189,6 +196,57 @@ def get_player_profile(player_id: int, response: Response, as_of_date: Optional[
         if not player:
             raise HTTPException(status_code=404, detail="Player not found")
 
+        if player_id == OHTANI_TWO_WAY_ID:
+            hitter_keys = [
+                "barrel_pct_last_50",
+                "hard_hit_pct_last_50",
+                "xwoba_last_50",
+                "contact_pct_last_50",
+                "chase_pct_last_50",
+            ]
+            starter_keys = [
+                "xwoba_last_3_starts",
+                "whiff_pct_last_3_starts",
+                "k_pct_last_3_starts",
+                "bb_pct_last_3_starts",
+                "hard_hit_pct_last_3_starts",
+            ]
+            hitter_raw = compute_hitter_metrics(session, player_id) or {}
+            starter_raw = compute_starter_metrics(session, player_id) or {}
+            hitter_metrics = {key: hitter_raw.get(key) for key in hitter_keys}
+            pitcher_metrics = {key: starter_raw.get(key) for key in starter_keys}
+
+            unicorns = (
+                session.query(models.UnicornTop50Daily)
+                .filter(models.UnicornTop50Daily.entity_id == player_id)
+                .order_by(models.UnicornTop50Daily.run_date.desc(), models.UnicornTop50Daily.rank.asc())
+                .limit(5)
+                .all()
+            )
+            response.headers["Cache-Control"] = "public, max-age=300"
+            return {
+                "player_id": player[0].player_id,
+                "player_name": player[0].full_name,
+                "team_id": player[1].team_id if player[1] else None,
+                "team_name": player[1].team_name if player[1] else None,
+                "role": "hitter",
+                "metrics": hitter_metrics,
+                "two_way": True,
+                "roles": ["hitter", "starter"],
+                "hitter_metrics": hitter_metrics,
+                "pitcher_metrics": pitcher_metrics,
+                "recent_unicorns": [
+                    {
+                        "run_date": str(u.run_date),
+                        "pattern_id": u.pattern_id,
+                        "description": u.description,
+                        "metric_value": float(u.metric_value),
+                        "score": float(u.score),
+                    }
+                    for u in unicorns
+                ],
+            }
+
         summary = session.get(models.PlayerSummary, player_id)
         if summary is None:
             refresh_player_metrics()  # compute fresh summaries
@@ -347,15 +405,19 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
                 or (base_role in {"starter", "reliever"})
                 or (counts.get("apps", 0) > 0)
             )
-            role = (
-                classify_pitcher_role(
-                    counts.get("starts", 0),
-                    counts.get("apps", 0),
-                    starts_threshold=DEFAULT_STARTS_THRESHOLD,
+            if p.player_id == OHTANI_TWO_WAY_ID:
+                role = "starter"
+                is_pitcher = True
+            else:
+                role = (
+                    classify_pitcher_role(
+                        counts.get("starts", 0),
+                        counts.get("apps", 0),
+                        starts_threshold=DEFAULT_STARTS_THRESHOLD,
+                    )
+                    if is_pitcher
+                    else (base_role or "hitter")
                 )
-                if is_pitcher
-                else (base_role or "hitter")
-            )
             player_name = p.full_name
             if is_placeholder_name(player_name, p.player_id):
                 resolved = get_full_name(p.player_id)

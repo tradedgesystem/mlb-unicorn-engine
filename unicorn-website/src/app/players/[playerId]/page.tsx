@@ -7,6 +7,10 @@ type PlayerResponse = {
   team_name?: string;
   role?: string;
   metrics?: Record<string, number | null>;
+  two_way?: boolean;
+  roles?: string[];
+  hitter_metrics?: Record<string, number | null>;
+  pitcher_metrics?: Record<string, number | null>;
   recent_unicorns?: {
     run_date: string;
     pattern_id: string;
@@ -75,6 +79,8 @@ export default async function PlayerPage({
     : "";
   let data: PlayerResponse | null = null;
   let league: LeagueAveragesResponse | null = null;
+  let leagueHitter: LeagueAveragesResponse | null = null;
+  let leagueStarter: LeagueAveragesResponse | null = null;
   let error: string | null = null;
   let status: number | null = null;
 
@@ -97,19 +103,31 @@ export default async function PlayerPage({
     }
   }
 
-  if (!error && base && data?.role) {
+  if (!error && base && data) {
     try {
-      const role = data.role.toLowerCase();
-      const leagueUrl = new URL(`/api/league-averages?role=${encodeURIComponent(role)}`, base).toString();
-      const resp = await fetch(leagueUrl, { cache: "no-store" });
-      if (resp.ok) {
-        league = await resp.json();
+      if (data.two_way) {
+        const leagueHitterUrl = new URL("/api/league-averages?role=hitter", base).toString();
+        const leagueStarterUrl = new URL("/api/league-averages?role=starter", base).toString();
+        const [hitterResp, starterResp] = await Promise.all([
+          fetch(leagueHitterUrl, { cache: "no-store" }),
+          fetch(leagueStarterUrl, { cache: "no-store" }),
+        ]);
+        if (hitterResp.ok) leagueHitter = await hitterResp.json();
+        if (starterResp.ok) leagueStarter = await starterResp.json();
+      } else if (data.role) {
+        const role = data.role.toLowerCase();
+        const leagueUrl = new URL(`/api/league-averages?role=${encodeURIComponent(role)}`, base).toString();
+        const resp = await fetch(leagueUrl, { cache: "no-store" });
+        if (resp.ok) {
+          league = await resp.json();
+        }
       }
     } catch {
       // Non-fatal: omit league averages when unavailable.
     }
   }
 
+  const isTwoWay = data?.two_way === true;
   const roleKey = (data?.role || "hitter").toLowerCase();
   const configs = METRIC_KEYS[roleKey] || METRIC_KEYS.hitter;
   const metrics = configs.map((cfg) => ({
@@ -120,6 +138,8 @@ export default async function PlayerPage({
 
   const hasMetrics = metrics.some((m) => m.value !== null && m.value !== undefined);
   const showLeagueAvg = Boolean(league && league.metrics);
+  const showLeagueAvgHitter = Boolean(leagueHitter && leagueHitter.metrics);
+  const showLeagueAvgStarter = Boolean(leagueStarter && leagueStarter.metrics);
 
   const debugPanel = debug ? (
     <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
@@ -150,6 +170,19 @@ export default async function PlayerPage({
     </div>
   ) : null;
 
+  const hittingMetrics = METRIC_KEYS.hitter.map((cfg) => ({
+    ...cfg,
+    value: data?.hitter_metrics?.[cfg.key],
+    leagueAvg: leagueHitter?.metrics?.[cfg.key],
+  }));
+  const pitchingMetrics = METRIC_KEYS.starter.map((cfg) => ({
+    ...cfg,
+    value: data?.pitcher_metrics?.[cfg.key],
+    leagueAvg: leagueStarter?.metrics?.[cfg.key],
+  }));
+  const hasHittingMetrics = hittingMetrics.some((m) => m.value !== null && m.value !== undefined);
+  const hasPitchingMetrics = pitchingMetrics.some((m) => m.value !== null && m.value !== undefined);
+
   return (
     <main className="min-h-screen px-4 py-8 sm:px-8 lg:px-16 space-y-6">
       <div className="flex items-center justify-between">
@@ -158,8 +191,12 @@ export default async function PlayerPage({
           <h1 className="text-3xl font-semibold text-neutral-900">
             {data?.player_name || `Player ${Number.isFinite(playerIdNum) ? playerIdNum : ""}`}
           </h1>
-          {data?.role && (
+          {isTwoWay ? (
+            <span className="text-sm text-neutral-600 uppercase tracking-wide">TWO-WAY</span>
+          ) : (
+            data?.role && (
             <span className="text-sm text-neutral-600 uppercase tracking-wide">{data.role}</span>
+            )
           )}
         </div>
         <div className="flex gap-2">
@@ -178,32 +215,93 @@ export default async function PlayerPage({
         </div>
       </div>
 
-      <div className="glass rounded-3xl p-6 space-y-4">
-        <h2 className="text-xl font-semibold text-neutral-900">Predictive Metrics</h2>
-        {error && <p className="text-red-600">{error}</p>}
-        {!error && !hasMetrics && <p className="text-neutral-600">Metrics unavailable.</p>}
-        {debugPanel}
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {metrics.map((m) => (
-            <div key={m.key} className="glass rounded-2xl p-4 shadow-sm">
-              <p className="text-xs uppercase text-neutral-500">{m.label}</p>
-              <p className="text-lg font-semibold text-neutral-900">
-                {m.value !== null && m.value !== undefined
-                  ? Number(m.value).toFixed(3)
-                  : "—"}
-              </p>
-              {showLeagueAvg && (
-                <p className="text-xs text-neutral-500">
-                  League avg:{" "}
-                  {m.leagueAvg !== null && m.leagueAvg !== undefined
-                    ? Number(m.leagueAvg).toFixed(3)
+      {isTwoWay ? (
+        <>
+          <div className="glass rounded-3xl p-6 space-y-4">
+            <h2 className="text-xl font-semibold text-neutral-900">Hitting Metrics</h2>
+            {error && <p className="text-red-600">{error}</p>}
+            {!error && !hasHittingMetrics && (
+              <p className="text-neutral-600">No predictive metrics available yet</p>
+            )}
+            {debugPanel}
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {hittingMetrics.map((m) => (
+                <div key={m.key} className="glass rounded-2xl p-4 shadow-sm">
+                  <p className="text-xs uppercase text-neutral-500">{m.label}</p>
+                  <p className="text-lg font-semibold text-neutral-900">
+                    {m.value !== null && m.value !== undefined
+                      ? Number(m.value).toFixed(3)
+                      : "—"}
+                  </p>
+                  {showLeagueAvgHitter && (
+                    <p className="text-xs text-neutral-500">
+                      League avg:{" "}
+                      {m.leagueAvg !== null && m.leagueAvg !== undefined
+                        ? Number(m.leagueAvg).toFixed(3)
+                        : "—"}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="glass rounded-3xl p-6 space-y-4">
+            <h2 className="text-xl font-semibold text-neutral-900">Pitching Metrics</h2>
+            {error && <p className="text-red-600">{error}</p>}
+            {!error && !hasPitchingMetrics && (
+              <p className="text-neutral-600">No predictive metrics available yet</p>
+            )}
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {pitchingMetrics.map((m) => (
+                <div key={m.key} className="glass rounded-2xl p-4 shadow-sm">
+                  <p className="text-xs uppercase text-neutral-500">{m.label}</p>
+                  <p className="text-lg font-semibold text-neutral-900">
+                    {m.value !== null && m.value !== undefined
+                      ? Number(m.value).toFixed(3)
+                      : "—"}
+                  </p>
+                  {showLeagueAvgStarter && (
+                    <p className="text-xs text-neutral-500">
+                      League avg:{" "}
+                      {m.leagueAvg !== null && m.leagueAvg !== undefined
+                        ? Number(m.leagueAvg).toFixed(3)
+                        : "—"}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="glass rounded-3xl p-6 space-y-4">
+          <h2 className="text-xl font-semibold text-neutral-900">Predictive Metrics</h2>
+          {error && <p className="text-red-600">{error}</p>}
+          {!error && !hasMetrics && <p className="text-neutral-600">Metrics unavailable.</p>}
+          {debugPanel}
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {metrics.map((m) => (
+              <div key={m.key} className="glass rounded-2xl p-4 shadow-sm">
+                <p className="text-xs uppercase text-neutral-500">{m.label}</p>
+                <p className="text-lg font-semibold text-neutral-900">
+                  {m.value !== null && m.value !== undefined
+                    ? Number(m.value).toFixed(3)
                     : "—"}
                 </p>
-              )}
-            </div>
-          ))}
+                {showLeagueAvg && (
+                  <p className="text-xs text-neutral-500">
+                    League avg:{" "}
+                    {m.leagueAvg !== null && m.leagueAvg !== undefined
+                      ? Number(m.leagueAvg).toFixed(3)
+                      : "—"}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="glass rounded-3xl p-6 space-y-3">
         <h2 className="text-xl font-semibold text-neutral-900">Recent Unicorns</h2>
