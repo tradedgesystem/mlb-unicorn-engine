@@ -57,9 +57,10 @@ export default async function PlayerPage({
     ? resolvedParams.playerId[0]
     : resolvedParams?.playerId;
   const playerIdNum = Number(rawFromParams);
-  const debug =
+  const debugRequested =
     (Array.isArray(resolvedSearch?.debug) ? resolvedSearch?.debug[0] : resolvedSearch?.debug) ===
     "1";
+  const debug = debugRequested && process.env.NODE_ENV !== "production";
   const base = process.env.NEXT_PUBLIC_API_BASE ?? "";
   const invalidId = !Number.isFinite(playerIdNum);
 
@@ -98,35 +99,34 @@ export default async function PlayerPage({
 
   const hasMetrics = metrics.some((m) => m.value !== null && m.value !== undefined);
 
-  const DebugPanel = () =>
-    debug ? (
-      <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
-        <p>
-          <strong>Resolved params:</strong> {JSON.stringify(resolvedParams)}
-        </p>
-        <p>
-          <strong>Resolved search:</strong> {JSON.stringify(resolvedSearch)}
-        </p>
-        <p>
-          <strong>Raw param:</strong> {String(rawFromParams)}
-        </p>
-        <p>
-          <strong>Parsed playerIdNum:</strong> {Number.isFinite(playerIdNum) ? playerIdNum : "NaN"}
-        </p>
-        <p>
-          <strong>API Base:</strong> {base || "(empty)"}
-        </p>
-        <p>
-          <strong>Fetch URL:</strong> {url || "(not fired)"}
-        </p>
-        <p>
-          <strong>HTTP status:</strong> {status ?? "(unknown)"}
-        </p>
-        <p>
-          <strong>Metric keys:</strong> {Object.keys(data?.metrics || {}).join(", ") || "(none)"}
-        </p>
-      </div>
-    ) : null;
+  const debugPanel = debug ? (
+    <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
+      <p>
+        <strong>Resolved params:</strong> {JSON.stringify(resolvedParams)}
+      </p>
+      <p>
+        <strong>Resolved search:</strong> {JSON.stringify(resolvedSearch)}
+      </p>
+      <p>
+        <strong>Raw param:</strong> {String(rawFromParams)}
+      </p>
+      <p>
+        <strong>Parsed playerIdNum:</strong> {Number.isFinite(playerIdNum) ? playerIdNum : "NaN"}
+      </p>
+      <p>
+        <strong>API Base:</strong> {base || "(empty)"}
+      </p>
+      <p>
+        <strong>Fetch URL:</strong> {url || "(not fired)"}
+      </p>
+      <p>
+        <strong>HTTP status:</strong> {status ?? "(unknown)"}
+      </p>
+      <p>
+        <strong>Metric keys:</strong> {Object.keys(data?.metrics || {}).join(", ") || "(none)"}
+      </p>
+    </div>
+  ) : null;
 
   return (
     <main className="min-h-screen px-4 py-8 sm:px-8 lg:px-16 space-y-6">
@@ -160,7 +160,7 @@ export default async function PlayerPage({
         <h2 className="text-xl font-semibold text-neutral-900">Predictive Metrics</h2>
         {error && <p className="text-red-600">{error}</p>}
         {!error && !hasMetrics && <p className="text-neutral-600">Metrics unavailable.</p>}
-        <DebugPanel />
+        {debugPanel}
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {metrics.map((m) => (
             <div key={m.key} className="glass rounded-2xl p-4 shadow-sm">
