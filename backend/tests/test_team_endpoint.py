@@ -70,6 +70,9 @@ def test_team_endpoint_without_as_of_date(monkeypatch):
     data = resp.json()
     assert data["team_id"] == 119
     assert "hitters" in data and "starters" in data and "relievers" in data
+    assert isinstance(data.get("starters"), list)
+    assert isinstance(data.get("relievers"), list)
+    assert isinstance(data.get("hitters"), list)
 
 
 def test_team_endpoint_with_as_of_date(monkeypatch):
