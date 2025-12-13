@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 
 type PlayerResponse = {
   player_id: number;
@@ -59,6 +60,11 @@ export default async function PlayerPage({
     Record<string, string | string[] | undefined>
   >;
 }) {
+  const h = await headers();
+  const host = h.get("x-forwarded-host") ?? h.get("host");
+  const proto = h.get("x-forwarded-proto") ?? "https";
+  const origin = host ? `${proto}://${host}` : "";
+
   const resolvedParams = (await Promise.resolve(params as unknown)) as { playerId?: unknown };
   const resolvedSearch = (await Promise.resolve(searchParams as unknown)) as
     | Record<string, string | string[] | undefined>
@@ -71,11 +77,10 @@ export default async function PlayerPage({
     (Array.isArray(resolvedSearch?.debug) ? resolvedSearch?.debug[0] : resolvedSearch?.debug) ===
     "1";
   const debug = debugRequested && process.env.NODE_ENV !== "production";
-  const base = process.env.NEXT_PUBLIC_API_BASE ?? "";
   const invalidId = !Number.isFinite(playerIdNum);
 
-  const url = base && Number.isFinite(playerIdNum)
-    ? new URL(`/api/players/${playerIdNum}`, base).toString()
+  const url = origin && Number.isFinite(playerIdNum)
+    ? new URL(`/api/players/${playerIdNum}`, origin).toString()
     : "";
   let data: PlayerResponse | null = null;
   let league: LeagueAveragesResponse | null = null;
@@ -86,8 +91,8 @@ export default async function PlayerPage({
 
   if (invalidId) {
     error = `Invalid player id: ${String(rawFromParams)}`;
-  } else if (!base) {
-    error = "Missing NEXT_PUBLIC_API_BASE";
+  } else if (!origin) {
+    error = "Missing request origin";
   } else {
     try {
       const resp = await fetch(url, { cache: "no-store" });
@@ -103,11 +108,11 @@ export default async function PlayerPage({
     }
   }
 
-  if (!error && base && data) {
+  if (!error && origin && data) {
     try {
       if (data.two_way) {
-        const leagueHitterUrl = new URL("/api/league-averages?role=hitter", base).toString();
-        const leagueStarterUrl = new URL("/api/league-averages?role=starter", base).toString();
+        const leagueHitterUrl = new URL("/api/league-averages?role=hitter", origin).toString();
+        const leagueStarterUrl = new URL("/api/league-averages?role=starter", origin).toString();
         const [hitterResp, starterResp] = await Promise.all([
           fetch(leagueHitterUrl, { cache: "no-store" }),
           fetch(leagueStarterUrl, { cache: "no-store" }),
@@ -116,7 +121,10 @@ export default async function PlayerPage({
         if (starterResp.ok) leagueStarter = await starterResp.json();
       } else if (data.role) {
         const role = data.role.toLowerCase();
-        const leagueUrl = new URL(`/api/league-averages?role=${encodeURIComponent(role)}`, base).toString();
+        const leagueUrl = new URL(
+          `/api/league-averages?role=${encodeURIComponent(role)}`,
+          origin
+        ).toString();
         const resp = await fetch(leagueUrl, { cache: "no-store" });
         if (resp.ok) {
           league = await resp.json();
@@ -156,7 +164,7 @@ export default async function PlayerPage({
         <strong>Parsed playerIdNum:</strong> {Number.isFinite(playerIdNum) ? playerIdNum : "NaN"}
       </p>
       <p>
-        <strong>API Base:</strong> {base || "(empty)"}
+        <strong>Origin:</strong> {origin || "(missing)"}
       </p>
       <p>
         <strong>Fetch URL:</strong> {url || "(not fired)"}

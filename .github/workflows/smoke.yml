@@ -17,5 +17,8 @@ jobs:
           curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/
           curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/teams
           curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/players/605141
+          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/api/teams
+          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/api/teams/119
+          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/api/players/605141
+          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/api/top50/2025-03-27
           curl -fsS --max-time 10 https://mlb-unicorn-engine.onrender.com/top50/2025-03-27
-

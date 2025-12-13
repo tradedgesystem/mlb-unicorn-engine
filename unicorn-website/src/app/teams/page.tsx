@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { API_BASE } from "../../lib/apiBase";
 import { fetchJson } from "../../lib/fetchJson";
 import { TeamsListSchema } from "../../lib/schemas";
 
@@ -14,7 +13,7 @@ export default function TeamsPage() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const url = `${API_BASE}/api/teams`;
+    const url = "/api/teams";
     fetchJson<unknown>(url, { timeoutMs: 4000, init: { next: { revalidate: 300 } } })
       .then((res) => {
         if (!res.ok) {

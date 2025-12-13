@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { TopTable } from "../components/TopTable";
-import { API_BASE } from "../lib/apiBase";
 import { fetchJson } from "../lib/fetchJson";
 import { TeamDetailSchema, TeamsListSchema } from "../lib/schemas";
 
@@ -33,18 +32,12 @@ export default function Home() {
   const [loadingTeamId, setLoadingTeamId] = useState<number | null>(null);
 
   useEffect(() => {
-    const url = `${API_BASE}/api/teams`;
+    const url = "/api/teams";
     fetchJson<unknown>(url, { timeoutMs: 4000, init: { next: { revalidate: 300 } } })
       .then((res) => {
         if (!res.ok) {
           const status = res.status ? ` (status ${res.status})` : "";
-          const host = (() => {
-            try {
-              return ` from ${new URL(url).host}`;
-            } catch {
-              return "";
-            }
-          })();
+          const host = typeof window !== "undefined" ? ` from ${window.location.host}` : "";
           setTeamsError(`Unable to load teams${status}${host}`);
           setTeams([]);
           return;
@@ -66,7 +59,7 @@ export default function Home() {
   }, []);
 
   const handleSelectTeam = async (teamId: number) => {
-    const url = `${API_BASE}/api/teams/${teamId}`;
+    const url = `/api/teams/${teamId}`;
     console.log("Fetching team roster:", url);
     setLoadingTeamId(teamId);
     setSelectedError(null);
@@ -152,7 +145,7 @@ export default function Home() {
           <h1 className="text-3xl font-semibold text-neutral-900">Unicorn Top 50</h1>
         </div>
         <div className="text-xs text-neutral-500">
-          Live data from mlb-unicorn-engine.onrender.com
+          Live data via /api proxy
         </div>
       </div>
       <section className="glass rounded-3xl p-6 space-y-4">
@@ -205,7 +198,7 @@ export default function Home() {
               <h2 className="text-2xl font-semibold text-neutral-900">{selectedTeam.team_name}</h2>
             </div>
             <p className="text-xs text-neutral-500">
-              Roster loaded from {API_BASE}/api/teams/{selectedTeam.team_id}
+              Roster loaded from /api/teams/{selectedTeam.team_id}
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { API_BASE } from "../../../lib/apiBase";
 import { fetchJson } from "../../../lib/fetchJson";
 import { TeamDetailSchema, TeamsListSchema } from "../../../lib/schemas";
 import * as Sentry from "@sentry/nextjs";
@@ -82,7 +81,7 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
         let resolvedMeta: { team_id: number; team_name: string; abbrev: string } | null = null;
 
         if (resolvedTeamId === null) {
-          const teamsUrl = `${API_BASE}/api/teams`;
+          const teamsUrl = "/api/teams";
           const teamsRes = await fetchJson<unknown>(teamsUrl, {
             timeoutMs: 4000,
             init: { next: { revalidate: 300 } },
@@ -121,7 +120,7 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
           return;
         }
 
-        const url = `${API_BASE}/api/teams/${resolvedTeamId}`;
+        const url = `/api/teams/${resolvedTeamId}`;
         const res = await fetchJson<unknown>(url, { timeoutMs: 10000 });
         if (!res.ok) {
           if (cancelled) return;

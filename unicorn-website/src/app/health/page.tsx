@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { API_BASE } from "../../lib/apiBase";
 
 type CheckResult = {
   url: string;
@@ -27,7 +26,7 @@ export default function HealthPage() {
 
   useEffect(() => {
     const run = async () => {
-      const teamsUrl = `${API_BASE}/api/teams`;
+      const teamsUrl = "/api/teams";
       const teamsRes = await ping(teamsUrl);
       setTeamsCheck(teamsRes);
       if (!teamsRes.ok) {
@@ -41,7 +40,7 @@ export default function HealthPage() {
         if (!firstTeam?.team_id) {
           throw new Error("No team id found");
         }
-        const rosterUrl = `${API_BASE}/api/teams/${firstTeam.team_id}`;
+        const rosterUrl = `/api/teams/${firstTeam.team_id}`;
         const rosterRes = await fetch(rosterUrl, { cache: "no-store" });
         if (!rosterRes.ok) {
           throw new Error(`Roster load failed (${rosterRes.status})`);
@@ -55,10 +54,10 @@ export default function HealthPage() {
           throw new Error("No player found in roster");
         }
         setPlayerId(candidate);
-        setPlayerCheck(await ping(`${API_BASE}/api/players/${candidate}`));
+        setPlayerCheck(await ping(`/api/players/${candidate}`));
       } catch (err) {
         setPlayerCheck({
-          url: `${API_BASE}/api/players/{derived}`,
+          url: "/api/players/{derived}",
           status: null,
           ok: false,
           error: err instanceof Error ? err.message : "Unknown error",
@@ -72,7 +71,10 @@ export default function HealthPage() {
 
   const cards = useMemo(
     () => [
-      { title: "API Base", content: API_BASE },
+      {
+        title: "Proxy",
+        content: typeof window !== "undefined" ? window.location.origin : "(same origin)",
+      },
       {
         title: "Teams endpoint",
         content: teamsCheck

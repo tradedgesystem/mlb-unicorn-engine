@@ -37,9 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ### API base configuration
 
-- Set `NEXT_PUBLIC_API_BASE` in Vercel Production to `https://mlb-unicorn-engine.onrender.com` (or your chosen backend base).
-- The frontend always calls the backend directly at `<base>/api/...`; no calls should go through the Vercel domain.
-- After changing the env var, trigger a redeploy.
+- Set `BACKEND_API_BASE` in Vercel Production/Preview to `https://mlb-unicorn-engine.onrender.com` (or your chosen backend base).
+- The browser calls same-origin `GET /api/...` routes on the Vercel domain, which proxy to the backend.
+- After changing the env var, trigger a redeploy (disable build cache if you’re troubleshooting).
 
 ### Vercel monorepo note
 

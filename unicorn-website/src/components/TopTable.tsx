@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { API_BASE } from "../lib/apiBase";
 import { fetchJson } from "../lib/fetchJson";
 import { Top50ResponseSchema, Top50Row } from "../lib/schemas";
 
@@ -35,8 +34,8 @@ export function TopTable() {
     setLoading(true);
     setError(null);
     try {
-      const top50Url = `${API_BASE}/top50/${runDate}`;
-      const playersUrl = `${API_BASE}/players`;
+      const top50Url = `/api/top50/${runDate}`;
+      const playersUrl = "/api/players";
 
       const [playersRes, top50Res] = await Promise.all([
         fetchJson<unknown>(playersUrl, { timeoutMs: 4000, init: { next: { revalidate: 60 } } }),
