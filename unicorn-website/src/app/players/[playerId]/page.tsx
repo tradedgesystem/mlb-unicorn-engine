@@ -16,6 +16,12 @@ type PlayerResponse = {
   }[];
 };
 
+type LeagueAveragesResponse = {
+  role: string;
+  as_of_date: string;
+  metrics: Record<string, number | null>;
+};
+
 const METRIC_KEYS: Record<string, { key: string; label: string }[]> = {
   hitter: [
     { key: "barrel_pct_last_50", label: "Barrel %" },
@@ -68,6 +74,7 @@ export default async function PlayerPage({
     ? new URL(`/api/players/${playerIdNum}`, base).toString()
     : "";
   let data: PlayerResponse | null = null;
+  let league: LeagueAveragesResponse | null = null;
   let error: string | null = null;
   let status: number | null = null;
 
@@ -90,14 +97,29 @@ export default async function PlayerPage({
     }
   }
 
+  if (!error && base && data?.role) {
+    try {
+      const role = data.role.toLowerCase();
+      const leagueUrl = new URL(`/api/league-averages?role=${encodeURIComponent(role)}`, base).toString();
+      const resp = await fetch(leagueUrl, { cache: "no-store" });
+      if (resp.ok) {
+        league = await resp.json();
+      }
+    } catch {
+      // Non-fatal: omit league averages when unavailable.
+    }
+  }
+
   const roleKey = (data?.role || "hitter").toLowerCase();
   const configs = METRIC_KEYS[roleKey] || METRIC_KEYS.hitter;
   const metrics = configs.map((cfg) => ({
     ...cfg,
     value: data?.metrics?.[cfg.key],
+    leagueAvg: league?.metrics?.[cfg.key],
   }));
 
   const hasMetrics = metrics.some((m) => m.value !== null && m.value !== undefined);
+  const showLeagueAvg = Boolean(league && league.metrics);
 
   const debugPanel = debug ? (
     <div className="rounded-xl border border-dashed border-neutral-300 bg-white/70 p-3 text-xs text-neutral-700 space-y-1">
@@ -170,6 +192,14 @@ export default async function PlayerPage({
                   ? Number(m.value).toFixed(3)
                   : "—"}
               </p>
+              {showLeagueAvg && (
+                <p className="text-xs text-neutral-500">
+                  League avg:{" "}
+                  {m.leagueAvg !== null && m.leagueAvg !== undefined
+                    ? Number(m.leagueAvg).toFixed(3)
+                    : "—"}
+                </p>
+              )}
             </div>
           ))}
         </div>

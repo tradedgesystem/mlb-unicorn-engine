@@ -1,4 +1,5 @@
 from datetime import date
+from time import time
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Response
@@ -33,6 +34,53 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+_LEAGUE_AVG_TTL_SECONDS = 15 * 60
+_LEAGUE_AVG_CACHE: dict[tuple[str, str], tuple[float, dict]] = {}
+
+
+def _league_avg_cache_get(role: str, as_of: date) -> Optional[dict]:
+    key = (role, as_of.isoformat())
+    cached = _LEAGUE_AVG_CACHE.get(key)
+    if not cached:
+        return None
+    expires_at, payload = cached
+    if time() < expires_at:
+        return payload
+    _LEAGUE_AVG_CACHE.pop(key, None)
+    return None
+
+
+def _league_avg_cache_set(role: str, as_of: date, payload: dict) -> None:
+    _LEAGUE_AVG_CACHE[(role, as_of.isoformat())] = (time() + _LEAGUE_AVG_TTL_SECONDS, payload)
+
+
+def _league_avg_metric_columns(role: str) -> dict[str, object]:
+    if role == "hitter":
+        return {
+            "barrel_pct_last_50": models.PlayerSummary.barrel_pct_last_50,
+            "hard_hit_pct_last_50": models.PlayerSummary.hard_hit_pct_last_50,
+            "xwoba_last_50": models.PlayerSummary.xwoba_last_50,
+            "contact_pct_last_50": models.PlayerSummary.contact_pct_last_50,
+            "chase_pct_last_50": models.PlayerSummary.chase_pct_last_50,
+        }
+    if role == "starter":
+        return {
+            "xwoba_last_3_starts": models.PlayerSummary.xwoba_last_3_starts,
+            "whiff_pct_last_3_starts": models.PlayerSummary.whiff_pct_last_3_starts,
+            "k_pct_last_3_starts": models.PlayerSummary.k_pct_last_3_starts,
+            "bb_pct_last_3_starts": models.PlayerSummary.bb_pct_last_3_starts,
+            "hard_hit_pct_last_3_starts": models.PlayerSummary.hard_hit_pct_last_3_starts,
+        }
+    if role == "reliever":
+        return {
+            "xwoba_last_5_apps": models.PlayerSummary.xwoba_last_5_apps,
+            "whiff_pct_last_5_apps": models.PlayerSummary.whiff_pct_last_5_apps,
+            "k_pct_last_5_apps": models.PlayerSummary.k_pct_last_5_apps,
+            "bb_pct_last_5_apps": models.PlayerSummary.bb_pct_last_5_apps,
+            "hard_hit_pct_last_5_apps": models.PlayerSummary.hard_hit_pct_last_5_apps,
+        }
+    return {}
 
 
 @app.on_event("startup")
@@ -192,6 +240,52 @@ def get_player_profile(player_id: int, response: Response, as_of_date: Optional[
 @app.get("/api/players/{player_id}")
 def get_player_profile_api(player_id: int, response: Response, as_of_date: Optional[date] = None):
     return get_player_profile(player_id, response, as_of_date=as_of_date)
+
+
+@app.get("/api/league-averages")
+def get_league_averages(role: str, response: Response, as_of_date: Optional[date] = None):
+    session = SessionLocal()
+    try:
+        normalized_role = (role or "").strip().lower()
+        if normalized_role not in {"hitter", "starter", "reliever"}:
+            raise HTTPException(status_code=400, detail="Invalid role")
+
+        as_of = as_of_date or date.today()
+        cached = _league_avg_cache_get(normalized_role, as_of)
+        if cached is not None:
+            response.headers["Cache-Control"] = "public, max-age=300"
+            return cached
+
+        if session.query(models.PlayerSummary).count() == 0:
+            refresh_player_metrics()
+
+        columns = _league_avg_metric_columns(normalized_role)
+        if not columns:
+            raise HTTPException(status_code=400, detail="Invalid role")
+
+        stmt = select(*(func.avg(col).label(key) for key, col in columns.items())).where(
+            models.PlayerSummary.role == normalized_role
+        )
+        row = session.execute(stmt).first()
+        metrics = {}
+        for key in columns:
+            value = row._mapping.get(key) if row else None
+            metrics[key] = float(value) if value is not None else None
+
+        payload = {
+            "role": normalized_role,
+            "as_of_date": as_of.isoformat(),
+            "metrics": metrics,
+        }
+        _league_avg_cache_set(normalized_role, as_of, payload)
+        response.headers["Cache-Control"] = "public, max-age=300"
+        return payload
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    finally:
+        session.close()
 
 
 @app.get("/api/teams")
