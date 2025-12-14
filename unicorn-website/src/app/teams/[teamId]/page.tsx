@@ -29,37 +29,6 @@ type TeamDetail = {
 
 type TabKey = "hitters" | "starters" | "relievers";
 
-const METRIC_CONFIG: Record<TabKey, { key: string; label: string }[]> = {
-  hitters: [
-    { key: "barrel_pct_last_50", label: "Barrel %" },
-    { key: "hard_hit_pct_last_50", label: "Hard-Hit %" },
-    { key: "xwoba_last_50", label: "xwOBA" },
-    { key: "contact_pct_last_50", label: "Contact %" },
-    { key: "chase_pct_last_50", label: "Chase %" },
-  ],
-  starters: [
-    { key: "xwoba_last_3_starts", label: "xwOBA Allowed" },
-    { key: "whiff_pct_last_3_starts", label: "Whiff %" },
-    { key: "k_pct_last_3_starts", label: "K %" },
-    { key: "bb_pct_last_3_starts", label: "BB %" },
-    { key: "hard_hit_pct_last_3_starts", label: "Hard-Hit % Allowed" },
-  ],
-  relievers: [
-    { key: "xwoba_last_5_apps", label: "xwOBA Allowed" },
-    { key: "whiff_pct_last_5_apps", label: "Whiff %" },
-    { key: "k_pct_last_5_apps", label: "K %" },
-    { key: "bb_pct_last_5_apps", label: "BB %" },
-    { key: "hard_hit_pct_last_5_apps", label: "Hard-Hit % Allowed" },
-  ],
-};
-
-function formatMetricValue(value: unknown): string {
-  if (value === null || value === undefined) return "—";
-  const n = typeof value === "number" ? value : Number(value);
-  if (!Number.isFinite(n)) return "—";
-  return n.toFixed(3);
-}
-
 function teamFetchErrorMessage(res: { status?: number; error?: string }): string {
   const err = (res.error || "").toLowerCase();
   if (err.includes("timeout")) return "Unable to load team (timeout)";
@@ -278,7 +247,6 @@ export default function TeamPage({
     if (activeTab === "starters") return team.starters || [];
     return team.relievers || [];
   }, [team, activeTab]);
-  const metricConfig = METRIC_CONFIG[activeTab];
 
   const hasRoster =
     (team?.hitters?.length || 0) > 0 ||
@@ -337,6 +305,9 @@ export default function TeamPage({
             </button>
           ))}
         </div>
+        {!loading && !error && hasRoster && (
+          <p className="text-xs text-neutral-600">Click a player to view predictive metrics.</p>
+        )}
 
         {loading ? (
           <p className="text-neutral-600">Loading roster…</p>
@@ -351,10 +322,6 @@ export default function TeamPage({
             {roster.map((p) => {
               const pid = p.player_id;
               const valid = typeof pid === "number" && Number.isFinite(pid);
-              const metrics = p.metrics || {};
-              const hasAnyMetric = metricConfig.some(
-                (cfg) => metrics[cfg.key] !== null && metrics[cfg.key] !== undefined
-              );
               return (
                 <li
                   key={pid ?? p.player_name ?? p.full_name ?? `${activeTab}-unknown`}
@@ -381,8 +348,16 @@ export default function TeamPage({
                             ? "Hitter"
                             : activeTab === "starters"
                               ? "Starter"
-                              : "Reliever")}
+                            : "Reliever")}
                       </p>
+                      {valid && (
+                        <Link
+                          href={`/players/${pid}`}
+                          className="text-xs text-neutral-600 hover:underline"
+                        >
+                          View predictive metrics →
+                        </Link>
+                      )}
                     </div>
                     <span className="text-xs uppercase text-neutral-500 whitespace-nowrap">
                       {activeTab === "hitters"
@@ -391,22 +366,6 @@ export default function TeamPage({
                           ? "Starter"
                           : "Reliever"}
                     </span>
-                  </div>
-
-                  {!hasAnyMetric && (
-                    <p className="text-xs text-neutral-600">
-                      No predictive metrics available yet.
-                    </p>
-                  )}
-                  <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-                    {metricConfig.map((cfg) => (
-                      <div key={cfg.key} className="border border-neutral-300 px-2 py-2">
-                        <p className="text-[10px] uppercase text-neutral-500">{cfg.label}</p>
-                        <p className="text-sm text-neutral-900">
-                          {formatMetricValue(metrics[cfg.key])}
-                        </p>
-                      </div>
-                    ))}
                   </div>
                 </li>
               );
