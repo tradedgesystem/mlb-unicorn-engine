@@ -6,6 +6,8 @@ import { fetchJson } from "../../../lib/fetchJson";
 import { TeamDetailSchema, TeamsListSchema } from "../../../lib/schemas";
 import * as Sentry from "@sentry/nextjs";
 
+export const dynamic = "force-dynamic";
+
 type Player = {
   player_id?: number;
   player_name?: string;
@@ -162,8 +164,11 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
           return;
         }
 
-        const url = `/api/teams/${resolvedTeamId}`;
-        const res = await fetchJson<unknown>(url, { timeoutMs: 10000 });
+        const url = `/api/teams/${resolvedTeamId}?ts=${Date.now()}`;
+        const res = await fetchJson<unknown>(url, {
+          timeoutMs: 30_000,
+          init: { cache: "no-store", headers: { "cache-control": "no-cache" } },
+        });
         if (!res.ok) {
           if (cancelled) return;
           const message = teamFetchErrorMessage(res);
@@ -172,9 +177,13 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
           setError(message);
           return;
         }
-        const parsed = TeamDetailSchema.safeParse(res.data);
+
+        const payload = (res.data && typeof res.data === "object"
+          ? (res.data as Record<string, unknown>).team ?? res.data
+          : res.data) as unknown;
+        const parsed = TeamDetailSchema.safeParse(payload);
         if (!parsed.success) {
-          const raw = res.data as Record<string, unknown> | null;
+          const raw = payload as Record<string, unknown> | null;
           const hitters = raw ? coerceRosterPlayers(raw.hitters) : [];
           const starters = raw ? coerceRosterPlayers(raw.starters) : [];
           const relievers = raw ? coerceRosterPlayers(raw.relievers) : [];
@@ -300,6 +309,8 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
 
         {loading ? (
           <p className="text-neutral-600">Loading roster…</p>
+        ) : error ? (
+          <p className="text-neutral-600">Roster unavailable.</p>
         ) : !hasRoster ? (
           <p className="text-neutral-600">No roster data.</p>
         ) : roster.length === 0 ? (
