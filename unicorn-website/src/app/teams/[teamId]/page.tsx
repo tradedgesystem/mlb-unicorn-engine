@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { fetchJson } from "../../../lib/fetchJson";
 import { TeamDetailSchema, TeamsListSchema } from "../../../lib/schemas";
@@ -63,6 +64,9 @@ function teamFetchErrorMessage(res: { status?: number; error?: string }): string
   const err = (res.error || "").toLowerCase();
   if (err.includes("timeout")) return "Unable to load team (timeout)";
   if (err.startsWith("invalid json")) return "Unable to load team (invalid response)";
+  if (err.includes("network error") || err.includes("failed to fetch")) {
+    return "Unable to load team (network error)";
+  }
   if (typeof res.status === "number") return `Unable to load team (status ${res.status})`;
   return "Unable to load team";
 }
@@ -103,8 +107,16 @@ function coerceRosterPlayers(value: unknown): Player[] {
     });
 }
 
-export default function TeamPage({ params }: { params: { teamId: string } }) {
-  const rawTeamId = params.teamId;
+export default function TeamPage({
+  params,
+}: {
+  params: { teamId: string };
+}) {
+  const routeParams = useParams();
+  const routeTeamId =
+    (routeParams as Record<string, string | string[] | undefined>)?.teamId ??
+    params.teamId;
+  const rawTeamId = Array.isArray(routeTeamId) ? routeTeamId[0] : routeTeamId;
   const [team, setTeam] = useState<TeamDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
@@ -120,8 +132,16 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
         setNotice(null);
         setTeam(null);
 
+        if (!rawTeamId) {
+          if (cancelled) return;
+          setError("Team not found");
+          return;
+        }
+
         const isNumeric = /^[0-9]+$/.test(rawTeamId);
-        let resolvedTeamId: number | null = isNumeric ? Number.parseInt(rawTeamId, 10) : null;
+        let resolvedTeamId: number | null = isNumeric
+          ? Number.parseInt(rawTeamId, 10)
+          : null;
         let resolvedMeta: { team_id: number; team_name: string; abbrev: string } | null = null;
 
         if (resolvedTeamId === null) {
@@ -201,10 +221,14 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
           if (cancelled) return;
           if (hasAnyRoster) {
             const bestEffort: TeamDetail = {
-              team_id: resolvedMeta?.team_id ?? (typeof raw?.team_id === "number" ? raw.team_id : resolvedTeamId),
+              team_id:
+                resolvedMeta?.team_id ??
+                (typeof raw?.team_id === "number" ? raw.team_id : resolvedTeamId),
               team_name:
                 resolvedMeta?.team_name ??
-                (typeof raw?.team_name === "string" ? raw.team_name : `Team ${resolvedTeamId}`),
+                (typeof raw?.team_name === "string"
+                  ? raw.team_name
+                  : `Team ${resolvedTeamId}`),
               abbrev:
                 resolvedMeta?.abbrev ??
                 (typeof raw?.abbrev === "string" ? raw.abbrev : rawTeamId.toUpperCase()),
