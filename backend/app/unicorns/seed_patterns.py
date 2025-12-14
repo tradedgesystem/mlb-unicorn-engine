@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from decimal import Decimal
+from textwrap import dedent
 from typing import List
 
 from backend.app.core.logging import logger
@@ -399,6 +400,770 @@ SEED_PATTERNS: List[dict] = [
         "count_value": None,
     },
 ]
+
+
+# --- Core raw-count hitter stats (data-driven patterns) ---
+
+WINDOW_LAST_50_AB = {"type": "last_n_ab", "n": 50}
+WINDOW_LAST_7_DAYS = {"type": "last_n_days", "n": 7}
+WINDOW_SEASON_TO_DATE_PA = {"type": "last_n_pa", "n": 10000}
+
+FASTBALL_TYPES = ["FF", "FT", "SI", "FC", "FA", "FS"]
+BREAKING_TYPES = ["SL", "CU", "KC", "SC", "SV", "KN"]
+OFFSPEED_TYPES = ["CH", "FO", "EP"]
+
+RATE_ORDER_EXPR = "metric_value::float / NULLIF(sample_size, 0)"
+
+BBE_BASE_CONDITIONS = [
+    {"field": "is_last_pitch_of_pa", "op": "=", "value": True},
+    {"field": "launch_speed", "op": "IS NOT NULL"},
+]
+
+AB_LAST_PITCH_CONDITIONS = [
+    {"field": "is_last_pitch_of_pa", "op": "=", "value": True},
+]
+
+BARREL_COND = "launch_speed >= 98 AND launch_angle BETWEEN 26 AND 30"
+
+
+def _sum_case(cond_sql: str) -> str:
+    return f"SUM(CASE WHEN {cond_sql} THEN 1 ELSE 0 END)"
+
+
+def _core_hitter_pattern(
+    *,
+    pattern_id: str,
+    name: str,
+    description_template: str,
+    metric_expr: str,
+    order_direction: str,
+    min_sample: int,
+    complexity_score: int,
+    window: dict | None = WINDOW_LAST_50_AB,
+    base_table: str = "pitch_facts",
+    base_conditions: list[dict] | None = None,
+    extra_conditions: list[dict] | None = None,
+    order_expr: str | None = None,
+    sample_expr: str | None = None,
+) -> dict:
+    conditions: list[dict] = []
+    if base_conditions:
+        conditions.extend(base_conditions)
+    if extra_conditions:
+        conditions.extend(extra_conditions)
+
+    filters_json: dict = {"conditions": conditions}
+    if window:
+        filters_json["window"] = window
+    if order_expr:
+        filters_json["order_expr"] = order_expr
+    if sample_expr:
+        filters_json["sample_expr"] = sample_expr
+
+    return {
+        "pattern_id": pattern_id,
+        "name": name,
+        "description_template": description_template,
+        "entity_type": "batter",
+        "base_table": base_table,
+        "category": "CORE_RAW_COUNTS",
+        "filters_json": filters_json,
+        "order_direction": order_direction,
+        "metric": "custom",
+        "metric_expr": metric_expr,
+        "target_sample": 0,
+        "min_sample": min_sample,
+        "unicorn_weight": Decimal("1.0"),
+        "public_weight": Decimal("1.0"),
+        "complexity_score": complexity_score,
+        "requires_count": False,
+        "count_value": None,
+    }
+
+
+def _surge_expr(*, current_cond: str, season_cond: str) -> str:
+    # Δ = current_count - expected_count; expected_count = season_rate * current_BBE
+    return (
+        f"({_sum_case(current_cond)} - ("
+        f"(SELECT {_sum_case(season_cond)}::float / NULLIF(COUNT(*), 0) "
+        f" FROM pitch_facts pf2"
+        f" JOIN games g2 USING (game_id)"
+        f" WHERE g2.game_date <= :as_of_date"
+        f"   AND pf2.batter_id = windowed.batter_id"
+        f"   AND pf2.is_last_pitch_of_pa = TRUE"
+        f"   AND pf2.launch_speed IS NOT NULL"
+        f") * COUNT(*)))"
+    )
+
+
+CORE_RAW_COUNT_PATTERNS: List[dict] = [
+    # Core raw counts (BBE denom; window = last 50 AB)
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0500",
+        name="Most Barrels (Last 50 AB)",
+        description_template="{{player_name}}: Barrels = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0501",
+        name="Most 100+ EV Balls (Last 50 AB)",
+        description_template="{{player_name}}: 100+ EV = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 100"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0502",
+        name="Most 105+ EV Balls (Last 50 AB)",
+        description_template="{{player_name}}: 105+ EV = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 105"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0503",
+        name="Most 110+ EV Balls (Last 50 AB)",
+        description_template="{{player_name}}: 110+ EV = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 110"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0504",
+        name="Most 95+ EV Balls (Last 50 AB)",
+        description_template="{{player_name}}: 95+ EV = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 95"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0505",
+        name="Most 90+ EV Balls (Last 50 AB)",
+        description_template="{{player_name}}: 90+ EV = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 90"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0506",
+        name='Most "Perfect-Perfect-ish" (Last 50 AB)',
+        description_template="{{player_name}}: EV≥100 & LA 8–32 = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 100 AND launch_angle BETWEEN 8 AND 32"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0507",
+        name='Most "HR Window" Balls (Last 50 AB)',
+        description_template="{{player_name}}: EV≥98 & LA 20–35 = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 98 AND launch_angle BETWEEN 20 AND 35"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0508",
+        name="Most Hard Air Balls (Last 50 AB)",
+        description_template="{{player_name}}: EV≥95 & LA≥10 = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 95 AND launch_angle >= 10"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0509",
+        name="Most Hard Pulled Air Balls (Last 50 AB)",
+        description_template="{{player_name}}: Pulled & EV≥95 & LA 10–35 = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("hit_direction = 'pull' AND launch_speed >= 95 AND launch_angle BETWEEN 10 AND 35"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    # Rates (still display X/Y; sort by rate via order_expr)
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0510",
+        name="Highest Barrel% (Last 50 AB)",
+        description_template="{{player_name}}: Barrel% = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0511",
+        name="Lowest Barrel% (Last 50 AB)",
+        description_template="{{player_name}}: Barrel% = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="asc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0512",
+        name="Highest HardHit% (Last 50 AB)",
+        description_template="{{player_name}}: HardHit% (EV≥95) = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 95"),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0513",
+        name="Lowest HardHit% (Last 50 AB)",
+        description_template="{{player_name}}: HardHit% (EV≥95) = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 95"),
+        order_direction="asc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0514",
+        name="Highest 100+ EV Rate (Last 50 AB)",
+        description_template="{{player_name}}: 100+ rate = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 100"),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0515",
+        name="Lowest 100+ EV Rate (Last 50 AB)",
+        description_template="{{player_name}}: 100+ rate = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed >= 100"),
+        order_direction="asc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    # Pitch-type specific damage (denom = BBE vs pitch bucket; window = last 50 AB)
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0520",
+        name="Highest Barrel% vs 95+ Fastballs (Last 50 AB)",
+        description_template="{{player_name}}: Barrels vs 95+ FB = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=5,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[
+            {"field": "pitch_type", "op": "IN", "value": FASTBALL_TYPES},
+            {"field": "vel", "op": ">=", "value": 95},
+        ],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0521",
+        name="Most Barrels vs 95+ Fastballs (Last 50 AB)",
+        description_template="{{player_name}}: Barrels vs 95+ FB = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[
+            {"field": "pitch_type", "op": "IN", "value": FASTBALL_TYPES},
+            {"field": "vel", "op": ">=", "value": 95},
+        ],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0522",
+        name="Most 100+ EV vs 95+ Fastballs (Last 50 AB)",
+        description_template="{{player_name}}: 100+ EV vs 95+ FB = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case("launch_speed >= 100"),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[
+            {"field": "pitch_type", "op": "IN", "value": FASTBALL_TYPES},
+            {"field": "vel", "op": ">=", "value": 95},
+        ],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0523",
+        name="Highest Avg EV vs 95+ Fastballs (Last 50 AB)",
+        description_template="{{player_name}}: AvgEV vs 95+ FB = {{metric_value}} ({{sample_size}} BBE).",
+        metric_expr="AVG(launch_speed)",
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[
+            {"field": "pitch_type", "op": "IN", "value": FASTBALL_TYPES},
+            {"field": "vel", "op": ">=", "value": 95},
+        ],
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0524",
+        name="Highest Barrel% vs Breaking (Last 50 AB)",
+        description_template="{{player_name}}: Barrels vs Breaking = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "pitch_type", "op": "IN", "value": BREAKING_TYPES}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0525",
+        name="Most Barrels vs Breaking (Last 50 AB)",
+        description_template="{{player_name}}: Barrels vs Breaking = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "pitch_type", "op": "IN", "value": BREAKING_TYPES}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0526",
+        name="Most 100+ EV vs Breaking (Last 50 AB)",
+        description_template="{{player_name}}: 100+ EV vs Breaking = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case("launch_speed >= 100"),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "pitch_type", "op": "IN", "value": BREAKING_TYPES}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0527",
+        name="Highest Avg EV vs Breaking (Last 50 AB)",
+        description_template="{{player_name}}: AvgEV vs Breaking = {{metric_value}} ({{sample_size}} BBE).",
+        metric_expr="AVG(launch_speed)",
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "pitch_type", "op": "IN", "value": BREAKING_TYPES}],
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0528",
+        name="Highest Barrel% vs Offspeed (Last 50 AB)",
+        description_template="{{player_name}}: Barrels vs Offspeed = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "pitch_type", "op": "IN", "value": OFFSPEED_TYPES}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0529",
+        name="Most Barrels vs Offspeed (Last 50 AB)",
+        description_template="{{player_name}}: Barrels vs Offspeed = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "pitch_type", "op": "IN", "value": OFFSPEED_TYPES}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0530",
+        name="Most 100+ EV vs Offspeed (Last 50 AB)",
+        description_template="{{player_name}}: 100+ EV vs Offspeed = {{metric_value}} / {{sample_size}} BBE.",
+        metric_expr=_sum_case("launch_speed >= 100"),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "pitch_type", "op": "IN", "value": OFFSPEED_TYPES}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0531",
+        name="Highest Avg EV vs Offspeed (Last 50 AB)",
+        description_template="{{player_name}}: AvgEV vs Offspeed = {{metric_value}} ({{sample_size}} BBE).",
+        metric_expr="AVG(launch_speed)",
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "pitch_type", "op": "IN", "value": OFFSPEED_TYPES}],
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    # Pulled-air specialists
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0540",
+        name="Most Pulled-Air Barrels (Last 50 AB)",
+        description_template="{{player_name}}: Pulled-air barrels = {{metric_value}} / {{sample_size}} pulled-air BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[
+            {"field": "hit_direction", "op": "=", "value": "pull"},
+            {"field": "launch_angle", "op": ">=", "value": 10},
+        ],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0541",
+        name="Highest Pulled-Air Barrel% (Last 50 AB)",
+        description_template="{{player_name}}: Pulled-air barrel% = {{metric_value}} / {{sample_size}} pulled-air BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=5,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[
+            {"field": "hit_direction", "op": "=", "value": "pull"},
+            {"field": "launch_angle", "op": ">=", "value": 10},
+        ],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0542",
+        name="Most Pulled Hard-Air Balls (Last 50 AB)",
+        description_template="{{player_name}}: Pulled & EV≥95 & LA≥10 = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("hit_direction = 'pull' AND launch_speed >= 95 AND launch_angle >= 10"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0543",
+        name="Highest Pulled Hard-Air Share (Last 50 AB)",
+        description_template="{{player_name}}: Pulled hard-air share = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("hit_direction = 'pull' AND launch_speed >= 95 AND launch_angle >= 10"),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0544",
+        name='Most Pulled "HR-Window" Balls (Last 50 AB)',
+        description_template="{{player_name}}: Pulled & EV≥98 & LA 20–35 = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("hit_direction = 'pull' AND launch_speed >= 98 AND launch_angle BETWEEN 20 AND 35"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    # Air contact quality (air BBE denom; LA>=10 filter)
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0550",
+        name="Most Air Barrels (Last 50 AB)",
+        description_template="{{player_name}}: Air barrels = {{metric_value}} / {{sample_size}} air BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "launch_angle", "op": ">=", "value": 10}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0551",
+        name="Highest Air Barrel% (Last 50 AB)",
+        description_template="{{player_name}}: Air barrel% = {{metric_value}} / {{sample_size}} air BBE.",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "launch_angle", "op": ">=", "value": 10}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0552",
+        name="Most Hard Air Balls (Air BBE) (Last 50 AB)",
+        description_template="{{player_name}}: Hard air (EV≥95) = {{metric_value}} / {{sample_size}} air BBE.",
+        metric_expr=_sum_case("launch_speed >= 95"),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "launch_angle", "op": ">=", "value": 10}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0553",
+        name="Highest Hard-Air% (Last 50 AB)",
+        description_template="{{player_name}}: Hard-air% (EV≥95) = {{metric_value}} / {{sample_size}} air BBE.",
+        metric_expr=_sum_case("launch_speed >= 95"),
+        order_direction="desc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "launch_angle", "op": ">=", "value": 10}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0554",
+        name="Highest Avg EV on Air Balls (Last 50 AB)",
+        description_template="{{player_name}}: AvgEV_air = {{metric_value}} ({{sample_size}} air BBE).",
+        metric_expr="AVG(launch_speed)",
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "launch_angle", "op": ">=", "value": 10}],
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    # Breakout deltas (recent vs baseline; use BBE window for recent)
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0560",
+        name="Barrels Surge (Δ vs Season Rate) (Last 50 AB)",
+        description_template="{{player_name}}: ΔBarrels = {{metric_value}} (BBE={{sample_size}} last 50 AB).",
+        metric_expr=_surge_expr(
+            current_cond=BARREL_COND,
+            season_cond="pf2.launch_speed >= 98 AND pf2.launch_angle BETWEEN 26 AND 30",
+        ),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0561",
+        name="100+ EV Surge (Δ vs Season Rate) (Last 50 AB)",
+        description_template="{{player_name}}: Δ100+ = {{metric_value}} (BBE={{sample_size}} last 50 AB).",
+        metric_expr=_surge_expr(current_cond="launch_speed >= 100", season_cond="pf2.launch_speed >= 100"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0562",
+        name="HardHit Surge (Δ vs Season Rate) (Last 50 AB)",
+        description_template="{{player_name}}: ΔHardHit = {{metric_value}} (BBE={{sample_size}} last 50 AB).",
+        metric_expr=_surge_expr(current_cond="launch_speed >= 95", season_cond="pf2.launch_speed >= 95"),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0563",
+        name="Pulled Hard-Air Surge (Δ vs Season Rate) (Last 50 AB)",
+        description_template="{{player_name}}: ΔPulledHardAir = {{metric_value}} (BBE={{sample_size}} last 50 AB).",
+        metric_expr=_surge_expr(
+            current_cond="hit_direction = 'pull' AND launch_speed >= 95 AND launch_angle >= 10",
+            season_cond="pf2.hit_direction = 'pull' AND pf2.launch_speed >= 95 AND pf2.launch_angle >= 10",
+        ),
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=3,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    # Avoiding weak contact (reverse unicorns)
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0570",
+        name="Fewest Weak Contact Balls (Last 50 AB)",
+        description_template="{{player_name}}: EV<80 = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed < 80"),
+        order_direction="asc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0571",
+        name='Lowest "Soft Air" Rate (Last 50 AB)',
+        description_template="{{player_name}}: Air EV<90 = {{metric_value}} / {{sample_size}} air BBE (last 50 AB).",
+        metric_expr=_sum_case("launch_speed < 90"),
+        order_direction="asc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=BBE_BASE_CONDITIONS,
+        extra_conditions=[{"field": "launch_angle", "op": ">=", "value": 10}],
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0572",
+        name="Lowest Pop-up Rate (Last 50 AB)",
+        description_template="{{player_name}}: Pop-ups = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        metric_expr=_sum_case("batted_ball_type = 'popup'"),
+        order_direction="asc",
+        order_expr=RATE_ORDER_EXPR,
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+
+    # Extreme ceiling
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0580",
+        name="Top Max EV (Last 50 AB)",
+        description_template="{{player_name}}: MaxEV = {{metric_value}} mph ({{sample_size}} BBE last 50 AB).",
+        metric_expr="MAX(launch_speed)",
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0581",
+        name="Top 2nd-Highest EV (Last 50 AB)",
+        description_template="{{player_name}}: EV2 = {{metric_value}} mph ({{sample_size}} BBE last 50 AB).",
+        metric_expr="(array_agg(launch_speed ORDER BY launch_speed DESC))[2]",
+        order_direction="desc",
+        min_sample=10,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0582",
+        name="Most Consecutive Games with 95+ EV (Current Streak)",
+        description_template="{{player_name}}: 95+ EV streak = {{metric_value}} games ({{sample_size}} games tracked).",
+        base_table="pa_facts",
+        window=WINDOW_SEASON_TO_DATE_PA,
+        base_conditions=[],
+        sample_expr="COUNT(DISTINCT game_id)",
+        metric_expr=dedent(
+            """
+            (
+              SELECT COALESCE(
+                array_position(flags, 0) - 1,
+                array_length(flags, 1),
+                0
+              )
+              FROM (
+                SELECT array_agg(has_95 ORDER BY game_date DESC, game_id DESC) AS flags
+                FROM (
+                  SELECT
+                    g.game_date AS game_date,
+                    pa.game_id AS game_id,
+                    MAX(
+                      CASE
+                        WHEN pf.is_last_pitch_of_pa = TRUE
+                         AND pf.launch_speed >= 95
+                        THEN 1
+                        ELSE 0
+                      END
+                    ) AS has_95
+                  FROM pa_facts pa
+                  JOIN games g ON g.game_id = pa.game_id
+                  LEFT JOIN pitch_facts pf
+                    ON pf.game_id = pa.game_id
+                   AND pf.batter_id = pa.batter_id
+                  WHERE g.game_date <= :as_of_date
+                    AND pa.batter_id = windowed.batter_id
+                  GROUP BY g.game_date, pa.game_id
+                ) gf
+              ) flags_sub
+            )
+            """
+        ).strip(),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0583",
+        name="Most Games with a Barrel (Last 50 AB)",
+        description_template="{{player_name}}: Barrel-games = {{metric_value}} / {{sample_size}} games (last 50 AB).",
+        metric_expr="COUNT(DISTINCT CASE WHEN launch_speed >= 98 AND launch_angle BETWEEN 26 AND 30 THEN game_id END)",
+        sample_expr="COUNT(DISTINCT game_id)",
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=2,
+        base_conditions=AB_LAST_PITCH_CONDITIONS,
+        window=WINDOW_LAST_50_AB,
+    ),
+    _core_hitter_pattern(
+        pattern_id="UNQ-H-0584",
+        name='"3-Barrel Week" (Last 7 Days)',
+        description_template="{{player_name}}: Barrels_7d = {{metric_value}} (BBE={{sample_size}}).",
+        metric_expr=_sum_case(BARREL_COND),
+        order_direction="desc",
+        min_sample=5,
+        complexity_score=1,
+        base_conditions=BBE_BASE_CONDITIONS,
+        window=WINDOW_LAST_7_DAYS,
+    ),
+]
+
+SEED_PATTERNS.extend(CORE_RAW_COUNT_PATTERNS)
 
 
 def seed() -> None:

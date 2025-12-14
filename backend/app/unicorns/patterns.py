@@ -1,6 +1,7 @@
 """Pattern validation helpers aligned to global constraints."""
 from __future__ import annotations
 
+import re
 from typing import Iterable
 
 from backend.app.db import models
@@ -30,7 +31,19 @@ def _contains_banned_term(filters_json: object) -> bool:
         return any(_contains_banned_term(v) for v in filters_json)
     if isinstance(filters_json, str):
         lower_val = filters_json.lower()
-        return any(term in lower_val for term in BANNED_TERMS)
+        for term in BANNED_TERMS:
+            term_lower = term.lower()
+            if " " in term_lower:
+                if term_lower in lower_val:
+                    return True
+                continue
+
+            # Match on letter boundaries so "wind" doesn't reject "window", while still
+            # catching tokens like "wind_speed" or "inning_topbot". Allow plural "s".
+            token_re = rf"(?<![a-z]){re.escape(term_lower)}s?(?![a-z])"
+            if re.search(token_re, lower_val):
+                return True
+        return False
     return False
 
 

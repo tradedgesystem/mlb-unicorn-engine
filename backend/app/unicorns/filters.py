@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Dict, Tuple
 
-SUPPORTED_OPS = {"=", "!=", ">", "<", ">=", "<=", "IN", "NOT IN"}
+SUPPORTED_OPS = {"=", "!=", ">", "<", ">=", "<=", "IN", "NOT IN", "IS NULL", "IS NOT NULL"}
 
 
 def _next_param(counter: int) -> str:
@@ -25,6 +25,19 @@ def build_filter_clause(filters_json: dict | None) -> Tuple[str, Dict[str, objec
         value = condition.get("value")
         if not field or op not in SUPPORTED_OPS:
             continue
+
+        if op in {"IS NULL", "IS NOT NULL"}:
+            clauses.append(f"{field} {op}")
+            continue
+
+        # Translate NULL comparisons into SQL IS (NOT) NULL for correctness.
+        if value is None:
+            if op == "=":
+                clauses.append(f"{field} IS NULL")
+                continue
+            if op == "!=":
+                clauses.append(f"{field} IS NOT NULL")
+                continue
 
         param_name = _next_param(counter)
         counter += 1

@@ -2,33 +2,16 @@ from datetime import date
 from types import SimpleNamespace
 
 from backend.app.unicorns.engine import MAX_PER_PATTERN_PER_DAY, _select_top50, apply_min_score_spacing
-from backend.app.unicorns.scoring import compute_scores
 
 
 class DummyPattern(SimpleNamespace):
     pass
 
 
-def test_rank_spread_z_used_for_tiny_stddev():
-    pattern = DummyPattern(
-        order_direction="desc",
-        target_sample=0,
-        unicorn_weight=1.0,
-        public_weight=1.0,
-        category=None,
-    )
-    rows = [{"entity_id": i, "metric_value": 1.0, "sample_size": 10} for i in range(4)]
-    scored = compute_scores(pattern, rows, lambda _: 1.0)
-    z_values = [round(r.z_raw, 3) for r in scored]
-    assert len(set(z_values)) == 4  # rank spread assigns unique values
-    assert max(z_values) == 2.0
-    assert min(z_values) == 0.0
-
-
 def test_select_top50_limits_per_pattern_and_uniqueness():
     run_date = date(2025, 3, 27)
     rows = []
-    # Pattern A: 7 candidates (should cap at 5)
+    # Pattern A: 7 candidates (should cap at MAX_PER_PATTERN_PER_DAY)
     for idx in range(7):
         res = SimpleNamespace(
             run_date=run_date,
@@ -67,13 +50,13 @@ def test_select_top50_limits_per_pattern_and_uniqueness():
         ]
     )
 
-    top = _select_top50(rows, run_date, recent_top50={}, recent_top10={})
+    top = _select_top50(rows, run_date)
     pattern_a_count = sum(1 for r in top if r.pattern_id == "PAT-A")
     pattern_b_count = sum(1 for r in top if r.pattern_id == "PAT-B")
     entity_ids = [r.entity_id for r in top]
 
     assert pattern_a_count == MAX_PER_PATTERN_PER_DAY
-    assert pattern_b_count == 1  # duplicate entity_id skipped
+    assert pattern_b_count == 1
     assert len(entity_ids) == len(set(entity_ids))  # unique players only
 
 
@@ -92,41 +75,10 @@ def test_apply_min_score_spacing_monotonic():
         assert rows[i].score <= rows[i - 1].score * (1 - 0.1) + 1e-9
 
 
-def test_cooldown_skips_recent_dominator():
-    run_date = date(2025, 3, 27)
-    # Candidate rows sorted by score desc.
-    dom = SimpleNamespace(
-        run_date=run_date,
-        entity_id=1,
-        pattern_id="PAT-A",
-        entity_type="player",
-        metric_value=10.0,
-        sample_size=10,
-        score=100,
-    )
-    alt = SimpleNamespace(
-        run_date=run_date,
-        entity_id=2,
-        pattern_id="PAT-A",
-        entity_type="player",
-        metric_value=9.0,
-        sample_size=10,
-        score=90,
-    )
-    rows = [
-        (dom, "Dom", "TeamX", "{{player_name}} test"),
-        (alt, "Alt", "TeamX", "{{player_name}} test"),
-    ]
-    recent_top50 = {1: 10}  # dominator exceeds limit
-    recent_top10 = {1: 10}
-    top = _select_top50(rows, run_date, recent_top50, recent_top10)
-    assert [r.entity_id for r in top] == [2]  # dominator skipped, next best kept
-
-
-def test_short_list_when_constraints_filter_out():
+def test_short_list_when_pattern_cap_filters_out():
     run_date = date(2025, 3, 27)
     rows = []
-    # Only one candidate passes; others exceed per-pattern cap and cooldown.
+    # Only one candidate passes; others exceed per-pattern cap.
     for idx in range(6):
         res = SimpleNamespace(
             run_date=run_date,
@@ -138,9 +90,7 @@ def test_short_list_when_constraints_filter_out():
             score=100 - idx,
         )
         rows.append((res, f"P{idx+1}", "TeamA", "{{player_name}} test"))
-    recent_top50 = {i: 5 for i in range(1, 6)}  # first five blocked by cooldown
-    recent_top10 = {}
-    top = _select_top50(rows, run_date, recent_top50, recent_top10)
+    top = _select_top50(rows, run_date)
     assert len(top) == 1
     assert top[0].rank == 1
-    assert top[0].entity_id == 6
+    assert top[0].entity_id == 1
