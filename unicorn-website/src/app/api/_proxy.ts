@@ -154,6 +154,12 @@ export async function proxyGet(
         cache: "no-store",
       });
       const headers = new Headers(res.headers);
+      // Node fetch transparently decodes compressed responses but leaves
+      // `content-encoding` / `content-length` from the upstream. If we forward
+      // those headers with a decoded body, Vercel can truncate the payload.
+      headers.delete("content-encoding");
+      headers.delete("content-length");
+      headers.delete("transfer-encoding");
       headers.set("cache-control", CACHE_CONTROL);
       headers.set("x-proxy-upstream", upstreamPathOnly);
       headers.set("x-proxy-cache", "miss");
