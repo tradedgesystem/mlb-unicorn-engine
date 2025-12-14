@@ -164,9 +164,9 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
           return;
         }
 
-        const url = `/api/teams/${resolvedTeamId}?ts=${Date.now()}`;
+        const url = `/api/teams/${resolvedTeamId}`;
         const res = await fetchJson<unknown>(url, {
-          timeoutMs: 30_000,
+          timeoutMs: 60_000,
           init: { cache: "no-store", headers: { "cache-control": "no-cache" } },
         });
         if (!res.ok) {
@@ -183,6 +183,13 @@ export default function TeamPage({ params }: { params: { teamId: string } }) {
           : res.data) as unknown;
         const parsed = TeamDetailSchema.safeParse(payload);
         if (!parsed.success) {
+          console.error("Team page parse failed", {
+            teamId: resolvedTeamId,
+            keys:
+              payload && typeof payload === "object" && !Array.isArray(payload)
+                ? Object.keys(payload as Record<string, unknown>)
+                : [],
+          });
           const raw = payload as Record<string, unknown> | null;
           const hitters = raw ? coerceRosterPlayers(raw.hitters) : [];
           const starters = raw ? coerceRosterPlayers(raw.starters) : [];
