@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 
 const DEFAULT_TIMEOUT_MS = 60_000;
 const CACHE_CONTROL = "public, max-age=0, s-maxage=60, stale-while-revalidate=300";
+const CACHE_CONTROL_ERROR = "no-store";
 
 export type ProxyGetOptions = {
   timeoutMs?: number;
@@ -47,10 +48,27 @@ function jsonError(
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": CACHE_CONTROL,
+      "cache-control": CACHE_CONTROL_ERROR,
       ...(headers || {}),
     },
   });
+}
+
+function isJsonContentType(contentType: string | null): boolean {
+  if (!contentType) return false;
+  const lower = contentType.toLowerCase();
+  return lower.includes("application/json") || lower.includes("+json");
+}
+
+function isValidJson(bodyBytes: ArrayBuffer): boolean {
+  try {
+    if (bodyBytes.byteLength === 0) return false;
+    const text = new TextDecoder().decode(bodyBytes);
+    JSON.parse(text);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export async function proxyGet(
@@ -122,34 +140,88 @@ export async function proxyGet(
 
   try {
     const accept = request.headers.get("accept");
-    const res = await fetch(upstreamUrl, {
-      method: "GET",
-      headers: accept ? { accept } : undefined,
-      signal: controller.signal,
-      cache: "no-store",
-    });
+    const requestHeaders = accept ? { accept } : undefined;
 
-    const headers = new Headers(res.headers);
-    headers.set("cache-control", CACHE_CONTROL);
-    headers.set("x-proxy-upstream", upstreamPathOnly);
-    headers.set("x-proxy-duration-ms", String(Date.now() - startedAt));
-    headers.set("x-proxy-cache", "miss");
+    const fetchUpstream = async (): Promise<{
+      res: Response;
+      headers: Headers;
+      bodyBytes: ArrayBuffer;
+    }> => {
+      const res = await fetch(upstreamUrl, {
+        method: "GET",
+        headers: requestHeaders,
+        signal: controller.signal,
+        cache: "no-store",
+      });
+      const headers = new Headers(res.headers);
+      headers.set("cache-control", CACHE_CONTROL);
+      headers.set("x-proxy-upstream", upstreamPathOnly);
+      headers.set("x-proxy-cache", "miss");
+      const body = await res.arrayBuffer();
+      const bodyBytes = body.slice(0);
+      return { res, headers, bodyBytes };
+    };
 
-    const body = await res.arrayBuffer();
-    const bodyBytes = body.slice(0);
-    if (res.status === 200) {
+    // Retry once if upstream returns invalid JSON (can happen if connection is cut mid-stream).
+    let attempt = 0;
+    let upstream = await fetchUpstream();
+    attempt += 1;
+    while (
+      attempt < 2 &&
+      upstream.res.status === 200 &&
+      isJsonContentType(upstream.headers.get("content-type")) &&
+      !isValidJson(upstream.bodyBytes)
+    ) {
+      upstream = await fetchUpstream();
+      attempt += 1;
+    }
+
+    const durationMs = Date.now() - startedAt;
+    upstream.headers.set("x-proxy-duration-ms", String(durationMs));
+
+    if (
+      upstream.res.status === 200 &&
+      isJsonContentType(upstream.headers.get("content-type")) &&
+      !isValidJson(upstream.bodyBytes)
+    ) {
+      if (cached) {
+        return new Response(cached.body, {
+          status: 200,
+          headers: {
+            "content-type": cached.contentType || "application/json; charset=utf-8",
+            "cache-control": CACHE_CONTROL,
+            "x-proxy-upstream": upstreamPathOnly,
+            "x-proxy-duration-ms": String(durationMs),
+            "x-proxy-cache": "stale",
+            "x-proxy-error": "invalid_json",
+          },
+        });
+      }
+      return jsonError(
+        502,
+        { error: "upstream invalid json", upstream: upstreamPathOnly },
+        {
+          "x-proxy-upstream": upstreamPathOnly,
+          "x-proxy-duration-ms": String(durationMs),
+          "x-proxy-error": "invalid_json",
+          "x-proxy-cache": "miss",
+        }
+      );
+    }
+
+    if (upstream.res.status === 200) {
       CACHE.set(cacheKey, {
-        body: bodyBytes,
-        contentType: headers.get("content-type"),
+        body: upstream.bodyBytes,
+        contentType: upstream.headers.get("content-type"),
         cachedAt: Date.now(),
         ttlMs,
       });
     }
 
-    return new Response(bodyBytes, {
-      status: res.status,
-      statusText: res.statusText,
-      headers,
+    return new Response(upstream.bodyBytes, {
+      status: upstream.res.status,
+      statusText: upstream.res.statusText,
+      headers: upstream.headers,
     });
   } catch (err) {
     const durationMs = Date.now() - startedAt;
