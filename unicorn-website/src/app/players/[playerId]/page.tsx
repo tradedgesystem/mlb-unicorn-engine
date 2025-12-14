@@ -209,16 +209,16 @@ export default async function PlayerPage({
         </div>
         <div className="flex gap-2">
           <Link
+            href={data?.team_id ? `/teams/${data.team_id}` : "/teams"}
+            className="glass px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-200"
+          >
+            ← Team roster
+          </Link>
+          <Link
             href="/"
             className="glass px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-200"
           >
             Top 50
-          </Link>
-          <Link
-            href="/teams"
-            className="glass px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-200"
-          >
-            Teams
           </Link>
         </div>
       </div>

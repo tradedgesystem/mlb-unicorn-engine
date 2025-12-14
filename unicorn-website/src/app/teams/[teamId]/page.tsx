@@ -29,6 +29,8 @@ type TeamDetail = {
 
 type TabKey = "hitters" | "starters" | "relievers";
 
+const OHTANI_PLAYER_ID = 660271;
+
 function teamFetchErrorMessage(res: { status?: number; error?: string }): string {
   const err = (res.error || "").toLowerCase();
   if (err.includes("timeout")) return "Unable to load team (timeout)";
@@ -243,9 +245,29 @@ export default function TeamPage({
 
   const roster = useMemo(() => {
     if (!team) return [];
-    if (activeTab === "hitters") return team.hitters || [];
-    if (activeTab === "starters") return team.starters || [];
-    return team.relievers || [];
+    const hitters = team.hitters || [];
+    const starters = team.starters || [];
+    const relievers = team.relievers || [];
+
+    if (activeTab === "hitters") {
+      const hasOhtani = hitters.some((p) => p.player_id === OHTANI_PLAYER_ID);
+      if (hasOhtani) return hitters;
+      const ohtani =
+        starters.find((p) => p.player_id === OHTANI_PLAYER_ID) ??
+        relievers.find((p) => p.player_id === OHTANI_PLAYER_ID);
+      return ohtani ? [ohtani, ...hitters] : hitters;
+    }
+
+    if (activeTab === "starters") {
+      const hasOhtani = starters.some((p) => p.player_id === OHTANI_PLAYER_ID);
+      if (hasOhtani) return starters;
+      const ohtani =
+        hitters.find((p) => p.player_id === OHTANI_PLAYER_ID) ??
+        relievers.find((p) => p.player_id === OHTANI_PLAYER_ID);
+      return ohtani ? [ohtani, ...starters] : starters;
+    }
+
+    return relievers;
   }, [team, activeTab]);
 
   const hasRoster =
