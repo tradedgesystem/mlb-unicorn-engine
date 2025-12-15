@@ -501,7 +501,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0500",
         name="Most Barrels (Last 50 AB)",
-        description_template="{{player_name}}: Barrels = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} barrels ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         min_sample=10,
@@ -512,7 +512,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0501",
         name="Most 100+ EV Balls (Last 50 AB)",
-        description_template="{{player_name}}: batted balls hit 100+ mph = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} balls hit 100+ mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 100"),
         order_direction="desc",
         min_sample=10,
@@ -523,7 +523,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0502",
         name="Most 105+ EV Balls (Last 50 AB)",
-        description_template="{{player_name}}: batted balls hit 105+ mph = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} balls hit 105+ mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 105"),
         order_direction="desc",
         min_sample=10,
@@ -534,7 +534,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0503",
         name="Most 110+ EV Balls (Last 50 AB)",
-        description_template="{{player_name}}: batted balls hit 110+ mph = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} balls hit 110+ mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 110"),
         order_direction="desc",
         min_sample=10,
@@ -545,7 +545,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0504",
         name="Most 95+ EV Balls (Last 50 AB)",
-        description_template="{{player_name}}: batted balls hit 95+ mph = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} balls hit 95+ mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 95"),
         order_direction="desc",
         min_sample=10,
@@ -556,7 +556,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0505",
         name="Most 90+ EV Balls (Last 50 AB)",
-        description_template="{{player_name}}: batted balls hit 90+ mph = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} balls hit 90+ mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 90"),
         order_direction="desc",
         min_sample=10,
@@ -567,7 +567,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0506",
         name='Most "Perfect-Perfect-ish" (Last 50 AB)',
-        description_template="{{player_name}}: batted balls hit 100+ mph with a 8–32° launch angle = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} balls hit 100+ mph with an 8–32° launch angle ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 100 AND launch_angle BETWEEN 8 AND 32"),
         order_direction="desc",
         min_sample=10,
@@ -578,7 +578,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0507",
         name='Most "HR Window" Balls (Last 50 AB)',
-        description_template="{{player_name}}: batted balls hit 98+ mph with a 20–35° launch angle = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} balls hit 98+ mph with a 20–35° launch angle ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 98 AND launch_angle BETWEEN 20 AND 35"),
         order_direction="desc",
         min_sample=10,
@@ -589,7 +589,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0508",
         name="Most Hard Air Balls (Last 50 AB)",
-        description_template="{{player_name}}: hard-hit air balls (95+ mph, 10°+ launch angle) = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} hard-hit air balls (95+ mph, 10°+ launch angle) in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 95 AND launch_angle >= 10"),
         order_direction="desc",
         min_sample=10,
@@ -600,7 +600,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0509",
         name="Most Hard Pulled Air Balls (Last 50 AB)",
-        description_template="{{player_name}}: pulled hard-hit air balls (95+ mph, 10–35° launch angle) = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} pulled hard-hit air balls (95+ mph, 10–35° launch angle) in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("hit_direction = 'pull' AND launch_speed >= 95 AND launch_angle BETWEEN 10 AND 35"),
         order_direction="desc",
         min_sample=10,
@@ -613,7 +613,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0510",
         name="Highest Barrel% (Last 50 AB)",
-        description_template="{{player_name}}: Barrel% = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: barrel rate leader with {{metric_value}} barrels in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -625,7 +625,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0511",
         name="Lowest Barrel% (Last 50 AB)",
-        description_template="{{player_name}}: Barrel% = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: lowest barrel rate with {{metric_value}} barrels in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="asc",
         order_expr=RATE_ORDER_EXPR,
@@ -637,7 +637,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0512",
         name="Highest HardHit% (Last 50 AB)",
-        description_template="{{player_name}}: hard-hit balls (95+ mph) = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: hard-hit rate leader with {{metric_value}} hard-hit balls (95+ mph) in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 95"),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -649,7 +649,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0513",
         name="Lowest HardHit% (Last 50 AB)",
-        description_template="{{player_name}}: hard-hit balls (95+ mph) = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: lowest hard-hit rate with {{metric_value}} hard-hit balls (95+ mph) in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 95"),
         order_direction="asc",
         order_expr=RATE_ORDER_EXPR,
@@ -661,7 +661,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0514",
         name="Highest 100+ EV Rate (Last 50 AB)",
-        description_template="{{player_name}}: 100+ rate = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: 100+ mph rate leader with {{metric_value}} balls hit 100+ mph in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 100"),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -673,7 +673,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0515",
         name="Lowest 100+ EV Rate (Last 50 AB)",
-        description_template="{{player_name}}: 100+ rate = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: lowest 100+ mph rate with {{metric_value}} balls hit 100+ mph in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 100"),
         order_direction="asc",
         order_expr=RATE_ORDER_EXPR,
@@ -687,7 +687,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0520",
         name="Highest Barrel% vs 95+ Fastballs (Last 50 AB)",
-        description_template="{{player_name}}: barrels vs 95+ mph fastballs = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: barrel rate vs 95+ mph fastballs: {{metric_value}} barrels ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -703,7 +703,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0521",
         name="Most Barrels vs 95+ Fastballs (Last 50 AB)",
-        description_template="{{player_name}}: barrels vs 95+ mph fastballs = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: {{metric_value}} barrels vs 95+ mph fastballs ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         min_sample=5,
@@ -718,7 +718,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0522",
         name="Most 100+ EV vs 95+ Fastballs (Last 50 AB)",
-        description_template="{{player_name}}: batted balls hit 100+ mph vs 95+ mph fastballs = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: {{metric_value}} balls hit 100+ mph vs 95+ mph fastballs ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 100"),
         order_direction="desc",
         min_sample=5,
@@ -733,7 +733,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0523",
         name="Highest Avg EV vs 95+ Fastballs (Last 50 AB)",
-        description_template="{{player_name}}: average exit velocity vs 95+ mph fastballs = {{metric_value}} ({{sample_size}} BBE).",
+        description_template="{{player_name}}: average exit velocity vs 95+ mph fastballs = {{metric_value}} mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr="AVG(launch_speed)",
         order_direction="desc",
         min_sample=5,
@@ -749,7 +749,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0524",
         name="Highest Barrel% vs Breaking (Last 50 AB)",
-        description_template="{{player_name}}: Barrels vs Breaking = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: barrel rate vs breaking balls: {{metric_value}} barrels ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -762,7 +762,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0525",
         name="Most Barrels vs Breaking (Last 50 AB)",
-        description_template="{{player_name}}: Barrels vs Breaking = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: {{metric_value}} barrels vs breaking balls ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         min_sample=5,
@@ -774,7 +774,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0526",
         name="Most 100+ EV vs Breaking (Last 50 AB)",
-        description_template="{{player_name}}: batted balls hit 100+ mph vs breaking balls = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: {{metric_value}} balls hit 100+ mph vs breaking balls ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 100"),
         order_direction="desc",
         min_sample=5,
@@ -786,7 +786,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0527",
         name="Highest Avg EV vs Breaking (Last 50 AB)",
-        description_template="{{player_name}}: average exit velocity vs breaking balls = {{metric_value}} ({{sample_size}} BBE).",
+        description_template="{{player_name}}: average exit velocity vs breaking balls = {{metric_value}} mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr="AVG(launch_speed)",
         order_direction="desc",
         min_sample=5,
@@ -799,7 +799,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0528",
         name="Highest Barrel% vs Offspeed (Last 50 AB)",
-        description_template="{{player_name}}: Barrels vs Offspeed = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: barrel rate vs offspeed pitches: {{metric_value}} barrels ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -812,7 +812,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0529",
         name="Most Barrels vs Offspeed (Last 50 AB)",
-        description_template="{{player_name}}: Barrels vs Offspeed = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: {{metric_value}} barrels vs offspeed pitches ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         min_sample=5,
@@ -824,7 +824,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0530",
         name="Most 100+ EV vs Offspeed (Last 50 AB)",
-        description_template="{{player_name}}: batted balls hit 100+ mph vs offspeed pitches = {{metric_value}} / {{sample_size}} BBE.",
+        description_template="{{player_name}}: {{metric_value}} balls hit 100+ mph vs offspeed pitches ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 100"),
         order_direction="desc",
         min_sample=5,
@@ -836,7 +836,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0531",
         name="Highest Avg EV vs Offspeed (Last 50 AB)",
-        description_template="{{player_name}}: average exit velocity vs offspeed pitches = {{metric_value}} ({{sample_size}} BBE).",
+        description_template="{{player_name}}: average exit velocity vs offspeed pitches = {{metric_value}} mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr="AVG(launch_speed)",
         order_direction="desc",
         min_sample=5,
@@ -850,7 +850,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0540",
         name="Most Pulled-Air Barrels (Last 50 AB)",
-        description_template="{{player_name}}: Pulled-air barrels = {{metric_value}} / {{sample_size}} pulled-air BBE.",
+        description_template="{{player_name}}: {{metric_value}} pulled-air barrels ({{sample_size}} pulled air balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         min_sample=5,
@@ -865,7 +865,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0541",
         name="Highest Pulled-Air Barrel% (Last 50 AB)",
-        description_template="{{player_name}}: Pulled-air barrel% = {{metric_value}} / {{sample_size}} pulled-air BBE.",
+        description_template="{{player_name}}: pulled-air barrel rate leader with {{metric_value}} barrels ({{sample_size}} pulled air balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -881,7 +881,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0542",
         name="Most Pulled Hard-Air Balls (Last 50 AB)",
-        description_template="{{player_name}}: pulled hard-hit air balls (95+ mph, 10°+ launch angle) = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} pulled hard-hit air balls (95+ mph, 10°+ launch angle) in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("hit_direction = 'pull' AND launch_speed >= 95 AND launch_angle >= 10"),
         order_direction="desc",
         min_sample=10,
@@ -892,7 +892,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0543",
         name="Highest Pulled Hard-Air Share (Last 50 AB)",
-        description_template="{{player_name}}: Pulled hard-air share = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: pulled hard-air share with {{metric_value}} pulled hard-hit air balls in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("hit_direction = 'pull' AND launch_speed >= 95 AND launch_angle >= 10"),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -904,7 +904,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0544",
         name='Most Pulled "HR-Window" Balls (Last 50 AB)',
-        description_template="{{player_name}}: pulled batted balls hit 98+ mph with a 20–35° launch angle = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} pulled balls hit 98+ mph with a 20–35° launch angle in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("hit_direction = 'pull' AND launch_speed >= 98 AND launch_angle BETWEEN 20 AND 35"),
         order_direction="desc",
         min_sample=10,
@@ -917,7 +917,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0550",
         name="Most Air Barrels (Last 50 AB)",
-        description_template="{{player_name}}: Air barrels = {{metric_value}} / {{sample_size}} air BBE.",
+        description_template="{{player_name}}: {{metric_value}} air barrels ({{sample_size}} air balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         min_sample=5,
@@ -929,7 +929,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0551",
         name="Highest Air Barrel% (Last 50 AB)",
-        description_template="{{player_name}}: Air barrel% = {{metric_value}} / {{sample_size}} air BBE.",
+        description_template="{{player_name}}: air barrel rate leader with {{metric_value}} barrels ({{sample_size}} air balls, last 50 AB).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -942,7 +942,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0552",
         name="Most Hard Air Balls (Air BBE) (Last 50 AB)",
-        description_template="{{player_name}}: hard-hit air balls (95+ mph) = {{metric_value}} / {{sample_size}} air BBE.",
+        description_template="{{player_name}}: {{metric_value}} hard-hit air balls (95+ mph) in {{sample_size}} air balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 95"),
         order_direction="desc",
         min_sample=5,
@@ -954,7 +954,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0553",
         name="Highest Hard-Air% (Last 50 AB)",
-        description_template="{{player_name}}: hard-hit air balls (95+ mph) = {{metric_value}} / {{sample_size}} air BBE.",
+        description_template="{{player_name}}: hard-hit air rate leader with {{metric_value}} hard-hit air balls (95+ mph) in {{sample_size}} air balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed >= 95"),
         order_direction="desc",
         order_expr=RATE_ORDER_EXPR,
@@ -967,7 +967,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0554",
         name="Highest Avg EV on Air Balls (Last 50 AB)",
-        description_template="{{player_name}}: average exit velocity on air balls = {{metric_value}} ({{sample_size}} air BBE).",
+        description_template="{{player_name}}: average exit velocity on air balls = {{metric_value}} mph ({{sample_size}} air balls, last 50 AB).",
         metric_expr="AVG(launch_speed)",
         order_direction="desc",
         min_sample=5,
@@ -981,7 +981,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0560",
         name="Barrels Surge (Δ vs Season Rate) (Last 50 AB)",
-        description_template="{{player_name}}: ΔBarrels = {{metric_value}} (BBE={{sample_size}} last 50 AB).",
+        description_template="{{player_name}}: ΔBarrels = {{metric_value}} ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_surge_expr(
             current_cond=BARREL_COND,
             season_cond="pf2.launch_speed >= 98 AND pf2.launch_angle BETWEEN 26 AND 30",
@@ -995,7 +995,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0561",
         name="100+ EV Surge (Δ vs Season Rate) (Last 50 AB)",
-        description_template="{{player_name}}: Δ100+ = {{metric_value}} (BBE={{sample_size}} last 50 AB).",
+        description_template="{{player_name}}: Δ100+ = {{metric_value}} ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_surge_expr(current_cond="launch_speed >= 100", season_cond="pf2.launch_speed >= 100"),
         order_direction="desc",
         min_sample=10,
@@ -1006,7 +1006,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0562",
         name="HardHit Surge (Δ vs Season Rate) (Last 50 AB)",
-        description_template="{{player_name}}: ΔHardHit = {{metric_value}} (BBE={{sample_size}} last 50 AB).",
+        description_template="{{player_name}}: ΔHardHit = {{metric_value}} ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_surge_expr(current_cond="launch_speed >= 95", season_cond="pf2.launch_speed >= 95"),
         order_direction="desc",
         min_sample=10,
@@ -1017,7 +1017,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0563",
         name="Pulled Hard-Air Surge (Δ vs Season Rate) (Last 50 AB)",
-        description_template="{{player_name}}: ΔPulledHardAir = {{metric_value}} (BBE={{sample_size}} last 50 AB).",
+        description_template="{{player_name}}: ΔPulledHardAir = {{metric_value}} ({{sample_size}} batted balls, last 50 AB).",
         metric_expr=_surge_expr(
             current_cond="hit_direction = 'pull' AND launch_speed >= 95 AND launch_angle >= 10",
             season_cond="pf2.hit_direction = 'pull' AND pf2.launch_speed >= 95 AND pf2.launch_angle >= 10",
@@ -1033,7 +1033,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0570",
         name="Fewest Weak Contact Balls (Last 50 AB)",
-        description_template="{{player_name}}: batted balls under 80 mph = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} weak-contact balls (under 80 mph) in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed < 80"),
         order_direction="asc",
         order_expr=RATE_ORDER_EXPR,
@@ -1045,7 +1045,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0571",
         name='Lowest "Soft Air" Rate (Last 50 AB)',
-        description_template="{{player_name}}: air balls under 90 mph = {{metric_value}} / {{sample_size}} air BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} soft air balls (under 90 mph) in {{sample_size}} air balls (last 50 AB).",
         metric_expr=_sum_case("launch_speed < 90"),
         order_direction="asc",
         order_expr=RATE_ORDER_EXPR,
@@ -1058,7 +1058,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0572",
         name="Lowest Pop-up Rate (Last 50 AB)",
-        description_template="{{player_name}}: Pop-ups = {{metric_value}} / {{sample_size}} BBE (last 50 AB).",
+        description_template="{{player_name}}: {{metric_value}} pop-ups in {{sample_size}} batted balls (last 50 AB).",
         metric_expr=_sum_case("batted_ball_type = 'popup'"),
         order_direction="asc",
         order_expr=RATE_ORDER_EXPR,
@@ -1072,7 +1072,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0580",
         name="Top Max EV (Last 50 AB)",
-        description_template="{{player_name}}: max exit velocity = {{metric_value}} mph ({{sample_size}} BBE last 50 AB).",
+        description_template="{{player_name}}: max exit velocity = {{metric_value}} mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr="MAX(launch_speed)",
         order_direction="desc",
         min_sample=10,
@@ -1083,7 +1083,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0581",
         name="Top 2nd-Highest EV (Last 50 AB)",
-        description_template="{{player_name}}: second-highest exit velocity = {{metric_value}} mph ({{sample_size}} BBE last 50 AB).",
+        description_template="{{player_name}}: second-highest exit velocity = {{metric_value}} mph ({{sample_size}} batted balls, last 50 AB).",
         metric_expr="(array_agg(launch_speed ORDER BY launch_speed DESC))[2]",
         order_direction="desc",
         min_sample=10,
@@ -1141,7 +1141,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0583",
         name="Most Games with a Barrel (Last 50 AB)",
-        description_template="{{player_name}}: Barrel-games = {{metric_value}} / {{sample_size}} games (last 50 AB).",
+        description_template="{{player_name}}: games with at least one barrel = {{metric_value}} ({{sample_size}} games, last 50 AB).",
         metric_expr="COUNT(DISTINCT CASE WHEN launch_speed >= 98 AND launch_angle BETWEEN 26 AND 30 THEN game_id END)",
         sample_expr="COUNT(DISTINCT game_id)",
         order_direction="desc",
@@ -1153,7 +1153,7 @@ CORE_RAW_COUNT_PATTERNS: List[dict] = [
     _core_hitter_pattern(
         pattern_id="UNQ-H-0584",
         name='"3-Barrel Week" (Last 7 Days)',
-        description_template="{{player_name}}: Barrels_7d = {{metric_value}} (BBE={{sample_size}}).",
+        description_template="{{player_name}}: barrels in the last 7 days = {{metric_value}} ({{sample_size}} batted balls).",
         metric_expr=_sum_case(BARREL_COND),
         order_direction="desc",
         min_sample=5,
