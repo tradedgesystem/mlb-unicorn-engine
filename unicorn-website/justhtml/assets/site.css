@@ -266,6 +266,53 @@ a:hover {
   gap: 10px;
 }
 
+.metrics-host {
+  overflow-x: auto;
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.metrics-table th,
+.metrics-table td {
+  padding: 10px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.metrics-table thead th {
+  font-size: 12px;
+  font-family: var(--mono);
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border);
+}
+
+.metrics-table tbody td {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.metrics-block + .metrics-block {
+  margin-top: 12px;
+}
+
+.metrics-caption {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  font-family: var(--mono);
+  color: var(--muted);
+}
+
 .row {
   padding: 12px 12px;
   border-radius: 12px;

@@ -1,4 +1,27 @@
 const DATA_BASE = "/data/latest";
+const METRIC_COLUMNS = {
+  hitter: [
+    { key: "barrel_pct_last_50", label: "Barrel%", kind: "pct" },
+    { key: "hard_hit_pct_last_50", label: "HardHit%", kind: "pct" },
+    { key: "xwoba_last_50", label: "xwOBA", kind: "dec3" },
+    { key: "contact_pct_last_50", label: "Contact%", kind: "pct" },
+    { key: "chase_pct_last_50", label: "Chase%", kind: "pct" },
+  ],
+  starter: [
+    { key: "xwoba_last_3_starts", label: "xwOBA", kind: "dec3" },
+    { key: "whiff_pct_last_3_starts", label: "Whiff%", kind: "pct" },
+    { key: "k_pct_last_3_starts", label: "K%", kind: "pct" },
+    { key: "bb_pct_last_3_starts", label: "BB%", kind: "pct" },
+    { key: "hard_hit_pct_last_3_starts", label: "HardHit%", kind: "pct" },
+  ],
+  reliever: [
+    { key: "xwoba_last_5_apps", label: "xwOBA", kind: "dec3" },
+    { key: "whiff_pct_last_5_apps", label: "Whiff%", kind: "pct" },
+    { key: "k_pct_last_5_apps", label: "K%", kind: "pct" },
+    { key: "bb_pct_last_5_apps", label: "BB%", kind: "pct" },
+    { key: "hard_hit_pct_last_5_apps", label: "HardHit%", kind: "pct" },
+  ],
+};
 
 function $(selector) {
   return document.querySelector(selector);
@@ -49,6 +72,27 @@ function formatNumber(value) {
   const n = Number(value);
   if (!Number.isFinite(n)) return String(value);
   return n.toLocaleString(undefined, { maximumFractionDigits: 3 });
+}
+
+function formatDec3(value) {
+  if (value === null || value === undefined) return "—";
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  const fixed = n.toFixed(3);
+  return fixed.replace(/^0\./, "."); // FanGraphs-style leading zero drop
+}
+
+function formatPct(value) {
+  if (value === null || value === undefined) return "—";
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  return `${(n * 100).toFixed(1)}%`;
+}
+
+function formatMetric(value, kind) {
+  if (kind === "pct") return formatPct(value);
+  if (kind === "dec3") return formatDec3(value);
+  return formatNumber(value);
 }
 
 function setLastUpdated(meta) {
@@ -187,6 +231,44 @@ function renderKeyValues(host, metrics) {
   }
 }
 
+function renderMetricsTable(host, { caption, columns, values }) {
+  host.textContent = "";
+  const block = document.createElement("div");
+  block.className = "metrics-block";
+  if (caption) {
+    const cap = document.createElement("div");
+    cap.className = "metrics-caption";
+    cap.textContent = caption;
+    block.appendChild(cap);
+  }
+
+  const table = document.createElement("table");
+  table.className = "metrics-table";
+
+  const thead = document.createElement("thead");
+  const trh = document.createElement("tr");
+  for (const col of columns) {
+    const th = document.createElement("th");
+    th.textContent = col.label;
+    trh.appendChild(th);
+  }
+  thead.appendChild(trh);
+
+  const tbody = document.createElement("tbody");
+  const tr = document.createElement("tr");
+  for (const col of columns) {
+    const td = document.createElement("td");
+    td.textContent = formatMetric(values?.[col.key], col.kind);
+    tr.appendChild(td);
+  }
+  tbody.appendChild(tr);
+
+  table.appendChild(thead);
+  table.appendChild(tbody);
+  block.appendChild(table);
+  host.appendChild(block);
+}
+
 function setupTabs() {
   const tabs = Array.from(document.querySelectorAll(".tab"));
   if (tabs.length === 0) return;
@@ -223,30 +305,25 @@ async function renderHome({ teamsById }) {
   try {
     const unicorns = await fetchJson(`${DATA_BASE}/unicorns.json`);
     if (!Array.isArray(unicorns)) throw new Error("unicorns.json is not an array");
-    host.textContent = "";
     if (unicorns.length === 0) {
       host.textContent = "No unicorns for this day.";
       return;
     }
-    for (const u of unicorns) {
+    const rows = unicorns.map((u) => {
       const pid = u?.player_id;
       const name = u?.name || `Player ${pid}`;
       const roles = Array.isArray(u?.roles) ? u.roles : [];
       const teamId = u?.current_team_id;
       const teamAbbr = teamsById.get(String(teamId))?.abbreviation || "";
-
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-        <div class="title">
-          <a href="/players/${encodeURIComponent(pid)}/">${escapeHtml(name)}</a>
-          <div class="small">${escapeHtml(teamAbbr)}</div>
-        </div>
-        <div class="chips">${roles.map((r) => `<span class="chip">${escapeHtml(r)}</span>`).join("")}</div>
-        <div class="small">${escapeHtml(u?.description || "")}</div>
-      `;
-      host.appendChild(card);
-    }
+      const desc = u?.description || "";
+      return {
+        left: `<a href="/players/${encodeURIComponent(pid)}/">${escapeHtml(name)}</a><div class="small">${escapeHtml(
+          desc,
+        )}</div>`,
+        right: `${escapeHtml(teamAbbr)}${roles.length ? `<br/>${escapeHtml(roles.join(", "))}` : ""}`,
+      };
+    });
+    renderList(host, rows);
   } catch (err) {
     host.textContent = "Unable to load unicorns.";
     showStatus(err?.message || String(err));
@@ -348,27 +425,39 @@ async function renderPlayerPage(playerId, { teamsById }) {
     if (rolesHost) renderChips(rolesHost, roles);
 
     if (metricsHost) {
-      const primary = p?.metrics || {};
-      const hitter = p?.hitter_metrics || null;
-      const pitcher = p?.pitcher_metrics || null;
-      if (hitter || pitcher) {
-        metricsHost.textContent = "";
-        if (hitter) {
-          const block = document.createElement("div");
-          block.className = "metric-section";
-          block.innerHTML = `<div class="metric-title">Hitter</div><div class="kv"></div>`;
-          renderKeyValues(block.querySelector(".kv"), hitter);
-          metricsHost.appendChild(block);
-        }
-        if (pitcher) {
-          const block = document.createElement("div");
-          block.className = "metric-section";
-          block.innerHTML = `<div class="metric-title">Pitcher</div><div class="kv"></div>`;
-          renderKeyValues(block.querySelector(".kv"), pitcher);
-          metricsHost.appendChild(block);
-        }
-      } else {
-        renderKeyValues(metricsHost, primary);
+      const roles = Array.isArray(p?.roles) ? p.roles.map((r) => String(r).toLowerCase()) : [];
+      const primaryRole = String(p?.role || roles[0] || "hitter").toLowerCase();
+
+      const hitter = p?.hitter_metrics || (primaryRole === "hitter" ? p?.metrics : null);
+      const starter = p?.pitcher_metrics || (primaryRole === "starter" ? p?.metrics : null);
+      const reliever = primaryRole === "reliever" ? p?.metrics : null;
+
+      metricsHost.textContent = "";
+
+      if (hitter) {
+        renderMetricsTable(metricsHost, {
+          caption: roles.includes("starter") || roles.includes("reliever") ? "Hitting" : null,
+          columns: METRIC_COLUMNS.hitter,
+          values: hitter,
+        });
+      }
+
+      if (starter) {
+        renderMetricsTable(metricsHost, {
+          caption: hitter ? "Pitching (Starter)" : null,
+          columns: METRIC_COLUMNS.starter,
+          values: starter,
+        });
+      } else if (reliever) {
+        renderMetricsTable(metricsHost, {
+          caption: hitter ? "Pitching (Reliever)" : null,
+          columns: METRIC_COLUMNS.reliever,
+          values: reliever,
+        });
+      }
+
+      if (!hitter && !starter && !reliever) {
+        metricsHost.textContent = "—";
       }
     }
 

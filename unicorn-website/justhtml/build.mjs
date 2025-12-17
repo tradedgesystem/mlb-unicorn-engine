@@ -112,7 +112,7 @@ function homePage() {
   <p class="subhead">Daily Top 50 (or fewer), shuffled once per day.</p>
 </header>
 <section>
-  <div id="unicorns" class="cards">Loading…</div>
+  <div id="unicorns" class="list">Loading…</div>
 </section>
 `,
   });
@@ -177,7 +177,7 @@ function playerPage(playerId) {
   </div>
   <div class="panel">
     <h2>Predictive stats</h2>
-    <div id="player-metrics" class="kv">Loading…</div>
+    <div id="player-metrics" class="metrics-host">Loading…</div>
   </div>
 </section>
 
