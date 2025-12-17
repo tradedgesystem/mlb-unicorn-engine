@@ -1,0 +1,42 @@
+{
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.22105263157894736,
+    "contact_pct_last_50": 0.34831460674157305,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.20629166666666668
+  },
+  "name": "Joc Pederson",
+  "player_id": 592626,
+  "player_name": "Joc Pederson",
+  "recent_unicorns": [
+    {
+      "description": "Joc Pederson leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-03",
+      "score": 1.576911
+    },
+    {
+      "description": "Joc Pederson leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-02",
+      "score": 1.559072
+    },
+    {
+      "description": "Joc Pederson leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-01",
+      "score": 1.42634
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

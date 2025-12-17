@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.2174,
+    "hard_hit_pct_last_5_apps": 0.2174,
+    "k_pct_last_5_apps": 0.2609,
+    "whiff_pct_last_5_apps": 0.2778,
+    "xwoba_last_5_apps": 0.2949
+  },
+  "name": "Ryan Helsley",
+  "player_id": 664854,
+  "player_name": "Ryan Helsley",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.18181818181818182,
+    "contact_pct_last_50": 0.2222222222222222,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.1806470588235294
+  },
+  "name": "Sam Huff",
+  "player_id": 669087,
+  "player_name": "Sam Huff",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

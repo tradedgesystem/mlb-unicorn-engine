@@ -1,0 +1,20 @@
+{
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.5,
+    "contact_pct_last_50": 0.14285714285714285,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.0005
+  },
+  "name": "Ji Hwan Bae",
+  "player_id": 678225,
+  "player_name": "Ji Hwan Bae",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 158,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2821,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.193,
+    "xwoba_last_5_apps": 0.913
+  },
+  "name": "Nestor Cortes",
+  "player_id": 641482,
+  "player_name": "Nestor Cortes",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.04,
+    "chase_pct_last_50": 0.28205128205128205,
+    "contact_pct_last_50": 0.2403846153846154,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.32268
+  },
+  "name": "Christian Walker",
+  "player_id": 572233,
+  "player_name": "Christian Walker",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

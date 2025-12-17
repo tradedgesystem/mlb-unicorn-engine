@@ -1,0 +1,35 @@
+{
+  "current_team_id": 112,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0476,
+    "hard_hit_pct_last_5_apps": 0.2308,
+    "k_pct_last_5_apps": 0.2857,
+    "whiff_pct_last_5_apps": 0.2286,
+    "xwoba_last_5_apps": 0.2558
+  },
+  "name": "Julian Merryweather",
+  "player_id": 657240,
+  "player_name": "Julian Merryweather",
+  "recent_unicorns": [
+    {
+      "description": "Julian Merryweather owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.049091,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-02",
+      "score": 2.48051
+    },
+    {
+      "description": "Julian Merryweather owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.049091,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-01",
+      "score": 2.376315
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

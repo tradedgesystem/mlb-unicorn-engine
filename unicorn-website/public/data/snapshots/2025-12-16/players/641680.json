@@ -1,0 +1,35 @@
+{
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.03333333333333333,
+    "chase_pct_last_50": 0.35526315789473684,
+    "contact_pct_last_50": 0.3488372093023256,
+    "hard_hit_pct_last_50": 0.4666666666666667,
+    "xwoba_last_50": 0.3168048780487805
+  },
+  "name": "Jonah Heim",
+  "player_id": 641680,
+  "player_name": "Jonah Heim",
+  "recent_unicorns": [
+    {
+      "description": "Jonah Heim leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.195122,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-03",
+      "score": 2.941766
+    },
+    {
+      "description": "Jonah Heim leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.195122,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-02",
+      "score": 2.854194
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

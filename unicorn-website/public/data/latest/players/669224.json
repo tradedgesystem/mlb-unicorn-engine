@@ -1,0 +1,20 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2818181818181818,
+    "contact_pct_last_50": 0.2894736842105263,
+    "hard_hit_pct_last_50": 0.5454545454545454,
+    "xwoba_last_50": 0.26278
+  },
+  "name": "Austin Wells",
+  "player_id": 669224,
+  "player_name": "Austin Wells",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

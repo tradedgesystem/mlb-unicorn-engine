@@ -1,0 +1,35 @@
+{
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.06060606060606061,
+    "chase_pct_last_50": 0.24761904761904763,
+    "contact_pct_last_50": 0.3238095238095238,
+    "hard_hit_pct_last_50": 0.6363636363636364,
+    "xwoba_last_50": 0.44287755102040816
+  },
+  "name": "Jonathan Aranda",
+  "player_id": 666018,
+  "player_name": "Jonathan Aranda",
+  "recent_unicorns": [
+    {
+      "description": "Jonathan Aranda: average exit velocity vs breaking balls = 102.533 mph (last 50 AB).",
+      "metric_value": 102.533333,
+      "pattern_id": "UNQ-H-0527",
+      "run_date": "2025-04-15",
+      "score": 102.533333
+    },
+    {
+      "description": "Jonathan Aranda leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.179487,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-01",
+      "score": 2.268079
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

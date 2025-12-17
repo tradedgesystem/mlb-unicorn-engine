@@ -1,0 +1,20 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.325,
+    "contact_pct_last_50": 0.28125,
+    "hard_hit_pct_last_50": 0.4444444444444444,
+    "xwoba_last_50": 0.2936875
+  },
+  "name": "Tyler Freeman",
+  "player_id": 671289,
+  "player_name": "Tyler Freeman",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

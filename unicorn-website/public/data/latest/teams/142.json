@@ -1,0 +1,280 @@
+{
+  "abbreviation": "MIN",
+  "hitters": [
+    {
+      "href": "/players/686797/",
+      "name": "Brooks Lee",
+      "player_id": 686797,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/621439/",
+      "name": "Byron Buxton",
+      "player_id": 621439,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/621043/",
+      "name": "Carlos Correa",
+      "player_id": 621043,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/543877/",
+      "name": "Christian Vázquez",
+      "player_id": 543877,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/680577/",
+      "name": "DaShawn Keirsey Jr.",
+      "player_id": 680577,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/666397/",
+      "name": "Edouard Julien",
+      "player_id": 666397,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/664056/",
+      "name": "Harrison Bader",
+      "player_id": 664056,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669304/",
+      "name": "Jose Miranda",
+      "player_id": 669304,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/670242/",
+      "name": "Matt Wallner",
+      "player_id": 670242,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/681508/",
+      "name": "Mickey Gasper",
+      "player_id": 681508,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/680777/",
+      "name": "Ryan Jeffers",
+      "player_id": 680777,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/663616/",
+      "name": "Trevor Larnach",
+      "player_id": 663616,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/664034/",
+      "name": "Ty France",
+      "player_id": 664034,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/663485/",
+      "name": "Cole Sands",
+      "player_id": 663485,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/543056/",
+      "name": "Danny Coulombe",
+      "player_id": 543056,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/670766/",
+      "name": "Darren McCaughan",
+      "player_id": 670766,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/701581/",
+      "name": "David Festa",
+      "player_id": 701581,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/643377/",
+      "name": "Griffin Jax",
+      "player_id": 643377,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/661395/",
+      "name": "Jhoan Duran",
+      "player_id": 661395,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/660896/",
+      "name": "Jorge Alcala",
+      "player_id": 660896,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/623437/",
+      "name": "Justin Topa",
+      "player_id": 623437,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681892/",
+      "name": "Kody Funderburk",
+      "player_id": 681892,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/686973/",
+      "name": "Louis Varland",
+      "player_id": 686973,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/677976/",
+      "name": "Randy Dobnak",
+      "player_id": 677976,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/650489/",
+      "name": "Willi Castro",
+      "player_id": 650489,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/641927/",
+      "name": "Bailey Ober",
+      "player_id": 641927,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/663978/",
+      "name": "Chris Paddack",
+      "player_id": 663978,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/657746/",
+      "name": "Joe Ryan",
+      "player_id": 657746,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/641154/",
+      "name": "Pablo López",
+      "player_id": 641154,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/680573/",
+      "name": "Simeon Woods Richardson",
+      "player_id": 680573,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "team_id": 142
+}

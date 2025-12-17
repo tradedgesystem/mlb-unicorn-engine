@@ -1,0 +1,20 @@
+{
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.16176470588235295,
+    "contact_pct_last_50": 0.4126984126984127,
+    "hard_hit_pct_last_50": 0.3076923076923077,
+    "xwoba_last_50": 0.23628947368421052
+  },
+  "name": "Oliver Dunn",
+  "player_id": 686554,
+  "player_name": "Oliver Dunn",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

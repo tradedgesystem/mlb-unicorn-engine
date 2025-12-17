@@ -1,0 +1,20 @@
+{
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.14285714285714285,
+    "hard_hit_pct_last_50": 1.0,
+    "xwoba_last_50": 0.24966666666666668
+  },
+  "name": "Nick Gonzales",
+  "player_id": 693304,
+  "player_name": "Nick Gonzales",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

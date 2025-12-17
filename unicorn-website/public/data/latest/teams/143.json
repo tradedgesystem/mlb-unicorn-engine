@@ -1,0 +1,244 @@
+{
+  "abbreviation": "PHI",
+  "hitters": [
+    {
+      "href": "/players/664761/",
+      "name": "Alec Bohm",
+      "player_id": 664761,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669016/",
+      "name": "Brandon Marsh",
+      "player_id": 669016,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/547180/",
+      "name": "Bryce Harper",
+      "player_id": 547180,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/681082/",
+      "name": "Bryson Stott",
+      "player_id": 681082,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/624641/",
+      "name": "Edmundo Sosa",
+      "player_id": 624641,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/592663/",
+      "name": "J.T. Realmuto",
+      "player_id": 592663,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/679032/",
+      "name": "Johan Rojas",
+      "player_id": 679032,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/665019/",
+      "name": "Kody Clemens",
+      "player_id": 665019,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/656941/",
+      "name": "Kyle Schwarber",
+      "player_id": 656941,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/596146/",
+      "name": "Max Kepler",
+      "player_id": 596146,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/592206/",
+      "name": "Nick Castellanos",
+      "player_id": 592206,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/665561/",
+      "name": "Rafael Marchán",
+      "player_id": 665561,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/607208/",
+      "name": "Trea Turner",
+      "player_id": 607208,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/672578/",
+      "name": "Carlos Hernández",
+      "player_id": 672578,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/605452/",
+      "name": "Joe Ross",
+      "player_id": 605452,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/605447/",
+      "name": "Jordan Romano",
+      "player_id": 605447,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/621237/",
+      "name": "José Alvarado",
+      "player_id": 621237,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/614179/",
+      "name": "José Ruiz",
+      "player_id": 614179,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/621381/",
+      "name": "Matt Strahm",
+      "player_id": 621381,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/689147/",
+      "name": "Orion Kerkering",
+      "player_id": 689147,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/621383/",
+      "name": "Tanner Banks",
+      "player_id": 621383,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/605400/",
+      "name": "Aaron Nola",
+      "player_id": 605400,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/650911/",
+      "name": "Cristopher Sánchez",
+      "player_id": 650911,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/666200/",
+      "name": "Jesús Luzardo",
+      "player_id": 666200,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/592836/",
+      "name": "Taijuan Walker",
+      "player_id": 592836,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/554430/",
+      "name": "Zack Wheeler",
+      "player_id": 554430,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "team_id": 143
+}

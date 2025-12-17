@@ -1,0 +1,28 @@
+{
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.08823529411764706,
+    "chase_pct_last_50": 0.35051546391752575,
+    "contact_pct_last_50": 0.38461538461538464,
+    "hard_hit_pct_last_50": 0.4117647058823529,
+    "xwoba_last_50": 0.2465
+  },
+  "name": "Harrison Bader",
+  "player_id": 664056,
+  "player_name": "Harrison Bader",
+  "recent_unicorns": [
+    {
+      "description": "Harrison Bader: 2 barrels vs breaking balls (last 50 AB).",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-H-0525",
+      "run_date": "2025-04-15",
+      "score": 2.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

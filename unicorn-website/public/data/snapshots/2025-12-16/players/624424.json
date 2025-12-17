@@ -1,0 +1,28 @@
+{
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.043478260869565216,
+    "chase_pct_last_50": 0.19469026548672566,
+    "contact_pct_last_50": 0.27710843373493976,
+    "hard_hit_pct_last_50": 0.30434782608695654,
+    "xwoba_last_50": 0.3677142857142857
+  },
+  "name": "Michael Conforto",
+  "player_id": 624424,
+  "player_name": "Michael Conforto",
+  "recent_unicorns": [
+    {
+      "description": "Michael Conforto tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.468609,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-05",
+      "score": 1.480536
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

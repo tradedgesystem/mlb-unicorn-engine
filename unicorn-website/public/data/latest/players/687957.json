@@ -1,0 +1,20 @@
+{
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.3333333333333333,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.3,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.4055
+  },
+  "name": "Dustin Harris",
+  "player_id": 687957,
+  "player_name": "Dustin Harris",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

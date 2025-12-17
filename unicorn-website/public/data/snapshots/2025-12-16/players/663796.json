@@ -1,0 +1,20 @@
+{
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4166666666666667,
+    "contact_pct_last_50": 0.6666666666666666,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.22275
+  },
+  "name": "Coco Montes",
+  "player_id": 663796,
+  "player_name": "Coco Montes",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

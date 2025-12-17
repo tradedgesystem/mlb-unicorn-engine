@@ -1,0 +1,42 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0967741935483871,
+    "chase_pct_last_50": 0.3387096774193548,
+    "contact_pct_last_50": 0.4025974025974026,
+    "hard_hit_pct_last_50": 0.4838709677419355,
+    "xwoba_last_50": 0.4811463414634146
+  },
+  "name": "Jackson Merrill",
+  "player_id": 701538,
+  "player_name": "Jackson Merrill",
+  "recent_unicorns": [
+    {
+      "description": "Jackson Merrill tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.469,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-04",
+      "score": 1.537144
+    },
+    {
+      "description": "Jackson Merrill tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.496111,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-03",
+      "score": 1.728408
+    },
+    {
+      "description": "Jackson Merrill tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.496111,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-02",
+      "score": 1.656236
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

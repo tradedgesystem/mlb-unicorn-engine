@@ -1,0 +1,20 @@
+{
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.21348314606741572,
+    "contact_pct_last_50": 0.3595505617977528,
+    "hard_hit_pct_last_50": 0.1875,
+    "xwoba_last_50": 0.26428
+  },
+  "name": "Xavier Edwards",
+  "player_id": 669364,
+  "player_name": "Xavier Edwards",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

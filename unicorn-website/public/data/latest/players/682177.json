@@ -1,0 +1,20 @@
+{
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.23076923076923078,
+    "contact_pct_last_50": 0.26666666666666666,
+    "hard_hit_pct_last_50": 0.4166666666666667,
+    "xwoba_last_50": 0.22556
+  },
+  "name": "Daniel Schneemann",
+  "player_id": 682177,
+  "player_name": "Daniel Schneemann",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

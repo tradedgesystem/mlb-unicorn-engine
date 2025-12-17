@@ -1,0 +1,28 @@
+{
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.0625,
+    "chase_pct_last_50": 0.30120481927710846,
+    "contact_pct_last_50": 0.367816091954023,
+    "hard_hit_pct_last_50": 0.6875,
+    "xwoba_last_50": 0.333734693877551
+  },
+  "name": "Dansby Swanson",
+  "player_id": 621020,
+  "player_name": "Dansby Swanson",
+  "recent_unicorns": [
+    {
+      "description": "Dansby Swanson: ΔHardHit = 3.600 over the last 50 AB.",
+      "metric_value": 3.6,
+      "pattern_id": "UNQ-H-0562",
+      "run_date": "2025-04-15",
+      "score": 3.6
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

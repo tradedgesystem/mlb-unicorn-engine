@@ -1,0 +1,20 @@
+{
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.1956521739130435,
+    "contact_pct_last_50": 0.3717948717948718,
+    "hard_hit_pct_last_50": 0.27586206896551724,
+    "xwoba_last_50": 0.22011111111111112
+  },
+  "name": "Danny Jansen",
+  "player_id": 643376,
+  "player_name": "Danny Jansen",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

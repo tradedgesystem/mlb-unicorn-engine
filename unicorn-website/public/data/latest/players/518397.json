@@ -1,0 +1,28 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1111,
+    "hard_hit_pct_last_5_apps": 0.4091,
+    "k_pct_last_5_apps": 0.1667,
+    "whiff_pct_last_5_apps": 0.1786,
+    "xwoba_last_5_apps": 0.4803
+  },
+  "name": "Scott Alexander",
+  "player_id": 518397,
+  "player_name": "Scott Alexander",
+  "recent_unicorns": [
+    {
+      "description": "Scott Alexander has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-04-05",
+      "score": 1.46425
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

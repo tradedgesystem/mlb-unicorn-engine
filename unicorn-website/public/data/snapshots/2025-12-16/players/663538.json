@@ -1,0 +1,42 @@
+{
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.32558139534883723,
+    "contact_pct_last_50": 0.5308641975308642,
+    "hard_hit_pct_last_50": 0.37209302325581395,
+    "xwoba_last_50": 0.3025
+  },
+  "name": "Nico Hoerner",
+  "player_id": 663538,
+  "player_name": "Nico Hoerner",
+  "recent_unicorns": [
+    {
+      "description": "Nico Hoerner leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-02",
+      "score": 1.541922
+    },
+    {
+      "description": "Nico Hoerner leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-01",
+      "score": 1.474464
+    },
+    {
+      "description": "Nico Hoerner leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-31",
+      "score": 1.451405
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

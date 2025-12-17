@@ -1,0 +1,42 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.030303030303030304,
+    "chase_pct_last_50": 0.3008130081300813,
+    "contact_pct_last_50": 0.33,
+    "hard_hit_pct_last_50": 0.5151515151515151,
+    "xwoba_last_50": 0.33183673469387753
+  },
+  "name": "Gavin Sheets",
+  "player_id": 657757,
+  "player_name": "Gavin Sheets",
+  "recent_unicorns": [
+    {
+      "description": "Gavin Sheets leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.151899,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-02",
+      "score": 2.087089
+    },
+    {
+      "description": "Gavin Sheets leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.180328,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-01",
+      "score": 2.561042
+    },
+    {
+      "description": "Gavin Sheets leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.180328,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-31",
+      "score": 2.353696
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

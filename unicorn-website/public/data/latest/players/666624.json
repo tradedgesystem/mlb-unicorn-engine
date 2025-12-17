@@ -1,0 +1,20 @@
+{
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.07407407407407407,
+    "chase_pct_last_50": 0.2916666666666667,
+    "contact_pct_last_50": 0.27,
+    "hard_hit_pct_last_50": 0.37037037037037035,
+    "xwoba_last_50": 0.36432
+  },
+  "name": "Christopher Morel",
+  "player_id": 666624,
+  "player_name": "Christopher Morel",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

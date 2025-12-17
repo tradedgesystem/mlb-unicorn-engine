@@ -1,0 +1,20 @@
+{
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.09375,
+    "chase_pct_last_50": 0.17708333333333334,
+    "contact_pct_last_50": 0.4155844155844156,
+    "hard_hit_pct_last_50": 0.53125,
+    "xwoba_last_50": 0.3880816326530612
+  },
+  "name": "George Springer",
+  "player_id": 543807,
+  "player_name": "George Springer",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2857142857142857,
+    "contact_pct_last_50": 0.37142857142857144,
+    "hard_hit_pct_last_50": 0.38461538461538464,
+    "xwoba_last_50": 0.3078823529411765
+  },
+  "name": "Thomas Saggese",
+  "player_id": 695336,
+  "player_name": "Thomas Saggese",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

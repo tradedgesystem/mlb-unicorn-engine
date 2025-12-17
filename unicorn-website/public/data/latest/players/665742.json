@@ -1,0 +1,20 @@
+{
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2169811320754717,
+    "contact_pct_last_50": 0.4931506849315068,
+    "hard_hit_pct_last_50": 0.3888888888888889,
+    "xwoba_last_50": 0.3478333333333333
+  },
+  "name": "Juan Soto",
+  "player_id": 665742,
+  "player_name": "Juan Soto",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

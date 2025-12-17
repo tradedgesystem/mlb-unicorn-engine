@@ -1,0 +1,49 @@
+{
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3238095238095238,
+    "contact_pct_last_50": 0.4268292682926829,
+    "hard_hit_pct_last_50": 0.4857142857142857,
+    "xwoba_last_50": 0.3496
+  },
+  "name": "Ryan O'Hearn",
+  "player_id": 656811,
+  "player_name": "Ryan O'Hearn",
+  "recent_unicorns": [
+    {
+      "description": "Ryan O'Hearn leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-04",
+      "score": 1.391493
+    },
+    {
+      "description": "Ryan O'Hearn leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-30",
+      "score": 1.42747
+    },
+    {
+      "description": "Ryan O'Hearn leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-29",
+      "score": 1.396273
+    },
+    {
+      "description": "Ryan O'Hearn leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.266667,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-27",
+      "score": 1.776616
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

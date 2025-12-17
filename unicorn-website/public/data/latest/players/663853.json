@@ -1,0 +1,20 @@
+{
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2222222222222222,
+    "contact_pct_last_50": 0.3055555555555556,
+    "hard_hit_pct_last_50": 0.6363636363636364,
+    "xwoba_last_50": 0.3629375
+  },
+  "name": "Romy Gonzalez",
+  "player_id": 663853,
+  "player_name": "Romy Gonzalez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

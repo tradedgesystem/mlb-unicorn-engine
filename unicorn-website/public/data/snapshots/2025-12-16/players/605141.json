@@ -1,0 +1,20 @@
+{
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.20909090909090908,
+    "contact_pct_last_50": 0.5441176470588235,
+    "hard_hit_pct_last_50": 0.2702702702702703,
+    "xwoba_last_50": 0.2806666666666667
+  },
+  "name": "Mookie Betts",
+  "player_id": 605141,
+  "player_name": "Mookie Betts",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

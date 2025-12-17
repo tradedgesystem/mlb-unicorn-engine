@@ -1,0 +1,20 @@
+{
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.03225806451612903,
+    "chase_pct_last_50": 0.2711864406779661,
+    "contact_pct_last_50": 0.3522727272727273,
+    "hard_hit_pct_last_50": 0.3548387096774194,
+    "xwoba_last_50": 0.29652
+  },
+  "name": "Mark Vientos",
+  "player_id": 668901,
+  "player_name": "Mark Vientos",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

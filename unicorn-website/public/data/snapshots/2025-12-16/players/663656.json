@@ -1,0 +1,35 @@
+{
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.05405405405405406,
+    "chase_pct_last_50": 0.21839080459770116,
+    "contact_pct_last_50": 0.3894736842105263,
+    "hard_hit_pct_last_50": 0.4864864864864865,
+    "xwoba_last_50": 0.434
+  },
+  "name": "Kyle Tucker",
+  "player_id": 663656,
+  "player_name": "Kyle Tucker",
+  "recent_unicorns": [
+    {
+      "description": "Kyle Tucker: 3 air barrels (10°+ launch angle) in the last 50 AB.",
+      "metric_value": 3.0,
+      "pattern_id": "UNQ-H-0550",
+      "run_date": "2025-04-15",
+      "score": 3.0
+    },
+    {
+      "description": "Kyle Tucker tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.457136,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-05",
+      "score": 1.708482
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

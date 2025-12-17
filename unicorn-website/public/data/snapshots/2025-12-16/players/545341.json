@@ -1,0 +1,35 @@
+{
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.32653061224489793,
+    "contact_pct_last_50": 0.34782608695652173,
+    "hard_hit_pct_last_50": 0.6875,
+    "xwoba_last_50": 0.28441666666666665
+  },
+  "name": "Randal Grichuk",
+  "player_id": 545341,
+  "player_name": "Randal Grichuk",
+  "recent_unicorns": [
+    {
+      "description": "Randal Grichuk leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.333333,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-28",
+      "score": 2.63925
+    },
+    {
+      "description": "Randal Grichuk leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.333333,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-27",
+      "score": 2.434346
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

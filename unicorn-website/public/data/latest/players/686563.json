@@ -1,0 +1,20 @@
+{
+  "current_team_id": 145,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1899,
+    "xwoba_last_5_apps": 0.4838
+  },
+  "name": "Jonathan Cannon",
+  "player_id": 686563,
+  "player_name": "Jonathan Cannon",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.22340425531914893,
+    "contact_pct_last_50": 0.25,
+    "hard_hit_pct_last_50": 0.47058823529411764,
+    "xwoba_last_50": 0.33683783783783783
+  },
+  "name": "Jack Suwinski",
+  "player_id": 669261,
+  "player_name": "Jack Suwinski",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

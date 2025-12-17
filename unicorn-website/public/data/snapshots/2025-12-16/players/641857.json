@@ -1,0 +1,20 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.07142857142857142,
+    "chase_pct_last_50": 0.2564102564102564,
+    "contact_pct_last_50": 0.27450980392156865,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.30512
+  },
+  "name": "Ryan McMahon",
+  "player_id": 641857,
+  "player_name": "Ryan McMahon",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

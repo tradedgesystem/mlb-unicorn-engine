@@ -1,0 +1,51 @@
+{
+  "current_team_id": 119,
+  "hitter_metrics": {
+    "barrel_pct_last_50": 0.06451612903225806,
+    "chase_pct_last_50": 0.27835051546391754,
+    "contact_pct_last_50": 0.3563218390804598,
+    "hard_hit_pct_last_50": 0.4838709677419355,
+    "xwoba_last_50": 0.4259
+  },
+  "metrics": {
+    "barrel_pct_last_50": 0.06451612903225806,
+    "chase_pct_last_50": 0.27835051546391754,
+    "contact_pct_last_50": 0.3563218390804598,
+    "hard_hit_pct_last_50": 0.4838709677419355,
+    "xwoba_last_50": 0.4259
+  },
+  "name": "Shohei Ohtani",
+  "pitcher_metrics": {
+    "bb_pct_last_3_starts": null,
+    "hard_hit_pct_last_3_starts": null,
+    "k_pct_last_3_starts": null,
+    "whiff_pct_last_3_starts": null,
+    "xwoba_last_3_starts": null
+  },
+  "player_id": 660271,
+  "player_name": "Shohei Ohtani",
+  "recent_unicorns": [
+    {
+      "description": "Shohei Ohtani: ΔPulledHardAir = 1.750 over the last 50 AB.",
+      "metric_value": 1.75,
+      "pattern_id": "UNQ-H-0563",
+      "run_date": "2025-04-15",
+      "score": 1.75
+    },
+    {
+      "description": "Shohei Ohtani tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.458824,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-05",
+      "score": 1.617516
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter",
+    "starter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD",
+  "two_way": true
+}

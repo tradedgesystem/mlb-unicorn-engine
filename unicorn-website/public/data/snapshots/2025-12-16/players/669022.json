@@ -1,0 +1,42 @@
+{
+  "current_team_id": 120,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2143,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2887,
+    "xwoba_last_5_apps": 0.4696
+  },
+  "name": "MacKenzie Gore",
+  "player_id": 669022,
+  "player_name": "MacKenzie Gore",
+  "recent_unicorns": [
+    {
+      "description": "MacKenzie Gore has the lowest xwOBA allowed over his last 5 relief outings.",
+      "metric_value": 0.097167,
+      "pattern_id": "UNQ-R-0200",
+      "run_date": "2025-03-29",
+      "score": 1.365724
+    },
+    {
+      "description": "MacKenzie Gore has the lowest xwOBA allowed over his last 5 relief outings.",
+      "metric_value": 0.097167,
+      "pattern_id": "UNQ-R-0200",
+      "run_date": "2025-03-28",
+      "score": 1.410179
+    },
+    {
+      "description": "MacKenzie Gore has the lowest xwOBA allowed over his last 5 relief outings.",
+      "metric_value": 0.097167,
+      "pattern_id": "UNQ-R-0200",
+      "run_date": "2025-03-27",
+      "score": 1.288251
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

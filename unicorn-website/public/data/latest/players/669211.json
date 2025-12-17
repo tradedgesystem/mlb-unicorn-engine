@@ -1,0 +1,42 @@
+{
+  "current_team_id": 110,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1304,
+    "hard_hit_pct_last_5_apps": 0.3438,
+    "k_pct_last_5_apps": 0.1304,
+    "whiff_pct_last_5_apps": 0.0976,
+    "xwoba_last_5_apps": 0.418
+  },
+  "name": "Keegan Akin",
+  "player_id": 669211,
+  "player_name": "Keegan Akin",
+  "recent_unicorns": [
+    {
+      "description": "Keegan Akin allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-02",
+      "score": 1.42247
+    },
+    {
+      "description": "Keegan Akin allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-01",
+      "score": 1.364609
+    },
+    {
+      "description": "Keegan Akin allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-31",
+      "score": 1.292184
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3804347826086957,
+    "contact_pct_last_50": 0.37037037037037035,
+    "hard_hit_pct_last_50": 0.41025641025641024,
+    "xwoba_last_50": 0.27619565217391306
+  },
+  "name": "Jake Mangum",
+  "player_id": 663968,
+  "player_name": "Jake Mangum",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

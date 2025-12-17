@@ -1,0 +1,20 @@
+{
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3076923076923077,
+    "contact_pct_last_50": 0.6666666666666666,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.255
+  },
+  "name": "Noelvi Marte",
+  "player_id": 682622,
+  "player_name": "Noelvi Marte",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

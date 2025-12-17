@@ -1,0 +1,262 @@
+{
+  "abbreviation": "CHC",
+  "hitters": [
+    {
+      "href": "/players/608348/",
+      "name": "Carson Kelly",
+      "player_id": 608348,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/621020/",
+      "name": "Dansby Swanson",
+      "player_id": 621020,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669398/",
+      "name": "Gage Workman",
+      "player_id": 669398,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/664023/",
+      "name": "Ian Happ",
+      "player_id": 664023,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/542932/",
+      "name": "Jon Berti",
+      "player_id": 542932,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/457759/",
+      "name": "Justin Turner",
+      "player_id": 457759,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/663656/",
+      "name": "Kyle Tucker",
+      "player_id": 663656,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/807713/",
+      "name": "Matt Shaw",
+      "player_id": 807713,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/683737/",
+      "name": "Michael Busch",
+      "player_id": 683737,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/665804/",
+      "name": "Miguel Amaya",
+      "player_id": 665804,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/663538/",
+      "name": "Nico Hoerner",
+      "player_id": 663538,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/691718/",
+      "name": "Pete Crow-Armstrong",
+      "player_id": 691718,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/673548/",
+      "name": "Seiya Suzuki",
+      "player_id": 673548,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/641745/",
+      "name": "Brad Keller",
+      "player_id": 641745,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/573204/",
+      "name": "Caleb Thielbar",
+      "player_id": 573204,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/607067/",
+      "name": "Colin Rea",
+      "player_id": 607067,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/694037/",
+      "name": "Daniel Palencia",
+      "player_id": 694037,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669212/",
+      "name": "Eli Morgan",
+      "player_id": 669212,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681799/",
+      "name": "Ethan Roberts",
+      "player_id": 681799,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/657240/",
+      "name": "Julian Merryweather",
+      "player_id": 657240,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/663878/",
+      "name": "Nate Pearson",
+      "player_id": 663878,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/687863/",
+      "name": "Porter Hodge",
+      "player_id": 687863,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/519151/",
+      "name": "Ryan Pressly",
+      "player_id": 519151,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/676962/",
+      "name": "Ben Brown",
+      "player_id": 676962,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/592791/",
+      "name": "Jameson Taillon",
+      "player_id": 592791,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/657006/",
+      "name": "Justin Steele",
+      "player_id": 657006,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/571510/",
+      "name": "Matthew Boyd",
+      "player_id": 571510,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/684007/",
+      "name": "Shota Imanaga",
+      "player_id": 684007,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "team_id": 112
+}

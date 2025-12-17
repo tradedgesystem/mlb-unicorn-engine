@@ -1,0 +1,20 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.38028169014084506,
+    "contact_pct_last_50": 0.3333333333333333,
+    "hard_hit_pct_last_50": 0.16,
+    "xwoba_last_50": 0.20558823529411765
+  },
+  "name": "Brandon Lockridge",
+  "player_id": 663604,
+  "player_name": "Brandon Lockridge",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

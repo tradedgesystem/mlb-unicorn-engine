@@ -1,0 +1,35 @@
+{
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.03225806451612903,
+    "chase_pct_last_50": 0.35294117647058826,
+    "contact_pct_last_50": 0.4,
+    "hard_hit_pct_last_50": 0.45161290322580644,
+    "xwoba_last_50": 0.279375
+  },
+  "name": "Jarren Duran",
+  "player_id": 680776,
+  "player_name": "Jarren Duran",
+  "recent_unicorns": [
+    {
+      "description": "Jarren Duran leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.14876,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-05",
+      "score": 2.240062
+    },
+    {
+      "description": "Jarren Duran leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.14876,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-04",
+      "score": 2.152546
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

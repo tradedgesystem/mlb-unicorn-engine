@@ -1,0 +1,35 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.03333333333333333,
+    "chase_pct_last_50": 0.3592233009708738,
+    "contact_pct_last_50": 0.2803738317757009,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.2602
+  },
+  "name": "Jordan Walker",
+  "player_id": 691023,
+  "player_name": "Jordan Walker",
+  "recent_unicorns": [
+    {
+      "description": "Jordan Walker has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.7894,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-02",
+      "score": 2.950033
+    },
+    {
+      "description": "Jordan Walker has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 1.1965,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-01",
+      "score": 5.266064
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

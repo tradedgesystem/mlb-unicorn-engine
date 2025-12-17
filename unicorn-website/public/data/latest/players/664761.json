@@ -1,0 +1,42 @@
+{
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.2988505747126437,
+    "contact_pct_last_50": 0.42696629213483145,
+    "hard_hit_pct_last_50": 0.43243243243243246,
+    "xwoba_last_50": 0.21089795918367346
+  },
+  "name": "Alec Bohm",
+  "player_id": 664761,
+  "player_name": "Alec Bohm",
+  "recent_unicorns": [
+    {
+      "description": "Alec Bohm leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.216667,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-31",
+      "score": 3.180647
+    },
+    {
+      "description": "Alec Bohm leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.23913,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-30",
+      "score": 3.264755
+    },
+    {
+      "description": "Alec Bohm leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.216216,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-29",
+      "score": 2.176324
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

@@ -1,0 +1,12 @@
+{
+  "outputDirectory": "dist",
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/teams", "destination": "/teams/", "permanent": true },
+    { "source": "/teams/:teamId", "destination": "/teams/:teamId/", "permanent": true },
+    { "source": "/players", "destination": "/players/", "permanent": true },
+    { "source": "/players/:playerId", "destination": "/players/:playerId/", "permanent": true }
+  ]
+}
+

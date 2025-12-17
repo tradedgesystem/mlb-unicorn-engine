@@ -1,0 +1,20 @@
+{
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.03333333333333333,
+    "chase_pct_last_50": 0.28205128205128205,
+    "contact_pct_last_50": 0.3157894736842105,
+    "hard_hit_pct_last_50": 0.4666666666666667,
+    "xwoba_last_50": 0.3151
+  },
+  "name": "Josh Bell",
+  "player_id": 605137,
+  "player_name": "Josh Bell",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

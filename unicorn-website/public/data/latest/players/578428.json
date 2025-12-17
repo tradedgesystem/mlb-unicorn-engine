@@ -1,0 +1,20 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.34615384615384615,
+    "contact_pct_last_50": 0.4375,
+    "hard_hit_pct_last_50": 0.17857142857142858,
+    "xwoba_last_50": 0.23169444444444445
+  },
+  "name": "Jose Iglesias",
+  "player_id": 578428,
+  "player_name": "Jose Iglesias",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

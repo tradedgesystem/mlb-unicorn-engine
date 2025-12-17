@@ -1,0 +1,28 @@
+{
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.10714285714285714,
+    "chase_pct_last_50": 0.24705882352941178,
+    "contact_pct_last_50": 0.35443037974683544,
+    "hard_hit_pct_last_50": 0.5714285714285714,
+    "xwoba_last_50": 0.37527083333333333
+  },
+  "name": "Kyle Stowers",
+  "player_id": 669065,
+  "player_name": "Kyle Stowers",
+  "recent_unicorns": [
+    {
+      "description": "Kyle Stowers owns the lowest chase rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0004",
+      "run_date": "2025-03-27",
+      "score": 0.784553
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

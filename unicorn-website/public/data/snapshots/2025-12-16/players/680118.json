@@ -1,0 +1,20 @@
+{
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.0,
+    "contact_pct_last_50": 0.3333333333333333,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.08
+  },
+  "name": "Dairon Blanco",
+  "player_id": 680118,
+  "player_name": "Dairon Blanco",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

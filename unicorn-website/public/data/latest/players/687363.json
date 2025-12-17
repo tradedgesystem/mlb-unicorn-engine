@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.24107142857142858,
+    "contact_pct_last_50": 0.3516483516483517,
+    "hard_hit_pct_last_50": 0.3125,
+    "xwoba_last_50": 0.25816326530612244
+  },
+  "name": "Victor Scott II",
+  "player_id": 687363,
+  "player_name": "Victor Scott II",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25609756097560976,
+    "contact_pct_last_50": 0.30952380952380953,
+    "hard_hit_pct_last_50": 0.34615384615384615,
+    "xwoba_last_50": 0.21490243902439024
+  },
+  "name": "Kris Bryant",
+  "player_id": 592178,
+  "player_name": "Kris Bryant",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

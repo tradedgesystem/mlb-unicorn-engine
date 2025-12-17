@@ -1,0 +1,20 @@
+{
+  "current_team_id": 142,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "David Festa",
+  "player_id": 701581,
+  "player_name": "David Festa",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

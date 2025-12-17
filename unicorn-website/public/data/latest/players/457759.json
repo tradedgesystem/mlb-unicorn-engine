@@ -1,0 +1,20 @@
+{
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.24742268041237114,
+    "contact_pct_last_50": 0.25806451612903225,
+    "hard_hit_pct_last_50": 0.20833333333333334,
+    "xwoba_last_50": 0.30057894736842106
+  },
+  "name": "Justin Turner",
+  "player_id": 457759,
+  "player_name": "Justin Turner",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

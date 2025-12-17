@@ -1,0 +1,20 @@
+{
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.30158730158730157,
+    "contact_pct_last_50": 0.35714285714285715,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.34379310344827585
+  },
+  "name": "Nathan Lukes",
+  "player_id": 664770,
+  "player_name": "Nathan Lukes",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

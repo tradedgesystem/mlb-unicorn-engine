@@ -1,0 +1,20 @@
+{
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2647058823529412,
+    "contact_pct_last_50": 0.27586206896551724,
+    "hard_hit_pct_last_50": 0.125,
+    "xwoba_last_50": 0.37783333333333335
+  },
+  "name": "Mike Tauchman",
+  "player_id": 643565,
+  "player_name": "Mike Tauchman",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

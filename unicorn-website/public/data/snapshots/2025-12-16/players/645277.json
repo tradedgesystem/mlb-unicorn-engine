@@ -1,0 +1,20 @@
+{
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.05263157894736842,
+    "chase_pct_last_50": 0.32142857142857145,
+    "contact_pct_last_50": 0.4175824175824176,
+    "hard_hit_pct_last_50": 0.34210526315789475,
+    "xwoba_last_50": 0.3514081632653061
+  },
+  "name": "Ozzie Albies",
+  "player_id": 645277,
+  "player_name": "Ozzie Albies",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

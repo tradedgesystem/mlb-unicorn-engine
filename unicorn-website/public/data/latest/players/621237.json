@@ -1,0 +1,42 @@
+{
+  "current_team_id": 143,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.04,
+    "hard_hit_pct_last_5_apps": 0.2195,
+    "k_pct_last_5_apps": 0.28,
+    "whiff_pct_last_5_apps": 0.2097,
+    "xwoba_last_5_apps": 0.2546
+  },
+  "name": "José Alvarado",
+  "player_id": 621237,
+  "player_name": "José Alvarado",
+  "recent_unicorns": [
+    {
+      "description": "José Alvarado owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.006429,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-30",
+      "score": 2.366821
+    },
+    {
+      "description": "José Alvarado owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.006429,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-29",
+      "score": 2.248663
+    },
+    {
+      "description": "José Alvarado owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.006429,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-27",
+      "score": 2.151813
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

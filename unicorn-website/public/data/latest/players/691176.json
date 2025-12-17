@@ -1,0 +1,20 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "barrel_pct_last_50": 0.03225806451612903,
+    "chase_pct_last_50": 0.36893203883495146,
+    "contact_pct_last_50": 0.3163265306122449,
+    "hard_hit_pct_last_50": 0.41935483870967744,
+    "xwoba_last_50": 0.30764
+  },
+  "name": "Jasson Domínguez",
+  "player_id": 691176,
+  "player_name": "Jasson Domínguez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

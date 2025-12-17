@@ -1,0 +1,20 @@
+{
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.11475409836065574,
+    "contact_pct_last_50": 0.52,
+    "hard_hit_pct_last_50": 0.3076923076923077,
+    "xwoba_last_50": 0.34894444444444445
+  },
+  "name": "Jacob Young",
+  "player_id": 696285,
+  "player_name": "Jacob Young",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

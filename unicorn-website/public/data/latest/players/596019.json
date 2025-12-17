@@ -1,0 +1,28 @@
+{
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.05405405405405406,
+    "chase_pct_last_50": 0.24545454545454545,
+    "contact_pct_last_50": 0.4148936170212766,
+    "hard_hit_pct_last_50": 0.5405405405405406,
+    "xwoba_last_50": 0.3738125
+  },
+  "name": "Francisco Lindor",
+  "player_id": 596019,
+  "player_name": "Francisco Lindor",
+  "recent_unicorns": [
+    {
+      "description": "Francisco Lindor: Δ100+ = 2.925 over the last 50 AB.",
+      "metric_value": 2.924528,
+      "pattern_id": "UNQ-H-0561",
+      "run_date": "2025-04-15",
+      "score": 2.924528
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

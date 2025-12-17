@@ -1,0 +1,20 @@
+{
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25862068965517243,
+    "contact_pct_last_50": 0.3218390804597701,
+    "hard_hit_pct_last_50": 0.4444444444444444,
+    "xwoba_last_50": 0.31042857142857144
+  },
+  "name": "Nathaniel Lowe",
+  "player_id": 663993,
+  "player_name": "Nathaniel Lowe",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

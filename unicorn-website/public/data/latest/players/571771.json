@@ -1,0 +1,20 @@
+{
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.08,
+    "chase_pct_last_50": 0.3627450980392157,
+    "contact_pct_last_50": 0.2631578947368421,
+    "hard_hit_pct_last_50": 0.48,
+    "xwoba_last_50": 0.29625
+  },
+  "name": "Enrique Hernández",
+  "player_id": 571771,
+  "player_name": "Enrique Hernández",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

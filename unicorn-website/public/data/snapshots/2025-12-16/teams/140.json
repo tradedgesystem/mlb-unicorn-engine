@@ -1,0 +1,280 @@
+{
+  "abbreviation": "TEX",
+  "hitters": [
+    {
+      "href": "/players/666969/",
+      "name": "Adolis García",
+      "player_id": 666969,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/608369/",
+      "name": "Corey Seager",
+      "player_id": 608369,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/687957/",
+      "name": "Dustin Harris",
+      "player_id": 687957,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669394/",
+      "name": "Jake Burger",
+      "player_id": 669394,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/592626/",
+      "name": "Joc Pederson",
+      "player_id": 592626,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/641680/",
+      "name": "Jonah Heim",
+      "player_id": 641680,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/680716/",
+      "name": "Jonathan Ornelas",
+      "player_id": 680716,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/673962/",
+      "name": "Josh Jung",
+      "player_id": 673962,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669701/",
+      "name": "Josh Smith",
+      "player_id": 669701,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/607680/",
+      "name": "Kevin Pillar",
+      "player_id": 607680,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/543309/",
+      "name": "Kyle Higashioka",
+      "player_id": 543309,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/665750/",
+      "name": "Leody Taveras",
+      "player_id": 665750,
+      "position": "OF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/543760/",
+      "name": "Marcus Semien",
+      "player_id": 543760,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/694671/",
+      "name": "Wyatt Langford",
+      "player_id": 694671,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/676961/",
+      "name": "Caleb Boushley",
+      "player_id": 676961,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/455119/",
+      "name": "Chris Martin",
+      "player_id": 455119,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/677649/",
+      "name": "Ezequiel Duran",
+      "player_id": 677649,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/642520/",
+      "name": "Gerson Garabito",
+      "player_id": 642520,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/571948/",
+      "name": "Hoby Milner",
+      "player_id": 571948,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/657097/",
+      "name": "Jacob Webb",
+      "player_id": 657097,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/592426/",
+      "name": "Luke Jackson",
+      "player_id": 592426,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/687847/",
+      "name": "Marc Church",
+      "player_id": 687847,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/571578/",
+      "name": "Patrick Corbin",
+      "player_id": 571578,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/676395/",
+      "name": "Robert Garcia",
+      "player_id": 676395,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/542888/",
+      "name": "Shawn Armstrong",
+      "player_id": 542888,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/683004/",
+      "name": "Jack Leiter",
+      "player_id": 683004,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/594798/",
+      "name": "Jacob deGrom",
+      "player_id": 594798,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/677958/",
+      "name": "Kumar Rocker",
+      "player_id": 677958,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/543135/",
+      "name": "Nathan Eovaldi",
+      "player_id": 543135,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/641816/",
+      "name": "Tyler Mahle",
+      "player_id": 641816,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "team_id": 140
+}

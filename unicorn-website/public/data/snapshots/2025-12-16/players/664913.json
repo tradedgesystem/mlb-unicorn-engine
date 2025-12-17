@@ -1,0 +1,42 @@
+{
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.21739130434782608,
+    "contact_pct_last_50": 0.275,
+    "hard_hit_pct_last_50": 0.36363636363636365,
+    "xwoba_last_50": 0.31413636363636366
+  },
+  "name": "Seth Brown",
+  "player_id": 664913,
+  "player_name": "Seth Brown",
+  "recent_unicorns": [
+    {
+      "description": "Seth Brown has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-04",
+      "score": 2.518293
+    },
+    {
+      "description": "Seth Brown has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-03",
+      "score": 2.25473
+    },
+    {
+      "description": "Seth Brown has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-02",
+      "score": 2.159509
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

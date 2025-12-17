@@ -1,0 +1,20 @@
+{
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.08333333333333333,
+    "chase_pct_last_50": 0.3157894736842105,
+    "contact_pct_last_50": 0.46153846153846156,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.22175
+  },
+  "name": "Stuart Fairchild",
+  "player_id": 656413,
+  "player_name": "Stuart Fairchild",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

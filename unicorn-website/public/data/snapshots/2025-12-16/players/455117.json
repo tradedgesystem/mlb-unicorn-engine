@@ -1,0 +1,20 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.1111111111111111,
+    "chase_pct_last_50": 0.37209302325581395,
+    "contact_pct_last_50": 0.375,
+    "hard_hit_pct_last_50": 0.2777777777777778,
+    "xwoba_last_50": 0.30079310344827587
+  },
+  "name": "Martín Maldonado",
+  "player_id": 455117,
+  "player_name": "Martín Maldonado",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

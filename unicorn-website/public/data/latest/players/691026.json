@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.17142857142857143,
+    "contact_pct_last_50": 0.32098765432098764,
+    "hard_hit_pct_last_50": 0.38461538461538464,
+    "xwoba_last_50": 0.2630212765957447
+  },
+  "name": "Masyn Winn",
+  "player_id": 691026,
+  "player_name": "Masyn Winn",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

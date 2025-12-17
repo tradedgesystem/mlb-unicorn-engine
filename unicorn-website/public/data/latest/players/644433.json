@@ -1,0 +1,20 @@
+{
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.35294117647058826,
+    "contact_pct_last_50": 0.3,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.15283333333333332
+  },
+  "name": "Chadwick Tromp",
+  "player_id": 644433,
+  "player_name": "Chadwick Tromp",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

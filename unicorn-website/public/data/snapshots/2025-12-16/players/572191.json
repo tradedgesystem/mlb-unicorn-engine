@@ -1,0 +1,20 @@
+{
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.36231884057971014,
+    "contact_pct_last_50": 0.36764705882352944,
+    "hard_hit_pct_last_50": 0.44,
+    "xwoba_last_50": 0.2923513513513514
+  },
+  "name": "Michael A. Taylor",
+  "player_id": 572191,
+  "player_name": "Michael A. Taylor",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.07407407407407407,
+    "chase_pct_last_50": 0.22077922077922077,
+    "contact_pct_last_50": 0.34615384615384615,
+    "hard_hit_pct_last_50": 0.4444444444444444,
+    "xwoba_last_50": 0.39565
+  },
+  "name": "Dylan Moore",
+  "player_id": 664238,
+  "player_name": "Dylan Moore",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

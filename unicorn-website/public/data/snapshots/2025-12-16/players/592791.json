@@ -1,0 +1,35 @@
+{
+  "current_team_id": 112,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0638,
+    "hard_hit_pct_last_5_apps": 0.3019,
+    "k_pct_last_5_apps": 0.1702,
+    "whiff_pct_last_5_apps": 0.2875,
+    "xwoba_last_5_apps": 0.3779
+  },
+  "name": "Jameson Taillon",
+  "player_id": 592791,
+  "player_name": "Jameson Taillon",
+  "recent_unicorns": [
+    {
+      "description": "Jameson Taillon has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-04-03",
+      "score": 1.756426
+    },
+    {
+      "description": "Jameson Taillon has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-04-02",
+      "score": 1.769883
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

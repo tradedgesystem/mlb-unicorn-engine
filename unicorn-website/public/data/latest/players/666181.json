@@ -1,0 +1,20 @@
+{
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": null,
+    "chase_pct_last_50": 0.2857142857142857,
+    "contact_pct_last_50": 0.0,
+    "hard_hit_pct_last_50": null,
+    "xwoba_last_50": 0.0
+  },
+  "name": "Will Benson",
+  "player_id": 666181,
+  "player_name": "Will Benson",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

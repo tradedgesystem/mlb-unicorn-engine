@@ -1,0 +1,244 @@
+{
+  "abbreviation": "SF",
+  "hitters": [
+    {
+      "href": "/players/669477/",
+      "name": "Casey Schmitt",
+      "player_id": 669477,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/683766/",
+      "name": "Christian Koss",
+      "player_id": 683766,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/671218/",
+      "name": "Heliot Ramos",
+      "player_id": 671218,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/808982/",
+      "name": "Jung Hoo Lee",
+      "player_id": 808982,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/664774/",
+      "name": "LaMonte Wade Jr.",
+      "player_id": 664774,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/682641/",
+      "name": "Luis Matos",
+      "player_id": 682641,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/656305/",
+      "name": "Matt Chapman",
+      "player_id": 656305,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/573262/",
+      "name": "Mike Yastrzemski",
+      "player_id": 573262,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/672275/",
+      "name": "Patrick Bailey",
+      "player_id": 672275,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669087/",
+      "name": "Sam Huff",
+      "player_id": 669087,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/666149/",
+      "name": "Tyler Fitzgerald",
+      "player_id": 666149,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/642715/",
+      "name": "Willy Adames",
+      "player_id": 642715,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/527038/",
+      "name": "Wilmer Flores",
+      "player_id": 527038,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/666808/",
+      "name": "Camilo Doval",
+      "player_id": 666808,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669062/",
+      "name": "Erik Miller",
+      "player_id": 669062,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/806185/",
+      "name": "Hayden Birdsong",
+      "player_id": 806185,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/642152/",
+      "name": "Lou Trivino",
+      "player_id": 642152,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/678495/",
+      "name": "Randy Rodríguez",
+      "player_id": 678495,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/676254/",
+      "name": "Ryan Walker",
+      "player_id": 676254,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/702352/",
+      "name": "Spencer Bivens",
+      "player_id": 702352,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/643511/",
+      "name": "Tyler Rogers",
+      "player_id": 643511,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/663855/",
+      "name": "Jordan Hicks",
+      "player_id": 663855,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/434378/",
+      "name": "Justin Verlander",
+      "player_id": 434378,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/694738/",
+      "name": "Landen Roupp",
+      "player_id": 694738,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/657277/",
+      "name": "Logan Webb",
+      "player_id": 657277,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/592662/",
+      "name": "Robbie Ray",
+      "player_id": 592662,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "team_id": 137
+}

@@ -1,0 +1,35 @@
+{
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.05714285714285714,
+    "chase_pct_last_50": 0.24074074074074073,
+    "contact_pct_last_50": 0.3804347826086957,
+    "hard_hit_pct_last_50": 0.5714285714285714,
+    "xwoba_last_50": 0.40424
+  },
+  "name": "Matt Olson",
+  "player_id": 621566,
+  "player_name": "Matt Olson",
+  "recent_unicorns": [
+    {
+      "description": "Matt Olson leads MLB in HR hit in 3-0 counts.",
+      "metric_value": 1.0,
+      "pattern_id": "UNQ-H-0020",
+      "run_date": "2025-04-05",
+      "score": 2.88
+    },
+    {
+      "description": "Matt Olson leads MLB in HR hit in 3-0 counts.",
+      "metric_value": 1.0,
+      "pattern_id": "UNQ-H-0020",
+      "run_date": "2025-04-04",
+      "score": 2.88
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

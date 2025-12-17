@@ -1,0 +1,20 @@
+{
+  "current_team_id": 158,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "Jose Quintana",
+  "player_id": 500779,
+  "player_name": "Jose Quintana",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

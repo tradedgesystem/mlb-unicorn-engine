@@ -1,0 +1,20 @@
+{
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2073170731707317,
+    "contact_pct_last_50": 0.3018867924528302,
+    "hard_hit_pct_last_50": 0.1875,
+    "xwoba_last_50": 0.32212121212121214
+  },
+  "name": "José Caballero",
+  "player_id": 676609,
+  "player_name": "José Caballero",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

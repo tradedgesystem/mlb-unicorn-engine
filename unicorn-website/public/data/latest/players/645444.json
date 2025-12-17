@@ -1,0 +1,20 @@
+{
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.13157894736842105,
+    "contact_pct_last_50": 0.4375,
+    "hard_hit_pct_last_50": 0.07142857142857142,
+    "xwoba_last_50": 0.18294444444444444
+  },
+  "name": "Jose Herrera",
+  "player_id": 645444,
+  "player_name": "Jose Herrera",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.29850746268656714,
+    "contact_pct_last_50": 0.38181818181818183,
+    "hard_hit_pct_last_50": 0.5238095238095238,
+    "xwoba_last_50": 0.37590322580645164
+  },
+  "name": "Ketel Marte",
+  "player_id": 606466,
+  "player_name": "Ketel Marte",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

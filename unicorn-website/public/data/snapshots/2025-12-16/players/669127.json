@@ -1,0 +1,35 @@
+{
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.02564102564102564,
+    "chase_pct_last_50": 0.24719101123595505,
+    "contact_pct_last_50": 0.547945205479452,
+    "hard_hit_pct_last_50": 0.5641025641025641,
+    "xwoba_last_50": 0.4373061224489796
+  },
+  "name": "Shea Langeliers",
+  "player_id": 669127,
+  "player_name": "Shea Langeliers",
+  "recent_unicorns": [
+    {
+      "description": "Shea Langeliers: 25 balls hit 95+ mph in the last 50 AB.",
+      "metric_value": 25.0,
+      "pattern_id": "UNQ-H-0504",
+      "run_date": "2025-04-15",
+      "score": 25.0
+    },
+    {
+      "description": "Shea Langeliers has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.681222,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-05",
+      "score": 2.420394
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.06666666666666667,
+    "chase_pct_last_50": 0.2,
+    "contact_pct_last_50": 0.35714285714285715,
+    "hard_hit_pct_last_50": 0.5333333333333333,
+    "xwoba_last_50": 0.4198636363636364
+  },
+  "name": "Alexander Canario",
+  "player_id": 672744,
+  "player_name": "Alexander Canario",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

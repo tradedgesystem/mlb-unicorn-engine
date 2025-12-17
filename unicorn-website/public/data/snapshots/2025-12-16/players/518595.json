@@ -1,0 +1,20 @@
+{
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3541666666666667,
+    "contact_pct_last_50": 0.32653061224489793,
+    "hard_hit_pct_last_50": 0.375,
+    "xwoba_last_50": 0.22869565217391305
+  },
+  "name": "Travis d'Arnaud",
+  "player_id": 518595,
+  "player_name": "Travis d'Arnaud",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

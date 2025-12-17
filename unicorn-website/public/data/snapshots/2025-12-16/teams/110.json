@@ -1,0 +1,289 @@
+{
+  "abbreviation": "BAL",
+  "hitters": [
+    {
+      "href": "/players/668939/",
+      "name": "Adley Rutschman",
+      "player_id": 668939,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/656775/",
+      "name": "Cedric Mullins",
+      "player_id": 656775,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/681297/",
+      "name": "Colton Cowser",
+      "player_id": 681297,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/666185/",
+      "name": "Dylan Carlson",
+      "player_id": 666185,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/596142/",
+      "name": "Gary Sánchez",
+      "player_id": 596142,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/683002/",
+      "name": "Gunnar Henderson",
+      "player_id": 683002,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/677008/",
+      "name": "Heston Kjerstad",
+      "player_id": 677008,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/702616/",
+      "name": "Jackson Holliday",
+      "player_id": 702616,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/676059/",
+      "name": "Jordan Westburg",
+      "player_id": 676059,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/622761/",
+      "name": "Jorge Mateo",
+      "player_id": 622761,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/657656/",
+      "name": "Ramón Laureano",
+      "player_id": 657656,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/602104/",
+      "name": "Ramón Urías",
+      "player_id": 602104,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/663624/",
+      "name": "Ryan Mountcastle",
+      "player_id": 663624,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/656811/",
+      "name": "Ryan O'Hearn",
+      "player_id": 656811,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/641933/",
+      "name": "Tyler O'Neill",
+      "player_id": 641933,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/544150/",
+      "name": "Albert Suárez",
+      "player_id": 544150,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/641329/",
+      "name": "Bryan Baker",
+      "player_id": 641329,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/672335/",
+      "name": "Cionel Pérez",
+      "player_id": 672335,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681882/",
+      "name": "Colin Selby",
+      "player_id": 681882,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/642585/",
+      "name": "Félix Bautista",
+      "player_id": 642585,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/642397/",
+      "name": "Gregory Soto",
+      "player_id": 642397,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669211/",
+      "name": "Keegan Akin",
+      "player_id": 669211,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/621199/",
+      "name": "Matt Bowman",
+      "player_id": 621199,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/656240/",
+      "name": "Scott Blewett",
+      "player_id": 656240,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/622554/",
+      "name": "Seranthony Domínguez",
+      "player_id": 622554,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/666974/",
+      "name": "Yennier Cano",
+      "player_id": 666974,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/700249/",
+      "name": "Cade Povich",
+      "player_id": 700249,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/450203/",
+      "name": "Charlie Morton",
+      "player_id": 450203,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/665152/",
+      "name": "Dean Kremer",
+      "player_id": 665152,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/608372/",
+      "name": "Tomoyuki Sugano",
+      "player_id": 608372,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/621107/",
+      "name": "Zach Eflin",
+      "player_id": 621107,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "team_id": 110
+}

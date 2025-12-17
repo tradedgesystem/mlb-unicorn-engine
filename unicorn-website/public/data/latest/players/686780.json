@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2962962962962963,
+    "contact_pct_last_50": 0.48333333333333334,
+    "hard_hit_pct_last_50": 0.3448275862068966,
+    "xwoba_last_50": 0.31824324324324327
+  },
+  "name": "Pedro Pagés",
+  "player_id": 686780,
+  "player_name": "Pedro Pagés",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

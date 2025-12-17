@@ -1,0 +1,28 @@
+{
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.08823529411764706,
+    "chase_pct_last_50": 0.24107142857142858,
+    "contact_pct_last_50": 0.3655913978494624,
+    "hard_hit_pct_last_50": 0.5294117647058824,
+    "xwoba_last_50": 0.4473125
+  },
+  "name": "Yordan Alvarez",
+  "player_id": 670541,
+  "player_name": "Yordan Alvarez",
+  "recent_unicorns": [
+    {
+      "description": "Yordan Alvarez has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-28",
+      "score": 1.972451
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

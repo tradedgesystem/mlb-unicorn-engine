@@ -1,0 +1,20 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.037037037037037035,
+    "chase_pct_last_50": 0.45614035087719296,
+    "contact_pct_last_50": 0.39705882352941174,
+    "hard_hit_pct_last_50": 0.5185185185185185,
+    "xwoba_last_50": 0.33115384615384613
+  },
+  "name": "Mickey Moniak",
+  "player_id": 666160,
+  "player_name": "Mickey Moniak",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.0,
+    "contact_pct_last_50": 0.5,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.0235
+  },
+  "name": "Rob Brantly",
+  "player_id": 542963,
+  "player_name": "Rob Brantly",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

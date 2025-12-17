@@ -1,0 +1,20 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.14893617021276595,
+    "contact_pct_last_50": 0.23076923076923078,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.26033333333333336
+  },
+  "name": "Sean Bouchard",
+  "player_id": 656248,
+  "player_name": "Sean Bouchard",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

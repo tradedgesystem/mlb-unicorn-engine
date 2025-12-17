@@ -1,0 +1,20 @@
+{
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.22388059701492538,
+    "contact_pct_last_50": 0.3333333333333333,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.3212258064516129
+  },
+  "name": "Mitch Garver",
+  "player_id": 641598,
+  "player_name": "Mitch Garver",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

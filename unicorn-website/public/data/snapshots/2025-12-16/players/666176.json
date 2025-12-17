@@ -1,0 +1,20 @@
+{
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.09090909090909091,
+    "chase_pct_last_50": 0.2976190476190476,
+    "contact_pct_last_50": 0.375,
+    "hard_hit_pct_last_50": 0.5454545454545454,
+    "xwoba_last_50": 0.3646326530612245
+  },
+  "name": "Jo Adell",
+  "player_id": 666176,
+  "player_name": "Jo Adell",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

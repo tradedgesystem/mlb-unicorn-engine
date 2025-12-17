@@ -1,0 +1,20 @@
+{
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.08333333333333333,
+    "chase_pct_last_50": 0.3793103448275862,
+    "contact_pct_last_50": 0.24489795918367346,
+    "hard_hit_pct_last_50": 0.16666666666666666,
+    "xwoba_last_50": 0.23248
+  },
+  "name": "Jose Siri",
+  "player_id": 642350,
+  "player_name": "Jose Siri",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

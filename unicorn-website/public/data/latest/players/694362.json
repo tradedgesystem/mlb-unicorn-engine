@@ -1,0 +1,28 @@
+{
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.08333333333333333,
+    "chase_pct_last_50": 0.2608695652173913,
+    "contact_pct_last_50": 0.20689655172413793,
+    "hard_hit_pct_last_50": 0.4166666666666667,
+    "xwoba_last_50": 0.319125
+  },
+  "name": "Blake Dunn",
+  "player_id": 694362,
+  "player_name": "Blake Dunn",
+  "recent_unicorns": [
+    {
+      "description": "Blake Dunn: 0 weak-contact balls (under 80 mph) in the last 50 AB.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0570",
+      "run_date": "2025-04-15",
+      "score": 0.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.35555555555555557,
+    "contact_pct_last_50": 0.23015873015873015,
+    "hard_hit_pct_last_50": 0.3793103448275862,
+    "xwoba_last_50": 0.23532
+  },
+  "name": "Paul DeJong",
+  "player_id": 657557,
+  "player_name": "Paul DeJong",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

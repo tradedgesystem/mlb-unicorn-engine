@@ -1,0 +1,20 @@
+{
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.03571428571428571,
+    "chase_pct_last_50": 0.3229166666666667,
+    "contact_pct_last_50": 0.28431372549019607,
+    "hard_hit_pct_last_50": 0.35714285714285715,
+    "xwoba_last_50": 0.3643125
+  },
+  "name": "Bryan Reynolds",
+  "player_id": 668804,
+  "player_name": "Bryan Reynolds",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

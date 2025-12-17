@@ -1,0 +1,42 @@
+{
+  "current_team_id": 118,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.1579,
+    "k_pct_last_5_apps": 0.4286,
+    "whiff_pct_last_5_apps": 0.2813,
+    "xwoba_last_5_apps": 0.1119
+  },
+  "name": "Hunter Harvey",
+  "player_id": 640451,
+  "player_name": "Hunter Harvey",
+  "recent_unicorns": [
+    {
+      "description": "Hunter Harvey owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.073975,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-15",
+      "score": 0.073975
+    },
+    {
+      "description": "Hunter Harvey owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.051872,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-03",
+      "score": 2.514647
+    },
+    {
+      "description": "Hunter Harvey owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.051872,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-02",
+      "score": 2.453092
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

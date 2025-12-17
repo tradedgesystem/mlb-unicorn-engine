@@ -1,0 +1,28 @@
+{
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.13333333333333333,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.3522727272727273,
+    "hard_hit_pct_last_50": 0.6333333333333333,
+    "xwoba_last_50": 0.4806734693877551
+  },
+  "name": "James Wood",
+  "player_id": 695578,
+  "player_name": "James Wood",
+  "recent_unicorns": [
+    {
+      "description": "James Wood: average exit velocity vs 95+ mph fastballs = 104.820 mph (last 50 AB).",
+      "metric_value": 104.82,
+      "pattern_id": "UNQ-H-0523",
+      "run_date": "2025-04-15",
+      "score": 104.82
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

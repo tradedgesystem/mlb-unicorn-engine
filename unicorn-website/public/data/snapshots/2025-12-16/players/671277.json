@@ -1,0 +1,20 @@
+{
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.023255813953488372,
+    "chase_pct_last_50": 0.3924050632911392,
+    "contact_pct_last_50": 0.524390243902439,
+    "hard_hit_pct_last_50": 0.4186046511627907,
+    "xwoba_last_50": 0.27638
+  },
+  "name": "Luis García Jr.",
+  "player_id": 671277,
+  "player_name": "Luis García Jr.",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

@@ -1,0 +1,42 @@
+{
+  "current_team_id": 141,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2182,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.25,
+    "xwoba_last_5_apps": 0.4036
+  },
+  "name": "José Berríos",
+  "player_id": 621244,
+  "player_name": "José Berríos",
+  "recent_unicorns": [
+    {
+      "description": "José Berríos has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-04-03",
+      "score": 1.680502
+    },
+    {
+      "description": "José Berríos has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-03-28",
+      "score": 3.189779
+    },
+    {
+      "description": "José Berríos has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-03-27",
+      "score": 2.85467
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

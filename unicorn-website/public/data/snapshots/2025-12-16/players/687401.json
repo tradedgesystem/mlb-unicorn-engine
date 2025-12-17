@@ -1,0 +1,20 @@
+{
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.24210526315789474,
+    "contact_pct_last_50": 0.45454545454545453,
+    "hard_hit_pct_last_50": 0.34285714285714286,
+    "xwoba_last_50": 0.3256875
+  },
+  "name": "Joey Ortiz",
+  "player_id": 687401,
+  "player_name": "Joey Ortiz",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

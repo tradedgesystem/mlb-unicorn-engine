@@ -1,0 +1,20 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1667,
+    "xwoba_last_5_apps": 0.6317
+  },
+  "name": "Marcus Stroman",
+  "player_id": 573186,
+  "player_name": "Marcus Stroman",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

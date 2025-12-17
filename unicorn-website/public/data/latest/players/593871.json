@@ -1,0 +1,20 @@
+{
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.2727272727272727,
+    "contact_pct_last_50": 0.4657534246575342,
+    "hard_hit_pct_last_50": 0.4117647058823529,
+    "xwoba_last_50": 0.43556410256410255
+  },
+  "name": "Jorge Polanco",
+  "player_id": 593871,
+  "player_name": "Jorge Polanco",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

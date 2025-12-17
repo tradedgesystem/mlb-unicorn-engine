@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.35135135135135137,
+    "contact_pct_last_50": 0.43478260869565216,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.26085106382978723
+  },
+  "name": "Alec Burleson",
+  "player_id": 676475,
+  "player_name": "Alec Burleson",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

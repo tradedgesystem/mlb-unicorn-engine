@@ -1,0 +1,20 @@
+{
+  "current_team_id": 119,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2286,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2692,
+    "xwoba_last_5_apps": 0.362
+  },
+  "name": "Roki Sasaki",
+  "player_id": 808963,
+  "player_name": "Roki Sasaki",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

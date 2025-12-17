@@ -1,0 +1,20 @@
+{
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0625,
+    "chase_pct_last_50": 0.32989690721649484,
+    "contact_pct_last_50": 0.3106796116504854,
+    "hard_hit_pct_last_50": 0.3125,
+    "xwoba_last_50": 0.30604
+  },
+  "name": "Andrés Giménez",
+  "player_id": 665926,
+  "player_name": "Andrés Giménez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

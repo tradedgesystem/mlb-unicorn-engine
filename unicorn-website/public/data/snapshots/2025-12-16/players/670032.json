@@ -1,0 +1,20 @@
+{
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2,
+    "contact_pct_last_50": 0.5,
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.1525
+  },
+  "name": "Nicky Lopez",
+  "player_id": 670032,
+  "player_name": "Nicky Lopez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

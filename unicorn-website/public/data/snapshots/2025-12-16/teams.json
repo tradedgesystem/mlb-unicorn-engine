@@ -1,0 +1,122 @@
+[
+  {
+    "abbreviation": "LAA",
+    "team_id": 108
+  },
+  {
+    "abbreviation": "AZ",
+    "team_id": 109
+  },
+  {
+    "abbreviation": "BAL",
+    "team_id": 110
+  },
+  {
+    "abbreviation": "BOS",
+    "team_id": 111
+  },
+  {
+    "abbreviation": "CHC",
+    "team_id": 112
+  },
+  {
+    "abbreviation": "CIN",
+    "team_id": 113
+  },
+  {
+    "abbreviation": "CLE",
+    "team_id": 114
+  },
+  {
+    "abbreviation": "COL",
+    "team_id": 115
+  },
+  {
+    "abbreviation": "DET",
+    "team_id": 116
+  },
+  {
+    "abbreviation": "HOU",
+    "team_id": 117
+  },
+  {
+    "abbreviation": "KC",
+    "team_id": 118
+  },
+  {
+    "abbreviation": "LAD",
+    "team_id": 119
+  },
+  {
+    "abbreviation": "WSH",
+    "team_id": 120
+  },
+  {
+    "abbreviation": "NYM",
+    "team_id": 121
+  },
+  {
+    "abbreviation": "ATH",
+    "team_id": 133
+  },
+  {
+    "abbreviation": "PIT",
+    "team_id": 134
+  },
+  {
+    "abbreviation": "SD",
+    "team_id": 135
+  },
+  {
+    "abbreviation": "SEA",
+    "team_id": 136
+  },
+  {
+    "abbreviation": "SF",
+    "team_id": 137
+  },
+  {
+    "abbreviation": "STL",
+    "team_id": 138
+  },
+  {
+    "abbreviation": "TB",
+    "team_id": 139
+  },
+  {
+    "abbreviation": "TEX",
+    "team_id": 140
+  },
+  {
+    "abbreviation": "TOR",
+    "team_id": 141
+  },
+  {
+    "abbreviation": "MIN",
+    "team_id": 142
+  },
+  {
+    "abbreviation": "PHI",
+    "team_id": 143
+  },
+  {
+    "abbreviation": "ATL",
+    "team_id": 144
+  },
+  {
+    "abbreviation": "CWS",
+    "team_id": 145
+  },
+  {
+    "abbreviation": "MIA",
+    "team_id": 146
+  },
+  {
+    "abbreviation": "NYY",
+    "team_id": 147
+  },
+  {
+    "abbreviation": "MIL",
+    "team_id": 158
+  }
+]

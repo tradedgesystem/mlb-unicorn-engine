@@ -1,0 +1,28 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.030303030303030304,
+    "chase_pct_last_50": 0.3853211009174312,
+    "contact_pct_last_50": 0.2894736842105263,
+    "hard_hit_pct_last_50": 0.6060606060606061,
+    "xwoba_last_50": 0.3594897959183673
+  },
+  "name": "Manny Machado",
+  "player_id": 592518,
+  "player_name": "Manny Machado",
+  "recent_unicorns": [
+    {
+      "description": "Manny Machado: 10 balls hit 100+ mph with an 8–32° launch angle in the last 50 AB.",
+      "metric_value": 10.0,
+      "pattern_id": "UNQ-H-0506",
+      "run_date": "2025-04-15",
+      "score": 10.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 142,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2817,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1875,
+    "xwoba_last_5_apps": 0.5899
+  },
+  "name": "Pablo López",
+  "player_id": 641154,
+  "player_name": "Pablo López",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

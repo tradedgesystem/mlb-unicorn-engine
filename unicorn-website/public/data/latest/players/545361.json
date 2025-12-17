@@ -1,0 +1,20 @@
+{
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.1,
+    "chase_pct_last_50": 0.22105263157894736,
+    "contact_pct_last_50": 0.3409090909090909,
+    "hard_hit_pct_last_50": 0.5333333333333333,
+    "xwoba_last_50": 0.41204166666666664
+  },
+  "name": "Mike Trout",
+  "player_id": 545361,
+  "player_name": "Mike Trout",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

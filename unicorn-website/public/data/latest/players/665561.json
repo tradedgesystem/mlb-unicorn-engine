@@ -1,0 +1,20 @@
+{
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.07142857142857142,
+    "contact_pct_last_50": 0.5333333333333333,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.4519166666666667
+  },
+  "name": "Rafael Marchán",
+  "player_id": 665561,
+  "player_name": "Rafael Marchán",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

@@ -1,0 +1,28 @@
+{
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.21495327102803738,
+    "contact_pct_last_50": 0.5068493150684932,
+    "hard_hit_pct_last_50": 0.35135135135135137,
+    "xwoba_last_50": 0.31804
+  },
+  "name": "Adley Rutschman",
+  "player_id": 668939,
+  "player_name": "Adley Rutschman",
+  "recent_unicorns": [
+    {
+      "description": "Adley Rutschman tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.586143,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-03-29",
+      "score": 1.203197
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

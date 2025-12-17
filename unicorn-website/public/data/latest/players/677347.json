@@ -1,0 +1,20 @@
+{
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.034482758620689655,
+    "chase_pct_last_50": 0.2926829268292683,
+    "contact_pct_last_50": 0.3670886075949367,
+    "hard_hit_pct_last_50": 0.5862068965517241,
+    "xwoba_last_50": 0.3978541666666667
+  },
+  "name": "Kyren Paris",
+  "player_id": 677347,
+  "player_name": "Kyren Paris",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}
