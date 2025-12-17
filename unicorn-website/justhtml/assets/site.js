@@ -293,39 +293,50 @@ function renderList(host, rows) {
   }
   for (const row of rows) {
     const div = document.createElement("div");
-    div.className = "row";
+    div.className = row.className ? `row ${row.className}` : "row";
     div.innerHTML = `<div>${row.left}</div><div class="right">${row.right || ""}</div>`;
     host.appendChild(div);
   }
 }
 
 async function renderHome({ teamsById }) {
-  const host = $("#unicorns");
-  if (!host) return;
+  const hotHost = $("#hot");
+  const notHost = $("#not");
+  if (!hotHost || !notHost) return;
   try {
     const unicorns = await fetchJson(`${DATA_BASE}/unicorns.json`);
     if (!Array.isArray(unicorns)) throw new Error("unicorns.json is not an array");
     if (unicorns.length === 0) {
-      host.textContent = "No unicorns for this day.";
+      hotHost.textContent = "No results.";
+      notHost.textContent = "No results.";
       return;
     }
-    const rows = unicorns.map((u) => {
-      const pid = u?.player_id;
-      const name = u?.name || `Player ${pid}`;
-      const roles = Array.isArray(u?.roles) ? u.roles : [];
-      const teamId = u?.current_team_id;
-      const teamAbbr = teamsById.get(String(teamId))?.abbreviation || "";
-      const desc = u?.description || "";
-      return {
-        left: `<a href="/players/${encodeURIComponent(pid)}/">${escapeHtml(name)}</a><div class="small">${escapeHtml(
-          desc,
-        )}</div>`,
-        right: `${escapeHtml(teamAbbr)}${roles.length ? `<br/>${escapeHtml(roles.join(", "))}` : ""}`,
-      };
-    });
-    renderList(host, rows);
+
+    const hot = unicorns.filter((u) => u?.kind === "hot").slice(0, 25);
+    const not = unicorns.filter((u) => u?.kind === "not").slice(0, 25);
+
+    const toRows = (items, className) =>
+      items.map((u) => {
+        const pid = u?.player_id;
+        const name = u?.name || `Player ${pid}`;
+        const teamId = u?.current_team_id;
+        const teamAbbr = teamsById.get(String(teamId))?.abbreviation || "";
+        const title = u?.title || "";
+        const value = u?.value_display || "—";
+        return {
+          className,
+          left: `<a href="/players/${encodeURIComponent(pid)}/">${escapeHtml(name)}</a><div class="small">${escapeHtml(
+            title,
+          )}</div>`,
+          right: `${escapeHtml(teamAbbr)}<br/>${escapeHtml(value)}`,
+        };
+      });
+
+    renderList(hotHost, toRows(hot, "hot"));
+    renderList(notHost, toRows(not, "not"));
   } catch (err) {
-    host.textContent = "Unable to load unicorns.";
+    hotHost.textContent = "Unable to load.";
+    notHost.textContent = "Unable to load.";
     showStatus(err?.message || String(err));
   }
 }

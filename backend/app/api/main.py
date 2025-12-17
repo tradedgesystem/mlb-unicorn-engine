@@ -386,7 +386,7 @@ def _role_metrics(summary: models.PlayerSummary) -> dict:
 def get_player_profile(player_id: int, response: Response, as_of_date: Optional[date] = None):
     session = SessionLocal()
     try:
-        as_of = as_of_date or date.today()
+        as_of = _effective_as_of_date(session, as_of_date)
         lookback = DEFAULT_LOOKBACK_DAYS
         usage_counts = get_pitcher_usage_counts(session, as_of_date=as_of, lookback_days=lookback)
         player = (

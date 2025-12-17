@@ -108,11 +108,18 @@ function homePage() {
     bodyAttrs: 'data-page="home"',
     mainHtml: `
 <header class="header">
-  <h1>Today’s Unicorns</h1>
-  <p class="subhead">Daily Top 50 (or fewer), shuffled once per day.</p>
+  <h1>Who Is Hot / Who Is Not</h1>
+  <p class="subhead">Daily list (up to 25 hot + 25 not), stats chosen at random per day.</p>
 </header>
 <section>
-  <div id="unicorns" class="list">Loading…</div>
+  <div class="panel">
+    <h2>Who is Hot</h2>
+    <div id="hot" class="list">Loading…</div>
+  </div>
+  <div class="panel">
+    <h2>Who is Not</h2>
+    <div id="not" class="list">Loading…</div>
+  </div>
 </section>
 `,
   });

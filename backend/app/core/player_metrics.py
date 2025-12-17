@@ -99,8 +99,29 @@ def _last_pa_ids(session, batter_id: int, limit: int = 50) -> List[int]:
     return [row.pa_id for row in session.execute(stmt)]
 
 
+def _last_ab_ids(session, batter_id: int, limit: int = 50) -> List[int]:
+    """Approximate last N ABs using PA rows excluding walks.
+
+    Note: this is an approximation because the model does not explicitly track HBP/SF/SH.
+    """
+    stmt = (
+        select(models.PlateAppearance.pa_id)
+        .join(models.Game, models.Game.game_id == models.PlateAppearance.game_id)
+        .where(
+            models.PlateAppearance.batter_id == batter_id,
+            or_(
+                models.PlateAppearance.is_bb == False,  # noqa: E712
+                models.PlateAppearance.is_bb == None,  # noqa: E711
+            ),
+        )
+        .order_by(models.Game.game_date.desc(), models.PlateAppearance.pa_id.desc())
+        .limit(limit)
+    )
+    return [row.pa_id for row in session.execute(stmt)]
+
+
 def _hitter_metrics(session, batter_id: int) -> dict:
-    pa_ids = _last_pa_ids(session, batter_id, limit=50)
+    pa_ids = _last_ab_ids(session, batter_id, limit=50)
     if not pa_ids:
         return {
             "barrel_pct_last_50": None,
@@ -276,7 +297,7 @@ def _starter_metrics(session, pitcher_id: int) -> dict:
 
 def _reliever_metrics(session, pitcher_id: int) -> dict:
     _, reliever_games_stmt = _pitcher_game_sets(session, pitcher_id)
-    reliever_games = [row.game_id for row in session.execute(reliever_games_stmt.limit(5))]
+    reliever_games = [row.game_id for row in session.execute(reliever_games_stmt.limit(6))]
     stats = _pitcher_metrics_for_games(session, pitcher_id, reliever_games)
     if not stats:
         return {}
