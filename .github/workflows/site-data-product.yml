@@ -1,0 +1,112 @@
+name: Site Data Product (Nightly)
+
+on:
+  schedule:
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+    inputs:
+      snapshot_date:
+        description: "Snapshot date (YYYY-MM-DD). Default: yesterday (UTC)."
+        required: false
+        type: string
+      base_url:
+        description: "Backend API base URL."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-data-product
+  cancel-in-progress: false
+
+jobs:
+  build-data:
+    runs-on: ubuntu-latest
+    env:
+      DEFAULT_BASE_URL: https://mlb-unicorn-engine.onrender.com
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Python tests
+        run: python -m pytest
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install website dependencies
+        run: npm ci
+        working-directory: unicorn-website
+
+      - name: Lint website
+        run: npm run lint
+        working-directory: unicorn-website
+
+      - name: Build website
+        run: npm run build
+        working-directory: unicorn-website
+
+      - name: Generate + validate + publish data product
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE_URL="${{ inputs.base_url }}"
+          if [[ -z "${BASE_URL}" ]]; then
+            BASE_URL="${DEFAULT_BASE_URL}"
+          fi
+
+          SNAPSHOT_DATE="${{ inputs.snapshot_date }}"
+          if [[ -n "${SNAPSHOT_DATE}" ]]; then
+            python -m backend.app.tools.generate_site_data_product \
+              --base-url "${BASE_URL}" \
+              --snapshot-date "${SNAPSHOT_DATE}" \
+              --data-root unicorn-website/public/data
+          else
+            python -m backend.app.tools.generate_site_data_product \
+              --base-url "${BASE_URL}" \
+              --data-root unicorn-website/public/data
+          fi
+
+      - name: Commit and push (if changed)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- unicorn-website/public/data; then
+            echo "No data product changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add unicorn-website/public/data
+
+          if git diff --cached --quiet; then
+            echo "No staged changes."
+            exit 0
+          fi
+
+          SNAPSHOT_DATE="${{ inputs.snapshot_date }}"
+          if [[ -z "${SNAPSHOT_DATE}" ]]; then
+            SNAPSHOT_DATE="$(python -c 'from datetime import datetime,timezone,timedelta; print((datetime.now(timezone.utc).date()-timedelta(days=1)).isoformat())')"
+          fi
+          git commit -m "data: site snapshot ${SNAPSHOT_DATE}"
+
+          git push origin "HEAD:${{ github.ref_name }}"
+
