@@ -27,3 +27,6 @@ artifacts/
 
 # JustHTML output
 dist/
+
+# Static site output
+static-site/dist/

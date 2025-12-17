@@ -1,6 +1,6 @@
-# Parallel Static Site Deployment (JustHTML)
+# Static Site Deployment (JustHTML)
 
-This repo now supports deploying a **second** frontend that serves only static files (HTML/CSS/JS + JSON) from `static-site/dist/`, while keeping the existing Next.js site unchanged.
+This repo deploys a **static-only** frontend (HTML/CSS/JS + JSON) from `static-site/dist/`.
 
 ## What gets deployed
 
@@ -19,7 +19,7 @@ This repo now supports deploying a **second** frontend that serves only static f
 
 ## Vercel setup (recommended)
 
-Create a **new Vercel project** (separate from the existing Next.js one):
+Create a Vercel project:
 
 - **Root Directory**: `static-site`
 - **Framework Preset**: Other
@@ -38,4 +38,3 @@ Requires the repo to already have `unicorn-website/public/data/latest/*` committ
 cd static-site
 npm run build
 ```
-

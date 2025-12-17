@@ -189,6 +189,36 @@ function playerPage(playerId) {
   });
 }
 
+function notFoundPage() {
+  return pageTemplate({
+    title: "Not Found",
+    bodyAttrs: 'data-page="not-found"',
+    mainHtml: `
+<header class="header">
+  <h1>Not found</h1>
+  <p class="subhead">That page doesn’t exist.</p>
+  <div class="actions">
+    <a class="action" href="/">Go to home</a>
+    <a class="action" href="/teams/">Browse teams</a>
+  </div>
+</header>
+`,
+  });
+}
+
+function healthPage() {
+  return pageTemplate({
+    title: "Health",
+    bodyAttrs: 'data-page="health"',
+    mainHtml: `
+<header class="header">
+  <h1>OK</h1>
+  <p class="subhead">Static site is serving files. Data freshness is shown in the sidebar.</p>
+</header>
+`,
+  });
+}
+
 async function copyAssets({ srcDir, outDir }) {
   await mkdirp(path.join(outDir, "assets"));
   const files = await fs.readdir(srcDir);
@@ -263,7 +293,9 @@ Defaults:
   await copyAssets({ srcDir: path.join(thisDir, "assets"), outDir });
 
   await writeFile(path.join(outDir, "index.html"), homePage());
+  await writeFile(path.join(outDir, "404.html"), notFoundPage());
   await writeFile(path.join(outDir, "teams", "index.html"), teamsIndexPage());
+  await writeFile(path.join(outDir, "health", "index.html"), healthPage());
 
   for (const teamId of teamIds) {
     await writeFile(path.join(outDir, "teams", teamId, "index.html"), teamPage(teamId));

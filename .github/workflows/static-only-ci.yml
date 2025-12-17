@@ -1,0 +1,25 @@
+name: Static-Only CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  static-only:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Static-only guard
+        run: node static-site/scripts/static-only-guard.mjs
+
+      - name: Build static site
+        run: node static-site/build.mjs
+

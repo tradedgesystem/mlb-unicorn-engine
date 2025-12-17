@@ -48,17 +48,8 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install website dependencies
-        run: npm ci
-        working-directory: unicorn-website
-
-      - name: Lint website
-        run: npm run lint
-        working-directory: unicorn-website
-
-      - name: Build website
-        run: npm run build
-        working-directory: unicorn-website
+      - name: Static-only guard
+        run: node static-site/scripts/static-only-guard.mjs
 
       - name: Generate + validate + publish data product
         shell: bash
@@ -81,6 +72,9 @@ jobs:
               --base-url "${BASE_URL}" \
               --data-root unicorn-website/public/data
           fi
+
+      - name: Build static site (sanity)
+        run: node static-site/build.mjs
 
       - name: Commit and push (if changed)
         shell: bash
@@ -109,4 +103,3 @@ jobs:
           git commit -m "data: site snapshot ${SNAPSHOT_DATE}"
 
           git push origin "HEAD:${{ github.ref_name }}"
-

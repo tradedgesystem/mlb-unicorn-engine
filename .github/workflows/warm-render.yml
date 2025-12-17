@@ -9,7 +9,7 @@ jobs:
   warm:
     runs-on: ubuntu-latest
     steps:
-      - name: Warm backend via Vercel proxy
+      - name: Warm backend
         shell: bash
         run: |
           set -euo pipefail
@@ -18,7 +18,7 @@ jobs:
           sleep "$((RANDOM % 21))"
 
           for attempt in 1 2 3; do
-            url="https://mlb-unicorn-web.vercel.app/api/warm?ts=$(date +%s)"
+            url="https://mlb-unicorn-engine.onrender.com/?ts=$(date +%s)"
             echo "Attempt ${attempt}/3: ${url}"
             if curl -fsS -L -H "Cache-Control: no-cache" --max-time 25 "${url}"; then
               echo "Warm OK"
