@@ -34,6 +34,58 @@ body {
     radial-gradient(900px 600px at 80% 90%, rgba(251, 113, 133, 0.11), transparent 55%), var(--bg);
 }
 
+body[data-page="home"] {
+  --bg: #ffffff;
+  --panel: rgba(15, 23, 42, 0.04);
+  --panel-2: rgba(15, 23, 42, 0.08);
+  --text: rgba(15, 23, 42, 0.92);
+  --muted: rgba(15, 23, 42, 0.7);
+  --faint: rgba(15, 23, 42, 0.55);
+  --border: rgba(15, 23, 42, 0.14);
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+  background: var(--bg);
+}
+
+body[data-page="home"] .sidebar {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+body[data-page="home"] .brand {
+  background: var(--panel);
+}
+
+body[data-page="home"] .last-updated,
+body[data-page="home"] .search,
+body[data-page="home"] .teams-nav {
+  background: var(--panel);
+}
+
+body[data-page="home"] .input,
+body[data-page="home"] .result,
+body[data-page="home"] .team-link,
+body[data-page="home"] .metrics-table tbody td,
+body[data-page="home"] .tab,
+body[data-page="home"] .panel,
+body[data-page="home"] .card,
+body[data-page="home"] .chip {
+  background: rgba(15, 23, 42, 0.02);
+}
+
+body[data-page="home"] .result:hover,
+body[data-page="home"] .team-link:hover,
+body[data-page="home"] .tab.active {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+body[data-page="home"] .metrics-table thead th {
+  color: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.08);
+}
+
+body[data-page="home"] .metrics-table {
+  background: rgba(15, 23, 42, 0.02);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -321,6 +373,32 @@ a:hover {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+
+.row .full {
+  flex: 1;
+  min-width: 0;
+}
+
+.feed-line {
+  font-size: 15px;
+  line-height: 1.35;
+  letter-spacing: 0.1px;
+}
+
+.feed-line a {
+  font-weight: 700;
+}
+
+.feed-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.feed-value {
+  font-family: var(--mono);
+  font-weight: 700;
 }
 
 .row.hot {

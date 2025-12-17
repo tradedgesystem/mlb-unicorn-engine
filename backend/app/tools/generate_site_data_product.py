@@ -263,6 +263,7 @@ def _build_hot_not_feed(
         if not isinstance(roster, list):
             return
         team_id = team_payload.get("team_id")
+        team_abbrev = (team_payload.get("abbrev") or "").strip()
         for p in roster:
             if not isinstance(p, Mapping):
                 continue
@@ -276,7 +277,9 @@ def _build_hot_not_feed(
             entry = {
                 "player_id": pid_int,
                 "name": (p.get("player_name") or p.get("full_name") or p.get("name") or "").strip(),
+                "position": (p.get("position") or "").strip(),
                 "current_team_id": int(team_id) if team_id is not None else None,
+                "team_abbrev": team_abbrev,
                 "roles": [group[:-1]],  # hitters->hitter, starters->starter, relievers->reliever
                 "metrics": dict(metrics),
             }
@@ -446,7 +449,9 @@ def _build_hot_not_feed(
                     "title": stat["label"],
                     "player_id": pid,
                     "name": (payload.get("name") or payload.get("player_name") or "").strip(),
+                    "position": (payload.get("position") or "").strip(),
                     "current_team_id": payload.get("current_team_id"),
+                    "team_abbrev": (payload.get("team_abbrev") or "").strip(),
                     "roles": roles_clean,
                     "href": f"/players/{pid}/",
                     "value": value,

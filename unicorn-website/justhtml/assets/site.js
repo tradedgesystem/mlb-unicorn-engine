@@ -294,7 +294,11 @@ function renderList(host, rows) {
   for (const row of rows) {
     const div = document.createElement("div");
     div.className = row.className ? `row ${row.className}` : "row";
-    div.innerHTML = `<div>${row.left}</div><div class="right">${row.right || ""}</div>`;
+    if (row.right === null || row.right === undefined || row.right === "") {
+      div.innerHTML = `<div class="full">${row.left}</div>`;
+    } else {
+      div.innerHTML = `<div>${row.left}</div><div class="right">${row.right}</div>`;
+    }
     host.appendChild(div);
   }
 }
@@ -319,16 +323,26 @@ async function renderHome({ teamsById }) {
       items.map((u) => {
         const pid = u?.player_id;
         const name = u?.name || `Player ${pid}`;
-        const teamId = u?.current_team_id;
-        const teamAbbr = teamsById.get(String(teamId))?.abbreviation || "";
+        const teamAbbr =
+          u?.team_abbrev ||
+          u?.team_abbreviation ||
+          u?.team_abbrev_current ||
+          teamsById.get(String(u?.current_team_id))?.abbreviation ||
+          "";
+        const pos = u?.position || "";
         const title = u?.title || "";
         const value = u?.value_display || "—";
+        const metaParts = [];
+        if (pos) metaParts.push(pos);
+        if (teamAbbr) metaParts.push(teamAbbr);
+        const meta = metaParts.length ? `<span class="feed-meta"> ${escapeHtml(metaParts.join(" · "))}</span>` : "";
+        const playerHref = pid ? `/players/${encodeURIComponent(pid)}/` : "#";
         return {
           className,
-          left: `<a href="/players/${encodeURIComponent(pid)}/">${escapeHtml(name)}</a><div class="small">${escapeHtml(
+          left: `<div class="feed-line"><a href="${playerHref}">${escapeHtml(name)}</a>${meta} — ${escapeHtml(
             title,
-          )}</div>`,
-          right: `${escapeHtml(teamAbbr)}<br/>${escapeHtml(value)}`,
+          )} <span class="feed-value">${escapeHtml(value)}</span></div>`,
+          right: null,
         };
       });
 
