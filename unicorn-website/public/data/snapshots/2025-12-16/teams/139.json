@@ -148,6 +148,15 @@
       ]
     },
     {
+      "href": "/players/656876/",
+      "name": "Drew Rasmussen",
+      "player_id": 656876,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/670955/",
       "name": "Edwin Uceta",
       "player_id": 670955,
@@ -232,6 +241,42 @@
       "href": "/players/664126/",
       "name": "Pete Fairbanks",
       "player_id": 664126,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/686752/",
+      "name": "Ryan Pepiot",
+      "player_id": 686752,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669358/",
+      "name": "Shane Baz",
+      "player_id": 669358,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/671737/",
+      "name": "Taj Bradley",
+      "player_id": 671737,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/641793/",
+      "name": "Zack Littell",
+      "player_id": 641793,
       "position": "P",
       "roles": [
         "reliever"

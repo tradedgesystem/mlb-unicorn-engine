@@ -193,6 +193,15 @@
       ]
     },
     {
+      "href": "/players/663436/",
+      "name": "Davis Martin",
+      "player_id": 663436,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/686642/",
       "name": "Fraser Ellard",
       "player_id": 686642,
@@ -202,9 +211,27 @@
       ]
     },
     {
+      "href": "/players/686563/",
+      "name": "Jonathan Cannon",
+      "player_id": 686563,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/673929/",
       "name": "Jordan Leasure",
       "player_id": 673929,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/527048/",
+      "name": "Martín Pérez",
+      "player_id": 527048,
       "position": "P",
       "roles": [
         "reliever"
@@ -232,6 +259,24 @@
       "href": "/players/682171/",
       "name": "Penn Murfee",
       "player_id": 682171,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/680732/",
+      "name": "Sean Burke",
+      "player_id": 680732,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681343/",
+      "name": "Shane Smith",
+      "player_id": 681343,
       "position": "P",
       "roles": [
         "reliever"

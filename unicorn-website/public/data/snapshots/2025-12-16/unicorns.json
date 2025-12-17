@@ -1,1 +1,702 @@
-[]
+[
+  {
+    "current_team_id": 141,
+    "description": "Yariel Rodríguez has allowed the most HR after reaching 75 pitches.",
+    "href": "/players/684320/",
+    "metric_value": 2.0,
+    "name": "Yariel Rodríguez",
+    "pattern_id": "UNQ-P-0300",
+    "player_id": 684320,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.82326863
+  },
+  {
+    "current_team_id": 144,
+    "description": "Marcell Ozuna owns the lowest chase rate over his last 50 PA.",
+    "href": "/players/542303/",
+    "metric_value": 0.0,
+    "name": "Marcell Ozuna",
+    "pattern_id": "UNQ-H-0004",
+    "player_id": 542303,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.739684
+  },
+  {
+    "current_team_id": 119,
+    "description": "Blake Snell has the highest whiff rate over his last 3 starts.",
+    "href": "/players/605483/",
+    "metric_value": 0.6,
+    "name": "Blake Snell",
+    "pattern_id": "UNQ-P-0101",
+    "player_id": 605483,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.598445
+  },
+  {
+    "current_team_id": 142,
+    "description": "Cole Sands owns the lowest contact quality after 70 pitches.",
+    "href": "/players/663485/",
+    "metric_value": 0.015571,
+    "name": "Cole Sands",
+    "pattern_id": "UNQ-P-0301",
+    "player_id": 663485,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.113048
+  },
+  {
+    "current_team_id": 114,
+    "description": "Ben Lively has the lowest xwOBA allowed over his last 5 relief outings.",
+    "href": "/players/594902/",
+    "metric_value": 0.198474,
+    "name": "Ben Lively",
+    "pattern_id": "UNQ-R-0200",
+    "player_id": 594902,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.711222537
+  },
+  {
+    "current_team_id": 146,
+    "description": "Lake Bachar has the highest whiff rate over his last 3 starts.",
+    "href": "/players/669199/",
+    "metric_value": 0.8,
+    "name": "Lake Bachar",
+    "pattern_id": "UNQ-P-0101",
+    "player_id": 669199,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.009837
+  },
+  {
+    "current_team_id": 134,
+    "description": "Andrew McCutchen leads MLB in contact rate over his last 50 PA.",
+    "href": "/players/457705/",
+    "metric_value": 0.0,
+    "name": "Andrew McCutchen",
+    "pattern_id": "UNQ-H-0005",
+    "player_id": 457705,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.0413928901669012
+  },
+  {
+    "current_team_id": 120,
+    "description": "Keibert Ruiz has the best xwOBA in MLB in 3-2 counts.",
+    "href": "/players/660688/",
+    "metric_value": 0.617,
+    "name": "Keibert Ruiz",
+    "pattern_id": "UNQ-H-0021",
+    "player_id": 660688,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.466717659
+  },
+  {
+    "current_team_id": 111,
+    "description": "Garrett Whitlock allows the lowest hard-hit rate over his last 5 relief outings.",
+    "href": "/players/676477/",
+    "metric_value": 0.0,
+    "name": "Garrett Whitlock",
+    "pattern_id": "UNQ-R-0202",
+    "player_id": 676477,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.69131
+  },
+  {
+    "current_team_id": 113,
+    "description": "Hunter Greene has the lowest xwOBA allowed over his last 5 relief outings.",
+    "href": "/players/668881/",
+    "metric_value": 0.167,
+    "name": "Hunter Greene",
+    "pattern_id": "UNQ-R-0200",
+    "player_id": 668881,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.900961
+  },
+  {
+    "current_team_id": 117,
+    "description": "Framber Valdez has the most strikeouts over his last 3 starts.",
+    "href": "/players/664285/",
+    "metric_value": 0.0,
+    "name": "Framber Valdez",
+    "pattern_id": "UNQ-P-0103",
+    "player_id": 664285,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.0186082551229396
+  },
+  {
+    "current_team_id": 138,
+    "description": "Willson Contreras leads MLB in contact rate over his last 50 PA.",
+    "href": "/players/575929/",
+    "metric_value": 0.0,
+    "name": "Willson Contreras",
+    "pattern_id": "UNQ-H-0005",
+    "player_id": 575929,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.052975622009
+  },
+  {
+    "current_team_id": 118,
+    "description": "Cole Ragans has the most strikeouts over his last 3 starts.",
+    "href": "/players/666142/",
+    "metric_value": 0.0,
+    "name": "Cole Ragans",
+    "pattern_id": "UNQ-P-0103",
+    "player_id": 666142,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.243127
+  },
+  {
+    "current_team_id": 110,
+    "description": "Colton Cowser leads MLB in contact rate over his last 50 PA.",
+    "href": "/players/681297/",
+    "metric_value": 0.0,
+    "name": "Colton Cowser",
+    "pattern_id": "UNQ-H-0005",
+    "player_id": 681297,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.1282877930000001
+  },
+  {
+    "current_team_id": 108,
+    "description": "Yusei Kikuchi has the most strikeouts over his last 3 starts.",
+    "href": "/players/579328/",
+    "metric_value": 0.0,
+    "name": "Yusei Kikuchi",
+    "pattern_id": "UNQ-P-0103",
+    "player_id": 579328,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.153526
+  },
+  {
+    "current_team_id": 138,
+    "description": "Nolan Arenado leads MLB in hard-hit rate over his last 50 PA.",
+    "href": "/players/571448/",
+    "metric_value": 0.3,
+    "name": "Nolan Arenado",
+    "pattern_id": "UNQ-H-0002",
+    "player_id": 571448,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.796376
+  },
+  {
+    "current_team_id": 111,
+    "description": "Justin Slaten has the highest whiff rate over his last 5 relief outings.",
+    "href": "/players/686580/",
+    "metric_value": 0.8,
+    "name": "Justin Slaten",
+    "pattern_id": "UNQ-R-0201",
+    "player_id": 686580,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.944803
+  },
+  {
+    "current_team_id": 138,
+    "description": "Iván Herrera has the best xwOBA in MLB in 3-2 counts.",
+    "href": "/players/671056/",
+    "metric_value": 0.691,
+    "name": "Iván Herrera",
+    "pattern_id": "UNQ-H-0021",
+    "player_id": 671056,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.885561
+  },
+  {
+    "current_team_id": 113,
+    "description": "Elly De La Cruz owns the lowest chase rate over his last 50 PA.",
+    "href": "/players/682829/",
+    "metric_value": 0.0,
+    "name": "Elly De La Cruz",
+    "pattern_id": "UNQ-H-0004",
+    "player_id": 682829,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.703399
+  },
+  {
+    "current_team_id": 110,
+    "description": "Zach Eflin has the most strikeouts over his last 3 starts.",
+    "href": "/players/621107/",
+    "metric_value": 0.0,
+    "name": "Zach Eflin",
+    "pattern_id": "UNQ-P-0103",
+    "player_id": 621107,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.166736
+  },
+  {
+    "current_team_id": 112,
+    "description": "Nate Pearson allows the lowest hard-hit rate over his last 3 starts.",
+    "href": "/players/663878/",
+    "metric_value": 0.0,
+    "name": "Nate Pearson",
+    "pattern_id": "UNQ-P-0102",
+    "player_id": 663878,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.140837
+  },
+  {
+    "current_team_id": 141,
+    "description": "José Berríos has allowed the most HR after reaching 75 pitches.",
+    "href": "/players/621244/",
+    "metric_value": 2.0,
+    "name": "José Berríos",
+    "pattern_id": "UNQ-P-0300",
+    "player_id": 621244,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.85467
+  },
+  {
+    "current_team_id": 110,
+    "description": "Ryan O'Hearn leads MLB in hard-hit rate over his last 50 PA.",
+    "href": "/players/656811/",
+    "metric_value": 0.266667,
+    "name": "Ryan O'Hearn",
+    "pattern_id": "UNQ-H-0002",
+    "player_id": 656811,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.776615864
+  },
+  {
+    "current_team_id": 143,
+    "description": "José Alvarado owns the lowest contact quality after 70 pitches.",
+    "href": "/players/621237/",
+    "metric_value": 0.006429,
+    "name": "José Alvarado",
+    "pattern_id": "UNQ-P-0301",
+    "player_id": 621237,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.1518124033449997
+  },
+  {
+    "current_team_id": 143,
+    "description": "Trea Turner leads MLB in contact rate over his last 50 PA.",
+    "href": "/players/607208/",
+    "metric_value": 0.0,
+    "name": "Trea Turner",
+    "pattern_id": "UNQ-H-0005",
+    "player_id": 607208,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.1158766272770002
+  },
+  {
+    "current_team_id": 121,
+    "description": "Tyrone Taylor leads MLB in hard-hit rate over his last 50 PA.",
+    "href": "/players/621438/",
+    "metric_value": 0.25,
+    "name": "Tyrone Taylor",
+    "pattern_id": "UNQ-H-0002",
+    "player_id": 621438,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.673684
+  },
+  {
+    "current_team_id": 113,
+    "description": "Scott Barlow owns the lowest contact quality after 70 pitches.",
+    "href": "/players/605130/",
+    "metric_value": 0.002143,
+    "name": "Scott Barlow",
+    "pattern_id": "UNQ-P-0301",
+    "player_id": 605130,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.199945
+  },
+  {
+    "current_team_id": 121,
+    "description": "Huascar Brazobán has the highest whiff rate over his last 3 starts.",
+    "href": "/players/623211/",
+    "metric_value": 0.538462,
+    "name": "Huascar Brazobán",
+    "pattern_id": "UNQ-P-0101",
+    "player_id": 623211,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.930079
+  },
+  {
+    "current_team_id": 147,
+    "description": "Carlos Rodón has the highest whiff rate over his last 3 starts.",
+    "href": "/players/607074/",
+    "metric_value": 0.521739,
+    "name": "Carlos Rodón",
+    "pattern_id": "UNQ-P-0101",
+    "player_id": 607074,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.088503
+  },
+  {
+    "current_team_id": 145,
+    "description": "Cam Booser has the highest whiff rate over his last 5 relief outings.",
+    "href": "/players/592155/",
+    "metric_value": 0.857143,
+    "name": "Cam Booser",
+    "pattern_id": "UNQ-R-0201",
+    "player_id": 592155,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.211107
+  },
+  {
+    "current_team_id": 146,
+    "description": "Kyle Stowers owns the lowest chase rate over his last 50 PA.",
+    "href": "/players/669065/",
+    "metric_value": 0.0,
+    "name": "Kyle Stowers",
+    "pattern_id": "UNQ-H-0004",
+    "player_id": 669065,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.784553
+  },
+  {
+    "current_team_id": 145,
+    "description": "Lenyn Sosa leads MLB in hard-hit rate over his last 50 PA.",
+    "href": "/players/672820/",
+    "metric_value": 0.272727,
+    "name": "Lenyn Sosa",
+    "pattern_id": "UNQ-H-0002",
+    "player_id": 672820,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.636704
+  },
+  {
+    "current_team_id": 116,
+    "description": "John Brebbia has the highest whiff rate over his last 5 relief outings.",
+    "href": "/players/605154/",
+    "metric_value": 1.0,
+    "name": "John Brebbia",
+    "pattern_id": "UNQ-R-0201",
+    "player_id": 605154,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.269992
+  },
+  {
+    "current_team_id": 110,
+    "description": "Ryan Mountcastle leads MLB in contact rate over his last 50 PA.",
+    "href": "/players/663624/",
+    "metric_value": 0.0,
+    "name": "Ryan Mountcastle",
+    "pattern_id": "UNQ-H-0005",
+    "player_id": 663624,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.064687181
+  },
+  {
+    "current_team_id": 133,
+    "description": "Tyler Ferguson has the highest whiff rate over his last 5 relief outings.",
+    "href": "/players/621053/",
+    "metric_value": 1.0,
+    "name": "Tyler Ferguson",
+    "pattern_id": "UNQ-R-0201",
+    "player_id": 621053,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.483031
+  },
+  {
+    "current_team_id": 133,
+    "description": "José Leclerc has allowed the most HR after reaching 75 pitches.",
+    "href": "/players/600917/",
+    "metric_value": 2.0,
+    "name": "José Leclerc",
+    "pattern_id": "UNQ-P-0300",
+    "player_id": 600917,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.886421
+  },
+  {
+    "current_team_id": 108,
+    "description": "Ryan Johnson has allowed the most HR after reaching 75 pitches.",
+    "href": "/players/696270/",
+    "metric_value": 2.0,
+    "name": "Ryan Johnson",
+    "pattern_id": "UNQ-P-0300",
+    "player_id": 696270,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.7922126750699996
+  },
+  {
+    "current_team_id": 109,
+    "description": "Randal Grichuk leads MLB in hard-hit rate over his last 50 PA.",
+    "href": "/players/545341/",
+    "metric_value": 0.333333,
+    "name": "Randal Grichuk",
+    "pattern_id": "UNQ-H-0002",
+    "player_id": 545341,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.434346
+  },
+  {
+    "current_team_id": 145,
+    "description": "Penn Murfee owns the lowest contact quality after 70 pitches.",
+    "href": "/players/682171/",
+    "metric_value": 0.0,
+    "name": "Penn Murfee",
+    "pattern_id": "UNQ-P-0301",
+    "player_id": 682171,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.224414
+  },
+  {
+    "current_team_id": 114,
+    "description": "Cade Smith owns the lowest contact quality after 70 pitches.",
+    "href": "/players/671922/",
+    "metric_value": 0.004667,
+    "name": "Cade Smith",
+    "pattern_id": "UNQ-P-0301",
+    "player_id": 671922,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 2.175745605
+  },
+  {
+    "current_team_id": 134,
+    "description": "Paul Skenes has the most strikeouts over his last 3 starts.",
+    "href": "/players/694973/",
+    "metric_value": 0.0,
+    "name": "Paul Skenes",
+    "pattern_id": "UNQ-P-0103",
+    "player_id": 694973,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.9963221251091048
+  },
+  {
+    "current_team_id": 120,
+    "description": "MacKenzie Gore has the lowest xwOBA allowed over his last 5 relief outings.",
+    "href": "/players/669022/",
+    "metric_value": 0.097167,
+    "name": "MacKenzie Gore",
+    "pattern_id": "UNQ-R-0200",
+    "player_id": 669022,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.288251
+  },
+  {
+    "current_team_id": 119,
+    "description": "Ben Casparius allows the lowest hard-hit rate over his last 3 starts.",
+    "href": "/players/676508/",
+    "metric_value": 0.0,
+    "name": "Ben Casparius",
+    "pattern_id": "UNQ-P-0102",
+    "player_id": 676508,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.076529
+  },
+  {
+    "current_team_id": 134,
+    "description": "Joey Bart owns the lowest chase rate over his last 50 PA.",
+    "href": "/players/663698/",
+    "metric_value": 0.0,
+    "name": "Joey Bart",
+    "pattern_id": "UNQ-H-0004",
+    "player_id": 663698,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.719133
+  },
+  {
+    "current_team_id": 135,
+    "description": "Robert Suarez allows the lowest hard-hit rate over his last 3 starts.",
+    "href": "/players/663158/",
+    "metric_value": 0.0,
+    "name": "Robert Suarez",
+    "pattern_id": "UNQ-P-0102",
+    "player_id": 663158,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.0299375683750653
+  },
+  {
+    "current_team_id": 112,
+    "description": "Ian Happ owns the lowest chase rate over his last 50 PA.",
+    "href": "/players/664023/",
+    "metric_value": 0.0,
+    "name": "Ian Happ",
+    "pattern_id": "UNQ-H-0004",
+    "player_id": 664023,
+    "roles": [
+      "hitter"
+    ],
+    "run_date": "2025-03-27",
+    "score": 0.749353
+  },
+  {
+    "current_team_id": 138,
+    "description": "Phil Maton has the highest whiff rate over his last 5 relief outings.",
+    "href": "/players/664208/",
+    "metric_value": 1.0,
+    "name": "Phil Maton",
+    "pattern_id": "UNQ-R-0201",
+    "player_id": 664208,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.406435
+  },
+  {
+    "current_team_id": 137,
+    "description": "Logan Webb has the highest whiff rate over his last 3 starts.",
+    "href": "/players/657277/",
+    "metric_value": 0.545455,
+    "name": "Logan Webb",
+    "pattern_id": "UNQ-P-0101",
+    "player_id": 657277,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.1977848229999999
+  },
+  {
+    "current_team_id": 140,
+    "description": "Robert Garcia allows the lowest hard-hit rate over his last 3 starts.",
+    "href": "/players/676395/",
+    "metric_value": 0.0,
+    "name": "Robert Garcia",
+    "pattern_id": "UNQ-P-0102",
+    "player_id": 676395,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.0074035643165873
+  },
+  {
+    "current_team_id": 146,
+    "description": "George Soriano allows the lowest hard-hit rate over his last 3 starts.",
+    "href": "/players/666277/",
+    "metric_value": 0.0,
+    "name": "George Soriano",
+    "pattern_id": "UNQ-P-0102",
+    "player_id": 666277,
+    "roles": [
+      "reliever"
+    ],
+    "run_date": "2025-03-27",
+    "score": 1.179713
+  }
+]

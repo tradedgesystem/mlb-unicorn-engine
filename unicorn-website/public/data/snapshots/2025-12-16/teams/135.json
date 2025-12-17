@@ -175,6 +175,15 @@
       ]
     },
     {
+      "href": "/players/656302/",
+      "name": "Dylan Cease",
+      "player_id": 656302,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/592094/",
       "name": "Jason Adam",
       "player_id": 592094,
@@ -193,6 +202,15 @@
       ]
     },
     {
+      "href": "/players/606996/",
+      "name": "Kyle Hart",
+      "player_id": 606996,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/670810/",
       "name": "Logan Gillaspie",
       "player_id": 670810,
@@ -202,9 +220,36 @@
       ]
     },
     {
+      "href": "/players/650633/",
+      "name": "Michael King",
+      "player_id": 650633,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/601713/",
+      "name": "Nick Pivetta",
+      "player_id": 601713,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/678316/",
       "name": "Omar Cruz",
       "player_id": 678316,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681190/",
+      "name": "Randy Vásquez",
+      "player_id": 681190,
       "position": "P",
       "roles": [
         "reliever"

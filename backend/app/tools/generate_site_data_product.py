@@ -37,6 +37,7 @@ DEFAULT_HTTP_RETRIES = int(os.getenv("DATA_PRODUCT_HTTP_RETRIES", "3"))
 DEFAULT_HTTP_BACKOFF = float(os.getenv("DATA_PRODUCT_HTTP_BACKOFF", "0.8"))
 DEFAULT_WORKERS = int(os.getenv("DATA_PRODUCT_WORKERS", "12"))
 DEFAULT_KEEP_DAYS = int(os.getenv("DATA_PRODUCT_KEEP_DAYS", "7"))
+DEFAULT_FALLBACK_TOP50_DATE = os.getenv("DATA_PRODUCT_FALLBACK_TOP50_DATE", "2025-03-27")
 
 _DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -176,21 +177,40 @@ def _normalize_team_detail(team: Mapping[str, Any], player_roles_map: Mapping[in
     team_id = int(team.get("team_id"))
     abbrev = (team.get("abbrev") or "").strip()
 
-    def norm_group(key: str) -> list[dict[str, Any]]:
+    groups: dict[str, dict[int, dict[str, Any]]] = {"hitters": {}, "starters": {}, "relievers": {}}
+
+    def add_to_group(group: str, normalized: dict[str, Any]) -> None:
+        pid = int(normalized["player_id"])
+        groups[group][pid] = normalized
+
+    for key in ("hitters", "starters", "relievers"):
         raw = team.get(key) or []
-        normalized: list[dict[str, Any]] = []
         for p in raw:
             pid = int(p.get("player_id"))
-            normalized.append(_normalize_roster_player(p, roles_override=player_roles_map.get(pid)))
-        normalized.sort(key=lambda r: (r.get("name") or "", r.get("player_id")))
-        return normalized
+            roles = list(player_roles_map.get(pid) or [])
+            normalized = _normalize_roster_player(p, roles_override=roles)
+            add_to_group(key, normalized)
+
+            # Two-way/multi-role players should appear in every applicable roster section.
+            roles_norm = {str(r).strip().lower() for r in roles if str(r).strip()}
+            if "hitter" in roles_norm:
+                add_to_group("hitters", normalized)
+            if "starter" in roles_norm:
+                add_to_group("starters", normalized)
+            if "reliever" in roles_norm:
+                add_to_group("relievers", normalized)
+
+    def finalize(group: str) -> list[dict[str, Any]]:
+        items = list(groups[group].values())
+        items.sort(key=lambda r: (r.get("name") or "", r.get("player_id")))
+        return items
 
     return {
         "team_id": team_id,
         "abbreviation": abbrev,
-        "hitters": norm_group("hitters"),
-        "starters": norm_group("starters"),
-        "relievers": norm_group("relievers"),
+        "hitters": finalize("hitters"),
+        "starters": finalize("starters"),
+        "relievers": finalize("relievers"),
     }
 
 
@@ -207,10 +227,35 @@ def _fetch_top50_player_entries(base_url: str, snapshot_date: str) -> list[Mappi
     return players
 
 
+def _resolve_unicorns_source_date(base_url: str, snapshot_date: str) -> str:
+    """Find a run date that actually has top50 rows.
+
+    Prefer snapshot_date; if it has no rows, fall back to the backend's latest available run_date.
+    """
+    try:
+        rows = _fetch_json(f"{base_url.rstrip('/')}/top50/{snapshot_date}")
+        if isinstance(rows, list) and len(rows) > 0:
+            return snapshot_date
+    except Exception:
+        # Ignore and try latest endpoint.
+        pass
+
+    try:
+        latest = _fetch_json(f"{base_url.rstrip('/')}/api/top50/latest")
+        run_date = (latest or {}).get("run_date")
+        return _ensure_date_str(run_date)
+    except requests.HTTPError as exc:
+        # Older deployments may not have the endpoint; fall back to a known sample date.
+        if getattr(getattr(exc, "response", None), "status_code", None) == 404:
+            return _ensure_date_str(DEFAULT_FALLBACK_TOP50_DATE)
+        raise
+
+
 def _build_unicorns(
     top50_rows: Sequence[Mapping[str, Any]],
     *,
     snapshot_date: str,
+    unicorns_source_date: str,
     player_minimal: Mapping[int, Mapping[str, Any]],
 ) -> list[dict[str, Any]]:
     by_player: dict[int, Mapping[str, Any]] = {}
@@ -232,7 +277,7 @@ def _build_unicorns(
                 "current_team_id": p.get("current_team_id"),
                 "roles": p.get("roles") or [],
                 "href": f"/players/{pid}/",
-                "run_date": snapshot_date,
+                "run_date": unicorns_source_date,
                 "pattern_id": row.get("pattern_id"),
                 "description": row.get("description"),
                 "metric_value": row.get("metric_value"),
@@ -273,7 +318,8 @@ def generate_data_product_staged(
     roster_player_ids = _sorted_unique_ints(roster_player_ids)
 
     # Fetch player details for all roster players (and any top50 players not in rosters).
-    top50_rows = _fetch_top50_player_entries(base_url, snapshot_date)
+    unicorns_source_date = _resolve_unicorns_source_date(base_url, snapshot_date)
+    top50_rows = _fetch_top50_player_entries(base_url, unicorns_source_date)
     top50_player_ids = _sorted_unique_ints([int(r.get("entity_id")) for r in top50_rows if r.get("entity_id") is not None])
     all_player_ids = _sorted_unique_ints([*roster_player_ids, *top50_player_ids])
 
@@ -327,12 +373,18 @@ def generate_data_product_staged(
         payload["roles"] = _player_roles(payload)
         _atomic_write_json(staged_root / "players" / f"{pid}.json", payload)
 
-    unicorns = _build_unicorns(top50_rows, snapshot_date=snapshot_date, player_minimal=player_minimal)
+    unicorns = _build_unicorns(
+        top50_rows,
+        snapshot_date=snapshot_date,
+        unicorns_source_date=unicorns_source_date,
+        player_minimal=player_minimal,
+    )
     _atomic_write_json(staged_root / "unicorns.json", unicorns)
 
     meta = {
         "last_updated": _utc_now_iso(),
         "snapshot_date": snapshot_date,
+        "unicorns_source_date": unicorns_source_date,
         "shuffle_seed_date": snapshot_date,
         "counts": {
             "teams_count": 30,
@@ -372,6 +424,12 @@ def validate_data_product_dir(root: Path) -> None:
         except Exception as exc:  # noqa: BLE001
             errors.append(f"meta.json snapshot_date invalid: {exc}")
             snapshot_date = None
+        try:
+            unicorns_source_date = meta.get("unicorns_source_date")
+            if unicorns_source_date is not None:
+                _ensure_date_str(unicorns_source_date)
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"meta.json unicorns_source_date invalid: {exc}")
         try:
             shuffle_seed_date = _ensure_date_str(meta.get("shuffle_seed_date"))
             if snapshot_date and shuffle_seed_date != snapshot_date:

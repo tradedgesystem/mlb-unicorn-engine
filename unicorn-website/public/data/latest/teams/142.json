@@ -117,9 +117,36 @@
       "roles": [
         "hitter"
       ]
+    },
+    {
+      "href": "/players/650489/",
+      "name": "Willi Castro",
+      "player_id": 650489,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
     }
   ],
   "relievers": [
+    {
+      "href": "/players/641927/",
+      "name": "Bailey Ober",
+      "player_id": 641927,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/663978/",
+      "name": "Chris Paddack",
+      "player_id": 663978,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
     {
       "href": "/players/663485/",
       "name": "Cole Sands",
@@ -175,6 +202,15 @@
       ]
     },
     {
+      "href": "/players/657746/",
+      "name": "Joe Ryan",
+      "player_id": 657746,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/660896/",
       "name": "Jorge Alcala",
       "player_id": 660896,
@@ -211,9 +247,27 @@
       ]
     },
     {
+      "href": "/players/641154/",
+      "name": "Pablo López",
+      "player_id": 641154,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/677976/",
       "name": "Randy Dobnak",
       "player_id": 677976,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/680573/",
+      "name": "Simeon Woods Richardson",
+      "player_id": 680573,
       "position": "P",
       "roles": [
         "reliever"

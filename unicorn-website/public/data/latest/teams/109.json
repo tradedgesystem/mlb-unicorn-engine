@@ -139,9 +139,36 @@
       ]
     },
     {
+      "href": "/players/694297/",
+      "name": "Brandon Pfaadt",
+      "player_id": 694297,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/686826/",
       "name": "Bryce Jarvis",
       "player_id": 686826,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669203/",
+      "name": "Corbin Burnes",
+      "player_id": 669203,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/593958/",
+      "name": "Eduardo Rodriguez",
+      "player_id": 593958,
       "position": "P",
       "roles": [
         "reliever"
@@ -175,6 +202,15 @@
       ]
     },
     {
+      "href": "/players/518876/",
+      "name": "Merrill Kelly",
+      "player_id": 518876,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/657044/",
       "name": "Ryan Thompson",
       "player_id": 657044,
@@ -196,6 +232,15 @@
       "href": "/players/571946/",
       "name": "Shelby Miller",
       "player_id": 571946,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/668678/",
+      "name": "Zac Gallen",
+      "player_id": 668678,
       "position": "P",
       "roles": [
         "reliever"

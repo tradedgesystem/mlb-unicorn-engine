@@ -313,6 +313,26 @@ def get_top50(run_date: date, response: Response):
             logger.debug("Request: /top50/%s %.3fs", run_date.isoformat(), duration)
 
 
+@app.get("/api/top50/latest")
+def get_latest_top50(response: Response):
+    """Return the latest run_date that has unicorn_top50_daily rows."""
+    session = SessionLocal()
+    try:
+        latest_row = session.execute(select(func.max(models.UnicornTop50Daily.run_date))).first()
+        latest = latest_row[0] if latest_row else None
+        if latest is None:
+            raise HTTPException(status_code=404, detail="No top50 data available")
+        run_date = latest.date() if hasattr(latest, "date") else date.fromisoformat(str(latest))
+        count_row = session.execute(
+            select(func.count()).select_from(models.UnicornTop50Daily).where(models.UnicornTop50Daily.run_date == run_date)
+        ).first()
+        count = int(count_row[0] if count_row else 0)
+        _set_hot_cache_headers(response)
+        return {"run_date": run_date.isoformat(), "count": count}
+    finally:
+        session.close()
+
+
 @app.get("/players")
 def get_players(response: Response):
     session = SessionLocal()

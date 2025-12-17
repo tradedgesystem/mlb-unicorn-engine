@@ -74,6 +74,15 @@
       ]
     },
     {
+      "href": "/players/670032/",
+      "name": "Nicky Lopez",
+      "player_id": 670032,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/694384/",
       "name": "Nolan Schanuel",
       "player_id": 694384,
@@ -166,9 +175,36 @@
       ]
     },
     {
+      "href": "/players/686799/",
+      "name": "Jack Kochanowicz",
+      "player_id": 686799,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/667755/",
+      "name": "José Soriano",
+      "player_id": 667755,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/445276/",
       "name": "Kenley Jansen",
       "player_id": 445276,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/543294/",
+      "name": "Kyle Hendricks",
+      "player_id": 543294,
       "position": "P",
       "roles": [
         "reliever"
@@ -214,6 +250,24 @@
       "href": "/players/666171/",
       "name": "Ryan Zeferjahn",
       "player_id": 666171,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/542881/",
+      "name": "Tyler Anderson",
+      "player_id": 542881,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/579328/",
+      "name": "Yusei Kikuchi",
+      "player_id": 579328,
       "position": "P",
       "roles": [
         "reliever"

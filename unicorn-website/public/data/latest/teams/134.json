@@ -157,9 +157,36 @@
   ],
   "relievers": [
     {
+      "href": "/players/571760/",
+      "name": "Andrew Heaney",
+      "player_id": 571760,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/663559/",
+      "name": "Bailey Falter",
+      "player_id": 663559,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/657571/",
       "name": "Caleb Ferguson",
       "player_id": 657571,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669387/",
+      "name": "Carmen Mlodzinski",
+      "player_id": 669387,
       "position": "P",
       "roles": [
         "reliever"
@@ -223,6 +250,24 @@
       "href": "/players/693312/",
       "name": "Kyle Nicolas",
       "player_id": 693312,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/656605/",
+      "name": "Mitch Keller",
+      "player_id": 656605,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/694973/",
+      "name": "Paul Skenes",
+      "player_id": 694973,
       "position": "P",
       "roles": [
         "reliever"

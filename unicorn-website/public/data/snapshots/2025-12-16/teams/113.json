@@ -166,9 +166,27 @@
       ]
     },
     {
+      "href": "/players/663903/",
+      "name": "Brady Singer",
+      "player_id": 663903,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/608718/",
       "name": "Brent Suter",
       "player_id": 608718,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/686730/",
+      "name": "Carson Spiers",
+      "player_id": 686730,
       "position": "P",
       "roles": [
         "reliever"
@@ -193,9 +211,36 @@
       ]
     },
     {
+      "href": "/players/668881/",
+      "name": "Hunter Greene",
+      "player_id": 668881,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/664139/",
       "name": "Ian Gibaut",
       "player_id": 664139,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/666157/",
+      "name": "Nick Lodolo",
+      "player_id": 666157,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/607259/",
+      "name": "Nick Martinez",
+      "player_id": 607259,
       "position": "P",
       "roles": [
         "reliever"

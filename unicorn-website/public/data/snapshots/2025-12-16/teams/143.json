@@ -121,9 +121,36 @@
   ],
   "relievers": [
     {
+      "href": "/players/605400/",
+      "name": "Aaron Nola",
+      "player_id": 605400,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/672578/",
       "name": "Carlos Hernández",
       "player_id": 672578,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/650911/",
+      "name": "Cristopher Sánchez",
+      "player_id": 650911,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/666200/",
+      "name": "Jesús Luzardo",
+      "player_id": 666200,
       "position": "P",
       "roles": [
         "reliever"
@@ -184,9 +211,27 @@
       ]
     },
     {
+      "href": "/players/592836/",
+      "name": "Taijuan Walker",
+      "player_id": 592836,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/621383/",
       "name": "Tanner Banks",
       "player_id": 621383,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/554430/",
+      "name": "Zack Wheeler",
+      "player_id": 554430,
       "position": "P",
       "roles": [
         "reliever"

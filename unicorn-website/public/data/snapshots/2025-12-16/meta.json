@@ -2,9 +2,10 @@
   "counts": {
     "players_count": 889,
     "teams_count": 30,
-    "unicorns_count": 0
+    "unicorns_count": 50
   },
-  "last_updated": "2025-12-17T19:05:34Z",
+  "last_updated": "2025-12-17T20:03:42Z",
   "shuffle_seed_date": "2025-12-16",
-  "snapshot_date": "2025-12-16"
+  "snapshot_date": "2025-12-16",
+  "unicorns_source_date": "2025-03-27"
 }

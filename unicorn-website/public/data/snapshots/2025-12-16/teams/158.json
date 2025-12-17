@@ -56,6 +56,15 @@
       ]
     },
     {
+      "href": "/players/641343/",
+      "name": "Jake Bauers",
+      "player_id": 641343,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/687401/",
       "name": "Joey Ortiz",
       "player_id": 687401,
@@ -139,6 +148,15 @@
       ]
     },
     {
+      "href": "/players/694477/",
+      "name": "Chad Patrick",
+      "player_id": 694477,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/671162/",
       "name": "Connor Thomas",
       "player_id": 671162,
@@ -148,9 +166,27 @@
       ]
     },
     {
+      "href": "/players/660730/",
+      "name": "Elvin Rodríguez",
+      "player_id": 660730,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/665625/",
       "name": "Elvis Peguero",
       "player_id": 665625,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/642547/",
+      "name": "Freddy Peralta",
+      "player_id": 642547,
       "position": "P",
       "roles": [
         "reliever"
@@ -202,6 +238,15 @@
       ]
     },
     {
+      "href": "/players/641482/",
+      "name": "Nestor Cortes",
+      "player_id": 641482,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/683232/",
       "name": "Nick Mears",
       "player_id": 683232,
@@ -211,9 +256,27 @@
       ]
     },
     {
+      "href": "/players/682990/",
+      "name": "Quinn Priester",
+      "player_id": 682990,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/656730/",
       "name": "Trevor Megill",
       "player_id": 656730,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/641302/",
+      "name": "Tyler Alexander",
+      "player_id": 641302,
       "position": "P",
       "roles": [
         "reliever"

@@ -139,9 +139,36 @@
   ],
   "relievers": [
     {
+      "href": "/players/700363/",
+      "name": "AJ Smith-Shawver",
+      "player_id": 700363,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/607481/",
       "name": "Aaron Bummer",
       "player_id": 607481,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/693821/",
+      "name": "Bryce Elder",
+      "player_id": 693821,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/519242/",
+      "name": "Chris Sale",
+      "player_id": 519242,
       "position": "P",
       "roles": [
         "reliever"
@@ -169,6 +196,15 @@
       "href": "/players/660853/",
       "name": "Enyel De Los Santos",
       "player_id": 660853,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/656550/",
+      "name": "Grant Holmes",
+      "player_id": 656550,
       "position": "P",
       "roles": [
         "reliever"
@@ -241,6 +277,15 @@
       "href": "/players/625643/",
       "name": "Reynaldo López",
       "player_id": 625643,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/680885/",
+      "name": "Spencer Schwellenbach",
+      "player_id": 680885,
       "position": "P",
       "roles": [
         "reliever"

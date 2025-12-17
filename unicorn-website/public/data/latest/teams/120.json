@@ -130,6 +130,15 @@
   ],
   "relievers": [
     {
+      "href": "/players/695418/",
+      "name": "Brad Lord",
+      "player_id": 695418,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/669371/",
       "name": "Cole Henry",
       "player_id": 669371,
@@ -160,6 +169,15 @@
       "href": "/players/671131/",
       "name": "Jackson Rutledge",
       "player_id": 671131,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/663623/",
+      "name": "Jake Irvin",
+      "player_id": 663623,
       "position": "P",
       "roles": [
         "reliever"
@@ -202,6 +220,15 @@
       ]
     },
     {
+      "href": "/players/669022/",
+      "name": "MacKenzie Gore",
+      "player_id": 669022,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/647336/",
       "name": "Michael Soroka",
       "player_id": 647336,
@@ -211,9 +238,27 @@
       ]
     },
     {
+      "href": "/players/680730/",
+      "name": "Mitchell Parker",
+      "player_id": 680730,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/687377/",
       "name": "Orlando Ribalta",
       "player_id": 687377,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/592866/",
+      "name": "Trevor Williams",
+      "player_id": 592866,
       "position": "P",
       "roles": [
         "reliever"

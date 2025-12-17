@@ -74,12 +74,31 @@
       ]
     },
     {
+      "href": "/players/500743/",
+      "name": "Miguel Rojas",
+      "player_id": 500743,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/605141/",
       "name": "Mookie Betts",
       "player_id": 605141,
       "position": "SS",
       "roles": [
         "hitter"
+      ]
+    },
+    {
+      "href": "/players/660271/",
+      "name": "Shohei Ohtani",
+      "player_id": 660271,
+      "position": "TWP",
+      "roles": [
+        "hitter",
+        "starter"
       ]
     },
     {
@@ -139,9 +158,27 @@
       ]
     },
     {
+      "href": "/players/605483/",
+      "name": "Blake Snell",
+      "player_id": 605483,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/595014/",
       "name": "Blake Treinen",
       "player_id": 595014,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669160/",
+      "name": "Dustin May",
+      "player_id": 669160,
       "position": "P",
       "roles": [
         "reliever"
@@ -175,6 +212,15 @@
       ]
     },
     {
+      "href": "/players/689017/",
+      "name": "Landon Knack",
+      "player_id": 689017,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/472610/",
       "name": "Luis García",
       "player_id": 472610,
@@ -202,9 +248,36 @@
       ]
     },
     {
+      "href": "/players/808963/",
+      "name": "Roki Sasaki",
+      "player_id": 808963,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/656945/",
       "name": "Tanner Scott",
       "player_id": 656945,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/607192/",
+      "name": "Tyler Glasnow",
+      "player_id": 607192,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/808967/",
+      "name": "Yoshinobu Yamamoto",
+      "player_id": 808967,
       "position": "P",
       "roles": [
         "reliever"

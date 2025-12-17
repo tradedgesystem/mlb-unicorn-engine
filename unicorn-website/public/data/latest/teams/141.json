@@ -130,6 +130,15 @@
   ],
   "relievers": [
     {
+      "href": "/players/670102/",
+      "name": "Bowden Francis",
+      "player_id": 670102,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/663893/",
       "name": "Brendon Little",
       "player_id": 663893,
@@ -148,6 +157,24 @@
       ]
     },
     {
+      "href": "/players/605135/",
+      "name": "Chris Bassitt",
+      "player_id": 605135,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/687922/",
+      "name": "Easton Lucas",
+      "player_id": 687922,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/606930/",
       "name": "Jacob Barnes",
       "player_id": 606930,
@@ -160,6 +187,24 @@
       "href": "/players/656546/",
       "name": "Jeff Hoffman",
       "player_id": 656546,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/621244/",
+      "name": "José Berríos",
+      "player_id": 621244,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/592332/",
+      "name": "Kevin Gausman",
+      "player_id": 592332,
       "position": "P",
       "roles": [
         "reliever"

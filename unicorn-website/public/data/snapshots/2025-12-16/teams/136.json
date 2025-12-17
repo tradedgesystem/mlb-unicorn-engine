@@ -157,6 +157,24 @@
       ]
     },
     {
+      "href": "/players/693433/",
+      "name": "Bryan Woo",
+      "player_id": 693433,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/682243/",
+      "name": "Bryce Miller",
+      "player_id": 682243,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/672841/",
       "name": "Carlos Vargas",
       "player_id": 672841,
@@ -241,6 +259,33 @@
       "href": "/players/646242/",
       "name": "Jhonathan Díaz",
       "player_id": 646242,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669302/",
+      "name": "Logan Gilbert",
+      "player_id": 669302,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/622491/",
+      "name": "Luis Castillo",
+      "player_id": 622491,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/622379/",
+      "name": "Luis F. Castillo",
+      "player_id": 622379,
       "position": "P",
       "roles": [
         "reliever"

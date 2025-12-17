@@ -148,6 +148,33 @@
       ]
     },
     {
+      "href": "/players/664285/",
+      "name": "Framber Valdez",
+      "player_id": 664285,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669713/",
+      "name": "Hayden Wesneski",
+      "player_id": 669713,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/686613/",
+      "name": "Hunter Brown",
+      "player_id": 686613,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/623352/",
       "name": "Josh Hader",
       "player_id": 623352,
@@ -175,9 +202,27 @@
       ]
     },
     {
+      "href": "/players/669854/",
+      "name": "Ronel Blanco",
+      "player_id": 669854,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/687473/",
       "name": "Ryan Gusto",
       "player_id": 687473,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681293/",
+      "name": "Spencer Arrighetti",
+      "player_id": 681293,
       "position": "P",
       "roles": [
         "reliever"

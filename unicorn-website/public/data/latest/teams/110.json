@@ -157,6 +157,24 @@
       ]
     },
     {
+      "href": "/players/700249/",
+      "name": "Cade Povich",
+      "player_id": 700249,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/450203/",
+      "name": "Charlie Morton",
+      "player_id": 450203,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/672335/",
       "name": "Cionel Pérez",
       "player_id": 672335,
@@ -169,6 +187,15 @@
       "href": "/players/681882/",
       "name": "Colin Selby",
       "player_id": 681882,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/665152/",
+      "name": "Dean Kremer",
+      "player_id": 665152,
       "position": "P",
       "roles": [
         "reliever"
@@ -229,9 +256,27 @@
       ]
     },
     {
+      "href": "/players/608372/",
+      "name": "Tomoyuki Sugano",
+      "player_id": 608372,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/666974/",
       "name": "Yennier Cano",
       "player_id": 666974,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/621107/",
+      "name": "Zach Eflin",
+      "player_id": 621107,
       "position": "P",
       "roles": [
         "reliever"
