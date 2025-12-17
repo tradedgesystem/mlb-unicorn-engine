@@ -24,3 +24,6 @@ logs/
 # Generated reports
 artifacts/
 .vercel
+
+# JustHTML output
+dist/
