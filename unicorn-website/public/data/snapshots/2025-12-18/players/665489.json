@@ -1,0 +1,28 @@
+{
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.045454545454545456,
+    "chase_pct_last_50": 0.3783783783783784,
+    "contact_pct_last_50": 0.5,
+    "hard_hit_pct_last_50": 0.45454545454545453,
+    "xwoba_last_50": 0.3683
+  },
+  "name": "Vladimir Guerrero Jr.",
+  "player_id": 665489,
+  "player_name": "Vladimir Guerrero Jr.",
+  "recent_unicorns": [
+    {
+      "description": "Vladimir Guerrero Jr.: 2 barrels vs 95+ mph fastballs (last 50 AB).",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-H-0521",
+      "run_date": "2025-04-15",
+      "score": 2.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

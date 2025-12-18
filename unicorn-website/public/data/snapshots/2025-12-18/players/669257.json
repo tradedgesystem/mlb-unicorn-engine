@@ -1,0 +1,20 @@
+{
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.0625,
+    "chase_pct_last_50": 0.2318840579710145,
+    "contact_pct_last_50": 0.4383561643835616,
+    "hard_hit_pct_last_50": 0.4375,
+    "xwoba_last_50": 0.28304255319148935
+  },
+  "name": "Will Smith",
+  "player_id": 669257,
+  "player_name": "Will Smith",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

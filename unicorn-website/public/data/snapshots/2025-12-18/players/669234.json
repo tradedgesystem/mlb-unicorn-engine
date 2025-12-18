@@ -1,0 +1,20 @@
+{
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.043478260869565216,
+    "chase_pct_last_50": 0.2537313432835821,
+    "contact_pct_last_50": 0.3709677419354839,
+    "hard_hit_pct_last_50": 0.2608695652173913,
+    "xwoba_last_50": 0.19608108108108108
+  },
+  "name": "Justyn-Henry Malloy",
+  "player_id": 669234,
+  "player_name": "Justyn-Henry Malloy",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

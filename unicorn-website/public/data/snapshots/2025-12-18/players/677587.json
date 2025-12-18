@@ -1,0 +1,20 @@
+{
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.5070422535211268,
+    "contact_pct_last_50": 0.3838383838383838,
+    "hard_hit_pct_last_50": 0.3157894736842105,
+    "xwoba_last_50": 0.2876808510638298
+  },
+  "name": "Brayan Rocchio",
+  "player_id": 677587,
+  "player_name": "Brayan Rocchio",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

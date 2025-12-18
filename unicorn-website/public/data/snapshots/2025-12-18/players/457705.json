@@ -1,0 +1,42 @@
+{
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.034482758620689655,
+    "chase_pct_last_50": 0.2894736842105263,
+    "contact_pct_last_50": 0.3815789473684211,
+    "hard_hit_pct_last_50": 0.5862068965517241,
+    "xwoba_last_50": 0.32072972972972974
+  },
+  "name": "Andrew McCutchen",
+  "player_id": 457705,
+  "player_name": "Andrew McCutchen",
+  "recent_unicorns": [
+    {
+      "description": "Andrew McCutchen leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-30",
+      "score": 1.396239
+    },
+    {
+      "description": "Andrew McCutchen leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-28",
+      "score": 1.208334
+    },
+    {
+      "description": "Andrew McCutchen leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-27",
+      "score": 1.041393
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

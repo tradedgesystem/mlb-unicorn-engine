@@ -1,0 +1,20 @@
+{
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25757575757575757,
+    "contact_pct_last_50": 0.4157303370786517,
+    "hard_hit_pct_last_50": 0.3783783783783784,
+    "xwoba_last_50": 0.23502173913043478
+  },
+  "name": "Jake Meyers",
+  "player_id": 676694,
+  "player_name": "Jake Meyers",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

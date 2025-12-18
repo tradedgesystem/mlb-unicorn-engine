@@ -1,0 +1,20 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.5185185185185185,
+    "contact_pct_last_50": 0.3238095238095238,
+    "hard_hit_pct_last_50": 0.4411764705882353,
+    "xwoba_last_50": 0.30186
+  },
+  "name": "Hunter Goodman",
+  "player_id": 696100,
+  "player_name": "Hunter Goodman",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

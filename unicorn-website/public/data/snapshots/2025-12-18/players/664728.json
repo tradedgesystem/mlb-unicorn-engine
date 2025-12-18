@@ -1,0 +1,20 @@
+{
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3023255813953488,
+    "contact_pct_last_50": 0.3974358974358974,
+    "hard_hit_pct_last_50": 0.16129032258064516,
+    "xwoba_last_50": 0.19575609756097562
+  },
+  "name": "Kyle Isbel",
+  "player_id": 664728,
+  "player_name": "Kyle Isbel",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

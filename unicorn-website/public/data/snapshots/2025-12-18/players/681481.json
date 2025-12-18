@@ -1,0 +1,28 @@
+{
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.07894736842105263,
+    "chase_pct_last_50": 0.4268292682926829,
+    "contact_pct_last_50": 0.40860215053763443,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.42538
+  },
+  "name": "Kerry Carpenter",
+  "player_id": 681481,
+  "player_name": "Kerry Carpenter",
+  "recent_unicorns": [
+    {
+      "description": "Kerry Carpenter: barrel rate vs breaking balls: 2 barrels (last 50 AB).",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-H-0524",
+      "run_date": "2025-04-15",
+      "score": 2.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

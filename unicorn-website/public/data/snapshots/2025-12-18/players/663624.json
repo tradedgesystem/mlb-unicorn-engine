@@ -1,0 +1,56 @@
+{
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.05263157894736842,
+    "chase_pct_last_50": 0.38095238095238093,
+    "contact_pct_last_50": 0.36893203883495146,
+    "hard_hit_pct_last_50": 0.5789473684210527,
+    "xwoba_last_50": 0.30392
+  },
+  "name": "Ryan Mountcastle",
+  "player_id": 663624,
+  "player_name": "Ryan Mountcastle",
+  "recent_unicorns": [
+    {
+      "description": "Ryan Mountcastle leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-05",
+      "score": 1.530489
+    },
+    {
+      "description": "Ryan Mountcastle leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-04",
+      "score": 1.361049
+    },
+    {
+      "description": "Ryan Mountcastle leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-03",
+      "score": 1.474668
+    },
+    {
+      "description": "Ryan Mountcastle leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-28",
+      "score": 1.262995
+    },
+    {
+      "description": "Ryan Mountcastle leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-27",
+      "score": 1.064688
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

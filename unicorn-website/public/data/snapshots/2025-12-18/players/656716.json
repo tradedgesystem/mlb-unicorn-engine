@@ -1,0 +1,20 @@
+{
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.367816091954023,
+    "contact_pct_last_50": 0.40860215053763443,
+    "hard_hit_pct_last_50": 0.34210526315789475,
+    "xwoba_last_50": 0.24258
+  },
+  "name": "Zach McKinstry",
+  "player_id": 656716,
+  "player_name": "Zach McKinstry",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

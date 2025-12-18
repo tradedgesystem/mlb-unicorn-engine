@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2702702702702703,
+    "contact_pct_last_50": 0.4,
+    "hard_hit_pct_last_50": 0.6666666666666666,
+    "xwoba_last_50": 0.30316666666666664
+  },
+  "name": "Luken Baker",
+  "player_id": 663609,
+  "player_name": "Luken Baker",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2222222222222222,
+    "contact_pct_last_50": 0.36666666666666664,
+    "hard_hit_pct_last_50": 0.36363636363636365,
+    "xwoba_last_50": 0.31626666666666664
+  },
+  "name": "Mark Canha",
+  "player_id": 592192,
+  "player_name": "Mark Canha",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

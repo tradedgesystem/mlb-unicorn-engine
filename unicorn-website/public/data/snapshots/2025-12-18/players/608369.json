@@ -1,0 +1,20 @@
+{
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.05128205128205128,
+    "chase_pct_last_50": 0.3010752688172043,
+    "contact_pct_last_50": 0.375,
+    "hard_hit_pct_last_50": 0.46153846153846156,
+    "xwoba_last_50": 0.31156
+  },
+  "name": "Corey Seager",
+  "player_id": 608369,
+  "player_name": "Corey Seager",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

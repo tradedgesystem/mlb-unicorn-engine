@@ -1,0 +1,20 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3055555555555556,
+    "contact_pct_last_50": 0.26262626262626265,
+    "hard_hit_pct_last_50": 0.5384615384615384,
+    "xwoba_last_50": 0.19214
+  },
+  "name": "Michael Toglia",
+  "player_id": 669911,
+  "player_name": "Michael Toglia",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

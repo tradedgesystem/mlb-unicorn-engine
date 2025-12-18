@@ -1,0 +1,20 @@
+{
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.037037037037037035,
+    "chase_pct_last_50": 0.359375,
+    "contact_pct_last_50": 0.391304347826087,
+    "hard_hit_pct_last_50": 0.4074074074074074,
+    "xwoba_last_50": 0.2865526315789474
+  },
+  "name": "Josh Smith",
+  "player_id": 669701,
+  "player_name": "Josh Smith",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

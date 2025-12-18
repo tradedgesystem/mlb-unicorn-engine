@@ -1,0 +1,20 @@
+{
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2857142857142857,
+    "contact_pct_last_50": 0.40350877192982454,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.1896551724137931
+  },
+  "name": "Matt Thaiss",
+  "player_id": 642136,
+  "player_name": "Matt Thaiss",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

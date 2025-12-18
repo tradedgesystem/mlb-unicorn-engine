@@ -1,0 +1,20 @@
+{
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25806451612903225,
+    "contact_pct_last_50": 0.3442622950819672,
+    "hard_hit_pct_last_50": 0.5238095238095238,
+    "xwoba_last_50": 0.2686969696969697
+  },
+  "name": "Brendan Rodgers",
+  "player_id": 663898,
+  "player_name": "Brendan Rodgers",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

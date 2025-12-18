@@ -1,0 +1,20 @@
+{
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.36363636363636365,
+    "contact_pct_last_50": 0.3181818181818182,
+    "hard_hit_pct_last_50": 0.42857142857142855,
+    "xwoba_last_50": 0.1942
+  },
+  "name": "Max Schuemann",
+  "player_id": 680474,
+  "player_name": "Max Schuemann",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

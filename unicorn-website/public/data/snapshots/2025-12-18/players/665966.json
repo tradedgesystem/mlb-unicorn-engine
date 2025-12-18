@@ -1,0 +1,20 @@
+{
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.34545454545454546,
+    "contact_pct_last_50": 0.3150684931506849,
+    "hard_hit_pct_last_50": 0.2608695652173913,
+    "xwoba_last_50": 0.20084375
+  },
+  "name": "Carlos Narváez",
+  "player_id": 665966,
+  "player_name": "Carlos Narváez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

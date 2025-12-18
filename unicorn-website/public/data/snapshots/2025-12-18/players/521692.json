@@ -1,0 +1,20 @@
+{
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.4215686274509804,
+    "contact_pct_last_50": 0.3269230769230769,
+    "hard_hit_pct_last_50": 0.5588235294117647,
+    "xwoba_last_50": 0.35164
+  },
+  "name": "Salvador Perez",
+  "player_id": 521692,
+  "player_name": "Salvador Perez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

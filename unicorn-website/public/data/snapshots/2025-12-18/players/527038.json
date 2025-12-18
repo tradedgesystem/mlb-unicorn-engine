@@ -1,0 +1,20 @@
+{
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.02564102564102564,
+    "chase_pct_last_50": 0.26373626373626374,
+    "contact_pct_last_50": 0.4588235294117647,
+    "hard_hit_pct_last_50": 0.23076923076923078,
+    "xwoba_last_50": 0.271
+  },
+  "name": "Wilmer Flores",
+  "player_id": 527038,
+  "player_name": "Wilmer Flores",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

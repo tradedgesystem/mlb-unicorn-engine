@@ -1,0 +1,42 @@
+{
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.03125,
+    "chase_pct_last_50": 0.39,
+    "contact_pct_last_50": 0.3047619047619048,
+    "hard_hit_pct_last_50": 0.5625,
+    "xwoba_last_50": 0.29406
+  },
+  "name": "Eugenio Suárez",
+  "player_id": 553993,
+  "player_name": "Eugenio Suárez",
+  "recent_unicorns": [
+    {
+      "description": "Eugenio Suárez tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.601938,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-03-31",
+      "score": 1.863494
+    },
+    {
+      "description": "Eugenio Suárez tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.601938,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-03-30",
+      "score": 1.692973
+    },
+    {
+      "description": "Eugenio Suárez tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.785833,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-03-29",
+      "score": 2.1193
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2558139534883721,
+    "contact_pct_last_50": 0.5964912280701754,
+    "hard_hit_pct_last_50": 0.2647058823529412,
+    "xwoba_last_50": 0.25427777777777777
+  },
+  "name": "Alex Call",
+  "player_id": 669743,
+  "player_name": "Alex Call",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

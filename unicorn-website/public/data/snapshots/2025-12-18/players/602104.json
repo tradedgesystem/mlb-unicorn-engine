@@ -1,0 +1,20 @@
+{
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3333333333333333,
+    "contact_pct_last_50": 0.5,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.2765142857142857
+  },
+  "name": "Ramón Urías",
+  "player_id": 602104,
+  "player_name": "Ramón Urías",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.044444444444444446,
+    "chase_pct_last_50": 0.38271604938271603,
+    "contact_pct_last_50": 0.42452830188679247,
+    "hard_hit_pct_last_50": 0.37777777777777777,
+    "xwoba_last_50": 0.32774
+  },
+  "name": "Ty France",
+  "player_id": 664034,
+  "player_name": "Ty France",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

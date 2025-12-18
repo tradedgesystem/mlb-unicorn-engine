@@ -1,0 +1,20 @@
+{
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.04878048780487805,
+    "chase_pct_last_50": 0.2702702702702703,
+    "contact_pct_last_50": 0.4939759036144578,
+    "hard_hit_pct_last_50": 0.4634146341463415,
+    "xwoba_last_50": 0.3899183673469388
+  },
+  "name": "Brenton Doyle",
+  "player_id": 686668,
+  "player_name": "Brenton Doyle",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

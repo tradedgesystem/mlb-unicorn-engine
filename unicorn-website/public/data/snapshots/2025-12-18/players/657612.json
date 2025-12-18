@@ -1,0 +1,20 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0952,
+    "hard_hit_pct_last_5_apps": 0.3214,
+    "k_pct_last_5_apps": 0.2381,
+    "whiff_pct_last_5_apps": 0.1667,
+    "xwoba_last_5_apps": 0.244
+  },
+  "name": "Tim Hill",
+  "player_id": 657612,
+  "player_name": "Tim Hill",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

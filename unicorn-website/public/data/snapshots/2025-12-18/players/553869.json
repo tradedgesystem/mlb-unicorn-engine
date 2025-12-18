@@ -1,0 +1,20 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3541666666666667,
+    "contact_pct_last_50": 0.43636363636363634,
+    "hard_hit_pct_last_50": 0.4166666666666667,
+    "xwoba_last_50": 0.2103225806451613
+  },
+  "name": "Elias Díaz",
+  "player_id": 553869,
+  "player_name": "Elias Díaz",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

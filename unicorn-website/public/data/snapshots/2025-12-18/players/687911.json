@@ -1,0 +1,35 @@
+{
+  "current_team_id": 117,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0952,
+    "hard_hit_pct_last_5_apps": 0.16,
+    "k_pct_last_5_apps": 0.381,
+    "whiff_pct_last_5_apps": 0.325,
+    "xwoba_last_5_apps": 0.3176
+  },
+  "name": "Bryan King",
+  "player_id": 687911,
+  "player_name": "Bryan King",
+  "recent_unicorns": [
+    {
+      "description": "Bryan King owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.081684,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-04",
+      "score": 2.386952
+    },
+    {
+      "description": "Bryan King owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.081684,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-03",
+      "score": 2.205399
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

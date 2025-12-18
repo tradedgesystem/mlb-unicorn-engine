@@ -1,0 +1,20 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "barrel_pct_last_50": 0.030303030303030304,
+    "chase_pct_last_50": 0.38235294117647056,
+    "contact_pct_last_50": 0.3269230769230769,
+    "hard_hit_pct_last_50": 0.5454545454545454,
+    "xwoba_last_50": 0.2403469387755102
+  },
+  "name": "Cody Bellinger",
+  "player_id": 641355,
+  "player_name": "Cody Bellinger",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

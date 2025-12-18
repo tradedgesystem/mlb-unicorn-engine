@@ -1,0 +1,20 @@
+{
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.26666666666666666,
+    "contact_pct_last_50": 0.23076923076923078,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.2821111111111111
+  },
+  "name": "Jacob Hurtubise",
+  "player_id": 674441,
+  "player_name": "Jacob Hurtubise",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

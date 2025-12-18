@@ -1,0 +1,20 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1905,
+    "hard_hit_pct_last_5_apps": 0.25,
+    "k_pct_last_5_apps": 0.2381,
+    "whiff_pct_last_5_apps": 0.2444,
+    "xwoba_last_5_apps": 0.3688
+  },
+  "name": "Devin Williams",
+  "player_id": 642207,
+  "player_name": "Devin Williams",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

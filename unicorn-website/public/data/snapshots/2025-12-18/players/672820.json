@@ -1,0 +1,28 @@
+{
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4880952380952381,
+    "contact_pct_last_50": 0.35514018691588783,
+    "hard_hit_pct_last_50": 0.3783783783783784,
+    "xwoba_last_50": 0.28877551020408165
+  },
+  "name": "Lenyn Sosa",
+  "player_id": 672820,
+  "player_name": "Lenyn Sosa",
+  "recent_unicorns": [
+    {
+      "description": "Lenyn Sosa leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.272727,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-27",
+      "score": 1.636704
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

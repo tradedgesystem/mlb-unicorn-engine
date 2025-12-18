@@ -1,0 +1,20 @@
+{
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.28888888888888886,
+    "contact_pct_last_50": 0.425531914893617,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.20557142857142857
+  },
+  "name": "Cavan Biggio",
+  "player_id": 624415,
+  "player_name": "Cavan Biggio",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

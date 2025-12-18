@@ -1,0 +1,20 @@
+{
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.75,
+    "contact_pct_last_50": 0.14285714285714285,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.0026666666666666666
+  },
+  "name": "Dominic Canzone",
+  "player_id": 686527,
+  "player_name": "Dominic Canzone",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

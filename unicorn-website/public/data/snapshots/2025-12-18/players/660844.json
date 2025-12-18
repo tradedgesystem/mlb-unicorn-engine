@@ -1,0 +1,20 @@
+{
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.13333333333333333,
+    "contact_pct_last_50": 0.45454545454545453,
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.089875
+  },
+  "name": "Leo Rivas",
+  "player_id": 660844,
+  "player_name": "Leo Rivas",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

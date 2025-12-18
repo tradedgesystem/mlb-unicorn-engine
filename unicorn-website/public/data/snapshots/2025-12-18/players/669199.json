@@ -1,0 +1,56 @@
+{
+  "current_team_id": 146,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1579,
+    "hard_hit_pct_last_5_apps": 0.4091,
+    "k_pct_last_5_apps": 0.2105,
+    "whiff_pct_last_5_apps": 0.2727,
+    "xwoba_last_5_apps": 0.3656
+  },
+  "name": "Lake Bachar",
+  "player_id": 669199,
+  "player_name": "Lake Bachar",
+  "recent_unicorns": [
+    {
+      "description": "Lake Bachar has the highest whiff rate over his last 3 starts.",
+      "metric_value": 0.75,
+      "pattern_id": "UNQ-P-0101",
+      "run_date": "2025-04-05",
+      "score": 2.474534
+    },
+    {
+      "description": "Lake Bachar has the highest whiff rate over his last 3 starts.",
+      "metric_value": 0.75,
+      "pattern_id": "UNQ-P-0101",
+      "run_date": "2025-04-04",
+      "score": 2.319968
+    },
+    {
+      "description": "Lake Bachar has the highest whiff rate over his last 3 starts.",
+      "metric_value": 0.714286,
+      "pattern_id": "UNQ-P-0101",
+      "run_date": "2025-03-29",
+      "score": 1.853857
+    },
+    {
+      "description": "Lake Bachar has the highest whiff rate over his last 3 starts.",
+      "metric_value": 0.8,
+      "pattern_id": "UNQ-P-0101",
+      "run_date": "2025-03-28",
+      "score": 2.040453
+    },
+    {
+      "description": "Lake Bachar has the highest whiff rate over his last 3 starts.",
+      "metric_value": 0.8,
+      "pattern_id": "UNQ-P-0101",
+      "run_date": "2025-03-27",
+      "score": 2.009837
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

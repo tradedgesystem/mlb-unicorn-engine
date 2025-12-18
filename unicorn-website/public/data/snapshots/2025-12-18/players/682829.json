@@ -1,0 +1,42 @@
+{
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.029411764705882353,
+    "chase_pct_last_50": 0.26744186046511625,
+    "contact_pct_last_50": 0.4533333333333333,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.2527
+  },
+  "name": "Elly De La Cruz",
+  "player_id": 682829,
+  "player_name": "Elly De La Cruz",
+  "recent_unicorns": [
+    {
+      "description": "Elly De La Cruz tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.541381,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-01",
+      "score": 1.749154
+    },
+    {
+      "description": "Elly De La Cruz tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.637176,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-03-31",
+      "score": 2.094079
+    },
+    {
+      "description": "Elly De La Cruz owns the lowest chase rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0004",
+      "run_date": "2025-03-27",
+      "score": 0.703399
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

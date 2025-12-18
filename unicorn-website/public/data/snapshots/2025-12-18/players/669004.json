@@ -1,0 +1,20 @@
+{
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3404255319148936,
+    "contact_pct_last_50": 0.28888888888888886,
+    "hard_hit_pct_last_50": 0.4230769230769231,
+    "xwoba_last_50": 0.1998
+  },
+  "name": "MJ Melendez",
+  "player_id": 669004,
+  "player_name": "MJ Melendez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

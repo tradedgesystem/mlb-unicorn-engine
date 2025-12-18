@@ -1,0 +1,20 @@
+{
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4,
+    "contact_pct_last_50": 0.44,
+    "hard_hit_pct_last_50": 0.18181818181818182,
+    "xwoba_last_50": 0.2517857142857143
+  },
+  "name": "Travis Jankowski",
+  "player_id": 608671,
+  "player_name": "Travis Jankowski",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

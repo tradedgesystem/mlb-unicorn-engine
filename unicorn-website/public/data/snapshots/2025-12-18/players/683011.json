@@ -1,0 +1,20 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "barrel_pct_last_50": 0.029411764705882353,
+    "chase_pct_last_50": 0.29411764705882354,
+    "contact_pct_last_50": 0.4,
+    "hard_hit_pct_last_50": 0.4117647058823529,
+    "xwoba_last_50": 0.2464
+  },
+  "name": "Anthony Volpe",
+  "player_id": 683011,
+  "player_name": "Anthony Volpe",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

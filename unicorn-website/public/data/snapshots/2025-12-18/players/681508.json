@@ -1,0 +1,20 @@
+{
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.17647058823529413,
+    "contact_pct_last_50": 0.3793103448275862,
+    "hard_hit_pct_last_50": 0.09090909090909091,
+    "xwoba_last_50": 0.08976470588235294
+  },
+  "name": "Mickey Gasper",
+  "player_id": 681508,
+  "player_name": "Mickey Gasper",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

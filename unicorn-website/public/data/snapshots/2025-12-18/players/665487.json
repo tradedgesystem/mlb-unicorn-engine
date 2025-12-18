@@ -1,0 +1,49 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.047619047619047616,
+    "chase_pct_last_50": 0.4142857142857143,
+    "contact_pct_last_50": 0.44680851063829785,
+    "hard_hit_pct_last_50": 0.6190476190476191,
+    "xwoba_last_50": 0.4349
+  },
+  "name": "Fernando Tatis Jr.",
+  "player_id": 665487,
+  "player_name": "Fernando Tatis Jr.",
+  "recent_unicorns": [
+    {
+      "description": "Fernando Tatis Jr.: 8 balls hit 98+ mph with a 20–35° launch angle in the last 50 AB.",
+      "metric_value": 8.0,
+      "pattern_id": "UNQ-H-0507",
+      "run_date": "2025-04-15",
+      "score": 8.0
+    },
+    {
+      "description": "Fernando Tatis Jr. tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.481061,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-04",
+      "score": 1.757076
+    },
+    {
+      "description": "Fernando Tatis Jr. tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.505138,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-03",
+      "score": 1.876947
+    },
+    {
+      "description": "Fernando Tatis Jr. tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.505138,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-02",
+      "score": 1.789568
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

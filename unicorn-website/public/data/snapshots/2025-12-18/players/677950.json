@@ -1,0 +1,20 @@
+{
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.42592592592592593,
+    "contact_pct_last_50": 0.40298507462686567,
+    "hard_hit_pct_last_50": 0.4444444444444444,
+    "xwoba_last_50": 0.38132352941176473
+  },
+  "name": "Alek Thomas",
+  "player_id": 677950,
+  "player_name": "Alek Thomas",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

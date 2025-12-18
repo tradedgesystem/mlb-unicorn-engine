@@ -1,0 +1,20 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.21568627450980393,
+    "contact_pct_last_50": 0.49122807017543857,
+    "hard_hit_pct_last_50": 0.5357142857142857,
+    "xwoba_last_50": 0.34905555555555556
+  },
+  "name": "Trent Grisham",
+  "player_id": 663757,
+  "player_name": "Trent Grisham",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

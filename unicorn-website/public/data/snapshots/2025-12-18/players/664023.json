@@ -1,0 +1,35 @@
+{
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.024390243902439025,
+    "chase_pct_last_50": 0.2840909090909091,
+    "contact_pct_last_50": 0.41836734693877553,
+    "hard_hit_pct_last_50": 0.34146341463414637,
+    "xwoba_last_50": 0.2802
+  },
+  "name": "Ian Happ",
+  "player_id": 664023,
+  "player_name": "Ian Happ",
+  "recent_unicorns": [
+    {
+      "description": "Ian Happ leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-15",
+      "score": 0.0
+    },
+    {
+      "description": "Ian Happ owns the lowest chase rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0004",
+      "run_date": "2025-03-27",
+      "score": 0.749353
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

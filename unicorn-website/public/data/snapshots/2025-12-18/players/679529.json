@@ -1,0 +1,42 @@
+{
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.03125,
+    "chase_pct_last_50": 0.3103448275862069,
+    "contact_pct_last_50": 0.36363636363636365,
+    "hard_hit_pct_last_50": 0.5625,
+    "xwoba_last_50": 0.36646
+  },
+  "name": "Spencer Torkelson",
+  "player_id": 679529,
+  "player_name": "Spencer Torkelson",
+  "recent_unicorns": [
+    {
+      "description": "Spencer Torkelson has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.604429,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-30",
+      "score": 1.81968
+    },
+    {
+      "description": "Spencer Torkelson has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.604429,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-29",
+      "score": 1.784296
+    },
+    {
+      "description": "Spencer Torkelson tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.6481,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-03-28",
+      "score": 1.051674
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

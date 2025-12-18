@@ -1,0 +1,20 @@
+{
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3384615384615385,
+    "contact_pct_last_50": 0.3235294117647059,
+    "hard_hit_pct_last_50": 0.3181818181818182,
+    "xwoba_last_50": 0.26545714285714284
+  },
+  "name": "Starling Marte",
+  "player_id": 516782,
+  "player_name": "Starling Marte",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

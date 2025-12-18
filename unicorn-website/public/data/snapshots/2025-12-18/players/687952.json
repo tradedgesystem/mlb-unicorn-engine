@@ -1,0 +1,20 @@
+{
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.027777777777777776,
+    "chase_pct_last_50": 0.5443037974683544,
+    "contact_pct_last_50": 0.37894736842105264,
+    "hard_hit_pct_last_50": 0.3888888888888889,
+    "xwoba_last_50": 0.22836
+  },
+  "name": "Christian Encarnacion-Strand",
+  "player_id": 687952,
+  "player_name": "Christian Encarnacion-Strand",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

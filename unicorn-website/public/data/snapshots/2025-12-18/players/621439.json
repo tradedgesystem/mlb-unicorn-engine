@@ -1,0 +1,20 @@
+{
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.03225806451612903,
+    "chase_pct_last_50": 0.24271844660194175,
+    "contact_pct_last_50": 0.3263157894736842,
+    "hard_hit_pct_last_50": 0.5806451612903226,
+    "xwoba_last_50": 0.29302
+  },
+  "name": "Byron Buxton",
+  "player_id": 621439,
+  "player_name": "Byron Buxton",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.23529411764705882,
+    "contact_pct_last_50": 0.6363636363636364,
+    "hard_hit_pct_last_50": 0.6190476190476191,
+    "xwoba_last_50": 0.33517391304347827
+  },
+  "name": "Miles Mastrobuoni",
+  "player_id": 670156,
+  "player_name": "Miles Mastrobuoni",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

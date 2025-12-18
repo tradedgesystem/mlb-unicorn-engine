@@ -1,0 +1,35 @@
+{
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.5753424657534246,
+    "contact_pct_last_50": 0.3490566037735849,
+    "hard_hit_pct_last_50": 0.40540540540540543,
+    "xwoba_last_50": 0.2327659574468085
+  },
+  "name": "Ceddanne Rafaela",
+  "player_id": 678882,
+  "player_name": "Ceddanne Rafaela",
+  "recent_unicorns": [
+    {
+      "description": "Ceddanne Rafaela leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-05",
+      "score": 1.34025
+    },
+    {
+      "description": "Ceddanne Rafaela leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-04",
+      "score": 1.346077
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

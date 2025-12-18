@@ -1,0 +1,20 @@
+{
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.07317073170731707,
+    "chase_pct_last_50": 0.3125,
+    "contact_pct_last_50": 0.4270833333333333,
+    "hard_hit_pct_last_50": 0.36585365853658536,
+    "xwoba_last_50": 0.28272
+  },
+  "name": "José Ramírez",
+  "player_id": 608070,
+  "player_name": "José Ramírez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

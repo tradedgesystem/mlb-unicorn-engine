@@ -1,0 +1,20 @@
+{
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.30158730158730157,
+    "contact_pct_last_50": 0.35064935064935066,
+    "hard_hit_pct_last_50": 0.37037037037037035,
+    "xwoba_last_50": 0.20653846153846153
+  },
+  "name": "Tim Anderson",
+  "player_id": 641313,
+  "player_name": "Tim Anderson",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

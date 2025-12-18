@@ -1,0 +1,20 @@
+{
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.38,
+    "contact_pct_last_50": 0.4576271186440678,
+    "hard_hit_pct_last_50": 0.4166666666666667,
+    "xwoba_last_50": 0.2623333333333333
+  },
+  "name": "Andy Ibáñez",
+  "player_id": 628451,
+  "player_name": "Andy Ibáñez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

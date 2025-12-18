@@ -1,0 +1,20 @@
+{
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.045454545454545456,
+    "chase_pct_last_50": 0.23076923076923078,
+    "contact_pct_last_50": 0.36065573770491804,
+    "hard_hit_pct_last_50": 0.4090909090909091,
+    "xwoba_last_50": 0.1598709677419355
+  },
+  "name": "Jesse Winker",
+  "player_id": 608385,
+  "player_name": "Jesse Winker",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

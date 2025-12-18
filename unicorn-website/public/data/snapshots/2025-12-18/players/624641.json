@@ -1,0 +1,20 @@
+{
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.40425531914893614,
+    "contact_pct_last_50": 0.33962264150943394,
+    "hard_hit_pct_last_50": 0.5555555555555556,
+    "xwoba_last_50": 0.3127037037037037
+  },
+  "name": "Edmundo Sosa",
+  "player_id": 624641,
+  "player_name": "Edmundo Sosa",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

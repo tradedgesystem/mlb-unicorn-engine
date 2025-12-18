@@ -1,0 +1,20 @@
+{
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.047619047619047616,
+    "chase_pct_last_50": 0.26136363636363635,
+    "contact_pct_last_50": 0.4827586206896552,
+    "hard_hit_pct_last_50": 0.4523809523809524,
+    "xwoba_last_50": 0.36714
+  },
+  "name": "Tyler Soderstrom",
+  "player_id": 691016,
+  "player_name": "Tyler Soderstrom",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

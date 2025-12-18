@@ -1,0 +1,20 @@
+{
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.047619047619047616,
+    "chase_pct_last_50": 0.32894736842105265,
+    "contact_pct_last_50": 0.4421052631578947,
+    "hard_hit_pct_last_50": 0.30952380952380953,
+    "xwoba_last_50": 0.3172
+  },
+  "name": "Luis Rengifo",
+  "player_id": 650859,
+  "player_name": "Luis Rengifo",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

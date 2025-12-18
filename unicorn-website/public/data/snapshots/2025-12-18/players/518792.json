@@ -1,0 +1,20 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.030303030303030304,
+    "chase_pct_last_50": 0.4,
+    "contact_pct_last_50": 0.4177215189873418,
+    "hard_hit_pct_last_50": 0.24242424242424243,
+    "xwoba_last_50": 0.20874418604651163
+  },
+  "name": "Jason Heyward",
+  "player_id": 518792,
+  "player_name": "Jason Heyward",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

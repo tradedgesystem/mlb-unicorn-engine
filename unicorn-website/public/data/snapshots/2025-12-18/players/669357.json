@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.18181818181818182,
+    "contact_pct_last_50": 0.52,
+    "hard_hit_pct_last_50": 0.5384615384615384,
+    "xwoba_last_50": 0.40694117647058825
+  },
+  "name": "Nolan Gorman",
+  "player_id": 669357,
+  "player_name": "Nolan Gorman",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.02564102564102564,
+    "chase_pct_last_50": 0.20588235294117646,
+    "contact_pct_last_50": 0.5128205128205128,
+    "hard_hit_pct_last_50": 0.5384615384615384,
+    "xwoba_last_50": 0.3007959183673469
+  },
+  "name": "Ke'Bryan Hayes",
+  "player_id": 663647,
+  "player_name": "Ke'Bryan Hayes",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

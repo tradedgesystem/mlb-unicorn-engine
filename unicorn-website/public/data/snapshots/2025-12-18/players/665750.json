@@ -1,0 +1,20 @@
+{
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.417910447761194,
+    "contact_pct_last_50": 0.34408602150537637,
+    "hard_hit_pct_last_50": 0.28125,
+    "xwoba_last_50": 0.16393617021276596
+  },
+  "name": "Leody Taveras",
+  "player_id": 665750,
+  "player_name": "Leody Taveras",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

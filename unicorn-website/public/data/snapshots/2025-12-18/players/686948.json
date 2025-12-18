@@ -1,0 +1,28 @@
+{
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.038461538461538464,
+    "chase_pct_last_50": 0.2972972972972973,
+    "contact_pct_last_50": 0.3880597014925373,
+    "hard_hit_pct_last_50": 0.6923076923076923,
+    "xwoba_last_50": 0.3278787878787879
+  },
+  "name": "Drake Baldwin",
+  "player_id": 686948,
+  "player_name": "Drake Baldwin",
+  "recent_unicorns": [
+    {
+      "description": "Drake Baldwin has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.601833,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-30",
+      "score": 1.799664
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

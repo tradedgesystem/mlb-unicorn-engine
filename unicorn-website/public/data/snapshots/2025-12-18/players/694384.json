@@ -1,0 +1,42 @@
+{
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.024390243902439025,
+    "chase_pct_last_50": 0.3125,
+    "contact_pct_last_50": 0.4659090909090909,
+    "hard_hit_pct_last_50": 0.24390243902439024,
+    "xwoba_last_50": 0.27054
+  },
+  "name": "Nolan Schanuel",
+  "player_id": 694384,
+  "player_name": "Nolan Schanuel",
+  "recent_unicorns": [
+    {
+      "description": "Nolan Schanuel leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-02",
+      "score": 1.611674
+    },
+    {
+      "description": "Nolan Schanuel leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-01",
+      "score": 1.574041
+    },
+    {
+      "description": "Nolan Schanuel leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-31",
+      "score": 1.500375
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

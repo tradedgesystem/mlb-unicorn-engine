@@ -1,0 +1,35 @@
+{
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.20408163265306123,
+    "contact_pct_last_50": 0.5434782608695652,
+    "hard_hit_pct_last_50": 0.48,
+    "xwoba_last_50": 0.3299655172413793
+  },
+  "name": "Kyle Higashioka",
+  "player_id": 543309,
+  "player_name": "Kyle Higashioka",
+  "recent_unicorns": [
+    {
+      "description": "Kyle Higashioka leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.227273,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-31",
+      "score": 2.546918
+    },
+    {
+      "description": "Kyle Higashioka leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.227273,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-30",
+      "score": 2.340786
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

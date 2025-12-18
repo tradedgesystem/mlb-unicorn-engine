@@ -1,0 +1,20 @@
+{
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2916666666666667,
+    "contact_pct_last_50": 0.39285714285714285,
+    "hard_hit_pct_last_50": 0.09090909090909091,
+    "xwoba_last_50": 0.12442857142857143
+  },
+  "name": "Ben Rortvedt",
+  "player_id": 666163,
+  "player_name": "Ben Rortvedt",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

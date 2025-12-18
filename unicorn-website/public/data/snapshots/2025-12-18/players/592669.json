@@ -1,0 +1,20 @@
+{
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.034482758620689655,
+    "chase_pct_last_50": 0.27631578947368424,
+    "contact_pct_last_50": 0.4027777777777778,
+    "hard_hit_pct_last_50": 0.27586206896551724,
+    "xwoba_last_50": 0.1606190476190476
+  },
+  "name": "Hunter Renfroe",
+  "player_id": 592669,
+  "player_name": "Hunter Renfroe",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

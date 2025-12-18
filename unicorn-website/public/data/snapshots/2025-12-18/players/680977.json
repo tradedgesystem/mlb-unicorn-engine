@@ -1,0 +1,20 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.023809523809523808,
+    "chase_pct_last_50": 0.2727272727272727,
+    "contact_pct_last_50": 0.4375,
+    "hard_hit_pct_last_50": 0.42857142857142855,
+    "xwoba_last_50": 0.35718
+  },
+  "name": "Brendan Donovan",
+  "player_id": 680977,
+  "player_name": "Brendan Donovan",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

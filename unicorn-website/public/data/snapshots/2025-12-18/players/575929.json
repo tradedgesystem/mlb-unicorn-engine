@@ -1,0 +1,49 @@
+{
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.03125,
+    "chase_pct_last_50": 0.3434343434343434,
+    "contact_pct_last_50": 0.3404255319148936,
+    "hard_hit_pct_last_50": 0.375,
+    "xwoba_last_50": 0.26385714285714285
+  },
+  "name": "Willson Contreras",
+  "player_id": 575929,
+  "player_name": "Willson Contreras",
+  "recent_unicorns": [
+    {
+      "description": "Willson Contreras leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-04",
+      "score": 1.62455
+    },
+    {
+      "description": "Willson Contreras leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-31",
+      "score": 1.529743
+    },
+    {
+      "description": "Willson Contreras leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-30",
+      "score": 1.459401
+    },
+    {
+      "description": "Willson Contreras leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-27",
+      "score": 1.052976
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

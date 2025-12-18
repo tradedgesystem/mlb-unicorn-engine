@@ -1,0 +1,20 @@
+{
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.27906976744186046,
+    "contact_pct_last_50": 0.2413793103448276,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.1308125
+  },
+  "name": "Davis Schneider",
+  "player_id": 676914,
+  "player_name": "Davis Schneider",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

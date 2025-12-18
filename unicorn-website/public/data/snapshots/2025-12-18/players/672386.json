@@ -1,0 +1,20 @@
+{
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.379746835443038,
+    "contact_pct_last_50": 0.4574468085106383,
+    "hard_hit_pct_last_50": 0.5116279069767442,
+    "xwoba_last_50": 0.24034
+  },
+  "name": "Alejandro Kirk",
+  "player_id": 672386,
+  "player_name": "Alejandro Kirk",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

@@ -1,0 +1,28 @@
+{
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.05405405405405406,
+    "chase_pct_last_50": 0.38961038961038963,
+    "contact_pct_last_50": 0.4111111111111111,
+    "hard_hit_pct_last_50": 0.2972972972972973,
+    "xwoba_last_50": 0.30953191489361703
+  },
+  "name": "Pete Crow-Armstrong",
+  "player_id": 691718,
+  "player_name": "Pete Crow-Armstrong",
+  "recent_unicorns": [
+    {
+      "description": "Pete Crow-Armstrong leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.25,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-28",
+      "score": 2.063148
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

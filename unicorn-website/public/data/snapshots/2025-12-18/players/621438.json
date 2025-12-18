@@ -1,0 +1,28 @@
+{
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.034482758620689655,
+    "chase_pct_last_50": 0.36619718309859156,
+    "contact_pct_last_50": 0.3717948717948718,
+    "hard_hit_pct_last_50": 0.3793103448275862,
+    "xwoba_last_50": 0.219525
+  },
+  "name": "Tyrone Taylor",
+  "player_id": 621438,
+  "player_name": "Tyrone Taylor",
+  "recent_unicorns": [
+    {
+      "description": "Tyrone Taylor leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.25,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-27",
+      "score": 1.673684
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

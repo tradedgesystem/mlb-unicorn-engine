@@ -1,0 +1,20 @@
+{
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.34444444444444444,
+    "contact_pct_last_50": 0.4444444444444444,
+    "hard_hit_pct_last_50": 0.3,
+    "xwoba_last_50": 0.21608
+  },
+  "name": "Alan Roden",
+  "player_id": 702176,
+  "player_name": "Alan Roden",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

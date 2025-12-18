@@ -1,0 +1,20 @@
+{
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.35064935064935066,
+    "contact_pct_last_50": 0.5301204819277109,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.32546
+  },
+  "name": "Josh Naylor",
+  "player_id": 647304,
+  "player_name": "Josh Naylor",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

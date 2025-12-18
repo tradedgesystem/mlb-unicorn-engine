@@ -1,0 +1,28 @@
+{
+  "current_team_id": 109,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0909,
+    "hard_hit_pct_last_5_apps": 0.0357,
+    "k_pct_last_5_apps": 0.4091,
+    "whiff_pct_last_5_apps": 0.3469,
+    "xwoba_last_5_apps": 0.292
+  },
+  "name": "A.J. Puk",
+  "player_id": 640462,
+  "player_name": "A.J. Puk",
+  "recent_unicorns": [
+    {
+      "description": "A.J. Puk allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-30",
+      "score": 1.189439
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

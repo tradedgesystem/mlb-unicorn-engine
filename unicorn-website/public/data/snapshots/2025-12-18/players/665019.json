@@ -1,0 +1,20 @@
+{
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.5,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.19266666666666668
+  },
+  "name": "Kody Clemens",
+  "player_id": 665019,
+  "player_name": "Kody Clemens",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

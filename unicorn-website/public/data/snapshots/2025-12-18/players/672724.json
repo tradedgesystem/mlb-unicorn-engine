@@ -1,0 +1,28 @@
+{
+  "current_team_id": 147,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3157894736842105,
+    "contact_pct_last_50": 0.2857142857142857,
+    "hard_hit_pct_last_50": 0.4166666666666667,
+    "xwoba_last_50": 0.22894736842105262
+  },
+  "name": "Oswald Peraza",
+  "player_id": 672724,
+  "player_name": "Oswald Peraza",
+  "recent_unicorns": [
+    {
+      "description": "Oswald Peraza leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.185185,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-05",
+      "score": 2.447314
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

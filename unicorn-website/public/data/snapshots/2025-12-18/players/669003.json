@@ -1,0 +1,28 @@
+{
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2345679012345679,
+    "contact_pct_last_50": 0.3875,
+    "hard_hit_pct_last_50": 0.41935483870967744,
+    "xwoba_last_50": 0.26356521739130434
+  },
+  "name": "Garrett Mitchell",
+  "player_id": 669003,
+  "player_name": "Garrett Mitchell",
+  "recent_unicorns": [
+    {
+      "description": "Garrett Mitchell owns the lowest chase rate over his last 50 PA.",
+      "metric_value": 0.04,
+      "pattern_id": "UNQ-H-0004",
+      "run_date": "2025-04-01",
+      "score": 1.170371
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

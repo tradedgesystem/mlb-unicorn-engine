@@ -1,0 +1,42 @@
+{
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.05555555555555555,
+    "chase_pct_last_50": 0.4,
+    "contact_pct_last_50": 0.36,
+    "hard_hit_pct_last_50": 0.5277777777777778,
+    "xwoba_last_50": 0.30734
+  },
+  "name": "Brent Rooker",
+  "player_id": 667670,
+  "player_name": "Brent Rooker",
+  "recent_unicorns": [
+    {
+      "description": "Brent Rooker leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-31",
+      "score": 1.483871
+    },
+    {
+      "description": "Brent Rooker leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-30",
+      "score": 1.411768
+    },
+    {
+      "description": "Brent Rooker leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-29",
+      "score": 1.380914
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

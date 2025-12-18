@@ -1,0 +1,20 @@
+{
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.40594059405940597,
+    "contact_pct_last_50": 0.2809917355371901,
+    "hard_hit_pct_last_50": 0.5882352941176471,
+    "xwoba_last_50": 0.3379
+  },
+  "name": "Trevor Story",
+  "player_id": 596115,
+  "player_name": "Trevor Story",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}
