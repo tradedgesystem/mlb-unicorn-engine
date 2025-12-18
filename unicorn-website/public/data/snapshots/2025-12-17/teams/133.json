@@ -38,15 +38,6 @@
       ]
     },
     {
-      "href": "/players/640902/",
-      "name": "Jhonny Pereda",
-      "player_id": 640902,
-      "position": "C",
-      "roles": [
-        "hitter"
-      ]
-    },
-    {
       "href": "/players/671732/",
       "name": "Lawrence Butler",
       "player_id": 671732,
@@ -139,24 +130,6 @@
       ]
     },
     {
-      "href": "/players/669372/",
-      "name": "J.T. Ginn",
-      "player_id": 669372,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/676664/",
-      "name": "JP Sears",
-      "player_id": 676664,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/669920/",
       "name": "Jason Alexander",
       "player_id": 669920,
@@ -166,19 +139,10 @@
       ]
     },
     {
-      "href": "/players/605488/",
-      "name": "Jeffrey Springs",
-      "player_id": 605488,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/683155/",
-      "name": "Joey Estes",
-      "player_id": 683155,
-      "position": "P",
+      "href": "/players/640902/",
+      "name": "Jhonny Pereda",
+      "player_id": 640902,
+      "position": "C",
       "roles": [
         "reliever"
       ]
@@ -196,15 +160,6 @@
       "href": "/players/686993/",
       "name": "Justin Sterner",
       "player_id": 686993,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/622663/",
-      "name": "Luis Severino",
-      "player_id": 622663,
       "position": "P",
       "roles": [
         "reliever"
@@ -238,15 +193,6 @@
       ]
     },
     {
-      "href": "/players/674370/",
-      "name": "Osvaldo Bido",
-      "player_id": 674370,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/519008/",
       "name": "T.J. McFarland",
       "player_id": 519008,
@@ -265,6 +211,61 @@
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/669372/",
+      "name": "J.T. Ginn",
+      "player_id": 669372,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/676664/",
+      "name": "JP Sears",
+      "player_id": 676664,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/605488/",
+      "name": "Jeffrey Springs",
+      "player_id": 605488,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/683155/",
+      "name": "Joey Estes",
+      "player_id": 683155,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/622663/",
+      "name": "Luis Severino",
+      "player_id": 622663,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/674370/",
+      "name": "Osvaldo Bido",
+      "player_id": 674370,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 133
 }

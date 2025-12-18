@@ -130,15 +130,6 @@
       ]
     },
     {
-      "href": "/players/605280/",
-      "name": "Clay Holmes",
-      "player_id": 605280,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/664849/",
       "name": "Danny Young",
       "player_id": 664849,
@@ -148,27 +139,9 @@
       ]
     },
     {
-      "href": "/players/656849/",
-      "name": "David Peterson",
-      "player_id": 656849,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/621242/",
       "name": "Edwin Díaz",
       "player_id": 621242,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/656288/",
-      "name": "Griffin Canning",
-      "player_id": 656288,
       "position": "P",
       "roles": [
         "reliever"
@@ -187,15 +160,6 @@
       "href": "/players/676130/",
       "name": "José Buttó",
       "player_id": 676130,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/673540/",
-      "name": "Kodai Senga",
-      "player_id": 673540,
       "position": "P",
       "roles": [
         "reliever"
@@ -227,6 +191,44 @@
       "roles": [
         "reliever"
       ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/605280/",
+      "name": "Clay Holmes",
+      "player_id": 605280,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/656849/",
+      "name": "David Peterson",
+      "player_id": 656849,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/656288/",
+      "name": "Griffin Canning",
+      "player_id": 656288,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/673540/",
+      "name": "Kodai Senga",
+      "player_id": 673540,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
     },
     {
       "href": "/players/656731/",
@@ -234,10 +236,9 @@
       "player_id": 656731,
       "position": "P",
       "roles": [
-        "reliever"
+        "starter"
       ]
     }
   ],
-  "starters": [],
   "team_id": 121
 }

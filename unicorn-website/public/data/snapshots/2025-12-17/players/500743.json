@@ -2,18 +2,18 @@
   "current_team_id": 119,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3333333333333333,
-    "contact_pct_last_50": 0.45098039215686275,
-    "hard_hit_pct_last_50": 0.30434782608695654,
-    "xwoba_last_50": 0.3092083333333333
+    "chase_pct_last_50": 0.3333,
+    "contact_pct_last_50": 0.451,
+    "hard_hit_pct_last_50": 0.3043,
+    "xwoba_last_50": 0.3092
   },
   "name": "Miguel Rojas",
   "player_id": 500743,
   "player_name": "Miguel Rojas",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 119,
   "team_name": "LAD"

@@ -157,24 +157,6 @@
       ]
     },
     {
-      "href": "/players/693433/",
-      "name": "Bryan Woo",
-      "player_id": 693433,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/682243/",
-      "name": "Bryce Miller",
-      "player_id": 682243,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/672841/",
       "name": "Carlos Vargas",
       "player_id": 672841,
@@ -220,15 +202,6 @@
       ]
     },
     {
-      "href": "/players/676106/",
-      "name": "Emerson Hancock",
-      "player_id": 676106,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/642100/",
       "name": "Gabe Speier",
       "player_id": 642100,
@@ -265,33 +238,6 @@
       ]
     },
     {
-      "href": "/players/669302/",
-      "name": "Logan Gilbert",
-      "player_id": 669302,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/622491/",
-      "name": "Luis Castillo",
-      "player_id": 622491,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/622379/",
-      "name": "Luis F. Castillo",
-      "player_id": 622379,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/642048/",
       "name": "Tayler Saucedo",
       "player_id": 642048,
@@ -319,6 +265,61 @@
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/693433/",
+      "name": "Bryan Woo",
+      "player_id": 693433,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/682243/",
+      "name": "Bryce Miller",
+      "player_id": 682243,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/676106/",
+      "name": "Emerson Hancock",
+      "player_id": 676106,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/669302/",
+      "name": "Logan Gilbert",
+      "player_id": 669302,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/622491/",
+      "name": "Luis Castillo",
+      "player_id": 622491,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/622379/",
+      "name": "Luis F. Castillo",
+      "player_id": 622379,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 136
 }

@@ -29,15 +29,6 @@
       ]
     },
     {
-      "href": "/players/677649/",
-      "name": "Ezequiel Duran",
-      "player_id": 677649,
-      "position": "SS",
-      "roles": [
-        "hitter"
-      ]
-    },
-    {
       "href": "/players/669394/",
       "name": "Jake Burger",
       "player_id": 669394,
@@ -157,6 +148,15 @@
       ]
     },
     {
+      "href": "/players/677649/",
+      "name": "Ezequiel Duran",
+      "player_id": 677649,
+      "position": "SS",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/642520/",
       "name": "Gerson Garabito",
       "player_id": 642520,
@@ -175,36 +175,9 @@
       ]
     },
     {
-      "href": "/players/683004/",
-      "name": "Jack Leiter",
-      "player_id": 683004,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/657097/",
       "name": "Jacob Webb",
       "player_id": 657097,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/594798/",
-      "name": "Jacob deGrom",
-      "player_id": 594798,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/677958/",
-      "name": "Kumar Rocker",
-      "player_id": 677958,
       "position": "P",
       "roles": [
         "reliever"
@@ -229,24 +202,6 @@
       ]
     },
     {
-      "href": "/players/543135/",
-      "name": "Nathan Eovaldi",
-      "player_id": 543135,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/571578/",
-      "name": "Patrick Corbin",
-      "player_id": 571578,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/676395/",
       "name": "Robert Garcia",
       "player_id": 676395,
@@ -263,6 +218,53 @@
       "roles": [
         "reliever"
       ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/683004/",
+      "name": "Jack Leiter",
+      "player_id": 683004,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/594798/",
+      "name": "Jacob deGrom",
+      "player_id": 594798,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/677958/",
+      "name": "Kumar Rocker",
+      "player_id": 677958,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/543135/",
+      "name": "Nathan Eovaldi",
+      "player_id": 543135,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/571578/",
+      "name": "Patrick Corbin",
+      "player_id": 571578,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
     },
     {
       "href": "/players/641816/",
@@ -270,10 +272,9 @@
       "player_id": 641816,
       "position": "P",
       "roles": [
-        "reliever"
+        "starter"
       ]
     }
   ],
-  "starters": [],
   "team_id": 140
 }

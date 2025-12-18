@@ -130,15 +130,6 @@
   ],
   "relievers": [
     {
-      "href": "/players/670102/",
-      "name": "Bowden Francis",
-      "player_id": 670102,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/663893/",
       "name": "Brendon Little",
       "player_id": 663893,
@@ -151,24 +142,6 @@
       "href": "/players/643338/",
       "name": "Chad Green",
       "player_id": 643338,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/605135/",
-      "name": "Chris Bassitt",
-      "player_id": 605135,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/687922/",
-      "name": "Easton Lucas",
-      "player_id": 687922,
       "position": "P",
       "roles": [
         "reliever"
@@ -193,36 +166,9 @@
       ]
     },
     {
-      "href": "/players/621244/",
-      "name": "José Berríos",
-      "player_id": 621244,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/592332/",
-      "name": "Kevin Gausman",
-      "player_id": 592332,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/689254/",
       "name": "Mason Fluharty",
       "player_id": 689254,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/453286/",
-      "name": "Max Scherzer",
-      "player_id": 453286,
       "position": "P",
       "roles": [
         "reliever"
@@ -265,6 +211,61 @@
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/670102/",
+      "name": "Bowden Francis",
+      "player_id": 670102,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/605135/",
+      "name": "Chris Bassitt",
+      "player_id": 605135,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/687922/",
+      "name": "Easton Lucas",
+      "player_id": 687922,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/621244/",
+      "name": "José Berríos",
+      "player_id": 621244,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/592332/",
+      "name": "Kevin Gausman",
+      "player_id": 592332,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/453286/",
+      "name": "Max Scherzer",
+      "player_id": 453286,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 141
 }

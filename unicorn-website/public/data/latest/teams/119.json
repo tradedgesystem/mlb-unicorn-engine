@@ -74,15 +74,6 @@
       ]
     },
     {
-      "href": "/players/500743/",
-      "name": "Miguel Rojas",
-      "player_id": 500743,
-      "position": "2B",
-      "roles": [
-        "hitter"
-      ]
-    },
-    {
       "href": "/players/605141/",
       "name": "Mookie Betts",
       "player_id": 605141,
@@ -158,27 +149,9 @@
       ]
     },
     {
-      "href": "/players/605483/",
-      "name": "Blake Snell",
-      "player_id": 605483,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/595014/",
       "name": "Blake Treinen",
       "player_id": 595014,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/669160/",
-      "name": "Dustin May",
-      "player_id": 669160,
       "position": "P",
       "roles": [
         "reliever"
@@ -194,27 +167,9 @@
       ]
     },
     {
-      "href": "/players/680736/",
-      "name": "Justin Wrobleski",
-      "player_id": 680736,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/489446/",
       "name": "Kirby Yates",
       "player_id": 489446,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/689017/",
-      "name": "Landon Knack",
-      "player_id": 689017,
       "position": "P",
       "roles": [
         "reliever"
@@ -239,10 +194,10 @@
       ]
     },
     {
-      "href": "/players/808963/",
-      "name": "Roki Sasaki",
-      "player_id": 808963,
-      "position": "P",
+      "href": "/players/500743/",
+      "name": "Miguel Rojas",
+      "player_id": 500743,
+      "position": "2B",
       "roles": [
         "reliever"
       ]
@@ -255,6 +210,63 @@
       "roles": [
         "reliever"
       ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/605483/",
+      "name": "Blake Snell",
+      "player_id": 605483,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/669160/",
+      "name": "Dustin May",
+      "player_id": 669160,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/680736/",
+      "name": "Justin Wrobleski",
+      "player_id": 680736,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/689017/",
+      "name": "Landon Knack",
+      "player_id": 689017,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/808963/",
+      "name": "Roki Sasaki",
+      "player_id": 808963,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/660271/",
+      "name": "Shohei Ohtani",
+      "player_id": 660271,
+      "position": "TWP",
+      "roles": [
+        "hitter",
+        "starter"
+      ]
     },
     {
       "href": "/players/607192/",
@@ -262,7 +274,7 @@
       "player_id": 607192,
       "position": "P",
       "roles": [
-        "reliever"
+        "starter"
       ]
     },
     {
@@ -271,18 +283,6 @@
       "player_id": 808967,
       "position": "P",
       "roles": [
-        "reliever"
-      ]
-    }
-  ],
-  "starters": [
-    {
-      "href": "/players/660271/",
-      "name": "Shohei Ohtani",
-      "player_id": 660271,
-      "position": "TWP",
-      "roles": [
-        "hitter",
         "starter"
       ]
     }

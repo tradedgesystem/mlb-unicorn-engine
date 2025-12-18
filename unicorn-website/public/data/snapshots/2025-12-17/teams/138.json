@@ -139,27 +139,9 @@
   ],
   "relievers": [
     {
-      "href": "/players/669467/",
-      "name": "Andre Pallante",
-      "player_id": 669467,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/688297/",
       "name": "Chris Roycroft",
       "player_id": 688297,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/607200/",
-      "name": "Erick Fedde",
-      "player_id": 607200,
       "position": "P",
       "roles": [
         "reliever"
@@ -202,24 +184,6 @@
       ]
     },
     {
-      "href": "/players/669461/",
-      "name": "Matthew Liberatore",
-      "player_id": 669461,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/571945/",
-      "name": "Miles Mikolas",
-      "player_id": 571945,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/664208/",
       "name": "Phil Maton",
       "player_id": 664208,
@@ -256,15 +220,6 @@
       ]
     },
     {
-      "href": "/players/543243/",
-      "name": "Sonny Gray",
-      "player_id": 543243,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/571927/",
       "name": "Steven Matz",
       "player_id": 571927,
@@ -274,6 +229,52 @@
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/669467/",
+      "name": "Andre Pallante",
+      "player_id": 669467,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/607200/",
+      "name": "Erick Fedde",
+      "player_id": 607200,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/669461/",
+      "name": "Matthew Liberatore",
+      "player_id": 669461,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/571945/",
+      "name": "Miles Mikolas",
+      "player_id": 571945,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/543243/",
+      "name": "Sonny Gray",
+      "player_id": 543243,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 138
 }

@@ -157,15 +157,6 @@
       ]
     },
     {
-      "href": "/players/676979/",
-      "name": "Garrett Crochet",
-      "player_id": 676979,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/676477/",
       "name": "Garrett Whitlock",
       "player_id": 676477,
@@ -229,45 +220,9 @@
       ]
     },
     {
-      "href": "/players/690916/",
-      "name": "Richard Fitts",
-      "player_id": 690916,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/476594/",
       "name": "Robert Stock",
       "player_id": 476594,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/656794/",
-      "name": "Sean Newcomb",
-      "player_id": 656794,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/656557/",
-      "name": "Tanner Houck",
-      "player_id": 656557,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/621111/",
-      "name": "Walker Buehler",
-      "player_id": 621111,
       "position": "P",
       "roles": [
         "reliever"
@@ -283,6 +238,52 @@
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/676979/",
+      "name": "Garrett Crochet",
+      "player_id": 676979,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/690916/",
+      "name": "Richard Fitts",
+      "player_id": 690916,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/656794/",
+      "name": "Sean Newcomb",
+      "player_id": 656794,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/656557/",
+      "name": "Tanner Houck",
+      "player_id": 656557,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/621111/",
+      "name": "Walker Buehler",
+      "player_id": 621111,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 111
 }

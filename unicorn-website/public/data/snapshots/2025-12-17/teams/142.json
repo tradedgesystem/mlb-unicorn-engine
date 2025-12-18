@@ -117,36 +117,9 @@
       "roles": [
         "hitter"
       ]
-    },
-    {
-      "href": "/players/650489/",
-      "name": "Willi Castro",
-      "player_id": 650489,
-      "position": "LF",
-      "roles": [
-        "hitter"
-      ]
     }
   ],
   "relievers": [
-    {
-      "href": "/players/641927/",
-      "name": "Bailey Ober",
-      "player_id": 641927,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/663978/",
-      "name": "Chris Paddack",
-      "player_id": 663978,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
     {
       "href": "/players/663485/",
       "name": "Cole Sands",
@@ -175,15 +148,6 @@
       ]
     },
     {
-      "href": "/players/701581/",
-      "name": "David Festa",
-      "player_id": 701581,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/643377/",
       "name": "Griffin Jax",
       "player_id": 643377,
@@ -196,15 +160,6 @@
       "href": "/players/661395/",
       "name": "Jhoan Duran",
       "player_id": 661395,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/657746/",
-      "name": "Joe Ryan",
-      "player_id": 657746,
       "position": "P",
       "roles": [
         "reliever"
@@ -247,15 +202,6 @@
       ]
     },
     {
-      "href": "/players/641154/",
-      "name": "Pablo López",
-      "player_id": 641154,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/677976/",
       "name": "Randy Dobnak",
       "player_id": 677976,
@@ -265,15 +211,70 @@
       ]
     },
     {
-      "href": "/players/680573/",
-      "name": "Simeon Woods Richardson",
-      "player_id": 680573,
-      "position": "P",
+      "href": "/players/650489/",
+      "name": "Willi Castro",
+      "player_id": 650489,
+      "position": "LF",
       "roles": [
         "reliever"
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/641927/",
+      "name": "Bailey Ober",
+      "player_id": 641927,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/663978/",
+      "name": "Chris Paddack",
+      "player_id": 663978,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/701581/",
+      "name": "David Festa",
+      "player_id": 701581,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/657746/",
+      "name": "Joe Ryan",
+      "player_id": 657746,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/641154/",
+      "name": "Pablo López",
+      "player_id": 641154,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/680573/",
+      "name": "Simeon Woods Richardson",
+      "player_id": 680573,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 142
 }

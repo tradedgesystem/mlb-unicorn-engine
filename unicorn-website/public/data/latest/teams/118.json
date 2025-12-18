@@ -166,15 +166,6 @@
       ]
     },
     {
-      "href": "/players/666142/",
-      "name": "Cole Ragans",
-      "player_id": 666142,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/663738/",
       "name": "Daniel Lynch IV",
       "player_id": 663738,
@@ -211,36 +202,9 @@
       ]
     },
     {
-      "href": "/players/663460/",
-      "name": "Kris Bubic",
-      "player_id": 663460,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/668674/",
       "name": "Lucas Erceg",
       "player_id": 668674,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/547179/",
-      "name": "Michael Lorenzen",
-      "player_id": 547179,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/608379/",
-      "name": "Michael Wacha",
-      "player_id": 608379,
       "position": "P",
       "roles": [
         "reliever"
@@ -256,15 +220,6 @@
       ]
     },
     {
-      "href": "/players/607625/",
-      "name": "Seth Lugo",
-      "player_id": 607625,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/674444/",
       "name": "Steven Cruz",
       "player_id": 674444,
@@ -274,6 +229,52 @@
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/666142/",
+      "name": "Cole Ragans",
+      "player_id": 666142,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/663460/",
+      "name": "Kris Bubic",
+      "player_id": 663460,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/547179/",
+      "name": "Michael Lorenzen",
+      "player_id": 547179,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/608379/",
+      "name": "Michael Wacha",
+      "player_id": 608379,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/607625/",
+      "name": "Seth Lugo",
+      "player_id": 607625,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 118
 }

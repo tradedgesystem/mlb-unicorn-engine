@@ -157,36 +157,9 @@
       ]
     },
     {
-      "href": "/players/622608/",
-      "name": "Antonio Senzatela",
-      "player_id": 622608,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/687134/",
       "name": "Bradley Blalock",
       "player_id": 687134,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/801403/",
-      "name": "Chase Dollander",
-      "player_id": 801403,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/608566/",
-      "name": "Germán Márquez",
-      "player_id": 608566,
       "position": "P",
       "roles": [
         "reliever"
@@ -211,27 +184,9 @@
       ]
     },
     {
-      "href": "/players/607536/",
-      "name": "Kyle Freeland",
-      "player_id": 607536,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/678821/",
       "name": "Luis Peralta",
       "player_id": 678821,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/663372/",
-      "name": "Ryan Feltner",
-      "player_id": 663372,
       "position": "P",
       "roles": [
         "reliever"
@@ -274,6 +229,52 @@
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/622608/",
+      "name": "Antonio Senzatela",
+      "player_id": 622608,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/801403/",
+      "name": "Chase Dollander",
+      "player_id": 801403,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/608566/",
+      "name": "Germán Márquez",
+      "player_id": 608566,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/607536/",
+      "name": "Kyle Freeland",
+      "player_id": 607536,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/663372/",
+      "name": "Ryan Feltner",
+      "player_id": 663372,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 115
 }

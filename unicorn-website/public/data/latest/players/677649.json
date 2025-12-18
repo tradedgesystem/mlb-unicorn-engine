@@ -3,17 +3,17 @@
   "metrics": {
     "barrel_pct_last_50": 0.0,
     "chase_pct_last_50": 0.5,
-    "contact_pct_last_50": 0.3055555555555556,
-    "hard_hit_pct_last_50": 0.2727272727272727,
-    "xwoba_last_50": 0.17413333333333333
+    "contact_pct_last_50": 0.3056,
+    "hard_hit_pct_last_50": 0.2727,
+    "xwoba_last_50": 0.1741
   },
   "name": "Ezequiel Duran",
   "player_id": 677649,
   "player_name": "Ezequiel Duran",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 140,
   "team_name": "TEX"

@@ -148,24 +148,6 @@
       ]
     },
     {
-      "href": "/players/471911/",
-      "name": "Carlos Carrasco",
-      "player_id": 471911,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/607074/",
-      "name": "Carlos Rodón",
-      "player_id": 607074,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/642207/",
       "name": "Devin Williams",
       "player_id": 642207,
@@ -202,27 +184,9 @@
       ]
     },
     {
-      "href": "/players/573186/",
-      "name": "Marcus Stroman",
-      "player_id": 573186,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/643410/",
       "name": "Mark Leiter Jr.",
       "player_id": 643410,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/608331/",
-      "name": "Max Fried",
-      "player_id": 608331,
       "position": "P",
       "roles": [
         "reliever"
@@ -247,15 +211,6 @@
       ]
     },
     {
-      "href": "/players/701542/",
-      "name": "Will Warren",
-      "player_id": 701542,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/672782/",
       "name": "Yoendrys Gómez",
       "player_id": 672782,
@@ -265,6 +220,52 @@
       ]
     }
   ],
-  "starters": [],
+  "starters": [
+    {
+      "href": "/players/471911/",
+      "name": "Carlos Carrasco",
+      "player_id": 471911,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/607074/",
+      "name": "Carlos Rodón",
+      "player_id": 607074,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/573186/",
+      "name": "Marcus Stroman",
+      "player_id": 573186,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/608331/",
+      "name": "Max Fried",
+      "player_id": 608331,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/701542/",
+      "name": "Will Warren",
+      "player_id": 701542,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
   "team_id": 147
 }

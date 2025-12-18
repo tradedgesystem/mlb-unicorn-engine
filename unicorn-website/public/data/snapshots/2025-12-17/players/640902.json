@@ -2,8 +2,8 @@
   "current_team_id": 133,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3333333333333333,
-    "contact_pct_last_50": 0.21739130434782608,
+    "chase_pct_last_50": 0.3333,
+    "contact_pct_last_50": 0.2174,
     "hard_hit_pct_last_50": 0.4,
     "xwoba_last_50": 0.1459
   },
@@ -11,9 +11,9 @@
   "player_id": 640902,
   "player_name": "Jhonny Pereda",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 133,
   "team_name": "ATH"

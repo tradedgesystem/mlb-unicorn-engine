@@ -175,15 +175,6 @@
       ]
     },
     {
-      "href": "/players/663623/",
-      "name": "Jake Irvin",
-      "player_id": 663623,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/605347/",
       "name": "Jorge López",
       "player_id": 605347,
@@ -220,12 +211,32 @@
       ]
     },
     {
+      "href": "/players/687377/",
+      "name": "Orlando Ribalta",
+      "player_id": 687377,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/663623/",
+      "name": "Jake Irvin",
+      "player_id": 663623,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
       "href": "/players/669022/",
       "name": "MacKenzie Gore",
       "player_id": 669022,
       "position": "P",
       "roles": [
-        "reliever"
+        "starter"
       ]
     },
     {
@@ -234,7 +245,7 @@
       "player_id": 647336,
       "position": "P",
       "roles": [
-        "reliever"
+        "starter"
       ]
     },
     {
@@ -243,16 +254,7 @@
       "player_id": 680730,
       "position": "P",
       "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/687377/",
-      "name": "Orlando Ribalta",
-      "player_id": 687377,
-      "position": "P",
-      "roles": [
-        "reliever"
+        "starter"
       ]
     },
     {
@@ -261,10 +263,9 @@
       "player_id": 592866,
       "position": "P",
       "roles": [
-        "reliever"
+        "starter"
       ]
     }
   ],
-  "starters": [],
   "team_id": 120
 }

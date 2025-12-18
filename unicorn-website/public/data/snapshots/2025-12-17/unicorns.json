@@ -32,6 +32,38 @@
     "value_display": "62.1%"
   },
   {
+    "current_team_id": 108,
+    "href": "/players/543294/",
+    "kind": "hot",
+    "name": "Kyle Hendricks",
+    "player_id": 543294,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_hardhit_low",
+    "team_abbrev": "LAA",
+    "title": "Lowest HardHit% allowed (last 3 starts)",
+    "value": 0.13402061855670103,
+    "value_display": "13.4%"
+  },
+  {
+    "current_team_id": 118,
+    "href": "/players/666142/",
+    "kind": "hot",
+    "name": "Cole Ragans",
+    "player_id": 666142,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_kbb",
+    "team_abbrev": "KC",
+    "title": "Best K-BB% (last 3 starts)",
+    "value": 0.40845070422535207,
+    "value_display": "40.8%"
+  },
+  {
     "current_team_id": 120,
     "href": "/players/695578/",
     "kind": "hot",
@@ -64,6 +96,22 @@
     "value_display": "Whiff% 62.1% · K% 38.9%"
   },
   {
+    "current_team_id": 158,
+    "href": "/players/642547/",
+    "kind": "hot",
+    "name": "Freddy Peralta",
+    "player_id": 642547,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_dom",
+    "team_abbrev": "MIL",
+    "title": "Best dominance (Whiff% − HardHit%)",
+    "value": 0.19631467044649187,
+    "value_display": "19.6%"
+  },
+  {
     "current_team_id": 109,
     "href": "/players/672695/",
     "kind": "hot",
@@ -78,6 +126,22 @@
     "title": "Best contact+quality (Contact% + xwOBA)",
     "value": 0.9344330074755607,
     "value_display": "Contact% 63.5% · xwOBA .299"
+  },
+  {
+    "current_team_id": 134,
+    "href": "/players/694973/",
+    "kind": "hot",
+    "name": "Paul Skenes",
+    "player_id": 694973,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_no_free_pass",
+    "team_abbrev": "PIT",
+    "title": "Best control (lowest BB% + low xwOBA)",
+    "value": 0.2051917808219178,
+    "value_display": ".205"
   },
   {
     "current_team_id": 112,
@@ -112,6 +176,22 @@
     "value_display": "26.2%"
   },
   {
+    "current_team_id": 134,
+    "href": "/players/694973/",
+    "kind": "hot",
+    "name": "Paul Skenes",
+    "player_id": 694973,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_xwOBA_allowed_low",
+    "team_abbrev": "PIT",
+    "title": "Lowest xwOBA allowed (last 3 starts)",
+    "value": 0.1914931506849315,
+    "value_display": ".191"
+  },
+  {
     "current_team_id": 143,
     "href": "/players/621381/",
     "kind": "hot",
@@ -126,6 +206,22 @@
     "title": "Best control (lowest BB% + low xwOBA)",
     "value": 0.09210526315789473,
     "value_display": ".092"
+  },
+  {
+    "current_team_id": 118,
+    "href": "/players/666142/",
+    "kind": "hot",
+    "name": "Cole Ragans",
+    "player_id": 666142,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_k",
+    "team_abbrev": "KC",
+    "title": "Highest K% (last 3 starts)",
+    "value": 0.43661971830985913,
+    "value_display": "43.7%"
   },
   {
     "current_team_id": 111,
@@ -192,6 +288,22 @@
     "value_display": "41.8%"
   },
   {
+    "current_team_id": 118,
+    "href": "/players/666142/",
+    "kind": "hot",
+    "name": "Cole Ragans",
+    "player_id": 666142,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_whiff_plus_k",
+    "team_abbrev": "KC",
+    "title": "Best bat-missing: Whiff% and K% (last 3 starts)",
+    "value": 0.8125062431325542,
+    "value_display": "Whiff% 37.6% · K% 43.7%"
+  },
+  {
     "current_team_id": 121,
     "href": "/players/624413/",
     "kind": "hot",
@@ -240,6 +352,22 @@
     "value_display": "45.0%"
   },
   {
+    "current_team_id": 134,
+    "href": "/players/694973/",
+    "kind": "hot",
+    "name": "Paul Skenes",
+    "player_id": 694973,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_bb_low",
+    "team_abbrev": "PIT",
+    "title": "Lowest BB% (last 3 starts)",
+    "value": 0.0136986301369863,
+    "value_display": "1.4%"
+  },
+  {
     "current_team_id": 112,
     "href": "/players/687863/",
     "kind": "hot",
@@ -272,22 +400,6 @@
     "value_display": "63.5%"
   },
   {
-    "current_team_id": 117,
-    "href": "/players/595345/",
-    "kind": "hot",
-    "name": "Steven Okert",
-    "player_id": 595345,
-    "position": "P",
-    "roles": [
-      "reliever"
-    ],
-    "stat_id": "R_bb_low",
-    "team_abbrev": "HOU",
-    "title": "Lowest BB% (last 6 apps)",
-    "value": 0.0,
-    "value_display": "0.0%"
-  },
-  {
     "current_team_id": 136,
     "href": "/players/666619/",
     "kind": "not",
@@ -304,6 +416,22 @@
     "value_display": "0.0%"
   },
   {
+    "current_team_id": 145,
+    "href": "/players/680732/",
+    "kind": "not",
+    "name": "Sean Burke",
+    "player_id": 680732,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_xwOBA_allowed_high",
+    "team_abbrev": "CWS",
+    "title": "Highest xwOBA allowed (last 3 starts)",
+    "value": 0.46034545454545456,
+    "value_display": ".460"
+  },
+  {
     "current_team_id": 113,
     "href": "/players/687952/",
     "kind": "not",
@@ -318,6 +446,22 @@
     "title": "Highest Chase% (last 50 AB)",
     "value": 0.5443037974683544,
     "value_display": "54.4%"
+  },
+  {
+    "current_team_id": 135,
+    "href": "/players/681190/",
+    "kind": "not",
+    "name": "Randy Vásquez",
+    "player_id": 681190,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_k_low",
+    "team_abbrev": "SD",
+    "title": "Lowest K% (last 3 starts)",
+    "value": 0.07936507936507936,
+    "value_display": "7.9%"
   },
   {
     "current_team_id": 113,
@@ -368,6 +512,54 @@
     "value_display": "19.5%"
   },
   {
+    "current_team_id": 140,
+    "href": "/players/677958/",
+    "kind": "not",
+    "name": "Kumar Rocker",
+    "player_id": 677958,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_damage_combo",
+    "team_abbrev": "TEX",
+    "title": "Worst damage combo (xwOBA + HardHit% allowed)",
+    "value": 0.7686383838383839,
+    "value_display": ".769"
+  },
+  {
+    "current_team_id": 135,
+    "href": "/players/681190/",
+    "kind": "not",
+    "name": "Randy Vásquez",
+    "player_id": 681190,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_whiff_plus_k_bad",
+    "team_abbrev": "SD",
+    "title": "Worst bat-missing: Whiff% and K% (last 3 starts)",
+    "value": 0.20702465383316446,
+    "value_display": "Whiff% 12.8% · K% 7.9%"
+  },
+  {
+    "current_team_id": 114,
+    "href": "/players/671106/",
+    "kind": "not",
+    "name": "Logan Allen",
+    "player_id": 671106,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_whiff_low",
+    "team_abbrev": "CLE",
+    "title": "Lowest Whiff% (last 3 starts)",
+    "value": 0.11009174311926606,
+    "value_display": "11.0%"
+  },
+  {
     "current_team_id": 136,
     "href": "/players/666619/",
     "kind": "not",
@@ -382,6 +574,22 @@
     "title": "Worst bat-missing: Whiff% and K% (last 6 apps)",
     "value": 0.09302325581395349,
     "value_display": "Whiff% 9.3% · K% 0.0%"
+  },
+  {
+    "current_team_id": 135,
+    "href": "/players/681190/",
+    "kind": "not",
+    "name": "Randy Vásquez",
+    "player_id": 681190,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_kbb_bad",
+    "team_abbrev": "SD",
+    "title": "Worst K-BB% (last 3 starts)",
+    "value": -0.07936507936507936,
+    "value_display": "-7.9%"
   },
   {
     "current_team_id": 134,
@@ -400,6 +608,22 @@
     "value_display": "15.0%"
   },
   {
+    "current_team_id": 137,
+    "href": "/players/663855/",
+    "kind": "not",
+    "name": "Jordan Hicks",
+    "player_id": 663855,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_hardhit_high",
+    "team_abbrev": "SF",
+    "title": "Highest HardHit% allowed (last 3 starts)",
+    "value": 0.3974358974358974,
+    "value_display": "39.7%"
+  },
+  {
     "current_team_id": 136,
     "href": "/players/666619/",
     "kind": "not",
@@ -416,17 +640,17 @@
     "value_display": "-24.1%"
   },
   {
-    "current_team_id": 135,
-    "href": "/players/593428/",
+    "current_team_id": 111,
+    "href": "/players/671213/",
     "kind": "not",
-    "name": "Xander Bogaerts",
-    "player_id": 593428,
-    "position": "SS",
+    "name": "Triston Casas",
+    "player_id": 671213,
+    "position": "1B",
     "roles": [
       "hitter"
     ],
     "stat_id": "H_barrel_low",
-    "team_abbrev": "SD",
+    "team_abbrev": "BOS",
     "title": "Lowest Barrel% (last 50 AB)",
     "value": 0.0,
     "value_display": "0.0%"
@@ -478,6 +702,22 @@
     "title": "Lowest Contact% (last 50 AB)",
     "value": 0.23076923076923078,
     "value_display": "23.1%"
+  },
+  {
+    "current_team_id": 138,
+    "href": "/players/607200/",
+    "kind": "not",
+    "name": "Erick Fedde",
+    "player_id": 607200,
+    "position": "P",
+    "roles": [
+      "starter"
+    ],
+    "stat_id": "S_bb_high",
+    "team_abbrev": "STL",
+    "title": "Highest BB% (last 3 starts)",
+    "value": 0.1746031746031746,
+    "value_display": "17.5%"
   },
   {
     "current_team_id": 143,
