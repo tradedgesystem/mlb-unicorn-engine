@@ -232,7 +232,6 @@ function renderKeyValues(host, metrics) {
 }
 
 function renderMetricsTable(host, { caption, columns, values }) {
-  host.textContent = "";
   const block = document.createElement("div");
   block.className = "metrics-block";
   if (caption) {
@@ -267,6 +266,18 @@ function renderMetricsTable(host, { caption, columns, values }) {
   table.appendChild(tbody);
   block.appendChild(table);
   host.appendChild(block);
+}
+
+function hasAnyMetric(values, columns) {
+  if (!values || !Array.isArray(columns) || columns.length === 0) return false;
+  for (const col of columns) {
+    const v = values?.[col.key];
+    if (v === null || v === undefined || v === "") continue;
+    const n = Number(v);
+    if (Number.isFinite(n)) return true;
+    return true;
+  }
+  return false;
 }
 
 function setupTabs() {
@@ -453,9 +464,13 @@ async function renderPlayerPage(playerId, { teamsById }) {
       const roles = Array.isArray(p?.roles) ? p.roles.map((r) => String(r).toLowerCase()) : [];
       const primaryRole = String(p?.role || roles[0] || "hitter").toLowerCase();
 
-      const hitter = p?.hitter_metrics || (primaryRole === "hitter" ? p?.metrics : null);
-      const starter = p?.pitcher_metrics || (primaryRole === "starter" ? p?.metrics : null);
-      const reliever = primaryRole === "reliever" ? p?.metrics : null;
+      const hitterCandidate = p?.hitter_metrics || (primaryRole === "hitter" ? p?.metrics : null);
+      const starterCandidate = p?.pitcher_metrics || (primaryRole === "starter" ? p?.metrics : null);
+      const relieverCandidate = primaryRole === "reliever" ? p?.metrics : null;
+
+      const hitter = hasAnyMetric(hitterCandidate, METRIC_COLUMNS.hitter) ? hitterCandidate : null;
+      const starter = hasAnyMetric(starterCandidate, METRIC_COLUMNS.starter) ? starterCandidate : null;
+      const reliever = hasAnyMetric(relieverCandidate, METRIC_COLUMNS.reliever) ? relieverCandidate : null;
 
       metricsHost.textContent = "";
 
