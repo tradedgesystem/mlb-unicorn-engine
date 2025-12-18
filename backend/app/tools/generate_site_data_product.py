@@ -309,32 +309,55 @@ def _build_hot_not_feed(
         candidates: Sequence[tuple[int, Mapping[str, Any], Mapping[str, Any]]],
         *,
         metric_key: str | None = None,
+        metric_pair: Sequence[Mapping[str, str]] | None = None,
         metric_fn=None,
         direction: str,
         rng: random.Random,
-    ) -> tuple[int, Mapping[str, Any], float | None] | None:
-        scored: list[tuple[float, int, Mapping[str, Any]]] = []
+    ) -> tuple[int, Mapping[str, Any], float, list[float] | None] | None:
+        scored: list[tuple[float, int, Mapping[str, Any], list[float] | None]] = []
         for pid, payload, metrics in candidates:
-            value = None
-            if metric_fn is not None:
+            extra_values: list[float] | None = None
+            value: float | None = None
+            if metric_pair is not None:
+                extra_values = []
+                for spec in metric_pair:
+                    key = spec.get("key")
+                    if not key:
+                        extra_values = None
+                        break
+                    v = _as_float(metrics.get(key))
+                    if v is None:
+                        extra_values = None
+                        break
+                    extra_values.append(float(v))
+                if extra_values is None:
+                    continue
+                value = float(sum(extra_values))
+            elif metric_fn is not None:
                 try:
-                    value = metric_fn(metrics)
+                    computed = metric_fn(metrics)
                 except Exception:
-                    value = None
+                    computed = None
+                if computed is None:
+                    continue
+                value = float(computed)
             elif metric_key:
-                value = _as_float(metrics.get(metric_key))
-            if value is None:
+                v = _as_float(metrics.get(metric_key))
+                if v is None:
+                    continue
+                value = float(v)
+            else:
                 continue
-            scored.append((float(value), pid, payload))
+            scored.append((value, pid, payload, extra_values))
         if not scored:
             return None
         # Stable ordering then random tie-break for the day.
         scored.sort(key=lambda x: (x[0], x[1]), reverse=(direction == "max"))
-        best_value = scored[0][0] if direction == "max" else scored[-1][0]
+        best_value = scored[0][0]
         tied = [row for row in scored if row[0] == best_value]
         rng.shuffle(tied)
-        value, pid, payload = tied[0]
-        return pid, payload, value
+        value, pid, payload, extra = tied[0]
+        return pid, payload, value, extra
 
     # Stat definitions (limited to what we can compute from current player payloads).
     # Provide a pool larger than 25 so daily selection is random.
@@ -345,14 +368,9 @@ def _build_hot_not_feed(
         {"id": "H_contact", "group": "hitter", "label": "Highest Contact% (last 50 AB)", "dir": "max", "key": "contact_pct_last_50", "fmt": "pct"},
         {"id": "H_chase_low", "group": "hitter", "label": "Lowest Chase% (last 50 AB)", "dir": "min", "key": "chase_pct_last_50", "fmt": "pct"},
         {"id": "H_disc", "group": "hitter", "label": "Best plate discipline (Contact% − Chase%)", "dir": "max", "fn": lambda m: _as_float(m.get("contact_pct_last_50")) - _as_float(m.get("chase_pct_last_50")) if _as_float(m.get("contact_pct_last_50")) is not None and _as_float(m.get("chase_pct_last_50")) is not None else None, "fmt": "pct"},
-        {"id": "H_damage", "group": "hitter", "label": "Best damage signal (Barrel% + HardHit%)", "dir": "max", "fn": lambda m: _as_float(m.get("barrel_pct_last_50")) + _as_float(m.get("hard_hit_pct_last_50")) if _as_float(m.get("barrel_pct_last_50")) is not None and _as_float(m.get("hard_hit_pct_last_50")) is not None else None, "fmt": "pct"},
-        {"id": "H_allaround", "group": "hitter", "label": "Best all-around (xwOBA + Contact% − Chase%)", "dir": "max", "fn": lambda m: (_as_float(m.get("xwoba_last_50")) or 0.0) + (_as_float(m.get("contact_pct_last_50")) or 0.0) - (_as_float(m.get("chase_pct_last_50")) or 0.0), "fmt": "dec3"},
-        {"id": "H_xwOBA_plus_barrel", "group": "hitter", "label": "Best power+quality (xwOBA + Barrel%)", "dir": "max", "fn": lambda m: (_as_float(m.get("xwoba_last_50")) or 0.0) + (_as_float(m.get("barrel_pct_last_50")) or 0.0), "fmt": "dec3"},
-        {"id": "H_xwOBA_plus_hardhit", "group": "hitter", "label": "Best quality contact (xwOBA + HardHit%)", "dir": "max", "fn": lambda m: (_as_float(m.get("xwoba_last_50")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_50")) or 0.0), "fmt": "dec3"},
-        {"id": "H_contact_plus_xwOBA", "group": "hitter", "label": "Best contact+quality (Contact% + xwOBA)", "dir": "max", "fn": lambda m: (_as_float(m.get("contact_pct_last_50")) or 0.0) + (_as_float(m.get("xwoba_last_50")) or 0.0), "fmt": "dec3"},
-        {"id": "H_discipline_weighted", "group": "hitter", "label": "Best swing decisions (2×Contact% − Chase%)", "dir": "max", "fn": lambda m: (2.0 * (_as_float(m.get("contact_pct_last_50")) or 0.0)) - (_as_float(m.get("chase_pct_last_50")) or 0.0), "fmt": "pct"},
-        {"id": "H_power_discipline", "group": "hitter", "label": "Best power + discipline (Barrel% + HardHit% − Chase%)", "dir": "max", "fn": lambda m: (_as_float(m.get("barrel_pct_last_50")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_50")) or 0.0) - (_as_float(m.get("chase_pct_last_50")) or 0.0), "fmt": "pct"},
-        {"id": "H_contact_damage", "group": "hitter", "label": "Best contact + damage (Contact% + HardHit%)", "dir": "max", "fn": lambda m: (_as_float(m.get("contact_pct_last_50")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_50")) or 0.0), "fmt": "pct"},
+        {"id": "H_xwOBA_plus_barrel", "group": "hitter", "label": "Best power+quality (xwOBA + Barrel%)", "dir": "max", "pair": [{"key": "xwoba_last_50", "label": "xwOBA", "fmt": "dec3"}, {"key": "barrel_pct_last_50", "label": "Barrel%", "fmt": "pct"}]},
+        {"id": "H_xwOBA_plus_hardhit", "group": "hitter", "label": "Best quality contact (xwOBA + HardHit%)", "dir": "max", "pair": [{"key": "xwoba_last_50", "label": "xwOBA", "fmt": "dec3"}, {"key": "hard_hit_pct_last_50", "label": "HardHit%", "fmt": "pct"}]},
+        {"id": "H_contact_plus_xwOBA", "group": "hitter", "label": "Best contact+quality (Contact% + xwOBA)", "dir": "max", "pair": [{"key": "contact_pct_last_50", "label": "Contact%", "fmt": "pct"}, {"key": "xwoba_last_50", "label": "xwOBA", "fmt": "dec3"}]},
         {"id": "S_xwOBA_allowed_low", "group": "starter", "label": "Lowest xwOBA allowed (last 3 starts)", "dir": "min", "key": "xwoba_last_3_starts", "fmt": "dec3"},
         {"id": "S_whiff", "group": "starter", "label": "Highest Whiff% (last 3 starts)", "dir": "max", "key": "whiff_pct_last_3_starts", "fmt": "pct"},
         {"id": "S_k", "group": "starter", "label": "Highest K% (last 3 starts)", "dir": "max", "key": "k_pct_last_3_starts", "fmt": "pct"},
@@ -360,7 +378,7 @@ def _build_hot_not_feed(
         {"id": "S_hardhit_low", "group": "starter", "label": "Lowest HardHit% allowed (last 3 starts)", "dir": "min", "key": "hard_hit_pct_last_3_starts", "fmt": "pct"},
         {"id": "S_kbb", "group": "starter", "label": "Best K-BB% (last 3 starts)", "dir": "max", "fn": lambda m: _as_float(m.get("k_pct_last_3_starts")) - _as_float(m.get("bb_pct_last_3_starts")) if _as_float(m.get("k_pct_last_3_starts")) is not None and _as_float(m.get("bb_pct_last_3_starts")) is not None else None, "fmt": "pct"},
         {"id": "S_dom", "group": "starter", "label": "Best dominance (Whiff% − HardHit%)", "dir": "max", "fn": lambda m: _as_float(m.get("whiff_pct_last_3_starts")) - _as_float(m.get("hard_hit_pct_last_3_starts")) if _as_float(m.get("whiff_pct_last_3_starts")) is not None and _as_float(m.get("hard_hit_pct_last_3_starts")) is not None else None, "fmt": "pct"},
-        {"id": "S_whiff_plus_k", "group": "starter", "label": "Best bat-missing (Whiff% + K%)", "dir": "max", "fn": lambda m: (_as_float(m.get("whiff_pct_last_3_starts")) or 0.0) + (_as_float(m.get("k_pct_last_3_starts")) or 0.0), "fmt": "pct"},
+        {"id": "S_whiff_plus_k", "group": "starter", "label": "Best bat-missing: Whiff% and K% (last 3 starts)", "dir": "max", "pair": [{"key": "whiff_pct_last_3_starts", "label": "Whiff%", "fmt": "pct"}, {"key": "k_pct_last_3_starts", "label": "K%", "fmt": "pct"}]},
         {"id": "S_no_free_pass", "group": "starter", "label": "Best control (lowest BB% + low xwOBA)", "dir": "min", "fn": lambda m: (_as_float(m.get("bb_pct_last_3_starts")) or 0.0) + (_as_float(m.get("xwoba_last_3_starts")) or 0.0), "fmt": "dec3"},
         {"id": "R_xwOBA_allowed_low", "group": "reliever", "label": "Lowest xwOBA allowed (last 6 apps)", "dir": "min", "key": "xwoba_last_5_apps", "fmt": "dec3"},
         {"id": "R_whiff", "group": "reliever", "label": "Highest Whiff% (last 6 apps)", "dir": "max", "key": "whiff_pct_last_5_apps", "fmt": "pct"},
@@ -369,7 +387,7 @@ def _build_hot_not_feed(
         {"id": "R_hardhit_low", "group": "reliever", "label": "Lowest HardHit% allowed (last 6 apps)", "dir": "min", "key": "hard_hit_pct_last_5_apps", "fmt": "pct"},
         {"id": "R_kbb", "group": "reliever", "label": "Best K-BB% (last 6 apps)", "dir": "max", "fn": lambda m: _as_float(m.get("k_pct_last_5_apps")) - _as_float(m.get("bb_pct_last_5_apps")) if _as_float(m.get("k_pct_last_5_apps")) is not None and _as_float(m.get("bb_pct_last_5_apps")) is not None else None, "fmt": "pct"},
         {"id": "R_dom", "group": "reliever", "label": "Best dominance (Whiff% − HardHit%)", "dir": "max", "fn": lambda m: _as_float(m.get("whiff_pct_last_5_apps")) - _as_float(m.get("hard_hit_pct_last_5_apps")) if _as_float(m.get("whiff_pct_last_5_apps")) is not None and _as_float(m.get("hard_hit_pct_last_5_apps")) is not None else None, "fmt": "pct"},
-        {"id": "R_whiff_plus_k", "group": "reliever", "label": "Best bat-missing (Whiff% + K%)", "dir": "max", "fn": lambda m: (_as_float(m.get("whiff_pct_last_5_apps")) or 0.0) + (_as_float(m.get("k_pct_last_5_apps")) or 0.0), "fmt": "pct"},
+        {"id": "R_whiff_plus_k", "group": "reliever", "label": "Best bat-missing: Whiff% and K% (last 6 apps)", "dir": "max", "pair": [{"key": "whiff_pct_last_5_apps", "label": "Whiff%", "fmt": "pct"}, {"key": "k_pct_last_5_apps", "label": "K%", "fmt": "pct"}]},
         {"id": "R_no_free_pass", "group": "reliever", "label": "Best control (lowest BB% + low xwOBA)", "dir": "min", "fn": lambda m: (_as_float(m.get("bb_pct_last_5_apps")) or 0.0) + (_as_float(m.get("xwoba_last_5_apps")) or 0.0), "fmt": "dec3"},
     ]
 
@@ -380,16 +398,14 @@ def _build_hot_not_feed(
         {"id": "H_contact_low", "group": "hitter", "label": "Lowest Contact% (last 50 AB)", "dir": "min", "key": "contact_pct_last_50", "fmt": "pct"},
         {"id": "H_chase_high", "group": "hitter", "label": "Highest Chase% (last 50 AB)", "dir": "max", "key": "chase_pct_last_50", "fmt": "pct"},
         {"id": "H_disc_bad", "group": "hitter", "label": "Worst discipline (Chase% − Contact%)", "dir": "max", "fn": lambda m: _as_float(m.get("chase_pct_last_50")) - _as_float(m.get("contact_pct_last_50")) if _as_float(m.get("chase_pct_last_50")) is not None and _as_float(m.get("contact_pct_last_50")) is not None else None, "fmt": "pct"},
-        {"id": "H_power_bad", "group": "hitter", "label": "Worst damage signal (Barrel% + HardHit%)", "dir": "min", "fn": lambda m: (_as_float(m.get("barrel_pct_last_50")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_50")) or 0.0), "fmt": "pct"},
         {"id": "H_quality_bad", "group": "hitter", "label": "Worst quality contact (xwOBA + HardHit%)", "dir": "min", "fn": lambda m: (_as_float(m.get("xwoba_last_50")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_50")) or 0.0), "fmt": "dec3"},
-        {"id": "H_swing_decision_bad", "group": "hitter", "label": "Worst swing decisions (Chase% + (1−Contact%))", "dir": "max", "fn": lambda m: (_as_float(m.get("chase_pct_last_50")) or 0.0) + (1.0 - (_as_float(m.get("contact_pct_last_50")) or 0.0)), "fmt": "pct"},
         {"id": "S_xwOBA_allowed_high", "group": "starter", "label": "Highest xwOBA allowed (last 3 starts)", "dir": "max", "key": "xwoba_last_3_starts", "fmt": "dec3"},
         {"id": "S_whiff_low", "group": "starter", "label": "Lowest Whiff% (last 3 starts)", "dir": "min", "key": "whiff_pct_last_3_starts", "fmt": "pct"},
         {"id": "S_k_low", "group": "starter", "label": "Lowest K% (last 3 starts)", "dir": "min", "key": "k_pct_last_3_starts", "fmt": "pct"},
         {"id": "S_bb_high", "group": "starter", "label": "Highest BB% (last 3 starts)", "dir": "max", "key": "bb_pct_last_3_starts", "fmt": "pct"},
         {"id": "S_hardhit_high", "group": "starter", "label": "Highest HardHit% allowed (last 3 starts)", "dir": "max", "key": "hard_hit_pct_last_3_starts", "fmt": "pct"},
         {"id": "S_kbb_bad", "group": "starter", "label": "Worst K-BB% (last 3 starts)", "dir": "min", "fn": lambda m: _as_float(m.get("k_pct_last_3_starts")) - _as_float(m.get("bb_pct_last_3_starts")) if _as_float(m.get("k_pct_last_3_starts")) is not None and _as_float(m.get("bb_pct_last_3_starts")) is not None else None, "fmt": "pct"},
-        {"id": "S_whiff_plus_k_bad", "group": "starter", "label": "Lowest bat-missing (Whiff% + K%)", "dir": "min", "fn": lambda m: (_as_float(m.get("whiff_pct_last_3_starts")) or 0.0) + (_as_float(m.get("k_pct_last_3_starts")) or 0.0), "fmt": "pct"},
+        {"id": "S_whiff_plus_k_bad", "group": "starter", "label": "Worst bat-missing: Whiff% and K% (last 3 starts)", "dir": "min", "pair": [{"key": "whiff_pct_last_3_starts", "label": "Whiff%", "fmt": "pct"}, {"key": "k_pct_last_3_starts", "label": "K%", "fmt": "pct"}]},
         {"id": "S_damage_combo", "group": "starter", "label": "Worst damage combo (xwOBA + HardHit% allowed)", "dir": "max", "fn": lambda m: (_as_float(m.get("xwoba_last_3_starts")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_3_starts")) or 0.0), "fmt": "dec3"},
         {"id": "R_xwOBA_allowed_high", "group": "reliever", "label": "Highest xwOBA allowed (last 6 apps)", "dir": "max", "key": "xwoba_last_5_apps", "fmt": "dec3"},
         {"id": "R_whiff_low", "group": "reliever", "label": "Lowest Whiff% (last 6 apps)", "dir": "min", "key": "whiff_pct_last_5_apps", "fmt": "pct"},
@@ -397,7 +413,7 @@ def _build_hot_not_feed(
         {"id": "R_bb_high", "group": "reliever", "label": "Highest BB% (last 6 apps)", "dir": "max", "key": "bb_pct_last_5_apps", "fmt": "pct"},
         {"id": "R_hardhit_high", "group": "reliever", "label": "Highest HardHit% allowed (last 6 apps)", "dir": "max", "key": "hard_hit_pct_last_5_apps", "fmt": "pct"},
         {"id": "R_kbb_bad", "group": "reliever", "label": "Worst K-BB% (last 6 apps)", "dir": "min", "fn": lambda m: _as_float(m.get("k_pct_last_5_apps")) - _as_float(m.get("bb_pct_last_5_apps")) if _as_float(m.get("k_pct_last_5_apps")) is not None and _as_float(m.get("bb_pct_last_5_apps")) is not None else None, "fmt": "pct"},
-        {"id": "R_whiff_plus_k_bad", "group": "reliever", "label": "Lowest bat-missing (Whiff% + K%)", "dir": "min", "fn": lambda m: (_as_float(m.get("whiff_pct_last_5_apps")) or 0.0) + (_as_float(m.get("k_pct_last_5_apps")) or 0.0), "fmt": "pct"},
+        {"id": "R_whiff_plus_k_bad", "group": "reliever", "label": "Worst bat-missing: Whiff% and K% (last 6 apps)", "dir": "min", "pair": [{"key": "whiff_pct_last_5_apps", "label": "Whiff%", "fmt": "pct"}, {"key": "k_pct_last_5_apps", "label": "K%", "fmt": "pct"}]},
         {"id": "R_damage_combo", "group": "reliever", "label": "Worst damage combo (xwOBA + HardHit% allowed)", "dir": "max", "fn": lambda m: (_as_float(m.get("xwoba_last_5_apps")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_5_apps")) or 0.0), "fmt": "dec3"},
     ]
 
@@ -421,6 +437,15 @@ def _build_hot_not_feed(
             return _dec3(value)
         return "—" if value is None else str(value)
 
+    def format_pair(pair: Sequence[Mapping[str, str]], values: Sequence[float]) -> str:
+        parts: list[str] = []
+        for spec, v in zip(pair, values):
+            label = (spec.get("label") or "").strip()
+            fmt = (spec.get("fmt") or "").strip()
+            shown = format_value(v, fmt)
+            parts.append(f"{label} {shown}".strip())
+        return " · ".join([p for p in parts if p]) if parts else "—"
+
     def add_items(kind: str, pool: Sequence[Mapping[str, Any]], target: int) -> None:
         nonlocal items
         count = 0
@@ -433,15 +458,21 @@ def _build_hot_not_feed(
             leader = select_leader(
                 cand,
                 metric_key=stat.get("key"),
+                metric_pair=stat.get("pair"),
                 metric_fn=stat.get("fn"),
                 direction=stat["dir"],
                 rng=stat_rng,
             )
             if not leader:
                 continue
-            pid, payload, value = leader
+            pid, payload, value, extra_values = leader
             roles = payload.get("roles") if isinstance(payload.get("roles"), list) else [payload.get("role")]
             roles_clean = [str(r) for r in roles if r]
+            pair = stat.get("pair")
+            if isinstance(pair, list) and extra_values is not None:
+                value_display = format_pair(pair, extra_values)
+            else:
+                value_display = format_value(value, stat.get("fmt") or "")
             items.append(
                 {
                     "kind": kind,
@@ -455,7 +486,7 @@ def _build_hot_not_feed(
                     "roles": roles_clean,
                     "href": f"/players/{pid}/",
                     "value": value,
-                    "value_display": format_value(value, stat.get("fmt") or ""),
+                    "value_display": value_display,
                 }
             )
             count += 1
