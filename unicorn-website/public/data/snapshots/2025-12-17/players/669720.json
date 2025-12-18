@@ -1,0 +1,20 @@
+{
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4166666666666667,
+    "contact_pct_last_50": 0.2727272727272727,
+    "hard_hit_pct_last_50": 0.6666666666666666,
+    "xwoba_last_50": 0.459
+  },
+  "name": "Austin Hays",
+  "player_id": 669720,
+  "player_name": "Austin Hays",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

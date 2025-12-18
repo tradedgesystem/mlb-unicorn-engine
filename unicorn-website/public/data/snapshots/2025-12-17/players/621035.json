@@ -1,0 +1,20 @@
+{
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.47058823529411764,
+    "contact_pct_last_50": 0.25,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.20158333333333334
+  },
+  "name": "Chris Taylor",
+  "player_id": 621035,
+  "player_name": "Chris Taylor",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.5,
+    "contact_pct_last_50": 0.3333333333333333,
+    "hard_hit_pct_last_50": 0.3,
+    "xwoba_last_50": 0.16742857142857143
+  },
+  "name": "Jorge Mateo",
+  "player_id": 622761,
+  "player_name": "Jorge Mateo",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

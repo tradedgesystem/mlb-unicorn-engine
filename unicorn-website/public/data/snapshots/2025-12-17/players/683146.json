@@ -1,0 +1,28 @@
+{
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3333333333333333,
+    "contact_pct_last_50": 0.25925925925925924,
+    "hard_hit_pct_last_50": 0.5238095238095238,
+    "xwoba_last_50": 0.2085
+  },
+  "name": "Brett Baty",
+  "player_id": 683146,
+  "player_name": "Brett Baty",
+  "recent_unicorns": [
+    {
+      "description": "Brett Baty: 4 balls hit 100+ mph vs offspeed pitches (last 50 AB).",
+      "metric_value": 4.0,
+      "pattern_id": "UNQ-H-0530",
+      "run_date": "2025-04-15",
+      "score": 4.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

@@ -1,0 +1,42 @@
+{
+  "current_team_id": 137,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2857,
+    "k_pct_last_5_apps": 0.3125,
+    "whiff_pct_last_5_apps": 0.2188,
+    "xwoba_last_5_apps": 0.2239
+  },
+  "name": "Randy Rodríguez",
+  "player_id": 678495,
+  "player_name": "Randy Rodríguez",
+  "recent_unicorns": [
+    {
+      "description": "Randy Rodríguez allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-31",
+      "score": 1.26647
+    },
+    {
+      "description": "Randy Rodríguez allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-30",
+      "score": 1.303255
+    },
+    {
+      "description": "Randy Rodríguez allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-29",
+      "score": 1.163926
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

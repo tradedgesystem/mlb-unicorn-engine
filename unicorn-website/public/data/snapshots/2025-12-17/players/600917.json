@@ -1,0 +1,42 @@
+{
+  "current_team_id": 133,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.04,
+    "hard_hit_pct_last_5_apps": 0.1463,
+    "k_pct_last_5_apps": 0.16,
+    "whiff_pct_last_5_apps": 0.2712,
+    "xwoba_last_5_apps": 0.3167
+  },
+  "name": "José Leclerc",
+  "player_id": 600917,
+  "player_name": "José Leclerc",
+  "recent_unicorns": [
+    {
+      "description": "José Leclerc has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-03-30",
+      "score": 2.239478
+    },
+    {
+      "description": "José Leclerc has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-03-28",
+      "score": 3.225257
+    },
+    {
+      "description": "José Leclerc has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-03-27",
+      "score": 2.886421
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

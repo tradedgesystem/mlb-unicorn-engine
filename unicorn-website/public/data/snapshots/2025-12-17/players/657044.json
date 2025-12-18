@@ -1,0 +1,28 @@
+{
+  "current_team_id": 109,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0526,
+    "hard_hit_pct_last_5_apps": 0.2143,
+    "k_pct_last_5_apps": 0.2105,
+    "whiff_pct_last_5_apps": 0.2051,
+    "xwoba_last_5_apps": 0.1651
+  },
+  "name": "Ryan Thompson",
+  "player_id": 657044,
+  "player_name": "Ryan Thompson",
+  "recent_unicorns": [
+    {
+      "description": "Ryan Thompson owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.047143,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-01",
+      "score": 2.402745
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

@@ -1,0 +1,20 @@
+{
+  "current_team_id": 146,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1875,
+    "hard_hit_pct_last_5_apps": 0.2174,
+    "k_pct_last_5_apps": 0.0625,
+    "whiff_pct_last_5_apps": 0.0417,
+    "xwoba_last_5_apps": 0.3171
+  },
+  "name": "Xzavion Curry",
+  "player_id": 675540,
+  "player_name": "Xzavion Curry",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

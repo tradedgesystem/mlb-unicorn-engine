@@ -1,0 +1,20 @@
+{
+  "current_team_id": 144,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0833,
+    "hard_hit_pct_last_5_apps": 0.1304,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.1429,
+    "xwoba_last_5_apps": 0.1674
+  },
+  "name": "Zach Thompson",
+  "player_id": 605507,
+  "player_name": "Zach Thompson",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

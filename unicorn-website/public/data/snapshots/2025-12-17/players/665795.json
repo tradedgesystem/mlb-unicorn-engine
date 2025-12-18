@@ -1,0 +1,20 @@
+{
+  "current_team_id": 146,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "Edward Cabrera",
+  "player_id": 665795,
+  "player_name": "Edward Cabrera",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

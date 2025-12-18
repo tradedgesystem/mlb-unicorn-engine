@@ -1,0 +1,20 @@
+{
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": null,
+    "chase_pct_last_50": 0.0,
+    "contact_pct_last_50": null,
+    "hard_hit_pct_last_50": null,
+    "xwoba_last_50": 0.0
+  },
+  "name": "Connor Joe",
+  "player_id": 656582,
+  "player_name": "Connor Joe",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

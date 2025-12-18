@@ -1,0 +1,20 @@
+{
+  "current_team_id": 136,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2222,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.25,
+    "xwoba_last_5_apps": 0.1945
+  },
+  "name": "Casey Legumina",
+  "player_id": 668984,
+  "player_name": "Casey Legumina",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}
