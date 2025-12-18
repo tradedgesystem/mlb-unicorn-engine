@@ -47,6 +47,15 @@
       ]
     },
     {
+      "href": "/players/691594/",
+      "name": "Javier Sanoja",
+      "player_id": 691594,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/681146/",
       "name": "Jonah Bride",
       "player_id": 681146,
@@ -139,9 +148,27 @@
       ]
     },
     {
+      "href": "/players/615698/",
+      "name": "Cal Quantrill",
+      "player_id": 615698,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/676534/",
       "name": "Calvin Faucher",
       "player_id": 676534,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/687362/",
+      "name": "Connor Gillispie",
+      "player_id": 687362,
       "position": "P",
       "roles": [
         "reliever"
@@ -161,15 +188,6 @@
       "name": "George Soriano",
       "player_id": 666277,
       "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/691594/",
-      "name": "Javier Sanoja",
-      "player_id": 691594,
-      "position": "2B",
       "roles": [
         "reliever"
       ]
@@ -202,9 +220,27 @@
       ]
     },
     {
+      "href": "/players/676974/",
+      "name": "Max Meyer",
+      "player_id": 676974,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/678692/",
       "name": "Ronny Henriquez",
       "player_id": 678692,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/645261/",
+      "name": "Sandy Alcantara",
+      "player_id": 645261,
       "position": "P",
       "roles": [
         "reliever"
@@ -220,6 +256,15 @@
       ]
     },
     {
+      "href": "/players/678368/",
+      "name": "Valente Bellozo",
+      "player_id": 678368,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/675540/",
       "name": "Xzavion Curry",
       "player_id": 675540,
@@ -229,52 +274,6 @@
       ]
     }
   ],
-  "starters": [
-    {
-      "href": "/players/615698/",
-      "name": "Cal Quantrill",
-      "player_id": 615698,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/687362/",
-      "name": "Connor Gillispie",
-      "player_id": 687362,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/676974/",
-      "name": "Max Meyer",
-      "player_id": 676974,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/645261/",
-      "name": "Sandy Alcantara",
-      "player_id": 645261,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/678368/",
-      "name": "Valente Bellozo",
-      "player_id": 678368,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    }
-  ],
+  "starters": [],
   "team_id": 146
 }

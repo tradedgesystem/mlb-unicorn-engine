@@ -148,6 +148,15 @@
       ]
     },
     {
+      "href": "/players/656876/",
+      "name": "Drew Rasmussen",
+      "player_id": 656876,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/670955/",
       "name": "Edwin Uceta",
       "player_id": 670955,
@@ -236,17 +245,6 @@
       "roles": [
         "reliever"
       ]
-    }
-  ],
-  "starters": [
-    {
-      "href": "/players/656876/",
-      "name": "Drew Rasmussen",
-      "player_id": 656876,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
     },
     {
       "href": "/players/686752/",
@@ -254,7 +252,7 @@
       "player_id": 686752,
       "position": "P",
       "roles": [
-        "starter"
+        "reliever"
       ]
     },
     {
@@ -263,7 +261,7 @@
       "player_id": 669358,
       "position": "P",
       "roles": [
-        "starter"
+        "reliever"
       ]
     },
     {
@@ -272,7 +270,7 @@
       "player_id": 671737,
       "position": "P",
       "roles": [
-        "starter"
+        "reliever"
       ]
     },
     {
@@ -281,9 +279,10 @@
       "player_id": 641793,
       "position": "P",
       "roles": [
-        "starter"
+        "reliever"
       ]
     }
   ],
+  "starters": [],
   "team_id": 139
 }

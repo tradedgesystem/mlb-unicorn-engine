@@ -130,6 +130,15 @@
   ],
   "relievers": [
     {
+      "href": "/players/594902/",
+      "name": "Ben Lively",
+      "player_id": 594902,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/671922/",
       "name": "Cade Smith",
       "player_id": 671922,
@@ -142,6 +151,15 @@
       "href": "/players/661403/",
       "name": "Emmanuel Clase",
       "player_id": 661403,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/668909/",
+      "name": "Gavin Williams",
+      "player_id": 668909,
       "position": "P",
       "roles": [
         "reliever"
@@ -175,9 +193,36 @@
       ]
     },
     {
+      "href": "/players/671106/",
+      "name": "Logan Allen",
+      "player_id": 671106,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/682847/",
+      "name": "Luis Ortiz",
+      "player_id": 682847,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/623149/",
       "name": "Paul Sewald",
       "player_id": 623149,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/676440/",
+      "name": "Tanner Bibee",
+      "player_id": 676440,
       "position": "P",
       "roles": [
         "reliever"
@@ -202,52 +247,6 @@
       ]
     }
   ],
-  "starters": [
-    {
-      "href": "/players/594902/",
-      "name": "Ben Lively",
-      "player_id": 594902,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/668909/",
-      "name": "Gavin Williams",
-      "player_id": 668909,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/671106/",
-      "name": "Logan Allen",
-      "player_id": 671106,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/682847/",
-      "name": "Luis Ortiz",
-      "player_id": 682847,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/676440/",
-      "name": "Tanner Bibee",
-      "player_id": 676440,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    }
-  ],
+  "starters": [],
   "team_id": 114
 }

@@ -1,53 +1,5 @@
 [
   {
-    "current_team_id": 138,
-    "href": "/players/664208/",
-    "kind": "hot",
-    "name": "Phil Maton",
-    "player_id": 664208,
-    "position": "P",
-    "roles": [
-      "reliever"
-    ],
-    "stat_id": "R_bb_low",
-    "team_abbrev": "STL",
-    "title": "Lowest BB% (last 6 apps)",
-    "value": 0.0,
-    "value_display": "0.0%"
-  },
-  {
-    "current_team_id": 135,
-    "href": "/players/673513/",
-    "kind": "hot",
-    "name": "Yuki Matsui",
-    "player_id": 673513,
-    "position": "P",
-    "roles": [
-      "reliever"
-    ],
-    "stat_id": "R_k",
-    "team_abbrev": "SD",
-    "title": "Highest K% (last 6 apps)",
-    "value": 0.5217391304347826,
-    "value_display": "52.2%"
-  },
-  {
-    "current_team_id": 143,
-    "href": "/players/621381/",
-    "kind": "hot",
-    "name": "Matt Strahm",
-    "player_id": 621381,
-    "position": "P",
-    "roles": [
-      "reliever"
-    ],
-    "stat_id": "R_xwOBA_allowed_low",
-    "team_abbrev": "PHI",
-    "title": "Lowest xwOBA allowed (last 6 apps)",
-    "value": 0.09210526315789473,
-    "value_display": ".092"
-  },
-  {
     "current_team_id": 121,
     "href": "/players/624413/",
     "kind": "hot",
@@ -57,27 +9,11 @@
     "roles": [
       "hitter"
     ],
-    "stat_id": "H_xwOBA_plus_hardhit",
+    "stat_id": "H_xwOBA",
     "team_abbrev": "NYM",
-    "title": "Best quality contact (xwOBA + HardHit%)",
-    "value": 1.09938,
-    "value_display": "xwOBA .449 · HardHit% 65.0%"
-  },
-  {
-    "current_team_id": 109,
-    "href": "/players/672695/",
-    "kind": "hot",
-    "name": "Geraldo Perdomo",
-    "player_id": 672695,
-    "position": "SS",
-    "roles": [
-      "hitter"
-    ],
-    "stat_id": "H_disc",
-    "team_abbrev": "AZ",
-    "title": "Best plate discipline (Contact% − Chase%)",
-    "value": 0.41774383078730903,
-    "value_display": "41.8%"
+    "title": "Leads MLB in xwOBA (last 50 AB)",
+    "value": 0.44938,
+    "value_display": ".449"
   },
   {
     "current_team_id": 141,
@@ -112,68 +48,20 @@
     "value_display": "xwOBA .395 · Barrel% 12.1%"
   },
   {
-    "current_team_id": 109,
-    "href": "/players/672695/",
-    "kind": "hot",
-    "name": "Geraldo Perdomo",
-    "player_id": 672695,
-    "position": "SS",
-    "roles": [
-      "hitter"
-    ],
-    "stat_id": "H_contact",
-    "team_abbrev": "AZ",
-    "title": "Highest Contact% (last 50 AB)",
-    "value": 0.6351351351351351,
-    "value_display": "63.5%"
-  },
-  {
     "current_team_id": 141,
-    "href": "/players/680704/",
+    "href": "/players/663893/",
     "kind": "hot",
-    "name": "Nick Sandlin",
-    "player_id": 680704,
+    "name": "Brendon Little",
+    "player_id": 663893,
     "position": "P",
     "roles": [
       "reliever"
     ],
-    "stat_id": "R_dom",
+    "stat_id": "R_whiff_plus_k",
     "team_abbrev": "TOR",
-    "title": "Best dominance (Whiff% − HardHit%)",
-    "value": 0.26190476190476186,
-    "value_display": "26.2%"
-  },
-  {
-    "current_team_id": 111,
-    "href": "/players/608324/",
-    "kind": "hot",
-    "name": "Alex Bregman",
-    "player_id": 608324,
-    "position": "3B",
-    "roles": [
-      "hitter"
-    ],
-    "stat_id": "H_chase_low",
-    "team_abbrev": "BOS",
-    "title": "Lowest Chase% (last 50 AB)",
-    "value": 0.16666666666666666,
-    "value_display": "16.7%"
-  },
-  {
-    "current_team_id": 112,
-    "href": "/players/687863/",
-    "kind": "hot",
-    "name": "Porter Hodge",
-    "player_id": 687863,
-    "position": "P",
-    "roles": [
-      "reliever"
-    ],
-    "stat_id": "R_hardhit_low",
-    "team_abbrev": "CHC",
-    "title": "Lowest HardHit% allowed (last 6 apps)",
-    "value": 0.05405405405405406,
-    "value_display": "5.4%"
+    "title": "Best bat-missing: Whiff% and K% (last 6 apps)",
+    "value": 1.0095785440613028,
+    "value_display": "Whiff% 62.1% · K% 38.9%"
   },
   {
     "current_team_id": 109,
@@ -192,38 +80,6 @@
     "value_display": "Contact% 63.5% · xwOBA .299"
   },
   {
-    "current_team_id": 141,
-    "href": "/players/663893/",
-    "kind": "hot",
-    "name": "Brendon Little",
-    "player_id": 663893,
-    "position": "P",
-    "roles": [
-      "reliever"
-    ],
-    "stat_id": "R_whiff_plus_k",
-    "team_abbrev": "TOR",
-    "title": "Best bat-missing: Whiff% and K% (last 6 apps)",
-    "value": 1.0095785440613028,
-    "value_display": "Whiff% 62.1% · K% 38.9%"
-  },
-  {
-    "current_team_id": 121,
-    "href": "/players/624413/",
-    "kind": "hot",
-    "name": "Pete Alonso",
-    "player_id": 624413,
-    "position": "1B",
-    "roles": [
-      "hitter"
-    ],
-    "stat_id": "H_xwOBA",
-    "team_abbrev": "NYM",
-    "title": "Leads MLB in xwOBA (last 50 AB)",
-    "value": 0.44938,
-    "value_display": ".449"
-  },
-  {
     "current_team_id": 112,
     "href": "/players/621020/",
     "kind": "hot",
@@ -240,6 +96,22 @@
     "value_display": "66.7%"
   },
   {
+    "current_team_id": 141,
+    "href": "/players/680704/",
+    "kind": "hot",
+    "name": "Nick Sandlin",
+    "player_id": 680704,
+    "position": "P",
+    "roles": [
+      "reliever"
+    ],
+    "stat_id": "R_dom",
+    "team_abbrev": "TOR",
+    "title": "Best dominance (Whiff% − HardHit%)",
+    "value": 0.26190476190476186,
+    "value_display": "26.2%"
+  },
+  {
     "current_team_id": 143,
     "href": "/players/621381/",
     "kind": "hot",
@@ -249,11 +121,91 @@
     "roles": [
       "reliever"
     ],
-    "stat_id": "R_kbb",
+    "stat_id": "R_no_free_pass",
     "team_abbrev": "PHI",
-    "title": "Best K-BB% (last 6 apps)",
-    "value": 0.45,
-    "value_display": "45.0%"
+    "title": "Best control (lowest BB% + low xwOBA)",
+    "value": 0.09210526315789473,
+    "value_display": ".092"
+  },
+  {
+    "current_team_id": 111,
+    "href": "/players/608324/",
+    "kind": "hot",
+    "name": "Alex Bregman",
+    "player_id": 608324,
+    "position": "3B",
+    "roles": [
+      "hitter"
+    ],
+    "stat_id": "H_chase_low",
+    "team_abbrev": "BOS",
+    "title": "Lowest Chase% (last 50 AB)",
+    "value": 0.16666666666666666,
+    "value_display": "16.7%"
+  },
+  {
+    "current_team_id": 135,
+    "href": "/players/673513/",
+    "kind": "hot",
+    "name": "Yuki Matsui",
+    "player_id": 673513,
+    "position": "P",
+    "roles": [
+      "reliever"
+    ],
+    "stat_id": "R_k",
+    "team_abbrev": "SD",
+    "title": "Highest K% (last 6 apps)",
+    "value": 0.5217391304347826,
+    "value_display": "52.2%"
+  },
+  {
+    "current_team_id": 143,
+    "href": "/players/621381/",
+    "kind": "hot",
+    "name": "Matt Strahm",
+    "player_id": 621381,
+    "position": "P",
+    "roles": [
+      "reliever"
+    ],
+    "stat_id": "R_xwOBA_allowed_low",
+    "team_abbrev": "PHI",
+    "title": "Lowest xwOBA allowed (last 6 apps)",
+    "value": 0.09210526315789473,
+    "value_display": ".092"
+  },
+  {
+    "current_team_id": 109,
+    "href": "/players/672695/",
+    "kind": "hot",
+    "name": "Geraldo Perdomo",
+    "player_id": 672695,
+    "position": "SS",
+    "roles": [
+      "hitter"
+    ],
+    "stat_id": "H_disc",
+    "team_abbrev": "AZ",
+    "title": "Best plate discipline (Contact% − Chase%)",
+    "value": 0.41774383078730903,
+    "value_display": "41.8%"
+  },
+  {
+    "current_team_id": 121,
+    "href": "/players/624413/",
+    "kind": "hot",
+    "name": "Pete Alonso",
+    "player_id": 624413,
+    "position": "1B",
+    "roles": [
+      "hitter"
+    ],
+    "stat_id": "H_xwOBA_plus_hardhit",
+    "team_abbrev": "NYM",
+    "title": "Best quality contact (xwOBA + HardHit%)",
+    "value": 1.09938,
+    "value_display": "xwOBA .449 · HardHit% 65.0%"
   },
   {
     "current_team_id": 120,
@@ -281,43 +233,91 @@
     "roles": [
       "reliever"
     ],
-    "stat_id": "R_no_free_pass",
+    "stat_id": "R_kbb",
     "team_abbrev": "PHI",
-    "title": "Best control (lowest BB% + low xwOBA)",
-    "value": 0.09210526315789473,
-    "value_display": ".092"
+    "title": "Best K-BB% (last 6 apps)",
+    "value": 0.45,
+    "value_display": "45.0%"
   },
   {
-    "current_team_id": 134,
-    "href": "/players/624428/",
-    "kind": "not",
-    "name": "Adam Frazier",
-    "player_id": 624428,
-    "position": "2B",
-    "roles": [
-      "hitter"
-    ],
-    "stat_id": "H_hardhit_low",
-    "team_abbrev": "PIT",
-    "title": "Lowest HardHit% (last 50 AB)",
-    "value": 0.15,
-    "value_display": "15.0%"
-  },
-  {
-    "current_team_id": 134,
-    "href": "/players/657571/",
-    "kind": "not",
-    "name": "Caleb Ferguson",
-    "player_id": 657571,
+    "current_team_id": 112,
+    "href": "/players/687863/",
+    "kind": "hot",
+    "name": "Porter Hodge",
+    "player_id": 687863,
     "position": "P",
     "roles": [
       "reliever"
     ],
-    "stat_id": "R_whiff_low",
-    "team_abbrev": "PIT",
-    "title": "Lowest Whiff% (last 6 apps)",
-    "value": 0.08,
-    "value_display": "8.0%"
+    "stat_id": "R_hardhit_low",
+    "team_abbrev": "CHC",
+    "title": "Lowest HardHit% allowed (last 6 apps)",
+    "value": 0.05405405405405406,
+    "value_display": "5.4%"
+  },
+  {
+    "current_team_id": 109,
+    "href": "/players/672695/",
+    "kind": "hot",
+    "name": "Geraldo Perdomo",
+    "player_id": 672695,
+    "position": "SS",
+    "roles": [
+      "hitter"
+    ],
+    "stat_id": "H_contact",
+    "team_abbrev": "AZ",
+    "title": "Highest Contact% (last 50 AB)",
+    "value": 0.6351351351351351,
+    "value_display": "63.5%"
+  },
+  {
+    "current_team_id": 117,
+    "href": "/players/595345/",
+    "kind": "hot",
+    "name": "Steven Okert",
+    "player_id": 595345,
+    "position": "P",
+    "roles": [
+      "reliever"
+    ],
+    "stat_id": "R_bb_low",
+    "team_abbrev": "HOU",
+    "title": "Lowest BB% (last 6 apps)",
+    "value": 0.0,
+    "value_display": "0.0%"
+  },
+  {
+    "current_team_id": 136,
+    "href": "/players/666619/",
+    "kind": "not",
+    "name": "Gregory Santos",
+    "player_id": 666619,
+    "position": "P",
+    "roles": [
+      "reliever"
+    ],
+    "stat_id": "R_k_low",
+    "team_abbrev": "SEA",
+    "title": "Lowest K% (last 6 apps)",
+    "value": 0.0,
+    "value_display": "0.0%"
+  },
+  {
+    "current_team_id": 113,
+    "href": "/players/687952/",
+    "kind": "not",
+    "name": "Christian Encarnacion-Strand",
+    "player_id": 687952,
+    "position": "1B",
+    "roles": [
+      "hitter"
+    ],
+    "stat_id": "H_chase_high",
+    "team_abbrev": "CIN",
+    "title": "Highest Chase% (last 50 AB)",
+    "value": 0.5443037974683544,
+    "value_display": "54.4%"
   },
   {
     "current_team_id": 113,
@@ -336,52 +336,20 @@
     "value_display": ".136"
   },
   {
-    "current_team_id": 136,
-    "href": "/players/666619/",
+    "current_team_id": 134,
+    "href": "/players/657571/",
     "kind": "not",
-    "name": "Gregory Santos",
-    "player_id": 666619,
+    "name": "Caleb Ferguson",
+    "player_id": 657571,
     "position": "P",
     "roles": [
       "reliever"
     ],
-    "stat_id": "R_kbb_bad",
-    "team_abbrev": "SEA",
-    "title": "Worst K-BB% (last 6 apps)",
-    "value": -0.2413793103448276,
-    "value_display": "-24.1%"
-  },
-  {
-    "current_team_id": 137,
-    "href": "/players/643511/",
-    "kind": "not",
-    "name": "Tyler Rogers",
-    "player_id": 643511,
-    "position": "P",
-    "roles": [
-      "reliever"
-    ],
-    "stat_id": "R_hardhit_high",
-    "team_abbrev": "SF",
-    "title": "Highest HardHit% allowed (last 6 apps)",
-    "value": 0.46153846153846156,
-    "value_display": "46.2%"
-  },
-  {
-    "current_team_id": 143,
-    "href": "/players/681082/",
-    "kind": "not",
-    "name": "Bryson Stott",
-    "player_id": 681082,
-    "position": "2B",
-    "roles": [
-      "hitter"
-    ],
-    "stat_id": "H_quality_bad",
-    "team_abbrev": "PHI",
-    "title": "Worst quality contact (xwOBA + HardHit%)",
-    "value": 0.37623052631578946,
-    "value_display": ".376"
+    "stat_id": "R_whiff_low",
+    "team_abbrev": "PIT",
+    "title": "Lowest Whiff% (last 6 apps)",
+    "value": 0.08,
+    "value_display": "8.0%"
   },
   {
     "current_team_id": 115,
@@ -400,33 +368,65 @@
     "value_display": "19.5%"
   },
   {
-    "current_team_id": 120,
-    "href": "/players/621363/",
+    "current_team_id": 136,
+    "href": "/players/666619/",
     "kind": "not",
-    "name": "Colin Poche",
-    "player_id": 621363,
+    "name": "Gregory Santos",
+    "player_id": 666619,
     "position": "P",
     "roles": [
       "reliever"
     ],
-    "stat_id": "R_bb_high",
-    "team_abbrev": "WSH",
-    "title": "Highest BB% (last 6 apps)",
-    "value": 0.32,
-    "value_display": "32.0%"
+    "stat_id": "R_whiff_plus_k_bad",
+    "team_abbrev": "SEA",
+    "title": "Worst bat-missing: Whiff% and K% (last 6 apps)",
+    "value": 0.09302325581395349,
+    "value_display": "Whiff% 9.3% · K% 0.0%"
   },
   {
-    "current_team_id": 142,
-    "href": "/players/650489/",
+    "current_team_id": 134,
+    "href": "/players/624428/",
     "kind": "not",
-    "name": "Willi Castro",
-    "player_id": 650489,
-    "position": "LF",
+    "name": "Adam Frazier",
+    "player_id": 624428,
+    "position": "2B",
+    "roles": [
+      "hitter"
+    ],
+    "stat_id": "H_hardhit_low",
+    "team_abbrev": "PIT",
+    "title": "Lowest HardHit% (last 50 AB)",
+    "value": 0.15,
+    "value_display": "15.0%"
+  },
+  {
+    "current_team_id": 136,
+    "href": "/players/666619/",
+    "kind": "not",
+    "name": "Gregory Santos",
+    "player_id": 666619,
+    "position": "P",
+    "roles": [
+      "reliever"
+    ],
+    "stat_id": "R_kbb_bad",
+    "team_abbrev": "SEA",
+    "title": "Worst K-BB% (last 6 apps)",
+    "value": -0.2413793103448276,
+    "value_display": "-24.1%"
+  },
+  {
+    "current_team_id": 135,
+    "href": "/players/593428/",
+    "kind": "not",
+    "name": "Xander Bogaerts",
+    "player_id": 593428,
+    "position": "SS",
     "roles": [
       "hitter"
     ],
     "stat_id": "H_barrel_low",
-    "team_abbrev": "MIN",
+    "team_abbrev": "SD",
     "title": "Lowest Barrel% (last 50 AB)",
     "value": 0.0,
     "value_display": "0.0%"
@@ -448,6 +448,22 @@
     "value_display": ".552"
   },
   {
+    "current_team_id": 115,
+    "href": "/players/518397/",
+    "kind": "not",
+    "name": "Scott Alexander",
+    "player_id": 518397,
+    "position": "P",
+    "roles": [
+      "reliever"
+    ],
+    "stat_id": "R_damage_combo",
+    "team_abbrev": "COL",
+    "title": "Worst damage combo (xwOBA + HardHit% allowed)",
+    "value": 0.9678730158730159,
+    "value_display": ".968"
+  },
+  {
     "current_team_id": 120,
     "href": "/players/657557/",
     "kind": "not",
@@ -464,67 +480,51 @@
     "value_display": "23.1%"
   },
   {
-    "current_team_id": 113,
-    "href": "/players/687952/",
+    "current_team_id": 143,
+    "href": "/players/681082/",
     "kind": "not",
-    "name": "Christian Encarnacion-Strand",
-    "player_id": 687952,
-    "position": "1B",
+    "name": "Bryson Stott",
+    "player_id": 681082,
+    "position": "2B",
     "roles": [
       "hitter"
     ],
-    "stat_id": "H_chase_high",
-    "team_abbrev": "CIN",
-    "title": "Highest Chase% (last 50 AB)",
-    "value": 0.5443037974683544,
-    "value_display": "54.4%"
+    "stat_id": "H_quality_bad",
+    "team_abbrev": "PHI",
+    "title": "Worst quality contact (xwOBA + HardHit%)",
+    "value": 0.37623052631578946,
+    "value_display": ".376"
   },
   {
-    "current_team_id": 136,
-    "href": "/players/666619/",
+    "current_team_id": 120,
+    "href": "/players/621363/",
     "kind": "not",
-    "name": "Gregory Santos",
-    "player_id": 666619,
+    "name": "Colin Poche",
+    "player_id": 621363,
     "position": "P",
     "roles": [
       "reliever"
     ],
-    "stat_id": "R_whiff_plus_k_bad",
-    "team_abbrev": "SEA",
-    "title": "Worst bat-missing: Whiff% and K% (last 6 apps)",
-    "value": 0.09302325581395349,
-    "value_display": "Whiff% 9.3% · K% 0.0%"
+    "stat_id": "R_bb_high",
+    "team_abbrev": "WSH",
+    "title": "Highest BB% (last 6 apps)",
+    "value": 0.32,
+    "value_display": "32.0%"
   },
   {
-    "current_team_id": 136,
-    "href": "/players/666619/",
+    "current_team_id": 137,
+    "href": "/players/643511/",
     "kind": "not",
-    "name": "Gregory Santos",
-    "player_id": 666619,
+    "name": "Tyler Rogers",
+    "player_id": 643511,
     "position": "P",
     "roles": [
       "reliever"
     ],
-    "stat_id": "R_k_low",
-    "team_abbrev": "SEA",
-    "title": "Lowest K% (last 6 apps)",
-    "value": 0.0,
-    "value_display": "0.0%"
-  },
-  {
-    "current_team_id": 115,
-    "href": "/players/518397/",
-    "kind": "not",
-    "name": "Scott Alexander",
-    "player_id": 518397,
-    "position": "P",
-    "roles": [
-      "reliever"
-    ],
-    "stat_id": "R_damage_combo",
-    "team_abbrev": "COL",
-    "title": "Worst damage combo (xwOBA + HardHit% allowed)",
-    "value": 0.9678730158730159,
-    "value_display": ".968"
+    "stat_id": "R_hardhit_high",
+    "team_abbrev": "SF",
+    "title": "Highest HardHit% allowed (last 6 apps)",
+    "value": 0.46153846153846156,
+    "value_display": "46.2%"
   }
 ]

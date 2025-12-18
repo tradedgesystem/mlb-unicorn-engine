@@ -2,18 +2,18 @@
   "current_team_id": 158,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.2162,
-    "contact_pct_last_50": 0.25,
-    "hard_hit_pct_last_50": 0.7143,
-    "xwoba_last_50": 0.3247
+    "chase_pct_last_50": 0.3333333333333333,
+    "contact_pct_last_50": 0.25925925925925924,
+    "hard_hit_pct_last_50": 0.7142857142857143,
+    "xwoba_last_50": 0.22706666666666667
   },
   "name": "Jake Bauers",
   "player_id": 641343,
   "player_name": "Jake Bauers",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "hitter",
   "roles": [
-    "reliever"
+    "hitter"
   ],
   "team_id": 158,
   "team_name": "MIL"

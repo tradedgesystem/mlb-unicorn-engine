@@ -148,6 +148,42 @@
       ]
     },
     {
+      "href": "/players/663855/",
+      "name": "Jordan Hicks",
+      "player_id": 663855,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/434378/",
+      "name": "Justin Verlander",
+      "player_id": 434378,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/694738/",
+      "name": "Landen Roupp",
+      "player_id": 694738,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/657277/",
+      "name": "Logan Webb",
+      "player_id": 657277,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/642152/",
       "name": "Lou Trivino",
       "player_id": 642152,
@@ -160,6 +196,15 @@
       "href": "/players/678495/",
       "name": "Randy Rodríguez",
       "player_id": 678495,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/592662/",
+      "name": "Robbie Ray",
+      "player_id": 592662,
       "position": "P",
       "roles": [
         "reliever"
@@ -193,52 +238,6 @@
       ]
     }
   ],
-  "starters": [
-    {
-      "href": "/players/663855/",
-      "name": "Jordan Hicks",
-      "player_id": 663855,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/434378/",
-      "name": "Justin Verlander",
-      "player_id": 434378,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/694738/",
-      "name": "Landen Roupp",
-      "player_id": 694738,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/657277/",
-      "name": "Logan Webb",
-      "player_id": 657277,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/592662/",
-      "name": "Robbie Ray",
-      "player_id": 592662,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    }
-  ],
+  "starters": [],
   "team_id": 137
 }

@@ -74,6 +74,15 @@
       ]
     },
     {
+      "href": "/players/670032/",
+      "name": "Nicky Lopez",
+      "player_id": 670032,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/694384/",
       "name": "Nolan Schanuel",
       "player_id": 694384,
@@ -166,9 +175,36 @@
       ]
     },
     {
+      "href": "/players/686799/",
+      "name": "Jack Kochanowicz",
+      "player_id": 686799,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/667755/",
+      "name": "José Soriano",
+      "player_id": 667755,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/445276/",
       "name": "Kenley Jansen",
       "player_id": 445276,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/543294/",
+      "name": "Kyle Hendricks",
+      "player_id": 543294,
       "position": "P",
       "roles": [
         "reliever"
@@ -179,15 +215,6 @@
       "name": "Michael Darrell-Hicks",
       "player_id": 690382,
       "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
-      "href": "/players/670032/",
-      "name": "Nicky Lopez",
-      "player_id": 670032,
-      "position": "3B",
       "roles": [
         "reliever"
       ]
@@ -218,35 +245,6 @@
       "roles": [
         "reliever"
       ]
-    }
-  ],
-  "starters": [
-    {
-      "href": "/players/686799/",
-      "name": "Jack Kochanowicz",
-      "player_id": 686799,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/667755/",
-      "name": "José Soriano",
-      "player_id": 667755,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/543294/",
-      "name": "Kyle Hendricks",
-      "player_id": 543294,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
     },
     {
       "href": "/players/542881/",
@@ -254,7 +252,7 @@
       "player_id": 542881,
       "position": "P",
       "roles": [
-        "starter"
+        "reliever"
       ]
     },
     {
@@ -263,9 +261,10 @@
       "player_id": 579328,
       "position": "P",
       "roles": [
-        "starter"
+        "reliever"
       ]
     }
   ],
+  "starters": [],
   "team_id": 108
 }

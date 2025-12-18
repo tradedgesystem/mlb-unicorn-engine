@@ -121,6 +121,15 @@
   ],
   "relievers": [
     {
+      "href": "/players/676962/",
+      "name": "Ben Brown",
+      "player_id": 676962,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/641745/",
       "name": "Brad Keller",
       "player_id": 641745,
@@ -175,9 +184,36 @@
       ]
     },
     {
+      "href": "/players/592791/",
+      "name": "Jameson Taillon",
+      "player_id": 592791,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/657240/",
       "name": "Julian Merryweather",
       "player_id": 657240,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/657006/",
+      "name": "Justin Steele",
+      "player_id": 657006,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/571510/",
+      "name": "Matthew Boyd",
+      "player_id": 571510,
       "position": "P",
       "roles": [
         "reliever"
@@ -209,44 +245,6 @@
       "roles": [
         "reliever"
       ]
-    }
-  ],
-  "starters": [
-    {
-      "href": "/players/676962/",
-      "name": "Ben Brown",
-      "player_id": 676962,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/592791/",
-      "name": "Jameson Taillon",
-      "player_id": 592791,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/657006/",
-      "name": "Justin Steele",
-      "player_id": 657006,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
-    },
-    {
-      "href": "/players/571510/",
-      "name": "Matthew Boyd",
-      "player_id": 571510,
-      "position": "P",
-      "roles": [
-        "starter"
-      ]
     },
     {
       "href": "/players/684007/",
@@ -254,9 +252,10 @@
       "player_id": 684007,
       "position": "P",
       "roles": [
-        "starter"
+        "reliever"
       ]
     }
   ],
+  "starters": [],
   "team_id": 112
 }

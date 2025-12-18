@@ -2,18 +2,18 @@
   "current_team_id": 142,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.337,
-    "contact_pct_last_50": 0.3186,
-    "hard_hit_pct_last_50": 0.25,
-    "xwoba_last_50": 0.2412
+    "chase_pct_last_50": 0.35294117647058826,
+    "contact_pct_last_50": 0.3333333333333333,
+    "hard_hit_pct_last_50": 0.24324324324324326,
+    "xwoba_last_50": 0.22996
   },
   "name": "Willi Castro",
   "player_id": 650489,
   "player_name": "Willi Castro",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "hitter",
   "roles": [
-    "reliever"
+    "hitter"
   ],
   "team_id": 142,
   "team_name": "MIN"

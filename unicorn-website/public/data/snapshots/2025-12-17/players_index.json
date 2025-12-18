@@ -4,7 +4,7 @@
     "name": "Justin Verlander",
     "player_id": 434378,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -28,7 +28,7 @@
     "name": "Charlie Morton",
     "player_id": 450203,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -100,7 +100,7 @@
     "name": "Carlos Carrasco",
     "player_id": 471911,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -148,7 +148,7 @@
     "name": "Miguel Rojas",
     "player_id": 500743,
     "roles": [
-      "reliever"
+      "hitter"
     ]
   },
   {
@@ -236,7 +236,7 @@
     "name": "Merrill Kelly",
     "player_id": 518876,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -260,7 +260,7 @@
     "name": "Chris Sale",
     "player_id": 519242,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -284,7 +284,7 @@
     "name": "Martín Pérez",
     "player_id": 527048,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -308,7 +308,7 @@
     "name": "Tyler Anderson",
     "player_id": 542881,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -348,7 +348,7 @@
     "name": "Nathan Eovaldi",
     "player_id": 543135,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -356,7 +356,7 @@
     "name": "Sonny Gray",
     "player_id": 543243,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -364,7 +364,7 @@
     "name": "Kyle Hendricks",
     "player_id": 543294,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -428,7 +428,7 @@
     "name": "Michael Lorenzen",
     "player_id": 547179,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -484,7 +484,7 @@
     "name": "Zack Wheeler",
     "player_id": 554430,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -508,7 +508,7 @@
     "name": "Matthew Boyd",
     "player_id": 571510,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -532,7 +532,7 @@
     "name": "Andrew Heaney",
     "player_id": 571760,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -556,7 +556,7 @@
     "name": "Miles Mikolas",
     "player_id": 571945,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -628,7 +628,7 @@
     "name": "Marcus Stroman",
     "player_id": 573186,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -668,7 +668,7 @@
     "name": "Yusei Kikuchi",
     "player_id": 579328,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -716,7 +716,7 @@
     "name": "Kevin Gausman",
     "player_id": 592332,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -764,7 +764,7 @@
     "name": "Robbie Ray",
     "player_id": 592662,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -796,7 +796,7 @@
     "name": "Jameson Taillon",
     "player_id": 592791,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -804,7 +804,7 @@
     "name": "Taijuan Walker",
     "player_id": 592836,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -812,7 +812,7 @@
     "name": "Trevor Williams",
     "player_id": 592866,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -852,7 +852,7 @@
     "name": "Eduardo Rodriguez",
     "player_id": 593958,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -876,7 +876,7 @@
     "name": "Jacob deGrom",
     "player_id": 594798,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -884,7 +884,7 @@
     "name": "Ben Lively",
     "player_id": 594902,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1012,7 +1012,7 @@
     "name": "Nick Pivetta",
     "player_id": 601713,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1044,7 +1044,7 @@
     "name": "Chris Bassitt",
     "player_id": 605135,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1108,7 +1108,7 @@
     "name": "Clay Holmes",
     "player_id": 605280,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1132,7 +1132,7 @@
     "name": "Aaron Nola",
     "player_id": 605400,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1164,7 +1164,7 @@
     "name": "Blake Snell",
     "player_id": 605483,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1172,7 +1172,7 @@
     "name": "Jeffrey Springs",
     "player_id": 605488,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1244,7 +1244,7 @@
     "name": "Kyle Hart",
     "player_id": 606996,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1268,7 +1268,7 @@
     "name": "Carlos Rodón",
     "player_id": 607074,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1276,7 +1276,7 @@
     "name": "Tyler Glasnow",
     "player_id": 607192,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1284,7 +1284,7 @@
     "name": "Erick Fedde",
     "player_id": 607200,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1300,7 +1300,7 @@
     "name": "Nick Martinez",
     "player_id": 607259,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1324,7 +1324,7 @@
     "name": "Kyle Freeland",
     "player_id": 607536,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1332,7 +1332,7 @@
     "name": "Seth Lugo",
     "player_id": 607625,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1380,7 +1380,7 @@
     "name": "Max Fried",
     "player_id": 608331,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1412,7 +1412,7 @@
     "name": "Tomoyuki Sugano",
     "player_id": 608372,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1420,7 +1420,7 @@
     "name": "Michael Wacha",
     "player_id": 608379,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1436,7 +1436,7 @@
     "name": "Germán Márquez",
     "player_id": 608566,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1492,7 +1492,7 @@
     "name": "Cal Quantrill",
     "player_id": 615698,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1548,7 +1548,7 @@
     "name": "Zach Eflin",
     "player_id": 621107,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1556,7 +1556,7 @@
     "name": "Walker Buehler",
     "player_id": 621111,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1588,7 +1588,7 @@
     "name": "José Berríos",
     "player_id": 621244,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1676,7 +1676,7 @@
     "name": "Luis F. Castillo",
     "player_id": 622379,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1684,7 +1684,7 @@
     "name": "Luis Castillo",
     "player_id": 622491,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1716,7 +1716,7 @@
     "name": "Antonio Senzatela",
     "player_id": 622608,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1724,7 +1724,7 @@
     "name": "Luis Severino",
     "player_id": 622663,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1932,7 +1932,7 @@
     "name": "Jhonny Pereda",
     "player_id": 640902,
     "roles": [
-      "reliever"
+      "hitter"
     ]
   },
   {
@@ -1940,7 +1940,7 @@
     "name": "Pablo López",
     "player_id": 641154,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1948,7 +1948,7 @@
     "name": "Tyler Alexander",
     "player_id": 641302,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -1972,7 +1972,7 @@
     "name": "Jake Bauers",
     "player_id": 641343,
     "roles": [
-      "reliever"
+      "hitter"
     ]
   },
   {
@@ -1988,7 +1988,7 @@
     "name": "Nestor Cortes",
     "player_id": 641482,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2068,7 +2068,7 @@
     "name": "Zack Littell",
     "player_id": 641793,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2076,7 +2076,7 @@
     "name": "Tyler Mahle",
     "player_id": 641816,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2100,7 +2100,7 @@
     "name": "Bailey Ober",
     "player_id": 641927,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2244,7 +2244,7 @@
     "name": "Freddy Peralta",
     "player_id": 642547,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2372,7 +2372,7 @@
     "name": "Sandy Alcantara",
     "player_id": 645261,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2460,7 +2460,7 @@
     "name": "Willi Castro",
     "player_id": 650489,
     "roles": [
-      "reliever"
+      "hitter"
     ]
   },
   {
@@ -2492,7 +2492,7 @@
     "name": "Michael King",
     "player_id": 650633,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2516,7 +2516,7 @@
     "name": "Cristopher Sánchez",
     "player_id": 650911,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2588,7 +2588,7 @@
     "name": "Griffin Canning",
     "player_id": 656288,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2596,7 +2596,7 @@
     "name": "Dylan Cease",
     "player_id": 656302,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2620,7 +2620,7 @@
     "name": "Jack Flaherty",
     "player_id": 656427,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2652,7 +2652,7 @@
     "name": "Grant Holmes",
     "player_id": 656550,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2668,7 +2668,7 @@
     "name": "Tanner Houck",
     "player_id": 656557,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2684,7 +2684,7 @@
     "name": "Mitch Keller",
     "player_id": 656605,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2708,7 +2708,7 @@
     "name": "Tylor Megill",
     "player_id": 656731,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2724,7 +2724,7 @@
     "name": "Sean Newcomb",
     "player_id": 656794,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2748,7 +2748,7 @@
     "name": "David Peterson",
     "player_id": 656849,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2756,7 +2756,7 @@
     "name": "Drew Rasmussen",
     "player_id": 656876,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2796,7 +2796,7 @@
     "name": "Justin Steele",
     "player_id": 657006,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2844,7 +2844,7 @@
     "name": "Logan Webb",
     "player_id": 657277,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2908,7 +2908,7 @@
     "name": "Joe Ryan",
     "player_id": 657746,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -2949,7 +2949,7 @@
     "name": "Elvin Rodríguez",
     "player_id": 660730,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3045,7 +3045,7 @@
     "name": "Ryan Feltner",
     "player_id": 663372,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3061,7 +3061,7 @@
     "name": "Davis Martin",
     "player_id": 663436,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3077,7 +3077,7 @@
     "name": "Kris Bubic",
     "player_id": 663460,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3117,7 +3117,7 @@
     "name": "Casey Mize",
     "player_id": 663554,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3125,7 +3125,7 @@
     "name": "Bailey Falter",
     "player_id": 663559,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3181,7 +3181,7 @@
     "name": "Jake Irvin",
     "player_id": 663623,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3293,7 +3293,7 @@
     "name": "Jordan Hicks",
     "player_id": 663855,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3325,7 +3325,7 @@
     "name": "Brady Singer",
     "player_id": 663903,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3357,7 +3357,7 @@
     "name": "Chris Paddack",
     "player_id": 663978,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3453,7 +3453,7 @@
     "name": "Framber Valdez",
     "player_id": 664285,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3573,7 +3573,7 @@
     "name": "Dean Kremer",
     "player_id": 665152,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3749,7 +3749,7 @@
     "name": "Cole Ragans",
     "player_id": 666142,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3773,7 +3773,7 @@
     "name": "Nick Lodolo",
     "player_id": 666157,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3853,7 +3853,7 @@
     "name": "Jesús Luzardo",
     "player_id": 666200,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3965,7 +3965,7 @@
     "name": "José Soriano",
     "player_id": 667755,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -3997,7 +3997,7 @@
     "name": "Zac Gallen",
     "player_id": 668678,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4045,7 +4045,7 @@
     "name": "Hunter Greene",
     "player_id": 668881,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4061,7 +4061,7 @@
     "name": "Gavin Williams",
     "player_id": 668909,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4141,7 +4141,7 @@
     "name": "MacKenzie Gore",
     "player_id": 669022,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4197,7 +4197,7 @@
     "name": "Dustin May",
     "player_id": 669160,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4229,7 +4229,7 @@
     "name": "Corbin Burnes",
     "player_id": 669203,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4325,7 +4325,7 @@
     "name": "Logan Gilbert",
     "player_id": 669302,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4349,7 +4349,7 @@
     "name": "Shane Baz",
     "player_id": 669358,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4381,7 +4381,7 @@
     "name": "Tarik Skubal",
     "player_id": 669373,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4389,7 +4389,7 @@
     "name": "Carmen Mlodzinski",
     "player_id": 669387,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4437,7 +4437,7 @@
     "name": "Matthew Liberatore",
     "player_id": 669461,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4445,7 +4445,7 @@
     "name": "Andre Pallante",
     "player_id": 669467,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4501,7 +4501,7 @@
     "name": "Hayden Wesneski",
     "player_id": 669713,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4533,7 +4533,7 @@
     "name": "Ronel Blanco",
     "player_id": 669854,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4557,7 +4557,7 @@
     "name": "Nicky Lopez",
     "player_id": 670032,
     "roles": [
-      "reliever"
+      "hitter"
     ]
   },
   {
@@ -4581,7 +4581,7 @@
     "name": "Bowden Francis",
     "player_id": 670102,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4725,7 +4725,7 @@
     "name": "Logan Allen",
     "player_id": 671106,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -4813,7 +4813,7 @@
     "name": "Taj Bradley",
     "player_id": 671737,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5005,7 +5005,7 @@
     "name": "Kodai Senga",
     "player_id": 673540,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5045,7 +5045,7 @@
     "name": "Osvaldo Bido",
     "player_id": 674370,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5189,7 +5189,7 @@
     "name": "Tanner Bibee",
     "player_id": 676440,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5253,7 +5253,7 @@
     "name": "JP Sears",
     "player_id": 676664,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5301,7 +5301,7 @@
     "name": "Ben Brown",
     "player_id": 676962,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5309,7 +5309,7 @@
     "name": "Max Meyer",
     "player_id": 676974,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5317,7 +5317,7 @@
     "name": "Garrett Crochet",
     "player_id": 676979,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5373,7 +5373,7 @@
     "name": "Ezequiel Duran",
     "player_id": 677649,
     "roles": [
-      "reliever"
+      "hitter"
     ]
   },
   {
@@ -5405,7 +5405,7 @@
     "name": "Kumar Rocker",
     "player_id": 677958,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5477,7 +5477,7 @@
     "name": "Valente Bellozo",
     "player_id": 678368,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5597,7 +5597,7 @@
     "name": "Simeon Woods Richardson",
     "player_id": 680573,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5653,7 +5653,7 @@
     "name": "Mitchell Parker",
     "player_id": 680730,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5661,7 +5661,7 @@
     "name": "Sean Burke",
     "player_id": 680732,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5717,7 +5717,7 @@
     "name": "Spencer Schwellenbach",
     "player_id": 680885,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5749,7 +5749,7 @@
     "name": "Randy Vásquez",
     "player_id": 681190,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5757,7 +5757,7 @@
     "name": "Spencer Arrighetti",
     "player_id": 681293,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5773,7 +5773,7 @@
     "name": "Shane Smith",
     "player_id": 681343,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5845,7 +5845,7 @@
     "name": "Reese Olson",
     "player_id": 681857,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -5933,7 +5933,7 @@
     "name": "Bryce Miller",
     "player_id": 682243,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6005,7 +6005,7 @@
     "name": "Luis Ortiz",
     "player_id": 682847,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6037,7 +6037,7 @@
     "name": "Quinn Priester",
     "player_id": 682990,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6061,7 +6061,7 @@
     "name": "Jack Leiter",
     "player_id": 683004,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6093,7 +6093,7 @@
     "name": "Joey Estes",
     "player_id": 683155,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6149,7 +6149,7 @@
     "name": "Shota Imanaga",
     "player_id": 684007,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6237,7 +6237,7 @@
     "name": "Jonathan Cannon",
     "player_id": 686563,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6261,7 +6261,7 @@
     "name": "Hunter Brown",
     "player_id": 686613,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6301,7 +6301,7 @@
     "name": "Carson Spiers",
     "player_id": 686730,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6309,7 +6309,7 @@
     "name": "Ryan Pepiot",
     "player_id": 686752,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6333,7 +6333,7 @@
     "name": "Jack Kochanowicz",
     "player_id": 686799,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6389,7 +6389,7 @@
     "name": "Connor Gillispie",
     "player_id": 687362,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6477,7 +6477,7 @@
     "name": "Easton Lucas",
     "player_id": 687922,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6517,7 +6517,7 @@
     "name": "Landon Knack",
     "player_id": 689017,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6581,7 +6581,7 @@
     "name": "Richard Fitts",
     "player_id": 690916,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6661,7 +6661,7 @@
     "name": "Javier Sanoja",
     "player_id": 691594,
     "roles": [
-      "reliever"
+      "hitter"
     ]
   },
   {
@@ -6733,7 +6733,7 @@
     "name": "Bryan Woo",
     "player_id": 693433,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6741,7 +6741,7 @@
     "name": "Bryce Elder",
     "player_id": 693821,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6765,7 +6765,7 @@
     "name": "Brandon Pfaadt",
     "player_id": 694297,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6797,7 +6797,7 @@
     "name": "Chad Patrick",
     "player_id": 694477,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6813,7 +6813,7 @@
     "name": "Landen Roupp",
     "player_id": 694738,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6821,7 +6821,7 @@
     "name": "Paul Skenes",
     "player_id": 694973,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6853,7 +6853,7 @@
     "name": "Brad Lord",
     "player_id": 695418,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6861,7 +6861,7 @@
     "name": "Jackson Jobe",
     "player_id": 695549,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6917,7 +6917,7 @@
     "name": "Cade Povich",
     "player_id": 700249,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6933,7 +6933,7 @@
     "name": "AJ Smith-Shawver",
     "player_id": 700363,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -6989,7 +6989,7 @@
     "name": "Will Warren",
     "player_id": 701542,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -7037,7 +7037,7 @@
     "name": "Chase Dollander",
     "player_id": 801403,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -7085,7 +7085,7 @@
     "name": "Roki Sasaki",
     "player_id": 808963,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
@@ -7093,7 +7093,7 @@
     "name": "Yoshinobu Yamamoto",
     "player_id": 808967,
     "roles": [
-      "starter"
+      "reliever"
     ]
   },
   {
