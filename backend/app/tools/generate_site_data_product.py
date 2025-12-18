@@ -135,13 +135,17 @@ def _fetch_teams(base_url: str) -> list[_TeamRef]:
     return teams
 
 
-def _fetch_team_detail(base_url: str, team_id: int) -> Mapping[str, Any]:
+def _fetch_team_detail(base_url: str, team_id: int, *, as_of_date: str | None = None) -> Mapping[str, Any]:
     url = f"{base_url.rstrip('/')}/api/teams/{team_id}"
+    if as_of_date:
+        url = f"{url}?as_of_date={as_of_date}"
     return _fetch_json(url)
 
 
-def _fetch_player_detail(base_url: str, player_id: int) -> Mapping[str, Any]:
+def _fetch_player_detail(base_url: str, player_id: int, *, as_of_date: str | None = None) -> Mapping[str, Any]:
     url = f"{base_url.rstrip('/')}/api/players/{player_id}"
+    if as_of_date:
+        url = f"{url}?as_of_date={as_of_date}"
     return _fetch_json(url)
 
 
@@ -528,7 +532,9 @@ def generate_data_product_staged(
 
     team_details: dict[int, Mapping[str, Any]] = {}
     with ThreadPoolExecutor(max_workers=min(workers, 8)) as pool:
-        futures = {pool.submit(_fetch_team_detail, base_url, t.team_id): t.team_id for t in teams}
+        futures = {
+            pool.submit(_fetch_team_detail, base_url, t.team_id, as_of_date=snapshot_date): t.team_id for t in teams
+        }
         for fut in as_completed(futures):
             team_id = futures[fut]
             team_details[team_id] = fut.result()
@@ -547,7 +553,9 @@ def generate_data_product_staged(
 
     player_details: dict[int, Mapping[str, Any]] = {}
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(_fetch_player_detail, base_url, pid): pid for pid in all_player_ids}
+        futures = {
+            pool.submit(_fetch_player_detail, base_url, pid, as_of_date=snapshot_date): pid for pid in all_player_ids
+        }
         for fut in as_completed(futures):
             pid = futures[fut]
             player_details[pid] = fut.result()
