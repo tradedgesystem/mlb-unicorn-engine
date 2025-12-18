@@ -643,21 +643,25 @@ def list_teams(response: Response):
 
 
 def _effective_as_of_date(session, as_of_date: Optional[date]) -> date:
-    if as_of_date:
-        return as_of_date
+    requested = as_of_date
     try:
         latest_row = session.execute(select(func.max(models.Game.game_date))).first()
         latest = latest_row[0] if latest_row else None
         if latest:
             if hasattr(latest, "date"):
-                return latest.date()
+                latest = latest.date()
             if isinstance(latest, date):
-                return latest
+                latest = latest
             # Handle string dates like "2025-03-29"
-            return date.fromisoformat(str(latest))
+            latest = date.fromisoformat(str(latest))
+            if requested:
+                return requested if requested <= latest else latest
+            return latest
     except Exception:
         # Fall back silently; callers will get today.
         pass
+    if requested:
+        return requested
     return date.today()
 
 
