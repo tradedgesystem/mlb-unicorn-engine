@@ -50,6 +50,16 @@ body[data-page="home"] .panel .row {
   background: rgba(15, 23, 42, 0.02);
 }
 
+body[data-page="home"] .panel .row.hot {
+  border-color: rgba(251, 113, 133, 0.45);
+  background: rgba(251, 113, 133, 0.14);
+}
+
+body[data-page="home"] .panel .row.not {
+  border-color: rgba(125, 211, 252, 0.45);
+  background: rgba(125, 211, 252, 0.14);
+}
+
 body[data-page="home"] .panel .feed-meta {
   color: rgba(15, 23, 42, 0.7);
 }
