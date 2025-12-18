@@ -34,36 +34,6 @@ body {
     radial-gradient(900px 600px at 80% 90%, rgba(251, 113, 133, 0.11), transparent 55%), var(--bg);
 }
 
-body[data-page="home"] .panel {
-  background: #ffffff;
-  border-color: rgba(15, 23, 42, 0.16);
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
-  color: rgba(15, 23, 42, 0.92);
-}
-
-body[data-page="home"] .panel h2 {
-  color: rgba(15, 23, 42, 0.7);
-}
-
-body[data-page="home"] .panel .row {
-  border-color: rgba(15, 23, 42, 0.14);
-  background: rgba(15, 23, 42, 0.02);
-}
-
-body[data-page="home"] .panel .row.hot {
-  border-color: rgba(251, 113, 133, 0.45);
-  background: rgba(251, 113, 133, 0.14);
-}
-
-body[data-page="home"] .panel .row.not {
-  border-color: rgba(125, 211, 252, 0.45);
-  background: rgba(125, 211, 252, 0.14);
-}
-
-body[data-page="home"] .panel .feed-meta {
-  color: rgba(15, 23, 42, 0.7);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -380,13 +350,13 @@ a:hover {
 }
 
 .row.hot {
-  border-color: rgba(251, 113, 133, 0.35);
-  background: rgba(251, 113, 133, 0.08);
+  border-color: rgba(251, 113, 133, 0.45);
+  background: rgba(251, 113, 133, 0.12);
 }
 
 .row.not {
-  border-color: rgba(125, 211, 252, 0.35);
-  background: rgba(125, 211, 252, 0.08);
+  border-color: rgba(125, 211, 252, 0.45);
+  background: rgba(125, 211, 252, 0.12);
 }
 
 .row .right {
