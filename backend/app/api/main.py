@@ -19,6 +19,7 @@ from backend.app.db.base import Base
 from backend.app.db.session import SessionLocal, engine
 from backend.app.unicorns.queries import fetch_top50_for_date
 from backend.app.core.player_metrics import (
+    _last_ab_ids,
     _hitter_metrics as compute_hitter_metrics,
     _starter_metrics as compute_starter_metrics,
     _reliever_metrics as compute_reliever_metrics,
@@ -113,6 +114,51 @@ def _metrics_for_team_role(session, player_id: int, role: str) -> dict:
     if normalized == "reliever":
         return {key: None for key in _RELIEVER_METRIC_KEYS}
     return {key: None for key in _HITTER_METRIC_KEYS}
+
+
+def _sample_for_team_role(session, player_id: int, role: str) -> dict[str, int]:
+    """Return simple sample-size counters for qualification gates.
+
+    Must never raise (the team endpoint should remain resilient even on partial schemas).
+    """
+    try:
+        normalized = (role or "").strip().lower()
+        if normalized == "hitter":
+            ab_ids = _last_ab_ids(session, player_id, limit=50)
+            return {"ab_count_last_50": int(len(ab_ids))}
+
+        # Use plate_appearances (not pitch_facts) so this works in minimal/test DBs.
+        min_inning_sub = (
+            select(
+                models.PlateAppearance.game_id,
+                func.min(models.PlateAppearance.inning).label("min_inning"),
+            )
+            .where(models.PlateAppearance.pitcher_id == player_id)
+            .group_by(models.PlateAppearance.game_id)
+            .subquery()
+        )
+        game_rows = (
+            select(min_inning_sub.c.game_id)
+            .join(models.Game, models.Game.game_id == min_inning_sub.c.game_id)
+            .order_by(models.Game.game_date.desc())
+        )
+
+        if normalized == "starter":
+            starter_ids = [
+                row.game_id
+                for row in session.execute(game_rows.where(min_inning_sub.c.min_inning <= 1).limit(3))
+            ]
+            return {"starts_count_last_3": int(len(starter_ids))}
+        if normalized == "reliever":
+            reliever_ids = [
+                row.game_id
+                for row in session.execute(game_rows.where(min_inning_sub.c.min_inning > 1).limit(6))
+            ]
+            return {"apps_count_last_6": int(len(reliever_ids))}
+        return {}
+    except Exception:
+        logger.exception("Failed to compute sample for player_id=%s role=%s", player_id, role)
+        return {}
 
 
 def _init_sentry() -> None:
@@ -689,6 +735,7 @@ def get_team(team_id: int, response: Response, as_of_date: Optional[date] = None
                 "role": role,
                 "position": position,
                 "metrics": _metrics_for_team_role(session, p.player_id, role),
+                "sample": _sample_for_team_role(session, p.player_id, role),
             }
             if role == "starter":
                 starters.append(payload)

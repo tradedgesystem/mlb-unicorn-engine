@@ -258,6 +258,18 @@ def _build_hot_not_feed(
     starters_by_id: dict[int, dict[str, Any]] = {}
     relievers_by_id: dict[int, dict[str, Any]] = {}
 
+    def _is_qualified(group: str, sample: Mapping[str, Any] | None) -> bool:
+        if not isinstance(sample, Mapping):
+            # Backward-compatible: if the backend doesn't provide sample sizes, don't filter.
+            return True
+        if group == "hitters":
+            return int(sample.get("ab_count_last_50") or 0) >= 50
+        if group == "starters":
+            return int(sample.get("starts_count_last_3") or 0) >= 3
+        if group == "relievers":
+            return int(sample.get("apps_count_last_6") or 0) >= 6
+        return True
+
     def ingest(group: str, team_payload: Mapping[str, Any]) -> None:
         roster = team_payload.get(group) or []
         if not isinstance(roster, list):
@@ -273,6 +285,9 @@ def _build_hot_not_feed(
             pid_int = int(pid)
             metrics = p.get("metrics")
             if not isinstance(metrics, Mapping):
+                continue
+            sample = p.get("sample")
+            if not _is_qualified(group, sample if isinstance(sample, Mapping) else None):
                 continue
             entry = {
                 "player_id": pid_int,
