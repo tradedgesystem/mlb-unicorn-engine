@@ -11,7 +11,8 @@ from backend.app.db import models
 
 # Defaults can be overridden via environment for tuning.
 DEFAULT_LOOKBACK_DAYS = int(os.getenv("PITCHER_ROLE_LOOKBACK_DAYS", "30"))
-DEFAULT_STARTS_THRESHOLD = int(os.getenv("PITCHER_STARTS_THRESHOLD", "2"))
+DEFAULT_STARTS_THRESHOLD = int(os.getenv("PITCHER_STARTS_THRESHOLD", "1"))
+DEFAULT_STARTS_RATIO_THRESHOLD = float(os.getenv("PITCHER_STARTS_RATIO_THRESHOLD", "0.5"))
 
 
 def _window(as_of_date: date, lookback_days: int) -> tuple[date, date]:
@@ -94,12 +95,19 @@ def classify_pitcher_role(
     apps: Optional[int],
     *,
     starts_threshold: Optional[int] = None,
+    starts_ratio_threshold: Optional[float] = None,
 ) -> str:
     """Return starter/reliever using configurable thresholds."""
     threshold = starts_threshold if starts_threshold is not None else DEFAULT_STARTS_THRESHOLD
+    ratio_threshold = (
+        starts_ratio_threshold if starts_ratio_threshold is not None else DEFAULT_STARTS_RATIO_THRESHOLD
+    )
     starts_val = int(starts or 0)
     apps_val = int(apps or 0)
-    if starts_val >= threshold:
+    if starts_val <= 0:
+        return "reliever"
+    if apps_val <= 0:
+        return "starter" if starts_val >= threshold else "reliever"
+    if starts_val >= threshold and (starts_val / apps_val) >= ratio_threshold:
         return "starter"
-    # Default to reliever when appearances are limited to avoid "unknown" UX.
     return "reliever"
