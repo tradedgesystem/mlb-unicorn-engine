@@ -30,6 +30,16 @@ import requests
 from sqlalchemy import case, func, select
 from pybaseball import batting_stats_bref, pitching_stats_bref
 
+from backend.app.tools.wrc_plus import (
+    CalibrationResult,
+    aggregate_hitters,
+    build_leaderboard,
+    build_plate_appearances,
+    compute_league_context,
+    load_constants,
+    load_statcast_data,
+)
+
 from backend.app.db import models
 from backend.app.db.session import SessionLocal
 
@@ -73,6 +83,17 @@ _PITCHING_STAT_SPECS: list[tuple[str, str, str]] = [
     ("whip", "WHIP", "dec2"),
     ("babip", "BABIP", "dec3"),
 ]
+
+_STATCAST_HIT_EVENTS = {"single", "double", "triple", "home_run"}
+_STATCAST_DOUBLE_EVENTS = {"double"}
+_STATCAST_TRIPLE_EVENTS = {"triple"}
+_STATCAST_HR_EVENTS = {"home_run"}
+_STATCAST_BB_EVENTS = {"walk", "intent_walk"}
+_STATCAST_HBP_EVENTS = {"hit_by_pitch"}
+_STATCAST_SF_EVENTS = {"sac_fly", "sac_fly_double_play"}
+_STATCAST_SH_EVENTS = {"sac_bunt", "sac_bunt_double_play"}
+_STATCAST_SO_EVENTS = {"strikeout", "strikeout_double_play"}
+_STATCAST_CI_EVENTS = {"catcher_interf"}
 
 
 def _utc_now_iso() -> str:
@@ -118,12 +139,206 @@ def _extract_stat_row(row: Mapping[str, Any], specs: Sequence[tuple[str, str, st
     return payload
 
 
-def _fetch_basic_batting_stats(season: int, league_rates: dict[str, float] | None) -> dict[int, dict[str, Any]]:
+def _fetch_basic_batting_stats(
+    season: int,
+    league_rates: dict[str, float] | None,
+    date_range: tuple[str, str] | None = None,
+) -> dict[int, dict[str, Any]]:
+    if date_range:
+        return _fetch_statcast_batting_stats(season, date_range[0], date_range[1])
     return _fetch_bref_batting_stats(season, league_rates)
 
 
 def _fetch_basic_pitching_stats(season: int) -> dict[int, dict[str, Any]]:
     return _fetch_bref_pitching_stats(season)
+
+
+def _statcast_date_range_from_db() -> tuple[str, str] | None:
+    try:
+        with SessionLocal() as session:
+            min_date = session.execute(select(func.min(models.Game.game_date))).scalar_one_or_none()
+            max_date = session.execute(select(func.max(models.Game.game_date))).scalar_one_or_none()
+            if not min_date or not max_date:
+                return None
+            return (min_date.isoformat(), max_date.isoformat())
+    except Exception:
+        return None
+
+
+def _statcast_date_range_from_constants(season: int) -> tuple[str, str] | None:
+    output_dir = Path("data/outputs")
+    candidates = sorted(
+        output_dir.glob(f"wrc_plus_constants_{season}_*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    if not candidates:
+        return None
+    payload = load_constants(candidates[0])
+    cfg = payload.get("config") or {}
+    start_date = cfg.get("start_date")
+    end_date = cfg.get("end_date")
+    if start_date and end_date:
+        return (start_date, end_date)
+    return None
+
+
+def _statcast_date_range(season: int) -> tuple[str, str] | None:
+    date_range = _statcast_date_range_from_db()
+    if date_range:
+        return date_range
+    return _statcast_date_range_from_constants(season)
+
+
+def _resolve_wrc_plus_constants_path(season: int, start_date: str, end_date: str) -> Path | None:
+    env_path = os.getenv("WRC_PLUS_CONSTANTS_PATH", "").strip()
+    if env_path:
+        candidate = Path(env_path)
+        if candidate.exists():
+            return candidate
+        raise RuntimeError(f"WRC+ constants file not found at {candidate}")
+
+    candidate = Path("data/outputs") / f"wrc_plus_constants_{season}_{start_date}_{end_date}.json"
+    if candidate.exists():
+        return candidate
+    return None
+
+
+def _fetch_statcast_batting_stats(
+    season: int,
+    start_date: str,
+    end_date: str,
+) -> dict[int, dict[str, Any]]:
+    cache_dir = Path("data/cache/wrc_plus")
+    raw = load_statcast_data(start_date, end_date, cache_dir, allow_fetch=True)
+    pa_df = build_plate_appearances(raw, game_type="R")
+
+    events = pa_df["events"].fillna("")
+    pa_df = pa_df.assign(
+        is_single=events.eq("single"),
+        is_double=events.isin(_STATCAST_DOUBLE_EVENTS),
+        is_triple=events.isin(_STATCAST_TRIPLE_EVENTS),
+        is_hr=events.isin(_STATCAST_HR_EVENTS),
+        is_bb=events.isin(_STATCAST_BB_EVENTS),
+        is_hbp=events.isin(_STATCAST_HBP_EVENTS),
+        is_sf=events.isin(_STATCAST_SF_EVENTS),
+        is_sh=events.isin(_STATCAST_SH_EVENTS),
+        is_so=events.isin(_STATCAST_SO_EVENTS),
+        is_ci=events.isin(_STATCAST_CI_EVENTS),
+    )
+    grouped = pa_df.groupby("batter", sort=False)
+    counts = grouped.agg(
+        PA=("events", "size"),
+        singles=("is_single", "sum"),
+        doubles=("is_double", "sum"),
+        triples=("is_triple", "sum"),
+        hr=("is_hr", "sum"),
+        bb=("is_bb", "sum"),
+        hbp=("is_hbp", "sum"),
+        sf=("is_sf", "sum"),
+        sh=("is_sh", "sum"),
+        so=("is_so", "sum"),
+        ci=("is_ci", "sum"),
+    ).reset_index()
+    counts["h"] = counts["singles"] + counts["doubles"] + counts["triples"] + counts["hr"]
+    counts["ab"] = (
+        counts["PA"]
+        - counts["bb"]
+        - counts["hbp"]
+        - counts["sf"]
+        - counts["sh"]
+        - counts["ci"]
+    )
+    counts["tb"] = (
+        counts["singles"]
+        + 2 * counts["doubles"]
+        + 3 * counts["triples"]
+        + 4 * counts["hr"]
+    )
+    counts["avg"] = counts["h"] / counts["ab"].where(counts["ab"] > 0)
+    counts["obp"] = (
+        (counts["h"] + counts["bb"] + counts["hbp"])
+        / (
+            counts["ab"]
+            + counts["bb"]
+            + counts["hbp"]
+            + counts["sf"]
+        ).where(
+            (counts["ab"] + counts["bb"] + counts["hbp"] + counts["sf"]) > 0
+        )
+    )
+    counts["slg"] = counts["tb"] / counts["ab"].where(counts["ab"] > 0)
+    counts["ops"] = counts["obp"] + counts["slg"]
+    counts["iso"] = counts["slg"] - counts["avg"]
+    babip_denom = (
+        counts["ab"] - counts["so"] - counts["hr"] + counts["sf"]
+    ).where((counts["ab"] - counts["so"] - counts["hr"] + counts["sf"]) > 0)
+    counts["babip"] = (counts["h"] - counts["hr"]) / babip_denom
+
+    woba_num = (
+        0.69 * counts["bb"]
+        + 0.72 * counts["hbp"]
+        + 0.89 * counts["singles"]
+        + 1.27 * counts["doubles"]
+        + 1.62 * counts["triples"]
+        + 2.1 * counts["hr"]
+    )
+    woba_denom = counts["ab"] + counts["bb"] + counts["hbp"] + counts["sf"]
+    counts["woba"] = woba_num / woba_denom.where(woba_denom > 0)
+
+    league_ab = counts["ab"].sum()
+    league_h = counts["h"].sum()
+    league_bb = counts["bb"].sum()
+    league_hbp = counts["hbp"].sum()
+    league_sf = counts["sf"].sum()
+    league_tb = counts["tb"].sum()
+    league_woba = woba_num.sum() / woba_denom.sum() if woba_denom.sum() > 0 else None
+    lg_obp = (
+        (league_h + league_bb + league_hbp)
+        / (league_ab + league_bb + league_hbp + league_sf)
+        if (league_ab + league_bb + league_hbp + league_sf) > 0
+        else None
+    )
+    lg_slg = league_tb / league_ab if league_ab > 0 else None
+
+    counts["ops_plus"] = None
+    if lg_obp and lg_slg:
+        counts["ops_plus"] = 100 * ((counts["obp"] / lg_obp) + (counts["slg"] / lg_slg) - 1)
+    counts["wrc_plus"] = None
+
+    constants_path = _resolve_wrc_plus_constants_path(season, start_date, end_date)
+    if constants_path:
+        payload = load_constants(constants_path)
+        calibration = CalibrationResult(**payload["calibration"])
+        league_ctx = compute_league_context(pa_df)
+        hitters = aggregate_hitters(pa_df, cache_dir)
+        leaderboard = build_leaderboard(hitters, league_ctx, calibration)
+        wrc_map = dict(zip(leaderboard["player_id"], leaderboard["wRC_plus"]))
+        counts["wrc_plus"] = counts["batter"].map(wrc_map)
+    elif league_woba:
+        counts["wrc_plus"] = 100 * (counts["woba"] / league_woba)
+
+    stats: dict[int, dict[str, Any]] = {}
+    for _, row in counts.iterrows():
+        pid = int(row["batter"])
+        stats[pid] = {
+            "avg": _coerce_number(row["avg"], "dec3"),
+            "slg": _coerce_number(row["slg"], "dec3"),
+            "ops": _coerce_number(row["ops"], "dec3"),
+            "obp": _coerce_number(row["obp"], "dec3"),
+            "iso": _coerce_number(row["iso"], "dec3"),
+            "woba": _coerce_number(row["woba"], "dec3"),
+            "ops_plus": _coerce_number(row.get("ops_plus"), "int"),
+            "wrc_plus": _coerce_number(row.get("wrc_plus"), "int"),
+            "babip": _coerce_number(row["babip"], "dec3"),
+            "h": _coerce_number(row["h"], "int"),
+            "doubles": _coerce_number(row["doubles"], "int"),
+            "triples": _coerce_number(row["triples"], "int"),
+            "hr": _coerce_number(row["hr"], "int"),
+            "k": _coerce_number(row["so"], "int"),
+            "bb": _coerce_number(row["bb"], "int"),
+        }
+    return stats
 
 
 def _league_rates_from_db() -> dict[str, float] | None:
@@ -628,8 +843,9 @@ def generate_data_product_staged(
     player_roles_map = {pid: info.get("roles") or [] for pid, info in player_minimal.items()}
 
     season_year = int(snapshot_date.split("-")[0])
-    league_rates = _league_rates_from_db()
-    basic_batting = _fetch_basic_batting_stats(season_year, league_rates)
+    date_range = _statcast_date_range(season_year)
+    league_rates = None if date_range else _league_rates_from_db()
+    basic_batting = _fetch_basic_batting_stats(season_year, league_rates, date_range)
     basic_pitching = _fetch_basic_pitching_stats(season_year)
 
     # Write artifacts.
