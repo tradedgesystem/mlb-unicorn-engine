@@ -23,6 +23,19 @@ const METRIC_COLUMNS = {
   ],
 };
 
+const DIVISIONS = {
+  AL: {
+    East: ["BAL", "BOS", "NYY", "TB", "TOR"],
+    Central: ["CLE", "CWS", "DET", "KC", "MIN"],
+    West: ["HOU", "LAA", "SEA", "TEX", "ATH"],
+  },
+  NL: {
+    East: ["ATL", "MIA", "NYM", "PHI", "WSH"],
+    Central: ["CHC", "CIN", "MIL", "PIT", "STL"],
+    West: ["AZ", "COL", "LAD", "SD", "SF"],
+  },
+};
+
 function $(selector) {
   return document.querySelector(selector);
 }
@@ -313,27 +326,54 @@ function renderTeamsList(host, teams, { showId = true } = {}) {
   renderList(host, rows);
 }
 
-function renderTeamsGrid(host, teams) {
+function renderDivisionGroup(host, leagueKey, teamsByAbbr) {
   if (!host) return;
   host.textContent = "";
-  if (!Array.isArray(teams) || teams.length === 0) {
-    host.textContent = "Unable to load teams.";
+  const league = DIVISIONS[leagueKey];
+  if (!league) {
+    host.textContent = "Unavailable.";
     return;
   }
-  for (const t of teams) {
-    const teamId = t.team_id;
-    const abbr = t.abbreviation || t.abbrev || teamId;
-    const a = document.createElement("a");
-    a.className = "team-pill";
-    a.href = `/teams/${encodeURIComponent(teamId)}/`;
-    a.textContent = String(abbr);
-    host.appendChild(a);
+  for (const [division, abbrs] of Object.entries(league)) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "division";
+
+    const title = document.createElement("div");
+    title.className = "division-title";
+    title.textContent = `${leagueKey} ${division}`;
+    wrapper.appendChild(title);
+
+    const grid = document.createElement("div");
+    grid.className = "division-teams";
+    for (const abbr of abbrs) {
+      const team = teamsByAbbr.get(abbr);
+      if (!team) continue;
+      const a = document.createElement("a");
+      a.className = "team-pill";
+      a.href = `/teams/${encodeURIComponent(team.team_id)}/`;
+      a.textContent = abbr;
+      grid.appendChild(a);
+    }
+    wrapper.appendChild(grid);
+    host.appendChild(wrapper);
   }
 }
 
 async function renderHome({ teams }) {
-  const host = $("#teams-home");
-  renderTeamsGrid(host, teams);
+  const alHost = $("#al-divisions");
+  const nlHost = $("#nl-divisions");
+  if (!Array.isArray(teams) || teams.length === 0) {
+    if (alHost) alHost.textContent = "Unable to load teams.";
+    if (nlHost) nlHost.textContent = "Unable to load teams.";
+    return;
+  }
+  const teamsByAbbr = new Map();
+  for (const t of teams) {
+    const abbr = t?.abbreviation || t?.abbrev;
+    if (abbr) teamsByAbbr.set(String(abbr), t);
+  }
+  renderDivisionGroup(alHost, "AL", teamsByAbbr);
+  renderDivisionGroup(nlHost, "NL", teamsByAbbr);
 }
 
 async function renderTeamsIndex({ teams }) {

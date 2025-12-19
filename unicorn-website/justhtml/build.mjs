@@ -108,7 +108,16 @@ function homePage() {
   <p class="subhead">All 30 MLB teams.</p>
 </header>
 <section>
-  <div id="teams-home" class="teams-grid">Loading…</div>
+  <div class="league-grid">
+    <div class="league-column">
+      <h2>American League</h2>
+      <div id="al-divisions" class="division-stack">Loading…</div>
+    </div>
+    <div class="league-column">
+      <h2>National League</h2>
+      <div id="nl-divisions" class="division-stack">Loading…</div>
+    </div>
+  </div>
 </section>
 `,
   });

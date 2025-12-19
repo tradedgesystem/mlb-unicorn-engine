@@ -229,23 +229,46 @@ a:hover {
   gap: 10px;
 }
 
-.teams-grid {
+.league-grid {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.league-column h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.division {
+  margin-top: 12px;
+}
+
+.division-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.division-teams {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .team-pill {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
+  min-height: 34px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--panel);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   transition: transform 0.15s ease, background 0.15s ease;
@@ -455,7 +478,10 @@ a:hover {
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
-  .teams-grid {
+  .league-grid {
+    grid-template-columns: 1fr;
+  }
+  .division-teams {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .grid {
@@ -464,7 +490,7 @@ a:hover {
 }
 
 @media (max-width: 640px) {
-  .teams-grid {
+  .division-teams {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .team-pill {
