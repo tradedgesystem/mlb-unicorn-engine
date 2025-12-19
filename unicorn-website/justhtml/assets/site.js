@@ -359,6 +359,62 @@ function renderDivisionGroup(host, leagueKey, teamsByAbbr) {
   }
 }
 
+function selectMetricsForGroup(player, group) {
+  if (!player || !group) return null;
+  const role = String(player?.role || "").toLowerCase();
+  if (group === "hitters") {
+    return player?.hitter_metrics || (role === "hitter" ? player?.metrics : null) || player?.metrics || null;
+  }
+  if (group === "starters") {
+    return player?.pitcher_metrics || (role === "starter" ? player?.metrics : null) || player?.metrics || null;
+  }
+  if (group === "relievers") {
+    return (role === "reliever" ? player?.metrics : null) || player?.pitcher_metrics || player?.metrics || null;
+  }
+  return player?.metrics || null;
+}
+
+function renderRosterTable(host, roster, group, playerById) {
+  if (!host) return;
+  if (!Array.isArray(roster) || roster.length === 0) {
+    host.textContent = "No results.";
+    return;
+  }
+  const columnSet =
+    group === "hitters"
+      ? METRIC_COLUMNS.hitter
+      : group === "starters"
+        ? METRIC_COLUMNS.starter
+        : METRIC_COLUMNS.reliever;
+
+  const headerCells = ["Name", ...columnSet.map((c) => c.label)]
+    .map((label) => `<th>${escapeHtml(label)}</th>`)
+    .join("");
+
+  const rows = roster
+    .map((p) => {
+      const pid = p?.player_id;
+      const name = p?.name || `Player ${pid}`;
+      const href = p?.href || `/players/${encodeURIComponent(pid)}/`;
+      const player = playerById.get(String(pid));
+      const metrics = selectMetricsForGroup(player, group) || {};
+      const cells = columnSet
+        .map((col) => `<td>${escapeHtml(formatMetric(metrics?.[col.key], col.kind))}</td>`)
+        .join("");
+      return `<tr><td class="name"><a href="${escapeHtml(href)}">${escapeHtml(name)}</a></td>${cells}</tr>`;
+    })
+    .join("");
+
+  host.innerHTML = `
+    <div class="roster-table-wrap">
+      <table class="roster-table">
+        <thead><tr>${headerCells}</tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
 async function renderHome({ teams }) {
   const alHost = $("#al-divisions");
   const nlHost = $("#nl-divisions");
@@ -396,24 +452,31 @@ async function renderTeamPage(teamId) {
       { key: "starters", host: $("#roster-starters") },
       { key: "relievers", host: $("#roster-relievers") },
     ];
+
+    const allIds = [];
+    for (const spec of groupSpecs) {
+      const roster = Array.isArray(team?.[spec.key]) ? team[spec.key] : [];
+      for (const p of roster) {
+        if (p?.player_id != null) allIds.push(String(p.player_id));
+      }
+    }
+    const uniqueIds = Array.from(new Set(allIds));
+    const playerById = new Map();
+    await Promise.all(
+      uniqueIds.map(async (pid) => {
+        try {
+          const payload = await fetchJson(`${DATA_BASE}/players/${encodeURIComponent(pid)}.json`);
+          playerById.set(String(pid), payload);
+        } catch {
+          playerById.set(String(pid), null);
+        }
+      }),
+    );
+
     for (const spec of groupSpecs) {
       if (!spec.host) continue;
       const roster = Array.isArray(team?.[spec.key]) ? team[spec.key] : [];
-      const rows = roster.map((p) => {
-        const pid = p?.player_id;
-        const name = p?.name || `Player ${pid}`;
-        const pos = p?.position || "";
-        const roles = Array.isArray(p?.roles) ? p.roles.join(", ") : "";
-        const href = p?.href || `/players/${encodeURIComponent(pid)}/`;
-        const meta = pos || roles;
-        return {
-          left: `<a href="${escapeHtml(href)}">${escapeHtml(name)}</a>${
-            meta ? `<div class="small">${escapeHtml(meta)}</div>` : ""
-          }`,
-          right: null,
-        };
-      });
-      renderList(spec.host, rows);
+      renderRosterTable(spec.host, roster, spec.key, playerById);
     }
   } catch (err) {
     showStatus(err?.message || String(err));
