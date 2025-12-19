@@ -102,25 +102,6 @@ function setLastUpdated(meta) {
   el.textContent = value ? String(value) : "Unavailable";
 }
 
-function renderTeamsSidebar(teams) {
-  const host = $("#teams-list");
-  if (!host) return;
-  if (!Array.isArray(teams) || teams.length === 0) {
-    host.textContent = "Unavailable";
-    return;
-  }
-  host.textContent = "";
-  for (const t of teams) {
-    const teamId = t?.team_id;
-    const abbr = t?.abbreviation || t?.abbrev || "";
-    const a = document.createElement("a");
-    a.className = "team-link";
-    a.href = `/teams/${encodeURIComponent(teamId)}/`;
-    a.textContent = String(abbr || teamId);
-    host.appendChild(a);
-  }
-}
-
 let playersIndexPromise = null;
 
 async function loadPlayersIndex() {
@@ -332,9 +313,27 @@ function renderTeamsList(host, teams, { showId = true } = {}) {
   renderList(host, rows);
 }
 
+function renderTeamsGrid(host, teams) {
+  if (!host) return;
+  host.textContent = "";
+  if (!Array.isArray(teams) || teams.length === 0) {
+    host.textContent = "Unable to load teams.";
+    return;
+  }
+  for (const t of teams) {
+    const teamId = t.team_id;
+    const abbr = t.abbreviation || t.abbrev || teamId;
+    const a = document.createElement("a");
+    a.className = "team-pill";
+    a.href = `/teams/${encodeURIComponent(teamId)}/`;
+    a.textContent = String(abbr);
+    host.appendChild(a);
+  }
+}
+
 async function renderHome({ teams }) {
   const host = $("#teams-home");
-  renderTeamsList(host, teams, { showId: false });
+  renderTeamsGrid(host, teams);
 }
 
 async function renderTeamsIndex({ teams }) {
@@ -497,8 +496,6 @@ async function init() {
         });
       }
     }
-    renderTeamsSidebar(teams);
-
     const page = document.body?.dataset?.page || "";
     if (page === "home") await renderHome({ teams });
     if (page === "teams-index") await renderTeamsIndex({ teams });

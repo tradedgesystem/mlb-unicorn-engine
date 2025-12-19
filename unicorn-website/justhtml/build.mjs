@@ -84,10 +84,6 @@ function pageTemplate({ title, bodyAttrs, mainHtml }) {
           <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
         </div>
 
-        <nav class="teams-nav" aria-label="Teams">
-          <div class="nav-title">Teams</div>
-          <div id="teams-list" class="teams-list">Loading…</div>
-        </nav>
       </aside>
 
       <main class="main">
@@ -112,7 +108,7 @@ function homePage() {
   <p class="subhead">All 30 MLB teams.</p>
 </header>
 <section>
-  <div id="teams-home" class="list">Loading…</div>
+  <div id="teams-home" class="teams-grid">Loading…</div>
 </section>
 `,
   });
