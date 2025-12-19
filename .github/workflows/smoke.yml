@@ -13,15 +13,14 @@ jobs:
       - name: Smoke curl
         run: |
           set -euo pipefail
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/health/
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/teams/
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/teams/119/
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/players/605141/
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/data/latest/meta.json
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/data/latest/teams.json
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/data/latest/unicorns.json
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/data/latest/players_index.json
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/data/latest/teams/119.json
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/data/latest/players/605141.json
-          curl -fsS --max-time 10 https://mlb-unicorn-web.vercel.app/404.html
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/health/
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/teams/
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/teams/119/
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/players/605141/
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/data/latest/meta.json
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/data/latest/teams.json
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/data/latest/players_index.json
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/data/latest/teams/119.json
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/data/latest/players/605141.json
+          curl -fsS --max-time 10 https://mlb-unicorn-engine.vercel.app/404.html
