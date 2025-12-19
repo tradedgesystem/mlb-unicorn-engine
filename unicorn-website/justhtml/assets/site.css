@@ -340,8 +340,7 @@ a:hover {
   list-style: disc;
   padding-left: 18px;
   margin: 12px 0 0;
-  columns: 3;
-  column-gap: 24px;
+  columns: 1;
 }
 
 .roster-list-items li {
@@ -509,9 +508,6 @@ a:hover {
   .grid {
     grid-template-columns: 1fr;
   }
-  .roster-list-items {
-    columns: 2;
-  }
 }
 
 @media (max-width: 640px) {
@@ -520,8 +516,5 @@ a:hover {
   }
   .team-pill {
     font-size: 12px;
-  }
-  .roster-list-items {
-    columns: 1;
   }
 }

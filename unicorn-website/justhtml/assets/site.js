@@ -366,9 +366,22 @@ function renderRosterList(host, roster) {
     host.textContent = "No results.";
     return;
   }
+  const infieldPositions = new Set(["1B", "2B", "3B", "SS", "IF"]);
+  const infielders = [];
+  const outfielders = [];
+  for (const p of roster) {
+    const pos = String(p?.position || "").toUpperCase();
+    if (infieldPositions.has(pos)) infielders.push(p);
+    else outfielders.push(p);
+  }
+
+  const byName = (a, b) => String(a?.name || "").localeCompare(String(b?.name || ""), undefined, { sensitivity: "base" });
+  infielders.sort(byName);
+  outfielders.sort(byName);
+
   const ul = document.createElement("ul");
   ul.className = "roster-list-items";
-  for (const p of roster) {
+  for (const p of [...infielders, ...outfielders]) {
     const pid = p?.player_id;
     const name = p?.name || `Player ${pid}`;
     const href = p?.href || `/players/${encodeURIComponent(pid)}/`;
