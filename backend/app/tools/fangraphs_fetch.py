@@ -33,8 +33,21 @@ def fetch_fangraphs_html(url: str, timeout: int = 30000, headless: bool = True) 
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=headless)
             page = browser.new_page()
-            page.goto(url, wait_until="networkidle", timeout=timeout)
-            page.wait_for_selector("table", timeout=timeout)
+            page.set_extra_http_headers(
+                {
+                    "User-Agent": (
+                        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) "
+                        "Chrome/120.0 Safari/537.36"
+                    ),
+                    "Accept-Language": "en-US,en;q=0.9",
+                }
+            )
+            try:
+                page.goto(url, wait_until="networkidle", timeout=timeout)
+            except PlaywrightTimeoutError:
+                page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+            page.wait_for_selector("table", timeout=timeout, state="attached")
             html = page.content()
             browser.close()
     except PlaywrightTimeoutError as exc:
