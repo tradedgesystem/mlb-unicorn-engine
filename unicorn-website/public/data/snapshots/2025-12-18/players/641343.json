@@ -1,19 +1,46 @@
 {
+  "basic_batting": {
+    "avg": 0.24,
+    "babip": 0.30708661417322836,
+    "bb": 33,
+    "doubles": 10,
+    "h": 47,
+    "hr": 8,
+    "iso": 0.173,
+    "k": 62,
+    "obp": 0.353,
+    "ops": 0.767,
+    "ops_plus": 114.42239266746226,
+    "slg": 0.413,
+    "triples": 0,
+    "woba": 0.3427586206896552,
+    "wrc_plus": 107.8587571609179
+  },
+  "basic_pitching": {
+    "babip": 0.34782608695652173,
+    "bb": 3,
+    "era": 3.6,
+    "fip": 5.725587005834022,
+    "h": 8,
+    "hr": 0,
+    "ip": 5.0,
+    "whip": 2.2
+  },
   "current_team_id": 158,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3333333333333333,
-    "contact_pct_last_50": 0.25925925925925924,
-    "hard_hit_pct_last_50": 0.7142857142857143,
-    "xwoba_last_50": 0.22706666666666667
+    "chase_pct_last_50": 0.2162,
+    "contact_pct_last_50": 0.25,
+    "hard_hit_pct_last_50": 0.7143,
+    "xwoba_last_50": 0.3247
   },
   "name": "Jake Bauers",
   "player_id": 641343,
   "player_name": "Jake Bauers",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 158,
   "team_name": "MIL"

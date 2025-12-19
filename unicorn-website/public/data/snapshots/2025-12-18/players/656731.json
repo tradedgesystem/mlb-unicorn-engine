@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.31952662721893493,
+    "bb": 33,
+    "era": 3.95,
+    "fip": 3.41826993266329,
+    "h": 60,
+    "hr": 6,
+    "ip": 68.1,
+    "whip": 1.361
+  },
   "current_team_id": 121,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -11,9 +22,9 @@
   "player_id": 656731,
   "player_name": "Tylor Megill",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 121,
   "team_name": "NYM"

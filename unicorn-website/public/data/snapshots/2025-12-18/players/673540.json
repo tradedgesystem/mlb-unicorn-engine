@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2724252491694352,
+    "bb": 55,
+    "era": 3.02,
+    "fip": 4.113822299951669,
+    "h": 94,
+    "hr": 12,
+    "ip": 113.1,
+    "whip": 1.315
+  },
   "current_team_id": 121,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -11,9 +22,9 @@
   "player_id": 673540,
   "player_name": "Kodai Senga",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 121,
   "team_name": "NYM"

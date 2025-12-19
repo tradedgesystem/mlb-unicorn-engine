@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2809917355371901,
+    "bb": 66,
+    "era": 3.53,
+    "fip": 4.097417991749515,
+    "h": 150,
+    "hr": 14,
+    "ip": 165.2,
+    "whip": 1.304
+  },
   "current_team_id": 121,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -11,9 +22,9 @@
   "player_id": 605280,
   "player_name": "Clay Holmes",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 121,
   "team_name": "NYM"

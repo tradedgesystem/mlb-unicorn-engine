@@ -27,7 +27,7 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping, MutableMapping, Sequence
 
 import requests
-from pybaseball import batting_stats, pitching_stats
+from pybaseball import batting_stats, batting_stats_bref, pitching_stats, pitching_stats_bref
 
 
 DEFAULT_BASE_URL = os.getenv("UNICORN_API_BASE_URL", "http://localhost:8000")
@@ -94,6 +94,19 @@ def _coerce_number(value: Any, kind: str) -> float | int | None:
     return float(num)
 
 
+def _normalize_ip(value: Any) -> float | None:
+    raw = _coerce_number(value, "dec1")
+    if raw is None:
+        return None
+    whole = int(raw)
+    frac = round(raw - whole, 1)
+    if frac == 0.1:
+        return whole + (1 / 3)
+    if frac == 0.2:
+        return whole + (2 / 3)
+    return float(raw)
+
+
 def _extract_stat_row(row: Mapping[str, Any], specs: Sequence[tuple[str, str, str]]) -> dict[str, Any]:
     payload: dict[str, Any] = {}
     for key, source, kind in specs:
@@ -102,40 +115,207 @@ def _extract_stat_row(row: Mapping[str, Any], specs: Sequence[tuple[str, str, st
 
 
 def _fetch_basic_batting_stats(season: int) -> dict[int, dict[str, Any]]:
-    try:
-        df = batting_stats(season, qual=0)
-    except Exception as exc:  # noqa: BLE001
-        print(f"basic batting stats fetch failed for {season}: {exc}")
-        return {}
-    stats: dict[int, dict[str, Any]] = {}
-    for _, row in df.iterrows():
-        player_id = row.get("ID")
-        if player_id is None:
-            continue
-        try:
-            pid = int(player_id)
-        except Exception:
-            continue
-        stats[pid] = _extract_stat_row(row, _BATTING_STAT_SPECS)
-    return stats
+    return _fetch_bref_batting_stats(season)
 
 
 def _fetch_basic_pitching_stats(season: int) -> dict[int, dict[str, Any]]:
+    return _fetch_bref_pitching_stats(season)
+
+
+def _fetch_bref_batting_stats(season: int) -> dict[int, dict[str, Any]]:
     try:
-        df = pitching_stats(season, qual=0)
+        df = batting_stats_bref(season)
     except Exception as exc:  # noqa: BLE001
-        print(f"basic pitching stats fetch failed for {season}: {exc}")
+        print(f"baseball-reference batting fetch failed for {season}: {exc}")
         return {}
+    total_ab = 0
+    total_h = 0
+    total_2b = 0
+    total_3b = 0
+    total_hr = 0
+    total_bb = 0
+    total_hbp = 0
+    total_sf = 0
+    total_obp_num = 0.0
+    total_slg_num = 0.0
+    total_pa_for_rate = 0.0
+    for _, row in df.iterrows():
+        ab = _coerce_number(row.get("AB"), "int") or 0
+        h = _coerce_number(row.get("H"), "int") or 0
+        doubles = _coerce_number(row.get("2B"), "int") or 0
+        triples = _coerce_number(row.get("3B"), "int") or 0
+        hr = _coerce_number(row.get("HR"), "int") or 0
+        bb = _coerce_number(row.get("BB"), "int") or 0
+        hbp = _coerce_number(row.get("HBP"), "int") or 0
+        sf = _coerce_number(row.get("SF"), "int") or 0
+        obp = _coerce_number(row.get("OBP"), "dec3")
+        slg = _coerce_number(row.get("SLG"), "dec3")
+        total_ab += int(ab)
+        total_h += int(h)
+        total_2b += int(doubles)
+        total_3b += int(triples)
+        total_hr += int(hr)
+        total_bb += int(bb)
+        total_hbp += int(hbp)
+        total_sf += int(sf)
+        if obp is not None:
+            total_obp_num += float(obp) * float(ab + bb + hbp + sf)
+        if slg is not None:
+            total_slg_num += float(slg) * float(ab)
+        total_pa_for_rate += float(ab + bb + hbp + sf)
+
+    lg_obp = (total_obp_num / total_pa_for_rate) if total_pa_for_rate > 0 else None
+    lg_slg = (total_slg_num / total_ab) if total_ab > 0 else None
+    lg_woba = None
+    woba_denom_lg = total_ab + total_bb + total_hbp + total_sf
+    if woba_denom_lg > 0:
+        singles = total_h - total_2b - total_3b - total_hr
+        woba_num_lg = (
+            0.69 * total_bb
+            + 0.72 * total_hbp
+            + 0.89 * singles
+            + 1.27 * total_2b
+            + 1.62 * total_3b
+            + 2.1 * total_hr
+        )
+        lg_woba = woba_num_lg / woba_denom_lg
+
     stats: dict[int, dict[str, Any]] = {}
     for _, row in df.iterrows():
-        player_id = row.get("ID")
+        player_id = row.get("mlbID")
         if player_id is None:
             continue
         try:
             pid = int(player_id)
         except Exception:
             continue
-        stats[pid] = _extract_stat_row(row, _PITCHING_STAT_SPECS)
+        avg = _coerce_number(row.get("BA"), "dec3")
+        slg = _coerce_number(row.get("SLG"), "dec3")
+        obp = _coerce_number(row.get("OBP"), "dec3")
+        ops = _coerce_number(row.get("OPS"), "dec3")
+        h = _coerce_number(row.get("H"), "int")
+        ab = _coerce_number(row.get("AB"), "int")
+        hr = _coerce_number(row.get("HR"), "int")
+        so = _coerce_number(row.get("SO"), "int")
+        sf = _coerce_number(row.get("SF"), "int")
+        iso = None if avg is None or slg is None else float(slg) - float(avg)
+        denom = None
+        if ab is not None and so is not None and hr is not None and sf is not None:
+            denom_val = int(ab) - int(so) - int(hr) + int(sf)
+            if denom_val > 0:
+                denom = denom_val
+        babip = None
+        if denom:
+            babip = (int(h or 0) - int(hr or 0)) / float(denom)
+        doubles = _coerce_number(row.get("2B"), "int")
+        triples = _coerce_number(row.get("3B"), "int")
+        bb = _coerce_number(row.get("BB"), "int")
+        hbp = _coerce_number(row.get("HBP"), "int")
+        singles = None
+        if h is not None and doubles is not None and triples is not None and hr is not None:
+            singles = int(h) - int(doubles) - int(triples) - int(hr)
+        woba = None
+        woba_denom = None
+        if ab is not None and bb is not None and hbp is not None and sf is not None:
+            woba_denom = int(ab) + int(bb) + int(hbp) + int(sf)
+        if woba_denom and singles is not None:
+            woba_num = (
+                0.69 * int(bb)
+                + 0.72 * int(hbp)
+                + 0.89 * int(singles)
+                + 1.27 * int(doubles or 0)
+                + 1.62 * int(triples or 0)
+                + 2.1 * int(hr or 0)
+            )
+            woba = woba_num / float(woba_denom)
+        ops_plus = None
+        if lg_obp and lg_slg and obp is not None and slg is not None:
+            ops_plus = 100 * ((float(obp) / lg_obp) + (float(slg) / lg_slg) - 1)
+        wrc_plus = None
+        if lg_woba and woba is not None and lg_woba > 0:
+            wrc_plus = 100 * (woba / lg_woba)
+        stats[pid] = {
+            "avg": avg,
+            "slg": slg,
+            "ops": ops,
+            "obp": obp,
+            "iso": iso,
+            "woba": woba,
+            "ops_plus": ops_plus,
+            "wrc_plus": wrc_plus,
+            "babip": babip,
+            "h": h,
+            "doubles": doubles,
+            "triples": triples,
+            "hr": hr,
+            "k": _coerce_number(row.get("SO"), "int"),
+            "bb": bb,
+        }
+    return stats
+
+
+def _fetch_bref_pitching_stats(season: int) -> dict[int, dict[str, Any]]:
+    try:
+        df = pitching_stats_bref(season)
+    except Exception as exc:  # noqa: BLE001
+        print(f"baseball-reference pitching fetch failed for {season}: {exc}")
+        return {}
+    stats: dict[int, dict[str, Any]] = {}
+    total_ip = 0.0
+    total_er = 0.0
+    total_hr = 0.0
+    total_bb = 0.0
+    total_hbp = 0.0
+    total_so = 0.0
+    for _, row in df.iterrows():
+        ip_val = _normalize_ip(row.get("IP"))
+        if ip_val:
+            total_ip += ip_val
+            total_er += float(_coerce_number(row.get("ER"), "int") or 0)
+            total_hr += float(_coerce_number(row.get("HR"), "int") or 0)
+            total_bb += float(_coerce_number(row.get("BB"), "int") or 0)
+            total_hbp += float(_coerce_number(row.get("HBP"), "int") or 0)
+            total_so += float(_coerce_number(row.get("SO"), "int") or 0)
+
+    fip_constant = None
+    if total_ip > 0:
+        lg_era = (9.0 * total_er) / total_ip if total_er > 0 else 0.0
+        fip_constant = lg_era - (13 * total_hr + 3 * (total_bb + total_hbp) - 2 * total_so) / total_ip
+
+    for _, row in df.iterrows():
+        player_id = row.get("mlbID")
+        if player_id is None:
+            continue
+        try:
+            pid = int(player_id)
+        except Exception:
+            continue
+        ip_val = _normalize_ip(row.get("IP"))
+        so = _coerce_number(row.get("SO"), "int")
+        bb = _coerce_number(row.get("BB"), "int")
+        hbp = _coerce_number(row.get("HBP"), "int")
+        hr = _coerce_number(row.get("HR"), "int")
+        fip = None
+        if ip_val and fip_constant is not None:
+            fip = ((13 * float(hr or 0) + 3 * float((bb or 0) + (hbp or 0)) - 2 * float(so or 0)) / ip_val) + fip_constant
+        ab = _coerce_number(row.get("AB"), "int")
+        h = _coerce_number(row.get("H"), "int")
+        sf = _coerce_number(row.get("SF"), "int")
+        babip = None
+        if ab is not None and so is not None and hr is not None and sf is not None:
+            denom_val = int(ab) - int(so) - int(hr) + int(sf)
+            if denom_val > 0:
+                babip = (int(h or 0) - int(hr or 0)) / float(denom_val)
+        stats[pid] = {
+            "era": _coerce_number(row.get("ERA"), "dec2"),
+            "fip": fip,
+            "ip": _coerce_number(row.get("IP"), "dec1"),
+            "h": h,
+            "bb": bb,
+            "hr": hr,
+            "whip": _coerce_number(row.get("WHIP"), "dec2"),
+            "babip": babip,
+        }
     return stats
 
 

@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.24336283185840707,
+    "bb": 72,
+    "era": 2.86,
+    "fip": 3.8443370058340216,
+    "h": 136,
+    "hr": 26,
+    "ip": 192.0,
+    "whip": 1.083
+  },
   "current_team_id": 158,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -11,9 +22,9 @@
   "player_id": 642547,
   "player_name": "Freddy Peralta",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 158,
   "team_name": "MIL"

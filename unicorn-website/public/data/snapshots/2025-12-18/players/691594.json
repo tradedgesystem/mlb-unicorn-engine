@@ -1,19 +1,46 @@
 {
+  "basic_batting": {
+    "avg": 0.243,
+    "babip": 0.25925925925925924,
+    "bb": 19,
+    "doubles": 22,
+    "h": 76,
+    "hr": 6,
+    "iso": 0.15300000000000002,
+    "k": 41,
+    "obp": 0.287,
+    "ops": 0.683,
+    "ops_plus": 89.25887734375921,
+    "slg": 0.396,
+    "triples": 4,
+    "woba": 0.29801775147929,
+    "wrc_plus": 93.77976904496762
+  },
+  "basic_pitching": {
+    "babip": 0.45454545454545453,
+    "bb": 5,
+    "era": 16.39,
+    "fip": 10.089872720119736,
+    "h": 24,
+    "hr": 4,
+    "ip": 9.1,
+    "whip": 3.107
+  },
   "current_team_id": 146,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.34146341463414637,
-    "contact_pct_last_50": 0.40425531914893614,
-    "hard_hit_pct_last_50": 0.3888888888888889,
-    "xwoba_last_50": 0.2435
+    "chase_pct_last_50": 0.3125,
+    "contact_pct_last_50": 0.3958,
+    "hard_hit_pct_last_50": 0.3889,
+    "xwoba_last_50": 0.2755
   },
   "name": "Javier Sanoja",
   "player_id": 691594,
   "player_name": "Javier Sanoja",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 146,
   "team_name": "MIA"

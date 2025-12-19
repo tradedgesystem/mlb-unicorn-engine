@@ -1,19 +1,46 @@
 {
+  "basic_batting": {
+    "avg": 0.263,
+    "babip": 0.2896825396825397,
+    "bb": 24,
+    "doubles": 18,
+    "h": 81,
+    "hr": 8,
+    "iso": 0.136,
+    "k": 48,
+    "obp": 0.318,
+    "ops": 0.718,
+    "ops_plus": 99.84246659783898,
+    "slg": 0.399,
+    "triples": 0,
+    "woba": 0.317987987987988,
+    "wrc_plus": 100.06397244648622
+  },
+  "basic_pitching": {
+    "babip": 0.36363636363636365,
+    "bb": 2,
+    "era": 12.6,
+    "fip": 12.725587005834022,
+    "h": 11,
+    "hr": 3,
+    "ip": 5.0,
+    "whip": 2.6
+  },
   "current_team_id": 119,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3333333333333333,
-    "contact_pct_last_50": 0.45098039215686275,
-    "hard_hit_pct_last_50": 0.30434782608695654,
-    "xwoba_last_50": 0.3092083333333333
+    "chase_pct_last_50": 0.3333,
+    "contact_pct_last_50": 0.451,
+    "hard_hit_pct_last_50": 0.3043,
+    "xwoba_last_50": 0.3092
   },
   "name": "Miguel Rojas",
   "player_id": 500743,
   "player_name": "Miguel Rojas",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 119,
   "team_name": "LAD"

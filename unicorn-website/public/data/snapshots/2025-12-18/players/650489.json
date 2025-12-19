@@ -1,19 +1,46 @@
 {
+  "basic_batting": {
+    "avg": 0.226,
+    "babip": 0.2857142857142857,
+    "bb": 40,
+    "doubles": 17,
+    "h": 91,
+    "hr": 11,
+    "iso": 0.13999999999999999,
+    "k": 111,
+    "obp": 0.313,
+    "ops": 0.679,
+    "ops_plus": 90.07538107351152,
+    "slg": 0.366,
+    "triples": 3,
+    "woba": 0.30567328918322295,
+    "wrc_plus": 96.18880191037988
+  },
+  "basic_pitching": {
+    "babip": 0.25,
+    "bb": 0,
+    "era": 0.0,
+    "fip": 3.1255870058340216,
+    "h": 1,
+    "hr": 0,
+    "ip": 1.0,
+    "whip": 1.0
+  },
   "current_team_id": 142,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.35294117647058826,
-    "contact_pct_last_50": 0.3333333333333333,
-    "hard_hit_pct_last_50": 0.24324324324324326,
-    "xwoba_last_50": 0.22996
+    "chase_pct_last_50": 0.337,
+    "contact_pct_last_50": 0.3186,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.2412
   },
   "name": "Willi Castro",
   "player_id": 650489,
   "player_name": "Willi Castro",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 142,
   "team_name": "MIN"

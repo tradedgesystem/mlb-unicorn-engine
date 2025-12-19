@@ -1,19 +1,46 @@
 {
+  "basic_batting": {
+    "avg": 0.224,
+    "babip": 0.304635761589404,
+    "bb": 8,
+    "doubles": 14,
+    "h": 46,
+    "hr": 0,
+    "iso": 0.06899999999999998,
+    "k": 55,
+    "obp": 0.266,
+    "ops": 0.559,
+    "ops_plus": 57.06159899220058,
+    "slg": 0.293,
+    "triples": 0,
+    "woba": 0.25073394495412843,
+    "wrc_plus": 78.90057331422359
+  },
+  "basic_pitching": {
+    "babip": 0.09090909090909091,
+    "bb": 0,
+    "era": 0.0,
+    "fip": 3.1255870058340216,
+    "h": 1,
+    "hr": 0,
+    "ip": 3.1,
+    "whip": 0.3
+  },
   "current_team_id": 140,
   "metrics": {
     "barrel_pct_last_50": 0.0,
     "chase_pct_last_50": 0.5,
-    "contact_pct_last_50": 0.3055555555555556,
-    "hard_hit_pct_last_50": 0.2727272727272727,
-    "xwoba_last_50": 0.17413333333333333
+    "contact_pct_last_50": 0.3056,
+    "hard_hit_pct_last_50": 0.2727,
+    "xwoba_last_50": 0.1741
   },
   "name": "Ezequiel Duran",
   "player_id": 677649,
   "player_name": "Ezequiel Duran",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 140,
   "team_name": "TEX"

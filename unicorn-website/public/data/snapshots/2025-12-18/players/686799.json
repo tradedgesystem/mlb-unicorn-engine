@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3248587570621469,
+    "bb": 58,
+    "era": 6.81,
+    "fip": 6.04450592475294,
+    "h": 136,
+    "hr": 21,
+    "ip": 111.0,
+    "whip": 1.748
+  },
   "current_team_id": 108,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -33,9 +44,9 @@
       "score": 1.216045
     }
   ],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 108,
   "team_name": "LAA"

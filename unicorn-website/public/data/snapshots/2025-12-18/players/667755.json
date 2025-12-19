@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3093220338983051,
+    "bb": 78,
+    "era": 4.26,
+    "fip": 3.7232201419286963,
+    "h": 158,
+    "hr": 12,
+    "ip": 169.0,
+    "whip": 1.396
+  },
   "current_team_id": 108,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -11,9 +22,9 @@
   "player_id": 667755,
   "player_name": "José Soriano",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 108,
   "team_name": "LAA"

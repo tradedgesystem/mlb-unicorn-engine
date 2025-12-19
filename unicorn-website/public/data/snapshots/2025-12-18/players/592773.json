@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.310126582278481,
+    "bb": 32,
+    "era": 5.3,
+    "fip": 4.393444148691165,
+    "h": 56,
+    "hr": 7,
+    "ip": 56.0,
+    "whip": 1.571
+  },
   "current_team_id": 121,
   "metrics": {
     "bb_pct_last_5_apps": 0.0625,

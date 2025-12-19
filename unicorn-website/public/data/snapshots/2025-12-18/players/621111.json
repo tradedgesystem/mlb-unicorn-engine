@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2857142857142857,
+    "bb": 61,
+    "era": 4.93,
+    "fip": 5.649396529643545,
+    "h": 130,
+    "hr": 22,
+    "ip": 126.0,
+    "whip": 1.516
+  },
   "current_team_id": 111,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -26,9 +37,9 @@
       "score": 3.854239
     }
   ],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 111,
   "team_name": "BOS"

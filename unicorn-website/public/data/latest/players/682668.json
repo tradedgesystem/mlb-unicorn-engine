@@ -1,4 +1,22 @@
 {
+  "basic_batting": {
+    "avg": 0.234,
+    "babip": 0.2949640287769784,
+    "bb": 13,
+    "doubles": 7,
+    "h": 41,
+    "hr": 0,
+    "iso": 0.04000000000000001,
+    "k": 37,
+    "obp": 0.293,
+    "ops": 0.567,
+    "ops_plus": 60.92218599936648,
+    "slg": 0.274,
+    "triples": 0,
+    "woba": 0.25947643979057594,
+    "wrc_plus": 81.65164818331858
+  },
+  "basic_pitching": null,
   "current_team_id": 121,
   "metrics": {
     "barrel_pct_last_50": 0.0,

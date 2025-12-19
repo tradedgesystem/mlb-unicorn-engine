@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2851063829787234,
+    "bb": 56,
+    "era": 4.17,
+    "fip": 4.637635198605106,
+    "h": 160,
+    "hr": 26,
+    "ip": 166.0,
+    "whip": 1.301
+  },
   "current_team_id": 141,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -33,9 +44,9 @@
       "score": 2.85467
     }
   ],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 141,
   "team_name": "TOR"

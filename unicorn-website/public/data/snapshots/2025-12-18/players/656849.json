@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.31958762886597936,
+    "bb": 65,
+    "era": 4.22,
+    "fip": 3.4753893773755236,
+    "h": 166,
+    "hr": 11,
+    "ip": 168.2,
+    "whip": 1.37
+  },
   "current_team_id": 121,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -11,9 +22,9 @@
   "player_id": 656849,
   "player_name": "David Peterson",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 121,
   "team_name": "NYM"

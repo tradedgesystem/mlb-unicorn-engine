@@ -1,4 +1,31 @@
 {
+  "basic_batting": {
+    "avg": 0.0,
+    "babip": 0.0,
+    "bb": 0,
+    "doubles": 0,
+    "h": 0,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 0,
+    "obp": 0.0,
+    "ops": 0.0,
+    "ops_plus": -100.0,
+    "slg": 0.0,
+    "triples": 0,
+    "woba": 0.0,
+    "wrc_plus": 0.0
+  },
+  "basic_pitching": {
+    "babip": 0.32996632996632996,
+    "bb": 30,
+    "era": 4.98,
+    "fip": 3.62729349047566,
+    "h": 107,
+    "hr": 9,
+    "ip": 97.2,
+    "whip": 1.403
+  },
   "current_team_id": 158,
   "metrics": {
     "bb_pct_last_5_apps": 0.1538,

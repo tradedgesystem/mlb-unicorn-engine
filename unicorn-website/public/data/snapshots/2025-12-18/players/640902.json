@@ -1,9 +1,36 @@
 {
+  "basic_batting": {
+    "avg": 0.246,
+    "babip": 0.3541666666666667,
+    "bb": 8,
+    "doubles": 6,
+    "h": 17,
+    "hr": 0,
+    "iso": 0.08700000000000002,
+    "k": 21,
+    "obp": 0.325,
+    "ops": 0.658,
+    "ops_plus": 85.70439893192021,
+    "slg": 0.333,
+    "triples": 0,
+    "woba": 0.2977922077922078,
+    "wrc_plus": 93.70879530337294
+  },
+  "basic_pitching": {
+    "babip": 0.5714285714285714,
+    "bb": 2,
+    "era": 21.0,
+    "fip": 7.458920339167355,
+    "h": 9,
+    "hr": 1,
+    "ip": 3.0,
+    "whip": 3.667
+  },
   "current_team_id": 133,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3333333333333333,
-    "contact_pct_last_50": 0.21739130434782608,
+    "chase_pct_last_50": 0.3333,
+    "contact_pct_last_50": 0.2174,
     "hard_hit_pct_last_50": 0.4,
     "xwoba_last_50": 0.1459
   },
@@ -11,9 +38,9 @@
   "player_id": 640902,
   "player_name": "Jhonny Pereda",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 133,
   "team_name": "ATH"

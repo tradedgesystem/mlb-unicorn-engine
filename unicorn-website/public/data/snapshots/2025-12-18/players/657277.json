@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3493761140819964,
+    "bb": 46,
+    "era": 3.22,
+    "fip": 2.5941860396504466,
+    "h": 210,
+    "hr": 14,
+    "ip": 207.0,
+    "whip": 1.237
+  },
   "current_team_id": 137,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -19,9 +30,9 @@
       "score": 1.197785
     }
   ],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 137,
   "team_name": "SF"

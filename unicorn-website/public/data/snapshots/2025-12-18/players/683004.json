@@ -1,4 +1,31 @@
 {
+  "basic_batting": {
+    "avg": 0.0,
+    "babip": null,
+    "bb": 0,
+    "doubles": 0,
+    "h": 0,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 1,
+    "obp": 0.0,
+    "ops": 0.0,
+    "ops_plus": -100.0,
+    "slg": 0.0,
+    "triples": 0,
+    "woba": 0.0,
+    "wrc_plus": 0.0
+  },
+  "basic_pitching": {
+    "babip": 0.2678132678132678,
+    "bb": 67,
+    "era": 3.86,
+    "fip": 4.140971621218637,
+    "h": 127,
+    "hr": 18,
+    "ip": 151.2,
+    "whip": 1.279
+  },
   "current_team_id": 140,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -11,9 +38,9 @@
   "player_id": 683004,
   "player_name": "Jack Leiter",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 140,
   "team_name": "TEX"

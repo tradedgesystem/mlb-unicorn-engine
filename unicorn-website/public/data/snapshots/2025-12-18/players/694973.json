@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.27292576419213976,
+    "bb": 42,
+    "era": 1.97,
+    "fip": 2.3529404694219433,
+    "h": 136,
+    "hr": 11,
+    "ip": 187.2,
+    "whip": 0.948
+  },
   "current_team_id": 134,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -47,9 +58,9 @@
       "score": 0.996323
     }
   ],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 134,
   "team_name": "PIT"

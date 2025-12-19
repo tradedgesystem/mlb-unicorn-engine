@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.28635346756152125,
+    "bb": 67,
+    "era": 5.49,
+    "fip": 5.189416793068064,
+    "h": 147,
+    "hr": 19,
+    "ip": 141.0,
+    "whip": 1.518
+  },
   "current_team_id": 138,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -11,9 +22,9 @@
   "player_id": 607200,
   "player_name": "Erick Fedde",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 138,
   "team_name": "STL"

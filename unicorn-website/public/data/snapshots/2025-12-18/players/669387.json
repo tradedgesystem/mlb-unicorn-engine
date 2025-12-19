@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3263888888888889,
+    "bb": 27,
+    "era": 3.55,
+    "fip": 3.3175061977532136,
+    "h": 102,
+    "hr": 8,
+    "ip": 99.0,
+    "whip": 1.303
+  },
   "current_team_id": 134,
   "metrics": {
     "bb_pct_last_5_apps": 0.1053,
@@ -11,9 +22,9 @@
   "player_id": 669387,
   "player_name": "Carmen Mlodzinski",
   "recent_unicorns": [],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 134,
   "team_name": "PIT"

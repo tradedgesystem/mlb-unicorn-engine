@@ -1,4 +1,15 @@
 {
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.27102803738317754,
+    "bb": 66,
+    "era": 4.83,
+    "fip": 4.495378672500689,
+    "h": 176,
+    "hr": 31,
+    "ip": 192.0,
+    "whip": 1.26
+  },
   "current_team_id": 109,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
@@ -33,9 +44,9 @@
       "score": 1.750414
     }
   ],
-  "role": "reliever",
+  "role": "starter",
   "roles": [
-    "reliever"
+    "starter"
   ],
   "team_id": 109,
   "team_name": "AZ"
