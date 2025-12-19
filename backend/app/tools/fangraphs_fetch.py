@@ -271,6 +271,12 @@ def _coerce_numeric_columns(df: pd.DataFrame) -> pd.DataFrame:
 def validate_fangraphs_html(html: str) -> None:
     """Validate that the FanGraphs HTML includes the leaderboard table."""
     soup = BeautifulSoup(html, "html.parser")
+    title = soup.title.string.strip() if soup.title and soup.title.string else ""
+    if "Just a moment" in title or soup.select_one("script[src*='challenge-platform']"):
+        raise RuntimeError(
+            "FanGraphs HTML validation failed: Cloudflare challenge page detected; "
+            "leaderboard HTML unavailable."
+        )
     table, headers = _find_leaderboard_table(soup)
     if table is None:
         raise RuntimeError("FanGraphs HTML validation failed: leaderboard table not found")
