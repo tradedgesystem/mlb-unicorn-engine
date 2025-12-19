@@ -27,7 +27,11 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping, MutableMapping, Sequence
 
 import requests
-from pybaseball import batting_stats, batting_stats_bref, pitching_stats, pitching_stats_bref
+from sqlalchemy import case, func, select
+from pybaseball import batting_stats_bref, pitching_stats_bref
+
+from backend.app.db import models
+from backend.app.db.session import SessionLocal
 
 
 DEFAULT_BASE_URL = os.getenv("UNICORN_API_BASE_URL", "http://localhost:8000")
@@ -114,15 +118,83 @@ def _extract_stat_row(row: Mapping[str, Any], specs: Sequence[tuple[str, str, st
     return payload
 
 
-def _fetch_basic_batting_stats(season: int) -> dict[int, dict[str, Any]]:
-    return _fetch_bref_batting_stats(season)
+def _fetch_basic_batting_stats(season: int, league_rates: dict[str, float] | None) -> dict[int, dict[str, Any]]:
+    return _fetch_bref_batting_stats(season, league_rates)
 
 
 def _fetch_basic_pitching_stats(season: int) -> dict[int, dict[str, Any]]:
     return _fetch_bref_pitching_stats(season)
 
 
-def _fetch_bref_batting_stats(season: int) -> dict[int, dict[str, Any]]:
+def _league_rates_from_db() -> dict[str, float] | None:
+    try:
+        with SessionLocal() as session:
+            min_date = session.execute(select(func.min(models.Game.game_date))).scalar_one_or_none()
+            max_date = session.execute(select(func.max(models.Game.game_date))).scalar_one_or_none()
+            if not min_date or not max_date:
+                return None
+            rows = session.execute(
+                select(
+                    func.count().label("pa"),
+                    func.sum(case((models.PlateAppearance.result == "single", 1), else_=0)).label("singles"),
+                    func.sum(case((models.PlateAppearance.result == "double", 1), else_=0)).label("doubles"),
+                    func.sum(case((models.PlateAppearance.result == "triple", 1), else_=0)).label("triples"),
+                    func.sum(case((models.PlateAppearance.result == "home_run", 1), else_=0)).label("hr"),
+                    func.sum(case((models.PlateAppearance.result == "walk", 1), else_=0)).label("bb"),
+                    func.sum(case((models.PlateAppearance.result == "intent_walk", 1), else_=0)).label("ibb"),
+                    func.sum(case((models.PlateAppearance.result == "hit_by_pitch", 1), else_=0)).label("hbp"),
+                    func.sum(case((models.PlateAppearance.result == "sac_fly", 1), else_=0)).label("sf"),
+                    func.sum(case((models.PlateAppearance.result == "sac_bunt", 1), else_=0)).label("sac_bunt"),
+                    func.sum(case((models.PlateAppearance.result == "strikeout", 1), else_=0)).label("so"),
+                )
+                .select_from(models.PlateAppearance)
+                .join(models.Game, models.Game.game_id == models.PlateAppearance.game_id)
+                .where(models.Game.game_date >= min_date, models.Game.game_date <= max_date)
+            ).first()
+            if not rows:
+                return None
+            pa = int(rows.pa or 0)
+            bb = int(rows.bb or 0) + int(rows.ibb or 0)
+            hbp = int(rows.hbp or 0)
+            sf = int(rows.sf or 0)
+            sac_bunt = int(rows.sac_bunt or 0)
+            ab = pa - bb - hbp - sf - sac_bunt
+            if ab <= 0:
+                return None
+            singles = int(rows.singles or 0)
+            doubles = int(rows.doubles or 0)
+            triples = int(rows.triples or 0)
+            hr = int(rows.hr or 0)
+            h = singles + doubles + triples + hr
+            obp_denom = ab + bb + hbp + sf
+            obp = (h + bb + hbp) / obp_denom if obp_denom > 0 else None
+            slg = (singles + 2 * doubles + 3 * triples + 4 * hr) / ab if ab > 0 else None
+            woba = None
+            woba_denom = ab + bb + hbp + sf
+            if woba_denom > 0:
+                woba_num = (
+                    0.69 * bb
+                    + 0.72 * hbp
+                    + 0.89 * singles
+                    + 1.27 * doubles
+                    + 1.62 * triples
+                    + 2.1 * hr
+                )
+                woba = woba_num / woba_denom
+            rates = {}
+            if obp is not None:
+                rates["obp"] = obp
+            if slg is not None:
+                rates["slg"] = slg
+            if woba is not None:
+                rates["woba"] = woba
+            return rates or None
+    except Exception as exc:  # noqa: BLE001
+        print(f"league rates from db failed: {exc}")
+        return None
+
+
+def _fetch_bref_batting_stats(season: int, league_rates: dict[str, float] | None) -> dict[int, dict[str, Any]]:
     try:
         df = batting_stats_bref(season)
     except Exception as exc:  # noqa: BLE001
@@ -164,21 +236,28 @@ def _fetch_bref_batting_stats(season: int) -> dict[int, dict[str, Any]]:
             total_slg_num += float(slg) * float(ab)
         total_pa_for_rate += float(ab + bb + hbp + sf)
 
-    lg_obp = (total_obp_num / total_pa_for_rate) if total_pa_for_rate > 0 else None
-    lg_slg = (total_slg_num / total_ab) if total_ab > 0 else None
+    lg_obp = None
+    lg_slg = None
     lg_woba = None
-    woba_denom_lg = total_ab + total_bb + total_hbp + total_sf
-    if woba_denom_lg > 0:
-        singles = total_h - total_2b - total_3b - total_hr
-        woba_num_lg = (
-            0.69 * total_bb
-            + 0.72 * total_hbp
-            + 0.89 * singles
-            + 1.27 * total_2b
-            + 1.62 * total_3b
-            + 2.1 * total_hr
-        )
-        lg_woba = woba_num_lg / woba_denom_lg
+    if league_rates:
+        lg_obp = league_rates.get("obp")
+        lg_slg = league_rates.get("slg")
+        lg_woba = league_rates.get("woba")
+    if lg_obp is None or lg_slg is None or lg_woba is None:
+        lg_obp = (total_obp_num / total_pa_for_rate) if total_pa_for_rate > 0 else None
+        lg_slg = (total_slg_num / total_ab) if total_ab > 0 else None
+        woba_denom_lg = total_ab + total_bb + total_hbp + total_sf
+        if woba_denom_lg > 0:
+            singles = total_h - total_2b - total_3b - total_hr
+            woba_num_lg = (
+                0.69 * total_bb
+                + 0.72 * total_hbp
+                + 0.89 * singles
+                + 1.27 * total_2b
+                + 1.62 * total_3b
+                + 2.1 * total_hr
+            )
+            lg_woba = woba_num_lg / woba_denom_lg
 
     stats: dict[int, dict[str, Any]] = {}
     for _, row in df.iterrows():
@@ -549,7 +628,8 @@ def generate_data_product_staged(
     player_roles_map = {pid: info.get("roles") or [] for pid, info in player_minimal.items()}
 
     season_year = int(snapshot_date.split("-")[0])
-    basic_batting = _fetch_basic_batting_stats(season_year)
+    league_rates = _league_rates_from_db()
+    basic_batting = _fetch_basic_batting_stats(season_year, league_rates)
     basic_pitching = _fetch_basic_pitching_stats(season_year)
 
     # Write artifacts.
