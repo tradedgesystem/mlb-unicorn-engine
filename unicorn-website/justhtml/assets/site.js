@@ -36,6 +36,69 @@ const DIVISIONS = {
   },
 };
 
+const TEAM_COLORS = {
+  ATH: { primary: "#006D4D" },
+  ATL: { primary: "#CE1141" },
+  AZ: { primary: "#A71930" },
+  BAL: { primary: "#DF4601" },
+  BOS: { primary: "#BD3039" },
+  CHC: { primary: "#0E3386" },
+  CIN: { primary: "#C6011F" },
+  CLE: { primary: "#0C2340" },
+  COL: { primary: "#33006F" },
+  CWS: { primary: "#27251F" },
+  DET: { primary: "#0C2340" },
+  HOU: { primary: "#EB6E1F" },
+  KC: { primary: "#004687" },
+  LAA: { primary: "#BA0021" },
+  LAD: { primary: "#005A9C" },
+  MIA: { primary: "#00A3E0" },
+  MIL: { primary: "#12284B" },
+  MIN: { primary: "#002B5C" },
+  NYM: { primary: "#002D72" },
+  NYY: { primary: "#0C2340" },
+  PHI: { primary: "#E81828" },
+  PIT: { primary: "#FDB827" },
+  SD: { primary: "#2F241D" },
+  SEA: { primary: "#0C2C56" },
+  SF: { primary: "#FD5A1E" },
+  STL: { primary: "#C41E3A" },
+  TB: { primary: "#092C5C" },
+  TEX: { primary: "#003278" },
+  TOR: { primary: "#134A8E" },
+  WSH: { primary: "#AB0003" },
+};
+
+function hexToRgb(hex) {
+  const raw = String(hex || "").replace("#", "");
+  if (raw.length !== 6) return null;
+  const r = parseInt(raw.slice(0, 2), 16);
+  const g = parseInt(raw.slice(2, 4), 16);
+  const b = parseInt(raw.slice(4, 6), 16);
+  if ([r, g, b].some((v) => Number.isNaN(v))) return null;
+  return { r, g, b };
+}
+
+function applyTeamTheme(abbr) {
+  const theme = TEAM_COLORS[String(abbr || "").toUpperCase()];
+  const root = document.documentElement;
+  if (!theme || !theme.primary) return;
+  const rgb = hexToRgb(theme.primary);
+  if (!rgb) return;
+  document.body.classList.add("team-theme");
+  root.style.setProperty("--team-primary", theme.primary);
+  root.style.setProperty("--team-primary-10", `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.12)`);
+  root.style.setProperty("--team-primary-20", `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.2)`);
+}
+
+function clearTeamTheme() {
+  const root = document.documentElement;
+  document.body.classList.remove("team-theme");
+  root.style.removeProperty("--team-primary");
+  root.style.removeProperty("--team-primary-10");
+  root.style.removeProperty("--team-primary-20");
+}
+
 function $(selector) {
   return document.querySelector(selector);
 }
@@ -427,6 +490,7 @@ async function renderTeamPage(teamId) {
     const abbr = team?.abbreviation || team?.abbrev || `Team ${teamId}`;
     if (title) title.textContent = String(abbr);
     if (subtitle) subtitle.textContent = `Team ${teamId}`;
+    applyTeamTheme(abbr);
 
     const groupSpecs = [
       { key: "hitters", host: $("#roster-hitters") },
@@ -541,6 +605,7 @@ async function init() {
       }
     }
     const page = document.body?.dataset?.page || "";
+    if (page !== "team") clearTeamTheme();
     if (page === "home") await renderHome({ teams });
     if (page === "teams-index") await renderTeamsIndex({ teams });
 
