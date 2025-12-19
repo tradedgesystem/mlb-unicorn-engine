@@ -359,60 +359,44 @@ function renderDivisionGroup(host, leagueKey, teamsByAbbr) {
   }
 }
 
-function selectMetricsForGroup(player, group) {
-  if (!player || !group) return null;
-  const role = String(player?.role || "").toLowerCase();
-  if (group === "hitters") {
-    return player?.hitter_metrics || (role === "hitter" ? player?.metrics : null) || player?.metrics || null;
-  }
-  if (group === "starters") {
-    return player?.pitcher_metrics || (role === "starter" ? player?.metrics : null) || player?.metrics || null;
-  }
-  if (group === "relievers") {
-    return (role === "reliever" ? player?.metrics : null) || player?.pitcher_metrics || player?.metrics || null;
-  }
-  return player?.metrics || null;
-}
-
-function renderRosterTable(host, roster, group, playerById) {
+function renderRosterByPosition(host, roster) {
   if (!host) return;
+  host.textContent = "";
   if (!Array.isArray(roster) || roster.length === 0) {
     host.textContent = "No results.";
     return;
   }
-  const columnSet =
-    group === "hitters"
-      ? METRIC_COLUMNS.hitter
-      : group === "starters"
-        ? METRIC_COLUMNS.starter
-        : METRIC_COLUMNS.reliever;
+  const groups = new Map();
+  for (const p of roster) {
+    const pos = (p?.position || "—").trim() || "—";
+    if (!groups.has(pos)) groups.set(pos, []);
+    groups.get(pos).push(p);
+  }
+  const positions = Array.from(groups.keys()).sort();
+  for (const pos of positions) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "roster-group";
 
-  const headerCells = ["Name", ...columnSet.map((c) => c.label)]
-    .map((label) => `<th>${escapeHtml(label)}</th>`)
-    .join("");
+    const title = document.createElement("div");
+    title.className = "roster-group-title";
+    title.textContent = pos;
+    wrapper.appendChild(title);
 
-  const rows = roster
-    .map((p) => {
+    const list = document.createElement("div");
+    list.className = "roster-names";
+    for (const p of groups.get(pos)) {
       const pid = p?.player_id;
       const name = p?.name || `Player ${pid}`;
       const href = p?.href || `/players/${encodeURIComponent(pid)}/`;
-      const player = playerById.get(String(pid));
-      const metrics = selectMetricsForGroup(player, group) || {};
-      const cells = columnSet
-        .map((col) => `<td>${escapeHtml(formatMetric(metrics?.[col.key], col.kind))}</td>`)
-        .join("");
-      return `<tr><td class="name"><a href="${escapeHtml(href)}">${escapeHtml(name)}</a></td>${cells}</tr>`;
-    })
-    .join("");
-
-  host.innerHTML = `
-    <div class="roster-table-wrap">
-      <table class="roster-table">
-        <thead><tr>${headerCells}</tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  `;
+      const a = document.createElement("a");
+      a.className = "roster-name";
+      a.href = href;
+      a.textContent = String(name);
+      list.appendChild(a);
+    }
+    wrapper.appendChild(list);
+    host.appendChild(wrapper);
+  }
 }
 
 async function renderHome({ teams }) {
@@ -452,31 +436,10 @@ async function renderTeamPage(teamId) {
       { key: "starters", host: $("#roster-starters") },
       { key: "relievers", host: $("#roster-relievers") },
     ];
-
-    const allIds = [];
-    for (const spec of groupSpecs) {
-      const roster = Array.isArray(team?.[spec.key]) ? team[spec.key] : [];
-      for (const p of roster) {
-        if (p?.player_id != null) allIds.push(String(p.player_id));
-      }
-    }
-    const uniqueIds = Array.from(new Set(allIds));
-    const playerById = new Map();
-    await Promise.all(
-      uniqueIds.map(async (pid) => {
-        try {
-          const payload = await fetchJson(`${DATA_BASE}/players/${encodeURIComponent(pid)}.json`);
-          playerById.set(String(pid), payload);
-        } catch {
-          playerById.set(String(pid), null);
-        }
-      }),
-    );
-
     for (const spec of groupSpecs) {
       if (!spec.host) continue;
       const roster = Array.isArray(team?.[spec.key]) ? team[spec.key] : [];
-      renderRosterTable(spec.host, roster, spec.key, playerById);
+      renderRosterByPosition(spec.host, roster);
     }
   } catch (err) {
     showStatus(err?.message || String(err));

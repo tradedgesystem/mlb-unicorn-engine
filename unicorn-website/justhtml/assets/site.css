@@ -336,49 +336,34 @@ a:hover {
   gap: 10px;
 }
 
-.roster-table-wrap {
-  overflow-x: auto;
+.roster-group {
   margin-top: 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--panel);
 }
 
-.roster-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  min-width: 720px;
-}
-
-.roster-table thead th {
-  text-align: right;
+.roster-group-title {
   font-size: 12px;
-  padding: 10px 12px;
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid var(--border);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+  margin-bottom: 6px;
 }
 
-.roster-table thead th:first-child {
-  text-align: left;
+.roster-names {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px 12px;
 }
 
-.roster-table tbody td {
-  text-align: right;
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text);
-  font-variant-numeric: tabular-nums;
-}
-
-.roster-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.roster-table tbody td.name {
-  text-align: left;
+.roster-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 600;
+  color: var(--text);
+}
+
+.roster-name:hover {
+  text-decoration: underline;
 }
 
 .row .full {
@@ -532,6 +517,9 @@ a:hover {
   .grid {
     grid-template-columns: 1fr;
   }
+  .roster-names {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -540,5 +528,8 @@ a:hover {
   }
   .team-pill {
     font-size: 12px;
+  }
+  .roster-names {
+    grid-template-columns: 1fr;
   }
 }
