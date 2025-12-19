@@ -439,11 +439,12 @@ def save_fangraphs_storage_state(
     *,
     interactive: bool = True,
     headless: bool = False,
+    channel: str | None = "chrome",
 ) -> Path:
     """Launch a real browser to capture cookies for FanGraphs access.
 
     Cloudflare may require an interactive browser session. This helper opens a
-    headful browser so a human can complete any verification, then saves the
+    real browser (Chrome by default) so a human can complete any verification, then saves the
     storage state for reuse by the fetcher. In non-interactive mode, it waits
     for the Cloudflare challenge to clear before saving state.
     """
@@ -464,7 +465,7 @@ def save_fangraphs_storage_state(
 
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=headless)
+            browser = p.chromium.launch(headless=headless, channel=channel)
             context = browser.new_context()
             page = context.new_page()
             page.goto(url, wait_until="domcontentloaded", timeout=timeout)
