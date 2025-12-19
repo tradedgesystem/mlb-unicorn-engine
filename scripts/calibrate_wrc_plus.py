@@ -46,7 +46,7 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--target-player-id", type=int, default=None)
     parser.add_argument("--target-first", default="Fernando")
     parser.add_argument("--target-last", default="Tatis")
-    parser.add_argument("--target-wrc-plus", type=float, default=196.0)
+    parser.add_argument("--target-wrc-plus", type=float, default=210.0)
     parser.add_argument(
         "--use-target",
         action="store_true",
