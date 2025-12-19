@@ -2,7 +2,8 @@
 
 FanGraphs blocks requests-based scraping (Cloudflare/WAF 403). A headless browser
 renders the page like a real user session, which is required to retrieve HTML reliably.
-A small disk cache reduces repeated browser launches while keeping HTML fresh.
+Fetching is intentionally decoupled from parsing/validation so HTML can be captured
+even if async-rendered tables appear late; parsing/validation handles missing tables.
 """
 
 from __future__ import annotations
@@ -32,6 +33,11 @@ def fetch_fangraphs_html(url: str, timeout: int = 30000, headless: bool = True) 
 
     Raises:
         RuntimeError: If navigation fails, times out, or returns empty HTML.
+
+    Notes:
+        Fetching does not wait for specific table selectors. Table presence is
+        validated later by parsing logic so late-rendered content doesn't cause
+        fetch timeouts.
     """
     if not url:
         raise RuntimeError("FanGraphs fetch failed: url is required")
@@ -56,11 +62,8 @@ def fetch_fangraphs_html(url: str, timeout: int = 30000, headless: bool = True) 
                     "Accept-Language": "en-US,en;q=0.9",
                 }
             )
-            try:
-                page.goto(url, wait_until="networkidle", timeout=timeout)
-            except PlaywrightTimeoutError:
-                page.goto(url, wait_until="domcontentloaded", timeout=timeout)
-            page.wait_for_selector("table", timeout=timeout, state="attached")
+            page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+            page.wait_for_timeout(1500)
             html = page.content()
             browser.close()
     except PlaywrightTimeoutError as exc:
@@ -78,8 +81,6 @@ def _fetch_with_selenium(url: str, timeout: int, headless: bool) -> str:
         from selenium import webdriver
         from selenium.common.exceptions import TimeoutException as SeleniumTimeout
         from selenium.webdriver.chrome.options import Options
-        from selenium.webdriver.common.by import By
-        from selenium.webdriver.support import expected_conditions as EC
         from selenium.webdriver.support.ui import WebDriverWait
     except Exception as exc:  # noqa: BLE001
         raise RuntimeError(
@@ -98,7 +99,10 @@ def _fetch_with_selenium(url: str, timeout: int, headless: bool) -> str:
         driver = webdriver.Chrome(options=options)
         driver.set_page_load_timeout(timeout / 1000)
         driver.get(url)
-        WebDriverWait(driver, timeout / 1000).until(EC.presence_of_element_located((By.TAG_NAME, "table")))
+        WebDriverWait(driver, timeout / 1000).until(
+            lambda d: d.execute_script("return document.readyState") == "complete"
+        )
+        time.sleep(1.5)
         html = driver.page_source
     except SeleniumTimeout as exc:
         raise RuntimeError(f"FanGraphs fetch failed: timeout after {timeout}ms") from exc
