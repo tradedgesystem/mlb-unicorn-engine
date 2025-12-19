@@ -436,14 +436,18 @@ def save_fangraphs_storage_state(
     storage_state_path: Path | str,
     url: str = DEFAULT_LEADERBOARD_URL,
     timeout: int = 30000,
+    *,
+    interactive: bool = True,
+    headless: bool = False,
 ) -> Path:
     """Launch a real browser to capture cookies for FanGraphs access.
 
     Cloudflare may require an interactive browser session. This helper opens a
     headful browser so a human can complete any verification, then saves the
-    storage state for reuse by the fetcher.
+    storage state for reuse by the fetcher. In non-interactive mode, it waits
+    for the Cloudflare challenge to clear before saving state.
     """
-    if not sys.stdin.isatty():
+    if interactive and not sys.stdin.isatty():
         raise RuntimeError(
             "FanGraphs storage state capture requires an interactive terminal."
         )
@@ -460,11 +464,19 @@ def save_fangraphs_storage_state(
 
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=False)
+            browser = p.chromium.launch(headless=headless)
             context = browser.new_context()
             page = context.new_page()
             page.goto(url, wait_until="domcontentloaded", timeout=timeout)
-            input("Complete any verification in the browser, then press Enter here...")
+            if interactive:
+                input(
+                    "Complete any verification in the browser, then press Enter here..."
+                )
+            else:
+                page.wait_for_function(
+                    "document.title && !document.title.includes('Just a moment')",
+                    timeout=timeout,
+                )
             html = page.content()
             if _is_cloudflare_challenge_html(html):
                 raise RuntimeError(
