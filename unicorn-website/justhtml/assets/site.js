@@ -1,25 +1,31 @@
 const DATA_BASE = "/data/latest";
-const METRIC_COLUMNS = {
+const BASIC_STAT_COLUMNS = {
   hitter: [
-    { key: "barrel_pct_last_50", label: "Barrel%", kind: "pct" },
-    { key: "hard_hit_pct_last_50", label: "HardHit%", kind: "pct" },
-    { key: "xwoba_last_50", label: "xwOBA", kind: "dec3" },
-    { key: "contact_pct_last_50", label: "Contact%", kind: "pct" },
-    { key: "chase_pct_last_50", label: "Chase%", kind: "pct" },
+    { key: "avg", label: "AVG", kind: "dec3" },
+    { key: "slg", label: "SLG", kind: "dec3" },
+    { key: "ops", label: "OPS", kind: "dec3" },
+    { key: "obp", label: "OBP", kind: "dec3" },
+    { key: "iso", label: "ISO", kind: "dec3" },
+    { key: "woba", label: "wOBA", kind: "dec3" },
+    { key: "ops_plus", label: "OPS+", kind: "int" },
+    { key: "wrc_plus", label: "wRC+", kind: "int" },
+    { key: "babip", label: "BABIP", kind: "dec3" },
+    { key: "h", label: "H", kind: "int" },
+    { key: "doubles", label: "2B", kind: "int" },
+    { key: "triples", label: "3B", kind: "int" },
+    { key: "hr", label: "HR", kind: "int" },
+    { key: "k", label: "K", kind: "int" },
+    { key: "bb", label: "BB", kind: "int" },
   ],
-  starter: [
-    { key: "xwoba_last_3_starts", label: "xwOBA", kind: "dec3" },
-    { key: "whiff_pct_last_3_starts", label: "Whiff%", kind: "pct" },
-    { key: "k_pct_last_3_starts", label: "K%", kind: "pct" },
-    { key: "bb_pct_last_3_starts", label: "BB%", kind: "pct" },
-    { key: "hard_hit_pct_last_3_starts", label: "HardHit%", kind: "pct" },
-  ],
-  reliever: [
-    { key: "xwoba_last_5_apps", label: "xwOBA", kind: "dec3" },
-    { key: "whiff_pct_last_5_apps", label: "Whiff%", kind: "pct" },
-    { key: "k_pct_last_5_apps", label: "K%", kind: "pct" },
-    { key: "bb_pct_last_5_apps", label: "BB%", kind: "pct" },
-    { key: "hard_hit_pct_last_5_apps", label: "HardHit%", kind: "pct" },
+  pitcher: [
+    { key: "era", label: "ERA", kind: "dec2" },
+    { key: "fip", label: "FIP", kind: "dec2" },
+    { key: "ip", label: "IP", kind: "dec1" },
+    { key: "h", label: "H", kind: "int" },
+    { key: "bb", label: "BB", kind: "int" },
+    { key: "hr", label: "HR", kind: "int" },
+    { key: "whip", label: "WHIP", kind: "dec2" },
+    { key: "babip", label: "BABIP", kind: "dec3" },
   ],
 };
 
@@ -95,6 +101,20 @@ function formatDec3(value) {
   return fixed.replace(/^0\./, "."); // FanGraphs-style leading zero drop
 }
 
+function formatDec2(value) {
+  if (value === null || value === undefined) return "—";
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  return n.toFixed(2);
+}
+
+function formatDec1(value) {
+  if (value === null || value === undefined) return "—";
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  return n.toFixed(1);
+}
+
 function formatPct(value) {
   if (value === null || value === undefined) return "—";
   const n = Number(value);
@@ -104,6 +124,12 @@ function formatPct(value) {
 
 function formatMetric(value, kind) {
   if (kind === "pct") return formatPct(value);
+  if (kind === "int") {
+    const n = Number(value);
+    return Number.isFinite(n) ? String(Math.round(n)) : "—";
+  }
+  if (kind === "dec1") return formatDec1(value);
+  if (kind === "dec2") return formatDec2(value);
   if (kind === "dec3") return formatDec3(value);
   return formatNumber(value);
 }
@@ -479,39 +505,31 @@ async function renderPlayerPage(playerId, { teamsById }) {
       const roles = Array.isArray(p?.roles) ? p.roles.map((r) => String(r).toLowerCase()) : [];
       const primaryRole = String(p?.role || roles[0] || "hitter").toLowerCase();
 
-      const hitterCandidate = p?.hitter_metrics || (primaryRole === "hitter" ? p?.metrics : null);
-      const starterCandidate = p?.pitcher_metrics || (primaryRole === "starter" ? p?.metrics : null);
-      const relieverCandidate = primaryRole === "reliever" ? p?.metrics : null;
+      const batting = p?.basic_batting || null;
+      const pitching = p?.basic_pitching || null;
 
-      const hitter = hasAnyMetric(hitterCandidate, METRIC_COLUMNS.hitter) ? hitterCandidate : null;
-      const starter = hasAnyMetric(starterCandidate, METRIC_COLUMNS.starter) ? starterCandidate : null;
-      const reliever = hasAnyMetric(relieverCandidate, METRIC_COLUMNS.reliever) ? relieverCandidate : null;
+      const hasBatting = hasAnyMetric(batting, BASIC_STAT_COLUMNS.hitter);
+      const hasPitching = hasAnyMetric(pitching, BASIC_STAT_COLUMNS.pitcher);
 
       metricsHost.textContent = "";
 
-      if (hitter) {
+      if (hasBatting && (primaryRole === "hitter" || roles.includes("hitter") || !hasPitching)) {
         renderMetricsTable(metricsHost, {
-          caption: roles.includes("starter") || roles.includes("reliever") ? "Hitting" : null,
-          columns: METRIC_COLUMNS.hitter,
-          values: hitter,
+          caption: hasPitching ? "Batting" : null,
+          columns: BASIC_STAT_COLUMNS.hitter,
+          values: batting,
         });
       }
 
-      if (starter) {
+      if (hasPitching && (primaryRole !== "hitter" || roles.includes("starter") || roles.includes("reliever"))) {
         renderMetricsTable(metricsHost, {
-          caption: hitter ? "Pitching (Starter)" : null,
-          columns: METRIC_COLUMNS.starter,
-          values: starter,
-        });
-      } else if (reliever) {
-        renderMetricsTable(metricsHost, {
-          caption: hitter ? "Pitching (Reliever)" : null,
-          columns: METRIC_COLUMNS.reliever,
-          values: reliever,
+          caption: hasBatting ? "Pitching" : null,
+          columns: BASIC_STAT_COLUMNS.pitcher,
+          values: pitching,
         });
       }
 
-      if (!hitter && !starter && !reliever) {
+      if (!hasBatting && !hasPitching) {
         metricsHost.textContent = "—";
       }
     }

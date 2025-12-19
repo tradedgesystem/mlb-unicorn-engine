@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import re
 import shutil
@@ -26,6 +27,7 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping, MutableMapping, Sequence
 
 import requests
+from pybaseball import batting_stats, pitching_stats
 
 
 DEFAULT_BASE_URL = os.getenv("UNICORN_API_BASE_URL", "http://localhost:8000")
@@ -39,9 +41,102 @@ DEFAULT_KEEP_DAYS = int(os.getenv("DATA_PRODUCT_KEEP_DAYS", "7"))
 
 _DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
+_BATTING_STAT_SPECS: list[tuple[str, str, str]] = [
+    ("avg", "AVG", "dec3"),
+    ("slg", "SLG", "dec3"),
+    ("ops", "OPS", "dec3"),
+    ("obp", "OBP", "dec3"),
+    ("iso", "ISO", "dec3"),
+    ("woba", "wOBA", "dec3"),
+    ("ops_plus", "OPS+", "int"),
+    ("wrc_plus", "wRC+", "int"),
+    ("babip", "BABIP", "dec3"),
+    ("h", "H", "int"),
+    ("doubles", "2B", "int"),
+    ("triples", "3B", "int"),
+    ("hr", "HR", "int"),
+    ("k", "SO", "int"),
+    ("bb", "BB", "int"),
+]
+
+_PITCHING_STAT_SPECS: list[tuple[str, str, str]] = [
+    ("era", "ERA", "dec2"),
+    ("fip", "FIP", "dec2"),
+    ("ip", "IP", "dec1"),
+    ("h", "H", "int"),
+    ("bb", "BB", "int"),
+    ("hr", "HR", "int"),
+    ("whip", "WHIP", "dec2"),
+    ("babip", "BABIP", "dec3"),
+]
+
 
 def _utc_now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def _coerce_number(value: Any, kind: str) -> float | int | None:
+    if value is None:
+        return None
+    if isinstance(value, str) and not value.strip():
+        return None
+    try:
+        if isinstance(value, float) and math.isnan(value):
+            return None
+    except TypeError:
+        pass
+    try:
+        num = float(value)
+    except Exception:
+        return None
+    if kind == "int":
+        return int(round(num))
+    return float(num)
+
+
+def _extract_stat_row(row: Mapping[str, Any], specs: Sequence[tuple[str, str, str]]) -> dict[str, Any]:
+    payload: dict[str, Any] = {}
+    for key, source, kind in specs:
+        payload[key] = _coerce_number(row.get(source), kind)
+    return payload
+
+
+def _fetch_basic_batting_stats(season: int) -> dict[int, dict[str, Any]]:
+    try:
+        df = batting_stats(season, qual=0)
+    except Exception as exc:  # noqa: BLE001
+        print(f"basic batting stats fetch failed for {season}: {exc}")
+        return {}
+    stats: dict[int, dict[str, Any]] = {}
+    for _, row in df.iterrows():
+        player_id = row.get("ID")
+        if player_id is None:
+            continue
+        try:
+            pid = int(player_id)
+        except Exception:
+            continue
+        stats[pid] = _extract_stat_row(row, _BATTING_STAT_SPECS)
+    return stats
+
+
+def _fetch_basic_pitching_stats(season: int) -> dict[int, dict[str, Any]]:
+    try:
+        df = pitching_stats(season, qual=0)
+    except Exception as exc:  # noqa: BLE001
+        print(f"basic pitching stats fetch failed for {season}: {exc}")
+        return {}
+    stats: dict[int, dict[str, Any]] = {}
+    for _, row in df.iterrows():
+        player_id = row.get("ID")
+        if player_id is None:
+            continue
+        try:
+            pid = int(player_id)
+        except Exception:
+            continue
+        stats[pid] = _extract_stat_row(row, _PITCHING_STAT_SPECS)
+    return stats
 
 
 def _parse_iso_datetime(value: str) -> datetime:
@@ -273,6 +368,10 @@ def generate_data_product_staged(
     # Normalize team details using player roles (handles two-way roles).
     player_roles_map = {pid: info.get("roles") or [] for pid, info in player_minimal.items()}
 
+    season_year = int(snapshot_date.split("-")[0])
+    basic_batting = _fetch_basic_batting_stats(season_year)
+    basic_pitching = _fetch_basic_pitching_stats(season_year)
+
     # Write artifacts.
     _atomic_write_json(staged_root / "teams.json", [{"team_id": t.team_id, "abbreviation": t.abbreviation} for t in teams])
 
@@ -298,6 +397,8 @@ def generate_data_product_staged(
         payload["current_team_id"] = int(payload["team_id"]) if payload.get("team_id") is not None else None
         payload["name"] = (payload.get("player_name") or "").strip()
         payload["roles"] = _player_roles(payload)
+        payload["basic_batting"] = basic_batting.get(pid)
+        payload["basic_pitching"] = basic_pitching.get(pid)
         _atomic_write_json(staged_root / "players" / f"{pid}.json", payload)
 
     meta = {

@@ -177,7 +177,7 @@ function playerPage(playerId) {
 
 <section class="grid">
   <div class="panel">
-    <h2>Predictive stats</h2>
+    <h2>Basic stats</h2>
     <div id="player-metrics" class="metrics-host">Loading…</div>
   </div>
 </section>
