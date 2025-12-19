@@ -405,11 +405,12 @@ async function renderTeamPage(teamId) {
         const pos = p?.position || "";
         const roles = Array.isArray(p?.roles) ? p.roles.join(", ") : "";
         const href = p?.href || `/players/${encodeURIComponent(pid)}/`;
+        const meta = pos || roles;
         return {
-          left: `<a href="${escapeHtml(href)}">${escapeHtml(name)}</a><div class="small">${escapeHtml(
-            roles,
-          )}</div>`,
-          right: escapeHtml(pos),
+          left: `<a href="${escapeHtml(href)}">${escapeHtml(name)}</a>${
+            meta ? `<div class="small">${escapeHtml(meta)}</div>` : ""
+          }`,
+          right: null,
         };
       });
       renderList(spec.host, rows);

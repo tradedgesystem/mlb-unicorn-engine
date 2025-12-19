@@ -156,9 +156,9 @@ function teamPage(teamId) {
 </section>
 
 <section class="tabpanes">
-  <div class="tabpane active" data-pane="hitters"><div id="roster-hitters" class="list">Loading…</div></div>
-  <div class="tabpane" data-pane="starters"><div id="roster-starters" class="list">Loading…</div></div>
-  <div class="tabpane" data-pane="relievers"><div id="roster-relievers" class="list">Loading…</div></div>
+  <div class="tabpane active" data-pane="hitters"><div id="roster-hitters" class="list roster-grid">Loading…</div></div>
+  <div class="tabpane" data-pane="starters"><div id="roster-starters" class="list roster-grid">Loading…</div></div>
+  <div class="tabpane" data-pane="relievers"><div id="roster-relievers" class="list roster-grid">Loading…</div></div>
 </section>
 `,
   });
