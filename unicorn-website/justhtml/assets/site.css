@@ -337,8 +337,8 @@ a:hover {
 }
 
 .roster-list-items {
-  list-style: disc;
-  padding-left: 18px;
+  list-style: none;
+  padding-left: 0;
   margin: 12px 0 0;
   columns: 1;
 }
