@@ -12,11 +12,11 @@
   },
   "current_team_id": 120,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0833,
-    "hard_hit_pct_last_5_apps": 0.3429,
-    "k_pct_last_5_apps": 0.125,
-    "whiff_pct_last_5_apps": 0.1224,
-    "xwoba_last_5_apps": 0.4603
+    "bb_pct_last_5_apps": 0.0741,
+    "hard_hit_pct_last_5_apps": 0.2778,
+    "k_pct_last_5_apps": 0.1111,
+    "whiff_pct_last_5_apps": 0.12,
+    "xwoba_last_5_apps": 0.4223
   },
   "name": "Jorge López",
   "player_id": 605347,

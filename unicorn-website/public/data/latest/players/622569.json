@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.0,
-    "babip": 0.0,
+    "avg": 0.125,
+    "babip": 0.125,
     "bb": 1,
     "doubles": 0,
-    "h": 0,
+    "h": 1,
     "hr": 0,
     "iso": 0.0,
     "k": 0,
-    "obp": 0.14285714285714285,
-    "ops": 0.14285714285714285,
-    "ops_plus": -54,
-    "slg": 0.0,
+    "obp": 0.2222222222222222,
+    "ops": 0.3472222222222222,
+    "ops_plus": 4,
+    "slg": 0.125,
     "triples": 0,
-    "woba": 0.09857142857142856,
-    "wrc_plus": -129
+    "woba": 0.17555555555555558,
+    "wrc_plus": 52
   },
   "basic_pitching": {
     "babip": 0.5714285714285714,
@@ -29,10 +29,10 @@
   "current_team_id": 147,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.2857142857142857,
-    "contact_pct_last_50": 0.6,
-    "hard_hit_pct_last_50": 0.0,
-    "xwoba_last_50": 0.1935
+    "chase_pct_last_50": 0.18181818181818182,
+    "contact_pct_last_50": 0.6666666666666666,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.22175
   },
   "name": "Pablo Reyes",
   "player_id": 622569,

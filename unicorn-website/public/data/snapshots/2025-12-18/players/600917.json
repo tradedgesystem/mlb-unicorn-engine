@@ -12,11 +12,11 @@
   },
   "current_team_id": 133,
   "metrics": {
-    "bb_pct_last_5_apps": 0.04,
-    "hard_hit_pct_last_5_apps": 0.1463,
-    "k_pct_last_5_apps": 0.16,
-    "whiff_pct_last_5_apps": 0.2712,
-    "xwoba_last_5_apps": 0.3167
+    "bb_pct_last_5_apps": 0.069,
+    "hard_hit_pct_last_5_apps": 0.2,
+    "k_pct_last_5_apps": 0.1724,
+    "whiff_pct_last_5_apps": 0.2879,
+    "xwoba_last_5_apps": 0.3531
   },
   "name": "José Leclerc",
   "player_id": 600917,

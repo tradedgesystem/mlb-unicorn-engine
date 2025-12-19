@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.16129032258064516,
-    "babip": 0.20833333333333334,
+    "avg": 0.15151515151515152,
+    "babip": 0.2,
     "bb": 5,
     "doubles": 0,
     "h": 5,
     "hr": 0,
     "iso": 0.0,
-    "k": 8,
-    "obp": 0.2894736842105263,
-    "ops": 0.45076400679117146,
-    "ops_plus": 35,
-    "slg": 0.16129032258064516,
+    "k": 9,
+    "obp": 0.275,
+    "ops": 0.4265151515151515,
+    "ops_plus": 27,
+    "slg": 0.15151515151515152,
     "triples": 0,
-    "woba": 0.22684210526315793,
-    "wrc_plus": 112
+    "woba": 0.21550000000000002,
+    "wrc_plus": 102
   },
   "basic_pitching": null,
   "current_team_id": 112,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.28378378378378377,
-    "contact_pct_last_50": 0.27906976744186046,
-    "hard_hit_pct_last_50": 0.20833333333333334,
-    "xwoba_last_50": 0.24142424242424243
+    "chase_pct_last_50": 0.2948717948717949,
+    "contact_pct_last_50": 0.2840909090909091,
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.2304
   },
   "name": "Justin Turner",
   "player_id": 457759,

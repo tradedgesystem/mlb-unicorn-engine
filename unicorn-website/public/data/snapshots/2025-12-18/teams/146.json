@@ -2,6 +2,15 @@
   "abbreviation": "MIA",
   "hitters": [
     {
+      "href": "/players/681393/",
+      "name": "Connor Norby",
+      "player_id": 681393,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/667472/",
       "name": "Dane Myers",
       "player_id": 667472,
@@ -47,10 +56,10 @@
       ]
     },
     {
-      "href": "/players/681146/",
-      "name": "Jonah Bride",
-      "player_id": 681146,
-      "position": "3B",
+      "href": "/players/660821/",
+      "name": "Jesús Sánchez",
+      "player_id": 660821,
+      "position": "RF",
       "roles": [
         "hitter"
       ]
@@ -110,6 +119,15 @@
       ]
     },
     {
+      "href": "/players/682927/",
+      "name": "Ronny Simon",
+      "player_id": 682927,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/669364/",
       "name": "Xavier Edwards",
       "player_id": 669364,
@@ -133,6 +151,15 @@
       "href": "/players/685107/",
       "name": "Anthony Veneziano",
       "player_id": 685107,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/806188/",
+      "name": "Cade Gibson",
+      "player_id": 806188,
       "position": "P",
       "roles": [
         "reliever"
@@ -187,6 +214,15 @@
       "href": "/players/678215/",
       "name": "Luarbert Arias",
       "player_id": 678215,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/687287/",
+      "name": "Patrick Monteverde",
+      "player_id": 687287,
       "position": "P",
       "roles": [
         "reliever"

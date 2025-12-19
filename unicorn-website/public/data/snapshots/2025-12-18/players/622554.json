@@ -12,11 +12,11 @@
   },
   "current_team_id": 110,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2105,
+    "bb_pct_last_5_apps": 0.2,
     "hard_hit_pct_last_5_apps": 0.1111,
-    "k_pct_last_5_apps": 0.3684,
-    "whiff_pct_last_5_apps": 0.3125,
-    "xwoba_last_5_apps": 0.253
+    "k_pct_last_5_apps": 0.4,
+    "whiff_pct_last_5_apps": 0.3714,
+    "xwoba_last_5_apps": 0.2404
   },
   "name": "Seranthony Domínguez",
   "player_id": 622554,

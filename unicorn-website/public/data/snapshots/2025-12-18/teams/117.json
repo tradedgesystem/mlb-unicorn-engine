@@ -148,6 +148,15 @@
       ]
     },
     {
+      "href": "/players/666215/",
+      "name": "Forrest Whitley",
+      "player_id": 666215,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/623352/",
       "name": "Josh Hader",
       "player_id": 623352,
@@ -169,6 +178,15 @@
       "href": "/players/664351/",
       "name": "Luis Contreras",
       "player_id": 664351,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/663321/",
+      "name": "Nick Hernandez",
+      "player_id": 663321,
       "position": "P",
       "roles": [
         "reliever"

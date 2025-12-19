@@ -12,11 +12,11 @@
   },
   "current_team_id": 111,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0588,
-    "hard_hit_pct_last_5_apps": 0.2143,
-    "k_pct_last_5_apps": 0.1176,
-    "whiff_pct_last_5_apps": 0.2308,
-    "xwoba_last_5_apps": 0.2729
+    "bb_pct_last_5_apps": 0.05,
+    "hard_hit_pct_last_5_apps": 0.1818,
+    "k_pct_last_5_apps": 0.1,
+    "whiff_pct_last_5_apps": 0.2391,
+    "xwoba_last_5_apps": 0.2649
   },
   "name": "Justin Wilson",
   "player_id": 458677,

@@ -264,6 +264,14 @@
     ]
   },
   {
+    "current_team_id": 111,
+    "name": "Liam Hendriks",
+    "player_id": 521230,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 118,
     "name": "Salvador Perez",
     "player_id": 521692,
@@ -421,6 +429,14 @@
     "player_id": 545361,
     "roles": [
       "hitter"
+    ]
+  },
+  {
+    "current_team_id": 110,
+    "name": "Cody Poteet",
+    "player_id": 547001,
+    "roles": [
+      "reliever"
     ]
   },
   {
@@ -784,9 +800,25 @@
     ]
   },
   {
+    "current_team_id": 119,
+    "name": "Eddie Rosario",
+    "player_id": 592696,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
     "current_team_id": 121,
     "name": "Ryne Stanek",
     "player_id": 592773,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 142,
+    "name": "Brock Stewart",
+    "player_id": 592779,
     "roles": [
       "reliever"
     ]
@@ -972,7 +1004,7 @@
     "name": "Gary Sánchez",
     "player_id": 596142,
     "roles": [
-      "hitter"
+      "reliever"
     ]
   },
   {
@@ -1536,6 +1568,14 @@
     ]
   },
   {
+    "current_team_id": 145,
+    "name": "Steven Wilson",
+    "player_id": 621051,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 133,
     "name": "Tyler Ferguson",
     "player_id": 621053,
@@ -1672,6 +1712,14 @@
     ]
   },
   {
+    "current_team_id": 141,
+    "name": "Dillon Tate",
+    "player_id": 622253,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 136,
     "name": "Luis F. Castillo",
     "player_id": 622379,
@@ -1732,7 +1780,7 @@
     "name": "Jorge Mateo",
     "player_id": 622761,
     "roles": [
-      "hitter"
+      "reliever"
     ]
   },
   {
@@ -1787,6 +1835,14 @@
     "current_team_id": 142,
     "name": "Justin Topa",
     "player_id": 623437,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 119,
+    "name": "Evan Phillips",
+    "player_id": 623465,
     "roles": [
       "reliever"
     ]
@@ -1925,6 +1981,14 @@
     "player_id": 640462,
     "roles": [
       "reliever"
+    ]
+  },
+  {
+    "current_team_id": 121,
+    "name": "José Azocar",
+    "player_id": 640492,
+    "roles": [
+      "hitter"
     ]
   },
   {
@@ -2616,6 +2680,14 @@
     ]
   },
   {
+    "current_team_id": 109,
+    "name": "J.P. Feyereisen",
+    "player_id": 656420,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 116,
     "name": "Jack Flaherty",
     "player_id": 656427,
@@ -2685,6 +2757,14 @@
     "player_id": 656605,
     "roles": [
       "starter"
+    ]
+  },
+  {
+    "current_team_id": 140,
+    "name": "Jacob Latz",
+    "player_id": 656641,
+    "roles": [
+      "reliever"
     ]
   },
   {
@@ -2816,6 +2896,14 @@
     ]
   },
   {
+    "current_team_id": 144,
+    "name": "Alex Verdugo",
+    "player_id": 657077,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
     "current_team_id": 140,
     "name": "Jacob Webb",
     "player_id": 657097,
@@ -2843,6 +2931,14 @@
     "current_team_id": 137,
     "name": "Logan Webb",
     "player_id": 657277,
+    "roles": [
+      "starter"
+    ]
+  },
+  {
+    "current_team_id": 147,
+    "name": "Clarke Schmidt",
+    "player_id": 657376,
     "roles": [
       "starter"
     ]
@@ -2937,6 +3033,14 @@
     ]
   },
   {
+    "current_team_id": 112,
+    "name": "Vidal Bruján",
+    "player_id": 660644,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
     "current_team_id": 120,
     "name": "Keibert Ruiz",
     "player_id": 660688,
@@ -2966,6 +3070,14 @@
     "player_id": 660761,
     "roles": [
       "reliever"
+    ]
+  },
+  {
+    "current_team_id": 146,
+    "name": "Jesús Sánchez",
+    "player_id": 660821,
+    "roles": [
+      "hitter"
     ]
   },
   {
@@ -3036,6 +3148,14 @@
     "current_team_id": 135,
     "name": "Robert Suarez",
     "player_id": 663158,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 117,
+    "name": "Nick Hernandez",
+    "player_id": 663321,
     "roles": [
       "reliever"
     ]
@@ -3126,6 +3246,14 @@
     "player_id": 663559,
     "roles": [
       "starter"
+    ]
+  },
+  {
+    "current_team_id": 119,
+    "name": "Noah Davis",
+    "player_id": 663562,
+    "roles": [
+      "reliever"
     ]
   },
   {
@@ -3268,6 +3396,14 @@
     "current_team_id": 134,
     "name": "Chase Shugart",
     "player_id": 663767,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 121,
+    "name": "Justin Hagenman",
+    "player_id": 663795,
     "roles": [
       "reliever"
     ]
@@ -3865,6 +4001,14 @@
     ]
   },
   {
+    "current_team_id": 117,
+    "name": "Forrest Whitley",
+    "player_id": 666215,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 146,
     "name": "George Soriano",
     "player_id": 666277,
@@ -3902,6 +4046,22 @@
     "player_id": 666624,
     "roles": [
       "hitter"
+    ]
+  },
+  {
+    "current_team_id": 136,
+    "name": "Sauryn Lao",
+    "player_id": 666659,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 109,
+    "name": "Juan Morillo",
+    "player_id": 666661,
+    "roles": [
+      "reliever"
     ]
   },
   {
@@ -4038,6 +4198,14 @@
     "player_id": 668820,
     "roles": [
       "reliever"
+    ]
+  },
+  {
+    "current_team_id": 115,
+    "name": "Aaron Schunk",
+    "player_id": 668845,
+    "roles": [
+      "hitter"
     ]
   },
   {
@@ -4633,6 +4801,14 @@
     ]
   },
   {
+    "current_team_id": 143,
+    "name": "Cal Stevenson",
+    "player_id": 670276,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
     "current_team_id": 134,
     "name": "David Bednar",
     "player_id": 670280,
@@ -4881,11 +5057,27 @@
     ]
   },
   {
+    "current_team_id": 135,
+    "name": "Tirso Ornelas",
+    "player_id": 672359,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
     "current_team_id": 141,
     "name": "Alejandro Kirk",
     "player_id": 672386,
     "roles": [
       "hitter"
+    ]
+  },
+  {
+    "current_team_id": 116,
+    "name": "Keider Montero",
+    "player_id": 672456,
+    "roles": [
+      "starter"
     ]
   },
   {
@@ -5081,6 +5273,14 @@
     ]
   },
   {
+    "current_team_id": 144,
+    "name": "Spencer Strider",
+    "player_id": 675911,
+    "roles": [
+      "starter"
+    ]
+  },
+  {
     "current_team_id": 110,
     "name": "Jordan Westburg",
     "player_id": 676059,
@@ -5134,6 +5334,14 @@
     "player_id": 676263,
     "roles": [
       "reliever"
+    ]
+  },
+  {
+    "current_team_id": 119,
+    "name": "Bobby Miller",
+    "player_id": 676272,
+    "roles": [
+      "starter"
     ]
   },
   {
@@ -5401,6 +5609,14 @@
     ]
   },
   {
+    "current_team_id": 115,
+    "name": "Jaden Hill",
+    "player_id": 677955,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 140,
     "name": "Kumar Rocker",
     "player_id": 677958,
@@ -5617,6 +5833,14 @@
     ]
   },
   {
+    "current_team_id": 139,
+    "name": "Richie Palacios",
+    "player_id": 680700,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
     "current_team_id": 141,
     "name": "Nick Sandlin",
     "player_id": 680704,
@@ -5737,7 +5961,7 @@
     ]
   },
   {
-    "current_team_id": 146,
+    "current_team_id": 142,
     "name": "Jonah Bride",
     "player_id": 681146,
     "roles": [
@@ -5785,6 +6009,22 @@
     ]
   },
   {
+    "current_team_id": 146,
+    "name": "Connor Norby",
+    "player_id": 681393,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
+    "current_team_id": 112,
+    "name": "Luke Little",
+    "player_id": 681432,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 145,
     "name": "Brooks Baldwin",
     "player_id": 681460,
@@ -5814,6 +6054,14 @@
     "player_id": 681517,
     "roles": [
       "reliever"
+    ]
+  },
+  {
+    "current_team_id": 137,
+    "name": "David Villar",
+    "player_id": 681584,
+    "roles": [
+      "hitter"
     ]
   },
   {
@@ -5900,6 +6148,14 @@
     "current_team_id": 158,
     "name": "Grant Anderson",
     "player_id": 681982,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 133,
+    "name": "Jacob Lopez",
+    "player_id": 682052,
     "roles": [
       "reliever"
     ]
@@ -6012,6 +6268,14 @@
     "current_team_id": 134,
     "name": "Endy Rodríguez",
     "player_id": 682848,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
+    "current_team_id": 146,
+    "name": "Ronny Simon",
+    "player_id": 682927,
     "roles": [
       "hitter"
     ]
@@ -6313,6 +6577,22 @@
     ]
   },
   {
+    "current_team_id": 109,
+    "name": "Drey Jameson",
+    "player_id": 686753,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 111,
+    "name": "Nick Sogard",
+    "player_id": 686765,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
     "current_team_id": 138,
     "name": "Pedro Pagés",
     "player_id": 686780,
@@ -6372,6 +6652,22 @@
     "current_team_id": 115,
     "name": "Bradley Blalock",
     "player_id": 687134,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 108,
+    "name": "Zach Neto",
+    "player_id": 687263,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
+    "current_team_id": 146,
+    "name": "Patrick Monteverde",
+    "player_id": 687287,
     "roles": [
       "reliever"
     ]
@@ -6438,6 +6734,14 @@
     "player_id": 687597,
     "roles": [
       "hitter"
+    ]
+  },
+  {
+    "current_team_id": 141,
+    "name": "Paxton Schultz",
+    "player_id": 687606,
+    "roles": [
+      "reliever"
     ]
   },
   {
@@ -6513,6 +6817,14 @@
     ]
   },
   {
+    "current_team_id": 115,
+    "name": "Zach Agnos",
+    "player_id": 688642,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 119,
     "name": "Landon Knack",
     "player_id": 689017,
@@ -6569,6 +6881,14 @@
     ]
   },
   {
+    "current_team_id": 116,
+    "name": "Bailey Horn",
+    "player_id": 690544,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 108,
     "name": "Ben Joyce",
     "player_id": 690829,
@@ -6597,7 +6917,7 @@
     "name": "Hunter Dobbins",
     "player_id": 690928,
     "roles": [
-      "reliever"
+      "starter"
     ]
   },
   {
@@ -6630,6 +6950,14 @@
     "player_id": 691026,
     "roles": [
       "hitter"
+    ]
+  },
+  {
+    "current_team_id": 113,
+    "name": "Randy Wynne",
+    "player_id": 691094,
+    "roles": [
+      "reliever"
     ]
   },
   {
@@ -6769,11 +7097,27 @@
     ]
   },
   {
+    "current_team_id": 138,
+    "name": "Matt Svanson",
+    "player_id": 694335,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
     "current_team_id": 113,
     "name": "Blake Dunn",
     "player_id": 694362,
     "roles": [
       "hitter"
+    ]
+  },
+  {
+    "current_team_id": 145,
+    "name": "Jared Shuster",
+    "player_id": 694363,
+    "roles": [
+      "reliever"
     ]
   },
   {
@@ -6853,7 +7197,7 @@
     "name": "Brad Lord",
     "player_id": 695418,
     "roles": [
-      "reliever"
+      "starter"
     ]
   },
   {
@@ -6878,6 +7222,14 @@
     "player_id": 696100,
     "roles": [
       "hitter"
+    ]
+  },
+  {
+    "current_team_id": 112,
+    "name": "Jordan Wicks",
+    "player_id": 696136,
+    "roles": [
+      "reliever"
     ]
   },
   {
@@ -6924,6 +7276,14 @@
     "current_team_id": 147,
     "name": "Ben Rice",
     "player_id": 700250,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
+    "current_team_id": 145,
+    "name": "Edgar Quero",
+    "player_id": 700337,
     "roles": [
       "hitter"
     ]
@@ -7001,9 +7361,25 @@
     ]
   },
   {
+    "current_team_id": 158,
+    "name": "Logan Henderson",
+    "player_id": 701656,
+    "roles": [
+      "starter"
+    ]
+  },
+  {
     "current_team_id": 141,
     "name": "Alan Roden",
     "player_id": 702176,
+    "roles": [
+      "hitter"
+    ]
+  },
+  {
+    "current_team_id": 158,
+    "name": "Caleb Durbin",
+    "player_id": 702332,
     "roles": [
       "hitter"
     ]
@@ -7014,6 +7390,14 @@
     "player_id": 702352,
     "roles": [
       "reliever"
+    ]
+  },
+  {
+    "current_team_id": 120,
+    "name": "Trey Lipscomb",
+    "player_id": 702358,
+    "roles": [
+      "hitter"
     ]
   },
   {
@@ -7038,6 +7422,14 @@
     "player_id": 801403,
     "roles": [
       "starter"
+    ]
+  },
+  {
+    "current_team_id": 139,
+    "name": "Chandler Simpson",
+    "player_id": 802415,
+    "roles": [
+      "hitter"
     ]
   },
   {
@@ -7070,6 +7462,22 @@
     "player_id": 806185,
     "roles": [
       "reliever"
+    ]
+  },
+  {
+    "current_team_id": 146,
+    "name": "Cade Gibson",
+    "player_id": 806188,
+    "roles": [
+      "reliever"
+    ]
+  },
+  {
+    "current_team_id": 142,
+    "name": "Luke Keaschall",
+    "player_id": 807712,
+    "roles": [
+      "hitter"
     ]
   },
   {

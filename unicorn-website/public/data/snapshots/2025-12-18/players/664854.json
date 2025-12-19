@@ -12,11 +12,11 @@
   },
   "current_team_id": 138,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2174,
-    "hard_hit_pct_last_5_apps": 0.2174,
-    "k_pct_last_5_apps": 0.2609,
-    "whiff_pct_last_5_apps": 0.2778,
-    "xwoba_last_5_apps": 0.2949
+    "bb_pct_last_5_apps": 0.2222,
+    "hard_hit_pct_last_5_apps": 0.2121,
+    "k_pct_last_5_apps": 0.2222,
+    "whiff_pct_last_5_apps": 0.28,
+    "xwoba_last_5_apps": 0.3063
   },
   "name": "Ryan Helsley",
   "player_id": 664854,

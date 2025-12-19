@@ -148,6 +148,24 @@
       ]
     },
     {
+      "href": "/players/686753/",
+      "name": "Drey Jameson",
+      "player_id": 686753,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/656420/",
+      "name": "J.P. Feyereisen",
+      "player_id": 656420,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/656222/",
       "name": "Jalen Beeks",
       "player_id": 656222,
@@ -160,6 +178,15 @@
       "href": "/players/573009/",
       "name": "Joe Mantiply",
       "player_id": 573009,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/666661/",
+      "name": "Juan Morillo",
+      "player_id": 666661,
       "position": "P",
       "roles": [
         "reliever"

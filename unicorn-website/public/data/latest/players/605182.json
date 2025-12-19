@@ -12,11 +12,11 @@
   },
   "current_team_id": 145,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2857,
-    "hard_hit_pct_last_5_apps": 0.2692,
-    "k_pct_last_5_apps": 0.0476,
-    "whiff_pct_last_5_apps": 0.1818,
-    "xwoba_last_5_apps": 0.4069
+    "bb_pct_last_5_apps": 0.25,
+    "hard_hit_pct_last_5_apps": 0.2857,
+    "k_pct_last_5_apps": 0.0833,
+    "whiff_pct_last_5_apps": 0.1842,
+    "xwoba_last_5_apps": 0.3617
   },
   "name": "Mike Clevinger",
   "player_id": 605182,

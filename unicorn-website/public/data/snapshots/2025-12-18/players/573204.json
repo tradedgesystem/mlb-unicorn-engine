@@ -12,11 +12,11 @@
   },
   "current_team_id": 112,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1667,
-    "hard_hit_pct_last_5_apps": 0.1154,
-    "k_pct_last_5_apps": 0.2222,
-    "whiff_pct_last_5_apps": 0.129,
-    "xwoba_last_5_apps": 0.2329
+    "bb_pct_last_5_apps": 0.2,
+    "hard_hit_pct_last_5_apps": 0.1,
+    "k_pct_last_5_apps": 0.2,
+    "whiff_pct_last_5_apps": 0.1143,
+    "xwoba_last_5_apps": 0.2465
   },
   "name": "Caleb Thielbar",
   "player_id": 573204,

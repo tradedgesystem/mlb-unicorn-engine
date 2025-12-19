@@ -29,6 +29,15 @@
       ]
     },
     {
+      "href": "/players/592696/",
+      "name": "Eddie Rosario",
+      "player_id": 592696,
+      "position": "OF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/571771/",
       "name": "Enrique Hernández",
       "player_id": 571771,
@@ -158,6 +167,15 @@
       ]
     },
     {
+      "href": "/players/623465/",
+      "name": "Evan Phillips",
+      "player_id": 623465,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/676263/",
       "name": "Jack Dreyer",
       "player_id": 676263,
@@ -203,6 +221,15 @@
       ]
     },
     {
+      "href": "/players/663562/",
+      "name": "Noah Davis",
+      "player_id": 663562,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/656945/",
       "name": "Tanner Scott",
       "player_id": 656945,
@@ -217,6 +244,15 @@
       "href": "/players/605483/",
       "name": "Blake Snell",
       "player_id": 605483,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/676272/",
+      "name": "Bobby Miller",
+      "player_id": 676272,
       "position": "P",
       "roles": [
         "starter"

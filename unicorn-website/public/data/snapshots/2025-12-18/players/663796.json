@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.25,
-    "babip": 0.3333333333333333,
+    "avg": 0.2,
+    "babip": 0.2857142857142857,
     "bb": 0,
     "doubles": 0,
     "h": 2,
     "hr": 0,
     "iso": 0.0,
-    "k": 2,
-    "obp": 0.25,
-    "ops": 0.5,
-    "ops_plus": 45,
-    "slg": 0.25,
+    "k": 3,
+    "obp": 0.2,
+    "ops": 0.4,
+    "ops_plus": 16,
+    "slg": 0.2,
     "triples": 0,
-    "woba": 0.2225,
-    "wrc_plus": 85
+    "woba": 0.178,
+    "wrc_plus": 44
   },
   "basic_pitching": null,
   "current_team_id": 139,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.4166666666666667,
-    "contact_pct_last_50": 0.6666666666666666,
-    "hard_hit_pct_last_50": 0.3333333333333333,
-    "xwoba_last_50": 0.22275
+    "chase_pct_last_50": 0.46153846153846156,
+    "contact_pct_last_50": 0.6363636363636364,
+    "hard_hit_pct_last_50": 0.42857142857142855,
+    "xwoba_last_50": 0.2558
   },
   "name": "Coco Montes",
   "player_id": 663796,

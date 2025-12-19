@@ -10,11 +10,11 @@
     "k": 5,
     "obp": 0.25,
     "ops": 0.75,
-    "ops_plus": 111,
+    "ops_plus": 110,
     "slg": 0.5,
     "triples": 0,
     "woba": 0.321,
-    "wrc_plus": 38
+    "wrc_plus": 50
   },
   "basic_pitching": {
     "babip": 0.3333333333333333,

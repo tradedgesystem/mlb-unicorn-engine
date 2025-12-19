@@ -12,11 +12,11 @@
   },
   "current_team_id": 143,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1154,
-    "hard_hit_pct_last_5_apps": 0.2647,
-    "k_pct_last_5_apps": 0.1923,
-    "whiff_pct_last_5_apps": 0.2692,
-    "xwoba_last_5_apps": 0.3947
+    "bb_pct_last_5_apps": 0.1333,
+    "hard_hit_pct_last_5_apps": 0.2703,
+    "k_pct_last_5_apps": 0.2,
+    "whiff_pct_last_5_apps": 0.2679,
+    "xwoba_last_5_apps": 0.3705
   },
   "name": "Tanner Banks",
   "player_id": 621383,

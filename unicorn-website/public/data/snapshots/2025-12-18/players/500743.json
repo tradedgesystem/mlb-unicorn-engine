@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.16666666666666666,
-    "babip": 0.17391304347826086,
+    "avg": 0.14814814814814814,
+    "babip": 0.16,
     "bb": 0,
     "doubles": 0,
     "h": 4,
     "hr": 0,
     "iso": 0.0,
-    "k": 1,
-    "obp": 0.16666666666666666,
-    "ops": 0.3333333333333333,
-    "ops_plus": -3,
-    "slg": 0.16666666666666666,
+    "k": 2,
+    "obp": 0.14814814814814814,
+    "ops": 0.2962962962962963,
+    "ops_plus": -14,
+    "slg": 0.14814814814814814,
     "triples": 0,
-    "woba": 0.14833333333333334,
-    "wrc_plus": -63
+    "woba": 0.13185185185185186,
+    "wrc_plus": -39
   },
   "basic_pitching": {
     "babip": 0.36363636363636365,
@@ -29,10 +29,10 @@
   "current_team_id": 119,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3333,
-    "contact_pct_last_50": 0.451,
-    "hard_hit_pct_last_50": 0.3043,
-    "xwoba_last_50": 0.3092
+    "chase_pct_last_50": 0.3191,
+    "contact_pct_last_50": 0.4545,
+    "hard_hit_pct_last_50": 0.28,
+    "xwoba_last_50": 0.2809
   },
   "name": "Miguel Rojas",
   "player_id": 500743,

@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.09090909090909091,
-    "babip": 0.125,
+    "avg": 0.11538461538461539,
+    "babip": 0.15,
     "bb": 0,
     "doubles": 0,
-    "h": 2,
+    "h": 3,
     "hr": 0,
     "iso": 0.0,
     "k": 6,
-    "obp": 0.13043478260869565,
-    "ops": 0.22134387351778656,
-    "ops_plus": -34,
-    "slg": 0.09090909090909091,
+    "obp": 0.14814814814814814,
+    "ops": 0.26353276353276356,
+    "ops_plus": -23,
+    "slg": 0.11538461538461539,
     "triples": 0,
-    "woba": 0.10869565217391304,
-    "wrc_plus": -119
+    "woba": 0.12555555555555553,
+    "wrc_plus": -78
   },
   "basic_pitching": null,
   "current_team_id": 108,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3541666666666667,
-    "contact_pct_last_50": 0.32653061224489793,
-    "hard_hit_pct_last_50": 0.375,
-    "xwoba_last_50": 0.22869565217391305
+    "chase_pct_last_50": 0.32727272727272727,
+    "contact_pct_last_50": 0.36363636363636365,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.2242222222222222
   },
   "name": "Travis d'Arnaud",
   "player_id": 518595,

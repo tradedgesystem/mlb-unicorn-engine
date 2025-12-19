@@ -13,10 +13,10 @@
   "current_team_id": 137,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.2857,
-    "k_pct_last_5_apps": 0.3125,
-    "whiff_pct_last_5_apps": 0.2188,
-    "xwoba_last_5_apps": 0.2239
+    "hard_hit_pct_last_5_apps": 0.3478,
+    "k_pct_last_5_apps": 0.2632,
+    "whiff_pct_last_5_apps": 0.2,
+    "xwoba_last_5_apps": 0.2461
   },
   "name": "Randy Rodríguez",
   "player_id": 678495,

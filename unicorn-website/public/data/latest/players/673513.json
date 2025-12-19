@@ -12,11 +12,11 @@
   },
   "current_team_id": 135,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1,
-    "hard_hit_pct_last_5_apps": 0.1538,
-    "k_pct_last_5_apps": 0.45,
-    "whiff_pct_last_5_apps": 0.3404,
-    "xwoba_last_5_apps": 0.1866
+    "bb_pct_last_5_apps": 0.12,
+    "hard_hit_pct_last_5_apps": 0.1765,
+    "k_pct_last_5_apps": 0.4,
+    "whiff_pct_last_5_apps": 0.3103,
+    "xwoba_last_5_apps": 0.204
   },
   "name": "Yuki Matsui",
   "player_id": 673513,

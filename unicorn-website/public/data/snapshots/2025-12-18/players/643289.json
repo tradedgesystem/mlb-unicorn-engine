@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.16,
-    "babip": 0.18181818181818182,
+    "avg": 0.17857142857142858,
+    "babip": 0.2,
     "bb": 3,
     "doubles": 2,
-    "h": 4,
+    "h": 5,
     "hr": 0,
-    "iso": 0.07999999999999999,
+    "iso": 0.07142857142857142,
     "k": 3,
-    "obp": 0.25,
-    "ops": 0.49,
-    "ops_plus": 43,
-    "slg": 0.24,
+    "obp": 0.25806451612903225,
+    "ops": 0.5080645161290323,
+    "ops_plus": 47,
+    "slg": 0.25,
     "triples": 0,
-    "woba": 0.2282142857142857,
-    "wrc_plus": 37
+    "woba": 0.23483870967741935,
+    "wrc_plus": 67
   },
   "basic_pitching": null,
   "current_team_id": 117,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3076923076923077,
-    "contact_pct_last_50": 0.5111111111111111,
-    "hard_hit_pct_last_50": 0.21739130434782608,
-    "xwoba_last_50": 0.24816
+    "chase_pct_last_50": 0.3023255813953488,
+    "contact_pct_last_50": 0.49056603773584906,
+    "hard_hit_pct_last_50": 0.19230769230769232,
+    "xwoba_last_50": 0.24821428571428572
   },
   "name": "Mauricio Dubón",
   "player_id": 643289,

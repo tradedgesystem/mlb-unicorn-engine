@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.07142857142857142,
-    "babip": 0.1,
+    "avg": 0.058823529411764705,
+    "babip": 0.09090909090909091,
     "bb": 0,
     "doubles": 1,
     "h": 1,
     "hr": 0,
-    "iso": 0.07142857142857142,
-    "k": 4,
-    "obp": 0.07142857142857142,
-    "ops": 0.21428571428571427,
-    "ops_plus": -40,
-    "slg": 0.14285714285714285,
+    "iso": 0.058823529411764705,
+    "k": 6,
+    "obp": 0.058823529411764705,
+    "ops": 0.1764705882352941,
+    "ops_plus": -51,
+    "slg": 0.11764705882352941,
     "triples": 0,
-    "woba": 0.09071428571428572,
-    "wrc_plus": -200
+    "woba": 0.07470588235294118,
+    "wrc_plus": -129
   },
   "basic_pitching": {
     "babip": 0.5714285714285714,
@@ -30,17 +30,17 @@
   "metrics": {
     "barrel_pct_last_50": 0.0,
     "chase_pct_last_50": 0.5,
-    "contact_pct_last_50": 0.3333333333333333,
-    "hard_hit_pct_last_50": 0.3,
-    "xwoba_last_50": 0.16742857142857143
+    "contact_pct_last_50": 0.3056,
+    "hard_hit_pct_last_50": 0.2727,
+    "xwoba_last_50": 0.141
   },
   "name": "Jorge Mateo",
   "player_id": 622761,
   "player_name": "Jorge Mateo",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 110,
   "team_name": "BAL"

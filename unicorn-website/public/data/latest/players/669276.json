@@ -12,11 +12,11 @@
   },
   "current_team_id": 144,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1,
-    "hard_hit_pct_last_5_apps": 0.2162,
-    "k_pct_last_5_apps": 0.15,
-    "whiff_pct_last_5_apps": 0.1875,
-    "xwoba_last_5_apps": 0.4169
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.2093,
+    "k_pct_last_5_apps": 0.2083,
+    "whiff_pct_last_5_apps": 0.2241,
+    "xwoba_last_5_apps": 0.3786
   },
   "name": "Dylan Lee",
   "player_id": 669276,

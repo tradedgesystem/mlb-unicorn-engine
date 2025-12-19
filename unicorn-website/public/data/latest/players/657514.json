@@ -12,11 +12,11 @@
   },
   "current_team_id": 111,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.2609,
-    "k_pct_last_5_apps": 0.3,
-    "whiff_pct_last_5_apps": 0.2632,
-    "xwoba_last_5_apps": 0.1823
+    "bb_pct_last_5_apps": 0.0385,
+    "hard_hit_pct_last_5_apps": 0.1786,
+    "k_pct_last_5_apps": 0.2308,
+    "whiff_pct_last_5_apps": 0.2619,
+    "xwoba_last_5_apps": 0.2217
   },
   "name": "Brennan Bernardino",
   "player_id": 657514,

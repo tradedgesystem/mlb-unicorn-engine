@@ -12,11 +12,11 @@
   },
   "current_team_id": 114,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0556,
-    "hard_hit_pct_last_5_apps": 0.12,
-    "k_pct_last_5_apps": 0.2778,
-    "whiff_pct_last_5_apps": 0.2703,
-    "xwoba_last_5_apps": 0.3035
+    "bb_pct_last_5_apps": 0.0385,
+    "hard_hit_pct_last_5_apps": 0.2286,
+    "k_pct_last_5_apps": 0.1538,
+    "whiff_pct_last_5_apps": 0.1778,
+    "xwoba_last_5_apps": 0.3977
   },
   "name": "Jakob Junis",
   "player_id": 596001,

@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.26865671641791045,
-    "babip": 0.3181818181818182,
-    "bb": 10,
+    "avg": 0.26666666666666666,
+    "babip": 0.3125,
+    "bb": 11,
     "doubles": 0,
-    "h": 18,
-    "hr": 4,
-    "iso": 0.208955223880597,
-    "k": 19,
-    "obp": 0.36363636363636365,
-    "ops": 0.841248303934871,
-    "ops_plus": 141,
-    "slg": 0.47761194029850745,
+    "h": 20,
+    "hr": 5,
+    "iso": 0.22666666666666668,
+    "k": 22,
+    "obp": 0.36046511627906974,
+    "ops": 0.8537984496124031,
+    "ops_plus": 143,
+    "slg": 0.49333333333333335,
     "triples": 1,
-    "woba": 0.37000000000000005,
-    "wrc_plus": 133
+    "woba": 0.3740697674418605,
+    "wrc_plus": 137
   },
   "basic_pitching": {
     "babip": 0.3227848101265823,
@@ -28,18 +28,18 @@
   },
   "current_team_id": 119,
   "hitter_metrics": {
-    "barrel_pct_last_50": 0.05555555555555555,
-    "chase_pct_last_50": 0.3253012048192771,
-    "contact_pct_last_50": 0.391304347826087,
-    "hard_hit_pct_last_50": 0.5,
-    "xwoba_last_50": 0.42202
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.3493975903614458,
+    "contact_pct_last_50": 0.3655913978494624,
+    "hard_hit_pct_last_50": 0.47058823529411764,
+    "xwoba_last_50": 0.3788
   },
   "metrics": {
-    "barrel_pct_last_50": 0.05555555555555555,
-    "chase_pct_last_50": 0.3253012048192771,
-    "contact_pct_last_50": 0.391304347826087,
-    "hard_hit_pct_last_50": 0.5,
-    "xwoba_last_50": 0.42202
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.3493975903614458,
+    "contact_pct_last_50": 0.3655913978494624,
+    "hard_hit_pct_last_50": 0.47058823529411764,
+    "xwoba_last_50": 0.3788
   },
   "name": "Shohei Ohtani",
   "pitcher_metrics": {

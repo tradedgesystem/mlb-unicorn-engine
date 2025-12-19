@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.10526315789473684,
-    "babip": 0.15384615384615385,
+    "avg": 0.13636363636363635,
+    "babip": 0.21428571428571427,
     "bb": 1,
     "doubles": 0,
-    "h": 2,
+    "h": 3,
     "hr": 0,
     "iso": 0.0,
-    "k": 7,
-    "obp": 0.18181818181818182,
-    "ops": 0.28708133971291866,
-    "ops_plus": -14,
-    "slg": 0.10526315789473684,
+    "k": 9,
+    "obp": 0.2,
+    "ops": 0.33636363636363636,
+    "ops_plus": -1,
+    "slg": 0.13636363636363635,
     "triples": 0,
-    "woba": 0.145,
-    "wrc_plus": 101
+    "woba": 0.1632,
+    "wrc_plus": 107
   },
   "basic_pitching": {
     "babip": 0.25,
@@ -29,18 +29,18 @@
   "current_team_id": 110,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.2619047619047619,
-    "contact_pct_last_50": 0.3023255813953488,
-    "hard_hit_pct_last_50": 0.6153846153846154,
-    "xwoba_last_50": 0.25633333333333336
+    "chase_pct_last_50": 0.3,
+    "contact_pct_last_50": 0.2857,
+    "hard_hit_pct_last_50": 0.6429,
+    "xwoba_last_50": 0.2466
   },
   "name": "Gary Sánchez",
   "player_id": 596142,
   "player_name": "Gary Sánchez",
   "recent_unicorns": [],
-  "role": "hitter",
+  "role": "reliever",
   "roles": [
-    "hitter"
+    "reliever"
   ],
   "team_id": 110,
   "team_name": "BAL"

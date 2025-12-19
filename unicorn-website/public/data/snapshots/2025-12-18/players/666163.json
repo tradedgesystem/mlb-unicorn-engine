@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.0,
-    "babip": 0.0,
-    "bb": 3,
+    "avg": 0.09523809523809523,
+    "babip": 0.1111111111111111,
+    "bb": 5,
     "doubles": 0,
-    "h": 0,
+    "h": 2,
     "hr": 0,
     "iso": 0.0,
     "k": 3,
-    "obp": 0.15,
-    "ops": 0.15,
-    "ops_plus": -52,
-    "slg": 0.0,
+    "obp": 0.2692307692307692,
+    "ops": 0.36446886446886445,
+    "ops_plus": 11,
+    "slg": 0.09523809523809523,
     "triples": 0,
-    "woba": 0.1035,
-    "wrc_plus": 2
+    "woba": 0.20115384615384613,
+    "wrc_plus": 124
   },
   "basic_pitching": null,
   "current_team_id": 139,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.2916666666666667,
-    "contact_pct_last_50": 0.39285714285714285,
-    "hard_hit_pct_last_50": 0.09090909090909091,
-    "xwoba_last_50": 0.12442857142857143
+    "chase_pct_last_50": 0.21875,
+    "contact_pct_last_50": 0.46875,
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.20544444444444446
   },
   "name": "Ben Rortvedt",
   "player_id": 666163,

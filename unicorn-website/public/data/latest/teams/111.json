@@ -74,6 +74,15 @@
       ]
     },
     {
+      "href": "/players/686765/",
+      "name": "Nick Sogard",
+      "player_id": 686765,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/646240/",
       "name": "Rafael Devers",
       "player_id": 646240,
@@ -175,15 +184,6 @@
       ]
     },
     {
-      "href": "/players/690928/",
-      "name": "Hunter Dobbins",
-      "player_id": 690928,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
-    {
       "href": "/players/670174/",
       "name": "Josh Winckowski",
       "player_id": 670174,
@@ -205,6 +205,15 @@
       "href": "/players/458677/",
       "name": "Justin Wilson",
       "player_id": 458677,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/521230/",
+      "name": "Liam Hendriks",
+      "player_id": 521230,
       "position": "P",
       "roles": [
         "reliever"
@@ -243,6 +252,15 @@
       "href": "/players/676979/",
       "name": "Garrett Crochet",
       "player_id": 676979,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/690928/",
+      "name": "Hunter Dobbins",
+      "player_id": 690928,
       "position": "P",
       "roles": [
         "starter"

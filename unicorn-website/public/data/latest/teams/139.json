@@ -20,6 +20,15 @@
       ]
     },
     {
+      "href": "/players/802415/",
+      "name": "Chandler Simpson",
+      "player_id": 802415,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/666624/",
       "name": "Christopher Morel",
       "player_id": 666624,
@@ -114,6 +123,15 @@
       "name": "Kameron Misner",
       "player_id": 670224,
       "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/680700/",
+      "name": "Richie Palacios",
+      "player_id": 680700,
+      "position": "LF",
       "roles": [
         "hitter"
       ]

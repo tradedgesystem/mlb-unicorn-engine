@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.20634920634920634,
-    "babip": 0.25,
+    "avg": 0.22727272727272727,
+    "babip": 0.28,
     "bb": 3,
-    "doubles": 5,
-    "h": 13,
+    "doubles": 6,
+    "h": 15,
     "hr": 1,
-    "iso": 0.12698412698412698,
-    "k": 14,
-    "obp": 0.2753623188405797,
-    "ops": 0.6086956521739131,
-    "ops_plus": 75,
-    "slg": 0.3333333333333333,
+    "iso": 0.13636363636363638,
+    "k": 15,
+    "obp": 0.2916666666666667,
+    "ops": 0.6553030303030303,
+    "ops_plus": 88,
+    "slg": 0.36363636363636365,
     "triples": 0,
-    "woba": 0.2740579710144928,
-    "wrc_plus": 60
+    "woba": 0.29263888888888895,
+    "wrc_plus": 90
   },
   "basic_pitching": {
     "babip": 0.25,
@@ -29,10 +29,10 @@
   "current_team_id": 142,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.337,
-    "contact_pct_last_50": 0.3186,
-    "hard_hit_pct_last_50": 0.25,
-    "xwoba_last_50": 0.2412
+    "chase_pct_last_50": 0.3793,
+    "contact_pct_last_50": 0.3162,
+    "hard_hit_pct_last_50": 0.2703,
+    "xwoba_last_50": 0.2367
   },
   "name": "Willi Castro",
   "player_id": 650489,

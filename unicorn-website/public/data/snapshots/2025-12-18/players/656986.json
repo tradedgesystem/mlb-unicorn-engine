@@ -12,11 +12,11 @@
   },
   "current_team_id": 117,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1429,
-    "hard_hit_pct_last_5_apps": 0.3636,
-    "k_pct_last_5_apps": 0.3571,
-    "whiff_pct_last_5_apps": 0.4444,
-    "xwoba_last_5_apps": 0.3249
+    "bb_pct_last_5_apps": 0.1333,
+    "hard_hit_pct_last_5_apps": 0.3333,
+    "k_pct_last_5_apps": 0.3333,
+    "whiff_pct_last_5_apps": 0.4286,
+    "xwoba_last_5_apps": 0.3108
   },
   "name": "Bennett Sousa",
   "player_id": 656986,

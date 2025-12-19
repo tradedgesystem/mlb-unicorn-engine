@@ -12,11 +12,11 @@
   },
   "current_team_id": 136,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0556,
-    "hard_hit_pct_last_5_apps": 0.0588,
-    "k_pct_last_5_apps": 0.2778,
-    "whiff_pct_last_5_apps": 0.28,
-    "xwoba_last_5_apps": 0.2198
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.2632,
+    "k_pct_last_5_apps": 0.2083,
+    "whiff_pct_last_5_apps": 0.2857,
+    "xwoba_last_5_apps": 0.2544
   },
   "name": "Carlos Vargas",
   "player_id": 672841,

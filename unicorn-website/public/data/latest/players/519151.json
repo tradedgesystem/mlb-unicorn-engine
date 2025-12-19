@@ -12,11 +12,11 @@
   },
   "current_team_id": 112,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1,
-    "hard_hit_pct_last_5_apps": 0.2353,
-    "k_pct_last_5_apps": 0.15,
-    "whiff_pct_last_5_apps": 0.1395,
-    "xwoba_last_5_apps": 0.3064
+    "bb_pct_last_5_apps": 0.0455,
+    "hard_hit_pct_last_5_apps": 0.3793,
+    "k_pct_last_5_apps": 0.1364,
+    "whiff_pct_last_5_apps": 0.1538,
+    "xwoba_last_5_apps": 0.3246
   },
   "name": "Ryan Pressly",
   "player_id": 519151,

@@ -12,11 +12,11 @@
   },
   "current_team_id": 145,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1111,
-    "hard_hit_pct_last_5_apps": 0.2553,
-    "k_pct_last_5_apps": 0.1667,
-    "whiff_pct_last_5_apps": 0.2319,
-    "xwoba_last_5_apps": 0.3642
+    "bb_pct_last_5_apps": 0.087,
+    "hard_hit_pct_last_5_apps": 0.25,
+    "k_pct_last_5_apps": 0.1304,
+    "whiff_pct_last_5_apps": 0.2048,
+    "xwoba_last_5_apps": 0.3394
   },
   "name": "Mike Vasil",
   "player_id": 678024,

@@ -2,6 +2,15 @@
   "abbreviation": "ATL",
   "hitters": [
     {
+      "href": "/players/657077/",
+      "name": "Alex Verdugo",
+      "player_id": 657077,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/663586/",
       "name": "Austin Riley",
       "player_id": 663586,
@@ -297,6 +306,15 @@
       "href": "/players/680885/",
       "name": "Spencer Schwellenbach",
       "player_id": 680885,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/675911/",
+      "name": "Spencer Strider",
+      "player_id": 675911,
       "position": "P",
       "roles": [
         "starter"

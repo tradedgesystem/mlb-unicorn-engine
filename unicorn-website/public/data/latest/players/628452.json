@@ -12,11 +12,11 @@
   },
   "current_team_id": 144,
   "metrics": {
-    "bb_pct_last_5_apps": 0.05,
-    "hard_hit_pct_last_5_apps": 0.28,
-    "k_pct_last_5_apps": 0.3,
-    "whiff_pct_last_5_apps": 0.2857,
-    "xwoba_last_5_apps": 0.4352
+    "bb_pct_last_5_apps": 0.0435,
+    "hard_hit_pct_last_5_apps": 0.2667,
+    "k_pct_last_5_apps": 0.2609,
+    "whiff_pct_last_5_apps": 0.2708,
+    "xwoba_last_5_apps": 0.3955
   },
   "name": "Raisel Iglesias",
   "player_id": 628452,

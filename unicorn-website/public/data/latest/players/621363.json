@@ -12,11 +12,11 @@
   },
   "current_team_id": 120,
   "metrics": {
-    "bb_pct_last_5_apps": 0.3,
-    "hard_hit_pct_last_5_apps": 0.4286,
-    "k_pct_last_5_apps": 0.25,
-    "whiff_pct_last_5_apps": 0.36,
-    "xwoba_last_5_apps": 0.3276
+    "bb_pct_last_5_apps": 0.2273,
+    "hard_hit_pct_last_5_apps": 0.3478,
+    "k_pct_last_5_apps": 0.2727,
+    "whiff_pct_last_5_apps": 0.2571,
+    "xwoba_last_5_apps": 0.2906
   },
   "name": "Colin Poche",
   "player_id": 621363,

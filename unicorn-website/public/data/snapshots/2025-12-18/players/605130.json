@@ -12,11 +12,11 @@
   },
   "current_team_id": 113,
   "metrics": {
-    "bb_pct_last_5_apps": 0.25,
-    "hard_hit_pct_last_5_apps": 0.3684,
-    "k_pct_last_5_apps": 0.125,
-    "whiff_pct_last_5_apps": 0.3,
-    "xwoba_last_5_apps": 0.4975
+    "bb_pct_last_5_apps": 0.08,
+    "hard_hit_pct_last_5_apps": 0.3214,
+    "k_pct_last_5_apps": 0.28,
+    "whiff_pct_last_5_apps": 0.3617,
+    "xwoba_last_5_apps": 0.386
   },
   "name": "Scott Barlow",
   "player_id": 605130,

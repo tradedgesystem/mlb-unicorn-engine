@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.17777777777777778,
-    "babip": 0.23529411764705882,
+    "avg": 0.16666666666666666,
+    "babip": 0.21951219512195122,
     "bb": 8,
     "doubles": 0,
-    "h": 8,
+    "h": 9,
     "hr": 0,
     "iso": 0.0,
-    "k": 11,
-    "obp": 0.3018867924528302,
-    "ops": 0.47966457023060793,
-    "ops_plus": 43,
-    "slg": 0.17777777777777778,
+    "k": 14,
+    "obp": 0.2698412698412698,
+    "ops": 0.4365079365079365,
+    "ops_plus": 30,
+    "slg": 0.16666666666666666,
     "triples": 0,
-    "woba": 0.23849056603773586,
-    "wrc_plus": 22
+    "woba": 0.21476190476190476,
+    "wrc_plus": -10
   },
   "basic_pitching": null,
   "current_team_id": 139,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.24193548387096775,
-    "contact_pct_last_50": 0.35294117647058826,
-    "hard_hit_pct_last_50": 0.2,
-    "xwoba_last_50": 0.15751219512195122
+    "chase_pct_last_50": 0.28,
+    "contact_pct_last_50": 0.34615384615384615,
+    "hard_hit_pct_last_50": 0.2222222222222222,
+    "xwoba_last_50": 0.1496
   },
   "name": "Taylor Walls",
   "player_id": 670764,

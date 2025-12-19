@@ -1,0 +1,38 @@
+{
+  "basic_batting": {
+    "avg": 0.25,
+    "babip": 0.25,
+    "bb": 0,
+    "doubles": 0,
+    "h": 1,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 0,
+    "obp": 0.25,
+    "ops": 0.5,
+    "ops_plus": 45,
+    "slg": 0.25,
+    "triples": 0,
+    "woba": 0.2225,
+    "wrc_plus": 1
+  },
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.25,
+    "chase_pct_last_50": 0.0,
+    "contact_pct_last_50": 0.8,
+    "hard_hit_pct_last_50": 1.0,
+    "xwoba_last_50": 0.60475
+  },
+  "name": "Eddie Rosario",
+  "player_id": 592696,
+  "player_name": "Eddie Rosario",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

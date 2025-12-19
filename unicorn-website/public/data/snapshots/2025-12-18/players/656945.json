@@ -13,10 +13,10 @@
   "current_team_id": 119,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.3462,
-    "k_pct_last_5_apps": 0.1765,
-    "whiff_pct_last_5_apps": 0.2051,
-    "xwoba_last_5_apps": 0.2927
+    "hard_hit_pct_last_5_apps": 0.25,
+    "k_pct_last_5_apps": 0.2609,
+    "whiff_pct_last_5_apps": 0.2281,
+    "xwoba_last_5_apps": 0.2997
   },
   "name": "Tanner Scott",
   "player_id": 656945,

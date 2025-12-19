@@ -12,11 +12,11 @@
   },
   "current_team_id": 141,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1875,
-    "hard_hit_pct_last_5_apps": 0.2941,
-    "k_pct_last_5_apps": 0.1875,
-    "whiff_pct_last_5_apps": 0.1739,
-    "xwoba_last_5_apps": 0.2573
+    "bb_pct_last_5_apps": 0.15,
+    "hard_hit_pct_last_5_apps": 0.2609,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.2059,
+    "xwoba_last_5_apps": 0.2699
   },
   "name": "Mason Fluharty",
   "player_id": 689254,

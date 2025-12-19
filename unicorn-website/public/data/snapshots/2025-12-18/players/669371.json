@@ -14,9 +14,9 @@
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
     "hard_hit_pct_last_5_apps": 0.0,
-    "k_pct_last_5_apps": 0.5,
-    "whiff_pct_last_5_apps": 0.4286,
-    "xwoba_last_5_apps": 0.117
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.3125,
+    "xwoba_last_5_apps": 0.1303
   },
   "name": "Cole Henry",
   "player_id": 669371,

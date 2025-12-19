@@ -1,0 +1,47 @@
+{
+  "basic_batting": {
+    "avg": 0.3333333333333333,
+    "babip": 1.0,
+    "bb": 0,
+    "doubles": 1,
+    "h": 1,
+    "hr": 0,
+    "iso": 0.3333333333333333,
+    "k": 2,
+    "obp": 0.3333333333333333,
+    "ops": 1.0,
+    "ops_plus": 179,
+    "slg": 0.6666666666666666,
+    "triples": 0,
+    "woba": 0.42333333333333334,
+    "wrc_plus": -38
+  },
+  "basic_pitching": {
+    "babip": 0.3333333333333333,
+    "bb": 1,
+    "era": 13.5,
+    "fip": 11.12558700583402,
+    "h": 4,
+    "hr": 1,
+    "ip": 2.0,
+    "whip": 2.5
+  },
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.25,
+    "hard_hit_pct_last_50": 1.0,
+    "xwoba_last_50": 0.141
+  },
+  "name": "Vidal Bruján",
+  "player_id": 660644,
+  "player_name": "Vidal Bruján",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

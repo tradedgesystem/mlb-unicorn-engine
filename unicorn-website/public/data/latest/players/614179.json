@@ -12,11 +12,11 @@
   },
   "current_team_id": 143,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1053,
-    "hard_hit_pct_last_5_apps": 0.2222,
-    "k_pct_last_5_apps": 0.1053,
-    "whiff_pct_last_5_apps": 0.2432,
-    "xwoba_last_5_apps": 0.3389
+    "bb_pct_last_5_apps": 0.16,
+    "hard_hit_pct_last_5_apps": 0.1818,
+    "k_pct_last_5_apps": 0.16,
+    "whiff_pct_last_5_apps": 0.2917,
+    "xwoba_last_5_apps": 0.311
   },
   "name": "José Ruiz",
   "player_id": 614179,

@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.3333333333333333,
-    "babip": 0.3333333333333333,
-    "bb": 0,
+    "avg": 0.2857142857142857,
+    "babip": 0.2857142857142857,
+    "bb": 2,
     "doubles": 0,
     "h": 2,
     "hr": 0,
     "iso": 0.0,
     "k": 1,
-    "obp": 0.2857142857142857,
-    "ops": 0.6190476190476191,
-    "ops_plus": 79,
-    "slg": 0.3333333333333333,
+    "obp": 0.4,
+    "ops": 0.6857142857142857,
+    "ops_plus": 102,
+    "slg": 0.2857142857142857,
     "triples": 0,
-    "woba": 0.2542857142857143,
-    "wrc_plus": 250
+    "woba": 0.316,
+    "wrc_plus": 235
   },
   "basic_pitching": null,
   "current_team_id": 145,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.25,
-    "contact_pct_last_50": 0.4,
-    "hard_hit_pct_last_50": 0.0,
-    "xwoba_last_50": 0.18757142857142858
+    "chase_pct_last_50": 0.23076923076923078,
+    "contact_pct_last_50": 0.4375,
+    "hard_hit_pct_last_50": 0.14285714285714285,
+    "xwoba_last_50": 0.19575
   },
   "name": "Omar Narváez",
   "player_id": 553882,

@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.5625,
+    "bb": 1,
+    "era": 11.25,
+    "fip": 8.37558700583402,
+    "h": 11,
+    "hr": 2,
+    "ip": 4.0,
+    "whip": 3.0
+  },
+  "current_team_id": 109,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "J.P. Feyereisen",
+  "player_id": 656420,
+  "player_name": "J.P. Feyereisen",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.125,
-    "babip": 0.2,
-    "bb": 3,
+    "avg": 0.23076923076923078,
+    "babip": 0.3333333333333333,
+    "bb": 4,
     "doubles": 0,
-    "h": 1,
+    "h": 3,
     "hr": 0,
     "iso": 0.0,
-    "k": 3,
-    "obp": 0.36363636363636365,
-    "ops": 0.48863636363636365,
-    "ops_plus": 49,
-    "slg": 0.125,
+    "k": 4,
+    "obp": 0.4117647058823529,
+    "ops": 0.6425339366515836,
+    "ops_plus": 92,
+    "slg": 0.23076923076923078,
     "triples": 0,
-    "woba": 0.2690909090909091,
-    "wrc_plus": 17
+    "woba": 0.31941176470588234,
+    "wrc_plus": 102
   },
   "basic_pitching": {
     "babip": 0.6,
@@ -29,10 +29,10 @@
   "current_team_id": 136,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.13333333333333333,
-    "contact_pct_last_50": 0.45454545454545453,
-    "hard_hit_pct_last_50": 0.2,
-    "xwoba_last_50": 0.089875
+    "chase_pct_last_50": 0.14285714285714285,
+    "contact_pct_last_50": 0.42857142857142855,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.17346153846153847
   },
   "name": "Leo Rivas",
   "player_id": 660844,

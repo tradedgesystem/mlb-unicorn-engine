@@ -12,11 +12,11 @@
   },
   "current_team_id": 138,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2857,
-    "hard_hit_pct_last_5_apps": 0.3214,
-    "k_pct_last_5_apps": 0.0476,
-    "whiff_pct_last_5_apps": 0.1622,
-    "xwoba_last_5_apps": 0.582
+    "bb_pct_last_5_apps": 0.25,
+    "hard_hit_pct_last_5_apps": 0.3125,
+    "k_pct_last_5_apps": 0.0833,
+    "whiff_pct_last_5_apps": 0.1667,
+    "xwoba_last_5_apps": 0.5515
   },
   "name": "Chris Roycroft",
   "player_id": 688297,

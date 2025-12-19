@@ -148,6 +148,15 @@
       ]
     },
     {
+      "href": "/players/622253/",
+      "name": "Dillon Tate",
+      "player_id": 622253,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/606930/",
       "name": "Jacob Barnes",
       "player_id": 606930,
@@ -178,6 +187,15 @@
       "href": "/players/680704/",
       "name": "Nick Sandlin",
       "player_id": 680704,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/687606/",
+      "name": "Paxton Schultz",
+      "player_id": 687606,
       "position": "P",
       "roles": [
         "reliever"

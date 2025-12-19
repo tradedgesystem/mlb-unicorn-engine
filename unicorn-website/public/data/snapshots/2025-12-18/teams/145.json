@@ -47,6 +47,15 @@
       ]
     },
     {
+      "href": "/players/700337/",
+      "name": "Edgar Quero",
+      "player_id": 700337,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/675659/",
       "name": "Greg Jones",
       "player_id": 675659,
@@ -202,6 +211,15 @@
       ]
     },
     {
+      "href": "/players/694363/",
+      "name": "Jared Shuster",
+      "player_id": 694363,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/673929/",
       "name": "Jordan Leasure",
       "player_id": 673929,
@@ -232,6 +250,15 @@
       "href": "/players/682171/",
       "name": "Penn Murfee",
       "player_id": 682171,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/621051/",
+      "name": "Steven Wilson",
+      "player_id": 621051,
       "position": "P",
       "roles": [
         "reliever"

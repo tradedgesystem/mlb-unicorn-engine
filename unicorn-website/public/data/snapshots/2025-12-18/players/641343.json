@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.2,
+    "avg": 0.16666666666666666,
     "babip": 0.3333333333333333,
     "bb": 4,
     "doubles": 1,
     "h": 3,
     "hr": 1,
-    "iso": 0.26666666666666666,
-    "k": 8,
-    "obp": 0.3684210526315789,
-    "ops": 0.8350877192982455,
-    "ops_plus": 140,
-    "slg": 0.4666666666666667,
+    "iso": 0.22222222222222224,
+    "k": 11,
+    "obp": 0.3181818181818182,
+    "ops": 0.7070707070707071,
+    "ops_plus": 103,
+    "slg": 0.3888888888888889,
     "triples": 0,
-    "woba": 0.3694736842105263,
-    "wrc_plus": 188
+    "woba": 0.3190909090909091,
+    "wrc_plus": 166
   },
   "basic_pitching": {
     "babip": 0.34782608695652173,
@@ -29,10 +29,10 @@
   "current_team_id": 158,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.2162,
-    "contact_pct_last_50": 0.25,
+    "chase_pct_last_50": 0.3333,
+    "contact_pct_last_50": 0.2059,
     "hard_hit_pct_last_50": 0.7143,
-    "xwoba_last_50": 0.3247
+    "xwoba_last_50": 0.1892
   },
   "name": "Jake Bauers",
   "player_id": 641343,

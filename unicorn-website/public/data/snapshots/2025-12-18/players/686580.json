@@ -12,11 +12,11 @@
   },
   "current_team_id": 111,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0588,
-    "hard_hit_pct_last_5_apps": 0.05,
-    "k_pct_last_5_apps": 0.1176,
-    "whiff_pct_last_5_apps": 0.2069,
-    "xwoba_last_5_apps": 0.2701
+    "bb_pct_last_5_apps": 0.05,
+    "hard_hit_pct_last_5_apps": 0.087,
+    "k_pct_last_5_apps": 0.2,
+    "whiff_pct_last_5_apps": 0.2286,
+    "xwoba_last_5_apps": 0.318
   },
   "name": "Justin Slaten",
   "player_id": 686580,

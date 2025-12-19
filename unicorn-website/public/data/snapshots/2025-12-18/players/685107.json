@@ -12,11 +12,11 @@
   },
   "current_team_id": 146,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0625,
-    "hard_hit_pct_last_5_apps": 0.3636,
-    "k_pct_last_5_apps": 0.1875,
-    "whiff_pct_last_5_apps": 0.1481,
-    "xwoba_last_5_apps": 0.4279
+    "bb_pct_last_5_apps": 0.0667,
+    "hard_hit_pct_last_5_apps": 0.3333,
+    "k_pct_last_5_apps": 0.1333,
+    "whiff_pct_last_5_apps": 0.1071,
+    "xwoba_last_5_apps": 0.3929
   },
   "name": "Anthony Veneziano",
   "player_id": 685107,

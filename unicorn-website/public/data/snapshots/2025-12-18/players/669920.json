@@ -12,11 +12,11 @@
   },
   "current_team_id": 133,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0714,
-    "hard_hit_pct_last_5_apps": 0.7273,
-    "k_pct_last_5_apps": 0.1429,
-    "whiff_pct_last_5_apps": 0.1875,
-    "xwoba_last_5_apps": 0.4083
+    "bb_pct_last_5_apps": 0.0588,
+    "hard_hit_pct_last_5_apps": 0.6667,
+    "k_pct_last_5_apps": 0.2353,
+    "whiff_pct_last_5_apps": 0.2857,
+    "xwoba_last_5_apps": 0.3336
   },
   "name": "Jason Alexander",
   "player_id": 669920,

@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.14285714285714285,
-    "babip": 0.16666666666666666,
-    "bb": 1,
+    "avg": 0.18181818181818182,
+    "babip": 0.2222222222222222,
+    "bb": 2,
     "doubles": 0,
-    "h": 2,
+    "h": 4,
     "hr": 0,
     "iso": 0.0,
-    "k": 2,
-    "obp": 0.25,
-    "ops": 0.39285714285714285,
-    "ops_plus": 18,
-    "slg": 0.14285714285714285,
+    "k": 4,
+    "obp": 0.28,
+    "ops": 0.46181818181818185,
+    "ops_plus": 37,
+    "slg": 0.18181818181818182,
     "triples": 0,
-    "woba": 0.199375,
-    "wrc_plus": 3
+    "woba": 0.22640000000000002,
+    "wrc_plus": 87
   },
   "basic_pitching": {
     "babip": 0.26666666666666666,
@@ -29,10 +29,10 @@
   "current_team_id": 112,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3333333333333333,
-    "contact_pct_last_50": 0.42857142857142855,
-    "hard_hit_pct_last_50": 0.3333333333333333,
-    "xwoba_last_50": 0.256
+    "chase_pct_last_50": 0.2222222222222222,
+    "contact_pct_last_50": 0.40540540540540543,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.262
   },
   "name": "Jon Berti",
   "player_id": 542932,

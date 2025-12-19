@@ -12,11 +12,11 @@
   },
   "current_team_id": 112,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.2857,
-    "k_pct_last_5_apps": 0.0,
-    "whiff_pct_last_5_apps": 0.125,
-    "xwoba_last_5_apps": 0.457
+    "bb_pct_last_5_apps": 0.1,
+    "hard_hit_pct_last_5_apps": 0.2222,
+    "k_pct_last_5_apps": 0.1,
+    "whiff_pct_last_5_apps": 0.0952,
+    "xwoba_last_5_apps": 0.4133
   },
   "name": "Daniel Palencia",
   "player_id": 694037,

@@ -117,6 +117,15 @@
       "roles": [
         "hitter"
       ]
+    },
+    {
+      "href": "/players/660644/",
+      "name": "Vidal Bruján",
+      "player_id": 660644,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
     }
   ],
   "relievers": [
@@ -175,9 +184,27 @@
       ]
     },
     {
+      "href": "/players/696136/",
+      "name": "Jordan Wicks",
+      "player_id": 696136,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/657240/",
       "name": "Julian Merryweather",
       "player_id": 657240,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681432/",
+      "name": "Luke Little",
+      "player_id": 681432,
       "position": "P",
       "roles": [
         "reliever"

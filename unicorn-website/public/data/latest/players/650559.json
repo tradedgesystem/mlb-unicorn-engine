@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.2,
-    "babip": 0.32142857142857145,
+    "avg": 0.19148936170212766,
+    "babip": 0.3103448275862069,
     "bb": 3,
     "doubles": 1,
     "h": 9,
     "hr": 0,
-    "iso": 0.0222222222222222,
-    "k": 17,
-    "obp": 0.25,
-    "ops": 0.4722222222222222,
-    "ops_plus": 38,
-    "slg": 0.2222222222222222,
+    "iso": 0.021276595744680854,
+    "k": 18,
+    "obp": 0.24,
+    "ops": 0.4527659574468085,
+    "ops_plus": 32,
+    "slg": 0.2127659574468085,
     "triples": 0,
-    "woba": 0.21791666666666665,
-    "wrc_plus": 11
+    "woba": 0.20919999999999997,
+    "wrc_plus": 18
   },
   "basic_pitching": null,
   "current_team_id": 144,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3968253968253968,
-    "contact_pct_last_50": 0.3111111111111111,
-    "hard_hit_pct_last_50": 0.5357142857142857,
-    "xwoba_last_50": 0.2265111111111111
+    "chase_pct_last_50": 0.390625,
+    "contact_pct_last_50": 0.30851063829787234,
+    "hard_hit_pct_last_50": 0.5172413793103449,
+    "xwoba_last_50": 0.21893617021276596
   },
   "name": "Bryan De La Cruz",
   "player_id": 650559,

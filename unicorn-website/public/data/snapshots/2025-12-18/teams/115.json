@@ -2,6 +2,15 @@
   "abbreviation": "COL",
   "hitters": [
     {
+      "href": "/players/668845/",
+      "name": "Aaron Schunk",
+      "player_id": 668845,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/691182/",
       "name": "Adael Amador",
       "player_id": 691182,
@@ -166,6 +175,15 @@
       ]
     },
     {
+      "href": "/players/677955/",
+      "name": "Jaden Hill",
+      "player_id": 677955,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/656234/",
       "name": "Jake Bird",
       "player_id": 656234,
@@ -223,6 +241,15 @@
       "href": "/players/680767/",
       "name": "Victor Vodnik",
       "player_id": 680767,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/688642/",
+      "name": "Zach Agnos",
+      "player_id": 688642,
       "position": "P",
       "roles": [
         "reliever"

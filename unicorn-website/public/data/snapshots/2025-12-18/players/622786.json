@@ -12,11 +12,11 @@
   },
   "current_team_id": 146,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2143,
-    "hard_hit_pct_last_5_apps": 0.2308,
-    "k_pct_last_5_apps": 0.1429,
-    "whiff_pct_last_5_apps": 0.1765,
-    "xwoba_last_5_apps": 0.2927
+    "bb_pct_last_5_apps": 0.1429,
+    "hard_hit_pct_last_5_apps": 0.25,
+    "k_pct_last_5_apps": 0.0952,
+    "whiff_pct_last_5_apps": 0.1154,
+    "xwoba_last_5_apps": 0.2294
   },
   "name": "Jesus Tinoco",
   "player_id": 622786,

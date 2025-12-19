@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.35714285714285715,
-    "babip": 0.45454545454545453,
+    "avg": 0.3888888888888889,
+    "babip": 0.4666666666666667,
     "bb": 2,
     "doubles": 2,
-    "h": 5,
+    "h": 7,
     "hr": 0,
-    "iso": 0.14285714285714285,
+    "iso": 0.1111111111111111,
     "k": 3,
-    "obp": 0.47058823529411764,
-    "ops": 0.9705882352941176,
+    "obp": 0.47619047619047616,
+    "ops": 0.9761904761904762,
     "ops_plus": 182,
     "slg": 0.5,
     "triples": 0,
-    "woba": 0.43,
-    "wrc_plus": 134
+    "woba": 0.43285714285714283,
+    "wrc_plus": 150
   },
   "basic_pitching": null,
   "current_team_id": 118,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.2222222222222222,
-    "contact_pct_last_50": 0.36666666666666664,
-    "hard_hit_pct_last_50": 0.36363636363636365,
-    "xwoba_last_50": 0.31626666666666664
+    "chase_pct_last_50": 0.30303030303030304,
+    "contact_pct_last_50": 0.39473684210526316,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.3101052631578947
   },
   "name": "Mark Canha",
   "player_id": 592192,

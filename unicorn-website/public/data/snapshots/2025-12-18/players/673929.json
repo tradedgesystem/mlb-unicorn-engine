@@ -12,11 +12,11 @@
   },
   "current_team_id": 145,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0952,
-    "hard_hit_pct_last_5_apps": 0.2381,
-    "k_pct_last_5_apps": 0.381,
-    "whiff_pct_last_5_apps": 0.425,
-    "xwoba_last_5_apps": 0.213
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.2273,
+    "k_pct_last_5_apps": 0.375,
+    "whiff_pct_last_5_apps": 0.4348,
+    "xwoba_last_5_apps": 0.2321
   },
   "name": "Jordan Leasure",
   "player_id": 673929,

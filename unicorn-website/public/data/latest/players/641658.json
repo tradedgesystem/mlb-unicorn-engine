@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.17647058823529413,
-    "babip": 0.25,
+    "avg": 0.13043478260869565,
+    "babip": 0.21428571428571427,
     "bb": 7,
     "doubles": 0,
     "h": 3,
     "hr": 0,
     "iso": 0.0,
-    "k": 5,
-    "obp": 0.4166666666666667,
-    "ops": 0.5931372549019608,
-    "ops_plus": 80,
-    "slg": 0.17647058823529413,
+    "k": 9,
+    "obp": 0.3333333333333333,
+    "ops": 0.46376811594202894,
+    "ops_plus": 41,
+    "slg": 0.13043478260869565,
     "triples": 0,
-    "woba": 0.3125,
-    "wrc_plus": 93
+    "woba": 0.25,
+    "wrc_plus": 43
   },
   "basic_pitching": {
     "babip": 0.0,
@@ -29,10 +29,10 @@
   "current_team_id": 109,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.14285714285714285,
-    "contact_pct_last_50": 0.34782608695652173,
-    "hard_hit_pct_last_50": 0.25,
-    "xwoba_last_50": 0.1608181818181818
+    "chase_pct_last_50": 0.20689655172413793,
+    "contact_pct_last_50": 0.29411764705882354,
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.109
   },
   "name": "Garrett Hampson",
   "player_id": 641658,

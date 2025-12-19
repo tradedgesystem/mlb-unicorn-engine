@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.2962962962962963,
-    "babip": 0.4444444444444444,
+    "avg": 0.35,
+    "babip": 0.4482758620689655,
     "bb": 2,
-    "doubles": 0,
-    "h": 8,
-    "hr": 0,
-    "iso": 0.0,
-    "k": 9,
-    "obp": 0.3448275862068966,
-    "ops": 0.6411238825031929,
-    "ops_plus": 88,
-    "slg": 0.2962962962962963,
+    "doubles": 1,
+    "h": 14,
+    "hr": 1,
+    "iso": 0.10000000000000003,
+    "k": 11,
+    "obp": 0.37209302325581395,
+    "ops": 0.8220930232558139,
+    "ops_plus": 136,
+    "slg": 0.45,
     "triples": 0,
-    "woba": 0.29310344827586204,
-    "wrc_plus": 31
+    "woba": 0.35883720930232554,
+    "wrc_plus": 117
   },
   "basic_pitching": {
     "babip": 0.45454545454545453,
@@ -28,11 +28,11 @@
   },
   "current_team_id": 146,
   "metrics": {
-    "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.3125,
-    "contact_pct_last_50": 0.3958,
-    "hard_hit_pct_last_50": 0.3889,
-    "xwoba_last_50": 0.2755
+    "barrel_pct_last_50": 0.0333,
+    "chase_pct_last_50": 0.3433,
+    "contact_pct_last_50": 0.4366,
+    "hard_hit_pct_last_50": 0.3667,
+    "xwoba_last_50": 0.2613
   },
   "name": "Javier Sanoja",
   "player_id": 691594,

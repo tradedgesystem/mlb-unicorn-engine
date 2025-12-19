@@ -1,29 +1,29 @@
 {
   "basic_batting": {
-    "avg": 0.21052631578947367,
-    "babip": 0.3076923076923077,
+    "avg": 0.17391304347826086,
+    "babip": 0.2857142857142857,
     "bb": 0,
     "doubles": 2,
     "h": 4,
     "hr": 0,
-    "iso": 0.10526315789473684,
-    "k": 6,
-    "obp": 0.25,
-    "ops": 0.5657894736842105,
-    "ops_plus": 63,
-    "slg": 0.3157894736842105,
+    "iso": 0.08695652173913043,
+    "k": 9,
+    "obp": 0.20833333333333334,
+    "ops": 0.4692028985507246,
+    "ops_plus": 34,
+    "slg": 0.2608695652173913,
     "triples": 0,
-    "woba": 0.252,
-    "wrc_plus": 37
+    "woba": 0.21,
+    "wrc_plus": 28
   },
   "basic_pitching": null,
   "current_team_id": 137,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.47058823529411764,
-    "contact_pct_last_50": 0.3023255813953488,
-    "hard_hit_pct_last_50": 0.46153846153846156,
-    "xwoba_last_50": 0.35425
+    "chase_pct_last_50": 0.525,
+    "contact_pct_last_50": 0.2692307692307692,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.32445833333333335
   },
   "name": "Casey Schmitt",
   "player_id": 669477,

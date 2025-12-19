@@ -1,0 +1,26 @@
+{
+  "config": {
+    "season": 2025,
+    "start_date": "2025-03-27",
+    "end_date": "2025-04-20",
+    "min_pa": 50,
+    "game_type": "R",
+    "cache_dir": "data/cache/wrc_plus",
+    "output_dir": "data/outputs"
+  },
+  "target": {
+    "player_id": 665487,
+    "target_wrc_plus": 196.0
+  },
+  "calibration": {
+    "alpha": 0.9990297425421386,
+    "beta": 0.11553521735033284,
+    "pf_gamma": 0.0,
+    "success": true,
+    "message": "Both `ftol` and `xtol` termination conditions are satisfied.",
+    "nfev": 5,
+    "loss": 323.84148347736874
+  },
+  "data_source": "pybaseball.statcast",
+  "generated_at": "2025-12-19T21:19:53Z"
+}

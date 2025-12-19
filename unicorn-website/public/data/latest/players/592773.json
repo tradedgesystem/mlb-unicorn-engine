@@ -12,11 +12,11 @@
   },
   "current_team_id": 121,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0625,
-    "hard_hit_pct_last_5_apps": 0.2632,
-    "k_pct_last_5_apps": 0.4375,
-    "whiff_pct_last_5_apps": 0.3529,
-    "xwoba_last_5_apps": 0.2957
+    "bb_pct_last_5_apps": 0.0435,
+    "hard_hit_pct_last_5_apps": 0.1471,
+    "k_pct_last_5_apps": 0.3478,
+    "whiff_pct_last_5_apps": 0.3077,
+    "xwoba_last_5_apps": 0.2153
   },
   "name": "Ryne Stanek",
   "player_id": 592773,

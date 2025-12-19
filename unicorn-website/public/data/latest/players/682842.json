@@ -12,11 +12,11 @@
   },
   "current_team_id": 158,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1667,
-    "hard_hit_pct_last_5_apps": 0.2727,
-    "k_pct_last_5_apps": 0.3333,
-    "whiff_pct_last_5_apps": 0.4091,
-    "xwoba_last_5_apps": 0.2056
+    "bb_pct_last_5_apps": 0.1429,
+    "hard_hit_pct_last_5_apps": 0.3889,
+    "k_pct_last_5_apps": 0.2857,
+    "whiff_pct_last_5_apps": 0.2857,
+    "xwoba_last_5_apps": 0.2651
   },
   "name": "Abner Uribe",
   "player_id": 682842,

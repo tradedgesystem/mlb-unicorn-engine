@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.16666666666666666,
-    "babip": 0.25,
+    "avg": 0.15789473684210525,
+    "babip": 0.125,
     "bb": 5,
     "doubles": 0,
-    "h": 2,
-    "hr": 1,
-    "iso": 0.25,
-    "k": 7,
-    "obp": 0.4117647058823529,
-    "ops": 0.8284313725490196,
-    "ops_plus": 141,
-    "slg": 0.4166666666666667,
+    "h": 3,
+    "hr": 2,
+    "iso": 0.3157894736842105,
+    "k": 9,
+    "obp": 0.3333333333333333,
+    "ops": 0.8070175438596491,
+    "ops_plus": 129,
+    "slg": 0.47368421052631576,
     "triples": 0,
-    "woba": 0.37882352941176467,
-    "wrc_plus": 5
+    "woba": 0.3558333333333333,
+    "wrc_plus": 17
   },
   "basic_pitching": {
     "babip": 0.42857142857142855,
@@ -29,10 +29,10 @@
   "current_team_id": 114,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.44,
-    "contact_pct_last_50": 0.2,
+    "chase_pct_last_50": 0.40540540540540543,
+    "contact_pct_last_50": 0.23809523809523808,
     "hard_hit_pct_last_50": 0.4,
-    "xwoba_last_50": 0.10041666666666667
+    "xwoba_last_50": 0.16052631578947368
   },
   "name": "Austin Hedges",
   "player_id": 595978,

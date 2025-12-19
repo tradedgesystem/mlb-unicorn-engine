@@ -12,11 +12,11 @@
   },
   "current_team_id": 134,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2,
-    "hard_hit_pct_last_5_apps": 0.5,
-    "k_pct_last_5_apps": 0.1,
-    "whiff_pct_last_5_apps": 0.4375,
-    "xwoba_last_5_apps": 0.5099
+    "bb_pct_last_5_apps": 0.1333,
+    "hard_hit_pct_last_5_apps": 0.6154,
+    "k_pct_last_5_apps": 0.2,
+    "whiff_pct_last_5_apps": 0.4167,
+    "xwoba_last_5_apps": 0.401
   },
   "name": "David Bednar",
   "player_id": 670280,

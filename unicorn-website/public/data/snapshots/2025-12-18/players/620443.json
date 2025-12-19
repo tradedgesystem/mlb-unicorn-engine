@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.2894736842105263,
-    "babip": 0.35714285714285715,
-    "bb": 2,
-    "doubles": 5,
-    "h": 11,
+    "avg": 0.24,
+    "babip": 0.2972972972972973,
+    "bb": 3,
+    "doubles": 6,
+    "h": 12,
     "hr": 1,
-    "iso": 0.21052631578947367,
-    "k": 9,
-    "obp": 0.325,
-    "ops": 0.825,
-    "ops_plus": 135,
-    "slg": 0.5,
+    "iso": 0.18,
+    "k": 12,
+    "obp": 0.2830188679245283,
+    "ops": 0.7030188679245283,
+    "ops_plus": 99,
+    "slg": 0.42,
     "triples": 0,
-    "woba": 0.357,
-    "wrc_plus": 198
+    "woba": 0.30641509433962266,
+    "wrc_plus": 139
   },
   "basic_pitching": {
     "babip": 0.6,
@@ -28,11 +28,11 @@
   },
   "current_team_id": 121,
   "metrics": {
-    "barrel_pct_last_50": 0.034482758620689655,
-    "chase_pct_last_50": 0.27419354838709675,
-    "contact_pct_last_50": 0.4084507042253521,
-    "hard_hit_pct_last_50": 0.5517241379310345,
-    "xwoba_last_50": 0.3841578947368421
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.2891566265060241,
+    "contact_pct_last_50": 0.3978494623655914,
+    "hard_hit_pct_last_50": 0.5675675675675675,
+    "xwoba_last_50": 0.36759574468085104
   },
   "name": "Luis Torrens",
   "player_id": 620443,

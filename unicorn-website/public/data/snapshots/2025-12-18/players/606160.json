@@ -12,11 +12,11 @@
   },
   "current_team_id": 144,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2083,
-    "hard_hit_pct_last_5_apps": 0.1935,
-    "k_pct_last_5_apps": 0.2917,
-    "whiff_pct_last_5_apps": 0.3966,
-    "xwoba_last_5_apps": 0.2327
+    "bb_pct_last_5_apps": 0.2,
+    "hard_hit_pct_last_5_apps": 0.2051,
+    "k_pct_last_5_apps": 0.2667,
+    "whiff_pct_last_5_apps": 0.3768,
+    "xwoba_last_5_apps": 0.2802
   },
   "name": "Rafael Montero",
   "player_id": 606160,

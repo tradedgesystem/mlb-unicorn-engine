@@ -1,29 +1,29 @@
 {
   "basic_batting": {
     "avg": 0.25,
-    "babip": 0.35294117647058826,
+    "babip": 0.32,
     "bb": 1,
     "doubles": 0,
-    "h": 7,
+    "h": 9,
     "hr": 1,
-    "iso": 0.10714285714285715,
+    "iso": 0.08333333333333331,
     "k": 10,
-    "obp": 0.27586206896551724,
-    "ops": 0.6330049261083743,
-    "ops_plus": 82,
-    "slg": 0.35714285714285715,
+    "obp": 0.2702702702702703,
+    "ops": 0.6036036036036037,
+    "ops_plus": 73,
+    "slg": 0.3333333333333333,
     "triples": 0,
-    "woba": 0.2803448275862069,
-    "wrc_plus": 39
+    "woba": 0.2678378378378378,
+    "wrc_plus": 18
   },
   "basic_pitching": null,
   "current_team_id": 135,
   "metrics": {
-    "barrel_pct_last_50": 0.1111111111111111,
-    "chase_pct_last_50": 0.41025641025641024,
-    "contact_pct_last_50": 0.375,
-    "hard_hit_pct_last_50": 0.2777777777777778,
-    "xwoba_last_50": 0.28685714285714287
+    "barrel_pct_last_50": 0.08,
+    "chase_pct_last_50": 0.40476190476190477,
+    "contact_pct_last_50": 0.44642857142857145,
+    "hard_hit_pct_last_50": 0.32,
+    "xwoba_last_50": 0.3143714285714286
   },
   "name": "Martín Maldonado",
   "player_id": 455117,

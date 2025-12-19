@@ -12,11 +12,11 @@
   },
   "current_team_id": 142,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.4167,
-    "k_pct_last_5_apps": 0.3333,
-    "whiff_pct_last_5_apps": 0.4091,
-    "xwoba_last_5_apps": 0.3112
+    "bb_pct_last_5_apps": 0.0741,
+    "hard_hit_pct_last_5_apps": 0.3939,
+    "k_pct_last_5_apps": 0.2222,
+    "whiff_pct_last_5_apps": 0.3,
+    "xwoba_last_5_apps": 0.3294
   },
   "name": "Griffin Jax",
   "player_id": 643377,

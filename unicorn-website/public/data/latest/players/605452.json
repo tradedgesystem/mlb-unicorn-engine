@@ -12,11 +12,11 @@
   },
   "current_team_id": 143,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.36,
-    "k_pct_last_5_apps": 0.1304,
-    "whiff_pct_last_5_apps": 0.1212,
-    "xwoba_last_5_apps": 0.3905
+    "bb_pct_last_5_apps": 0.0278,
+    "hard_hit_pct_last_5_apps": 0.3864,
+    "k_pct_last_5_apps": 0.0833,
+    "whiff_pct_last_5_apps": 0.1356,
+    "xwoba_last_5_apps": 0.4044
   },
   "name": "Joe Ross",
   "player_id": 605452,

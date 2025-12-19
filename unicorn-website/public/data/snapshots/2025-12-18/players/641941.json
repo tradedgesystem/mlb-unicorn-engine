@@ -13,10 +13,10 @@
   "current_team_id": 113,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.5294,
-    "k_pct_last_5_apps": 0.2857,
-    "whiff_pct_last_5_apps": 0.2692,
-    "xwoba_last_5_apps": 0.326
+    "hard_hit_pct_last_5_apps": 0.5,
+    "k_pct_last_5_apps": 0.3158,
+    "whiff_pct_last_5_apps": 0.2571,
+    "xwoba_last_5_apps": 0.427
   },
   "name": "Emilio Pagán",
   "player_id": 641941,

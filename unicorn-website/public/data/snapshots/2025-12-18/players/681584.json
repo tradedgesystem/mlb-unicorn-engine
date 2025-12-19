@@ -1,0 +1,38 @@
+{
+  "basic_batting": {
+    "avg": 0.25,
+    "babip": 0.3333333333333333,
+    "bb": 0,
+    "doubles": 0,
+    "h": 1,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 1,
+    "obp": 0.25,
+    "ops": 0.5,
+    "ops_plus": 45,
+    "slg": 0.25,
+    "triples": 0,
+    "woba": 0.2225,
+    "wrc_plus": -101
+  },
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.375,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.26125
+  },
+  "name": "David Villar",
+  "player_id": 681584,
+  "player_name": "David Villar",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

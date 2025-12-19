@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.1,
-    "babip": 0.16666666666666666,
+    "avg": 0.14285714285714285,
+    "babip": 0.25,
     "bb": 1,
     "doubles": 0,
-    "h": 1,
+    "h": 2,
     "hr": 0,
     "iso": 0.0,
-    "k": 4,
-    "obp": 0.18181818181818182,
-    "ops": 0.28181818181818186,
-    "ops_plus": -15,
-    "slg": 0.1,
+    "k": 6,
+    "obp": 0.2,
+    "ops": 0.34285714285714286,
+    "ops_plus": 1,
+    "slg": 0.14285714285714285,
     "triples": 0,
-    "woba": 0.14363636363636365,
-    "wrc_plus": 131
+    "woba": 0.16466666666666666,
+    "wrc_plus": 87
   },
   "basic_pitching": {
     "babip": 0.25,
@@ -30,9 +30,9 @@
   "metrics": {
     "barrel_pct_last_50": 0.0,
     "chase_pct_last_50": 0.4,
-    "contact_pct_last_50": 0.2727272727272727,
+    "contact_pct_last_50": 0.26666666666666666,
     "hard_hit_pct_last_50": 0.5,
-    "xwoba_last_50": 0.1164
+    "xwoba_last_50": 0.11021428571428571
   },
   "name": "Christian Koss",
   "player_id": 683766,

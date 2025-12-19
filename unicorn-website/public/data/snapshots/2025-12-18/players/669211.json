@@ -12,11 +12,11 @@
   },
   "current_team_id": 110,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1304,
-    "hard_hit_pct_last_5_apps": 0.3438,
-    "k_pct_last_5_apps": 0.1304,
-    "whiff_pct_last_5_apps": 0.0976,
-    "xwoba_last_5_apps": 0.418
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.2188,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.1957,
+    "xwoba_last_5_apps": 0.3192
   },
   "name": "Keegan Akin",
   "player_id": 669211,

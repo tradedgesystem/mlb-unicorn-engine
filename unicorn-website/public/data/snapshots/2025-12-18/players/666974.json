@@ -12,11 +12,11 @@
   },
   "current_team_id": 110,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.2273,
-    "k_pct_last_5_apps": 0.2353,
-    "whiff_pct_last_5_apps": 0.303,
-    "xwoba_last_5_apps": 0.2422
+    "bb_pct_last_5_apps": 0.05,
+    "hard_hit_pct_last_5_apps": 0.1923,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.2895,
+    "xwoba_last_5_apps": 0.2512
   },
   "name": "Yennier Cano",
   "player_id": 666974,

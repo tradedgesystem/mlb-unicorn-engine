@@ -10,11 +10,11 @@
     "k": 0,
     "obp": 1.0,
     "ops": 2.0,
-    "ops_plus": 482,
+    "ops_plus": 479,
     "slg": 1.0,
     "triples": 0,
     "woba": 0.89,
-    "wrc_plus": -109
+    "wrc_plus": -26
   },
   "basic_pitching": {
     "babip": 0.25176470588235295,
@@ -28,11 +28,11 @@
   },
   "current_team_id": 109,
   "metrics": {
-    "bb_pct_last_5_apps": 0.025,
-    "hard_hit_pct_last_5_apps": 0.2549,
+    "bb_pct_last_5_apps": 0.0417,
+    "hard_hit_pct_last_5_apps": 0.2787,
     "k_pct_last_5_apps": 0.25,
-    "whiff_pct_last_5_apps": 0.2055,
-    "xwoba_last_5_apps": 0.2994
+    "whiff_pct_last_5_apps": 0.2093,
+    "xwoba_last_5_apps": 0.3128
   },
   "name": "Ryne Nelson",
   "player_id": 669194,

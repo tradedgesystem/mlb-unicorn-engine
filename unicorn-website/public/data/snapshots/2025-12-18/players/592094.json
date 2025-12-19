@@ -12,11 +12,11 @@
   },
   "current_team_id": 135,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1,
-    "hard_hit_pct_last_5_apps": 0.2273,
-    "k_pct_last_5_apps": 0.35,
-    "whiff_pct_last_5_apps": 0.3714,
-    "xwoba_last_5_apps": 0.2713
+    "bb_pct_last_5_apps": 0.0769,
+    "hard_hit_pct_last_5_apps": 0.1875,
+    "k_pct_last_5_apps": 0.3462,
+    "whiff_pct_last_5_apps": 0.3333,
+    "xwoba_last_5_apps": 0.2205
   },
   "name": "Jason Adam",
   "player_id": 592094,

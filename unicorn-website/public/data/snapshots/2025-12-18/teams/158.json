@@ -11,6 +11,15 @@
       ]
     },
     {
+      "href": "/players/702332/",
+      "name": "Caleb Durbin",
+      "player_id": 702332,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/592885/",
       "name": "Christian Yelich",
       "player_id": 592885,
@@ -243,6 +252,15 @@
       "href": "/players/500779/",
       "name": "Jose Quintana",
       "player_id": 500779,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/701656/",
+      "name": "Logan Henderson",
+      "player_id": 701656,
       "position": "P",
       "roles": [
         "starter"

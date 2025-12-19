@@ -12,11 +12,11 @@
   },
   "current_team_id": 136,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0714,
-    "hard_hit_pct_last_5_apps": 0.2222,
+    "bb_pct_last_5_apps": 0.0588,
+    "hard_hit_pct_last_5_apps": 0.2381,
     "k_pct_last_5_apps": 0.0,
-    "whiff_pct_last_5_apps": 0.2,
-    "xwoba_last_5_apps": 0.6049
+    "whiff_pct_last_5_apps": 0.1786,
+    "xwoba_last_5_apps": 0.5324
   },
   "name": "Casey Lawrence",
   "player_id": 596271,

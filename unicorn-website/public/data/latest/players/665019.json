@@ -8,13 +8,13 @@
     "hr": 0,
     "iso": 0.0,
     "k": 0,
-    "obp": 0.25,
-    "ops": 0.25,
-    "ops_plus": -20,
+    "obp": 0.16666666666666666,
+    "ops": 0.16666666666666666,
+    "ops_plus": -47,
     "slg": 0.0,
     "triples": 0,
-    "woba": 0.1725,
-    "wrc_plus": 138
+    "woba": 0.11499999999999999,
+    "wrc_plus": 86
   },
   "basic_pitching": {
     "babip": 0.25,
@@ -29,10 +29,10 @@
   "current_team_id": 143,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.25,
+    "chase_pct_last_50": 0.2857142857142857,
     "contact_pct_last_50": 0.5,
-    "hard_hit_pct_last_50": 0.0,
-    "xwoba_last_50": 0.19266666666666668
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.2586
   },
   "name": "Kody Clemens",
   "player_id": 665019,

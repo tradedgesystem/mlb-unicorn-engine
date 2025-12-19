@@ -10,11 +10,11 @@
     "k": 16,
     "obp": 0.3137254901960784,
     "ops": 0.6026143790849673,
-    "ops_plus": 76,
+    "ops_plus": 75,
     "slg": 0.28888888888888886,
     "triples": 0,
     "woba": 0.27999999999999997,
-    "wrc_plus": 69
+    "wrc_plus": 75
   },
   "basic_pitching": null,
   "current_team_id": 138,

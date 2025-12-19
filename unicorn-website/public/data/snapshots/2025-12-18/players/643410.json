@@ -12,11 +12,11 @@
   },
   "current_team_id": 147,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0625,
-    "hard_hit_pct_last_5_apps": 0.1176,
-    "k_pct_last_5_apps": 0.25,
-    "whiff_pct_last_5_apps": 0.1818,
-    "xwoba_last_5_apps": 0.2194
+    "bb_pct_last_5_apps": 0.05,
+    "hard_hit_pct_last_5_apps": 0.2,
+    "k_pct_last_5_apps": 0.35,
+    "whiff_pct_last_5_apps": 0.3235,
+    "xwoba_last_5_apps": 0.2655
   },
   "name": "Mark Leiter Jr.",
   "player_id": 643410,

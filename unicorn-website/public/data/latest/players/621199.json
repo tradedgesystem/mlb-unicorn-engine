@@ -12,11 +12,11 @@
   },
   "current_team_id": 110,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.0714,
-    "k_pct_last_5_apps": 0.0435,
-    "whiff_pct_last_5_apps": 0.12,
-    "xwoba_last_5_apps": 0.2143
+    "bb_pct_last_5_apps": 0.0357,
+    "hard_hit_pct_last_5_apps": 0.1,
+    "k_pct_last_5_apps": 0.0357,
+    "whiff_pct_last_5_apps": 0.1167,
+    "xwoba_last_5_apps": 0.253
   },
   "name": "Matt Bowman",
   "player_id": 621199,

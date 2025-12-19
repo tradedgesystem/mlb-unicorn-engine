@@ -12,11 +12,11 @@
   },
   "current_team_id": 111,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1176,
-    "hard_hit_pct_last_5_apps": 0.3,
-    "k_pct_last_5_apps": 0.2941,
-    "whiff_pct_last_5_apps": 0.3333,
-    "xwoba_last_5_apps": 0.3063
+    "bb_pct_last_5_apps": 0.0976,
+    "hard_hit_pct_last_5_apps": 0.2826,
+    "k_pct_last_5_apps": 0.3415,
+    "whiff_pct_last_5_apps": 0.3293,
+    "xwoba_last_5_apps": 0.2864
   },
   "name": "Garrett Whitlock",
   "player_id": 676477,

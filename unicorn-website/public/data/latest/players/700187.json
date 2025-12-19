@@ -12,11 +12,11 @@
   },
   "current_team_id": 136,
   "metrics": {
-    "bb_pct_last_5_apps": null,
-    "hard_hit_pct_last_5_apps": null,
-    "k_pct_last_5_apps": null,
-    "whiff_pct_last_5_apps": null,
-    "xwoba_last_5_apps": null
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.0,
+    "xwoba_last_5_apps": 0.5353
   },
   "name": "Troy Taylor",
   "player_id": 700187,

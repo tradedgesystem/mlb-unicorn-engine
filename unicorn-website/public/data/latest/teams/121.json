@@ -56,6 +56,15 @@
       ]
     },
     {
+      "href": "/players/640492/",
+      "name": "José Azocar",
+      "player_id": 640492,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/665742/",
       "name": "Juan Soto",
       "player_id": 665742,
@@ -160,6 +169,15 @@
       "href": "/players/676130/",
       "name": "José Buttó",
       "player_id": 676130,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/663795/",
+      "name": "Justin Hagenman",
+      "player_id": 663795,
       "position": "P",
       "roles": [
         "reliever"

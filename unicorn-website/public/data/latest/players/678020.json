@@ -12,11 +12,11 @@
   },
   "current_team_id": 115,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2143,
-    "hard_hit_pct_last_5_apps": 0.1852,
-    "k_pct_last_5_apps": 0.1786,
-    "whiff_pct_last_5_apps": 0.3556,
-    "xwoba_last_5_apps": 0.3689
+    "bb_pct_last_5_apps": 0.1875,
+    "hard_hit_pct_last_5_apps": 0.1875,
+    "k_pct_last_5_apps": 0.1875,
+    "whiff_pct_last_5_apps": 0.3333,
+    "xwoba_last_5_apps": 0.331
   },
   "name": "Seth Halvorsen",
   "player_id": 678020,

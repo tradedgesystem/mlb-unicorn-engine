@@ -12,11 +12,11 @@
   },
   "current_team_id": 143,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1765,
-    "hard_hit_pct_last_5_apps": 0.25,
-    "k_pct_last_5_apps": 0.1765,
-    "whiff_pct_last_5_apps": 0.2593,
-    "xwoba_last_5_apps": 0.3017
+    "bb_pct_last_5_apps": 0.12,
+    "hard_hit_pct_last_5_apps": 0.3462,
+    "k_pct_last_5_apps": 0.12,
+    "whiff_pct_last_5_apps": 0.2105,
+    "xwoba_last_5_apps": 0.3706
   },
   "name": "Jordan Romano",
   "player_id": 605447,

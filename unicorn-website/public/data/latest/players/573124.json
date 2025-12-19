@@ -12,11 +12,11 @@
   },
   "current_team_id": 113,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1333,
-    "hard_hit_pct_last_5_apps": 0.2941,
-    "k_pct_last_5_apps": 0.2,
-    "whiff_pct_last_5_apps": 0.3571,
-    "xwoba_last_5_apps": 0.3178
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.28,
+    "k_pct_last_5_apps": 0.2632,
+    "whiff_pct_last_5_apps": 0.3158,
+    "xwoba_last_5_apps": 0.2462
   },
   "name": "Taylor Rogers",
   "player_id": 573124,

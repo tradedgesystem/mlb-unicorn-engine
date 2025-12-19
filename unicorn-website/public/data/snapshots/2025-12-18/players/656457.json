@@ -12,11 +12,11 @@
   },
   "current_team_id": 145,
   "metrics": {
-    "bb_pct_last_5_apps": 0.125,
-    "hard_hit_pct_last_5_apps": 0.1538,
-    "k_pct_last_5_apps": 0.375,
-    "whiff_pct_last_5_apps": 0.2353,
-    "xwoba_last_5_apps": 0.175
+    "bb_pct_last_5_apps": 0.15,
+    "hard_hit_pct_last_5_apps": 0.1111,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.2105,
+    "xwoba_last_5_apps": 0.2975
   },
   "name": "Tyler Gilbert",
   "player_id": 656457,

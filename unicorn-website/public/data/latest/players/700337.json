@@ -1,0 +1,38 @@
+{
+  "basic_batting": {
+    "avg": 0.36363636363636365,
+    "babip": 0.4,
+    "bb": 0,
+    "doubles": 2,
+    "h": 4,
+    "hr": 0,
+    "iso": 0.18181818181818177,
+    "k": 1,
+    "obp": 0.4166666666666667,
+    "ops": 0.9621212121212122,
+    "ops_plus": 175,
+    "slg": 0.5454545454545454,
+    "triples": 0,
+    "woba": 0.42,
+    "wrc_plus": 201
+  },
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.36363636363636365,
+    "contact_pct_last_50": 0.42857142857142855,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.3805
+  },
+  "name": "Edgar Quero",
+  "player_id": 700337,
+  "player_name": "Edgar Quero",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

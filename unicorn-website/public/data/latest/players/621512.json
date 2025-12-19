@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.0,
-    "babip": 0.0,
+    "avg": 0.4444444444444444,
+    "babip": 0.6666666666666666,
     "bb": 0,
     "doubles": 0,
-    "h": 0,
+    "h": 4,
     "hr": 0,
     "iso": 0.0,
-    "k": 2,
-    "obp": 0.0,
-    "ops": 0.0,
-    "ops_plus": -100,
-    "slg": 0.0,
+    "k": 3,
+    "obp": 0.4444444444444444,
+    "ops": 0.8888888888888888,
+    "ops_plus": 158,
+    "slg": 0.4444444444444444,
     "triples": 0,
-    "woba": 0.0,
-    "wrc_plus": -202
+    "woba": 0.39555555555555555,
+    "wrc_plus": 101
   },
   "basic_pitching": {
     "babip": 0.0,
@@ -29,10 +29,10 @@
   "current_team_id": 116,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.16666666666666666,
-    "contact_pct_last_50": 0.18181818181818182,
-    "hard_hit_pct_last_50": 0.0,
-    "xwoba_last_50": 0.02525
+    "chase_pct_last_50": 0.36363636363636365,
+    "contact_pct_last_50": 0.3684210526315789,
+    "hard_hit_pct_last_50": 0.2857142857142857,
+    "xwoba_last_50": 0.2634444444444444
   },
   "name": "Tomás Nido",
   "player_id": 621512,

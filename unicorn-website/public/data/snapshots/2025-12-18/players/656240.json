@@ -12,11 +12,11 @@
   },
   "current_team_id": 110,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.3571,
-    "k_pct_last_5_apps": 0.28,
-    "whiff_pct_last_5_apps": 0.3617,
-    "xwoba_last_5_apps": 0.2533
+    "bb_pct_last_5_apps": 0.0263,
+    "hard_hit_pct_last_5_apps": 0.325,
+    "k_pct_last_5_apps": 0.2895,
+    "whiff_pct_last_5_apps": 0.3714,
+    "xwoba_last_5_apps": 0.2121
   },
   "name": "Scott Blewett",
   "player_id": 656240,

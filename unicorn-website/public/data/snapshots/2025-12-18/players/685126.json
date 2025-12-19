@@ -12,11 +12,11 @@
   },
   "current_team_id": 145,
   "metrics": {
-    "bb_pct_last_5_apps": 0.04,
-    "hard_hit_pct_last_5_apps": 0.25,
-    "k_pct_last_5_apps": 0.36,
-    "whiff_pct_last_5_apps": 0.2553,
-    "xwoba_last_5_apps": 0.2846
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2128,
+    "k_pct_last_5_apps": 0.2857,
+    "whiff_pct_last_5_apps": 0.2917,
+    "xwoba_last_5_apps": 0.2994
   },
   "name": "Brandon Eisert",
   "player_id": 685126,

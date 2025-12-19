@@ -12,11 +12,11 @@
   },
   "current_team_id": 146,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1579,
-    "hard_hit_pct_last_5_apps": 0.4091,
-    "k_pct_last_5_apps": 0.2105,
-    "whiff_pct_last_5_apps": 0.2727,
-    "xwoba_last_5_apps": 0.3656
+    "bb_pct_last_5_apps": 0.1786,
+    "hard_hit_pct_last_5_apps": 0.3,
+    "k_pct_last_5_apps": 0.3214,
+    "whiff_pct_last_5_apps": 0.2444,
+    "xwoba_last_5_apps": 0.2958
   },
   "name": "Lake Bachar",
   "player_id": 669199,

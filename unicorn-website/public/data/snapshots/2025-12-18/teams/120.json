@@ -126,18 +126,18 @@
       "roles": [
         "hitter"
       ]
+    },
+    {
+      "href": "/players/702358/",
+      "name": "Trey Lipscomb",
+      "player_id": 702358,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
     }
   ],
   "relievers": [
-    {
-      "href": "/players/695418/",
-      "name": "Brad Lord",
-      "player_id": 695418,
-      "position": "P",
-      "roles": [
-        "reliever"
-      ]
-    },
     {
       "href": "/players/669371/",
       "name": "Cole Henry",
@@ -221,6 +221,15 @@
     }
   ],
   "starters": [
+    {
+      "href": "/players/695418/",
+      "name": "Brad Lord",
+      "player_id": 695418,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
     {
       "href": "/players/663623/",
       "name": "Jake Irvin",

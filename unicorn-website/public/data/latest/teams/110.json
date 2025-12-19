@@ -38,15 +38,6 @@
       ]
     },
     {
-      "href": "/players/596142/",
-      "name": "Gary Sánchez",
-      "player_id": 596142,
-      "position": "C",
-      "roles": [
-        "hitter"
-      ]
-    },
-    {
       "href": "/players/683002/",
       "name": "Gunnar Henderson",
       "player_id": 683002,
@@ -78,15 +69,6 @@
       "name": "Jordan Westburg",
       "player_id": 676059,
       "position": "3B",
-      "roles": [
-        "hitter"
-      ]
-    },
-    {
-      "href": "/players/622761/",
-      "name": "Jorge Mateo",
-      "player_id": 622761,
-      "position": "SS",
       "roles": [
         "hitter"
       ]
@@ -166,6 +148,15 @@
       ]
     },
     {
+      "href": "/players/547001/",
+      "name": "Cody Poteet",
+      "player_id": 547001,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/681882/",
       "name": "Colin Selby",
       "player_id": 681882,
@@ -184,10 +175,28 @@
       ]
     },
     {
+      "href": "/players/596142/",
+      "name": "Gary Sánchez",
+      "player_id": 596142,
+      "position": "C",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/642397/",
       "name": "Gregory Soto",
       "player_id": 642397,
       "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/622761/",
+      "name": "Jorge Mateo",
+      "player_id": 622761,
+      "position": "SS",
       "roles": [
         "reliever"
       ]

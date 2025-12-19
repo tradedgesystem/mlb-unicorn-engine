@@ -12,11 +12,11 @@
   },
   "current_team_id": 139,
   "metrics": {
-    "bb_pct_last_5_apps": 0.1429,
-    "hard_hit_pct_last_5_apps": 0.28,
-    "k_pct_last_5_apps": 0.1429,
-    "whiff_pct_last_5_apps": 0.2703,
-    "xwoba_last_5_apps": 0.3788
+    "bb_pct_last_5_apps": 0.08,
+    "hard_hit_pct_last_5_apps": 0.2571,
+    "k_pct_last_5_apps": 0.2,
+    "whiff_pct_last_5_apps": 0.283,
+    "xwoba_last_5_apps": 0.4737
   },
   "name": "Edwin Uceta",
   "player_id": 670955,

@@ -12,11 +12,11 @@
   },
   "current_team_id": 143,
   "metrics": {
-    "bb_pct_last_5_apps": 0.04,
-    "hard_hit_pct_last_5_apps": 0.2195,
-    "k_pct_last_5_apps": 0.28,
-    "whiff_pct_last_5_apps": 0.2097,
-    "xwoba_last_5_apps": 0.2546
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2564,
+    "k_pct_last_5_apps": 0.2083,
+    "whiff_pct_last_5_apps": 0.1765,
+    "xwoba_last_5_apps": 0.2424
   },
   "name": "José Alvarado",
   "player_id": 621237,

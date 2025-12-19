@@ -12,11 +12,11 @@
   },
   "current_team_id": 139,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0,
-    "hard_hit_pct_last_5_apps": 0.1786,
-    "k_pct_last_5_apps": 0.3478,
-    "whiff_pct_last_5_apps": 0.3654,
-    "xwoba_last_5_apps": 0.3137
+    "bb_pct_last_5_apps": 0.037,
+    "hard_hit_pct_last_5_apps": 0.2,
+    "k_pct_last_5_apps": 0.2222,
+    "whiff_pct_last_5_apps": 0.3889,
+    "xwoba_last_5_apps": 0.3583
   },
   "name": "Mason Montgomery",
   "player_id": 682254,

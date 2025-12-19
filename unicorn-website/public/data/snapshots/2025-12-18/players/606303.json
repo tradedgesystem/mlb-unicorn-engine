@@ -12,11 +12,11 @@
   },
   "current_team_id": 158,
   "metrics": {
-    "bb_pct_last_5_apps": 0.15,
-    "hard_hit_pct_last_5_apps": 0.3684,
-    "k_pct_last_5_apps": 0.2,
-    "whiff_pct_last_5_apps": 0.2069,
-    "xwoba_last_5_apps": 0.5443
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.4348,
+    "k_pct_last_5_apps": 0.1667,
+    "whiff_pct_last_5_apps": 0.1818,
+    "xwoba_last_5_apps": 0.5605
   },
   "name": "Joel Payamps",
   "player_id": 606303,

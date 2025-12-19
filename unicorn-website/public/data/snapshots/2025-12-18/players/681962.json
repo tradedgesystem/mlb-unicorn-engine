@@ -1,20 +1,20 @@
 {
   "basic_batting": {
-    "avg": 0.1,
-    "babip": 0.10526315789473684,
+    "avg": 0.09375,
+    "babip": 0.09523809523809523,
     "bb": 0,
     "doubles": 0,
     "h": 3,
     "hr": 1,
-    "iso": 0.1,
+    "iso": 0.09375,
     "k": 10,
-    "obp": 0.12903225806451613,
-    "ops": 0.32903225806451614,
-    "ops_plus": -6,
-    "slg": 0.2,
+    "obp": 0.12121212121212122,
+    "ops": 0.3087121212121212,
+    "ops_plus": -13,
+    "slg": 0.1875,
     "triples": 0,
-    "woba": 0.14838709677419354,
-    "wrc_plus": -65
+    "woba": 0.13939393939393938,
+    "wrc_plus": -39
   },
   "basic_pitching": {
     "babip": 0.3076923076923077,
@@ -29,10 +29,10 @@
   "current_team_id": 158,
   "metrics": {
     "barrel_pct_last_50": 0.0,
-    "chase_pct_last_50": 0.2777777777777778,
-    "contact_pct_last_50": 0.3620689655172414,
-    "hard_hit_pct_last_50": 0.2857142857142857,
-    "xwoba_last_50": 0.20609677419354838
+    "chase_pct_last_50": 0.26785714285714285,
+    "contact_pct_last_50": 0.3770491803278688,
+    "hard_hit_pct_last_50": 0.30434782608695654,
+    "xwoba_last_50": 0.20118181818181818
   },
   "name": "Vinny Capra",
   "player_id": 681962,

@@ -148,6 +148,15 @@
   ],
   "relievers": [
     {
+      "href": "/players/690544/",
+      "name": "Bailey Horn",
+      "player_id": 690544,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
       "href": "/players/689225/",
       "name": "Beau Brieske",
       "player_id": 689225,
@@ -243,6 +252,15 @@
       "href": "/players/695549/",
       "name": "Jackson Jobe",
       "player_id": 695549,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/672456/",
+      "name": "Keider Montero",
+      "player_id": 672456,
       "position": "P",
       "roles": [
         "starter"

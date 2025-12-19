@@ -12,11 +12,11 @@
   },
   "current_team_id": 138,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0667,
-    "hard_hit_pct_last_5_apps": 0.35,
-    "k_pct_last_5_apps": 0.1333,
-    "whiff_pct_last_5_apps": 0.1538,
-    "xwoba_last_5_apps": 0.4266
+    "bb_pct_last_5_apps": 0.1,
+    "hard_hit_pct_last_5_apps": 0.3333,
+    "k_pct_last_5_apps": 0.1,
+    "whiff_pct_last_5_apps": 0.1875,
+    "xwoba_last_5_apps": 0.3922
   },
   "name": "John King",
   "player_id": 667463,

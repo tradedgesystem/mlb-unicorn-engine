@@ -12,11 +12,11 @@
   },
   "current_team_id": 112,
   "metrics": {
-    "bb_pct_last_5_apps": 0.0476,
-    "hard_hit_pct_last_5_apps": 0.2308,
-    "k_pct_last_5_apps": 0.2857,
-    "whiff_pct_last_5_apps": 0.2286,
-    "xwoba_last_5_apps": 0.2558
+    "bb_pct_last_5_apps": 0.0417,
+    "hard_hit_pct_last_5_apps": 0.2121,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.2391,
+    "xwoba_last_5_apps": 0.2557
   },
   "name": "Julian Merryweather",
   "player_id": 657240,

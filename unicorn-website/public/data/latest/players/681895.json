@@ -12,11 +12,11 @@
   },
   "current_team_id": 118,
   "metrics": {
-    "bb_pct_last_5_apps": 0.2,
-    "hard_hit_pct_last_5_apps": 0.5,
-    "k_pct_last_5_apps": 0.6,
-    "whiff_pct_last_5_apps": 0.6,
-    "xwoba_last_5_apps": 0.1882
+    "bb_pct_last_5_apps": 0.1818,
+    "hard_hit_pct_last_5_apps": 0.3,
+    "k_pct_last_5_apps": 0.4545,
+    "whiff_pct_last_5_apps": 0.4737,
+    "xwoba_last_5_apps": 0.1898
   },
   "name": "Evan Sisk",
   "player_id": 681895,

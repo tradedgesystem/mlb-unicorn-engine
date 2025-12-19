@@ -65,10 +65,28 @@
       ]
     },
     {
+      "href": "/players/681146/",
+      "name": "Jonah Bride",
+      "player_id": 681146,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
       "href": "/players/669304/",
       "name": "Jose Miranda",
       "player_id": 669304,
       "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/807712/",
+      "name": "Luke Keaschall",
+      "player_id": 807712,
+      "position": "2B",
       "roles": [
         "hitter"
       ]
@@ -120,6 +138,15 @@
     }
   ],
   "relievers": [
+    {
+      "href": "/players/592779/",
+      "name": "Brock Stewart",
+      "player_id": 592779,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
     {
       "href": "/players/663485/",
       "name": "Cole Sands",
