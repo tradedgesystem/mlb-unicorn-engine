@@ -450,9 +450,7 @@ async function renderPlayerPage(playerId, { teamsById }) {
   const title = $("#player-title");
   const subtitle = $("#player-subtitle");
   const actions = $("#player-actions");
-  const rolesHost = $("#player-roles");
   const metricsHost = $("#player-metrics");
-  const recentHost = $("#player-recent");
 
   try {
     const p = await fetchJson(`${DATA_BASE}/players/${encodeURIComponent(playerId)}.json`);
@@ -476,9 +474,6 @@ async function renderPlayerPage(playerId, { teamsById }) {
         actions.appendChild(a);
       }
     }
-
-    const roles = Array.isArray(p?.roles) ? p.roles : p?.role ? [p.role] : [];
-    if (rolesHost) renderChips(rolesHost, roles);
 
     if (metricsHost) {
       const roles = Array.isArray(p?.roles) ? p.roles.map((r) => String(r).toLowerCase()) : [];
@@ -521,24 +516,9 @@ async function renderPlayerPage(playerId, { teamsById }) {
       }
     }
 
-    if (recentHost) {
-      const recent = Array.isArray(p?.recent_unicorns) ? p.recent_unicorns : [];
-      const rows = recent.map((u) => {
-        const runDate = u?.run_date || "—";
-        const desc = u?.description || "—";
-        const score = u?.score;
-        return {
-          left: `<div>${escapeHtml(desc)}</div><div class="small">${escapeHtml(runDate)}</div>`,
-          right: escapeHtml(formatNumber(score)),
-        };
-      });
-      renderList(recentHost, rows);
-    }
   } catch (err) {
     showStatus(err?.message || String(err));
-    if (rolesHost) rolesHost.textContent = "Unavailable";
     if (metricsHost) metricsHost.textContent = "Unavailable";
-    if (recentHost) recentHost.textContent = "Unavailable";
   }
 }
 

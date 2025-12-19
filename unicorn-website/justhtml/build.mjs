@@ -177,18 +177,9 @@ function playerPage(playerId) {
 
 <section class="grid">
   <div class="panel">
-    <h2>Roles</h2>
-    <div id="player-roles" class="chips">Loading…</div>
-  </div>
-  <div class="panel">
     <h2>Predictive stats</h2>
     <div id="player-metrics" class="metrics-host">Loading…</div>
   </div>
-</section>
-
-<section class="panel">
-  <h2>Recent unicorns</h2>
-  <div id="player-recent" class="list">Loading…</div>
 </section>
 `,
   });
