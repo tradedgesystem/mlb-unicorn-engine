@@ -40,13 +40,18 @@ def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Calibrate FanGraphs-free wRC+.")
     parser.add_argument("--season", type=int, default=2025)
     parser.add_argument("--start-date", default="2025-03-27")
-    parser.add_argument("--end-date", default="2025-04-15")
+    parser.add_argument("--end-date", default="2025-04-20")
     parser.add_argument("--min-pa", type=int, default=50)
     parser.add_argument("--game-type", default="R")
     parser.add_argument("--target-player-id", type=int, default=None)
     parser.add_argument("--target-first", default="Fernando")
     parser.add_argument("--target-last", default="Tatis")
     parser.add_argument("--target-wrc-plus", type=float, default=196.0)
+    parser.add_argument(
+        "--use-target",
+        action="store_true",
+        help="Enable optional player anchor (default off).",
+    )
     parser.add_argument("--cache-dir", default="data/cache/wrc_plus")
     parser.add_argument("--output-dir", default="data/outputs")
     parser.add_argument("--park-factors", default=None)
@@ -108,16 +113,18 @@ def main() -> None:
     league_ctx = compute_league_context(pa_df)
     hitters = aggregate_hitters(pa_df, config.cache_dir)
 
-    target_player_id = _resolve_target_player_id(
-        hitters,
-        target_player_id=args.target_player_id,
-        first=args.target_first,
-        last=args.target_last,
-    )
-    target = CalibrationTarget(
-        player_id=target_player_id,
-        target_wrc_plus=args.target_wrc_plus,
-    )
+    target = None
+    if args.use_target:
+        target_player_id = _resolve_target_player_id(
+            hitters,
+            target_player_id=args.target_player_id,
+            first=args.target_first,
+            last=args.target_last,
+        )
+        target = CalibrationTarget(
+            player_id=target_player_id,
+            target_wrc_plus=args.target_wrc_plus,
+        )
 
     calibration = calibrate_wrc_plus(
         hitters,
@@ -137,15 +144,17 @@ def main() -> None:
         park_factors=park_factors,
     )
 
-    tatis_val = float(
-        leaderboard.loc[leaderboard["player_id"] == target.player_id, "wRC_plus"].iloc[0]
-    )
+    tatis_val = None
+    if target is not None:
+        tatis_val = float(
+            leaderboard.loc[leaderboard["player_id"] == target.player_id, "wRC_plus"].iloc[0]
+        )
     mean_wrc = float(
         (leaderboard["wRC_plus"] * leaderboard["PA"]).sum() / leaderboard["PA"].sum()
     )
-    if abs(tatis_val - target.target_wrc_plus) > 0.5:
+    if target is not None and tatis_val is not None and abs(tatis_val - target.target_wrc_plus) > 0.5:
         raise RuntimeError(
-            f"Tatis wRC+ {tatis_val:.2f} does not match target {target.target_wrc_plus}."
+            f"Target wRC+ {tatis_val:.2f} does not match {target.target_wrc_plus}."
         )
     if not (99.0 <= mean_wrc <= 101.0):
         raise RuntimeError(f"League mean wRC+ {mean_wrc:.2f} outside [99, 101].")
@@ -185,7 +194,8 @@ def main() -> None:
     summary = summarize_leaderboard(leaderboard, min_pa=config.min_pa)
     print(f"constants_path={constants_path}")
     print(f"leaderboard_path={leaderboard_path}")
-    print(f"tatis_wrc_plus={tatis_val:.2f}")
+    if tatis_val is not None:
+        print(f"target_wrc_plus={tatis_val:.2f}")
     print(f"mean_wrc_plus={mean_wrc:.2f}")
     print(f"qualified_count={summary['qualified_count']}")
     qualified = leaderboard[leaderboard["PA"] >= config.min_pa]

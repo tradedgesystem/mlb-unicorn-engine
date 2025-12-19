@@ -8,19 +8,16 @@
     "cache_dir": "data/cache/wrc_plus",
     "output_dir": "data/outputs"
   },
-  "target": {
-    "player_id": 665487,
-    "target_wrc_plus": 196.0
-  },
+  "target": null,
   "calibration": {
-    "alpha": 0.9990297425421386,
-    "beta": 0.11553521735033284,
+    "alpha": 0.9830618719393992,
+    "beta": 0.15740857447922993,
     "pf_gamma": 0.0,
     "success": true,
-    "message": "Both `ftol` and `xtol` termination conditions are satisfied.",
-    "nfev": 5,
-    "loss": 323.84148347736874
+    "message": "`xtol` termination condition is satisfied.",
+    "nfev": 1274,
+    "loss": 3.1782573644810042e-06
   },
   "data_source": "pybaseball.statcast",
-  "generated_at": "2025-12-19T21:19:53Z"
+  "generated_at": "2025-12-19T22:24:35Z"
 }

@@ -64,10 +64,11 @@ def test_wrc_plus_deterministic():
 def test_wrc_plus_target_and_mean():
     config, calibration, target, hitters, league_ctx = _load_inputs()
     leaderboard = build_leaderboard(hitters, league_ctx, calibration)
-    tatis_val = float(
-        leaderboard.loc[leaderboard["player_id"] == target["player_id"], "wRC_plus"].iloc[0]
-    )
-    assert abs(tatis_val - target["target_wrc_plus"]) <= 0.5
+    if target is not None:
+        tatis_val = float(
+            leaderboard.loc[leaderboard["player_id"] == target["player_id"], "wRC_plus"].iloc[0]
+        )
+        assert abs(tatis_val - target["target_wrc_plus"]) <= 0.5
     mean_wrc = float(
         (leaderboard["wRC_plus"] * leaderboard["PA"]).sum() / leaderboard["PA"].sum()
     )

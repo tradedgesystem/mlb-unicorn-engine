@@ -1,9 +1,9 @@
 """FanGraphs-free wRC+ calculator built on Statcast play-by-play.
 
 This module uses pybaseball Statcast data to compute RE24, aggregate hitter run
-values per PA, and calibrate a small set of parameters to a known target. It
-never calls FanGraphs and is fully reproducible when cached inputs/constants
-are available.
+values per PA, and calibrate a small set of parameters either with or without
+an anchor player target. It never calls FanGraphs and is fully reproducible
+when cached inputs/constants are available.
 """
 
 from __future__ import annotations
@@ -327,13 +327,13 @@ def _distribution_penalty(df: pd.DataFrame, min_pa: int) -> float:
 def calibrate_wrc_plus(
     hitters: pd.DataFrame,
     league_ctx: dict[str, float],
-    target: CalibrationTarget,
+    target: CalibrationTarget | None,
     *,
     min_pa: int,
     park_factors: Optional[dict[str, float]] = None,
     enable_park: bool = False,
 ) -> CalibrationResult:
-    if target.player_id not in set(hitters["player_id"].astype(int).tolist()):
+    if target is not None and target.player_id not in set(hitters["player_id"].astype(int).tolist()):
         raise RuntimeError(f"Target player_id {target.player_id} not found in data.")
 
     lg_outcomes = league_ctx["lg_runs_per_pa_outcomes"]
@@ -351,21 +351,26 @@ def calibrate_wrc_plus(
             pf_gamma=pf_gamma,
             park_factors=park_factors,
         )
-        tatis_val = float(
-            df.loc[df["player_id"] == target.player_id, "wRC_plus"].iloc[0]
-        )
+        target_val = None
+        if target is not None:
+            target_val = float(
+                df.loc[df["player_id"] == target.player_id, "wRC_plus"].iloc[0]
+            )
         mean_wrc = float((df["wRC_plus"] * df["PA"]).sum() / df["PA"].sum())
         dist_pen = _distribution_penalty(df, min_pa=min_pa)
         reg_pen = (alpha - 1.0) ** 2 + beta**2 + pf_gamma**2
 
-        return np.array(
+        losses = []
+        if target is not None and target_val is not None:
+            losses.append(50.0 * (target_val - target.target_wrc_plus))
+        losses.extend(
             [
-                50.0 * (tatis_val - target.target_wrc_plus),
                 2.0 * (mean_wrc - 100.0),
                 0.1 * dist_pen,
                 0.1 * reg_pen,
             ]
         )
+        return np.array(losses)
 
     x0 = np.array([1.0, 0.1, 0.0])
     bounds = (
@@ -379,7 +384,7 @@ def calibrate_wrc_plus(
         xtol=1e-6,
         ftol=1e-6,
         gtol=1e-6,
-        max_nfev=200,
+        max_nfev=2000,
     )
     alpha = float(result.x[0])
     beta_offset = float(result.x[1])
@@ -410,7 +415,7 @@ def write_constants(
     path: Path | str,
     *,
     config: WRCPlusConfig,
-    target: CalibrationTarget,
+    target: CalibrationTarget | None,
     calibration: CalibrationResult,
     data_source: str,
 ) -> None:
@@ -419,7 +424,7 @@ def write_constants(
     config_payload["output_dir"] = str(config.output_dir)
     payload: dict[str, Any] = {
         "config": config_payload,
-        "target": asdict(target),
+        "target": asdict(target) if target is not None else None,
         "calibration": asdict(calibration),
         "data_source": data_source,
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
