@@ -98,7 +98,7 @@ function formatDec3(value) {
   const n = Number(value);
   if (!Number.isFinite(n)) return "—";
   const fixed = n.toFixed(3);
-  return fixed.replace(/^0\./, "."); // FanGraphs-style leading zero drop
+  return fixed.replace(/^0\./, "."); // drop leading zero
 }
 
 function formatDec2(value) {

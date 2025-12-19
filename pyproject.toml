@@ -17,7 +17,6 @@ pandas = "^2.2"
 numpy = "^1.26"
 pybaseball = "^2.2"
 requests = "^2.32"
-beautifulsoup4 = "^4.12"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4"
