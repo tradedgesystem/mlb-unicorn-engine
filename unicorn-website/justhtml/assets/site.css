@@ -11,9 +11,6 @@
   --warn: #fbbf24;
   --danger: #fb7185;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  --team-primary: var(--accent);
-  --team-primary-10: rgba(125, 211, 252, 0.12);
-  --team-primary-20: rgba(125, 211, 252, 0.2);
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
     "Segoe UI Emoji";
@@ -169,10 +166,6 @@ a:hover {
   margin: 0;
   font-size: 28px;
   letter-spacing: 0.2px;
-}
-
-.team-theme .header h1 {
-  color: var(--team-primary);
 }
 
 .subhead {
@@ -396,11 +389,6 @@ a:hover {
 .tab.active {
   border-color: rgba(125, 211, 252, 0.55);
   background: rgba(125, 211, 252, 0.12);
-}
-
-.team-theme .tab.active {
-  border-color: var(--team-primary);
-  background: var(--team-primary-10);
 }
 
 .tabpanes {
