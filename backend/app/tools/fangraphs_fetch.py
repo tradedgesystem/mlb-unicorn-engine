@@ -9,7 +9,9 @@ even if async-rendered tables appear late; parsing/validation handles missing ta
 from __future__ import annotations
 
 import hashlib
+import os
 import re
+import sys
 import time
 from pathlib import Path
 from typing import Optional
@@ -23,7 +25,12 @@ DEFAULT_CACHE_TTL = 60 * 60
 CACHE_DIR = Path(".cache/fangraphs")
 
 
-def fetch_fangraphs_html(url: str, timeout: int = 30000, headless: bool = True) -> str:
+def fetch_fangraphs_html(
+    url: str,
+    timeout: int = 30000,
+    headless: bool = True,
+    storage_state_path: Path | str | None = None,
+) -> str:
     """Return full HTML for a FanGraphs page using a headless browser.
 
     Args:
@@ -42,16 +49,38 @@ def fetch_fangraphs_html(url: str, timeout: int = 30000, headless: bool = True) 
     if not url:
         raise RuntimeError("FanGraphs fetch failed: url is required")
 
+    resolved_storage_state: Optional[Path] = None
+    if storage_state_path:
+        resolved_storage_state = Path(storage_state_path)
+    else:
+        storage_state_env = os.getenv("FANGRAPHS_STORAGE_STATE", "").strip()
+        if storage_state_env:
+            resolved_storage_state = Path(storage_state_env)
+
+    if resolved_storage_state is not None and not resolved_storage_state.exists():
+        raise RuntimeError(
+            f"FanGraphs fetch failed: storage state file not found at {resolved_storage_state}"
+        )
+
     try:
         from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
         from playwright.sync_api import sync_playwright
     except Exception:
+        if resolved_storage_state is not None:
+            raise RuntimeError(
+                "FanGraphs fetch failed: storage state requires Playwright"
+            )
         return _fetch_with_selenium(url, timeout=timeout, headless=headless)
 
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=headless)
-            page = browser.new_page()
+            context = browser.new_context(
+                storage_state=str(resolved_storage_state)
+                if resolved_storage_state is not None
+                else None
+            )
+            page = context.new_page()
             page.set_extra_http_headers(
                 {
                     "User-Agent": (
@@ -65,6 +94,7 @@ def fetch_fangraphs_html(url: str, timeout: int = 30000, headless: bool = True) 
             page.goto(url, wait_until="domcontentloaded", timeout=timeout)
             page.wait_for_timeout(1500)
             html = page.content()
+            context.close()
             browser.close()
     except PlaywrightTimeoutError as exc:
         raise RuntimeError(f"FanGraphs fetch failed: timeout after {timeout}ms") from exc
@@ -146,6 +176,8 @@ def _read_cache(cache_path: Path, cache_ttl: Optional[int]) -> Optional[str]:
         return None
     html = cache_path.read_text(encoding="utf-8")
     if not html.strip():
+        return None
+    if _is_cloudflare_challenge_html(html):
         return None
     return html
 
@@ -268,15 +300,24 @@ def _coerce_numeric_columns(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def validate_fangraphs_html(html: str) -> None:
-    """Validate that the FanGraphs HTML includes the leaderboard table."""
+def _is_cloudflare_challenge_html(html: str) -> bool:
     soup = BeautifulSoup(html, "html.parser")
     title = soup.title.string.strip() if soup.title and soup.title.string else ""
-    if "Just a moment" in title or soup.select_one("script[src*='challenge-platform']"):
+    return bool(
+        "Just a moment" in title
+        or soup.select_one("script[src*='challenge-platform']")
+        or soup.select_one("script[src*='turnstile']")
+    )
+
+
+def validate_fangraphs_html(html: str) -> None:
+    """Validate that the FanGraphs HTML includes the leaderboard table."""
+    if _is_cloudflare_challenge_html(html):
         raise RuntimeError(
             "FanGraphs HTML validation failed: Cloudflare challenge page detected; "
             "leaderboard HTML unavailable."
         )
+    soup = BeautifulSoup(html, "html.parser")
     table, headers = _find_leaderboard_table(soup)
     if table is None:
         raise RuntimeError("FanGraphs HTML validation failed: leaderboard table not found")
@@ -333,14 +374,21 @@ def _get_cached_or_fetch(
     cache_ttl: Optional[int],
     timeout: int,
     headless: bool,
+    storage_state_path: Path | str | None,
 ) -> str:
     cache_path = _cache_path(url, cache_dir)
     cached = _read_cache(cache_path, cache_ttl)
     if cached is not None:
         return cached
 
-    html = fetch_fangraphs_html(url, timeout=timeout, headless=headless)
-    _write_cache(cache_path, html)
+    html = fetch_fangraphs_html(
+        url,
+        timeout=timeout,
+        headless=headless,
+        storage_state_path=storage_state_path,
+    )
+    if not _is_cloudflare_challenge_html(html):
+        _write_cache(cache_path, html)
     return html
 
 
@@ -359,12 +407,16 @@ class FangraphsClient:
         cache_dir: Path | str = CACHE_DIR,
         headless: bool = True,
         timeout: int = 30000,
+        storage_state_path: Path | str | None = None,
     ) -> None:
         self.base_url = base_url
         self.cache_ttl = cache_ttl
         self.cache_dir = Path(cache_dir)
         self.headless = headless
         self.timeout = timeout
+        self.storage_state_path = (
+            Path(storage_state_path) if storage_state_path else None
+        )
 
     def get_leaderboard(self, params: dict | None = None) -> pd.DataFrame:
         url = _build_url(self.base_url, params)
@@ -374,9 +426,59 @@ class FangraphsClient:
             cache_ttl=self.cache_ttl,
             timeout=self.timeout,
             headless=self.headless,
+            storage_state_path=self.storage_state_path,
         )
         validate_fangraphs_html(html)
         return parse_fangraphs_leaderboard(html)
+
+
+def save_fangraphs_storage_state(
+    storage_state_path: Path | str,
+    url: str = DEFAULT_LEADERBOARD_URL,
+    timeout: int = 30000,
+) -> Path:
+    """Launch a real browser to capture cookies for FanGraphs access.
+
+    Cloudflare may require an interactive browser session. This helper opens a
+    headful browser so a human can complete any verification, then saves the
+    storage state for reuse by the fetcher.
+    """
+    if not sys.stdin.isatty():
+        raise RuntimeError(
+            "FanGraphs storage state capture requires an interactive terminal."
+        )
+
+    try:
+        from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
+        from playwright.sync_api import sync_playwright
+    except Exception as exc:
+        raise RuntimeError(
+            "FanGraphs storage state capture requires Playwright"
+        ) from exc
+
+    storage_state_path = Path(storage_state_path)
+
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=False)
+            context = browser.new_context()
+            page = context.new_page()
+            page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+            input("Complete any verification in the browser, then press Enter here...")
+            html = page.content()
+            if _is_cloudflare_challenge_html(html):
+                raise RuntimeError(
+                    "FanGraphs storage state capture failed: Cloudflare challenge still active."
+                )
+            context.storage_state(path=str(storage_state_path))
+            context.close()
+            browser.close()
+    except PlaywrightTimeoutError as exc:
+        raise RuntimeError(
+            f"FanGraphs storage state capture failed: timeout after {timeout}ms"
+        ) from exc
+
+    return storage_state_path
 
 
 if __name__ == "__main__":
