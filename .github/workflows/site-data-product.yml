@@ -51,7 +51,7 @@ jobs:
       - name: Static-only guard
         run: node static-site/scripts/static-only-guard.mjs
 
-      - name: Generate + validate + publish data product
+      - name: Recalibrate wRC+ + publish data product
         shell: bash
         run: |
           set -euo pipefail
@@ -62,16 +62,8 @@ jobs:
           fi
 
           SNAPSHOT_DATE="${{ inputs.snapshot_date }}"
-          if [[ -n "${SNAPSHOT_DATE}" ]]; then
-            python -m backend.app.tools.generate_site_data_product \
-              --base-url "${BASE_URL}" \
-              --snapshot-date "${SNAPSHOT_DATE}" \
-              --data-root unicorn-website/public/data
-          else
-            python -m backend.app.tools.generate_site_data_product \
-              --base-url "${BASE_URL}" \
-              --data-root unicorn-website/public/data
-          fi
+          UNICORN_API_BASE_URL="${BASE_URL}" SNAPSHOT_DATE="${SNAPSHOT_DATE}" \
+            ./scripts/daily_site_update.sh
 
       - name: Build static site (sanity)
         run: node static-site/build.mjs
@@ -81,7 +73,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- unicorn-website/public/data; then
+          if git diff --quiet -- unicorn-website/public/data data/outputs data/cache/wrc_plus; then
             echo "No data product changes."
             exit 0
           fi
@@ -89,7 +81,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add unicorn-website/public/data
+          git add unicorn-website/public/data data/outputs data/cache/wrc_plus
 
           if git diff --cached --quiet; then
             echo "No staged changes."
