@@ -329,37 +329,6 @@ a:hover {
   min-width: 0;
 }
 
-.feed-line {
-  font-size: 15px;
-  line-height: 1.35;
-  letter-spacing: 0.1px;
-}
-
-.feed-line a {
-  font-weight: 700;
-}
-
-.feed-meta {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.feed-value {
-  font-family: var(--mono);
-  font-weight: 700;
-}
-
-.row.hot {
-  border-color: rgba(251, 113, 133, 0.45);
-  background: rgba(251, 113, 133, 0.12);
-}
-
-.row.not {
-  border-color: rgba(125, 211, 252, 0.45);
-  background: rgba(125, 211, 252, 0.12);
-}
-
 .row .right {
   font-family: var(--mono);
   font-size: 12px;

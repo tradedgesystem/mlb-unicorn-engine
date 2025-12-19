@@ -29,15 +29,13 @@ def test_validate_data_product_minimal_pass(tmp_path: Path) -> None:
                 "relievers": [],
             },
         )
-    _write_json(tmp_path / "unicorns.json", [])
     _write_json(tmp_path / "players_index.json", [])
     _write_json(
         tmp_path / "meta.json",
         {
             "last_updated": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
             "snapshot_date": "2025-01-01",
-            "shuffle_seed_date": "2025-01-01",
-            "counts": {"teams_count": 30, "players_count": 0, "unicorns_count": 0},
+            "counts": {"teams_count": 30, "players_count": 0},
         },
     )
 
@@ -46,17 +44,14 @@ def test_validate_data_product_minimal_pass(tmp_path: Path) -> None:
 
 def test_validate_data_product_fails_on_wrong_team_count(tmp_path: Path) -> None:
     _write_json(tmp_path / "teams.json", [{"team_id": 1, "abbreviation": "A"}])
-    _write_json(tmp_path / "unicorns.json", [])
     _write_json(tmp_path / "players_index.json", [])
     _write_json(
         tmp_path / "meta.json",
         {
             "last_updated": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
             "snapshot_date": "2025-01-01",
-            "shuffle_seed_date": "2025-01-01",
-            "counts": {"teams_count": 1, "players_count": 0, "unicorns_count": 0},
+            "counts": {"teams_count": 1, "players_count": 0},
         },
     )
     with pytest.raises(ValueError):
         validate_data_product_dir(tmp_path)
-

@@ -14,7 +14,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import random
 import re
 import shutil
 import sys
@@ -217,316 +216,6 @@ def _normalize_team_detail(team: Mapping[str, Any], player_roles_map: Mapping[in
     }
 
 
-def _as_float(value: Any) -> float | None:
-    try:
-        if value is None:
-            return None
-        return float(value)
-    except Exception:
-        return None
-
-
-def _metric(payload: Mapping[str, Any], key: str) -> float | None:
-    metrics = payload.get("metrics")
-    if isinstance(metrics, Mapping):
-        return _as_float(metrics.get(key))
-    return None
-
-
-def _pct(value: float | None) -> str:
-    if value is None:
-        return "—"
-    return f"{value * 100:.1f}%"
-
-
-def _dec3(value: float | None) -> str:
-    if value is None:
-        return "—"
-    return f"{value:.3f}".replace("0.", ".")
-
-
-def _build_hot_not_feed(
-    team_details: Mapping[int, Mapping[str, Any]],
-    *,
-    snapshot_date: str,
-) -> list[dict[str, Any]]:
-    """Build the daily Who is Hot / Who is Not feed from existing player metric payloads.
-
-    - Uses random stat selection with seed=snapshot_date (stable for the day).
-    - Never repeats a stat_id in the same day.
-    - Prefers unique players across the 50 items; if insufficient, returns fewer items.
-    """
-
-    # Build candidate pools from team roster payloads, since they contain role-specific metrics.
-    hitters_by_id: dict[int, dict[str, Any]] = {}
-    starters_by_id: dict[int, dict[str, Any]] = {}
-    relievers_by_id: dict[int, dict[str, Any]] = {}
-
-    def _is_qualified(
-        group: str,
-        sample: Mapping[str, Any] | None,
-        player: Mapping[str, Any] | None = None,
-    ) -> bool:
-        if not isinstance(sample, Mapping):
-            # Backward-compatible: if the backend doesn't provide sample sizes, don't filter.
-            return True
-        if group == "hitters":
-            ab = int(sample.get("ab_count_last_50") or 0)
-            threshold = 50
-            if isinstance(player, Mapping) and player.get("two_way"):
-                threshold = 30
-            return ab >= threshold
-        if group == "starters":
-            return int(sample.get("starts_count_last_3") or 0) >= 3
-        if group == "relievers":
-            return int(sample.get("apps_count_last_6") or 0) >= 6
-        return True
-
-    def ingest(group: str, team_payload: Mapping[str, Any]) -> None:
-        roster = team_payload.get(group) or []
-        if not isinstance(roster, list):
-            return
-        team_id = team_payload.get("team_id")
-        team_abbrev = (team_payload.get("abbrev") or "").strip()
-        for p in roster:
-            if not isinstance(p, Mapping):
-                continue
-            pid = p.get("player_id")
-            if pid is None:
-                continue
-            pid_int = int(pid)
-            metrics = p.get("metrics")
-            if not isinstance(metrics, Mapping):
-                continue
-            sample = p.get("sample")
-            if not _is_qualified(group, sample if isinstance(sample, Mapping) else None, p):
-                continue
-            entry = {
-                "player_id": pid_int,
-                "name": (p.get("player_name") or p.get("full_name") or p.get("name") or "").strip(),
-                "position": (p.get("position") or "").strip(),
-                "current_team_id": int(team_id) if team_id is not None else None,
-                "team_abbrev": team_abbrev,
-                "roles": [group[:-1]],  # hitters->hitter, starters->starter, relievers->reliever
-                "metrics": dict(metrics),
-            }
-            if group == "hitters":
-                hitters_by_id[pid_int] = entry
-            elif group == "starters":
-                starters_by_id[pid_int] = entry
-            else:
-                relievers_by_id[pid_int] = entry
-
-    for team in team_details.values():
-        ingest("hitters", team)
-        ingest("starters", team)
-        ingest("relievers", team)
-
-    hitters: list[tuple[int, Mapping[str, Any], Mapping[str, Any]]] = [
-        (pid, entry, entry["metrics"]) for pid, entry in hitters_by_id.items()
-    ]
-    starters: list[tuple[int, Mapping[str, Any], Mapping[str, Any]]] = [
-        (pid, entry, entry["metrics"]) for pid, entry in starters_by_id.items()
-    ]
-    relievers: list[tuple[int, Mapping[str, Any], Mapping[str, Any]]] = [
-        (pid, entry, entry["metrics"]) for pid, entry in relievers_by_id.items()
-    ]
-
-    def select_leader(
-        candidates: Sequence[tuple[int, Mapping[str, Any], Mapping[str, Any]]],
-        *,
-        metric_key: str | None = None,
-        metric_pair: Sequence[Mapping[str, str]] | None = None,
-        metric_fn=None,
-        direction: str,
-        rng: random.Random,
-    ) -> tuple[int, Mapping[str, Any], float, list[float] | None] | None:
-        scored: list[tuple[float, int, Mapping[str, Any], list[float] | None]] = []
-        for pid, payload, metrics in candidates:
-            extra_values: list[float] | None = None
-            value: float | None = None
-            if metric_pair is not None:
-                extra_values = []
-                for spec in metric_pair:
-                    key = spec.get("key")
-                    if not key:
-                        extra_values = None
-                        break
-                    v = _as_float(metrics.get(key))
-                    if v is None:
-                        extra_values = None
-                        break
-                    extra_values.append(float(v))
-                if extra_values is None:
-                    continue
-                value = float(sum(extra_values))
-            elif metric_fn is not None:
-                try:
-                    computed = metric_fn(metrics)
-                except Exception:
-                    computed = None
-                if computed is None:
-                    continue
-                value = float(computed)
-            elif metric_key:
-                v = _as_float(metrics.get(metric_key))
-                if v is None:
-                    continue
-                value = float(v)
-            else:
-                continue
-            scored.append((value, pid, payload, extra_values))
-        if not scored:
-            return None
-        # Stable ordering then random tie-break for the day.
-        scored.sort(key=lambda x: (x[0], x[1]), reverse=(direction == "max"))
-        best_value = scored[0][0]
-        tied = [row for row in scored if row[0] == best_value]
-        rng.shuffle(tied)
-        value, pid, payload, extra = tied[0]
-        return pid, payload, value, extra
-
-    # Stat definitions (limited to what we can compute from current player payloads).
-    # Provide a pool larger than 25 so daily selection is random.
-    hot_stats: list[dict[str, Any]] = [
-        {"id": "H_xwOBA", "group": "hitter", "label": "Leads MLB in xwOBA (last 50 AB)", "dir": "max", "key": "xwoba_last_50", "fmt": "dec3"},
-        {"id": "H_barrel", "group": "hitter", "label": "Highest Barrel% (last 50 AB)", "dir": "max", "key": "barrel_pct_last_50", "fmt": "pct"},
-        {"id": "H_hardhit", "group": "hitter", "label": "Highest HardHit% (last 50 AB)", "dir": "max", "key": "hard_hit_pct_last_50", "fmt": "pct"},
-        {"id": "H_contact", "group": "hitter", "label": "Highest Contact% (last 50 AB)", "dir": "max", "key": "contact_pct_last_50", "fmt": "pct"},
-        {"id": "H_chase_low", "group": "hitter", "label": "Lowest Chase% (last 50 AB)", "dir": "min", "key": "chase_pct_last_50", "fmt": "pct"},
-        {"id": "H_disc", "group": "hitter", "label": "Best plate discipline (Contact% − Chase%)", "dir": "max", "fn": lambda m: _as_float(m.get("contact_pct_last_50")) - _as_float(m.get("chase_pct_last_50")) if _as_float(m.get("contact_pct_last_50")) is not None and _as_float(m.get("chase_pct_last_50")) is not None else None, "fmt": "pct"},
-        {"id": "H_xwOBA_plus_barrel", "group": "hitter", "label": "Best power+quality (xwOBA + Barrel%)", "dir": "max", "pair": [{"key": "xwoba_last_50", "label": "xwOBA", "fmt": "dec3"}, {"key": "barrel_pct_last_50", "label": "Barrel%", "fmt": "pct"}]},
-        {"id": "H_xwOBA_plus_hardhit", "group": "hitter", "label": "Best quality contact (xwOBA + HardHit%)", "dir": "max", "pair": [{"key": "xwoba_last_50", "label": "xwOBA", "fmt": "dec3"}, {"key": "hard_hit_pct_last_50", "label": "HardHit%", "fmt": "pct"}]},
-        {"id": "H_contact_plus_xwOBA", "group": "hitter", "label": "Best contact+quality (Contact% + xwOBA)", "dir": "max", "pair": [{"key": "contact_pct_last_50", "label": "Contact%", "fmt": "pct"}, {"key": "xwoba_last_50", "label": "xwOBA", "fmt": "dec3"}]},
-        {"id": "S_xwOBA_allowed_low", "group": "starter", "label": "Lowest xwOBA allowed (last 3 starts)", "dir": "min", "key": "xwoba_last_3_starts", "fmt": "dec3"},
-        {"id": "S_whiff", "group": "starter", "label": "Highest Whiff% (last 3 starts)", "dir": "max", "key": "whiff_pct_last_3_starts", "fmt": "pct"},
-        {"id": "S_k", "group": "starter", "label": "Highest K% (last 3 starts)", "dir": "max", "key": "k_pct_last_3_starts", "fmt": "pct"},
-        {"id": "S_bb_low", "group": "starter", "label": "Lowest BB% (last 3 starts)", "dir": "min", "key": "bb_pct_last_3_starts", "fmt": "pct"},
-        {"id": "S_hardhit_low", "group": "starter", "label": "Lowest HardHit% allowed (last 3 starts)", "dir": "min", "key": "hard_hit_pct_last_3_starts", "fmt": "pct"},
-        {"id": "S_kbb", "group": "starter", "label": "Best K-BB% (last 3 starts)", "dir": "max", "fn": lambda m: _as_float(m.get("k_pct_last_3_starts")) - _as_float(m.get("bb_pct_last_3_starts")) if _as_float(m.get("k_pct_last_3_starts")) is not None and _as_float(m.get("bb_pct_last_3_starts")) is not None else None, "fmt": "pct"},
-        {"id": "S_dom", "group": "starter", "label": "Best dominance (Whiff% − HardHit%)", "dir": "max", "fn": lambda m: _as_float(m.get("whiff_pct_last_3_starts")) - _as_float(m.get("hard_hit_pct_last_3_starts")) if _as_float(m.get("whiff_pct_last_3_starts")) is not None and _as_float(m.get("hard_hit_pct_last_3_starts")) is not None else None, "fmt": "pct"},
-        {"id": "S_whiff_plus_k", "group": "starter", "label": "Best bat-missing: Whiff% and K% (last 3 starts)", "dir": "max", "pair": [{"key": "whiff_pct_last_3_starts", "label": "Whiff%", "fmt": "pct"}, {"key": "k_pct_last_3_starts", "label": "K%", "fmt": "pct"}]},
-        {"id": "S_no_free_pass", "group": "starter", "label": "Best control (lowest BB% + low xwOBA)", "dir": "min", "fn": lambda m: (_as_float(m.get("bb_pct_last_3_starts")) or 0.0) + (_as_float(m.get("xwoba_last_3_starts")) or 0.0), "fmt": "dec3"},
-        {"id": "R_xwOBA_allowed_low", "group": "reliever", "label": "Lowest xwOBA allowed (last 6 apps)", "dir": "min", "key": "xwoba_last_5_apps", "fmt": "dec3"},
-        {"id": "R_whiff", "group": "reliever", "label": "Highest Whiff% (last 6 apps)", "dir": "max", "key": "whiff_pct_last_5_apps", "fmt": "pct"},
-        {"id": "R_k", "group": "reliever", "label": "Highest K% (last 6 apps)", "dir": "max", "key": "k_pct_last_5_apps", "fmt": "pct"},
-        {"id": "R_bb_low", "group": "reliever", "label": "Lowest BB% (last 6 apps)", "dir": "min", "key": "bb_pct_last_5_apps", "fmt": "pct"},
-        {"id": "R_hardhit_low", "group": "reliever", "label": "Lowest HardHit% allowed (last 6 apps)", "dir": "min", "key": "hard_hit_pct_last_5_apps", "fmt": "pct"},
-        {"id": "R_kbb", "group": "reliever", "label": "Best K-BB% (last 6 apps)", "dir": "max", "fn": lambda m: _as_float(m.get("k_pct_last_5_apps")) - _as_float(m.get("bb_pct_last_5_apps")) if _as_float(m.get("k_pct_last_5_apps")) is not None and _as_float(m.get("bb_pct_last_5_apps")) is not None else None, "fmt": "pct"},
-        {"id": "R_dom", "group": "reliever", "label": "Best dominance (Whiff% − HardHit%)", "dir": "max", "fn": lambda m: _as_float(m.get("whiff_pct_last_5_apps")) - _as_float(m.get("hard_hit_pct_last_5_apps")) if _as_float(m.get("whiff_pct_last_5_apps")) is not None and _as_float(m.get("hard_hit_pct_last_5_apps")) is not None else None, "fmt": "pct"},
-        {"id": "R_whiff_plus_k", "group": "reliever", "label": "Best bat-missing: Whiff% and K% (last 6 apps)", "dir": "max", "pair": [{"key": "whiff_pct_last_5_apps", "label": "Whiff%", "fmt": "pct"}, {"key": "k_pct_last_5_apps", "label": "K%", "fmt": "pct"}]},
-        {"id": "R_no_free_pass", "group": "reliever", "label": "Best control (lowest BB% + low xwOBA)", "dir": "min", "fn": lambda m: (_as_float(m.get("bb_pct_last_5_apps")) or 0.0) + (_as_float(m.get("xwoba_last_5_apps")) or 0.0), "fmt": "dec3"},
-    ]
-
-    not_stats: list[dict[str, Any]] = [
-        {"id": "H_xwOBA_low", "group": "hitter", "label": "Lowest xwOBA (last 50 AB)", "dir": "min", "key": "xwoba_last_50", "fmt": "dec3"},
-        {"id": "H_barrel_low", "group": "hitter", "label": "Lowest Barrel% (last 50 AB)", "dir": "min", "key": "barrel_pct_last_50", "fmt": "pct"},
-        {"id": "H_hardhit_low", "group": "hitter", "label": "Lowest HardHit% (last 50 AB)", "dir": "min", "key": "hard_hit_pct_last_50", "fmt": "pct"},
-        {"id": "H_contact_low", "group": "hitter", "label": "Lowest Contact% (last 50 AB)", "dir": "min", "key": "contact_pct_last_50", "fmt": "pct"},
-        {"id": "H_chase_high", "group": "hitter", "label": "Highest Chase% (last 50 AB)", "dir": "max", "key": "chase_pct_last_50", "fmt": "pct"},
-        {"id": "H_disc_bad", "group": "hitter", "label": "Worst discipline (Chase% − Contact%)", "dir": "max", "fn": lambda m: _as_float(m.get("chase_pct_last_50")) - _as_float(m.get("contact_pct_last_50")) if _as_float(m.get("chase_pct_last_50")) is not None and _as_float(m.get("contact_pct_last_50")) is not None else None, "fmt": "pct"},
-        {"id": "H_quality_bad", "group": "hitter", "label": "Worst quality contact (xwOBA + HardHit%)", "dir": "min", "fn": lambda m: (_as_float(m.get("xwoba_last_50")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_50")) or 0.0), "fmt": "dec3"},
-        {"id": "S_xwOBA_allowed_high", "group": "starter", "label": "Highest xwOBA allowed (last 3 starts)", "dir": "max", "key": "xwoba_last_3_starts", "fmt": "dec3"},
-        {"id": "S_whiff_low", "group": "starter", "label": "Lowest Whiff% (last 3 starts)", "dir": "min", "key": "whiff_pct_last_3_starts", "fmt": "pct"},
-        {"id": "S_k_low", "group": "starter", "label": "Lowest K% (last 3 starts)", "dir": "min", "key": "k_pct_last_3_starts", "fmt": "pct"},
-        {"id": "S_bb_high", "group": "starter", "label": "Highest BB% (last 3 starts)", "dir": "max", "key": "bb_pct_last_3_starts", "fmt": "pct"},
-        {"id": "S_hardhit_high", "group": "starter", "label": "Highest HardHit% allowed (last 3 starts)", "dir": "max", "key": "hard_hit_pct_last_3_starts", "fmt": "pct"},
-        {"id": "S_kbb_bad", "group": "starter", "label": "Worst K-BB% (last 3 starts)", "dir": "min", "fn": lambda m: _as_float(m.get("k_pct_last_3_starts")) - _as_float(m.get("bb_pct_last_3_starts")) if _as_float(m.get("k_pct_last_3_starts")) is not None and _as_float(m.get("bb_pct_last_3_starts")) is not None else None, "fmt": "pct"},
-        {"id": "S_whiff_plus_k_bad", "group": "starter", "label": "Worst bat-missing: Whiff% and K% (last 3 starts)", "dir": "min", "pair": [{"key": "whiff_pct_last_3_starts", "label": "Whiff%", "fmt": "pct"}, {"key": "k_pct_last_3_starts", "label": "K%", "fmt": "pct"}]},
-        {"id": "S_damage_combo", "group": "starter", "label": "Worst damage combo (xwOBA + HardHit% allowed)", "dir": "max", "fn": lambda m: (_as_float(m.get("xwoba_last_3_starts")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_3_starts")) or 0.0), "fmt": "dec3"},
-        {"id": "R_xwOBA_allowed_high", "group": "reliever", "label": "Highest xwOBA allowed (last 6 apps)", "dir": "max", "key": "xwoba_last_5_apps", "fmt": "dec3"},
-        {"id": "R_whiff_low", "group": "reliever", "label": "Lowest Whiff% (last 6 apps)", "dir": "min", "key": "whiff_pct_last_5_apps", "fmt": "pct"},
-        {"id": "R_k_low", "group": "reliever", "label": "Lowest K% (last 6 apps)", "dir": "min", "key": "k_pct_last_5_apps", "fmt": "pct"},
-        {"id": "R_bb_high", "group": "reliever", "label": "Highest BB% (last 6 apps)", "dir": "max", "key": "bb_pct_last_5_apps", "fmt": "pct"},
-        {"id": "R_hardhit_high", "group": "reliever", "label": "Highest HardHit% allowed (last 6 apps)", "dir": "max", "key": "hard_hit_pct_last_5_apps", "fmt": "pct"},
-        {"id": "R_kbb_bad", "group": "reliever", "label": "Worst K-BB% (last 6 apps)", "dir": "min", "fn": lambda m: _as_float(m.get("k_pct_last_5_apps")) - _as_float(m.get("bb_pct_last_5_apps")) if _as_float(m.get("k_pct_last_5_apps")) is not None and _as_float(m.get("bb_pct_last_5_apps")) is not None else None, "fmt": "pct"},
-        {"id": "R_whiff_plus_k_bad", "group": "reliever", "label": "Worst bat-missing: Whiff% and K% (last 6 apps)", "dir": "min", "pair": [{"key": "whiff_pct_last_5_apps", "label": "Whiff%", "fmt": "pct"}, {"key": "k_pct_last_5_apps", "label": "K%", "fmt": "pct"}]},
-        {"id": "R_damage_combo", "group": "reliever", "label": "Worst damage combo (xwOBA + HardHit% allowed)", "dir": "max", "fn": lambda m: (_as_float(m.get("xwoba_last_5_apps")) or 0.0) + (_as_float(m.get("hard_hit_pct_last_5_apps")) or 0.0), "fmt": "dec3"},
-    ]
-
-    rng = random.Random(snapshot_date)
-    rng.shuffle(hot_stats)
-    rng.shuffle(not_stats)
-
-    items: list[dict[str, Any]] = []
-
-    def candidates_for(group: str):
-        if group == "starter":
-            return starters
-        if group == "reliever":
-            return relievers
-        return hitters
-
-    def format_value(value: float | None, fmt: str) -> str:
-        if fmt == "pct":
-            return _pct(value)
-        if fmt == "dec3":
-            return _dec3(value)
-        return "—" if value is None else str(value)
-
-    def format_pair(pair: Sequence[Mapping[str, str]], values: Sequence[float]) -> str:
-        parts: list[str] = []
-        for spec, v in zip(pair, values):
-            label = (spec.get("label") or "").strip()
-            fmt = (spec.get("fmt") or "").strip()
-            shown = format_value(v, fmt)
-            parts.append(f"{label} {shown}".strip())
-        return " · ".join([p for p in parts if p]) if parts else "—"
-
-    def add_items(kind: str, pool: Sequence[Mapping[str, Any]], target: int) -> None:
-        nonlocal items
-        count = 0
-        for stat in pool:
-            if count >= target:
-                break
-            stat_rng = random.Random(f"{snapshot_date}:{stat['id']}")
-            group = stat["group"]
-            cand = candidates_for(group)
-            leader = select_leader(
-                cand,
-                metric_key=stat.get("key"),
-                metric_pair=stat.get("pair"),
-                metric_fn=stat.get("fn"),
-                direction=stat["dir"],
-                rng=stat_rng,
-            )
-            if not leader:
-                continue
-            pid, payload, value, extra_values = leader
-            roles = payload.get("roles") if isinstance(payload.get("roles"), list) else [payload.get("role")]
-            roles_clean = [str(r) for r in roles if r]
-            pair = stat.get("pair")
-            if isinstance(pair, list) and extra_values is not None:
-                value_display = format_pair(pair, extra_values)
-            else:
-                value_display = format_value(value, stat.get("fmt") or "")
-            items.append(
-                {
-                    "kind": kind,
-                    "stat_id": stat["id"],
-                    "title": stat["label"],
-                    "player_id": pid,
-                    "name": (payload.get("name") or payload.get("player_name") or "").strip(),
-                    "position": (payload.get("position") or "").strip(),
-                    "current_team_id": payload.get("current_team_id"),
-                    "team_abbrev": (payload.get("team_abbrev") or "").strip(),
-                    "roles": roles_clean,
-                    "href": f"/players/{pid}/",
-                    "value": value,
-                    "value_display": value_display,
-                }
-            )
-            count += 1
-
-    add_items("hot", hot_stats, 25)
-    add_items("not", not_stats, 25)
-
-    # Force order: hot first (up to 25), then not (up to 25).
-    hot_items = [i for i in items if i.get("kind") == "hot"][:25]
-    not_items = [i for i in items if i.get("kind") == "not"][:25]
-    return [*hot_items, *not_items]
-
-
 def generate_data_product_staged(
     *,
     base_url: str,
@@ -568,7 +257,7 @@ def generate_data_product_staged(
             pid = futures[fut]
             player_details[pid] = fut.result()
 
-    # Minimal player refs for team/unicorns/index payloads.
+    # Minimal player refs for team/index payloads.
     player_minimal: dict[int, dict[str, Any]] = {}
     for pid, payload in player_details.items():
         name = (payload.get("player_name") or "").strip()
@@ -611,18 +300,12 @@ def generate_data_product_staged(
         payload["roles"] = _player_roles(payload)
         _atomic_write_json(staged_root / "players" / f"{pid}.json", payload)
 
-    feed_items = _build_hot_not_feed(team_details, snapshot_date=snapshot_date)
-    _atomic_write_json(staged_root / "unicorns.json", feed_items)
-
     meta = {
         "last_updated": _utc_now_iso(),
         "snapshot_date": snapshot_date,
-        "unicorns_source_date": snapshot_date,
-        "shuffle_seed_date": snapshot_date,
         "counts": {
             "teams_count": 30,
             "players_count": len(players_index),
-            "unicorns_count": len(feed_items),
         },
     }
     _atomic_write_json(staged_root / "meta.json", meta)
@@ -644,7 +327,6 @@ def validate_data_product_dir(root: Path) -> None:
 
     meta = load_json("meta.json")
     teams = load_json("teams.json")
-    unicorns = load_json("unicorns.json")
     players_index = load_json("players_index.json")
 
     if isinstance(meta, dict):
@@ -657,19 +339,6 @@ def validate_data_product_dir(root: Path) -> None:
         except Exception as exc:  # noqa: BLE001
             errors.append(f"meta.json snapshot_date invalid: {exc}")
             snapshot_date = None
-        try:
-            unicorns_source_date = meta.get("unicorns_source_date")
-            if unicorns_source_date is not None:
-                _ensure_date_str(unicorns_source_date)
-        except Exception as exc:  # noqa: BLE001
-            errors.append(f"meta.json unicorns_source_date invalid: {exc}")
-        try:
-            shuffle_seed_date = _ensure_date_str(meta.get("shuffle_seed_date"))
-            if snapshot_date and shuffle_seed_date != snapshot_date:
-                errors.append("meta.json shuffle_seed_date must equal snapshot_date")
-        except Exception as exc:  # noqa: BLE001
-            errors.append(f"meta.json shuffle_seed_date invalid: {exc}")
-
         counts = meta.get("counts")
         if not isinstance(counts, dict):
             errors.append("meta.json counts missing or invalid")
@@ -683,29 +352,6 @@ def validate_data_product_dir(root: Path) -> None:
                 continue
             if t.get("team_id") is None or t.get("abbreviation") is None:
                 errors.append(f"teams.json[{i}] must include team_id and abbreviation")
-
-    unicorn_player_ids: list[int] = []
-    unicorn_stat_ids: list[str] = []
-    if isinstance(unicorns, list):
-        if len(unicorns) > 50:
-            errors.append(f"unicorns.json must have length <= 50 (got {len(unicorns)})")
-        for i, u in enumerate(unicorns):
-            if not isinstance(u, dict):
-                errors.append(f"unicorns.json[{i}] must be an object")
-                continue
-            pid = u.get("player_id")
-            if pid is None:
-                errors.append(f"unicorns.json[{i}] missing player_id")
-                continue
-            unicorn_player_ids.append(int(pid))
-            stat_id = u.get("stat_id")
-            if stat_id is not None:
-                unicorn_stat_ids.append(str(stat_id))
-        if len(set(unicorn_player_ids)) != len(unicorn_player_ids):
-            # Allowed: a player may appear multiple times for different stats.
-            pass
-        if unicorn_stat_ids and len(set(unicorn_stat_ids)) != len(unicorn_stat_ids):
-            errors.append("unicorns.json must have unique stat_id values")
 
     team_player_ids: list[int] = []
     team_ids: list[int] = []
@@ -728,7 +374,7 @@ def validate_data_product_dir(root: Path) -> None:
                     continue
                 team_player_ids.append(int(p.get("player_id")))
 
-    referenced_player_ids = set(unicorn_player_ids) | set(team_player_ids)
+    referenced_player_ids = set(team_player_ids)
     for pid in sorted(referenced_player_ids):
         rel = f"players/{pid}.json"
         payload = load_json(rel)
@@ -744,9 +390,6 @@ def validate_data_product_dir(root: Path) -> None:
             errors.append("meta.json counts.teams_count inconsistent with teams.json")
         if isinstance(players_index, list) and int(counts.get("players_count", -1)) != len(players_index):
             errors.append("meta.json counts.players_count inconsistent with players_index.json")
-        if isinstance(unicorns, list) and int(counts.get("unicorns_count", -1)) != len(unicorns):
-            errors.append("meta.json counts.unicorns_count inconsistent with unicorns.json")
-
     if errors:
         raise ValueError("Data product validation failed:\n- " + "\n- ".join(errors))
 

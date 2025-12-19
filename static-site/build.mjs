@@ -39,7 +39,7 @@ async function main() {
 
   const dataRoot = path.join(repoRoot, "unicorn-website", "public", "data");
   const dataLatest = path.join(dataRoot, "latest");
-  const required = ["meta.json", "teams.json", "unicorns.json", "players_index.json"].map((f) => path.join(dataLatest, f));
+  const required = ["meta.json", "teams.json", "players_index.json"].map((f) => path.join(dataLatest, f));
   for (const file of required) {
     if (!(await exists(file))) {
       throw new Error(
@@ -71,4 +71,3 @@ main().catch((err) => {
   console.error(err?.message || err);
   process.exitCode = 1;
 });
-

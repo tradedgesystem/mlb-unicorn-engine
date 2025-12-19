@@ -5,13 +5,12 @@ This repo deploys a **static-only** frontend (HTML/CSS/JS + JSON) from `static-s
 ## What gets deployed
 
 - Static pages (no SSR, no API routes, no backend fetches)
-  - `/` (unicorns list)
+  - `/` (teams list)
   - `/teams/`
   - `/teams/{teamId}/`
   - `/players/{playerId}/`
 - Same-origin JSON data product (copied into output at build time)
   - `/data/latest/meta.json`
-  - `/data/latest/unicorns.json`
   - `/data/latest/teams.json`
   - `/data/latest/teams/{teamId}.json`
   - `/data/latest/players/{playerId}.json`

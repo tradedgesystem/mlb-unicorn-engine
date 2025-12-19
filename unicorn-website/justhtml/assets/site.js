@@ -314,60 +314,7 @@ function renderList(host, rows) {
   }
 }
 
-async function renderHome({ teamsById }) {
-  const hotHost = $("#hot");
-  const notHost = $("#not");
-  if (!hotHost || !notHost) return;
-  try {
-    const unicorns = await fetchJson(`${DATA_BASE}/unicorns.json`);
-    if (!Array.isArray(unicorns)) throw new Error("unicorns.json is not an array");
-    if (unicorns.length === 0) {
-      hotHost.textContent = "No results.";
-      notHost.textContent = "No results.";
-      return;
-    }
-
-    const hot = unicorns.filter((u) => u?.kind === "hot").slice(0, 25);
-    const not = unicorns.filter((u) => u?.kind === "not").slice(0, 25);
-
-    const toRows = (items, className) =>
-      items.map((u) => {
-        const pid = u?.player_id;
-        const name = u?.name || `Player ${pid}`;
-        const teamAbbr =
-          u?.team_abbrev ||
-          u?.team_abbreviation ||
-          u?.team_abbrev_current ||
-          teamsById.get(String(u?.current_team_id))?.abbreviation ||
-          "";
-        const pos = u?.position || "";
-        const title = u?.title || "";
-        const value = u?.value_display || "—";
-        const metaParts = [];
-        if (pos) metaParts.push(pos);
-        if (teamAbbr) metaParts.push(teamAbbr);
-        const meta = metaParts.length ? `<span class="feed-meta"> ${escapeHtml(metaParts.join(" · "))}</span>` : "";
-        const playerHref = pid ? `/players/${encodeURIComponent(pid)}/` : "#";
-        return {
-          className,
-          left: `<div class="feed-line"><a href="${playerHref}">${escapeHtml(name)}</a>${meta} — ${escapeHtml(
-            title,
-          )} <span class="feed-value">${escapeHtml(value)}</span></div>`,
-          right: null,
-        };
-      });
-
-    renderList(hotHost, toRows(hot, "hot"));
-    renderList(notHost, toRows(not, "not"));
-  } catch (err) {
-    hotHost.textContent = "Unable to load.";
-    notHost.textContent = "Unable to load.";
-    showStatus(err?.message || String(err));
-  }
-}
-
-async function renderTeamsIndex({ teams }) {
-  const host = $("#teams");
+function renderTeamsList(host, teams, { showId = true } = {}) {
   if (!host) return;
   host.textContent = "";
   if (!Array.isArray(teams) || teams.length === 0) {
@@ -379,10 +326,20 @@ async function renderTeamsIndex({ teams }) {
     const abbr = t.abbreviation || t.abbrev || teamId;
     return {
       left: `<a href="/teams/${encodeURIComponent(teamId)}/">${escapeHtml(abbr)}</a>`,
-      right: escapeHtml(String(teamId)),
+      right: showId ? escapeHtml(String(teamId)) : null,
     };
   });
   renderList(host, rows);
+}
+
+async function renderHome({ teams }) {
+  const host = $("#teams-home");
+  renderTeamsList(host, teams, { showId: false });
+}
+
+async function renderTeamsIndex({ teams }) {
+  const host = $("#teams");
+  renderTeamsList(host, teams, { showId: true });
 }
 
 async function renderTeamPage(teamId) {
@@ -543,7 +500,7 @@ async function init() {
     renderTeamsSidebar(teams);
 
     const page = document.body?.dataset?.page || "";
-    if (page === "home") await renderHome({ teamsById });
+    if (page === "home") await renderHome({ teams });
     if (page === "teams-index") await renderTeamsIndex({ teams });
 
     if (page === "team") {

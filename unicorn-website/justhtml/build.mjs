@@ -104,22 +104,15 @@ function pageTemplate({ title, bodyAttrs, mainHtml }) {
 
 function homePage() {
   return pageTemplate({
-    title: "Today’s Unicorns",
+    title: "Teams",
     bodyAttrs: 'data-page="home"',
     mainHtml: `
 <header class="header">
-  <h1>Who Is Hot / Who Is Not</h1>
-  <p class="subhead">Daily list (up to 25 hot + 25 not), stats chosen at random per day.</p>
+  <h1>Teams</h1>
+  <p class="subhead">All 30 MLB teams.</p>
 </header>
 <section>
-  <div class="panel">
-    <h2>Who is Hot</h2>
-    <div id="hot" class="list">Loading…</div>
-  </div>
-  <div class="panel">
-    <h2>Who is Not</h2>
-    <div id="not" class="list">Loading…</div>
-  </div>
+  <div id="teams-home" class="list">Loading…</div>
 </section>
 `,
   });
@@ -266,7 +259,7 @@ Defaults:
   );
   const outDir = path.resolve(repoRoot, args.outDir ?? "dist");
 
-  const required = ["meta.json", "teams.json", "unicorns.json", "players_index.json"];
+  const required = ["meta.json", "teams.json", "players_index.json"];
   for (const f of required) {
     const p = path.join(dataLatestDir, f);
     try {

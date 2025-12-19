@@ -20,8 +20,8 @@ Fill in your deployed static base URL:
   - Shows up to 10 results.
   - Clicking a result navigates to `/players/{playerId}/`.
 - **Home page**
-  - Renders 0–50 unicorn cards from `GET /data/latest/unicorns.json`.
-  - Each card links to `/players/{playerId}/`.
+  - Renders links to all 30 teams from `GET /data/latest/teams.json`.
+  - Each link navigates to `/teams/{teamId}/`.
 - **Team page**
   - Loads roster from `GET /data/latest/teams/{teamId}.json`.
   - Tabs switch between hitters/starters/relievers without a full page reload.
@@ -33,4 +33,3 @@ Fill in your deployed static base URL:
 ## Missing/invalid JSON handling
 
 - If any required JSON fails to load or parse, the page shows a clear “Unable to load …” message and does not crash.
-
