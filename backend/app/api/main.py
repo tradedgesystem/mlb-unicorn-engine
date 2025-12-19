@@ -124,8 +124,8 @@ def _sample_for_team_role(session, player_id: int, role: str) -> dict[str, int]:
     try:
         normalized = (role or "").strip().lower()
         if normalized == "hitter":
-            ab_ids = _last_ab_ids(session, player_id, limit=50)
-            return {"ab_count_last_50": int(len(ab_ids))}
+            ab_ids = _last_ab_ids(session, player_id, limit=150)
+            return {"ab_count_last_150": int(len(ab_ids))}
 
         # Use plate_appearances (not pitch_facts) so this works in minimal/test DBs.
         min_inning_sub = (
@@ -146,15 +146,15 @@ def _sample_for_team_role(session, player_id: int, role: str) -> dict[str, int]:
         if normalized == "starter":
             starter_ids = [
                 row.game_id
-                for row in session.execute(game_rows.where(min_inning_sub.c.min_inning <= 1).limit(3))
+                for row in session.execute(game_rows.where(min_inning_sub.c.min_inning <= 1).limit(6))
             ]
-            return {"starts_count_last_3": int(len(starter_ids))}
+            return {"starts_count_last_6": int(len(starter_ids))}
         if normalized == "reliever":
             reliever_ids = [
                 row.game_id
-                for row in session.execute(game_rows.where(min_inning_sub.c.min_inning > 1).limit(6))
+                for row in session.execute(game_rows.where(min_inning_sub.c.min_inning > 1).limit(8))
             ]
-            return {"apps_count_last_6": int(len(reliever_ids))}
+            return {"apps_count_last_8": int(len(reliever_ids))}
         return {}
     except Exception:
         logger.exception("Failed to compute sample for player_id=%s role=%s", player_id, role)
