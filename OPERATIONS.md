@@ -11,6 +11,17 @@
 
 The static site deployment copies `unicorn-website/public/data/` into the deployed output so it is reachable at same-origin `/data/latest/...`.
 
+## Daily wRC+ recalibration
+
+Run this before publishing the data product each day:
+
+```sh
+./scripts/daily_site_update.sh
+```
+
+This recalibrates wRC+ from the current Statcast window and publishes the data
+product into `unicorn-website/public/data/latest/` and `snapshots/`.
+
 ## Rollback (fast)
 
 Goal: restore `latest/` from yesterday’s snapshot and redeploy.
@@ -34,4 +45,3 @@ Goal: restore `latest/` from yesterday’s snapshot and redeploy.
 CI includes a static-only check that fails if the runtime JS references backend URLs or Next.js `/api/*` routes:
 
 - Script: `static-site/scripts/static-only-guard.mjs`
-
