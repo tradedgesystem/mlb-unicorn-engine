@@ -359,44 +359,28 @@ function renderDivisionGroup(host, leagueKey, teamsByAbbr) {
   }
 }
 
-function renderRosterByPosition(host, roster) {
+function renderRosterList(host, roster) {
   if (!host) return;
   host.textContent = "";
   if (!Array.isArray(roster) || roster.length === 0) {
     host.textContent = "No results.";
     return;
   }
-  const groups = new Map();
+  const ul = document.createElement("ul");
+  ul.className = "roster-list-items";
   for (const p of roster) {
-    const pos = (p?.position || "—").trim() || "—";
-    if (!groups.has(pos)) groups.set(pos, []);
-    groups.get(pos).push(p);
+    const pid = p?.player_id;
+    const name = p?.name || `Player ${pid}`;
+    const href = p?.href || `/players/${encodeURIComponent(pid)}/`;
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.className = "roster-name";
+    a.href = href;
+    a.textContent = String(name);
+    li.appendChild(a);
+    ul.appendChild(li);
   }
-  const positions = Array.from(groups.keys()).sort();
-  for (const pos of positions) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "roster-group";
-
-    const title = document.createElement("div");
-    title.className = "roster-group-title";
-    title.textContent = pos;
-    wrapper.appendChild(title);
-
-    const list = document.createElement("div");
-    list.className = "roster-names";
-    for (const p of groups.get(pos)) {
-      const pid = p?.player_id;
-      const name = p?.name || `Player ${pid}`;
-      const href = p?.href || `/players/${encodeURIComponent(pid)}/`;
-      const a = document.createElement("a");
-      a.className = "roster-name";
-      a.href = href;
-      a.textContent = String(name);
-      list.appendChild(a);
-    }
-    wrapper.appendChild(list);
-    host.appendChild(wrapper);
-  }
+  host.appendChild(ul);
 }
 
 async function renderHome({ teams }) {
@@ -439,7 +423,7 @@ async function renderTeamPage(teamId) {
     for (const spec of groupSpecs) {
       if (!spec.host) continue;
       const roster = Array.isArray(team?.[spec.key]) ? team[spec.key] : [];
-      renderRosterByPosition(spec.host, roster);
+      renderRosterList(spec.host, roster);
     }
   } catch (err) {
     showStatus(err?.message || String(err));
