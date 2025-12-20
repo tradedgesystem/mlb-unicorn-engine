@@ -1,0 +1,280 @@
+{
+  "abbreviation": "LAA",
+  "hitters": [
+    {
+      "href": "/players/605204/",
+      "name": "J.D. Davis",
+      "player_id": 605204,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/666176/",
+      "name": "Jo Adell",
+      "player_id": 666176,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/624585/",
+      "name": "Jorge Soler",
+      "player_id": 624585,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/621028/",
+      "name": "Kevin Newman",
+      "player_id": 621028,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/677347/",
+      "name": "Kyren Paris",
+      "player_id": 677347,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/681351/",
+      "name": "Logan O'Hoppe",
+      "player_id": 681351,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/650859/",
+      "name": "Luis Rengifo",
+      "player_id": 650859,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/545361/",
+      "name": "Mike Trout",
+      "player_id": 545361,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/694384/",
+      "name": "Nolan Schanuel",
+      "player_id": 694384,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/621493/",
+      "name": "Taylor Ward",
+      "player_id": 621493,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/641313/",
+      "name": "Tim Anderson",
+      "player_id": 641313,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/518595/",
+      "name": "Travis d'Arnaud",
+      "player_id": 518595,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/660162/",
+      "name": "Yoán Moncada",
+      "player_id": 660162,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/687263/",
+      "name": "Zach Neto",
+      "player_id": 687263,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/690829/",
+      "name": "Ben Joyce",
+      "player_id": 690829,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/656271/",
+      "name": "Brock Burke",
+      "player_id": 656271,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/702674/",
+      "name": "Caden Dana",
+      "player_id": 702674,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/680729/",
+      "name": "Garrett McDaniels",
+      "player_id": 680729,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/666120/",
+      "name": "Ian Anderson",
+      "player_id": 666120,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/445276/",
+      "name": "Kenley Jansen",
+      "player_id": 445276,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/690382/",
+      "name": "Michael Darrell-Hicks",
+      "player_id": 690382,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/670032/",
+      "name": "Nicky Lopez",
+      "player_id": 670032,
+      "position": "3B",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/672282/",
+      "name": "Reid Detmers",
+      "player_id": 672282,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/696270/",
+      "name": "Ryan Johnson",
+      "player_id": 696270,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/666171/",
+      "name": "Ryan Zeferjahn",
+      "player_id": 666171,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/686799/",
+      "name": "Jack Kochanowicz",
+      "player_id": 686799,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/667755/",
+      "name": "José Soriano",
+      "player_id": 667755,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/543294/",
+      "name": "Kyle Hendricks",
+      "player_id": 543294,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/542881/",
+      "name": "Tyler Anderson",
+      "player_id": 542881,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/579328/",
+      "name": "Yusei Kikuchi",
+      "player_id": 579328,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
+  "team_id": 108
+}

@@ -1,0 +1,67 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3125,
+    "bb": 13,
+    "era": 5.93,
+    "fip": 5.6349328002265455,
+    "h": 88,
+    "hr": 18,
+    "ip": 71.1,
+    "whip": 1.416
+  },
+  "current_team_id": 110,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3966,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2346,
+    "xwoba_last_5_apps": 0.5673
+  },
+  "name": "Zach Eflin",
+  "player_id": 621107,
+  "player_name": "Zach Eflin",
+  "recent_unicorns": [
+    {
+      "description": "Zach Eflin has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-04-05",
+      "score": 1.400879
+    },
+    {
+      "description": "Zach Eflin has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-04-04",
+      "score": 1.422619
+    },
+    {
+      "description": "Zach Eflin has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-04-02",
+      "score": 1.503355
+    },
+    {
+      "description": "Zach Eflin has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-28",
+      "score": 1.181896
+    },
+    {
+      "description": "Zach Eflin has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-27",
+      "score": 1.166736
+    }
+  ],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

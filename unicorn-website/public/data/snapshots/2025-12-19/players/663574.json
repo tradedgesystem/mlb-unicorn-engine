@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2553191489361702,
+    "bb": 31,
+    "era": 2.53,
+    "fip": 3.7818370058340216,
+    "h": 55,
+    "hr": 7,
+    "ip": 74.2,
+    "whip": 1.152
+  },
+  "current_team_id": 113,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0455,
+    "hard_hit_pct_last_5_apps": 0.2857,
+    "k_pct_last_5_apps": 0.1364,
+    "whiff_pct_last_5_apps": 0.0976,
+    "xwoba_last_5_apps": 0.4152
+  },
+  "name": "Tony Santillan",
+  "player_id": 663574,
+  "player_name": "Tony Santillan",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

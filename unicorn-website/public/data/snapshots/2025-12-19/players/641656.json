@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.24731182795698925,
+    "bb": 22,
+    "era": 4.28,
+    "fip": 4.375587005834022,
+    "h": 28,
+    "hr": 5,
+    "ip": 40.0,
+    "whip": 1.25
+  },
+  "current_team_id": 147,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1923,
+    "hard_hit_pct_last_5_apps": 0.25,
+    "k_pct_last_5_apps": 0.3077,
+    "whiff_pct_last_5_apps": 0.2778,
+    "xwoba_last_5_apps": 0.2929
+  },
+  "name": "Ian Hamilton",
+  "player_id": 641656,
+  "player_name": "Ian Hamilton",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

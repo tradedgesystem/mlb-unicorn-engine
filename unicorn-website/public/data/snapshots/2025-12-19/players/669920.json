@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.28634361233480177,
+    "bb": 26,
+    "era": 4.77,
+    "fip": 5.091104247213332,
+    "h": 80,
+    "hr": 15,
+    "ip": 77.1,
+    "whip": 1.371
+  },
+  "current_team_id": 133,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0588,
+    "hard_hit_pct_last_5_apps": 0.6667,
+    "k_pct_last_5_apps": 0.2353,
+    "whiff_pct_last_5_apps": 0.2857,
+    "xwoba_last_5_apps": 0.3336
+  },
+  "name": "Jason Alexander",
+  "player_id": 669920,
+  "player_name": "Jason Alexander",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

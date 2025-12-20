@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3092105263157895,
+    "bb": 31,
+    "era": 2.28,
+    "fip": 2.379108132594585,
+    "h": 51,
+    "hr": 4,
+    "ip": 71.0,
+    "whip": 1.155
+  },
+  "current_team_id": 117,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.069,
+    "hard_hit_pct_last_5_apps": 0.4063,
+    "k_pct_last_5_apps": 0.2414,
+    "whiff_pct_last_5_apps": 0.3077,
+    "xwoba_last_5_apps": 0.346
+  },
+  "name": "Bryan Abreu",
+  "player_id": 650556,
+  "player_name": "Bryan Abreu",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

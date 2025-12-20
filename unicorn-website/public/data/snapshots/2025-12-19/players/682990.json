@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.28695652173913044,
+    "bb": 55,
+    "era": 3.44,
+    "fip": 4.125587005834022,
+    "h": 151,
+    "hr": 19,
+    "ip": 162.0,
+    "whip": 1.272
+  },
+  "current_team_id": 158,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "Quinn Priester",
+  "player_id": 682990,
+  "player_name": "Quinn Priester",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.06666666666666667,
+    "bb": 2,
+    "era": 1.69,
+    "fip": 6.313087005834022,
+    "h": 2,
+    "hr": 1,
+    "ip": 5.1,
+    "whip": 0.75
+  },
+  "current_team_id": 142,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1053,
+    "hard_hit_pct_last_5_apps": 0.3462,
+    "k_pct_last_5_apps": 0.0526,
+    "whiff_pct_last_5_apps": 0.1613,
+    "xwoba_last_5_apps": 0.3747
+  },
+  "name": "Randy Dobnak",
+  "player_id": 677976,
+  "player_name": "Randy Dobnak",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

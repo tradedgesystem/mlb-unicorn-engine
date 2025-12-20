@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2556237218813906,
+    "bb": 54,
+    "era": 4.11,
+    "fip": 4.640206888874957,
+    "h": 153,
+    "hr": 28,
+    "ip": 171.0,
+    "whip": 1.211
+  },
+  "current_team_id": 133,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.1667,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.3,
+    "xwoba_last_5_apps": 0.8834
+  },
+  "name": "Jeffrey Springs",
+  "player_id": 605488,
+  "player_name": "Jeffrey Springs",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

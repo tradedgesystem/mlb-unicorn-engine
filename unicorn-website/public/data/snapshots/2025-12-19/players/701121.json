@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3611111111111111,
+    "bb": 3,
+    "era": 5.06,
+    "fip": 5.375587005834022,
+    "h": 15,
+    "hr": 2,
+    "ip": 10.2,
+    "whip": 1.688
+  },
+  "current_team_id": 117,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0556,
+    "hard_hit_pct_last_5_apps": 0.2593,
+    "k_pct_last_5_apps": 0.0556,
+    "whiff_pct_last_5_apps": 0.0,
+    "xwoba_last_5_apps": 0.3748
+  },
+  "name": "Logan VanWey",
+  "player_id": 701121,
+  "player_name": "Logan VanWey",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

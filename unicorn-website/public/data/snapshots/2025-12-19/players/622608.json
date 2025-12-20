@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.36637931034482757,
+    "bb": 47,
+    "era": 6.65,
+    "fip": 5.471740851987867,
+    "h": 192,
+    "hr": 22,
+    "ip": 130.0,
+    "whip": 1.838
+  },
+  "current_team_id": 115,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.4655,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1667,
+    "xwoba_last_5_apps": 0.6803
+  },
+  "name": "Antonio Senzatela",
+  "player_id": 622608,
+  "player_name": "Antonio Senzatela",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

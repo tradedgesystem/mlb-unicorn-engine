@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.329923273657289,
+    "bb": 72,
+    "era": 5.83,
+    "fip": 4.949530667805853,
+    "h": 152,
+    "hr": 23,
+    "ip": 142.0,
+    "whip": 1.577
+  },
+  "current_team_id": 110,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3793,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2471,
+    "xwoba_last_5_apps": 0.7663
+  },
+  "name": "Charlie Morton",
+  "player_id": 450203,
+  "player_name": "Charlie Morton",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

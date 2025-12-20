@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2608695652173913,
+    "bb": 46,
+    "era": 4.45,
+    "fip": 4.928778495195724,
+    "h": 115,
+    "hr": 19,
+    "ip": 125.1,
+    "whip": 1.285
+  },
+  "current_team_id": 134,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.4259,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2857,
+    "xwoba_last_5_apps": 0.3208
+  },
+  "name": "Bailey Falter",
+  "player_id": 663559,
+  "player_name": "Bailey Falter",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

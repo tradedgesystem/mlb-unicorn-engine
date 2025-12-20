@@ -1,0 +1,53 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2893401015228426,
+    "bb": 25,
+    "era": 4.1,
+    "fip": 3.507939947010492,
+    "h": 60,
+    "hr": 3,
+    "ip": 68.0,
+    "whip": 1.25
+  },
+  "current_team_id": 134,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.2353,
+    "k_pct_last_5_apps": 0.1667,
+    "whiff_pct_last_5_apps": 0.1333,
+    "xwoba_last_5_apps": 0.2297
+  },
+  "name": "Caleb Ferguson",
+  "player_id": 657571,
+  "player_name": "Caleb Ferguson",
+  "recent_unicorns": [
+    {
+      "description": "Caleb Ferguson allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.013699,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-02",
+      "score": 1.406823
+    },
+    {
+      "description": "Caleb Ferguson allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.013699,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-01",
+      "score": 1.344809
+    },
+    {
+      "description": "Caleb Ferguson allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-28",
+      "score": 1.088699
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

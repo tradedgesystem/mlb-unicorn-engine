@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.28776978417266186,
+    "bb": 36,
+    "era": 4.88,
+    "fip": 5.08303381434466,
+    "h": 95,
+    "hr": 15,
+    "ip": 94.0,
+    "whip": 1.394
+  },
+  "current_team_id": 136,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3333,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.125,
+    "xwoba_last_5_apps": null
+  },
+  "name": "Emerson Hancock",
+  "player_id": 676106,
+  "player_name": "Emerson Hancock",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

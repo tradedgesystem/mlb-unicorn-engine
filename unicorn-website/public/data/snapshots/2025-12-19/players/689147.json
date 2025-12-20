@@ -1,0 +1,53 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.29069767441860467,
+    "bb": 29,
+    "era": 3.45,
+    "fip": 3.779842324982958,
+    "h": 56,
+    "hr": 6,
+    "ip": 62.2,
+    "whip": 1.356
+  },
+  "current_team_id": 143,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.3704,
+    "k_pct_last_5_apps": 0.2083,
+    "whiff_pct_last_5_apps": 0.275,
+    "xwoba_last_5_apps": 0.3355
+  },
+  "name": "Orion Kerkering",
+  "player_id": 689147,
+  "player_name": "Orion Kerkering",
+  "recent_unicorns": [
+    {
+      "description": "Orion Kerkering allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-05",
+      "score": 1.635507
+    },
+    {
+      "description": "Orion Kerkering allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-04",
+      "score": 1.503513
+    },
+    {
+      "description": "Orion Kerkering allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-03",
+      "score": 1.49107
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2631578947368421,
+    "bb": 24,
+    "era": 3.88,
+    "fip": 4.007939947010492,
+    "h": 40,
+    "hr": 5,
+    "ip": 51.0,
+    "whip": 1.255
+  },
+  "current_team_id": 145,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.15,
+    "hard_hit_pct_last_5_apps": 0.1111,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.2105,
+    "xwoba_last_5_apps": 0.2975
+  },
+  "name": "Tyler Gilbert",
+  "player_id": 656457,
+  "player_name": "Tyler Gilbert",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

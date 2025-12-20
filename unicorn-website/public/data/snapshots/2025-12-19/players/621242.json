@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.264,
+    "bb": 21,
+    "era": 1.63,
+    "fip": 2.2662905234219615,
+    "h": 37,
+    "hr": 4,
+    "ip": 66.1,
+    "whip": 0.874
+  },
+  "current_team_id": 121,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.2069,
+    "hard_hit_pct_last_5_apps": 0.2963,
+    "k_pct_last_5_apps": 0.3103,
+    "whiff_pct_last_5_apps": 0.383,
+    "xwoba_last_5_apps": 0.3872
+  },
+  "name": "Edwin Díaz",
+  "player_id": 621242,
+  "player_name": "Edwin Díaz",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

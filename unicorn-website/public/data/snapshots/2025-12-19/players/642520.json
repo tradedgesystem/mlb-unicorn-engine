@@ -1,0 +1,46 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.4827586206896552,
+    "bb": 1,
+    "era": 9.0,
+    "fip": 3.8755870058340216,
+    "h": 15,
+    "hr": 1,
+    "ip": 8.0,
+    "whip": 2.0
+  },
+  "current_team_id": 140,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0244,
+    "hard_hit_pct_last_5_apps": 0.2973,
+    "k_pct_last_5_apps": 0.1951,
+    "whiff_pct_last_5_apps": 0.2807,
+    "xwoba_last_5_apps": 0.3747
+  },
+  "name": "Gerson Garabito",
+  "player_id": 642520,
+  "player_name": "Gerson Garabito",
+  "recent_unicorns": [
+    {
+      "description": "Gerson Garabito has the highest whiff rate over his last 5 relief outings.",
+      "metric_value": 0.625,
+      "pattern_id": "UNQ-R-0201",
+      "run_date": "2025-04-03",
+      "score": 1.298129
+    },
+    {
+      "description": "Gerson Garabito has the highest whiff rate over his last 5 relief outings.",
+      "metric_value": 0.625,
+      "pattern_id": "UNQ-R-0201",
+      "run_date": "2025-03-31",
+      "score": 1.225135
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

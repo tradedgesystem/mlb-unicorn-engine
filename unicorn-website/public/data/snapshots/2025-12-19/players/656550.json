@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.28865979381443296,
+    "bb": 54,
+    "era": 4.0,
+    "fip": 4.390121889554952,
+    "h": 100,
+    "hr": 16,
+    "ip": 114.2,
+    "whip": 1.343
+  },
+  "current_team_id": 144,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 1.0,
+    "k_pct_last_5_apps": 0.6667,
+    "whiff_pct_last_5_apps": 0.8,
+    "xwoba_last_5_apps": 0.091
+  },
+  "name": "Grant Holmes",
+  "player_id": 656550,
+  "player_name": "Grant Holmes",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

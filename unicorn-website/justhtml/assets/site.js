@@ -7,8 +7,6 @@ const BASIC_STAT_COLUMNS = {
     { key: "obp", label: "OBP", kind: "dec3" },
     { key: "iso", label: "ISO", kind: "dec3" },
     { key: "woba", label: "wOBA", kind: "dec3" },
-    { key: "ops_plus", label: "OPS+", kind: "int" },
-    { key: "wrc_plus", label: "wRC+", kind: "int" },
     { key: "babip", label: "BABIP", kind: "dec3" },
     { key: "h", label: "H", kind: "int" },
     { key: "doubles", label: "2B", kind: "int" },

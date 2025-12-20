@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.338785046728972,
+    "bb": 48,
+    "era": 6.7,
+    "fip": 5.460679354118982,
+    "h": 168,
+    "hr": 23,
+    "ip": 126.1,
+    "whip": 1.71
+  },
+  "current_team_id": 115,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2131,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1829,
+    "xwoba_last_5_apps": 0.4514
+  },
+  "name": "Germán Márquez",
+  "player_id": 608566,
+  "player_name": "Germán Márquez",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

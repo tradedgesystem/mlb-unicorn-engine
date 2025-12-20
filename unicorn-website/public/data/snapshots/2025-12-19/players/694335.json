@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2158273381294964,
+    "bb": 20,
+    "era": 1.94,
+    "fip": 2.7112223649500438,
+    "h": 33,
+    "hr": 3,
+    "ip": 60.1,
+    "whip": 0.878
+  },
+  "current_team_id": 138,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2857,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.125,
+    "xwoba_last_5_apps": 0.5568
+  },
+  "name": "Matt Svanson",
+  "player_id": 694335,
+  "player_name": "Matt Svanson",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

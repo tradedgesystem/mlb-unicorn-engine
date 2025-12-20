@@ -1,0 +1,39 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2545454545454545,
+    "bb": 47,
+    "era": 3.16,
+    "fip": 3.976938357185373,
+    "h": 49,
+    "hr": 7,
+    "ip": 74.0,
+    "whip": 1.297
+  },
+  "current_team_id": 110,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.2,
+    "hard_hit_pct_last_5_apps": 0.1111,
+    "k_pct_last_5_apps": 0.4,
+    "whiff_pct_last_5_apps": 0.3714,
+    "xwoba_last_5_apps": 0.2404
+  },
+  "name": "Seranthony Domínguez",
+  "player_id": 622554,
+  "player_name": "Seranthony Domínguez",
+  "recent_unicorns": [
+    {
+      "description": "Seranthony Domínguez allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.014925,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-04",
+      "score": 1.331271
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

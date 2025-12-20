@@ -1,0 +1,39 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.24074074074074073,
+    "bb": 19,
+    "era": 3.01,
+    "fip": 2.74884281978751,
+    "h": 45,
+    "hr": 6,
+    "ip": 71.2,
+    "whip": 0.893
+  },
+  "current_team_id": 117,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2353,
+    "k_pct_last_5_apps": 0.2963,
+    "whiff_pct_last_5_apps": 0.3509,
+    "xwoba_last_5_apps": 0.2994
+  },
+  "name": "Steven Okert",
+  "player_id": 595345,
+  "player_name": "Steven Okert",
+  "recent_unicorns": [
+    {
+      "description": "Steven Okert owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.086396,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-05",
+      "score": 2.393769
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

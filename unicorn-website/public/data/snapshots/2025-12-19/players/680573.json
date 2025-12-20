@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2651006711409396,
+    "bb": 46,
+    "era": 4.04,
+    "fip": 4.508820538768154,
+    "h": 96,
+    "hr": 17,
+    "ip": 111.1,
+    "whip": 1.275
+  },
+  "current_team_id": 142,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0588,
+    "hard_hit_pct_last_5_apps": 0.2917,
+    "k_pct_last_5_apps": 0.2941,
+    "whiff_pct_last_5_apps": 0.25,
+    "xwoba_last_5_apps": 0.3479
+  },
+  "name": "Simeon Woods Richardson",
+  "player_id": 680573,
+  "player_name": "Simeon Woods Richardson",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

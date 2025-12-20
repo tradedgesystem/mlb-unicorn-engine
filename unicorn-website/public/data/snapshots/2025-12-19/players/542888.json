@@ -1,0 +1,53 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.19553072625698323,
+    "bb": 20,
+    "era": 2.31,
+    "fip": 3.058019438266454,
+    "h": 40,
+    "hr": 5,
+    "ip": 74.0,
+    "whip": 0.811
+  },
+  "current_team_id": 140,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0968,
+    "hard_hit_pct_last_5_apps": 0.1818,
+    "k_pct_last_5_apps": 0.2581,
+    "whiff_pct_last_5_apps": 0.1525,
+    "xwoba_last_5_apps": 0.3476
+  },
+  "name": "Shawn Armstrong",
+  "player_id": 542888,
+  "player_name": "Shawn Armstrong",
+  "recent_unicorns": [
+    {
+      "description": "Shawn Armstrong allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-04-01",
+      "score": 1.458245
+    },
+    {
+      "description": "Shawn Armstrong allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-31",
+      "score": 1.400655
+    },
+    {
+      "description": "Shawn Armstrong allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-30",
+      "score": 1.38088
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

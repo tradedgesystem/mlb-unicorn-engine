@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3218390804597701,
+    "bb": 18,
+    "era": 4.11,
+    "fip": 3.2886304840948912,
+    "h": 60,
+    "hr": 4,
+    "ip": 61.1,
+    "whip": 1.272
+  },
+  "current_team_id": 137,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0417,
+    "hard_hit_pct_last_5_apps": 0.2059,
+    "k_pct_last_5_apps": 0.2083,
+    "whiff_pct_last_5_apps": 0.093,
+    "xwoba_last_5_apps": 0.3405
+  },
+  "name": "Ryan Walker",
+  "player_id": 676254,
+  "player_name": "Ryan Walker",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

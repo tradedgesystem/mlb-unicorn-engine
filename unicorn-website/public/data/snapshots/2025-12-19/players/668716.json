@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.4727272727272727,
+    "bb": 20,
+    "era": 13.24,
+    "fip": 4.537351711716375,
+    "h": 26,
+    "hr": 0,
+    "ip": 17.0,
+    "whip": 2.706
+  },
+  "current_team_id": 133,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.2093,
+    "hard_hit_pct_last_5_apps": 0.2432,
+    "k_pct_last_5_apps": 0.2093,
+    "whiff_pct_last_5_apps": 0.2667,
+    "xwoba_last_5_apps": 0.3321
+  },
+  "name": "Noah Murdock",
+  "player_id": 668716,
+  "player_name": "Noah Murdock",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

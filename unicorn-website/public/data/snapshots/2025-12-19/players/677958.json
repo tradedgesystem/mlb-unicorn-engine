@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3125,
+    "bb": 23,
+    "era": 5.74,
+    "fip": 4.866519648321068,
+    "h": 71,
+    "hr": 11,
+    "ip": 64.1,
+    "whip": 1.461
+  },
+  "current_team_id": 140,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.4286,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2727,
+    "xwoba_last_5_apps": 1.848
+  },
+  "name": "Kumar Rocker",
+  "player_id": 677958,
+  "player_name": "Kumar Rocker",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

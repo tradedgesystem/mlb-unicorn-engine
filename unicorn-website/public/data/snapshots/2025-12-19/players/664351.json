@@ -1,0 +1,53 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2903225806451613,
+    "bb": 8,
+    "era": 6.75,
+    "fip": 5.125587005834022,
+    "h": 11,
+    "hr": 2,
+    "ip": 12.0,
+    "whip": 1.583
+  },
+  "current_team_id": 117,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.15,
+    "hard_hit_pct_last_5_apps": 0.24,
+    "k_pct_last_5_apps": 0.2,
+    "whiff_pct_last_5_apps": 0.2174,
+    "xwoba_last_5_apps": 0.3419
+  },
+  "name": "Luis Contreras",
+  "player_id": 664351,
+  "player_name": "Luis Contreras",
+  "recent_unicorns": [
+    {
+      "description": "Luis Contreras owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-30",
+      "score": 2.473889
+    },
+    {
+      "description": "Luis Contreras owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-29",
+      "score": 2.350386
+    },
+    {
+      "description": "Luis Contreras owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-28",
+      "score": 2.132758
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.44,
+    "bb": 1,
+    "era": 6.28,
+    "fip": 3.334889331415417,
+    "h": 24,
+    "hr": 2,
+    "ip": 14.1,
+    "whip": 1.744
+  },
+  "current_team_id": 112,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3077,
+    "k_pct_last_5_apps": 0.1538,
+    "whiff_pct_last_5_apps": 0.0952,
+    "xwoba_last_5_apps": 0.3737
+  },
+  "name": "Jordan Wicks",
+  "player_id": 696136,
+  "player_name": "Jordan Wicks",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

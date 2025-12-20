@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.33986928104575165,
+    "bb": 25,
+    "era": 3.96,
+    "fip": 3.109880199551299,
+    "h": 58,
+    "hr": 6,
+    "ip": 63.2,
+    "whip": 1.304
+  },
+  "current_team_id": 108,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0909,
+    "hard_hit_pct_last_5_apps": 0.1429,
+    "k_pct_last_5_apps": 0.1515,
+    "whiff_pct_last_5_apps": 0.2034,
+    "xwoba_last_5_apps": 0.3056
+  },
+  "name": "Reid Detmers",
+  "player_id": 672282,
+  "player_name": "Reid Detmers",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

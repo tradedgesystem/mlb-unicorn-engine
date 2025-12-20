@@ -1,0 +1,39 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2937625754527163,
+    "bb": 50,
+    "era": 4.54,
+    "fip": 4.096898481243858,
+    "h": 162,
+    "hr": 16,
+    "ip": 162.2,
+    "whip": 1.303
+  },
+  "current_team_id": 133,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2794,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1919,
+    "xwoba_last_5_apps": 0.8852
+  },
+  "name": "Luis Severino",
+  "player_id": 622663,
+  "player_name": "Luis Severino",
+  "recent_unicorns": [
+    {
+      "description": "Luis Severino has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-04-15",
+      "score": 0.0
+    }
+  ],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

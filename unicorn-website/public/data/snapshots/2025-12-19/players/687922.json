@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.29411764705882354,
+    "bb": 12,
+    "era": 6.66,
+    "fip": 5.385860978436762,
+    "h": 25,
+    "hr": 5,
+    "ip": 24.1,
+    "whip": 1.521
+  },
+  "current_team_id": 141,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.0769,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2973,
+    "xwoba_last_5_apps": 0.204
+  },
+  "name": "Easton Lucas",
+  "player_id": 687922,
+  "player_name": "Easton Lucas",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

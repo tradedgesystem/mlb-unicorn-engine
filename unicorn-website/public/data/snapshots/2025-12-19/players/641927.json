@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2958715596330275,
+    "bb": 31,
+    "era": 5.1,
+    "fip": 4.888684955720127,
+    "h": 159,
+    "hr": 30,
+    "ip": 146.1,
+    "whip": 1.298
+  },
+  "current_team_id": 142,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2813,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2826,
+    "xwoba_last_5_apps": 0.926
+  },
+  "name": "Bailey Ober",
+  "player_id": 641927,
+  "player_name": "Bailey Ober",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

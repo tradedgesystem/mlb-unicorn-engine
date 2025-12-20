@@ -30,15 +30,7 @@ import requests
 from sqlalchemy import case, func, select
 from pybaseball import batting_stats_bref, pitching_stats_bref
 
-from backend.app.tools.wrc_plus import (
-    CalibrationResult,
-    aggregate_hitters,
-    build_leaderboard,
-    build_plate_appearances,
-    compute_league_context,
-    load_constants,
-    load_statcast_data,
-)
+from backend.app.tools.wrc_plus import build_plate_appearances, load_constants, load_statcast_data
 
 from backend.app.db import models
 from backend.app.db.session import SessionLocal
@@ -62,8 +54,6 @@ _BATTING_STAT_SPECS: list[tuple[str, str, str]] = [
     ("obp", "OBP", "dec3"),
     ("iso", "ISO", "dec3"),
     ("woba", "wOBA", "dec3"),
-    ("ops_plus", "OPS+", "int"),
-    ("wrc_plus", "wRC+", "int"),
     ("babip", "BABIP", "dec3"),
     ("h", "H", "int"),
     ("doubles", "2B", "int"),
@@ -190,19 +180,6 @@ def _statcast_date_range(season: int) -> tuple[str, str] | None:
     return _statcast_date_range_from_constants(season)
 
 
-def _resolve_wrc_plus_constants_path(season: int, start_date: str, end_date: str) -> Path | None:
-    env_path = os.getenv("WRC_PLUS_CONSTANTS_PATH", "").strip()
-    if env_path:
-        candidate = Path(env_path)
-        if candidate.exists():
-            return candidate
-        raise RuntimeError(f"WRC+ constants file not found at {candidate}")
-
-    candidate = Path("data/outputs") / f"wrc_plus_constants_{season}_{start_date}_{end_date}.json"
-    if candidate.exists():
-        return candidate
-    return None
-
 
 def _fetch_statcast_batting_stats(
     season: int,
@@ -301,22 +278,7 @@ def _fetch_statcast_batting_stats(
     )
     lg_slg = league_tb / league_ab if league_ab > 0 else None
 
-    counts["ops_plus"] = None
-    if lg_obp and lg_slg:
-        counts["ops_plus"] = 100 * ((counts["obp"] / lg_obp) + (counts["slg"] / lg_slg) - 1)
-    counts["wrc_plus"] = None
-
-    constants_path = _resolve_wrc_plus_constants_path(season, start_date, end_date)
-    if constants_path:
-        payload = load_constants(constants_path)
-        calibration = CalibrationResult(**payload["calibration"])
-        league_ctx = compute_league_context(pa_df)
-        hitters = aggregate_hitters(pa_df, cache_dir)
-        leaderboard = build_leaderboard(hitters, league_ctx, calibration)
-        wrc_map = dict(zip(leaderboard["player_id"], leaderboard["wRC_plus"]))
-        counts["wrc_plus"] = counts["batter"].map(wrc_map)
-    elif league_woba:
-        counts["wrc_plus"] = 100 * (counts["woba"] / league_woba)
+    # OPS+ and wRC+ removed from output.
 
     stats: dict[int, dict[str, Any]] = {}
     for _, row in counts.iterrows():
@@ -328,8 +290,6 @@ def _fetch_statcast_batting_stats(
             "obp": _coerce_number(row["obp"], "dec3"),
             "iso": _coerce_number(row["iso"], "dec3"),
             "woba": _coerce_number(row["woba"], "dec3"),
-            "ops_plus": _coerce_number(row.get("ops_plus"), "int"),
-            "wrc_plus": _coerce_number(row.get("wrc_plus"), "int"),
             "babip": _coerce_number(row["babip"], "dec3"),
             "h": _coerce_number(row["h"], "int"),
             "doubles": _coerce_number(row["doubles"], "int"),
@@ -522,12 +482,6 @@ def _fetch_bref_batting_stats(season: int, league_rates: dict[str, float] | None
                 + 2.1 * int(hr or 0)
             )
             woba = woba_num / float(woba_denom)
-        ops_plus = None
-        if lg_obp and lg_slg and obp is not None and slg is not None:
-            ops_plus = 100 * ((float(obp) / lg_obp) + (float(slg) / lg_slg) - 1)
-        wrc_plus = None
-        if lg_woba and woba is not None and lg_woba > 0:
-            wrc_plus = 100 * (woba / lg_woba)
         stats[pid] = {
             "avg": avg,
             "slg": slg,
@@ -535,8 +489,6 @@ def _fetch_bref_batting_stats(season: int, league_rates: dict[str, float] | None
             "obp": obp,
             "iso": iso,
             "woba": woba,
-            "ops_plus": ops_plus,
-            "wrc_plus": wrc_plus,
             "babip": babip,
             "h": h,
             "doubles": doubles,

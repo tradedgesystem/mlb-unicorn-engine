@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.291970802919708,
+    "bb": 23,
+    "era": 3.31,
+    "fip": 4.344941844543699,
+    "h": 47,
+    "hr": 7,
+    "ip": 51.2,
+    "whip": 1.355
+  },
+  "current_team_id": 113,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.28,
+    "k_pct_last_5_apps": 0.2632,
+    "whiff_pct_last_5_apps": 0.3158,
+    "xwoba_last_5_apps": 0.2462
+  },
+  "name": "Taylor Rogers",
+  "player_id": 573124,
+  "player_name": "Taylor Rogers",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.4117647058823529,
+    "bb": 10,
+    "era": 7.71,
+    "fip": 4.935110815357831,
+    "h": 32,
+    "hr": 4,
+    "ip": 21.0,
+    "whip": 2.0
+  },
+  "current_team_id": 118,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0909,
+    "hard_hit_pct_last_5_apps": 0.2097,
+    "k_pct_last_5_apps": 0.1364,
+    "whiff_pct_last_5_apps": 0.2222,
+    "xwoba_last_5_apps": 0.3553
+  },
+  "name": "Chris Stratton",
+  "player_id": 608717,
+  "player_name": "Chris Stratton",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

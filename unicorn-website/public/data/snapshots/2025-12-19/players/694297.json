@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.31675874769797424,
+    "bb": 37,
+    "era": 5.25,
+    "fip": 4.20671908130572,
+    "h": 198,
+    "hr": 26,
+    "ip": 176.2,
+    "whip": 1.33
+  },
+  "current_team_id": 109,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2769,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2247,
+    "xwoba_last_5_apps": 0.331
+  },
+  "name": "Brandon Pfaadt",
+  "player_id": 694297,
+  "player_name": "Brandon Pfaadt",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

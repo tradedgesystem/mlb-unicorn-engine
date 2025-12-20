@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.24539877300613497,
+    "bb": 21,
+    "era": 1.73,
+    "fip": 2.787125467372483,
+    "h": 90,
+    "hr": 10,
+    "ip": 130.0,
+    "whip": 0.854
+  },
+  "current_team_id": 140,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "Nathan Eovaldi",
+  "player_id": 543135,
+  "player_name": "Nathan Eovaldi",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

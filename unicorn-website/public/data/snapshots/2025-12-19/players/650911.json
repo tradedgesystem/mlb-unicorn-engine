@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2984014209591474,
+    "bb": 47,
+    "era": 2.48,
+    "fip": 2.5227832675162647,
+    "h": 180,
+    "hr": 12,
+    "ip": 214.0,
+    "whip": 1.061
+  },
+  "current_team_id": 143,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.129,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.3,
+    "xwoba_last_5_apps": 0.2045
+  },
+  "name": "Cristopher Sánchez",
+  "player_id": 650911,
+  "player_name": "Cristopher Sánchez",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2457627118644068,
+    "bb": 13,
+    "era": 5.86,
+    "fip": 5.172098633740998,
+    "h": 38,
+    "hr": 9,
+    "ip": 43.0,
+    "whip": 1.186
+  },
+  "current_team_id": 135,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2857,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.25,
+    "xwoba_last_5_apps": 0.635
+  },
+  "name": "Kyle Hart",
+  "player_id": 606996,
+  "player_name": "Kyle Hart",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

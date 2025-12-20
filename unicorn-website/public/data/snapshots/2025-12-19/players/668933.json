@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.35233160621761656,
+    "bb": 25,
+    "era": 3.93,
+    "fip": 2.763777960607891,
+    "h": 70,
+    "hr": 2,
+    "ip": 66.1,
+    "whip": 1.432
+  },
+  "current_team_id": 113,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0968,
+    "hard_hit_pct_last_5_apps": 0.0811,
+    "k_pct_last_5_apps": 0.2258,
+    "whiff_pct_last_5_apps": 0.2222,
+    "xwoba_last_5_apps": 0.2163
+  },
+  "name": "Graham Ashcraft",
+  "player_id": 668933,
+  "player_name": "Graham Ashcraft",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

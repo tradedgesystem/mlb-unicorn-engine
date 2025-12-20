@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.30217391304347824,
+    "bb": 40,
+    "era": 4.21,
+    "fip": 4.015696895943912,
+    "h": 158,
+    "hr": 19,
+    "ip": 151.2,
+    "whip": 1.305
+  },
+  "current_team_id": 138,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.1765,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1026,
+    "xwoba_last_5_apps": 0.2857
+  },
+  "name": "Matthew Liberatore",
+  "player_id": 669461,
+  "player_name": "Matthew Liberatore",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

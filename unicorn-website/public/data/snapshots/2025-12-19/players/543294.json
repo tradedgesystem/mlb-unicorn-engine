@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2811881188118812,
+    "bb": 43,
+    "era": 4.76,
+    "fip": 4.589149758870459,
+    "h": 167,
+    "hr": 25,
+    "ip": 164.2,
+    "whip": 1.275
+  },
+  "current_team_id": 108,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.1795,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2041,
+    "xwoba_last_5_apps": 0.167
+  },
+  "name": "Kyle Hendricks",
+  "player_id": 543294,
+  "player_name": "Kyle Hendricks",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

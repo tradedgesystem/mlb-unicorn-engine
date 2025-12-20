@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2956989247311828,
+    "bb": 17,
+    "era": 4.13,
+    "fip": 3.8632919238668086,
+    "h": 61,
+    "hr": 6,
+    "ip": 61.0,
+    "whip": 1.279
+  },
+  "current_team_id": 111,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "Hunter Dobbins",
+  "player_id": 690928,
+  "player_name": "Hunter Dobbins",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.34355828220858897,
+    "bb": 19,
+    "era": 6.65,
+    "fip": 6.294601090341064,
+    "h": 67,
+    "hr": 11,
+    "ip": 47.1,
+    "whip": 1.817
+  },
+  "current_team_id": 145,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0455,
+    "hard_hit_pct_last_5_apps": 0.2698,
+    "k_pct_last_5_apps": 0.1364,
+    "whiff_pct_last_5_apps": 0.1667,
+    "xwoba_last_5_apps": 0.3983
+  },
+  "name": "Bryse Wilson",
+  "player_id": 669060,
+  "player_name": "Bryse Wilson",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

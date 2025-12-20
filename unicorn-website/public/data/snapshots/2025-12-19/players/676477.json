@@ -1,0 +1,39 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3125,
+    "bb": 26,
+    "era": 2.32,
+    "fip": 2.1889354221236146,
+    "h": 57,
+    "hr": 2,
+    "ip": 73.2,
+    "whip": 1.127
+  },
+  "current_team_id": 111,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0976,
+    "hard_hit_pct_last_5_apps": 0.2826,
+    "k_pct_last_5_apps": 0.3415,
+    "whiff_pct_last_5_apps": 0.3293,
+    "xwoba_last_5_apps": 0.2864
+  },
+  "name": "Garrett Whitlock",
+  "player_id": 676477,
+  "player_name": "Garrett Whitlock",
+  "recent_unicorns": [
+    {
+      "description": "Garrett Whitlock allows the lowest hard-hit rate over his last 5 relief outings.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-R-0202",
+      "run_date": "2025-03-27",
+      "score": 0.69131
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

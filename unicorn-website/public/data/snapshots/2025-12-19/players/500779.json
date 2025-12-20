@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2645631067961165,
+    "bb": 52,
+    "era": 4.02,
+    "fip": 4.837782127785241,
+    "h": 128,
+    "hr": 19,
+    "ip": 136.2,
+    "whip": 1.317
+  },
+  "current_team_id": 158,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "Jose Quintana",
+  "player_id": 500779,
+  "player_name": "Jose Quintana",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

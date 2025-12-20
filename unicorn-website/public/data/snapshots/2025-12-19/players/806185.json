@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.288135593220339,
+    "bb": 37,
+    "era": 4.8,
+    "fip": 4.952998173346712,
+    "h": 61,
+    "hr": 10,
+    "ip": 65.2,
+    "whip": 1.492
+  },
+  "current_team_id": 137,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0976,
+    "hard_hit_pct_last_5_apps": 0.2791,
+    "k_pct_last_5_apps": 0.2195,
+    "whiff_pct_last_5_apps": 0.2462,
+    "xwoba_last_5_apps": 0.3174
+  },
+  "name": "Hayden Birdsong",
+  "player_id": 806185,
+  "player_name": "Hayden Birdsong",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

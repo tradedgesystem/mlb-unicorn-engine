@@ -1,0 +1,39 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.25263157894736843,
+    "bb": 30,
+    "era": 3.41,
+    "fip": 4.9904518706988865,
+    "h": 27,
+    "hr": 3,
+    "ip": 37.0,
+    "whip": 1.541
+  },
+  "current_team_id": 144,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0833,
+    "hard_hit_pct_last_5_apps": 0.1818,
+    "k_pct_last_5_apps": 0.1667,
+    "whiff_pct_last_5_apps": 0.25,
+    "xwoba_last_5_apps": 0.2128
+  },
+  "name": "Daysbel Hernández",
+  "player_id": 678226,
+  "player_name": "Daysbel Hernández",
+  "recent_unicorns": [
+    {
+      "description": "Daysbel Hernández has the highest whiff rate over his last 5 relief outings.",
+      "metric_value": 1.0,
+      "pattern_id": "UNQ-R-0201",
+      "run_date": "2025-04-01",
+      "score": 2.067881
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

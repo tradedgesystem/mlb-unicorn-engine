@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.25925925925925924,
+    "bb": 15,
+    "era": 2.74,
+    "fip": 3.429934831920978,
+    "h": 33,
+    "hr": 5,
+    "ip": 46.0,
+    "whip": 1.043
+  },
+  "current_team_id": 109,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0714,
+    "hard_hit_pct_last_5_apps": 0.1818,
+    "k_pct_last_5_apps": 0.3214,
+    "whiff_pct_last_5_apps": 0.2857,
+    "xwoba_last_5_apps": 0.2389
+  },
+  "name": "Shelby Miller",
+  "player_id": 571946,
+  "player_name": "Shelby Miller",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

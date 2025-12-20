@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2795031055900621,
+    "bb": 24,
+    "era": 3.28,
+    "fip": 4.2360842434030825,
+    "h": 53,
+    "hr": 8,
+    "ip": 60.1,
+    "whip": 1.276
+  },
+  "current_team_id": 146,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.08,
+    "hard_hit_pct_last_5_apps": 0.1622,
+    "k_pct_last_5_apps": 0.16,
+    "whiff_pct_last_5_apps": 0.1731,
+    "xwoba_last_5_apps": 0.3728
+  },
+  "name": "Calvin Faucher",
+  "player_id": 676534,
+  "player_name": "Calvin Faucher",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

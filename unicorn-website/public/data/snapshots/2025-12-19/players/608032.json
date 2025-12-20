@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.23497267759562843,
+    "bb": 22,
+    "era": 2.45,
+    "fip": 3.655890036137052,
+    "h": 48,
+    "hr": 5,
+    "ip": 66.0,
+    "whip": 1.061
+  },
+  "current_team_id": 118,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.129,
+    "hard_hit_pct_last_5_apps": 0.2162,
+    "k_pct_last_5_apps": 0.2581,
+    "whiff_pct_last_5_apps": 0.2041,
+    "xwoba_last_5_apps": 0.2697
+  },
+  "name": "Carlos Estévez",
+  "player_id": 608032,
+  "player_name": "Carlos Estévez",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

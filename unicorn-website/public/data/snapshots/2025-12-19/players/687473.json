@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3265993265993266,
+    "bb": 36,
+    "era": 5.67,
+    "fip": 4.600996841899596,
+    "h": 114,
+    "hr": 17,
+    "ip": 101.2,
+    "whip": 1.475
+  },
+  "current_team_id": 117,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0667,
+    "hard_hit_pct_last_5_apps": 0.325,
+    "k_pct_last_5_apps": 0.3,
+    "whiff_pct_last_5_apps": 0.2656,
+    "xwoba_last_5_apps": 0.2673
+  },
+  "name": "Ryan Gusto",
+  "player_id": 687473,
+  "player_name": "Ryan Gusto",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

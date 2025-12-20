@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.28,
+    "bb": 23,
+    "era": 4.65,
+    "fip": 5.191160776325825,
+    "h": 85,
+    "hr": 15,
+    "ip": 81.1,
+    "whip": 1.328
+  },
+  "current_team_id": 146,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.16,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1515,
+    "xwoba_last_5_apps": 0.665
+  },
+  "name": "Valente Bellozo",
+  "player_id": 678368,
+  "player_name": "Valente Bellozo",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

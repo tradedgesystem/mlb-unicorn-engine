@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2845528455284553,
+    "bb": 36,
+    "era": 4.64,
+    "fip": 5.348516942139755,
+    "h": 173,
+    "hr": 33,
+    "ip": 157.0,
+    "whip": 1.331
+  },
+  "current_team_id": 110,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0732,
+    "hard_hit_pct_last_5_apps": 0.25,
+    "k_pct_last_5_apps": 0.122,
+    "whiff_pct_last_5_apps": 0.1918,
+    "xwoba_last_5_apps": 0.354
+  },
+  "name": "Tomoyuki Sugano",
+  "player_id": 608372,
+  "player_name": "Tomoyuki Sugano",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

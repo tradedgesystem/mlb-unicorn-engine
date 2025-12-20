@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.3076923076923077,
+    "bb": 26,
+    "era": 4.18,
+    "fip": 4.625587005834022,
+    "h": 91,
+    "hr": 11,
+    "ip": 84.0,
+    "whip": 1.393
+  },
+  "current_team_id": 136,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.2632,
+    "k_pct_last_5_apps": 0.2083,
+    "whiff_pct_last_5_apps": 0.2857,
+    "xwoba_last_5_apps": 0.2544
+  },
+  "name": "Carlos Vargas",
+  "player_id": 672841,
+  "player_name": "Carlos Vargas",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

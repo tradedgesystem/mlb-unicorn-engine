@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2746478873239437,
+    "bb": 19,
+    "era": 5.4,
+    "fip": 4.869337005834021,
+    "h": 49,
+    "hr": 10,
+    "ip": 53.1,
+    "whip": 1.275
+  },
+  "current_team_id": 142,
+  "metrics": {
+    "bb_pct_last_5_apps": null,
+    "hard_hit_pct_last_5_apps": null,
+    "k_pct_last_5_apps": null,
+    "whiff_pct_last_5_apps": null,
+    "xwoba_last_5_apps": null
+  },
+  "name": "David Festa",
+  "player_id": 701581,
+  "player_name": "David Festa",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

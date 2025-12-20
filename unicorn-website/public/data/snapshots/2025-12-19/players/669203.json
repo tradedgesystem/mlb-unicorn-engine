@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.25609756097560976,
+    "bb": 26,
+    "era": 2.66,
+    "fip": 3.9338771612744363,
+    "h": 49,
+    "hr": 7,
+    "ip": 64.1,
+    "whip": 1.166
+  },
+  "current_team_id": 109,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2759,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.3125,
+    "xwoba_last_5_apps": 1.854
+  },
+  "name": "Corbin Burnes",
+  "player_id": 669203,
+  "player_name": "Corbin Burnes",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

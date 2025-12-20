@@ -1,0 +1,31 @@
+{
+  "basic_batting": null,
+  "basic_pitching": {
+    "babip": 0.2617801047120419,
+    "bb": 58,
+    "era": 3.81,
+    "fip": 4.08914053658573,
+    "h": 117,
+    "hr": 17,
+    "ip": 146.1,
+    "whip": 1.196
+  },
+  "current_team_id": 145,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3158,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2941,
+    "xwoba_last_5_apps": 0.272
+  },
+  "name": "Shane Smith",
+  "player_id": 681343,
+  "player_name": "Shane Smith",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}
