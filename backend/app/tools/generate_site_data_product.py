@@ -252,16 +252,26 @@ def _fetch_statcast_batting_stats(
     ).where((counts["ab"] - counts["so"] - counts["hr"] + counts["sf"]) > 0)
     counts["babip"] = (counts["h"] - counts["hr"]) / babip_denom
 
-    woba_num = (
-        0.69 * counts["bb"]
-        + 0.72 * counts["hbp"]
-        + 0.89 * counts["singles"]
-        + 1.27 * counts["doubles"]
-        + 1.62 * counts["triples"]
-        + 2.1 * counts["hr"]
-    )
-    woba_denom = counts["ab"] + counts["bb"] + counts["hbp"] + counts["sf"]
-    counts["woba"] = woba_num / woba_denom.where(woba_denom > 0)
+    woba_value_ok = "woba_value" in pa_df.columns
+    woba_denom_ok = "woba_denom" in pa_df.columns
+    if woba_value_ok and woba_denom_ok:
+        woba_num = pa_df.groupby("batter")["woba_value"].sum()
+        woba_denom = pa_df.groupby("batter")["woba_denom"].sum()
+        woba_ratio = woba_num / woba_denom.where(woba_denom > 0)
+        counts["woba"] = counts["batter"].map(woba_ratio)
+        league_woba = float(woba_num.sum() / woba_denom.sum()) if woba_denom.sum() > 0 else None
+    else:
+        woba_num = (
+            0.69 * counts["bb"]
+            + 0.72 * counts["hbp"]
+            + 0.89 * counts["singles"]
+            + 1.27 * counts["doubles"]
+            + 1.62 * counts["triples"]
+            + 2.1 * counts["hr"]
+        )
+        woba_denom = counts["ab"] + counts["bb"] + counts["hbp"] + counts["sf"]
+        counts["woba"] = woba_num / woba_denom.where(woba_denom > 0)
+        league_woba = woba_num.sum() / woba_denom.sum() if woba_denom.sum() > 0 else None
 
     league_ab = counts["ab"].sum()
     league_h = counts["h"].sum()
@@ -269,7 +279,6 @@ def _fetch_statcast_batting_stats(
     league_hbp = counts["hbp"].sum()
     league_sf = counts["sf"].sum()
     league_tb = counts["tb"].sum()
-    league_woba = woba_num.sum() / woba_denom.sum() if woba_denom.sum() > 0 else None
     lg_obp = (
         (league_h + league_bb + league_hbp)
         / (league_ab + league_bb + league_hbp + league_sf)
