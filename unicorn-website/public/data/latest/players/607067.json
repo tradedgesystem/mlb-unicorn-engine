@@ -14,16 +14,7 @@
     "triples": 0,
     "woba": 0.0
   },
-  "basic_pitching": {
-    "babip": 0.2936344969199179,
-    "bb": 47,
-    "era": 3.83,
-    "fip": 4.1555271255945,
-    "h": 164,
-    "hr": 21,
-    "ip": 167.0,
-    "whip": 1.263
-  },
+  "basic_pitching": null,
   "current_team_id": 112,
   "metrics": {
     "bb_pct_last_5_apps": 0.0,
