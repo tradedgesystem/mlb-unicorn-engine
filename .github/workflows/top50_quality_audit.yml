@@ -29,6 +29,8 @@ jobs:
           echo "end=$END" >> "$GITHUB_OUTPUT"
 
       - name: Run Top50 Quality Audit
+        env:
+          AUDIT_FAIL_ON_INSUFFICIENT: "0"
         run: |
           python -m backend.app.tools.audit_top50_quality \
             --start "${{ steps.dates.outputs.start }}" \

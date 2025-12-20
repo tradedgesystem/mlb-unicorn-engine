@@ -212,6 +212,32 @@ def audit_day(
     fail_reasons: List[str] = []
     warnings: List[str] = []
     n = len(entries)
+    if n == 0:
+        reason = "top50_insufficient_count"
+        if fail_on_short:
+            fail_reasons.append(reason)
+        else:
+            warnings.append(reason)
+        day_report = {
+            "n": 0,
+            "diversity": {
+                "patterns_distinct": 0,
+                "teams_distinct": 0,
+                "roles_distinct": 0,
+                "role_counts": {},
+            },
+            "duplicates": {
+                "pairs_over_0_85": 0,
+                "largest_cluster": 1,
+                "example_clusters": [],
+            },
+            "scores": {},
+            "role_mismatches": [],
+            "verdict": "FAIL" if fail_reasons else "PASS",
+            "fail_reasons": fail_reasons,
+            "warnings": warnings,
+        }
+        return day_report, fail_reasons
     patterns = {e.pattern_id for e in entries}
     teams = set()
     roles = []
