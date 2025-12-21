@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2222222222222222,
+    "babip": 0.32142857142857145,
+    "bb": 5,
+    "doubles": 0,
+    "h": 10,
+    "hr": 1,
+    "iso": 0.06666666666666665,
+    "k": 16,
+    "obp": 0.3137254901960784,
+    "ops": 0.6026143790849673,
+    "slg": 0.28888888888888886,
+    "triples": 0,
+    "woba": 0.2803921568627451
+  },
+  "basic_pitching": null,
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.21176470588235294,
+    "contact_pct_last_50": 0.33766233766233766,
+    "hard_hit_pct_last_50": 0.38461538461538464,
+    "xwoba_last_50": 0.21207142857142858
+  },
+  "name": "Masyn Winn",
+  "player_id": 691026,
+  "player_name": "Masyn Winn",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

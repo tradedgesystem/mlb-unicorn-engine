@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.19444444444444445,
+    "babip": 0.25,
+    "bb": 4,
+    "doubles": 1,
+    "h": 7,
+    "hr": 1,
+    "iso": 0.11111111111111113,
+    "k": 11,
+    "obp": 0.275,
+    "ops": 0.5805555555555556,
+    "slg": 0.3055555555555556,
+    "triples": 0,
+    "woba": 0.27051282051282055
+  },
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2153846153846154,
+    "contact_pct_last_50": 0.3870967741935484,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.25894285714285714
+  },
+  "name": "Ryan Bliss",
+  "player_id": 669208,
+  "player_name": "Ryan Bliss",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

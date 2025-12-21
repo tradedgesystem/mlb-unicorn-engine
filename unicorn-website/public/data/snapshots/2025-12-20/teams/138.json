@@ -1,0 +1,289 @@
+{
+  "abbreviation": "STL",
+  "hitters": [
+    {
+      "href": "/players/676475/",
+      "name": "Alec Burleson",
+      "player_id": 676475,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/680977/",
+      "name": "Brendan Donovan",
+      "player_id": 680977,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/671056/",
+      "name": "Iván Herrera",
+      "player_id": 671056,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/691023/",
+      "name": "Jordan Walker",
+      "player_id": 691023,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/663457/",
+      "name": "Lars Nootbaar",
+      "player_id": 663457,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/663609/",
+      "name": "Luken Baker",
+      "player_id": 663609,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/691026/",
+      "name": "Masyn Winn",
+      "player_id": 691026,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/672279/",
+      "name": "Michael Siani",
+      "player_id": 672279,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/571448/",
+      "name": "Nolan Arenado",
+      "player_id": 571448,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669357/",
+      "name": "Nolan Gorman",
+      "player_id": 669357,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/686780/",
+      "name": "Pedro Pagés",
+      "player_id": 686780,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/695336/",
+      "name": "Thomas Saggese",
+      "player_id": 695336,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/687363/",
+      "name": "Victor Scott II",
+      "player_id": 687363,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/575929/",
+      "name": "Willson Contreras",
+      "player_id": 575929,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/650968/",
+      "name": "Yohel Pozo",
+      "player_id": 650968,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/688297/",
+      "name": "Chris Roycroft",
+      "player_id": 688297,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/700669/",
+      "name": "Gordon Graceffo",
+      "player_id": 700669,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/668941/",
+      "name": "JoJo Romero",
+      "player_id": 668941,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/667463/",
+      "name": "John King",
+      "player_id": 667463,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681517/",
+      "name": "Kyle Leahy",
+      "player_id": 681517,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/694335/",
+      "name": "Matt Svanson",
+      "player_id": 694335,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/664208/",
+      "name": "Phil Maton",
+      "player_id": 664208,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/682610/",
+      "name": "Roddery Muñoz",
+      "player_id": 682610,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/681676/",
+      "name": "Ryan Fernandez",
+      "player_id": 681676,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/664854/",
+      "name": "Ryan Helsley",
+      "player_id": 664854,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/571927/",
+      "name": "Steven Matz",
+      "player_id": 571927,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/669467/",
+      "name": "Andre Pallante",
+      "player_id": 669467,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/607200/",
+      "name": "Erick Fedde",
+      "player_id": 607200,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/669461/",
+      "name": "Matthew Liberatore",
+      "player_id": 669461,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/571945/",
+      "name": "Miles Mikolas",
+      "player_id": 571945,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/543243/",
+      "name": "Sonny Gray",
+      "player_id": 543243,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
+  "team_id": 138
+}

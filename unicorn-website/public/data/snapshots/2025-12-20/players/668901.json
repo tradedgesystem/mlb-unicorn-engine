@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.16666666666666666,
+    "babip": 0.17857142857142858,
+    "bb": 9,
+    "doubles": 4,
+    "h": 12,
+    "hr": 2,
+    "iso": 0.13888888888888892,
+    "k": 14,
+    "obp": 0.25925925925925924,
+    "ops": 0.5648148148148149,
+    "slg": 0.3055555555555556,
+    "triples": 0,
+    "woba": 0.2777777777777778
+  },
+  "basic_pitching": null,
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.02631578947368421,
+    "chase_pct_last_50": 0.3469387755102041,
+    "contact_pct_last_50": 0.3877551020408163,
+    "hard_hit_pct_last_50": 0.3684210526315789,
+    "xwoba_last_50": 0.23848
+  },
+  "name": "Mark Vientos",
+  "player_id": 668901,
+  "player_name": "Mark Vientos",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

@@ -1,0 +1,51 @@
+{
+  "basic_batting": {
+    "avg": 0.2692307692307692,
+    "babip": 0.2459016393442623,
+    "bb": 3,
+    "doubles": 2,
+    "h": 21,
+    "hr": 6,
+    "iso": 0.2820512820512821,
+    "k": 12,
+    "obp": 0.30952380952380953,
+    "ops": 0.8608058608058609,
+    "slg": 0.5512820512820513,
+    "triples": 1,
+    "woba": 0.36626506024096384
+  },
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.05128205128205128,
+    "chase_pct_last_50": 0.2857142857142857,
+    "contact_pct_last_50": 0.4588235294117647,
+    "hard_hit_pct_last_50": 0.41025641025641024,
+    "xwoba_last_50": 0.31662
+  },
+  "name": "Tommy Edman",
+  "player_id": 669242,
+  "player_name": "Tommy Edman",
+  "recent_unicorns": [
+    {
+      "description": "Tommy Edman leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.2,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-01",
+      "score": 3.043311
+    },
+    {
+      "description": "Tommy Edman leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.22449,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-31",
+      "score": 3.216023
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

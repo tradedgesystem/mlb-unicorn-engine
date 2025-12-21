@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.34615384615384615,
+    "babip": 0.45,
+    "bb": 3,
+    "doubles": 4,
+    "h": 9,
+    "hr": 0,
+    "iso": 0.15384615384615385,
+    "k": 6,
+    "obp": 0.41379310344827586,
+    "ops": 0.9137931034482758,
+    "slg": 0.5,
+    "triples": 0,
+    "woba": 0.39999999999999997
+  },
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3157894736842105,
+    "contact_pct_last_50": 0.3076923076923077,
+    "hard_hit_pct_last_50": 0.625,
+    "xwoba_last_50": 0.2691904761904762
+  },
+  "name": "Romy Gonzalez",
+  "player_id": 663853,
+  "player_name": "Romy Gonzalez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

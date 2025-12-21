@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.20454545454545456,
+    "babip": 0.24615384615384617,
+    "bb": 9,
+    "doubles": 4,
+    "h": 18,
+    "hr": 2,
+    "iso": 0.11363636363636362,
+    "k": 22,
+    "obp": 0.2755102040816326,
+    "ops": 0.5936920222634507,
+    "slg": 0.3181818181818182,
+    "triples": 0,
+    "woba": 0.2663265306122449
+  },
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.38823529411764707,
+    "contact_pct_last_50": 0.3425925925925926,
+    "hard_hit_pct_last_50": 0.4594594594594595,
+    "xwoba_last_50": 0.24678
+  },
+  "name": "Anthony Santander",
+  "player_id": 623993,
+  "player_name": "Anthony Santander",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

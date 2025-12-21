@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2878787878787879,
+    "babip": 0.36,
+    "bb": 13,
+    "doubles": 1,
+    "h": 19,
+    "hr": 1,
+    "iso": 0.12121212121212122,
+    "k": 16,
+    "obp": 0.4,
+    "ops": 0.8090909090909091,
+    "slg": 0.4090909090909091,
+    "triples": 2,
+    "woba": 0.36645569620253166
+  },
+  "basic_pitching": null,
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3146067415730337,
+    "contact_pct_last_50": 0.4,
+    "hard_hit_pct_last_50": 0.2894736842105263,
+    "xwoba_last_50": 0.25816
+  },
+  "name": "Zach McKinstry",
+  "player_id": 656716,
+  "player_name": "Zach McKinstry",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

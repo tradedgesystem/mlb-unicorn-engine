@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3333,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2368,
+    "xwoba_last_5_apps": 0.3194
+  },
+  "name": "Logan Webb",
+  "player_id": 657277,
+  "player_name": "Logan Webb",
+  "recent_unicorns": [
+    {
+      "description": "Logan Webb has the highest whiff rate over his last 3 starts.",
+      "metric_value": 0.545455,
+      "pattern_id": "UNQ-P-0101",
+      "run_date": "2025-03-27",
+      "score": 1.197785
+    }
+  ],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

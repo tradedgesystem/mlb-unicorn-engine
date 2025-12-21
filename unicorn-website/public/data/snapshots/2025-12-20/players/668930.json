@@ -1,0 +1,51 @@
+{
+  "basic_batting": {
+    "avg": 0.3218390804597701,
+    "babip": 0.373134328358209,
+    "bb": 5,
+    "doubles": 1,
+    "h": 28,
+    "hr": 3,
+    "iso": 0.11494252873563221,
+    "k": 19,
+    "obp": 0.35789473684210527,
+    "ops": 0.7946763460375076,
+    "slg": 0.4367816091954023,
+    "triples": 0,
+    "woba": 0.3857894736842105
+  },
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2631578947368421,
+    "contact_pct_last_50": 0.39805825242718446,
+    "hard_hit_pct_last_50": 0.4878048780487805,
+    "xwoba_last_50": 0.3203469387755102
+  },
+  "name": "Brice Turang",
+  "player_id": 668930,
+  "player_name": "Brice Turang",
+  "recent_unicorns": [
+    {
+      "description": "Brice Turang has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.629667,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-05",
+      "score": 2.052999
+    },
+    {
+      "description": "Brice Turang has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.629667,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-04",
+      "score": 2.021934
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.5,
+    "babip": 0.5,
+    "bb": 0,
+    "doubles": 0,
+    "h": 1,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 0,
+    "obp": 0.5,
+    "ops": 1.0,
+    "slg": 0.5,
+    "triples": 0,
+    "woba": 0.45
+  },
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.0,
+    "contact_pct_last_50": 0.5,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.0845
+  },
+  "name": "Cal Stevenson",
+  "player_id": 670276,
+  "player_name": "Cal Stevenson",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

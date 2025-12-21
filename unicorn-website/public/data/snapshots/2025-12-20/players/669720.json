@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.42857142857142855,
+    "babip": 0.47368421052631576,
+    "bb": 2,
+    "doubles": 1,
+    "h": 12,
+    "hr": 3,
+    "iso": 0.35714285714285715,
+    "k": 6,
+    "obp": 0.4666666666666667,
+    "ops": 1.2523809523809524,
+    "slg": 0.7857142857142857,
+    "triples": 0,
+    "woba": 0.5283333333333334
+  },
+  "basic_pitching": null,
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.05263157894736842,
+    "chase_pct_last_50": 0.41025641025641024,
+    "contact_pct_last_50": 0.4418604651162791,
+    "hard_hit_pct_last_50": 0.5789473684210527,
+    "xwoba_last_50": 0.47191304347826085
+  },
+  "name": "Austin Hays",
+  "player_id": 669720,
+  "player_name": "Austin Hays",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

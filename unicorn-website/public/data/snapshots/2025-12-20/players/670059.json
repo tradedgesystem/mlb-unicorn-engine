@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.16,
+    "hard_hit_pct_last_5_apps": 0.2258,
+    "k_pct_last_5_apps": 0.24,
+    "whiff_pct_last_5_apps": 0.3519,
+    "xwoba_last_5_apps": 0.4286
+  },
+  "name": "Colin Holderman",
+  "player_id": 670059,
+  "player_name": "Colin Holderman",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

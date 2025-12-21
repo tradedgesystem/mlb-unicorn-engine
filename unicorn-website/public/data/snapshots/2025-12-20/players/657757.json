@@ -1,0 +1,58 @@
+{
+  "basic_batting": {
+    "avg": 0.3333333333333333,
+    "babip": 0.4146341463414634,
+    "bb": 5,
+    "doubles": 4,
+    "h": 19,
+    "hr": 2,
+    "iso": 0.17543859649122812,
+    "k": 15,
+    "obp": 0.38095238095238093,
+    "ops": 0.8897243107769424,
+    "slg": 0.5087719298245614,
+    "triples": 0,
+    "woba": 0.3841269841269841
+  },
+  "basic_pitching": null,
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3523809523809524,
+    "contact_pct_last_50": 0.34951456310679613,
+    "hard_hit_pct_last_50": 0.5277777777777778,
+    "xwoba_last_50": 0.30432
+  },
+  "name": "Gavin Sheets",
+  "player_id": 657757,
+  "player_name": "Gavin Sheets",
+  "recent_unicorns": [
+    {
+      "description": "Gavin Sheets leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.151899,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-02",
+      "score": 2.087089
+    },
+    {
+      "description": "Gavin Sheets leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.180328,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-01",
+      "score": 2.561042
+    },
+    {
+      "description": "Gavin Sheets leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.180328,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-31",
+      "score": 2.353696
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.27586206896551724,
+    "babip": 0.358974358974359,
+    "bb": 0,
+    "doubles": 3,
+    "h": 16,
+    "hr": 2,
+    "iso": 0.1896551724137931,
+    "k": 17,
+    "obp": 0.288135593220339,
+    "ops": 0.7536528345996494,
+    "slg": 0.46551724137931033,
+    "triples": 1,
+    "woba": 0.338135593220339
+  },
+  "basic_pitching": null,
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.35,
+    "contact_pct_last_50": 0.3300970873786408,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.30624
+  },
+  "name": "Dillon Dingler",
+  "player_id": 693307,
+  "player_name": "Dillon Dingler",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

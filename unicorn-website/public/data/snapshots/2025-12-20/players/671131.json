@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1563,
+    "hard_hit_pct_last_5_apps": 0.1892,
+    "k_pct_last_5_apps": 0.3438,
+    "whiff_pct_last_5_apps": 0.3846,
+    "xwoba_last_5_apps": 0.3232
+  },
+  "name": "Jackson Rutledge",
+  "player_id": 671131,
+  "player_name": "Jackson Rutledge",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

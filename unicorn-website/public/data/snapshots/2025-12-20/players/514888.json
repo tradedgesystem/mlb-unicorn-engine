@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.3023255813953488,
+    "babip": 0.3484848484848485,
+    "bb": 4,
+    "doubles": 1,
+    "h": 26,
+    "hr": 3,
+    "iso": 0.1162790697674419,
+    "k": 18,
+    "obp": 0.32967032967032966,
+    "ops": 0.7482749808331204,
+    "slg": 0.4186046511627907,
+    "triples": 0,
+    "woba": 0.3383333333333333
+  },
+  "basic_pitching": null,
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4111111111111111,
+    "contact_pct_last_50": 0.5172413793103449,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.2478
+  },
+  "name": "Jose Altuve",
+  "player_id": 514888,
+  "player_name": "Jose Altuve",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

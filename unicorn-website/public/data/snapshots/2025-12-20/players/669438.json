@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 139,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3519,
+    "k_pct_last_5_apps": 0.2143,
+    "whiff_pct_last_5_apps": 0.2105,
+    "xwoba_last_5_apps": 0.3251
+  },
+  "name": "Mason Englert",
+  "player_id": 669438,
+  "player_name": "Mason Englert",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

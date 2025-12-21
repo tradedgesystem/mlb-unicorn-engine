@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0385,
+    "hard_hit_pct_last_5_apps": 0.2222,
+    "k_pct_last_5_apps": 0.1538,
+    "whiff_pct_last_5_apps": 0.2131,
+    "xwoba_last_5_apps": 0.1823
+  },
+  "name": "Collin Snider",
+  "player_id": 676092,
+  "player_name": "Collin Snider",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.18571428571428572,
+    "babip": 0.22,
+    "bb": 3,
+    "doubles": 1,
+    "h": 13,
+    "hr": 2,
+    "iso": 0.09999999999999998,
+    "k": 18,
+    "obp": 0.2191780821917808,
+    "ops": 0.5048923679060665,
+    "slg": 0.2857142857142857,
+    "triples": 0,
+    "woba": 0.2363013698630137
+  },
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.075,
+    "chase_pct_last_50": 0.2112676056338028,
+    "contact_pct_last_50": 0.5128205128205128,
+    "hard_hit_pct_last_50": 0.375,
+    "xwoba_last_50": 0.34794
+  },
+  "name": "Dylan Crews",
+  "player_id": 686611,
+  "player_name": "Dylan Crews",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

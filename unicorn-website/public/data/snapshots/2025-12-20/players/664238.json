@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.3157894736842105,
+    "babip": 0.34210526315789475,
+    "bb": 5,
+    "doubles": 1,
+    "h": 18,
+    "hr": 5,
+    "iso": 0.2807017543859649,
+    "k": 14,
+    "obp": 0.3709677419354839,
+    "ops": 0.9674589700056593,
+    "slg": 0.5964912280701754,
+    "triples": 0,
+    "woba": 0.4120967741935484
+  },
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.10810810810810811,
+    "chase_pct_last_50": 0.3048780487804878,
+    "contact_pct_last_50": 0.37755102040816324,
+    "hard_hit_pct_last_50": 0.4594594594594595,
+    "xwoba_last_50": 0.36286
+  },
+  "name": "Dylan Moore",
+  "player_id": 664238,
+  "player_name": "Dylan Moore",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

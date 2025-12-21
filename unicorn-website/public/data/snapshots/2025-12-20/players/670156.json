@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2857142857142857,
+    "babip": 0.3333333333333333,
+    "bb": 5,
+    "doubles": 0,
+    "h": 8,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 4,
+    "obp": 0.3939393939393939,
+    "ops": 0.6796536796536796,
+    "slg": 0.2857142857142857,
+    "triples": 0,
+    "woba": 0.3575757575757576
+  },
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2631578947368421,
+    "contact_pct_last_50": 0.575,
+    "hard_hit_pct_last_50": 0.6086956521739131,
+    "xwoba_last_50": 0.33015384615384613
+  },
+  "name": "Miles Mastrobuoni",
+  "player_id": 670156,
+  "player_name": "Miles Mastrobuoni",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

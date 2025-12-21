@@ -1,0 +1,51 @@
+{
+  "basic_batting": {
+    "avg": 0.22,
+    "babip": 0.275,
+    "bb": 8,
+    "doubles": 1,
+    "h": 11,
+    "hr": 0,
+    "iso": 0.01999999999999999,
+    "k": 10,
+    "obp": 0.3275862068965517,
+    "ops": 0.5675862068965517,
+    "slg": 0.24,
+    "triples": 0,
+    "woba": 0.27327586206896554
+  },
+  "basic_pitching": null,
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3424657534246575,
+    "contact_pct_last_50": 0.3780487804878049,
+    "hard_hit_pct_last_50": 0.3548387096774194,
+    "xwoba_last_50": 0.2518974358974359
+  },
+  "name": "Gabriel Moreno",
+  "player_id": 672515,
+  "player_name": "Gabriel Moreno",
+  "recent_unicorns": [
+    {
+      "description": "Gabriel Moreno has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.589,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-30",
+      "score": 1.711803
+    },
+    {
+      "description": "Gabriel Moreno has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.6958,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-29",
+      "score": 2.435403
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

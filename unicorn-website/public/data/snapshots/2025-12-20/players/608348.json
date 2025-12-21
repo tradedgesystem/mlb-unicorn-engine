@@ -1,0 +1,72 @@
+{
+  "basic_batting": {
+    "avg": 0.375,
+    "babip": 0.2608695652173913,
+    "bb": 11,
+    "doubles": 1,
+    "h": 12,
+    "hr": 6,
+    "iso": 0.65625,
+    "k": 4,
+    "obp": 0.5333333333333333,
+    "ops": 1.5645833333333332,
+    "slg": 1.03125,
+    "triples": 1,
+    "woba": 0.5966666666666666
+  },
+  "basic_pitching": null,
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.10344827586206896,
+    "chase_pct_last_50": 0.24561403508771928,
+    "contact_pct_last_50": 0.4084507042253521,
+    "hard_hit_pct_last_50": 0.6551724137931034,
+    "xwoba_last_50": 0.41908823529411765
+  },
+  "name": "Carson Kelly",
+  "player_id": 608348,
+  "player_name": "Carson Kelly",
+  "recent_unicorns": [
+    {
+      "description": "Carson Kelly: hard-hit rate leader with 13 hard-hit balls (95+ mph) in the last 50 AB.",
+      "metric_value": 13.0,
+      "pattern_id": "UNQ-H-0512",
+      "run_date": "2025-04-15",
+      "score": 13.0
+    },
+    {
+      "description": "Carson Kelly has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.772,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-05",
+      "score": 3.195781
+    },
+    {
+      "description": "Carson Kelly leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.272727,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-30",
+      "score": 2.393145
+    },
+    {
+      "description": "Carson Kelly leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.272727,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-29",
+      "score": 2.019554
+    },
+    {
+      "description": "Carson Kelly leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.272727,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-28",
+      "score": 1.770394
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

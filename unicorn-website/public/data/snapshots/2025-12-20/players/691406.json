@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2692307692307692,
+    "babip": 0.2962962962962963,
+    "bb": 5,
+    "doubles": 3,
+    "h": 21,
+    "hr": 5,
+    "iso": 0.23076923076923078,
+    "k": 20,
+    "obp": 0.30952380952380953,
+    "ops": 0.8095238095238095,
+    "slg": 0.5,
+    "triples": 0,
+    "woba": 0.35535714285714287
+  },
+  "basic_pitching": null,
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.08823529411764706,
+    "chase_pct_last_50": 0.4056603773584906,
+    "contact_pct_last_50": 0.3063063063063063,
+    "hard_hit_pct_last_50": 0.7058823529411765,
+    "xwoba_last_50": 0.37846
+  },
+  "name": "Junior Caminero",
+  "player_id": 691406,
+  "player_name": "Junior Caminero",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0741,
+    "hard_hit_pct_last_5_apps": 0.1795,
+    "k_pct_last_5_apps": 0.2222,
+    "whiff_pct_last_5_apps": 0.18,
+    "xwoba_last_5_apps": 0.3133
+  },
+  "name": "Blake Treinen",
+  "player_id": 595014,
+  "player_name": "Blake Treinen",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1818,
+    "hard_hit_pct_last_5_apps": 0.3333,
+    "k_pct_last_5_apps": 0.1364,
+    "whiff_pct_last_5_apps": 0.2,
+    "xwoba_last_5_apps": 0.3223
+  },
+  "name": "Bryan Hudson",
+  "player_id": 663542,
+  "player_name": "Bryan Hudson",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

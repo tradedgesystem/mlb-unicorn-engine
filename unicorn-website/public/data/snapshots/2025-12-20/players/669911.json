@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.18055555555555555,
+    "babip": 0.32432432432432434,
+    "bb": 2,
+    "doubles": 3,
+    "h": 13,
+    "hr": 1,
+    "iso": 0.08333333333333334,
+    "k": 35,
+    "obp": 0.21052631578947367,
+    "ops": 0.47441520467836257,
+    "slg": 0.2638888888888889,
+    "triples": 0,
+    "woba": 0.20866666666666667
+  },
+  "basic_pitching": null,
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.03571428571428571,
+    "chase_pct_last_50": 0.2872340425531915,
+    "contact_pct_last_50": 0.2916666666666667,
+    "hard_hit_pct_last_50": 0.6071428571428571,
+    "xwoba_last_50": 0.2433
+  },
+  "name": "Michael Toglia",
+  "player_id": 669911,
+  "player_name": "Michael Toglia",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

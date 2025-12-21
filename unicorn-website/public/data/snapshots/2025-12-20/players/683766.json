@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.14285714285714285,
+    "babip": 0.25,
+    "bb": 1,
+    "doubles": 0,
+    "h": 2,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 6,
+    "obp": 0.2,
+    "ops": 0.34285714285714286,
+    "slg": 0.14285714285714285,
+    "triples": 0,
+    "woba": 0.2866666666666667
+  },
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4,
+    "contact_pct_last_50": 0.26666666666666666,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.11021428571428571
+  },
+  "name": "Christian Koss",
+  "player_id": 683766,
+  "player_name": "Christian Koss",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}
