@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.23376623376623376,
+    "babip": 0.24615384615384617,
+    "bb": 6,
+    "doubles": 3,
+    "h": 18,
+    "hr": 2,
+    "iso": 0.1168831168831169,
+    "k": 10,
+    "obp": 0.313953488372093,
+    "ops": 0.6646028390214437,
+    "slg": 0.35064935064935066,
+    "triples": 0,
+    "woba": 0.3241176470588235
+  },
+  "basic_pitching": null,
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.047619047619047616,
+    "chase_pct_last_50": 0.33783783783783783,
+    "contact_pct_last_50": 0.42,
+    "hard_hit_pct_last_50": 0.38095238095238093,
+    "xwoba_last_50": 0.29344
+  },
+  "name": "Ty France",
+  "player_id": 664034,
+  "player_name": "Ty France",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

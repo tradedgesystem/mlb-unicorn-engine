@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": null,
+    "chase_pct_last_50": null,
+    "contact_pct_last_50": null,
+    "hard_hit_pct_last_50": null,
+    "xwoba_last_50": null
+  },
+  "name": "Nick Sogard",
+  "player_id": 686765,
+  "player_name": "Nick Sogard",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

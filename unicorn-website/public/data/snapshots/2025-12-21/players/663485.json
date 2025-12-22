@@ -1,0 +1,44 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 142,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1905,
+    "hard_hit_pct_last_5_apps": 0.3939,
+    "k_pct_last_5_apps": 0.0952,
+    "whiff_pct_last_5_apps": 0.1591,
+    "xwoba_last_5_apps": 0.4301
+  },
+  "name": "Cole Sands",
+  "player_id": 663485,
+  "player_name": "Cole Sands",
+  "recent_unicorns": [
+    {
+      "description": "Cole Sands owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.015571,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-31",
+      "score": 2.603888
+    },
+    {
+      "description": "Cole Sands owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.015571,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-30",
+      "score": 2.214844
+    },
+    {
+      "description": "Cole Sands owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.015571,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-27",
+      "score": 2.113048
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

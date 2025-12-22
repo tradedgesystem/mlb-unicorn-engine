@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.18518518518518517,
+    "babip": 0.15789473684210525,
+    "bb": 4,
+    "doubles": 1,
+    "h": 5,
+    "hr": 2,
+    "iso": 0.25925925925925924,
+    "k": 7,
+    "obp": 0.30303030303030304,
+    "ops": 0.7474747474747474,
+    "slg": 0.4444444444444444,
+    "triples": 0,
+    "woba": 0.34696969696969693
+  },
+  "basic_pitching": null,
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4523809523809524,
+    "contact_pct_last_50": 0.3829787234042553,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.28616
+  },
+  "name": "Tim Tawa",
+  "player_id": 694374,
+  "player_name": "Tim Tawa",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

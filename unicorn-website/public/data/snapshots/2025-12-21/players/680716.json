@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.0,
+    "babip": 0.0,
+    "bb": 1,
+    "doubles": 0,
+    "h": 0,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 3,
+    "obp": 0.2,
+    "ops": 0.2,
+    "slg": 0.0,
+    "triples": 0,
+    "woba": 0.13999999999999999
+  },
+  "basic_pitching": null,
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.7142857142857143,
+    "contact_pct_last_50": 0.1,
+    "hard_hit_pct_last_50": 0.0,
+    "xwoba_last_50": 0.0505
+  },
+  "name": "Jonathan Ornelas",
+  "player_id": 680716,
+  "player_name": "Jonathan Ornelas",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

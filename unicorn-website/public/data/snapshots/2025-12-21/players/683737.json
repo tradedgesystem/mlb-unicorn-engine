@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.33783783783783783,
+    "babip": 0.39215686274509803,
+    "bb": 5,
+    "doubles": 6,
+    "h": 25,
+    "hr": 5,
+    "iso": 0.31081081081081086,
+    "k": 18,
+    "obp": 0.4024390243902439,
+    "ops": 1.0510876730388925,
+    "slg": 0.6486486486486487,
+    "triples": 1,
+    "woba": 0.4604938271604938
+  },
+  "basic_pitching": null,
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.24468085106382978,
+    "contact_pct_last_50": 0.38202247191011235,
+    "hard_hit_pct_last_50": 0.4117647058823529,
+    "xwoba_last_50": 0.3703673469387755
+  },
+  "name": "Michael Busch",
+  "player_id": 683737,
+  "player_name": "Michael Busch",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

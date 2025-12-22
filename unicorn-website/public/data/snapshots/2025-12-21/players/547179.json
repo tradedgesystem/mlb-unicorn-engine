@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2581,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2791,
+    "xwoba_last_5_apps": 0.327
+  },
+  "name": "Michael Lorenzen",
+  "player_id": 547179,
+  "player_name": "Michael Lorenzen",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

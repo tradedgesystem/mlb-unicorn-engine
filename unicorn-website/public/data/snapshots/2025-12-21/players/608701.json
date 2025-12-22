@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.35,
+    "babip": 0.5,
+    "bb": 1,
+    "doubles": 2,
+    "h": 7,
+    "hr": 0,
+    "iso": 0.10000000000000003,
+    "k": 6,
+    "obp": 0.38095238095238093,
+    "ops": 0.8309523809523809,
+    "slg": 0.45,
+    "triples": 0,
+    "woba": 0.4095238095238095
+  },
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.42857142857142855,
+    "contact_pct_last_50": 0.3170731707317073,
+    "hard_hit_pct_last_50": 0.6923076923076923,
+    "xwoba_last_50": 0.356
+  },
+  "name": "Rob Refsnyder",
+  "player_id": 608701,
+  "player_name": "Rob Refsnyder",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

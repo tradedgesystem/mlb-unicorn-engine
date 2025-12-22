@@ -1,0 +1,58 @@
+{
+  "basic_batting": {
+    "avg": 0.23170731707317074,
+    "babip": 0.26153846153846155,
+    "bb": 8,
+    "doubles": 2,
+    "h": 19,
+    "hr": 2,
+    "iso": 0.0975609756097561,
+    "k": 16,
+    "obp": 0.30434782608695654,
+    "ops": 0.6336161187698834,
+    "slg": 0.32926829268292684,
+    "triples": 0,
+    "woba": 0.29888888888888887
+  },
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2604166666666667,
+    "contact_pct_last_50": 0.38235294117647056,
+    "hard_hit_pct_last_50": 0.358974358974359,
+    "xwoba_last_50": 0.22955102040816328
+  },
+  "name": "Carlos Santana",
+  "player_id": 467793,
+  "player_name": "Carlos Santana",
+  "recent_unicorns": [
+    {
+      "description": "Carlos Santana leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-05",
+      "score": 1.370229
+    },
+    {
+      "description": "Carlos Santana leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-03",
+      "score": 1.406345
+    },
+    {
+      "description": "Carlos Santana leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-01",
+      "score": 1.395133
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

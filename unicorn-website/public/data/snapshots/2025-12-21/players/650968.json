@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.3157894736842105,
+    "babip": 0.29411764705882354,
+    "bb": 1,
+    "doubles": 2,
+    "h": 6,
+    "hr": 1,
+    "iso": 0.26315789473684215,
+    "k": 1,
+    "obp": 0.35,
+    "ops": 0.9289473684210526,
+    "slg": 0.5789473684210527,
+    "triples": 0,
+    "woba": 0.395
+  },
+  "basic_pitching": null,
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.5,
+    "contact_pct_last_50": 0.42424242424242425,
+    "hard_hit_pct_last_50": 0.42857142857142855,
+    "xwoba_last_50": 0.3436666666666667
+  },
+  "name": "Yohel Pozo",
+  "player_id": 650968,
+  "player_name": "Yohel Pozo",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

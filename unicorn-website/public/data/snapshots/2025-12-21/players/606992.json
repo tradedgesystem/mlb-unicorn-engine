@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.26666666666666666,
+    "babip": 0.3333333333333333,
+    "bb": 2,
+    "doubles": 0,
+    "h": 4,
+    "hr": 1,
+    "iso": 0.2,
+    "k": 5,
+    "obp": 0.35294117647058826,
+    "ops": 0.8196078431372549,
+    "slg": 0.4666666666666667,
+    "triples": 0,
+    "woba": 0.3588235294117647
+  },
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3125,
+    "contact_pct_last_50": 0.2857142857142857,
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.34386666666666665
+  },
+  "name": "Eric Haase",
+  "player_id": 606992,
+  "player_name": "Eric Haase",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

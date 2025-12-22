@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.1818,
+    "k_pct_last_5_apps": 0.0625,
+    "whiff_pct_last_5_apps": 0.2069,
+    "xwoba_last_5_apps": 0.3663
+  },
+  "name": "Cody Poteet",
+  "player_id": 547001,
+  "player_name": "Cody Poteet",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

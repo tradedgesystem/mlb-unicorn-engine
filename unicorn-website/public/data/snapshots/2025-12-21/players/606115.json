@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2222222222222222,
+    "babip": 0.3157894736842105,
+    "bb": 1,
+    "doubles": 1,
+    "h": 6,
+    "hr": 0,
+    "iso": 0.037037037037037035,
+    "k": 8,
+    "obp": 0.25,
+    "ops": 0.5092592592592593,
+    "slg": 0.25925925925925924,
+    "triples": 0,
+    "woba": 0.2625
+  },
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2972972972972973,
+    "contact_pct_last_50": 0.3584905660377358,
+    "hard_hit_pct_last_50": 0.2631578947368421,
+    "xwoba_last_50": 0.19048148148148147
+  },
+  "name": "Orlando Arcia",
+  "player_id": 606115,
+  "player_name": "Orlando Arcia",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

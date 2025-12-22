@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1111,
+    "hard_hit_pct_last_5_apps": 0.1304,
+    "k_pct_last_5_apps": 0.1111,
+    "whiff_pct_last_5_apps": 0.1333,
+    "xwoba_last_5_apps": 0.3605
+  },
+  "name": "Luis F. Castillo",
+  "player_id": 622379,
+  "player_name": "Luis F. Castillo",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

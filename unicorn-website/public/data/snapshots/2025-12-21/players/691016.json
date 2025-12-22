@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2976190476190476,
+    "babip": 0.2909090909090909,
+    "bb": 9,
+    "doubles": 2,
+    "h": 25,
+    "hr": 9,
+    "iso": 0.3452380952380953,
+    "k": 21,
+    "obp": 0.3617021276595745,
+    "ops": 1.0045592705167175,
+    "slg": 0.6428571428571429,
+    "triples": 0,
+    "woba": 0.41914893617021276
+  },
+  "basic_pitching": null,
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.07692307692307693,
+    "chase_pct_last_50": 0.2894736842105263,
+    "contact_pct_last_50": 0.43820224719101125,
+    "hard_hit_pct_last_50": 0.48717948717948717,
+    "xwoba_last_50": 0.39722
+  },
+  "name": "Tyler Soderstrom",
+  "player_id": 691016,
+  "player_name": "Tyler Soderstrom",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

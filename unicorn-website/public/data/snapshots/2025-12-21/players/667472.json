@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.3333333333333333,
+    "babip": 0.41935483870967744,
+    "bb": 1,
+    "doubles": 2,
+    "h": 14,
+    "hr": 1,
+    "iso": 0.11904761904761907,
+    "k": 10,
+    "obp": 0.3488372093023256,
+    "ops": 0.801218161683278,
+    "slg": 0.4523809523809524,
+    "triples": 0,
+    "woba": 0.37209302325581395
+  },
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.03125,
+    "chase_pct_last_50": 0.24489795918367346,
+    "contact_pct_last_50": 0.4155844155844156,
+    "hard_hit_pct_last_50": 0.40625,
+    "xwoba_last_50": 0.31342857142857145
+  },
+  "name": "Dane Myers",
+  "player_id": 667472,
+  "player_name": "Dane Myers",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

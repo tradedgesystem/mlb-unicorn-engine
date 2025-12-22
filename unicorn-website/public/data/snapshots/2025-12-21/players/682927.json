@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": null,
+    "chase_pct_last_50": null,
+    "contact_pct_last_50": null,
+    "hard_hit_pct_last_50": null,
+    "xwoba_last_50": null
+  },
+  "name": "Ronny Simon",
+  "player_id": 682927,
+  "player_name": "Ronny Simon",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

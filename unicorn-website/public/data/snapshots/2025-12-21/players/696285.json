@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.23255813953488372,
+    "babip": 0.2702702702702703,
+    "bb": 9,
+    "doubles": 1,
+    "h": 10,
+    "hr": 0,
+    "iso": 0.023255813953488386,
+    "k": 6,
+    "obp": 0.37735849056603776,
+    "ops": 0.6331724440544099,
+    "slg": 0.2558139534883721,
+    "triples": 0,
+    "woba": 0.32211538461538464
+  },
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.19148936170212766,
+    "contact_pct_last_50": 0.55,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.24135135135135136
+  },
+  "name": "Jacob Young",
+  "player_id": 696285,
+  "player_name": "Jacob Young",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

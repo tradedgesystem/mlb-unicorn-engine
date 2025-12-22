@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.4,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1579,
+    "xwoba_last_5_apps": 0.011
+  },
+  "name": "Max Scherzer",
+  "player_id": 453286,
+  "player_name": "Max Scherzer",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.24,
+    "hard_hit_pct_last_5_apps": 0.1,
+    "k_pct_last_5_apps": 0.24,
+    "whiff_pct_last_5_apps": 0.2889,
+    "xwoba_last_5_apps": 0.3304
+  },
+  "name": "Félix Bautista",
+  "player_id": 642585,
+  "player_name": "Félix Bautista",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

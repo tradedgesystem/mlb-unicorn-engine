@@ -1,0 +1,37 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3667,
+    "k_pct_last_5_apps": 0.087,
+    "whiff_pct_last_5_apps": 0.2105,
+    "xwoba_last_5_apps": 0.3728
+  },
+  "name": "Dennis Santana",
+  "player_id": 642701,
+  "player_name": "Dennis Santana",
+  "recent_unicorns": [
+    {
+      "description": "Dennis Santana has the highest whiff rate over his last 5 relief outings.",
+      "metric_value": 0.666667,
+      "pattern_id": "UNQ-R-0201",
+      "run_date": "2025-03-31",
+      "score": 1.159218
+    },
+    {
+      "description": "Dennis Santana allows the lowest hard-hit rate over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0102",
+      "run_date": "2025-03-30",
+      "score": 1.230605
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

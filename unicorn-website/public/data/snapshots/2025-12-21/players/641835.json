@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0263,
+    "hard_hit_pct_last_5_apps": 0.1923,
+    "k_pct_last_5_apps": 0.2105,
+    "whiff_pct_last_5_apps": 0.2162,
+    "xwoba_last_5_apps": 0.2525
+  },
+  "name": "Tim Mayza",
+  "player_id": 641835,
+  "player_name": "Tim Mayza",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

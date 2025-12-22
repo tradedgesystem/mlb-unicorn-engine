@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.07692307692307693,
+    "babip": 0.14285714285714285,
+    "bb": 0,
+    "doubles": 0,
+    "h": 1,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 6,
+    "obp": 0.07692307692307693,
+    "ops": 0.15384615384615385,
+    "slg": 0.07692307692307693,
+    "triples": 0,
+    "woba": 0.075
+  },
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2777777777777778,
+    "contact_pct_last_50": 0.23529411764705882,
+    "hard_hit_pct_last_50": 0.75,
+    "xwoba_last_50": 0.1565
+  },
+  "name": "Riley Adams",
+  "player_id": 656180,
+  "player_name": "Riley Adams",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

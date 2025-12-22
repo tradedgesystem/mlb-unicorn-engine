@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2676056338028169,
+    "babip": 0.24193548387096775,
+    "bb": 8,
+    "doubles": 4,
+    "h": 19,
+    "hr": 4,
+    "iso": 0.22535211267605637,
+    "k": 9,
+    "obp": 0.3333333333333333,
+    "ops": 0.8262910798122065,
+    "slg": 0.49295774647887325,
+    "triples": 0,
+    "woba": 0.37073170731707317
+  },
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.022222222222222223,
+    "chase_pct_last_50": 0.32941176470588235,
+    "contact_pct_last_50": 0.44554455445544555,
+    "hard_hit_pct_last_50": 0.26666666666666666,
+    "xwoba_last_50": 0.25562
+  },
+  "name": "José Ramírez",
+  "player_id": 608070,
+  "player_name": "José Ramírez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.14285714285714285,
+    "babip": 0.125,
+    "bb": 4,
+    "doubles": 1,
+    "h": 6,
+    "hr": 3,
+    "iso": 0.23809523809523808,
+    "k": 15,
+    "obp": 0.21739130434782608,
+    "ops": 0.598343685300207,
+    "slg": 0.38095238095238093,
+    "triples": 0,
+    "woba": 0.27717391304347827
+  },
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.07407407407407407,
+    "chase_pct_last_50": 0.3917525773195876,
+    "contact_pct_last_50": 0.2967032967032967,
+    "hard_hit_pct_last_50": 0.48148148148148145,
+    "xwoba_last_50": 0.2699047619047619
+  },
+  "name": "Enrique Hernández",
+  "player_id": 571771,
+  "player_name": "Enrique Hernández",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

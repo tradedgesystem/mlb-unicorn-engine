@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.18181818181818182,
+    "babip": 0.18181818181818182,
+    "bb": 0,
+    "doubles": 0,
+    "h": 2,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 0,
+    "obp": 0.25,
+    "ops": 0.4318181818181818,
+    "slg": 0.18181818181818182,
+    "triples": 0,
+    "woba": 0.20833333333333334
+  },
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.21052631578947367,
+    "contact_pct_last_50": 0.5238095238095238,
+    "hard_hit_pct_last_50": 0.18181818181818182,
+    "xwoba_last_50": 0.22025
+  },
+  "name": "Caleb Durbin",
+  "player_id": 702332,
+  "player_name": "Caleb Durbin",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

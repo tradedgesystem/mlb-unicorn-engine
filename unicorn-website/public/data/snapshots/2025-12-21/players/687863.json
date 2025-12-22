@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 112,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1071,
+    "hard_hit_pct_last_5_apps": 0.0789,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.2545,
+    "xwoba_last_5_apps": 0.3116
+  },
+  "name": "Porter Hodge",
+  "player_id": 687863,
+  "player_name": "Porter Hodge",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

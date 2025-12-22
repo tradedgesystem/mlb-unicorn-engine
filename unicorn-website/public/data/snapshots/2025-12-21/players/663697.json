@@ -1,0 +1,44 @@
+{
+  "basic_batting": {
+    "avg": 0.20512820512820512,
+    "babip": 0.24242424242424243,
+    "bb": 11,
+    "doubles": 4,
+    "h": 16,
+    "hr": 0,
+    "iso": 0.051282051282051266,
+    "k": 12,
+    "obp": 0.3111111111111111,
+    "ops": 0.5675213675213675,
+    "slg": 0.2564102564102564,
+    "triples": 0,
+    "woba": 0.2688888888888889
+  },
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.023809523809523808,
+    "chase_pct_last_50": 0.1927710843373494,
+    "contact_pct_last_50": 0.4827586206896552,
+    "hard_hit_pct_last_50": 0.42857142857142855,
+    "xwoba_last_50": 0.23476
+  },
+  "name": "Jonathan India",
+  "player_id": 663697,
+  "player_name": "Jonathan India",
+  "recent_unicorns": [
+    {
+      "description": "Jonathan India: 2 pulled balls hit 98+ mph with a 20–35° launch angle in the last 50 AB.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-H-0544",
+      "run_date": "2025-04-15",
+      "score": 2.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

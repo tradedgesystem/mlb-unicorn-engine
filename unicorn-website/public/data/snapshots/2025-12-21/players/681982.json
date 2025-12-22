@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.2105,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.3,
+    "xwoba_last_5_apps": 0.2735
+  },
+  "name": "Grant Anderson",
+  "player_id": 681982,
+  "player_name": "Grant Anderson",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.34210526315789475,
+    "babip": 0.38461538461538464,
+    "bb": 10,
+    "doubles": 3,
+    "h": 26,
+    "hr": 1,
+    "iso": 0.13157894736842102,
+    "k": 10,
+    "obp": 0.4318181818181818,
+    "ops": 0.9055023923444976,
+    "slg": 0.47368421052631576,
+    "triples": 2,
+    "woba": 0.4166666666666667
+  },
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.022727272727272728,
+    "chase_pct_last_50": 0.15294117647058825,
+    "contact_pct_last_50": 0.5714285714285714,
+    "hard_hit_pct_last_50": 0.36363636363636365,
+    "xwoba_last_50": 0.31604081632653064
+  },
+  "name": "Sal Frelick",
+  "player_id": 686217,
+  "player_name": "Sal Frelick",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

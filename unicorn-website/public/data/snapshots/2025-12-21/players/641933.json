@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.24561403508771928,
+    "babip": 0.3076923076923077,
+    "bb": 5,
+    "doubles": 3,
+    "h": 14,
+    "hr": 2,
+    "iso": 0.19298245614035087,
+    "k": 17,
+    "obp": 0.3230769230769231,
+    "ops": 0.7616734143049932,
+    "slg": 0.43859649122807015,
+    "triples": 1,
+    "woba": 0.33
+  },
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.0625,
+    "chase_pct_last_50": 0.36666666666666664,
+    "contact_pct_last_50": 0.3333333333333333,
+    "hard_hit_pct_last_50": 0.46875,
+    "xwoba_last_50": 0.29008163265306125
+  },
+  "name": "Tyler O'Neill",
+  "player_id": 641933,
+  "player_name": "Tyler O'Neill",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

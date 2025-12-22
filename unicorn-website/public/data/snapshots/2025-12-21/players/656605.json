@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2462,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1786,
+    "xwoba_last_5_apps": 0.5616
+  },
+  "name": "Mitch Keller",
+  "player_id": 656605,
+  "player_name": "Mitch Keller",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0303,
+    "hard_hit_pct_last_5_apps": 0.2667,
+    "k_pct_last_5_apps": 0.2121,
+    "whiff_pct_last_5_apps": 0.1579,
+    "xwoba_last_5_apps": 0.3751
+  },
+  "name": "Zack Kelly",
+  "player_id": 677161,
+  "player_name": "Zack Kelly",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

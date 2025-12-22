@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.28,
+    "babip": 0.37142857142857144,
+    "bb": 0,
+    "doubles": 4,
+    "h": 14,
+    "hr": 1,
+    "iso": 0.18,
+    "k": 14,
+    "obp": 0.28,
+    "ops": 0.74,
+    "slg": 0.46,
+    "triples": 1,
+    "woba": 0.3408163265306122
+  },
+  "basic_pitching": null,
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.05714285714285714,
+    "chase_pct_last_50": 0.358974358974359,
+    "contact_pct_last_50": 0.391304347826087,
+    "hard_hit_pct_last_50": 0.4857142857142857,
+    "xwoba_last_50": 0.28981632653061223
+  },
+  "name": "Josh Jung",
+  "player_id": 673962,
+  "player_name": "Josh Jung",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

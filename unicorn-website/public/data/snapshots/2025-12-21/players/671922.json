@@ -1,0 +1,51 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1154,
+    "hard_hit_pct_last_5_apps": 0.2188,
+    "k_pct_last_5_apps": 0.3846,
+    "whiff_pct_last_5_apps": 0.3269,
+    "xwoba_last_5_apps": 0.2571
+  },
+  "name": "Cade Smith",
+  "player_id": 671922,
+  "player_name": "Cade Smith",
+  "recent_unicorns": [
+    {
+      "description": "Cade Smith owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.090293,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-05",
+      "score": 2.367438
+    },
+    {
+      "description": "Cade Smith owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.090293,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-04-04",
+      "score": 2.294284
+    },
+    {
+      "description": "Cade Smith owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.004667,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-28",
+      "score": 2.018008
+    },
+    {
+      "description": "Cade Smith owns the lowest contact quality after 70 pitches.",
+      "metric_value": 0.004667,
+      "pattern_id": "UNQ-P-0301",
+      "run_date": "2025-03-27",
+      "score": 2.175746
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}
