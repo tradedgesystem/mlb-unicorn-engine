@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.15,
+    "hard_hit_pct_last_5_apps": 0.4286,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.1481,
+    "xwoba_last_5_apps": 0.2823
+  },
+  "name": "Angel Zerpa",
+  "player_id": 672582,
+  "player_name": "Angel Zerpa",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.15,
+    "babip": 0.125,
+    "bb": 0,
+    "doubles": 0,
+    "h": 3,
+    "hr": 1,
+    "iso": 0.15,
+    "k": 3,
+    "obp": 0.15,
+    "ops": 0.44999999999999996,
+    "slg": 0.3,
+    "triples": 0,
+    "woba": 0.23500000000000001
+  },
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.4117647058823529,
+    "contact_pct_last_50": 0.3695652173913043,
+    "hard_hit_pct_last_50": 0.17647058823529413,
+    "xwoba_last_50": 0.27845
+  },
+  "name": "Henry Davis",
+  "player_id": 680779,
+  "player_name": "Henry Davis",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

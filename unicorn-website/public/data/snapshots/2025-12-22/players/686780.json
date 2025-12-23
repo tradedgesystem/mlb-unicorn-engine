@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.23529411764705882,
+    "babip": 0.3142857142857143,
+    "bb": 2,
+    "doubles": 4,
+    "h": 12,
+    "hr": 1,
+    "iso": 0.13725490196078433,
+    "k": 15,
+    "obp": 0.2641509433962264,
+    "ops": 0.6366999630040695,
+    "slg": 0.37254901960784315,
+    "triples": 0,
+    "woba": 0.2943396226415094
+  },
+  "basic_pitching": null,
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3625,
+    "contact_pct_last_50": 0.375,
+    "hard_hit_pct_last_50": 0.30303030303030304,
+    "xwoba_last_50": 0.24578260869565216
+  },
+  "name": "Pedro Pagés",
+  "player_id": 686780,
+  "player_name": "Pedro Pagés",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

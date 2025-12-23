@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 113,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0455,
+    "hard_hit_pct_last_5_apps": 0.2857,
+    "k_pct_last_5_apps": 0.1364,
+    "whiff_pct_last_5_apps": 0.0976,
+    "xwoba_last_5_apps": 0.4152
+  },
+  "name": "Tony Santillan",
+  "player_id": 663574,
+  "player_name": "Tony Santillan",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

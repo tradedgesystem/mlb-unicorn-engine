@@ -1,0 +1,37 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1163,
+    "hard_hit_pct_last_5_apps": 0.4,
+    "k_pct_last_5_apps": 0.186,
+    "whiff_pct_last_5_apps": 0.2286,
+    "xwoba_last_5_apps": 0.3756
+  },
+  "name": "Tanner Houck",
+  "player_id": 656557,
+  "player_name": "Tanner Houck",
+  "recent_unicorns": [
+    {
+      "description": "Tanner Houck has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-03-29",
+      "score": 2.489879
+    },
+    {
+      "description": "Tanner Houck has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-03-28",
+      "score": 3.154692
+    }
+  ],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

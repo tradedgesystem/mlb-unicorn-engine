@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.0,
+    "babip": 0.0,
+    "bb": 0,
+    "doubles": 0,
+    "h": 0,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 3,
+    "obp": 0.0,
+    "ops": 0.0,
+    "slg": 0.0,
+    "triples": 0,
+    "woba": 0.1285714285714286
+  },
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.2857142857142857,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.16528571428571429
+  },
+  "name": "Tsung-Che Cheng",
+  "player_id": 691907,
+  "player_name": "Tsung-Che Cheng",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

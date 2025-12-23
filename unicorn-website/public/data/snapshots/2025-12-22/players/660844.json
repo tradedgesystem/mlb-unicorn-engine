@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.23076923076923078,
+    "babip": 0.3333333333333333,
+    "bb": 4,
+    "doubles": 0,
+    "h": 3,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 4,
+    "obp": 0.4117647058823529,
+    "ops": 0.6425339366515836,
+    "slg": 0.23076923076923078,
+    "triples": 0,
+    "woba": 0.3235294117647059
+  },
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.14285714285714285,
+    "contact_pct_last_50": 0.42857142857142855,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.17346153846153847
+  },
+  "name": "Leo Rivas",
+  "player_id": 660844,
+  "player_name": "Leo Rivas",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

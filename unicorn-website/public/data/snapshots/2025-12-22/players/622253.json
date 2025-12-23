@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.25,
+    "k_pct_last_5_apps": 0.375,
+    "whiff_pct_last_5_apps": 0.3077,
+    "xwoba_last_5_apps": 0.3784
+  },
+  "name": "Dillon Tate",
+  "player_id": 622253,
+  "player_name": "Dillon Tate",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.13636363636363635,
+    "babip": 0.21428571428571427,
+    "bb": 1,
+    "doubles": 0,
+    "h": 3,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 9,
+    "obp": 0.2,
+    "ops": 0.33636363636363636,
+    "slg": 0.13636363636363635,
+    "triples": 0,
+    "woba": 0.16399999999999998
+  },
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3,
+    "contact_pct_last_50": 0.2857,
+    "hard_hit_pct_last_50": 0.6429,
+    "xwoba_last_50": 0.2466
+  },
+  "name": "Gary Sánchez",
+  "player_id": 596142,
+  "player_name": "Gary Sánchez",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

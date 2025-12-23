@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2449,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.314,
+    "xwoba_last_5_apps": 0.7162
+  },
+  "name": "Jesús Luzardo",
+  "player_id": 666200,
+  "player_name": "Jesús Luzardo",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

@@ -1,0 +1,307 @@
+{
+  "abbreviation": "COL",
+  "hitters": [
+    {
+      "href": "/players/668845/",
+      "name": "Aaron Schunk",
+      "player_id": 668845,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/691182/",
+      "name": "Adael Amador",
+      "player_id": 691182,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/690924/",
+      "name": "Braxton Fulford",
+      "player_id": 690924,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/686668/",
+      "name": "Brenton Doyle",
+      "player_id": 686668,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/678662/",
+      "name": "Ezequiel Tovar",
+      "player_id": 678662,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/696100/",
+      "name": "Hunter Goodman",
+      "player_id": 696100,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/607732/",
+      "name": "Jacob Stallings",
+      "player_id": 607732,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/687597/",
+      "name": "Jordan Beck",
+      "player_id": 687597,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/592178/",
+      "name": "Kris Bryant",
+      "player_id": 592178,
+      "position": "DH",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/571657/",
+      "name": "Kyle Farmer",
+      "player_id": 571657,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669911/",
+      "name": "Michael Toglia",
+      "player_id": 669911,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/666160/",
+      "name": "Mickey Moniak",
+      "player_id": 666160,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/605361/",
+      "name": "Nick Martini",
+      "player_id": 605361,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/641857/",
+      "name": "Ryan McMahon",
+      "player_id": 641857,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/656248/",
+      "name": "Sean Bouchard",
+      "player_id": 656248,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/671289/",
+      "name": "Tyler Freeman",
+      "player_id": 671289,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/691728/",
+      "name": "Zac Veen",
+      "player_id": 691728,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/683409/",
+      "name": "Angel Chivilli",
+      "player_id": 683409,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/687134/",
+      "name": "Bradley Blalock",
+      "player_id": 687134,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/677955/",
+      "name": "Jaden Hill",
+      "player_id": 677955,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/656234/",
+      "name": "Jake Bird",
+      "player_id": 656234,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/623474/",
+      "name": "Jimmy Herget",
+      "player_id": 623474,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/678821/",
+      "name": "Luis Peralta",
+      "player_id": 678821,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/518397/",
+      "name": "Scott Alexander",
+      "player_id": 518397,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/678020/",
+      "name": "Seth Halvorsen",
+      "player_id": 678020,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/641755/",
+      "name": "Tyler Kinley",
+      "player_id": 641755,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/680767/",
+      "name": "Victor Vodnik",
+      "player_id": 680767,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/688642/",
+      "name": "Zach Agnos",
+      "player_id": 688642,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/622608/",
+      "name": "Antonio Senzatela",
+      "player_id": 622608,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/801403/",
+      "name": "Chase Dollander",
+      "player_id": 801403,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/608566/",
+      "name": "Germán Márquez",
+      "player_id": 608566,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/607536/",
+      "name": "Kyle Freeland",
+      "player_id": 607536,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/663372/",
+      "name": "Ryan Feltner",
+      "player_id": 663372,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
+  "team_id": 115
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.25,
+    "babip": 0.32,
+    "bb": 1,
+    "doubles": 0,
+    "h": 9,
+    "hr": 1,
+    "iso": 0.08333333333333331,
+    "k": 10,
+    "obp": 0.2702702702702703,
+    "ops": 0.6036036036036037,
+    "slg": 0.3333333333333333,
+    "triples": 0,
+    "woba": 0.275
+  },
+  "basic_pitching": null,
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.08,
+    "chase_pct_last_50": 0.40476190476190477,
+    "contact_pct_last_50": 0.44642857142857145,
+    "hard_hit_pct_last_50": 0.32,
+    "xwoba_last_50": 0.3143714285714286
+  },
+  "name": "Martín Maldonado",
+  "player_id": 455117,
+  "player_name": "Martín Maldonado",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

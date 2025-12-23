@@ -1,0 +1,58 @@
+{
+  "basic_batting": {
+    "avg": 0.2222222222222222,
+    "babip": 0.26,
+    "bb": 6,
+    "doubles": 2,
+    "h": 14,
+    "hr": 1,
+    "iso": 0.1111111111111111,
+    "k": 12,
+    "obp": 0.2898550724637681,
+    "ops": 0.6231884057971014,
+    "slg": 0.3333333333333333,
+    "triples": 1,
+    "woba": 0.2927536231884058
+  },
+  "basic_pitching": null,
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.025,
+    "chase_pct_last_50": 0.29411764705882354,
+    "contact_pct_last_50": 0.45977011494252873,
+    "hard_hit_pct_last_50": 0.425,
+    "xwoba_last_50": 0.2591
+  },
+  "name": "Trey Sweeney",
+  "player_id": 700242,
+  "player_name": "Trey Sweeney",
+  "recent_unicorns": [
+    {
+      "description": "Trey Sweeney has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-31",
+      "score": 1.959615
+    },
+    {
+      "description": "Trey Sweeney has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-30",
+      "score": 2.315037
+    },
+    {
+      "description": "Trey Sweeney has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-29",
+      "score": 2.378854
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

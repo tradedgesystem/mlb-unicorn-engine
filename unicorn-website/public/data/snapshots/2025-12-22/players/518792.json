@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.19047619047619047,
+    "babip": 0.22580645161290322,
+    "bb": 4,
+    "doubles": 1,
+    "h": 8,
+    "hr": 1,
+    "iso": 0.09523809523809523,
+    "k": 11,
+    "obp": 0.2553191489361702,
+    "ops": 0.541033434650456,
+    "slg": 0.2857142857142857,
+    "triples": 0,
+    "woba": 0.253125
+  },
+  "basic_pitching": null,
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.030303030303030304,
+    "chase_pct_last_50": 0.4,
+    "contact_pct_last_50": 0.4177215189873418,
+    "hard_hit_pct_last_50": 0.24242424242424243,
+    "xwoba_last_50": 0.20874418604651163
+  },
+  "name": "Jason Heyward",
+  "player_id": 518792,
+  "player_name": "Jason Heyward",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

@@ -1,0 +1,298 @@
+{
+  "abbreviation": "SD",
+  "hitters": [
+    {
+      "href": "/players/663604/",
+      "name": "Brandon Lockridge",
+      "player_id": 663604,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/656582/",
+      "name": "Connor Joe",
+      "player_id": 656582,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/553869/",
+      "name": "Elias Díaz",
+      "player_id": 553869,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/665487/",
+      "name": "Fernando Tatis Jr.",
+      "player_id": 665487,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/657757/",
+      "name": "Gavin Sheets",
+      "player_id": 657757,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/701538/",
+      "name": "Jackson Merrill",
+      "player_id": 701538,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/630105/",
+      "name": "Jake Cronenworth",
+      "player_id": 630105,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/518792/",
+      "name": "Jason Heyward",
+      "player_id": 518792,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/578428/",
+      "name": "Jose Iglesias",
+      "player_id": 578428,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/650333/",
+      "name": "Luis Arraez",
+      "player_id": 650333,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/592518/",
+      "name": "Manny Machado",
+      "player_id": 592518,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/455117/",
+      "name": "Martín Maldonado",
+      "player_id": 455117,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669200/",
+      "name": "Mason McCoy",
+      "player_id": 669200,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/660757/",
+      "name": "Oscar Gonzalez",
+      "player_id": 660757,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/672359/",
+      "name": "Tirso Ornelas",
+      "player_id": 672359,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/642180/",
+      "name": "Tyler Wade",
+      "player_id": 642180,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/593428/",
+      "name": "Xander Bogaerts",
+      "player_id": 593428,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/493329/",
+      "name": "Yuli Gurriel",
+      "player_id": 493329,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/670970/",
+      "name": "Adrian Morejon",
+      "player_id": 670970,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/689690/",
+      "name": "Alek Jacob",
+      "player_id": 689690,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/592094/",
+      "name": "Jason Adam",
+      "player_id": 592094,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/669093/",
+      "name": "Jeremiah Estrada",
+      "player_id": 669093,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/670810/",
+      "name": "Logan Gillaspie",
+      "player_id": 670810,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/678316/",
+      "name": "Omar Cruz",
+      "player_id": 678316,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/663158/",
+      "name": "Robert Suarez",
+      "player_id": 663158,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/593974/",
+      "name": "Wandy Peralta",
+      "player_id": 593974,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/673513/",
+      "name": "Yuki Matsui",
+      "player_id": 673513,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/656302/",
+      "name": "Dylan Cease",
+      "player_id": 656302,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/606996/",
+      "name": "Kyle Hart",
+      "player_id": 606996,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/650633/",
+      "name": "Michael King",
+      "player_id": 650633,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/601713/",
+      "name": "Nick Pivetta",
+      "player_id": 601713,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/681190/",
+      "name": "Randy Vásquez",
+      "player_id": 681190,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
+  "team_id": 135
+}

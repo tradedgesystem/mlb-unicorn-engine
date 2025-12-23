@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0909,
+    "hard_hit_pct_last_5_apps": 0.3846,
+    "k_pct_last_5_apps": 0.0909,
+    "whiff_pct_last_5_apps": 0.2353,
+    "xwoba_last_5_apps": 0.5363
+  },
+  "name": "Tayler Saucedo",
+  "player_id": 642048,
+  "player_name": "Tayler Saucedo",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

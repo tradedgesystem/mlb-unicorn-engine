@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.05,
+    "hard_hit_pct_last_5_apps": 0.1923,
+    "k_pct_last_5_apps": 0.25,
+    "whiff_pct_last_5_apps": 0.2895,
+    "xwoba_last_5_apps": 0.2512
+  },
+  "name": "Yennier Cano",
+  "player_id": 666974,
+  "player_name": "Yennier Cano",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.28846153846153844,
+    "babip": 0.35714285714285715,
+    "bb": 5,
+    "doubles": 1,
+    "h": 15,
+    "hr": 5,
+    "iso": 0.34615384615384615,
+    "k": 19,
+    "obp": 0.38333333333333336,
+    "ops": 1.0179487179487179,
+    "slg": 0.6346153846153846,
+    "triples": 1,
+    "woba": 0.45416666666666666
+  },
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.03571428571428571,
+    "chase_pct_last_50": 0.3614457831325301,
+    "contact_pct_last_50": 0.31521739130434784,
+    "hard_hit_pct_last_50": 0.6071428571428571,
+    "xwoba_last_50": 0.36220833333333335
+  },
+  "name": "Kyren Paris",
+  "player_id": 677347,
+  "player_name": "Kyren Paris",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

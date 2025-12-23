@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2121,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2828,
+    "xwoba_last_5_apps": 0.813
+  },
+  "name": "Garrett Crochet",
+  "player_id": 676979,
+  "player_name": "Garrett Crochet",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

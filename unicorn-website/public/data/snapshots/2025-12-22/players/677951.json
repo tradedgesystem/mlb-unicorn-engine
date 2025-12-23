@@ -1,0 +1,44 @@
+{
+  "basic_batting": {
+    "avg": 0.3068181818181818,
+    "babip": 0.33783783783783783,
+    "bb": 9,
+    "doubles": 9,
+    "h": 27,
+    "hr": 2,
+    "iso": 0.17045454545454547,
+    "k": 14,
+    "obp": 0.37,
+    "ops": 0.8472727272727273,
+    "slg": 0.4772727272727273,
+    "triples": 0,
+    "woba": 0.41302083333333334
+  },
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3953488372093023,
+    "contact_pct_last_50": 0.43,
+    "hard_hit_pct_last_50": 0.4418604651162791,
+    "xwoba_last_50": 0.35754
+  },
+  "name": "Bobby Witt Jr.",
+  "player_id": 677951,
+  "player_name": "Bobby Witt Jr.",
+  "recent_unicorns": [
+    {
+      "description": "Bobby Witt Jr.: 7 balls hit 100+ mph vs breaking balls (last 50 AB).",
+      "metric_value": 7.0,
+      "pattern_id": "UNQ-H-0526",
+      "run_date": "2025-04-15",
+      "score": 7.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

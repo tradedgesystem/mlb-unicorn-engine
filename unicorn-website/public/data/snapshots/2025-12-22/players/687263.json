@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2222222222222222,
+    "babip": 0.14285714285714285,
+    "bb": 0,
+    "doubles": 1,
+    "h": 2,
+    "hr": 1,
+    "iso": 0.4444444444444444,
+    "k": 1,
+    "obp": 0.3,
+    "ops": 0.9666666666666666,
+    "slg": 0.6666666666666666,
+    "triples": 0,
+    "woba": 0.395
+  },
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.125,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.5714285714285714,
+    "hard_hit_pct_last_50": 0.375,
+    "xwoba_last_50": 0.533
+  },
+  "name": "Zach Neto",
+  "player_id": 687263,
+  "player_name": "Zach Neto",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

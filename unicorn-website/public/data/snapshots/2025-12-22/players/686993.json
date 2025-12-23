@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 133,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.12,
+    "hard_hit_pct_last_5_apps": 0.2667,
+    "k_pct_last_5_apps": 0.28,
+    "whiff_pct_last_5_apps": 0.3019,
+    "xwoba_last_5_apps": 0.2082
+  },
+  "name": "Justin Sterner",
+  "player_id": 686993,
+  "player_name": "Justin Sterner",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

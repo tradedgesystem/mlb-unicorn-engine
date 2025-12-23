@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.26229508196721313,
+    "babip": 0.29545454545454547,
+    "bb": 8,
+    "doubles": 1,
+    "h": 16,
+    "hr": 3,
+    "iso": 0.16393442622950816,
+    "k": 15,
+    "obp": 0.352112676056338,
+    "ops": 0.7783421842530593,
+    "slg": 0.4262295081967213,
+    "triples": 0,
+    "woba": 0.3429577464788732
+  },
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.08108108108108109,
+    "chase_pct_last_50": 0.20652173913043478,
+    "contact_pct_last_50": 0.3557692307692308,
+    "hard_hit_pct_last_50": 0.3783783783783784,
+    "xwoba_last_50": 0.28772
+  },
+  "name": "Rhys Hoskins",
+  "player_id": 656555,
+  "player_name": "Rhys Hoskins",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

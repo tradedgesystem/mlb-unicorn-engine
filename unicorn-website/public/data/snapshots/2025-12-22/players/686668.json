@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.3148148148148148,
+    "babip": 0.35,
+    "bb": 3,
+    "doubles": 3,
+    "h": 17,
+    "hr": 3,
+    "iso": 0.22222222222222227,
+    "k": 11,
+    "obp": 0.3508771929824561,
+    "ops": 0.8879142300194932,
+    "slg": 0.5370370370370371,
+    "triples": 0,
+    "woba": 0.3815789473684211
+  },
+  "basic_pitching": null,
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.04878048780487805,
+    "chase_pct_last_50": 0.2676056338028169,
+    "contact_pct_last_50": 0.4939759036144578,
+    "hard_hit_pct_last_50": 0.4634146341463415,
+    "xwoba_last_50": 0.3899183673469388
+  },
+  "name": "Brenton Doyle",
+  "player_id": 686668,
+  "player_name": "Brenton Doyle",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0909,
+    "hard_hit_pct_last_5_apps": 0.2895,
+    "k_pct_last_5_apps": 0.1818,
+    "whiff_pct_last_5_apps": 0.1429,
+    "xwoba_last_5_apps": 0.3276
+  },
+  "name": "Chad Green",
+  "player_id": 643338,
+  "player_name": "Chad Green",
+  "recent_unicorns": [
+    {
+      "description": "Chad Green has allowed the most HR after reaching 75 pitches.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-P-0300",
+      "run_date": "2025-03-29",
+      "score": 2.545574
+    }
+  ],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}
