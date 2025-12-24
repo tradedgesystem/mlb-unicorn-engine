@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 1.0,
+    "k_pct_last_5_apps": 0.6667,
+    "whiff_pct_last_5_apps": 0.8,
+    "xwoba_last_5_apps": 0.091
+  },
+  "name": "Grant Holmes",
+  "player_id": 656550,
+  "player_name": "Grant Holmes",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

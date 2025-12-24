@@ -1,0 +1,58 @@
+{
+  "basic_batting": {
+    "avg": 0.2159090909090909,
+    "babip": 0.22580645161290322,
+    "bb": 4,
+    "doubles": 4,
+    "h": 19,
+    "hr": 5,
+    "iso": 0.2159090909090909,
+    "k": 22,
+    "obp": 0.24731182795698925,
+    "ops": 0.6791300097751711,
+    "slg": 0.4318181818181818,
+    "triples": 0,
+    "woba": 0.3076086956521739
+  },
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.08571428571428572,
+    "chase_pct_last_50": 0.23863636363636365,
+    "contact_pct_last_50": 0.3888888888888889,
+    "hard_hit_pct_last_50": 0.5428571428571428,
+    "xwoba_last_50": 0.2698
+  },
+  "name": "Taylor Ward",
+  "player_id": 621493,
+  "player_name": "Taylor Ward",
+  "recent_unicorns": [
+    {
+      "description": "Taylor Ward: barrels in the last 7 days = 3.",
+      "metric_value": 3.0,
+      "pattern_id": "UNQ-H-0584",
+      "run_date": "2025-04-15",
+      "score": 3.0
+    },
+    {
+      "description": "Taylor Ward owns the lowest chase rate over his last 50 PA.",
+      "metric_value": 0.054054,
+      "pattern_id": "UNQ-H-0004",
+      "run_date": "2025-04-01",
+      "score": 1.209859
+    },
+    {
+      "description": "Taylor Ward owns the lowest chase rate over his last 50 PA.",
+      "metric_value": 0.035714,
+      "pattern_id": "UNQ-H-0004",
+      "run_date": "2025-03-31",
+      "score": 1.238761
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

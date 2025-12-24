@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.17647058823529413,
+    "babip": 0.2727272727272727,
+    "bb": 0,
+    "doubles": 0,
+    "h": 3,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 6,
+    "obp": 0.17647058823529413,
+    "ops": 0.35294117647058826,
+    "slg": 0.17647058823529413,
+    "triples": 0,
+    "woba": 0.24000000000000002
+  },
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.45,
+    "contact_pct_last_50": 0.4444444444444444,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.164
+  },
+  "name": "José Tena",
+  "player_id": 677588,
+  "player_name": "José Tena",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

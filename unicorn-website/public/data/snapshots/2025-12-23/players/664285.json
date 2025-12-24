@@ -1,0 +1,44 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 117,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3036,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2706,
+    "xwoba_last_5_apps": 0.2717
+  },
+  "name": "Framber Valdez",
+  "player_id": 664285,
+  "player_name": "Framber Valdez",
+  "recent_unicorns": [
+    {
+      "description": "Framber Valdez has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-04-02",
+      "score": 1.284582
+    },
+    {
+      "description": "Framber Valdez has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-28",
+      "score": 1.12182
+    },
+    {
+      "description": "Framber Valdez has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-27",
+      "score": 1.018609
+    }
+  ],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.21052631578947367,
+    "babip": 0.2542372881355932,
+    "bb": 7,
+    "doubles": 1,
+    "h": 16,
+    "hr": 1,
+    "iso": 0.07894736842105265,
+    "k": 16,
+    "obp": 0.27710843373493976,
+    "ops": 0.5665821179454661,
+    "slg": 0.2894736842105263,
+    "triples": 1,
+    "woba": 0.26158536585365855
+  },
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2549019607843137,
+    "contact_pct_last_50": 0.43902439024390244,
+    "hard_hit_pct_last_50": 0.5142857142857142,
+    "xwoba_last_50": 0.2453877551020408
+  },
+  "name": "Ke'Bryan Hayes",
+  "player_id": 663647,
+  "player_name": "Ke'Bryan Hayes",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

@@ -1,0 +1,65 @@
+{
+  "basic_batting": {
+    "avg": 0.34615384615384615,
+    "babip": 0.3442622950819672,
+    "bb": 14,
+    "doubles": 9,
+    "h": 27,
+    "hr": 6,
+    "iso": 0.3717948717948718,
+    "k": 12,
+    "obp": 0.45263157894736844,
+    "ops": 1.1705802968960863,
+    "slg": 0.717948717948718,
+    "triples": 1,
+    "woba": 0.4856382978723404
+  },
+  "basic_pitching": null,
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2828282828282828,
+    "contact_pct_last_50": 0.425531914893617,
+    "hard_hit_pct_last_50": 0.575,
+    "xwoba_last_50": 0.4369
+  },
+  "name": "Pete Alonso",
+  "player_id": 624413,
+  "player_name": "Pete Alonso",
+  "recent_unicorns": [
+    {
+      "description": "Pete Alonso: 33 balls hit 90+ mph in the last 50 AB.",
+      "metric_value": 33.0,
+      "pattern_id": "UNQ-H-0505",
+      "run_date": "2025-04-15",
+      "score": 33.0
+    },
+    {
+      "description": "Pete Alonso tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.495,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-04",
+      "score": 1.82746
+    },
+    {
+      "description": "Pete Alonso tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.509308,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-03",
+      "score": 1.795714
+    },
+    {
+      "description": "Pete Alonso tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.509308,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-04-02",
+      "score": 1.712117
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

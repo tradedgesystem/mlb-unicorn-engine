@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.15555555555555556,
+    "babip": 0.22580645161290322,
+    "bb": 1,
+    "doubles": 1,
+    "h": 7,
+    "hr": 0,
+    "iso": 0.022222222222222227,
+    "k": 15,
+    "obp": 0.1875,
+    "ops": 0.3652777777777778,
+    "slg": 0.17777777777777778,
+    "triples": 0,
+    "woba": 0.16770833333333335
+  },
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25675675675675674,
+    "contact_pct_last_50": 0.4025974025974026,
+    "hard_hit_pct_last_50": 0.3225806451612903,
+    "xwoba_last_50": 0.18406382978723404
+  },
+  "name": "Lane Thomas",
+  "player_id": 657041,
+  "player_name": "Lane Thomas",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

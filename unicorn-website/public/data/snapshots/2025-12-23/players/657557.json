@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2037037037037037,
+    "babip": 0.36666666666666664,
+    "bb": 2,
+    "doubles": 4,
+    "h": 11,
+    "hr": 0,
+    "iso": 0.0740740740740741,
+    "k": 24,
+    "obp": 0.24561403508771928,
+    "ops": 0.5233918128654971,
+    "slg": 0.2777777777777778,
+    "triples": 0,
+    "woba": 0.23508771929824562
+  },
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3626373626373626,
+    "contact_pct_last_50": 0.23076923076923078,
+    "hard_hit_pct_last_50": 0.36666666666666664,
+    "xwoba_last_50": 0.22312
+  },
+  "name": "Paul DeJong",
+  "player_id": 657557,
+  "player_name": "Paul DeJong",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

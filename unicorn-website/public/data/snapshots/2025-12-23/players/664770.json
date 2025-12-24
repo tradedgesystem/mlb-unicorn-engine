@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.18518518518518517,
+    "babip": 0.20833333333333334,
+    "bb": 4,
+    "doubles": 1,
+    "h": 5,
+    "hr": 0,
+    "iso": 0.037037037037037035,
+    "k": 4,
+    "obp": 0.30303030303030304,
+    "ops": 0.5252525252525253,
+    "slg": 0.2222222222222222,
+    "triples": 0,
+    "woba": 0.2590909090909091
+  },
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.37037037037037035,
+    "contact_pct_last_50": 0.4444444444444444,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.29810344827586205
+  },
+  "name": "Nathan Lukes",
+  "player_id": 664770,
+  "player_name": "Nathan Lukes",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

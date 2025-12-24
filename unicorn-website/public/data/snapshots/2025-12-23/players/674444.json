@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.2143,
+    "hard_hit_pct_last_5_apps": 0.2778,
+    "k_pct_last_5_apps": 0.2857,
+    "whiff_pct_last_5_apps": 0.1923,
+    "xwoba_last_5_apps": 0.2169
+  },
+  "name": "Steven Cruz",
+  "player_id": 674444,
+  "player_name": "Steven Cruz",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

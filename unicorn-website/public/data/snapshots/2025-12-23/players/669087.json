@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.19047619047619047,
+    "babip": 0.3,
+    "bb": 3,
+    "doubles": 0,
+    "h": 4,
+    "hr": 1,
+    "iso": 0.14285714285714285,
+    "k": 10,
+    "obp": 0.2916666666666667,
+    "ops": 0.625,
+    "slg": 0.3333333333333333,
+    "triples": 0,
+    "woba": 0.2833333333333333
+  },
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.09090909090909091,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.24444444444444444,
+    "hard_hit_pct_last_50": 0.45454545454545453,
+    "xwoba_last_50": 0.20633333333333334
+  },
+  "name": "Sam Huff",
+  "player_id": 669087,
+  "player_name": "Sam Huff",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

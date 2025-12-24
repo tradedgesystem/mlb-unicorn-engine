@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3636,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1628,
+    "xwoba_last_5_apps": 0.7741
+  },
+  "name": "Davis Martin",
+  "player_id": 663436,
+  "player_name": "Davis Martin",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

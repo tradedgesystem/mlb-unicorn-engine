@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.1590909090909091,
+    "babip": 0.1875,
+    "bb": 3,
+    "doubles": 1,
+    "h": 7,
+    "hr": 1,
+    "iso": 0.13636363636363638,
+    "k": 11,
+    "obp": 0.2127659574468085,
+    "ops": 0.508220502901354,
+    "slg": 0.29545454545454547,
+    "triples": 1,
+    "woba": 0.224468085106383
+  },
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.36231884057971014,
+    "contact_pct_last_50": 0.3902439024390244,
+    "hard_hit_pct_last_50": 0.46875,
+    "xwoba_last_50": 0.28345238095238096
+  },
+  "name": "Michael A. Taylor",
+  "player_id": 572191,
+  "player_name": "Michael A. Taylor",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

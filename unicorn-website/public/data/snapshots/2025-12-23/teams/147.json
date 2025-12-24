@@ -1,0 +1,280 @@
+{
+  "abbreviation": "NYY",
+  "hitters": [
+    {
+      "href": "/players/592450/",
+      "name": "Aaron Judge",
+      "player_id": 592450,
+      "position": "RF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/683011/",
+      "name": "Anthony Volpe",
+      "player_id": 683011,
+      "position": "SS",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/669224/",
+      "name": "Austin Wells",
+      "player_id": 669224,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/700250/",
+      "name": "Ben Rice",
+      "player_id": 700250,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/641355/",
+      "name": "Cody Bellinger",
+      "player_id": 641355,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/641555/",
+      "name": "J.C. Escarra",
+      "player_id": 641555,
+      "position": "C",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/691176/",
+      "name": "Jasson Domínguez",
+      "player_id": 691176,
+      "position": "LF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/665862/",
+      "name": "Jazz Chisholm Jr.",
+      "player_id": 665862,
+      "position": "2B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/672724/",
+      "name": "Oswald Peraza",
+      "player_id": 672724,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/665828/",
+      "name": "Oswaldo Cabrera",
+      "player_id": 665828,
+      "position": "3B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/622569/",
+      "name": "Pablo Reyes",
+      "player_id": 622569,
+      "position": "OF",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/502671/",
+      "name": "Paul Goldschmidt",
+      "player_id": 502671,
+      "position": "1B",
+      "roles": [
+        "hitter"
+      ]
+    },
+    {
+      "href": "/players/663757/",
+      "name": "Trent Grisham",
+      "player_id": 663757,
+      "position": "CF",
+      "roles": [
+        "hitter"
+      ]
+    }
+  ],
+  "relievers": [
+    {
+      "href": "/players/493603/",
+      "name": "Adam Ottavino",
+      "player_id": 493603,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/642216/",
+      "name": "Allan Winans",
+      "player_id": 642216,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/687396/",
+      "name": "Brent Headrick",
+      "player_id": 687396,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/642207/",
+      "name": "Devin Williams",
+      "player_id": 642207,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/518585/",
+      "name": "Fernando Cruz",
+      "player_id": 518585,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/641656/",
+      "name": "Ian Hamilton",
+      "player_id": 641656,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/596133/",
+      "name": "Luke Weaver",
+      "player_id": 596133,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/643410/",
+      "name": "Mark Leiter Jr.",
+      "player_id": 643410,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/642232/",
+      "name": "Ryan Yarbrough",
+      "player_id": 642232,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/657612/",
+      "name": "Tim Hill",
+      "player_id": 657612,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    },
+    {
+      "href": "/players/672782/",
+      "name": "Yoendrys Gómez",
+      "player_id": 672782,
+      "position": "P",
+      "roles": [
+        "reliever"
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "href": "/players/471911/",
+      "name": "Carlos Carrasco",
+      "player_id": 471911,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/607074/",
+      "name": "Carlos Rodón",
+      "player_id": 607074,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/657376/",
+      "name": "Clarke Schmidt",
+      "player_id": 657376,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/573186/",
+      "name": "Marcus Stroman",
+      "player_id": 573186,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/608331/",
+      "name": "Max Fried",
+      "player_id": 608331,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    },
+    {
+      "href": "/players/701542/",
+      "name": "Will Warren",
+      "player_id": 701542,
+      "position": "P",
+      "roles": [
+        "starter"
+      ]
+    }
+  ],
+  "team_id": 147
+}

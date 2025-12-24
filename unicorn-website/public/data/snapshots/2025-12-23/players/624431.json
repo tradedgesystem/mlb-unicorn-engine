@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.3181818181818182,
+    "babip": 0.3333333333333333,
+    "bb": 4,
+    "doubles": 5,
+    "h": 14,
+    "hr": 1,
+    "iso": 0.18181818181818182,
+    "k": 4,
+    "obp": 0.375,
+    "ops": 0.875,
+    "slg": 0.5,
+    "triples": 0,
+    "woba": 0.421875
+  },
+  "basic_pitching": null,
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.027777777777777776,
+    "chase_pct_last_50": 0.32075471698113206,
+    "contact_pct_last_50": 0.6,
+    "hard_hit_pct_last_50": 0.3888888888888889,
+    "xwoba_last_50": 0.243
+  },
+  "name": "Jose Trevino",
+  "player_id": 624431,
+  "player_name": "Jose Trevino",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

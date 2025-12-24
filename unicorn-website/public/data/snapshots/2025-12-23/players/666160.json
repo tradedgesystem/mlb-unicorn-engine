@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.23076923076923078,
+    "babip": 0.24324324324324326,
+    "bb": 5,
+    "doubles": 2,
+    "h": 12,
+    "hr": 3,
+    "iso": 0.3269230769230769,
+    "k": 12,
+    "obp": 0.3103448275862069,
+    "ops": 0.8680371352785146,
+    "slg": 0.5576923076923077,
+    "triples": 3,
+    "woba": 0.3649122807017544
+  },
+  "basic_pitching": null,
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.05128205128205128,
+    "chase_pct_last_50": 0.49122807017543857,
+    "contact_pct_last_50": 0.4431818181818182,
+    "hard_hit_pct_last_50": 0.46153846153846156,
+    "xwoba_last_50": 0.35814285714285715
+  },
+  "name": "Mickey Moniak",
+  "player_id": 666160,
+  "player_name": "Mickey Moniak",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

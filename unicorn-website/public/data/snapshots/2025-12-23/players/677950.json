@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2830188679245283,
+    "babip": 0.375,
+    "bb": 4,
+    "doubles": 3,
+    "h": 15,
+    "hr": 0,
+    "iso": 0.13207547169811323,
+    "k": 14,
+    "obp": 0.35,
+    "ops": 0.7650943396226415,
+    "slg": 0.41509433962264153,
+    "triples": 2,
+    "woba": 0.3358333333333333
+  },
+  "basic_pitching": null,
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.02631578947368421,
+    "chase_pct_last_50": 0.4225352112676056,
+    "contact_pct_last_50": 0.40860215053763443,
+    "hard_hit_pct_last_50": 0.3684210526315789,
+    "xwoba_last_50": 0.3484791666666667
+  },
+  "name": "Alek Thomas",
+  "player_id": 677950,
+  "player_name": "Alek Thomas",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.125,
+    "hard_hit_pct_last_5_apps": 0.2093,
+    "k_pct_last_5_apps": 0.2083,
+    "whiff_pct_last_5_apps": 0.2241,
+    "xwoba_last_5_apps": 0.3786
+  },
+  "name": "Dylan Lee",
+  "player_id": 669276,
+  "player_name": "Dylan Lee",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

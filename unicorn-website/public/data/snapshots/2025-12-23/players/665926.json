@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.20481927710843373,
+    "babip": 0.21875,
+    "bb": 8,
+    "doubles": 4,
+    "h": 17,
+    "hr": 3,
+    "iso": 0.1566265060240964,
+    "k": 17,
+    "obp": 0.29473684210526313,
+    "ops": 0.6561826252377932,
+    "slg": 0.3614457831325301,
+    "triples": 0,
+    "woba": 0.29157894736842105
+  },
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.05263157894736842,
+    "chase_pct_last_50": 0.38666666666666666,
+    "contact_pct_last_50": 0.3877551020408163,
+    "hard_hit_pct_last_50": 0.3157894736842105,
+    "xwoba_last_50": 0.275
+  },
+  "name": "Andrés Giménez",
+  "player_id": 665926,
+  "player_name": "Andrés Giménez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

@@ -1,0 +1,44 @@
+{
+  "basic_batting": {
+    "avg": 0.2,
+    "babip": 0.1875,
+    "bb": 4,
+    "doubles": 0,
+    "h": 7,
+    "hr": 4,
+    "iso": 0.3428571428571428,
+    "k": 15,
+    "obp": 0.3333333333333333,
+    "ops": 0.8761904761904762,
+    "slg": 0.5428571428571428,
+    "triples": 0,
+    "woba": 0.37142857142857144
+  },
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.10526315789473684,
+    "chase_pct_last_50": 0.19298245614035087,
+    "contact_pct_last_50": 0.3114754098360656,
+    "hard_hit_pct_last_50": 0.42105263157894735,
+    "xwoba_last_50": 0.3256764705882353
+  },
+  "name": "Sean Murphy",
+  "player_id": 669221,
+  "player_name": "Sean Murphy",
+  "recent_unicorns": [
+    {
+      "description": "Sean Murphy: barrel rate leader with 2 barrels in the last 50 AB.",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-H-0510",
+      "run_date": "2025-04-15",
+      "score": 2.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

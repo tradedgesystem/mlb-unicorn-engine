@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2222222222222222,
+    "babip": 0.24242424242424243,
+    "bb": 7,
+    "doubles": 1,
+    "h": 10,
+    "hr": 2,
+    "iso": 0.15555555555555556,
+    "k": 11,
+    "obp": 0.32075471698113206,
+    "ops": 0.6985324947589098,
+    "slg": 0.37777777777777777,
+    "triples": 0,
+    "woba": 0.3141509433962264
+  },
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.027777777777777776,
+    "chase_pct_last_50": 0.24390243902439024,
+    "contact_pct_last_50": 0.3956043956043956,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.2516304347826087
+  },
+  "name": "Bo Naylor",
+  "player_id": 666310,
+  "player_name": "Bo Naylor",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

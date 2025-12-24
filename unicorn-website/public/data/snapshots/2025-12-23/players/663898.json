@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.225,
+    "babip": 0.375,
+    "bb": 5,
+    "doubles": 2,
+    "h": 9,
+    "hr": 0,
+    "iso": 0.05000000000000002,
+    "k": 16,
+    "obp": 0.3111111111111111,
+    "ops": 0.5861111111111111,
+    "slg": 0.275,
+    "triples": 0,
+    "woba": 0.2733333333333334
+  },
+  "basic_pitching": null,
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2631578947368421,
+    "contact_pct_last_50": 0.3116883116883117,
+    "hard_hit_pct_last_50": 0.5416666666666666,
+    "xwoba_last_50": 0.253475
+  },
+  "name": "Brendan Rodgers",
+  "player_id": 663898,
+  "player_name": "Brendan Rodgers",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

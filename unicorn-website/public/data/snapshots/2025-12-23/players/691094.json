@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 113,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0769,
+    "hard_hit_pct_last_5_apps": 0.2083,
+    "k_pct_last_5_apps": 0.2308,
+    "whiff_pct_last_5_apps": 0.1071,
+    "xwoba_last_5_apps": 0.3471
+  },
+  "name": "Randy Wynne",
+  "player_id": 691094,
+  "player_name": "Randy Wynne",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

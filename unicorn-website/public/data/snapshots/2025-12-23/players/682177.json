@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.21875,
+    "babip": 0.29411764705882354,
+    "bb": 3,
+    "doubles": 2,
+    "h": 7,
+    "hr": 2,
+    "iso": 0.25,
+    "k": 13,
+    "obp": 0.2857142857142857,
+    "ops": 0.7544642857142857,
+    "slg": 0.46875,
+    "triples": 0,
+    "woba": 0.34857142857142853
+  },
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.30303030303030304,
+    "contact_pct_last_50": 0.3114754098360656,
+    "hard_hit_pct_last_50": 0.5263157894736842,
+    "xwoba_last_50": 0.22878125
+  },
+  "name": "Daniel Schneemann",
+  "player_id": 682177,
+  "player_name": "Daniel Schneemann",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

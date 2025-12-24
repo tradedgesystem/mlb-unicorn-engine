@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.41379310344827586,
+    "babip": 0.5714285714285714,
+    "bb": 2,
+    "doubles": 4,
+    "h": 12,
+    "hr": 0,
+    "iso": 0.13793103448275862,
+    "k": 9,
+    "obp": 0.4375,
+    "ops": 0.9892241379310345,
+    "slg": 0.5517241379310345,
+    "triples": 0,
+    "woba": 0.425
+  },
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.42105263157894735,
+    "contact_pct_last_50": 0.35,
+    "hard_hit_pct_last_50": 0.47619047619047616,
+    "xwoba_last_50": 0.29656666666666665
+  },
+  "name": "Edmundo Sosa",
+  "player_id": 624641,
+  "player_name": "Edmundo Sosa",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

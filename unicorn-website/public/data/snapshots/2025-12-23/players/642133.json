@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.15555555555555556,
+    "babip": 0.12,
+    "bb": 2,
+    "doubles": 1,
+    "h": 7,
+    "hr": 4,
+    "iso": 0.28888888888888886,
+    "k": 17,
+    "obp": 0.20408163265306123,
+    "ops": 0.6485260770975056,
+    "slg": 0.4444444444444444,
+    "triples": 0,
+    "woba": 0.2683673469387755
+  },
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.352112676056338,
+    "contact_pct_last_50": 0.3424657534246575,
+    "hard_hit_pct_last_50": 0.52,
+    "xwoba_last_50": 0.2976829268292683
+  },
+  "name": "Rowdy Tellez",
+  "player_id": 642133,
+  "player_name": "Rowdy Tellez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.2128,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2895,
+    "xwoba_last_5_apps": 0.276
+  },
+  "name": "Sandy Alcantara",
+  "player_id": 645261,
+  "player_name": "Sandy Alcantara",
+  "recent_unicorns": [],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

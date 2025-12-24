@@ -1,0 +1,58 @@
+{
+  "basic_batting": {
+    "avg": 0.2261904761904762,
+    "babip": 0.32,
+    "bb": 5,
+    "doubles": 4,
+    "h": 19,
+    "hr": 3,
+    "iso": 0.15476190476190474,
+    "k": 31,
+    "obp": 0.2696629213483146,
+    "ops": 0.6506153023006955,
+    "slg": 0.38095238095238093,
+    "triples": 0,
+    "woba": 0.2840909090909091
+  },
+  "basic_pitching": null,
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.034482758620689655,
+    "chase_pct_last_50": 0.3235294117647059,
+    "contact_pct_last_50": 0.24369747899159663,
+    "hard_hit_pct_last_50": 0.4482758620689655,
+    "xwoba_last_50": 0.18156
+  },
+  "name": "Riley Greene",
+  "player_id": 682985,
+  "player_name": "Riley Greene",
+  "recent_unicorns": [
+    {
+      "description": "Riley Greene has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.668,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-03",
+      "score": 2.129402
+    },
+    {
+      "description": "Riley Greene has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.668,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-01",
+      "score": 1.768609
+    },
+    {
+      "description": "Riley Greene has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.685,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-31",
+      "score": 1.916741
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}
