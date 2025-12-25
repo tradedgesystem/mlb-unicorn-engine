@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.0,
+    "babip": 0.0,
+    "bb": 0,
+    "doubles": 0,
+    "h": 0,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 4,
+    "obp": 0.0,
+    "ops": 0.0,
+    "slg": 0.0,
+    "triples": 0,
+    "woba": 0.0
+  },
+  "basic_pitching": null,
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.5,
+    "contact_pct_last_50": 0.3056,
+    "hard_hit_pct_last_50": 0.2727,
+    "xwoba_last_50": 0.1741
+  },
+  "name": "Ezequiel Duran",
+  "player_id": 677649,
+  "player_name": "Ezequiel Duran",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.26666666666666666,
+    "babip": 0.375,
+    "bb": 2,
+    "doubles": 2,
+    "h": 12,
+    "hr": 0,
+    "iso": 0.04444444444444445,
+    "k": 13,
+    "obp": 0.3125,
+    "ops": 0.6236111111111111,
+    "slg": 0.3111111111111111,
+    "triples": 0,
+    "woba": 0.2833333333333333
+  },
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.32,
+    "contact_pct_last_50": 0.35365853658536583,
+    "hard_hit_pct_last_50": 0.3793103448275862,
+    "xwoba_last_50": 0.2424418604651163
+  },
+  "name": "Nick Allen",
+  "player_id": 669397,
+  "player_name": "Nick Allen",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

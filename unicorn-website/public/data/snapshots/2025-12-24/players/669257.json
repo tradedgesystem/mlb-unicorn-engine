@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.3269230769230769,
+    "babip": 0.42857142857142855,
+    "bb": 6,
+    "doubles": 2,
+    "h": 17,
+    "hr": 2,
+    "iso": 0.15384615384615385,
+    "k": 17,
+    "obp": 0.39344262295081966,
+    "ops": 0.8742118537200505,
+    "slg": 0.4807692307692308,
+    "triples": 0,
+    "woba": 0.37868852459016394
+  },
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.058823529411764705,
+    "chase_pct_last_50": 0.2564102564102564,
+    "contact_pct_last_50": 0.4146341463414634,
+    "hard_hit_pct_last_50": 0.4411764705882353,
+    "xwoba_last_50": 0.2687
+  },
+  "name": "Will Smith",
+  "player_id": 669257,
+  "player_name": "Will Smith",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

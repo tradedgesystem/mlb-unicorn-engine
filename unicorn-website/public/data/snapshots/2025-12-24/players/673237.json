@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.14285714285714285,
+    "babip": 0.1702127659574468,
+    "bb": 3,
+    "doubles": 2,
+    "h": 9,
+    "hr": 1,
+    "iso": 0.07936507936507936,
+    "k": 15,
+    "obp": 0.18181818181818182,
+    "ops": 0.40404040404040403,
+    "slg": 0.2222222222222222,
+    "triples": 0,
+    "woba": 0.19545454545454546
+  },
+  "basic_pitching": null,
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.05263157894736842,
+    "chase_pct_last_50": 0.4375,
+    "contact_pct_last_50": 0.37623762376237624,
+    "hard_hit_pct_last_50": 0.3157894736842105,
+    "xwoba_last_50": 0.22048
+  },
+  "name": "Yainer Diaz",
+  "player_id": 673237,
+  "player_name": "Yainer Diaz",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

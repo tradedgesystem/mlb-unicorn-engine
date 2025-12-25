@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.26785714285714285,
+    "babip": 0.35714285714285715,
+    "bb": 3,
+    "doubles": 3,
+    "h": 15,
+    "hr": 0,
+    "iso": 0.0535714285714286,
+    "k": 14,
+    "obp": 0.3050847457627119,
+    "ops": 0.6265133171912833,
+    "slg": 0.32142857142857145,
+    "triples": 0,
+    "woba": 0.2974576271186441
+  },
+  "basic_pitching": null,
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.37373737373737376,
+    "contact_pct_last_50": 0.3917525773195876,
+    "hard_hit_pct_last_50": 0.2894736842105263,
+    "xwoba_last_50": 0.23808
+  },
+  "name": "Javier Báez",
+  "player_id": 595879,
+  "player_name": "Javier Báez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

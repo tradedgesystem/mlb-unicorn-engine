@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.07317073170731707,
+    "babip": 0.08333333333333333,
+    "bb": 4,
+    "doubles": 1,
+    "h": 3,
+    "hr": 0,
+    "iso": 0.024390243902439032,
+    "k": 6,
+    "obp": 0.1702127659574468,
+    "ops": 0.2677737415672029,
+    "slg": 0.0975609756097561,
+    "triples": 0,
+    "woba": 0.13936170212765958
+  },
+  "basic_pitching": null,
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3448275862068966,
+    "contact_pct_last_50": 0.4827586206896552,
+    "hard_hit_pct_last_50": 0.17857142857142858,
+    "xwoba_last_50": 0.1939142857142857
+  },
+  "name": "Jake McCarthy",
+  "player_id": 664983,
+  "player_name": "Jake McCarthy",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.21052631578947367,
+    "babip": 0.23333333333333334,
+    "bb": 11,
+    "doubles": 3,
+    "h": 16,
+    "hr": 2,
+    "iso": 0.11842105263157898,
+    "k": 15,
+    "obp": 0.3068181818181818,
+    "ops": 0.6357655502392345,
+    "slg": 0.32894736842105265,
+    "triples": 0,
+    "woba": 0.29829545454545453
+  },
+  "basic_pitching": null,
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.05405405405405406,
+    "chase_pct_last_50": 0.2753623188405797,
+    "contact_pct_last_50": 0.46835443037974683,
+    "hard_hit_pct_last_50": 0.4594594594594595,
+    "xwoba_last_50": 0.24732
+  },
+  "name": "JJ Bleday",
+  "player_id": 668709,
+  "player_name": "JJ Bleday",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

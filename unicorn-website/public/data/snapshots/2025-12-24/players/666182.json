@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.30927835051546393,
+    "babip": 0.3614457831325301,
+    "bb": 5,
+    "doubles": 8,
+    "h": 30,
+    "hr": 0,
+    "iso": 0.0824742268041237,
+    "k": 15,
+    "obp": 0.3523809523809524,
+    "ops": 0.74413352970054,
+    "slg": 0.3917525773195876,
+    "triples": 0,
+    "woba": 0.3372549019607843
+  },
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.47058823529411764,
+    "contact_pct_last_50": 0.41,
+    "hard_hit_pct_last_50": 0.6,
+    "xwoba_last_50": 0.3704081632653061
+  },
+  "name": "Bo Bichette",
+  "player_id": 666182,
+  "player_name": "Bo Bichette",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

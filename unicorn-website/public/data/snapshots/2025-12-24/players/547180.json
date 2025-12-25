@@ -1,0 +1,65 @@
+{
+  "basic_batting": {
+    "avg": 0.2716049382716049,
+    "babip": 0.288135593220339,
+    "bb": 18,
+    "doubles": 4,
+    "h": 22,
+    "hr": 5,
+    "iso": 0.23456790123456794,
+    "k": 17,
+    "obp": 0.40404040404040403,
+    "ops": 0.9102132435465768,
+    "slg": 0.5061728395061729,
+    "triples": 0,
+    "woba": 0.3989690721649485
+  },
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.04878048780487805,
+    "chase_pct_last_50": 0.4375,
+    "contact_pct_last_50": 0.4019607843137255,
+    "hard_hit_pct_last_50": 0.43902439024390244,
+    "xwoba_last_50": 0.37152
+  },
+  "name": "Bryce Harper",
+  "player_id": 547180,
+  "player_name": "Bryce Harper",
+  "recent_unicorns": [
+    {
+      "description": "Bryce Harper leads MLB in HR hit in 3-0 counts.",
+      "metric_value": 1.0,
+      "pattern_id": "UNQ-H-0020",
+      "run_date": "2025-04-15",
+      "score": 1.0
+    },
+    {
+      "description": "Bryce Harper leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-03",
+      "score": 1.535432
+    },
+    {
+      "description": "Bryce Harper leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-02",
+      "score": 1.454288
+    },
+    {
+      "description": "Bryce Harper leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-01",
+      "score": 1.41065
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

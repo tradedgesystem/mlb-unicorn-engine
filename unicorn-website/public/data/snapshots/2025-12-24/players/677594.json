@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.18823529411764706,
+    "babip": 0.22807017543859648,
+    "bb": 12,
+    "doubles": 2,
+    "h": 16,
+    "hr": 3,
+    "iso": 0.1764705882352941,
+    "k": 25,
+    "obp": 0.31,
+    "ops": 0.6747058823529412,
+    "slg": 0.36470588235294116,
+    "triples": 2,
+    "woba": 0.3191919191919192
+  },
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.5128205128205128,
+    "contact_pct_last_50": 0.3025210084033613,
+    "hard_hit_pct_last_50": 0.4444444444444444,
+    "xwoba_last_50": 0.26284
+  },
+  "name": "Julio Rodríguez",
+  "player_id": 677594,
+  "player_name": "Julio Rodríguez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.2222222222222222,
+    "babip": 0.2631578947368421,
+    "bb": 4,
+    "doubles": 2,
+    "h": 6,
+    "hr": 1,
+    "iso": 0.18518518518518517,
+    "k": 8,
+    "obp": 0.3125,
+    "ops": 0.7199074074074074,
+    "slg": 0.4074074074074074,
+    "triples": 0,
+    "woba": 0.3129032258064516
+  },
+  "basic_pitching": null,
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.1875,
+    "contact_pct_last_50": 0.5428571428571428,
+    "hard_hit_pct_last_50": 0.42105263157894735,
+    "xwoba_last_50": 0.3439583333333333
+  },
+  "name": "Nolan Gorman",
+  "player_id": 669357,
+  "player_name": "Nolan Gorman",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

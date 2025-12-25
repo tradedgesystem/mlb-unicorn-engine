@@ -1,0 +1,44 @@
+{
+  "basic_batting": {
+    "avg": 0.20588235294117646,
+    "babip": 0.2222222222222222,
+    "bb": 12,
+    "doubles": 3,
+    "h": 14,
+    "hr": 2,
+    "iso": 0.13235294117647062,
+    "k": 16,
+    "obp": 0.30952380952380953,
+    "ops": 0.6477591036414566,
+    "slg": 0.3382352941176471,
+    "triples": 0,
+    "woba": 0.28841463414634144
+  },
+  "basic_pitching": null,
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.07317073170731707,
+    "chase_pct_last_50": 0.2980769230769231,
+    "contact_pct_last_50": 0.39805825242718446,
+    "hard_hit_pct_last_50": 0.4634146341463415,
+    "xwoba_last_50": 0.36866
+  },
+  "name": "Yordan Alvarez",
+  "player_id": 670541,
+  "player_name": "Yordan Alvarez",
+  "recent_unicorns": [
+    {
+      "description": "Yordan Alvarez has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-28",
+      "score": 1.972451
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

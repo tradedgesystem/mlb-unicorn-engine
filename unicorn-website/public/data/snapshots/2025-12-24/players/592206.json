@@ -1,0 +1,44 @@
+{
+  "basic_batting": {
+    "avg": 0.3037974683544304,
+    "babip": 0.3442622950819672,
+    "bb": 8,
+    "doubles": 6,
+    "h": 24,
+    "hr": 3,
+    "iso": 0.189873417721519,
+    "k": 16,
+    "obp": 0.36363636363636365,
+    "ops": 0.8573072497123131,
+    "slg": 0.4936708860759494,
+    "triples": 0,
+    "woba": 0.3704545454545455
+  },
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.37735849056603776,
+    "contact_pct_last_50": 0.3114754098360656,
+    "hard_hit_pct_last_50": 0.4473684210526316,
+    "xwoba_last_50": 0.32222
+  },
+  "name": "Nick Castellanos",
+  "player_id": 592206,
+  "player_name": "Nick Castellanos",
+  "recent_unicorns": [
+    {
+      "description": "Nick Castellanos: 15 hard-hit air balls (95+ mph, 10°+ launch angle) in the last 50 AB.",
+      "metric_value": 15.0,
+      "pattern_id": "UNQ-H-0552",
+      "run_date": "2025-04-15",
+      "score": 15.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.15517241379310345,
+    "babip": 0.18421052631578946,
+    "bb": 4,
+    "doubles": 0,
+    "h": 9,
+    "hr": 2,
+    "iso": 0.10344827586206898,
+    "k": 18,
+    "obp": 0.24615384615384617,
+    "ops": 0.5047745358090185,
+    "slg": 0.25862068965517243,
+    "triples": 0,
+    "woba": 0.23384615384615384
+  },
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.02857142857142857,
+    "chase_pct_last_50": 0.34545454545454546,
+    "contact_pct_last_50": 0.28,
+    "hard_hit_pct_last_50": 0.2857142857142857,
+    "xwoba_last_50": 0.1751
+  },
+  "name": "Andy Pages",
+  "player_id": 681624,
+  "player_name": "Andy Pages",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

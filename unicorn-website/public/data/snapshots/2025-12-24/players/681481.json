@@ -1,0 +1,44 @@
+{
+  "basic_batting": {
+    "avg": 0.3150684931506849,
+    "babip": 0.33962264150943394,
+    "bb": 1,
+    "doubles": 3,
+    "h": 23,
+    "hr": 5,
+    "iso": 0.24657534246575347,
+    "k": 16,
+    "obp": 0.33766233766233766,
+    "ops": 0.899306173278776,
+    "slg": 0.5616438356164384,
+    "triples": 0,
+    "woba": 0.3980263157894737
+  },
+  "basic_pitching": null,
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.027777777777777776,
+    "chase_pct_last_50": 0.41379310344827586,
+    "contact_pct_last_50": 0.40217391304347827,
+    "hard_hit_pct_last_50": 0.4444444444444444,
+    "xwoba_last_50": 0.33908163265306124
+  },
+  "name": "Kerry Carpenter",
+  "player_id": 681481,
+  "player_name": "Kerry Carpenter",
+  "recent_unicorns": [
+    {
+      "description": "Kerry Carpenter: barrel rate vs breaking balls: 2 barrels (last 50 AB).",
+      "metric_value": 2.0,
+      "pattern_id": "UNQ-H-0524",
+      "run_date": "2025-04-15",
+      "score": 2.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

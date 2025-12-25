@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.23529411764705882,
+    "babip": 0.36363636363636365,
+    "bb": 3,
+    "doubles": 1,
+    "h": 4,
+    "hr": 0,
+    "iso": 0.05882352941176472,
+    "k": 6,
+    "obp": 0.35,
+    "ops": 0.6441176470588235,
+    "slg": 0.29411764705882354,
+    "triples": 0,
+    "woba": 0.3025
+  },
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.44,
+    "contact_pct_last_50": 0.3142857142857143,
+    "hard_hit_pct_last_50": 0.2727272727272727,
+    "xwoba_last_50": 0.2556470588235294
+  },
+  "name": "Eli White",
+  "player_id": 642201,
+  "player_name": "Eli White",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

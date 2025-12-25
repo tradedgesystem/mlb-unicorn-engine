@@ -1,0 +1,51 @@
+{
+  "basic_batting": {
+    "avg": 0.26582278481012656,
+    "babip": 0.2692307692307692,
+    "bb": 19,
+    "doubles": 1,
+    "h": 21,
+    "hr": 7,
+    "iso": 0.30379746835443044,
+    "k": 20,
+    "obp": 0.42,
+    "ops": 0.989620253164557,
+    "slg": 0.569620253164557,
+    "triples": 1,
+    "woba": 0.438265306122449
+  },
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.02857142857142857,
+    "chase_pct_last_50": 0.23711340206185566,
+    "contact_pct_last_50": 0.38461538461538464,
+    "hard_hit_pct_last_50": 0.5142857142857142,
+    "xwoba_last_50": 0.33562
+  },
+  "name": "Kyle Schwarber",
+  "player_id": 656941,
+  "player_name": "Kyle Schwarber",
+  "recent_unicorns": [
+    {
+      "description": "Kyle Schwarber leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.141844,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-05",
+      "score": 2.106623
+    },
+    {
+      "description": "Kyle Schwarber leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.166667,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-03",
+      "score": 2.720994
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

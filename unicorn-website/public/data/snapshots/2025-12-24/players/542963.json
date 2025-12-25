@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.42857142857142855,
+    "babip": 0.5,
+    "bb": 0,
+    "doubles": 0,
+    "h": 3,
+    "hr": 0,
+    "iso": 0.0,
+    "k": 1,
+    "obp": 0.42857142857142855,
+    "ops": 0.8571428571428571,
+    "slg": 0.42857142857142855,
+    "triples": 0,
+    "woba": 0.38571428571428573
+  },
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.42857142857142855,
+    "contact_pct_last_50": 0.4,
+    "hard_hit_pct_last_50": 0.16666666666666666,
+    "xwoba_last_50": 0.21657142857142858
+  },
+  "name": "Rob Brantly",
+  "player_id": 542963,
+  "player_name": "Rob Brantly",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

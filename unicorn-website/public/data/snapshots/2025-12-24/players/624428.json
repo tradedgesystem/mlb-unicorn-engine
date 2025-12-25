@@ -1,0 +1,44 @@
+{
+  "basic_batting": {
+    "avg": 0.20588235294117646,
+    "babip": 0.23636363636363636,
+    "bb": 2,
+    "doubles": 3,
+    "h": 14,
+    "hr": 1,
+    "iso": 0.08823529411764708,
+    "k": 13,
+    "obp": 0.2361111111111111,
+    "ops": 0.5302287581699346,
+    "slg": 0.29411764705882354,
+    "triples": 0,
+    "woba": 0.23732394366197185
+  },
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3522727272727273,
+    "contact_pct_last_50": 0.425531914893617,
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.22128571428571428
+  },
+  "name": "Adam Frazier",
+  "player_id": 624428,
+  "player_name": "Adam Frazier",
+  "recent_unicorns": [
+    {
+      "description": "Adam Frazier: lowest 100+ mph rate with 0 balls hit 100+ mph in the last 50 AB.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0515",
+      "run_date": "2025-04-15",
+      "score": 0.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

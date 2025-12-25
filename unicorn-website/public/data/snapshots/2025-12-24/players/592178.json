@@ -1,0 +1,36 @@
+{
+  "basic_batting": {
+    "avg": 0.15384615384615385,
+    "babip": 0.23076923076923078,
+    "bb": 2,
+    "doubles": 2,
+    "h": 6,
+    "hr": 0,
+    "iso": 0.051282051282051266,
+    "k": 13,
+    "obp": 0.1951219512195122,
+    "ops": 0.4002501563477173,
+    "slg": 0.20512820512820512,
+    "triples": 0,
+    "woba": 0.18292682926829268
+  },
+  "basic_pitching": null,
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2876712328767123,
+    "contact_pct_last_50": 0.325,
+    "hard_hit_pct_last_50": 0.34615384615384615,
+    "xwoba_last_50": 0.1904871794871795
+  },
+  "name": "Kris Bryant",
+  "player_id": 592178,
+  "player_name": "Kris Bryant",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

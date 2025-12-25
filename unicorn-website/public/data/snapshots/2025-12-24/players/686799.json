@@ -1,0 +1,44 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.3846,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.1081,
+    "xwoba_last_5_apps": 0.176
+  },
+  "name": "Jack Kochanowicz",
+  "player_id": 686799,
+  "player_name": "Jack Kochanowicz",
+  "recent_unicorns": [
+    {
+      "description": "Jack Kochanowicz has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-04-01",
+      "score": 1.196551
+    },
+    {
+      "description": "Jack Kochanowicz has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-31",
+      "score": 1.19833
+    },
+    {
+      "description": "Jack Kochanowicz has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-30",
+      "score": 1.216045
+    }
+  ],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

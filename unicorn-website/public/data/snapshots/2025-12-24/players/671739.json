@@ -1,0 +1,44 @@
+{
+  "basic_batting": {
+    "avg": 0.20253164556962025,
+    "babip": 0.22413793103448276,
+    "bb": 3,
+    "doubles": 3,
+    "h": 16,
+    "hr": 3,
+    "iso": 0.1518987341772152,
+    "k": 20,
+    "obp": 0.2261904761904762,
+    "ops": 0.5806208559373116,
+    "slg": 0.35443037974683544,
+    "triples": 0,
+    "woba": 0.2636904761904762
+  },
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.02564102564102564,
+    "chase_pct_last_50": 0.4155844155844156,
+    "contact_pct_last_50": 0.4020618556701031,
+    "hard_hit_pct_last_50": 0.358974358974359,
+    "xwoba_last_50": 0.23252083333333334
+  },
+  "name": "Michael Harris II",
+  "player_id": 671739,
+  "player_name": "Michael Harris II",
+  "recent_unicorns": [
+    {
+      "description": "Michael Harris II: ΔBarrels = 0.692 over the last 50 AB.",
+      "metric_value": 0.692308,
+      "pattern_id": "UNQ-H-0560",
+      "run_date": "2025-04-15",
+      "score": 0.692308
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

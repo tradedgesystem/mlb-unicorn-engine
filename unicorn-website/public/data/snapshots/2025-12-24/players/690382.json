@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.1818,
+    "hard_hit_pct_last_5_apps": 0.4545,
+    "k_pct_last_5_apps": 0.0909,
+    "whiff_pct_last_5_apps": 0.2188,
+    "xwoba_last_5_apps": 0.4697
+  },
+  "name": "Michael Darrell-Hicks",
+  "player_id": 690382,
+  "player_name": "Michael Darrell-Hicks",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

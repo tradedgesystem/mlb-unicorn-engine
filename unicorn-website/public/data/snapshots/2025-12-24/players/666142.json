@@ -1,0 +1,58 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.0,
+    "hard_hit_pct_last_5_apps": 0.1639,
+    "k_pct_last_5_apps": 0.0,
+    "whiff_pct_last_5_apps": 0.2872,
+    "xwoba_last_5_apps": 0.2297
+  },
+  "name": "Cole Ragans",
+  "player_id": 666142,
+  "player_name": "Cole Ragans",
+  "recent_unicorns": [
+    {
+      "description": "Cole Ragans has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-04-05",
+      "score": 1.513653
+    },
+    {
+      "description": "Cole Ragans has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-04-04",
+      "score": 1.486974
+    },
+    {
+      "description": "Cole Ragans has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-29",
+      "score": 1.23011
+    },
+    {
+      "description": "Cole Ragans has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-28",
+      "score": 1.221773
+    },
+    {
+      "description": "Cole Ragans has the most strikeouts over his last 3 starts.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-P-0103",
+      "run_date": "2025-03-27",
+      "score": 1.243127
+    }
+  ],
+  "role": "starter",
+  "roles": [
+    "starter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 133,
+  "metrics": {
+    "bb_pct_last_5_apps": 0.05,
+    "hard_hit_pct_last_5_apps": 0.2381,
+    "k_pct_last_5_apps": 0.55,
+    "whiff_pct_last_5_apps": 0.4186,
+    "xwoba_last_5_apps": 0.1014
+  },
+  "name": "Mason Miller",
+  "player_id": 695243,
+  "player_name": "Mason Miller",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

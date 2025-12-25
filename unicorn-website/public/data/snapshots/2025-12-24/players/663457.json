@@ -1,0 +1,58 @@
+{
+  "basic_batting": {
+    "avg": 0.25316455696202533,
+    "babip": 0.2786885245901639,
+    "bb": 17,
+    "doubles": 3,
+    "h": 20,
+    "hr": 3,
+    "iso": 0.15189873417721517,
+    "k": 15,
+    "obp": 0.3917525773195876,
+    "ops": 0.7968158684588281,
+    "slg": 0.4050632911392405,
+    "triples": 0,
+    "woba": 0.3796875
+  },
+  "basic_pitching": null,
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.02564102564102564,
+    "chase_pct_last_50": 0.24731182795698925,
+    "contact_pct_last_50": 0.43820224719101125,
+    "hard_hit_pct_last_50": 0.41025641025641024,
+    "xwoba_last_50": 0.2484
+  },
+  "name": "Lars Nootbaar",
+  "player_id": 663457,
+  "player_name": "Lars Nootbaar",
+  "recent_unicorns": [
+    {
+      "description": "Lars Nootbaar has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-01",
+      "score": 1.932242
+    },
+    {
+      "description": "Lars Nootbaar has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-03-31",
+      "score": 2.048262
+    },
+    {
+      "description": "Lars Nootbaar tops MLB in xwOBA over his last 50 PA.",
+      "metric_value": 0.667857,
+      "pattern_id": "UNQ-H-0003",
+      "run_date": "2025-03-30",
+      "score": 1.969954
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}
