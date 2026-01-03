@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.38823529411764707,
+    "contact_pct_last_50": 0.3425925925925926,
+    "hard_hit_pct_last_50": 0.4594594594594595,
+    "xwoba_last_50": 0.24678
+  },
+  "name": "Anthony Santander",
+  "player_id": 623993,
+  "player_name": "Anthony Santander",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

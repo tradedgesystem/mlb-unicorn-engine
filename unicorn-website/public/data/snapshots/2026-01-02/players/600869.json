@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.03125,
+    "chase_pct_last_50": 0.36893203883495146,
+    "contact_pct_last_50": 0.2711864406779661,
+    "hard_hit_pct_last_50": 0.28125,
+    "xwoba_last_50": 0.16163265306122448
+  },
+  "name": "Jeimer Candelario",
+  "player_id": 600869,
+  "player_name": "Jeimer Candelario",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.525,
+    "contact_pct_last_50": 0.2692307692307692,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.32445833333333335
+  },
+  "name": "Casey Schmitt",
+  "player_id": 669477,
+  "player_name": "Casey Schmitt",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

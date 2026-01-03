@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.27380952380952384,
+    "contact_pct_last_50": 0.3870967741935484,
+    "hard_hit_pct_last_50": 0.3888888888888889,
+    "xwoba_last_50": 0.20572
+  },
+  "name": "Willy Adames",
+  "player_id": 642715,
+  "player_name": "Willy Adames",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

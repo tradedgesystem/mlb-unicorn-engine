@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.07142857142857142,
+    "chase_pct_last_50": 0.3150684931506849,
+    "contact_pct_last_50": 0.4117647058823529,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.25966
+  },
+  "name": "Marcus Semien",
+  "player_id": 543760,
+  "player_name": "Marcus Semien",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

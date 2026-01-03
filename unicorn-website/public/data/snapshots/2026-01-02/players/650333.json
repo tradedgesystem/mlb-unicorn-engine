@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4084507042253521,
+    "contact_pct_last_50": 0.5454545454545454,
+    "hard_hit_pct_last_50": 0.2708333333333333,
+    "xwoba_last_50": 0.2738163265306122
+  },
+  "name": "Luis Arraez",
+  "player_id": 650333,
+  "player_name": "Luis Arraez",
+  "recent_unicorns": [
+    {
+      "description": "Luis Arraez: lowest barrel rate with 0 barrels in the last 50 AB.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0511",
+      "run_date": "2025-04-15",
+      "score": 0.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

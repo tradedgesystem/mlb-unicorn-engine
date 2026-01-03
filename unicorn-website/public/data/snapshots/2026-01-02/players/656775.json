@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.29292929292929293,
+    "contact_pct_last_50": 0.3917525773195876,
+    "hard_hit_pct_last_50": 0.3157894736842105,
+    "xwoba_last_50": 0.25708
+  },
+  "name": "Cedric Mullins",
+  "player_id": 656775,
+  "player_name": "Cedric Mullins",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

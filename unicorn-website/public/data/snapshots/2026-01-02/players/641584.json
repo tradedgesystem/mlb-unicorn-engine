@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3409090909090909,
+    "contact_pct_last_50": 0.4444444444444444,
+    "hard_hit_pct_last_50": 0.3,
+    "xwoba_last_50": 0.27522
+  },
+  "name": "Jake Fraley",
+  "player_id": 641584,
+  "player_name": "Jake Fraley",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

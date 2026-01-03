@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3333333333333333,
+    "contact_pct_last_50": 0.4358974358974359,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.23375609756097562
+  },
+  "name": "Luisangel Acuña",
+  "player_id": 682668,
+  "player_name": "Luisangel Acuña",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

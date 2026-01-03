@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.025,
+    "chase_pct_last_50": 0.3037974683544304,
+    "contact_pct_last_50": 0.45454545454545453,
+    "hard_hit_pct_last_50": 0.675,
+    "xwoba_last_50": 0.33024489795918366
+  },
+  "name": "Maikel Garcia",
+  "player_id": 672580,
+  "player_name": "Maikel Garcia",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

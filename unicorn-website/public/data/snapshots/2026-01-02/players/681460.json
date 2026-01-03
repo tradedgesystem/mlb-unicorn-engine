@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.02631578947368421,
+    "chase_pct_last_50": 0.34782608695652173,
+    "contact_pct_last_50": 0.41304347826086957,
+    "hard_hit_pct_last_50": 0.39473684210526316,
+    "xwoba_last_50": 0.2892708333333333
+  },
+  "name": "Brooks Baldwin",
+  "player_id": 681460,
+  "player_name": "Brooks Baldwin",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

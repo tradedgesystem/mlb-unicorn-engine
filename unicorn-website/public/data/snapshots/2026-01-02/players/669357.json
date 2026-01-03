@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.1875,
+    "contact_pct_last_50": 0.5428571428571428,
+    "hard_hit_pct_last_50": 0.42105263157894735,
+    "xwoba_last_50": 0.3439583333333333
+  },
+  "name": "Nolan Gorman",
+  "player_id": 669357,
+  "player_name": "Nolan Gorman",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

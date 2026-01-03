@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.0333,
+    "chase_pct_last_50": 0.3433,
+    "contact_pct_last_50": 0.4366,
+    "hard_hit_pct_last_50": 0.3667,
+    "xwoba_last_50": 0.2613
+  },
+  "name": "Javier Sanoja",
+  "player_id": 691594,
+  "player_name": "Javier Sanoja",
+  "recent_unicorns": [],
+  "role": "reliever",
+  "roles": [
+    "reliever"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

@@ -1,0 +1,44 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.29896907216494845,
+    "contact_pct_last_50": 0.3894736842105263,
+    "hard_hit_pct_last_50": 0.5135135135135135,
+    "xwoba_last_50": 0.3129
+  },
+  "name": "Christian Yelich",
+  "player_id": 592885,
+  "player_name": "Christian Yelich",
+  "recent_unicorns": [
+    {
+      "description": "Christian Yelich has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.662909,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-05",
+      "score": 2.315641
+    },
+    {
+      "description": "Christian Yelich has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.656667,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-04",
+      "score": 2.244087
+    },
+    {
+      "description": "Christian Yelich has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.73875,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-01",
+      "score": 2.218456
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.26582278481012656,
+    "contact_pct_last_50": 0.47560975609756095,
+    "hard_hit_pct_last_50": 0.42105263157894735,
+    "xwoba_last_50": 0.26319565217391305
+  },
+  "name": "Xander Bogaerts",
+  "player_id": 593428,
+  "player_name": "Xander Bogaerts",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

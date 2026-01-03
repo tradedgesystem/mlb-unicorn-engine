@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.4067796610169492,
+    "contact_pct_last_50": 0.5,
+    "hard_hit_pct_last_50": 0.1891891891891892,
+    "xwoba_last_50": 0.23071111111111112
+  },
+  "name": "Ernie Clement",
+  "player_id": 676391,
+  "player_name": "Ernie Clement",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

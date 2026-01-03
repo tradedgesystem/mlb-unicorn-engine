@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.28,
+    "contact_pct_last_50": 0.5064935064935064,
+    "hard_hit_pct_last_50": 0.41025641025641024,
+    "xwoba_last_50": 0.237
+  },
+  "name": "Isiah Kiner-Falefa",
+  "player_id": 643396,
+  "player_name": "Isiah Kiner-Falefa",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

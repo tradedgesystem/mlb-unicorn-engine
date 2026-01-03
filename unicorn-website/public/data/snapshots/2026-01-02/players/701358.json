@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2236842105263158,
+    "contact_pct_last_50": 0.39080459770114945,
+    "hard_hit_pct_last_50": 0.4117647058823529,
+    "xwoba_last_50": 0.30062
+  },
+  "name": "Cam Smith",
+  "player_id": 701358,
+  "player_name": "Cam Smith",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

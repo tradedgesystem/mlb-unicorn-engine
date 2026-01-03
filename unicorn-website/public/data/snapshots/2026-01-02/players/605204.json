@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.14285714285714285,
+    "contact_pct_last_50": 0.5714285714285714,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.0845
+  },
+  "name": "J.D. Davis",
+  "player_id": 605204,
+  "player_name": "J.D. Davis",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

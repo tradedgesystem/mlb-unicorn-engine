@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3617021276595745,
+    "contact_pct_last_50": 0.3333333333333333,
+    "hard_hit_pct_last_50": 0.39473684210526316,
+    "xwoba_last_50": 0.2200408163265306
+  },
+  "name": "Will Wagner",
+  "player_id": 695238,
+  "player_name": "Will Wagner",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2631578947368421,
+    "contact_pct_last_50": 0.4722222222222222,
+    "hard_hit_pct_last_50": 0.29411764705882354,
+    "xwoba_last_50": 0.2652857142857143
+  },
+  "name": "Chase Meidroth",
+  "player_id": 805367,
+  "player_name": "Chase Meidroth",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

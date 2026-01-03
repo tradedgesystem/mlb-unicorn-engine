@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2826086956521739,
+    "contact_pct_last_50": 0.3069306930693069,
+    "hard_hit_pct_last_50": 0.41935483870967744,
+    "xwoba_last_50": 0.17098
+  },
+  "name": "Patrick Bailey",
+  "player_id": 672275,
+  "player_name": "Patrick Bailey",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

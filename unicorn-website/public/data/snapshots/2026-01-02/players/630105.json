@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.22950819672131148,
+    "contact_pct_last_50": 0.4482758620689655,
+    "hard_hit_pct_last_50": 0.38461538461538464,
+    "xwoba_last_50": 0.22891666666666666
+  },
+  "name": "Jake Cronenworth",
+  "player_id": 630105,
+  "player_name": "Jake Cronenworth",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

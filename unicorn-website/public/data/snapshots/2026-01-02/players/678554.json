@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.05555555555555555,
+    "chase_pct_last_50": 0.3181818181818182,
+    "contact_pct_last_50": 0.27941176470588236,
+    "hard_hit_pct_last_50": 0.3888888888888889,
+    "xwoba_last_50": 0.2782413793103448
+  },
+  "name": "Curtis Mead",
+  "player_id": 678554,
+  "player_name": "Curtis Mead",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

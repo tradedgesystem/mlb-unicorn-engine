@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": null,
+    "chase_pct_last_50": null,
+    "contact_pct_last_50": null,
+    "hard_hit_pct_last_50": null,
+    "xwoba_last_50": null
+  },
+  "name": "José Azocar",
+  "player_id": 640492,
+  "player_name": "José Azocar",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

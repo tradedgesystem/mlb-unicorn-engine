@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.08571428571428572,
+    "chase_pct_last_50": 0.36082474226804123,
+    "contact_pct_last_50": 0.35,
+    "hard_hit_pct_last_50": 0.5142857142857142,
+    "xwoba_last_50": 0.354125
+  },
+  "name": "Heston Kjerstad",
+  "player_id": 677008,
+  "player_name": "Heston Kjerstad",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

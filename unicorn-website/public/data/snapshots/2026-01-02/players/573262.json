@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.05405405405405406,
+    "chase_pct_last_50": 0.3026315789473684,
+    "contact_pct_last_50": 0.4065934065934066,
+    "hard_hit_pct_last_50": 0.43243243243243246,
+    "xwoba_last_50": 0.29942
+  },
+  "name": "Mike Yastrzemski",
+  "player_id": 573262,
+  "player_name": "Mike Yastrzemski",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

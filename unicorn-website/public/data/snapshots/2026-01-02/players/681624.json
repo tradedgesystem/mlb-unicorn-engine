@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.02857142857142857,
+    "chase_pct_last_50": 0.34545454545454546,
+    "contact_pct_last_50": 0.28,
+    "hard_hit_pct_last_50": 0.2857142857142857,
+    "xwoba_last_50": 0.1751
+  },
+  "name": "Andy Pages",
+  "player_id": 681624,
+  "player_name": "Andy Pages",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

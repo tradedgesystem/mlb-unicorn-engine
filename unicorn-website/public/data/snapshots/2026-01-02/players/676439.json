@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.0,
+    "contact_pct_last_50": 0.25,
+    "hard_hit_pct_last_50": 1.0,
+    "xwoba_last_50": 0.1095
+  },
+  "name": "Hunter Feduccia",
+  "player_id": 676439,
+  "player_name": "Hunter Feduccia",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

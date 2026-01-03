@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.03125,
+    "chase_pct_last_50": 0.22950819672131148,
+    "contact_pct_last_50": 0.4177215189873418,
+    "hard_hit_pct_last_50": 0.46875,
+    "xwoba_last_50": 0.21529545454545454
+  },
+  "name": "Endy Rodríguez",
+  "player_id": 682848,
+  "player_name": "Endy Rodríguez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2830188679245283,
+    "contact_pct_last_50": 0.3888888888888889,
+    "hard_hit_pct_last_50": 0.2857142857142857,
+    "xwoba_last_50": 0.21945161290322582
+  },
+  "name": "Cavan Biggio",
+  "player_id": 624415,
+  "player_name": "Cavan Biggio",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3220338983050847,
+    "contact_pct_last_50": 0.31343283582089554,
+    "hard_hit_pct_last_50": 0.2857142857142857,
+    "xwoba_last_50": 0.20472413793103447
+  },
+  "name": "Freddy Fermin",
+  "player_id": 666023,
+  "player_name": "Freddy Fermin",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

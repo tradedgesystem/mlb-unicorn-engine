@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.35106382978723405,
+    "contact_pct_last_50": 0.3829787234042553,
+    "hard_hit_pct_last_50": 0.2222222222222222,
+    "xwoba_last_50": 0.19796
+  },
+  "name": "Max Muncy",
+  "player_id": 691777,
+  "player_name": "Max Muncy",
+  "recent_unicorns": [
+    {
+      "description": "Max Muncy: barrel rate vs offspeed pitches: 1 barrels (last 50 AB).",
+      "metric_value": 1.0,
+      "pattern_id": "UNQ-H-0528",
+      "run_date": "2025-04-15",
+      "score": 1.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}
