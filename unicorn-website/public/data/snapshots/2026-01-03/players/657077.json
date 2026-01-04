@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.125,
+    "chase_pct_last_50": 0.21428571428571427,
+    "contact_pct_last_50": 0.5333333333333333,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.28144444444444444
+  },
+  "name": "Alex Verdugo",
+  "player_id": 657077,
+  "player_name": "Alex Verdugo",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}

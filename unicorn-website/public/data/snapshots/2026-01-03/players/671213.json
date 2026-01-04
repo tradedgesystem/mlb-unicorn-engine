@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.28431372549019607,
+    "contact_pct_last_50": 0.32727272727272727,
+    "hard_hit_pct_last_50": 0.3888888888888889,
+    "xwoba_last_50": 0.27542
+  },
+  "name": "Triston Casas",
+  "player_id": 671213,
+  "player_name": "Triston Casas",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

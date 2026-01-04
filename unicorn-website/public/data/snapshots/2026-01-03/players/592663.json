@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.029411764705882353,
+    "chase_pct_last_50": 0.25274725274725274,
+    "contact_pct_last_50": 0.3695652173913043,
+    "hard_hit_pct_last_50": 0.4117647058823529,
+    "xwoba_last_50": 0.29888
+  },
+  "name": "J.T. Realmuto",
+  "player_id": 592663,
+  "player_name": "J.T. Realmuto",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

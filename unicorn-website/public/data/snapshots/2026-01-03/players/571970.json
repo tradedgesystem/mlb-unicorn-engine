@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.1,
+    "chase_pct_last_50": 0.2222222222222222,
+    "contact_pct_last_50": 0.30303030303030304,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.30912
+  },
+  "name": "Max Muncy",
+  "player_id": 571970,
+  "player_name": "Max Muncy",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.03571428571428571,
+    "chase_pct_last_50": 0.4716981132075472,
+    "contact_pct_last_50": 0.4745762711864407,
+    "hard_hit_pct_last_50": 0.42857142857142855,
+    "xwoba_last_50": 0.26976666666666665
+  },
+  "name": "Luis Matos",
+  "player_id": 682641,
+  "player_name": "Luis Matos",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

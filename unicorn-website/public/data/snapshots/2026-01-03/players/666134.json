@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.030303030303030304,
+    "chase_pct_last_50": 0.26136363636363635,
+    "contact_pct_last_50": 0.3235294117647059,
+    "hard_hit_pct_last_50": 0.6363636363636364,
+    "xwoba_last_50": 0.26946938775510204
+  },
+  "name": "Nolan Jones",
+  "player_id": 666134,
+  "player_name": "Nolan Jones",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

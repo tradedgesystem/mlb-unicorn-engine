@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2571428571428571,
+    "contact_pct_last_50": 0.45569620253164556,
+    "hard_hit_pct_last_50": 0.2857142857142857,
+    "xwoba_last_50": 0.2892272727272727
+  },
+  "name": "Liam Hicks",
+  "player_id": 689414,
+  "player_name": "Liam Hicks",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

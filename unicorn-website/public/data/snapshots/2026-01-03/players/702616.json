@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.02631578947368421,
+    "chase_pct_last_50": 0.21176470588235294,
+    "contact_pct_last_50": 0.4175824175824176,
+    "hard_hit_pct_last_50": 0.34210526315789475,
+    "xwoba_last_50": 0.24896
+  },
+  "name": "Jackson Holliday",
+  "player_id": 702616,
+  "player_name": "Jackson Holliday",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}

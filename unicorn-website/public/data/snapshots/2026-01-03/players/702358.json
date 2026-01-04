@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": null,
+    "chase_pct_last_50": null,
+    "contact_pct_last_50": null,
+    "hard_hit_pct_last_50": null,
+    "xwoba_last_50": null
+  },
+  "name": "Trey Lipscomb",
+  "player_id": 702358,
+  "player_name": "Trey Lipscomb",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

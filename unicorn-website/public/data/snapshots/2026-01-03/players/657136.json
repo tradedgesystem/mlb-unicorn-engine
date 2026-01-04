@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4,
+    "contact_pct_last_50": 0.2777777777777778,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.30522727272727274
+  },
+  "name": "Connor Wong",
+  "player_id": 657136,
+  "player_name": "Connor Wong",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

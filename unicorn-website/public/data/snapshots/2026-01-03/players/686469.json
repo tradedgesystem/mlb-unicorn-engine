@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.38144329896907214,
+    "contact_pct_last_50": 0.4,
+    "hard_hit_pct_last_50": 0.5526315789473685,
+    "xwoba_last_50": 0.24936
+  },
+  "name": "Vinnie Pasquantino",
+  "player_id": 686469,
+  "player_name": "Vinnie Pasquantino",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

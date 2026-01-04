@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 116,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.36363636363636365,
+    "contact_pct_last_50": 0.3684210526315789,
+    "hard_hit_pct_last_50": 0.2857142857142857,
+    "xwoba_last_50": 0.2634444444444444
+  },
+  "name": "Tomás Nido",
+  "player_id": 621512,
+  "player_name": "Tomás Nido",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 116,
+  "team_name": "DET"
+}

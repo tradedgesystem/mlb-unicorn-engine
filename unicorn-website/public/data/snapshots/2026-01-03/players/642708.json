@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.029411764705882353,
+    "chase_pct_last_50": 0.4166666666666667,
+    "contact_pct_last_50": 0.5396825396825397,
+    "hard_hit_pct_last_50": 0.38235294117647056,
+    "xwoba_last_50": 0.2955405405405405
+  },
+  "name": "Amed Rosario",
+  "player_id": 642708,
+  "player_name": "Amed Rosario",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

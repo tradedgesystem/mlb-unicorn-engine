@@ -1,0 +1,44 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.03225806451612903,
+    "chase_pct_last_50": 0.2358490566037736,
+    "contact_pct_last_50": 0.32978723404255317,
+    "hard_hit_pct_last_50": 0.3548387096774194,
+    "xwoba_last_50": 0.21522448979591838
+  },
+  "name": "LaMonte Wade Jr.",
+  "player_id": 664774,
+  "player_name": "LaMonte Wade Jr.",
+  "recent_unicorns": [
+    {
+      "description": "LaMonte Wade Jr. leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-04",
+      "score": 1.571527
+    },
+    {
+      "description": "LaMonte Wade Jr. leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-03",
+      "score": 1.442404
+    },
+    {
+      "description": "LaMonte Wade Jr. leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-02",
+      "score": 1.438291
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

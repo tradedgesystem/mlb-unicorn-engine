@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2375,
+    "contact_pct_last_50": 0.4533333333333333,
+    "hard_hit_pct_last_50": 0.35294117647058826,
+    "xwoba_last_50": 0.2378095238095238
+  },
+  "name": "Nick Martini",
+  "player_id": 605361,
+  "player_name": "Nick Martini",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

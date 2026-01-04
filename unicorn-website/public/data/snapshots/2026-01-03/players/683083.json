@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3333333333333333,
+    "contact_pct_last_50": 0.3684210526315789,
+    "hard_hit_pct_last_50": 0.2857142857142857,
+    "xwoba_last_50": 0.19461111111111112
+  },
+  "name": "Nasim Nuñez",
+  "player_id": 683083,
+  "player_name": "Nasim Nuñez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

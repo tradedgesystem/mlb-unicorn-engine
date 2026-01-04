@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 118,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.36666666666666664,
+    "contact_pct_last_50": 0.3894736842105263,
+    "hard_hit_pct_last_50": 0.2702702702702703,
+    "xwoba_last_50": 0.18968
+  },
+  "name": "Michael Massey",
+  "player_id": 686681,
+  "player_name": "Michael Massey",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 118,
+  "team_name": "KC"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 139,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.23863636363636365,
+    "contact_pct_last_50": 0.3150684931506849,
+    "hard_hit_pct_last_50": 0.17391304347826086,
+    "xwoba_last_50": 0.200775
+  },
+  "name": "José Caballero",
+  "player_id": 676609,
+  "player_name": "José Caballero",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 139,
+  "team_name": "TB"
+}

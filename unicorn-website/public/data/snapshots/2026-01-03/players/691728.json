@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3269230769230769,
+    "contact_pct_last_50": 0.2465753424657534,
+    "hard_hit_pct_last_50": 0.2777777777777778,
+    "xwoba_last_50": 0.105
+  },
+  "name": "Zac Veen",
+  "player_id": 691728,
+  "player_name": "Zac Veen",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

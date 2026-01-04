@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4,
+    "contact_pct_last_50": 0.26666666666666666,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.11021428571428571
+  },
+  "name": "Christian Koss",
+  "player_id": 683766,
+  "player_name": "Christian Koss",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

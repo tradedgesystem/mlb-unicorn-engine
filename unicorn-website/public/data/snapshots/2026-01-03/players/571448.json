@@ -1,0 +1,37 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 138,
+  "metrics": {
+    "barrel_pct_last_50": 0.04081632653061224,
+    "chase_pct_last_50": 0.3673469387755102,
+    "contact_pct_last_50": 0.5051546391752577,
+    "hard_hit_pct_last_50": 0.2653061224489796,
+    "xwoba_last_50": 0.2522
+  },
+  "name": "Nolan Arenado",
+  "player_id": 571448,
+  "player_name": "Nolan Arenado",
+  "recent_unicorns": [
+    {
+      "description": "Nolan Arenado leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.3,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-28",
+      "score": 1.929296
+    },
+    {
+      "description": "Nolan Arenado leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.3,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-27",
+      "score": 1.796376
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 138,
+  "team_name": "STL"
+}

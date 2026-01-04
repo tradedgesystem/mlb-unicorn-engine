@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.037037037037037035,
+    "chase_pct_last_50": 0.4639175257731959,
+    "contact_pct_last_50": 0.2727272727272727,
+    "hard_hit_pct_last_50": 0.4074074074074074,
+    "xwoba_last_50": 0.24455813953488373
+  },
+  "name": "Derek Hill",
+  "player_id": 656537,
+  "player_name": "Derek Hill",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

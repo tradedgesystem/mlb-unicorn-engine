@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.02857142857142857,
+    "chase_pct_last_50": 0.2647058823529412,
+    "contact_pct_last_50": 0.3645833333333333,
+    "hard_hit_pct_last_50": 0.42857142857142855,
+    "xwoba_last_50": 0.2553
+  },
+  "name": "Edouard Julien",
+  "player_id": 666397,
+  "player_name": "Edouard Julien",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}
