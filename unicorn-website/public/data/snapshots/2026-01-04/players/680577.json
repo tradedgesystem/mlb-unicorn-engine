@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2972972972972973,
+    "contact_pct_last_50": 0.35135135135135137,
+    "hard_hit_pct_last_50": 0.23076923076923078,
+    "xwoba_last_50": 0.1371111111111111
+  },
+  "name": "DaShawn Keirsey Jr.",
+  "player_id": 680577,
+  "player_name": "DaShawn Keirsey Jr.",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

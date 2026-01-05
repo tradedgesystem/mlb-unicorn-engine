@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.07142857142857142,
+    "chase_pct_last_50": 0.4050632911392405,
+    "contact_pct_last_50": 0.2641509433962264,
+    "hard_hit_pct_last_50": 0.5357142857142857,
+    "xwoba_last_50": 0.2824
+  },
+  "name": "Matt Mervis",
+  "player_id": 670223,
+  "player_name": "Matt Mervis",
+  "recent_unicorns": [
+    {
+      "description": "Matt Mervis: 100+ mph rate leader with 11 balls hit 100+ mph in the last 50 AB.",
+      "metric_value": 11.0,
+      "pattern_id": "UNQ-H-0514",
+      "run_date": "2025-04-15",
+      "score": 11.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

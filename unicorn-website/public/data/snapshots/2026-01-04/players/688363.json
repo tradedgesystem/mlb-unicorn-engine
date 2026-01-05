@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.02631578947368421,
+    "chase_pct_last_50": 0.3888888888888889,
+    "contact_pct_last_50": 0.4222222222222222,
+    "hard_hit_pct_last_50": 0.39473684210526316,
+    "xwoba_last_50": 0.24281632653061225
+  },
+  "name": "Graham Pauley",
+  "player_id": 688363,
+  "player_name": "Graham Pauley",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

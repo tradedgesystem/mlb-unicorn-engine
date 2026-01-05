@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.13333333333333333,
+    "chase_pct_last_50": 0.3977272727272727,
+    "contact_pct_last_50": 0.2631578947368421,
+    "hard_hit_pct_last_50": 0.5666666666666667,
+    "xwoba_last_50": 0.37968
+  },
+  "name": "Cal Raleigh",
+  "player_id": 663728,
+  "player_name": "Cal Raleigh",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

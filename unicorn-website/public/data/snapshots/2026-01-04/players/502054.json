@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.21686746987951808,
+    "contact_pct_last_50": 0.3655913978494624,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.211
+  },
+  "name": "Tommy Pham",
+  "player_id": 502054,
+  "player_name": "Tommy Pham",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

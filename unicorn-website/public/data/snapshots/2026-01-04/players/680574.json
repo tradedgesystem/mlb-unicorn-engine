@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.06896551724137931,
+    "chase_pct_last_50": 0.23684210526315788,
+    "contact_pct_last_50": 0.410958904109589,
+    "hard_hit_pct_last_50": 0.5862068965517241,
+    "xwoba_last_50": 0.3475909090909091
+  },
+  "name": "Matt McLain",
+  "player_id": 680574,
+  "player_name": "Matt McLain",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

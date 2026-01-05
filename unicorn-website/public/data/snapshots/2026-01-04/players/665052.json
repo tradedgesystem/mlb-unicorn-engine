@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.22077922077922077,
+    "contact_pct_last_50": 0.3707865168539326,
+    "hard_hit_pct_last_50": 0.48484848484848486,
+    "xwoba_last_50": 0.24706
+  },
+  "name": "Griffin Conine",
+  "player_id": 665052,
+  "player_name": "Griffin Conine",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

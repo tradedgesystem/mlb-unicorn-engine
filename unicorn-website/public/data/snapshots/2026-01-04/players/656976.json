@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.12903225806451613,
+    "chase_pct_last_50": 0.275,
+    "contact_pct_last_50": 0.37349397590361444,
+    "hard_hit_pct_last_50": 0.5483870967741935,
+    "xwoba_last_50": 0.3864565217391304
+  },
+  "name": "Pavin Smith",
+  "player_id": 656976,
+  "player_name": "Pavin Smith",
+  "recent_unicorns": [
+    {
+      "description": "Pavin Smith: air barrel rate leader with 3 barrels in the last 50 AB.",
+      "metric_value": 3.0,
+      "pattern_id": "UNQ-H-0551",
+      "run_date": "2025-04-15",
+      "score": 3.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

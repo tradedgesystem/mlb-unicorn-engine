@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 109,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.20689655172413793,
+    "contact_pct_last_50": 0.29411764705882354,
+    "hard_hit_pct_last_50": 0.2,
+    "xwoba_last_50": 0.109
+  },
+  "name": "Garrett Hampson",
+  "player_id": 641658,
+  "player_name": "Garrett Hampson",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 109,
+  "team_name": "AZ"
+}

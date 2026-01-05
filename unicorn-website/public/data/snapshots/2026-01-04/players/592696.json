@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.25,
+    "chase_pct_last_50": 0.0,
+    "contact_pct_last_50": 0.8,
+    "hard_hit_pct_last_50": 1.0,
+    "xwoba_last_50": 0.60475
+  },
+  "name": "Eddie Rosario",
+  "player_id": 592696,
+  "player_name": "Eddie Rosario",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

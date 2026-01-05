@@ -1,0 +1,37 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0625,
+    "chase_pct_last_50": 0.3333333333333333,
+    "contact_pct_last_50": 0.425,
+    "hard_hit_pct_last_50": 0.375,
+    "xwoba_last_50": 0.2745897435897436
+  },
+  "name": "Andrew Benintendi",
+  "player_id": 643217,
+  "player_name": "Andrew Benintendi",
+  "recent_unicorns": [
+    {
+      "description": "Andrew Benintendi leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.15625,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-01",
+      "score": 1.956622
+    },
+    {
+      "description": "Andrew Benintendi leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.204082,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-03-31",
+      "score": 2.762077
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

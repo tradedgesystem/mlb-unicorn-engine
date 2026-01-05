@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3783783783783784,
+    "contact_pct_last_50": 0.45121951219512196,
+    "hard_hit_pct_last_50": 0.3783783783783784,
+    "xwoba_last_50": 0.23568
+  },
+  "name": "Kyle Farmer",
+  "player_id": 571657,
+  "player_name": "Kyle Farmer",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

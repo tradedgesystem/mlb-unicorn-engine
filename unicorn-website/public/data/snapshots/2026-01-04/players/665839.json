@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.36619718309859156,
+    "contact_pct_last_50": 0.43529411764705883,
+    "hard_hit_pct_last_50": 0.5135135135135135,
+    "xwoba_last_50": 0.3357291666666667
+  },
+  "name": "Enmanuel Valdez",
+  "player_id": 665839,
+  "player_name": "Enmanuel Valdez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

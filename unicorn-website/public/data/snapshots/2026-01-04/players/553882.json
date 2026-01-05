@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.23076923076923078,
+    "contact_pct_last_50": 0.4375,
+    "hard_hit_pct_last_50": 0.14285714285714285,
+    "xwoba_last_50": 0.19575
+  },
+  "name": "Omar Narváez",
+  "player_id": 553882,
+  "player_name": "Omar Narváez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

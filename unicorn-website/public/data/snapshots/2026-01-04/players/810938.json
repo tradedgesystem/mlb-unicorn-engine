@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 136,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3125,
+    "contact_pct_last_50": 0.3157894736842105,
+    "hard_hit_pct_last_50": 0.25,
+    "xwoba_last_50": 0.23458823529411765
+  },
+  "name": "Ben Williamson",
+  "player_id": 810938,
+  "player_name": "Ben Williamson",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 136,
+  "team_name": "SEA"
+}

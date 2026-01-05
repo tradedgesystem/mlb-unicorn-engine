@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 134,
+  "metrics": {
+    "barrel_pct_last_50": 0.03225806451612903,
+    "chase_pct_last_50": 0.29591836734693877,
+    "contact_pct_last_50": 0.3563218390804598,
+    "hard_hit_pct_last_50": 0.3225806451612903,
+    "xwoba_last_50": 0.2886
+  },
+  "name": "Joey Bart",
+  "player_id": 663698,
+  "player_name": "Joey Bart",
+  "recent_unicorns": [
+    {
+      "description": "Joey Bart owns the lowest chase rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0004",
+      "run_date": "2025-03-27",
+      "score": 0.719133
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 134,
+  "team_name": "PIT"
+}

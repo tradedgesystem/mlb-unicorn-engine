@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 144,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.43243243243243246,
+    "contact_pct_last_50": 0.2553191489361702,
+    "hard_hit_pct_last_50": 0.18181818181818182,
+    "xwoba_last_50": 0.12178571428571429
+  },
+  "name": "Jurickson Profar",
+  "player_id": 595777,
+  "player_name": "Jurickson Profar",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 144,
+  "team_name": "ATL"
+}
