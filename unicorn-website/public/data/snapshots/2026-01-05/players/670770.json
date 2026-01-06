@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 113,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.20967741935483872,
+    "contact_pct_last_50": 0.5833333333333334,
+    "hard_hit_pct_last_50": 0.23809523809523808,
+    "xwoba_last_50": 0.19952083333333334
+  },
+  "name": "TJ Friedl",
+  "player_id": 670770,
+  "player_name": "TJ Friedl",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 113,
+  "team_name": "CIN"
+}

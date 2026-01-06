@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 120,
+  "metrics": {
+    "barrel_pct_last_50": 0.034482758620689655,
+    "chase_pct_last_50": 0.38961038961038963,
+    "contact_pct_last_50": 0.37662337662337664,
+    "hard_hit_pct_last_50": 0.3793103448275862,
+    "xwoba_last_50": 0.32171052631578945
+  },
+  "name": "CJ Abrams",
+  "player_id": 682928,
+  "player_name": "CJ Abrams",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 120,
+  "team_name": "WSH"
+}

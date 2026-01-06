@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.03571428571428571,
+    "chase_pct_last_50": 0.36046511627906974,
+    "contact_pct_last_50": 0.32558139534883723,
+    "hard_hit_pct_last_50": 0.4642857142857143,
+    "xwoba_last_50": 0.1739767441860465
+  },
+  "name": "Brandon Marsh",
+  "player_id": 669016,
+  "player_name": "Brandon Marsh",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

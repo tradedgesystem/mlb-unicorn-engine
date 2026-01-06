@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 119,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.32142857142857145,
+    "contact_pct_last_50": 0.42857142857142855,
+    "hard_hit_pct_last_50": 0.08333333333333333,
+    "xwoba_last_50": 0.12757894736842104
+  },
+  "name": "Austin Barnes",
+  "player_id": 605131,
+  "player_name": "Austin Barnes",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 119,
+  "team_name": "LAD"
+}

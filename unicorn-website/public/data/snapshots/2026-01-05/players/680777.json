@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.05555555555555555,
+    "chase_pct_last_50": 0.2708333333333333,
+    "contact_pct_last_50": 0.3592233009708738,
+    "hard_hit_pct_last_50": 0.4166666666666667,
+    "xwoba_last_50": 0.33085714285714285
+  },
+  "name": "Ryan Jeffers",
+  "player_id": 680777,
+  "player_name": "Ryan Jeffers",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

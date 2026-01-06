@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.05555555555555555,
+    "chase_pct_last_50": 0.6333333333333333,
+    "contact_pct_last_50": 0.32142857142857145,
+    "hard_hit_pct_last_50": 0.5555555555555556,
+    "xwoba_last_50": 0.3266363636363636
+  },
+  "name": "Oscar Gonzalez",
+  "player_id": 660757,
+  "player_name": "Oscar Gonzalez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

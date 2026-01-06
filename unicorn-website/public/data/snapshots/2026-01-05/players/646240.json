@@ -1,0 +1,51 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.35365853658536583,
+    "contact_pct_last_50": 0.37,
+    "hard_hit_pct_last_50": 0.5675675675675675,
+    "xwoba_last_50": 0.37114285714285716
+  },
+  "name": "Rafael Devers",
+  "player_id": 646240,
+  "player_name": "Rafael Devers",
+  "recent_unicorns": [
+    {
+      "description": "Rafael Devers leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-04-05",
+      "score": 1.653851
+    },
+    {
+      "description": "Rafael Devers leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-30",
+      "score": 1.50864
+    },
+    {
+      "description": "Rafael Devers leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-29",
+      "score": 1.428664
+    },
+    {
+      "description": "Rafael Devers leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-28",
+      "score": 1.305608
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

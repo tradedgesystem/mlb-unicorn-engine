@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.05263157894736842,
+    "chase_pct_last_50": 0.3953488372093023,
+    "contact_pct_last_50": 0.40425531914893614,
+    "hard_hit_pct_last_50": 0.3157894736842105,
+    "xwoba_last_50": 0.24483333333333332
+  },
+  "name": "Isaac Collins",
+  "player_id": 686555,
+  "player_name": "Isaac Collins",
+  "recent_unicorns": [
+    {
+      "description": "Isaac Collins: 1 barrels vs offspeed pitches (last 50 AB).",
+      "metric_value": 1.0,
+      "pattern_id": "UNQ-H-0529",
+      "run_date": "2025-04-15",
+      "score": 1.0
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

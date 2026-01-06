@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.05,
+    "chase_pct_last_50": 0.33695652173913043,
+    "contact_pct_last_50": 0.43478260869565216,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.27779591836734696
+  },
+  "name": "Trea Turner",
+  "player_id": 607208,
+  "player_name": "Trea Turner",
+  "recent_unicorns": [
+    {
+      "description": "Trea Turner leads MLB in contact rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0005",
+      "run_date": "2025-03-27",
+      "score": 1.115877
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

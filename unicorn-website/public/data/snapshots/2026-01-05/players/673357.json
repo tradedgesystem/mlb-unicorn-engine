@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.06666666666666667,
+    "chase_pct_last_50": 0.41,
+    "contact_pct_last_50": 0.31958762886597936,
+    "hard_hit_pct_last_50": 0.36666666666666664,
+    "xwoba_last_50": 0.23287234042553193
+  },
+  "name": "Luis Robert Jr.",
+  "player_id": 673357,
+  "player_name": "Luis Robert Jr.",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

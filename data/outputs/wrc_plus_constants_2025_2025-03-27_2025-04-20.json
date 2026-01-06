@@ -13,14 +13,14 @@
     "target_wrc_plus": 210.0
   },
   "calibration": {
-    "alpha": 1.0042512060076485,
-    "beta": 0.10191331145459422,
+    "alpha": 1.0042512060076405,
+    "beta": 0.10191331145469198,
     "pf_gamma": 0.0,
     "success": true,
     "message": "`ftol` termination condition is satisfied.",
     "nfev": 13,
-    "loss": 1686.6924254139512
+    "loss": 1686.6924254139465
   },
   "data_source": "pybaseball.statcast",
-  "generated_at": "2026-01-05T07:43:31Z"
+  "generated_at": "2026-01-06T07:38:46Z"
 }

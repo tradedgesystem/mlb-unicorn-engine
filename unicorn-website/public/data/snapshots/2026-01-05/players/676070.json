@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.22580645161290322,
+    "contact_pct_last_50": 0.5636363636363636,
+    "hard_hit_pct_last_50": 0.25806451612903225,
+    "xwoba_last_50": 0.175390243902439
+  },
+  "name": "Jacob Amaya",
+  "player_id": 676070,
+  "player_name": "Jacob Amaya",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

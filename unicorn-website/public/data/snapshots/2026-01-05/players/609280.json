@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3157894736842105,
+    "contact_pct_last_50": 0.4174757281553398,
+    "hard_hit_pct_last_50": 0.3023255813953488,
+    "xwoba_last_50": 0.2494
+  },
+  "name": "Miguel Andujar",
+  "player_id": 609280,
+  "player_name": "Miguel Andujar",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

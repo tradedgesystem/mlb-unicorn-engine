@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.35365853658536583,
+    "contact_pct_last_50": 0.3163265306122449,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.28997826086956524
+  },
+  "name": "Matt Wallner",
+  "player_id": 670242,
+  "player_name": "Matt Wallner",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

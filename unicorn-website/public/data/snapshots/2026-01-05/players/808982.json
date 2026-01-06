@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.046511627906976744,
+    "chase_pct_last_50": 0.3404255319148936,
+    "contact_pct_last_50": 0.45263157894736844,
+    "hard_hit_pct_last_50": 0.32558139534883723,
+    "xwoba_last_50": 0.36446
+  },
+  "name": "Jung Hoo Lee",
+  "player_id": 808982,
+  "player_name": "Jung Hoo Lee",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.5128205128205128,
+    "contact_pct_last_50": 0.3617021276595745,
+    "hard_hit_pct_last_50": 0.29411764705882354,
+    "xwoba_last_50": 0.24427272727272728
+  },
+  "name": "Kevin Newman",
+  "player_id": 621028,
+  "player_name": "Kevin Newman",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

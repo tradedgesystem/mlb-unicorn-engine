@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 115,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.4307692307692308,
+    "contact_pct_last_50": 0.22058823529411764,
+    "hard_hit_pct_last_50": 0.4666666666666667,
+    "xwoba_last_50": 0.2197
+  },
+  "name": "Jacob Stallings",
+  "player_id": 607732,
+  "player_name": "Jacob Stallings",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 115,
+  "team_name": "COL"
+}

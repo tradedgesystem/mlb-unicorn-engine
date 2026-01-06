@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.32727272727272727,
+    "contact_pct_last_50": 0.36363636363636365,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.2242222222222222
+  },
+  "name": "Travis d'Arnaud",
+  "player_id": 518595,
+  "player_name": "Travis d'Arnaud",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

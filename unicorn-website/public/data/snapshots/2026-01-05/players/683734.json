@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.02631578947368421,
+    "chase_pct_last_50": 0.40816326530612246,
+    "contact_pct_last_50": 0.35514018691588783,
+    "hard_hit_pct_last_50": 0.47368421052631576,
+    "xwoba_last_50": 0.28194
+  },
+  "name": "Andrew Vaughn",
+  "player_id": 683734,
+  "player_name": "Andrew Vaughn",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

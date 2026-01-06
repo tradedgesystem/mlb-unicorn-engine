@@ -1,0 +1,30 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.047619047619047616,
+    "chase_pct_last_50": 0.27631578947368424,
+    "contact_pct_last_50": 0.5675675675675675,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.37268
+  },
+  "name": "Eric Wagaman",
+  "player_id": 676572,
+  "player_name": "Eric Wagaman",
+  "recent_unicorns": [
+    {
+      "description": "Eric Wagaman has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.7278,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-05",
+      "score": 2.840903
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.26785714285714285,
+    "contact_pct_last_50": 0.3770491803278688,
+    "hard_hit_pct_last_50": 0.30434782608695654,
+    "xwoba_last_50": 0.20118181818181818
+  },
+  "name": "Vinny Capra",
+  "player_id": 681962,
+  "player_name": "Vinny Capra",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

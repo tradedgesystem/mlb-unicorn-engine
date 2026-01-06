@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.02564102564102564,
+    "chase_pct_last_50": 0.35526315789473684,
+    "contact_pct_last_50": 0.41935483870967744,
+    "hard_hit_pct_last_50": 0.38461538461538464,
+    "xwoba_last_50": 0.2460816326530612
+  },
+  "name": "Gio Urshela",
+  "player_id": 570482,
+  "player_name": "Gio Urshela",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

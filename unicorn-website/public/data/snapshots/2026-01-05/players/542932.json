@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2222222222222222,
+    "contact_pct_last_50": 0.40540540540540543,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.262
+  },
+  "name": "Jon Berti",
+  "player_id": 542932,
+  "player_name": "Jon Berti",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 110,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2826086956521739,
+    "contact_pct_last_50": 0.29545454545454547,
+    "hard_hit_pct_last_50": 0.3076923076923077,
+    "xwoba_last_50": 0.17395238095238094
+  },
+  "name": "Ramón Laureano",
+  "player_id": 657656,
+  "player_name": "Ramón Laureano",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 110,
+  "team_name": "BAL"
+}
