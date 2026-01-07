@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.027777777777777776,
+    "chase_pct_last_50": 0.24390243902439024,
+    "contact_pct_last_50": 0.3956043956043956,
+    "hard_hit_pct_last_50": 0.3333333333333333,
+    "xwoba_last_50": 0.2516304347826087
+  },
+  "name": "Bo Naylor",
+  "player_id": 666310,
+  "player_name": "Bo Naylor",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

@@ -1,0 +1,44 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 140,
+  "metrics": {
+    "barrel_pct_last_50": 0.027777777777777776,
+    "chase_pct_last_50": 0.3880597014925373,
+    "contact_pct_last_50": 0.45569620253164556,
+    "hard_hit_pct_last_50": 0.4444444444444444,
+    "xwoba_last_50": 0.3163913043478261
+  },
+  "name": "Wyatt Langford",
+  "player_id": 694671,
+  "player_name": "Wyatt Langford",
+  "recent_unicorns": [
+    {
+      "description": "Wyatt Langford has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-04",
+      "score": 2.490592
+    },
+    {
+      "description": "Wyatt Langford has the best xwOBA in MLB in 3-2 counts.",
+      "metric_value": 0.691,
+      "pattern_id": "UNQ-H-0021",
+      "run_date": "2025-04-03",
+      "score": 2.229928
+    },
+    {
+      "description": "Wyatt Langford owns the lowest chase rate over his last 50 PA.",
+      "metric_value": 0.0,
+      "pattern_id": "UNQ-H-0004",
+      "run_date": "2025-03-28",
+      "score": 0.865959
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 140,
+  "team_name": "TEX"
+}

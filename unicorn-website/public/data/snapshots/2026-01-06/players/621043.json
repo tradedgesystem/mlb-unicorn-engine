@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3020833333333333,
+    "contact_pct_last_50": 0.42,
+    "hard_hit_pct_last_50": 0.30952380952380953,
+    "xwoba_last_50": 0.24446
+  },
+  "name": "Carlos Correa",
+  "player_id": 621043,
+  "player_name": "Carlos Correa",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.32142857142857145,
+    "contact_pct_last_50": 0.3829787234042553,
+    "hard_hit_pct_last_50": 0.4166666666666667,
+    "xwoba_last_50": 0.31806
+  },
+  "name": "Kristian Campbell",
+  "player_id": 692225,
+  "player_name": "Kristian Campbell",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

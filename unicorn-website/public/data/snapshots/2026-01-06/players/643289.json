@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 117,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3023255813953488,
+    "contact_pct_last_50": 0.49056603773584906,
+    "hard_hit_pct_last_50": 0.19230769230769232,
+    "xwoba_last_50": 0.24821428571428572
+  },
+  "name": "Mauricio Dubón",
+  "player_id": 643289,
+  "player_name": "Mauricio Dubón",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 117,
+  "team_name": "HOU"
+}

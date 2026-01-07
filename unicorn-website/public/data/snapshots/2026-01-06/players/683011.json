@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 147,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.273972602739726,
+    "contact_pct_last_50": 0.35106382978723405,
+    "hard_hit_pct_last_50": 0.3939393939393939,
+    "xwoba_last_50": 0.20144
+  },
+  "name": "Anthony Volpe",
+  "player_id": 683011,
+  "player_name": "Anthony Volpe",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 147,
+  "team_name": "NYY"
+}

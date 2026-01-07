@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 112,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.23300970873786409,
+    "contact_pct_last_50": 0.4148936170212766,
+    "hard_hit_pct_last_50": 0.4358974358974359,
+    "xwoba_last_50": 0.37224
+  },
+  "name": "Seiya Suzuki",
+  "player_id": 673548,
+  "player_name": "Seiya Suzuki",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 112,
+  "team_name": "CHC"
+}

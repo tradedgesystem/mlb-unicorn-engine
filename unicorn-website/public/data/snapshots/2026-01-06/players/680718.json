@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 141,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.25925925925925924,
+    "contact_pct_last_50": 0.3448275862068966,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.18915384615384614
+  },
+  "name": "Addison Barger",
+  "player_id": 680718,
+  "player_name": "Addison Barger",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 141,
+  "team_name": "TOR"
+}

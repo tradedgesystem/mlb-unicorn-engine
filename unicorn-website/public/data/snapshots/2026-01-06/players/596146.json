@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 143,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.32432432432432434,
+    "contact_pct_last_50": 0.4148936170212766,
+    "hard_hit_pct_last_50": 0.5128205128205128,
+    "xwoba_last_50": 0.29972
+  },
+  "name": "Max Kepler",
+  "player_id": 596146,
+  "player_name": "Max Kepler",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 143,
+  "team_name": "PHI"
+}

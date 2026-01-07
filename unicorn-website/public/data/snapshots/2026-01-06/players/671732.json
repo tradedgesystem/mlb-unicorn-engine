@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 133,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.2727272727272727,
+    "contact_pct_last_50": 0.43333333333333335,
+    "hard_hit_pct_last_50": 0.5384615384615384,
+    "xwoba_last_50": 0.27016
+  },
+  "name": "Lawrence Butler",
+  "player_id": 671732,
+  "player_name": "Lawrence Butler",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 133,
+  "team_name": "ATH"
+}

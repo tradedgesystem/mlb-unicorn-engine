@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 158,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.47368421052631576,
+    "contact_pct_last_50": 0.4270833333333333,
+    "hard_hit_pct_last_50": 0.36585365853658536,
+    "xwoba_last_50": 0.26864
+  },
+  "name": "Jackson Chourio",
+  "player_id": 694192,
+  "player_name": "Jackson Chourio",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 158,
+  "team_name": "MIL"
+}

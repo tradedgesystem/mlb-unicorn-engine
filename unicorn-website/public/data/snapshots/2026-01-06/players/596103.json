@@ -1,0 +1,37 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.06666666666666667,
+    "chase_pct_last_50": 0.2727272727272727,
+    "contact_pct_last_50": 0.45454545454545453,
+    "hard_hit_pct_last_50": 0.6666666666666666,
+    "xwoba_last_50": 0.34515
+  },
+  "name": "Austin Slater",
+  "player_id": 596103,
+  "player_name": "Austin Slater",
+  "recent_unicorns": [
+    {
+      "description": "Austin Slater leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.171429,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-05",
+      "score": 2.290169
+    },
+    {
+      "description": "Austin Slater leads MLB in hard-hit rate over his last 50 PA.",
+      "metric_value": 0.171429,
+      "pattern_id": "UNQ-H-0002",
+      "run_date": "2025-04-04",
+      "score": 2.200695
+    }
+  ],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.02702702702702703,
+    "chase_pct_last_50": 0.2891566265060241,
+    "contact_pct_last_50": 0.3978494623655914,
+    "hard_hit_pct_last_50": 0.5675675675675675,
+    "xwoba_last_50": 0.36759574468085104
+  },
+  "name": "Luis Torrens",
+  "player_id": 620443,
+  "player_name": "Luis Torrens",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

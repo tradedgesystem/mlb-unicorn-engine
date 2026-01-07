@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 146,
+  "metrics": {
+    "barrel_pct_last_50": 0.03125,
+    "chase_pct_last_50": 0.24489795918367346,
+    "contact_pct_last_50": 0.4155844155844156,
+    "hard_hit_pct_last_50": 0.40625,
+    "xwoba_last_50": 0.31342857142857145
+  },
+  "name": "Dane Myers",
+  "player_id": 667472,
+  "player_name": "Dane Myers",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 146,
+  "team_name": "MIA"
+}

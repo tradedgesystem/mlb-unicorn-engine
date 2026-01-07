@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 137,
+  "metrics": {
+    "barrel_pct_last_50": 0.08108108108108109,
+    "chase_pct_last_50": 0.4588235294117647,
+    "contact_pct_last_50": 0.37,
+    "hard_hit_pct_last_50": 0.4594594594594595,
+    "xwoba_last_50": 0.2977
+  },
+  "name": "Heliot Ramos",
+  "player_id": 671218,
+  "player_name": "Heliot Ramos",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 137,
+  "team_name": "SF"
+}

@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 121,
+  "metrics": {
+    "barrel_pct_last_50": 0.04878048780487805,
+    "chase_pct_last_50": 0.25,
+    "contact_pct_last_50": 0.43617021276595747,
+    "hard_hit_pct_last_50": 0.4878048780487805,
+    "xwoba_last_50": 0.2809
+  },
+  "name": "Brandon Nimmo",
+  "player_id": 607043,
+  "player_name": "Brandon Nimmo",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 121,
+  "team_name": "NYM"
+}

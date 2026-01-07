@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 108,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.26881720430107525,
+    "contact_pct_last_50": 0.3626373626373626,
+    "hard_hit_pct_last_50": 0.3939393939393939,
+    "xwoba_last_50": 0.27318
+  },
+  "name": "Jorge Soler",
+  "player_id": 624585,
+  "player_name": "Jorge Soler",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 108,
+  "team_name": "LAA"
+}

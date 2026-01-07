@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 145,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.3125,
+    "contact_pct_last_50": 0.3157894736842105,
+    "hard_hit_pct_last_50": 0.2727272727272727,
+    "xwoba_last_50": 0.2078888888888889
+  },
+  "name": "Joshua Palacios",
+  "player_id": 641943,
+  "player_name": "Joshua Palacios",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 145,
+  "team_name": "CWS"
+}

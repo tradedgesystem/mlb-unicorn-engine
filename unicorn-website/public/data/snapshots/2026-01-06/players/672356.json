@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.08571428571428572,
+    "chase_pct_last_50": 0.3783783783783784,
+    "contact_pct_last_50": 0.39325842696629215,
+    "hard_hit_pct_last_50": 0.4,
+    "xwoba_last_50": 0.29334
+  },
+  "name": "Gabriel Arias",
+  "player_id": 672356,
+  "player_name": "Gabriel Arias",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

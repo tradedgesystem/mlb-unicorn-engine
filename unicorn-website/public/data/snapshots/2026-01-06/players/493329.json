@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 135,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.42,
+    "contact_pct_last_50": 0.46938775510204084,
+    "hard_hit_pct_last_50": 0.18181818181818182,
+    "xwoba_last_50": 0.14357142857142857
+  },
+  "name": "Yuli Gurriel",
+  "player_id": 493329,
+  "player_name": "Yuli Gurriel",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 135,
+  "team_name": "SD"
+}

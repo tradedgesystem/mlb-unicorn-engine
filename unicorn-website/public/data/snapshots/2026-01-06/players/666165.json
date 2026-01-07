@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 111,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.43333333333333335,
+    "contact_pct_last_50": 0.21428571428571427,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.2429090909090909
+  },
+  "name": "Blake Sabol",
+  "player_id": 666165,
+  "player_name": "Blake Sabol",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 111,
+  "team_name": "BOS"
+}

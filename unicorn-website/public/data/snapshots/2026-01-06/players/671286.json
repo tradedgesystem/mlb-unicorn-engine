@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 114,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.45454545454545453,
+    "contact_pct_last_50": 0.2222222222222222,
+    "hard_hit_pct_last_50": 0.5,
+    "xwoba_last_50": 0.0192
+  },
+  "name": "Johnathan Rodríguez",
+  "player_id": 671286,
+  "player_name": "Johnathan Rodríguez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 114,
+  "team_name": "CLE"
+}

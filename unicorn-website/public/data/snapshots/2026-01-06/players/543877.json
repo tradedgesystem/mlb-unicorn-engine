@@ -1,0 +1,22 @@
+{
+  "basic_batting": null,
+  "basic_pitching": null,
+  "current_team_id": 142,
+  "metrics": {
+    "barrel_pct_last_50": 0.0,
+    "chase_pct_last_50": 0.21428571428571427,
+    "contact_pct_last_50": 0.5365853658536586,
+    "hard_hit_pct_last_50": 0.3181818181818182,
+    "xwoba_last_50": 0.18685185185185185
+  },
+  "name": "Christian Vázquez",
+  "player_id": 543877,
+  "player_name": "Christian Vázquez",
+  "recent_unicorns": [],
+  "role": "hitter",
+  "roles": [
+    "hitter"
+  ],
+  "team_id": 142,
+  "team_name": "MIN"
+}
